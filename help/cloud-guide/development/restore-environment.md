@@ -1,0 +1,182 @@
+---
+title: Omgeving herstellen
+description: Leer hoe u de Adobe Commerce-toepassing kunt verwijderen uit een cloudinfrastructuurproject en een omgeving kunt herstellen in een stabiele toestand.
+role: Developer
+topic: Development
+exl-id: b76bd6c3-986e-4adc-abd0-5b27db0d8a3b
+source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+workflow-type: tm+mt
+source-wordcount: '480'
+ht-degree: 0%
+
+---
+
+# Omgeving herstellen
+
+Als u problemen tegenkomt in de integratieomgeving en geen [geldige back-up](../storage/snapshots.md)kunt u de omgeving op een van de volgende manieren herstellen:
+
+- De code in de Git-vertakking herstellen of herstellen
+- De installatie van de [!DNL Commerce] toepassing
+- Herplaatsing forceren
+- De database handmatig opnieuw instellen
+
+{{stuck-deployment-tip}}
+
+## De Git-vertakking opnieuw instellen
+
+Als u de Git-vertakking opnieuw instelt, wordt de code in het verleden teruggezet naar een stabiele status.
+
+**De vertakking opnieuw instellen**:
+
+1. Wijzig op uw lokale werkstation de projectmap.
+
+1. Bekijk de Git commit geschiedenis. Gebruiken `--oneline` om afgekorte verbintenissen op één regel weer te geven:
+
+   ```bash
+   git log --oneline
+   ```
+
+   Monsterrespons:
+
+   ```terminal
+   6bf9f45 (HEAD -> master, magento/master, magento/develop, magento/HEAD, develop) Create composer.lock
+   34d7434 2.4.6 upgrade
+   b69803c Update composer.lock
+   c1bca24 Add sample data
+   ec604c3 Update magento/ece-tools
+   ...
+   ```
+
+1. Kies een commit hash die de laatst bekende stabiele staat van uw code vertegenwoordigt.
+
+   Als u de oorspronkelijke geïnitialiseerde status van de vertakking wilt herstellen, zoekt u eerst naar de instelling waarmee de vertakking is gemaakt. U kunt `--reverse` om de geschiedenis in omgekeerde chronologische volgorde weer te geven.
+
+1. Met de optie voor het opnieuw instellen van de vaste waarden kunt u de vertakking herstellen. Wees voorzichtig met het gebruik van deze opdracht omdat alle wijzigingen worden verwijderd sinds de gekozen toewijzen.
+
+   ```bash
+   git reset --hard <commit>
+   ```
+
+1. Duw uw veranderingen om een herplaatsing teweeg te brengen, die Adobe Commerce opnieuw installeert.
+
+   ```bash
+   git push --force <origin> <branch>
+   ```
+
+## Commerce verwijderen
+
+De installatie van de [!DNL Commerce] de toepassing keert uw milieu aan een originele staat terug door het gegevensbestand te herstellen, de plaatsingsconfiguratie te verwijderen en `var/` submappen. Deze richtlijn stelt ook uw git tak aan een vroegere stabiele staat terug. Als u geen recente back-up hebt, maar de externe omgeving wel kunt openen met behulp van SSH, voert u de volgende stappen uit om uw omgeving te herstellen:
+
+- Configuratiebeheer uitschakelen
+- Adobe Commerce verwijderen
+- De grijsvertakking herstellen
+
+Als u de Adobe Commerce-software verwijdert, wordt de database neergezet en hersteld, wordt de implementatieconfiguratie verwijderd en wordt de `var/` submappen. Het is belangrijk om [Configuratiebeheer](../store/store-settings.md) zodat de vorige configuratie-instellingen tijdens de volgende implementatie niet automatisch worden toegepast. Zorg ervoor dat uw `app/etc/` map bevat niet de `config.php` bestand.
+
+**De Adobe Commerce-software verwijderen**:
+
+1. Wijzig op uw lokale werkstation de projectmap.
+
+1. Gebruik SSH om u aan te melden bij de externe omgeving.
+
+   ```bash
+   magento-cloud ssh
+   ```
+
+1. Verwijder het configuratiebestand.
+   - Voor Adobe Commerce 2.2 en hoger:
+
+     ```bash
+     rm app/etc/config.php
+     ```
+
+   - Voor Adobe Commerce 2.1:
+
+     ```bash
+     rm app/etc/config.local.php
+     ```
+
+1. Verwijder de Adobe Commerce-toepassing.
+
+   ```bash
+   php bin/magento setup:uninstall -n
+   ```
+
+1. Bevestig dat Adobe Commerce is verwijderd.
+
+   Het volgende bericht wordt weergegeven om te bevestigen dat het verwijderen is gelukt:
+
+   ```terminal
+   [SUCCESS]: Magento uninstallation complete.
+   ```
+
+1. Wis de `var/` submappen.
+
+   ```bash
+   rm -rf var/*
+   ```
+
+1. Afmelden.
+
+>[!TIP]
+>
+>Optioneel is het een goede gewoonte om bouwcaches schoon te maken.
+>
+>```bash
+>magento-cloud project:clear-build-cache
+>```
+
+## Herplaatsing forceren
+
+Als u hebt geprobeerd om Adobe Commerce te verwijderen en uw implementatie blijft mislukken, kunt u proberen om handmatig een herimplementatie te forceren.
+
+```bash
+git commit --allow-empty -m "<message>" && git push <origin> <branch>
+```
+
+## De database opnieuw instellen
+
+Als u hebt geprobeerd om Adobe Commerce te verwijderen en de opdracht is mislukt of niet kan worden voltooid, kunt u de database handmatig opnieuw instellen.
+
+**De database opnieuw instellen**:
+
+1. Wijzig op uw lokale werkstation de projectmap.
+
+1. Gebruik SSH om u aan te melden bij de externe omgeving.
+
+   ```bash
+   magento-cloud ssh
+   ```
+
+1. Maak verbinding met de database.
+
+   ```bash
+   mysql -h database.internal
+   ```
+
+1. Zet de `main` database.
+
+   ```shell
+   drop database main;
+   ```
+
+1. Een leeg bestand maken `main` database.
+
+   ```shell
+   create database main;
+   ```
+
+1. Verwijder de volgende configuratiebestanden.
+
+   - `config.php`
+   - `config.php.bak`
+   - `env.php`
+   - `env.php.bak`
+
+1. Log uit en activeer een herplaatsing.
+
+   ```bash
+   magento-cloud environment:redeploy
+   ```
+
+{{redeploy-warning}}

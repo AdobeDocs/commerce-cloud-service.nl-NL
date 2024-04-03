@@ -1,0 +1,52 @@
+---
+title: Include-bestanden op de server
+description: Leer hoe u include-bestanden op de server kunt gebruiken met Adobe Commerce op cloudinfrastructuur.
+feature: Cloud, Routes
+exl-id: 34a38cb5-5f0e-49ac-9dba-bb581a06aeed
+source-git-commit: 649c11b111aa9c9105e54908bf9c6f48741f10e4
+workflow-type: tm+mt
+source-wordcount: '172'
+ht-degree: 0%
+
+---
+
+# Include-bestanden op de server
+
+[Include-bestanden op de server](https://nginx.org/en/docs/http/ngx_http_ssi_module.html) (SSI) zijn instructies in HTML-pagina&#39;s die op de server worden geëvalueerd terwijl de pagina&#39;s worden weergegeven. Met SSI kunt u dynamisch gegenereerde inhoud toevoegen aan een bestaande HTML-pagina zonder de hele pagina te bedienen.
+
+U kunt SSI op een per-routebasis in uw activeren of deactiveren `.magento/routes.yaml`; bijvoorbeeld:
+
+```yaml
+    "http://{default}/":
+        type: upstream
+        upstream: "myapp:php"
+        cache:
+            enabled: false
+            ssi:
+                enabled: true
+    "http://{default}/time.php":
+        type: upstream
+        upstream: "myapp:php"
+        cache:
+            enabled: true
+```
+
+SSI laat u toe om in uw HTML reactierichtlijnen te omvatten die de server ertoe brengen om delen van de HTML in te vullen, met inachtneming van om het even welk bestaand [caching-configuratie](caching.md).
+
+In het volgende voorbeeld ziet u hoe u een dynamisch datumbesturingselement boven aan een pagina invoegt en een ander datumbesturingselement onder aan dat elke 600 seconden wordt bijgewerkt:
+
+Voeg het volgende toe aan elke pagina, zoals `/index.php`:
+
+```php?start_inline=1
+echo date(DATE_RFC2822);
+<!--#include virtual="time.php" -->
+```
+
+Voeg het volgende toe aan `time.php`:
+
+```php?start_inline=1
+header("Cache-Control: max-age=600");
+echo date(DATE_RFC2822);
+```
+
+Blader naar de pagina waarop u het besturingselement hebt toegevoegd. Vernieuw de pagina een aantal keren. U ziet dat de tijd boven aan de pagina verandert, maar de tijd onder aan de pagina verandert slechts om de 600 seconden.
