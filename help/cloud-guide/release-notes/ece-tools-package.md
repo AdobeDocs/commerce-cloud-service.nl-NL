@@ -2,11 +2,11 @@
 title: Opmerkingen bij de release ECE-Tools
 description: Zie een lijst met de meest recente verbeteringen in het pakket ECE-Tools.
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-01-16T00:00:00Z
+last-substantial-update: 2024-04-08T00:00:00Z
 exl-id: a464b940-c56e-4a7c-9948-559539e25361
-source-git-commit: f2aa4aa183298d829d27c4641f21acef1514d312
+source-git-commit: e21f21e34f89b62842bd22c99ff5705f984898e0
 workflow-type: tm+mt
-source-wordcount: '2887'
+source-wordcount: '2905'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,15 @@ De opmerkingen bij de release omvatten:
 
 <!--Add release notes below-->
 
-## v2002.1.17 {#latest}
+
+## v2002.1.18 {#latest}
+
+Releasedatum: 8 april 2024
+
+- ![nieuw pictogram](../../assets/new.svg) **PHP** — Toegevoegde ondersteuning voor PHP 8.3.
+- ![fixepictogram](../../assets/fix.svg) Validator - Bijgewerkte EOL-validatie.
+
+## v2002.1.17
 
 Releasedatum: 16 januari 2024
 
