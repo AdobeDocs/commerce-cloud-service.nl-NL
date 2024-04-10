@@ -1,7 +1,7 @@
 ---
-source-git-commit: c160be020d855983eaf7a06d04cee6e27819b2a0
+source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
 workflow-type: tm+mt
-source-wordcount: '21467'
+source-wordcount: '21442'
 ht-degree: 0%
 
 ---
@@ -6138,7 +6138,7 @@ Stel geen interactieve vragen. Accepteer standaardwaarden. Gelijk aan het gebrui
 
 ## `metrics:all`
 
-\&lt;fg white=&quot;&quot; bg=&quot;red&quot;> BETA \&lt;/> Cpu, schijf en geheugenmetriek voor een milieu tonen
+Cpu-, schijf- en geheugengegevens voor een omgeving weergeven
 
 ```bash
 magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6268,7 +6268,7 @@ Stel geen interactieve vragen. Accepteer standaardwaarden. Gelijk aan het gebrui
 
 ## `metrics:cpu`
 
-\&lt;fg white=&quot;&quot; bg=&quot;red&quot;> BETA \&lt;/> CPU-gebruik van een omgeving tonen
+CPU-gebruik van een omgeving tonen
 
 ```bash
 magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6528,7 +6528,7 @@ Stel geen interactieve vragen. Accepteer standaardwaarden. Gelijk aan het gebrui
 
 ## `metrics:memory`
 
-\&lt;fg white=&quot;&quot; bg=&quot;red&quot;> BETA \&lt;/> Geheugengebruik van een omgeving tonen
+Geheugengebruik van een omgeving weergeven
 
 ```bash
 magento-cloud mem [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -7136,7 +7136,7 @@ Stel geen interactieve vragen. Accepteer standaardwaarden. Gelijk aan het gebrui
 
 ## `operation:list`
 
-\&lt;fg white=&quot;&quot; bg=&quot;red&quot;> BETA \&lt;/> Runtimebewerkingen in een omgeving weergeven
+Runtimebewerkingen weergeven in een omgeving
 
 ```bash
 magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
@@ -7232,7 +7232,7 @@ Stel geen interactieve vragen. Accepteer standaardwaarden. Gelijk aan het gebrui
 
 ## `operation:run`
 
-\&lt;fg white=&quot;&quot; bg=&quot;red&quot;> BETA \&lt;/> Een bewerking uitvoeren op de omgeving
+Een bewerking uitvoeren op de omgeving
 
 ```bash
 magento-cloud operation:run [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-W|--no-wait] [--wait] [--] [<operation>]

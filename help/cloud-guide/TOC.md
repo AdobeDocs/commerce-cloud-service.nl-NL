@@ -3,9 +3,9 @@ user-guide-title: Handleiding Commerce on Cloud Infrastructure
 user-guide-description: Leer hoe u de Adobe Commerce-toepassing beheert op cloudinfrastructuur.
 product: magento
 feature: Cloud
-source-git-commit: 615a6525597c62cb6f151cc26ea2bdded3229350
+source-git-commit: ebd434e488b666d34df9562825a612b33495e44d
 workflow-type: tm+mt
-source-wordcount: '356'
+source-wordcount: '353'
 ht-degree: 4%
 
 ---
@@ -31,7 +31,6 @@ ht-degree: 4%
    + [Cloud Docker-pakket](release-notes/cloud-docker.md)
    + [Cloud-componenten](release-notes/cloud-components.md)
    + [Cloud Packages](release-notes/cloud-packages.md)
-   + [Cloud Packages (bèta)](release-notes/cloud-packages-beta.md)
    + [Achteruit incompatibele wijzigingen](release-notes/backward-incompatible-changes.md)
    + [Archief met opmerkingen vrijgeven](release-notes/cloud-release-archive.md)
 + Cloud-project {#project}

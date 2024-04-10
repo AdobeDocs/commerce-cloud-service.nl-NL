@@ -3,7 +3,7 @@ title: Versie voor upgradeopdracht
 description: Leer hoe u de Adobe Commerce-versie kunt upgraden in het cloud-infrastructuurproject.
 feature: Cloud, Upgrade
 exl-id: 87821007-4979-4a20-940b-aa3c82c192d8
-source-git-commit: 745a9f08353bd5dfbb871ca88947157c145c7c70
+source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
 workflow-type: tm+mt
 source-wordcount: '1439'
 ht-degree: 0%
@@ -124,7 +124,7 @@ Voordat u de toepassing kunt upgraden, moet u de projectconfiguratiebestanden bi
 
 ### .magento.app.yaml
 
-Controleer altijd de waarden in het dialoogvenster [.magento.app.yaml](../application/configure-app-yaml.md) bestand voor uw geïnstalleerde versie, omdat deze de manier bepaalt waarop uw toepassing wordt gebouwd en geïmplementeerd in de cloudinfrastructuur. Het volgende voorbeeld is voor versie 2.4.6 en gebruikt Composer 2.2.21. De `build: flavor:` eigenschap wordt niet gebruikt voor Composer 2.x; zie [Composer 2 installeren en gebruiken](../application/properties.md#installing-and-using-composer-2).
+Controleer altijd de waarden in het dialoogvenster [.magento.app.yaml](../application/configure-app-yaml.md) bestand voor uw geïnstalleerde versie, omdat deze de manier bepaalt waarop uw toepassing wordt gebouwd en geïmplementeerd in de cloudinfrastructuur. Het volgende voorbeeld is voor versie 2.4.7 en gebruikt Composer 2.7.2. De `build: flavor:` eigenschap wordt niet gebruikt voor Composer 2.x; zie [Composer 2 installeren en gebruiken](../application/properties.md#installing-and-using-composer-2).
 
 **Als u het dialoogvenster `.magento.app.yaml` file**:
 
@@ -135,13 +135,13 @@ Controleer altijd de waarden in het dialoogvenster [.magento.app.yaml](../applic
 1. Werk de PHP-opties bij.
 
    ```yaml
-   type: php:8.2
+   type: php:8.3
    
    build:
        flavor: none
    dependencies:
        php:
-           composer/composer: '2.2.21'
+           composer/composer: '2.7.2'
    ```
 
 1. Wijzig de `hooks` eigenschap `build` en `deploy` opdrachten.

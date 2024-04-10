@@ -3,7 +3,7 @@ title: Upgradeproject voor gebruik van ECE-tools
 description: Leer hoe u een upgrade uitvoert van uw Adobe Commerce op een cloud-infrastructuurproject, zodat u het pakket ECE-Tools kunt gebruiken en de nieuwste oplossingen en functies kunt benutten.
 feature: Cloud, Install
 exl-id: 820cca84-2817-4881-829f-ebb78400d8c7
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: bcdb59f0d2a17e55e8b0479ee69fac06c710638f
 workflow-type: tm+mt
 source-wordcount: '365'
 ht-degree: 0%
@@ -44,11 +44,11 @@ Als u Adobe Commerce wilt installeren `2.3.5-p2`, set `current_version` tot `2.3
 
 U kunt de meest recente metapakketbeperking altijd vinden in het dialoogvenster [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json).
 
-In het volgende voorbeeld wordt een beperking voor het Adobe Commerce-pakket voor de infrastructuur van de cloud geplaatst in elke versie die hoger is dan of gelijk is aan de huidige versie 2.4.5 en lager is dan de volgende versie 2.4.6:
+In het volgende voorbeeld wordt een beperking voor het Adobe Commerce-pakket voor de infrastructuur van de cloud geplaatst in elke versie die hoger is dan of gelijk is aan de huidige versie 2.4.7 en lager is dan de volgende versie 2.4.8:
 
 ```json
 "require": {
-    "magento/magento-cloud-metapackage": ">=2.4.5 <2.4.6"
+    "magento/magento-cloud-metapackage": ">=2.4.7 <2.4.8"
 },
 ```
 
@@ -61,7 +61,7 @@ Om uw project te bevorderen om te gebruiken `ece-tools` moet u het pakket metapa
 1. Werk de `magento/magento-cloud-metapackage` versiebeperking in de `composer.json` bestand.
 
    ```bash
-   composer require "magento/magento-cloud-metapackage":">=2.4.5 <2.4.6" --no-update
+   composer require "magento/magento-cloud-metapackage":">=2.4.7 <2.4.8" --no-update
    ```
 
 1. Werk het metapakket bij.

@@ -3,7 +3,7 @@ title: Eigenschappen
 description: Gebruik de eigenschappenlijst als een referentie bij het configureren van de [!DNL Commerce] toepassing voor de bouw en de implementatie in de wolkeninfrastructuur.
 feature: Cloud, Configuration, Build, Deploy, Roles/Permissions, Storage
 exl-id: 58a86136-a9f9-4519-af27-2f8fa4018038
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
 workflow-type: tm+mt
 source-wordcount: '797'
 ht-degree: 0%
@@ -26,7 +26,7 @@ De `.magento.app.yaml` het dossier gebruikt eigenschappen voor het beheer van om
 | [`name`](#name) | De toepassingsnaam definiëren | `mymagento` | Ja |
 | [`relationships`](#relationships) | Kaartservices | Services:<ul><li>`database: "mysql:mysql"`</li><li>`redis: "redis:redis"`</li><li>`opensearch: "opensearch:opensearch"`</li></ul> | Nee |
 | [`runtime`](#runtime) | De runtime-eigenschap bevat extensies die vereist zijn voor de [!DNL Commerce] toepassing. | Extensies:<ul><li>`xsl`</li><li>`newrelic`</li><li>`sodium`</li></ul> | Ja |
-| [`type`](#type-and-build) | De basiscontainerafbeelding instellen | `php:8.1` | Ja |
+| [`type`](#type-and-build) | De basiscontainerafbeelding instellen | `php:8.3` | Ja |
 | [`variables`](variables-property.md) | Pas een omgevingsvariabele toe voor een specifieke versie van de Handel | — | Nee |
 | [`web`](web-property.md) | Externe verzoeken afhandelen | — | Ja |
 | [`workers`](workers-property.md) | Externe verzoeken afhandelen | — | Ja, als de webeigenschap niet wordt gebruikt |
@@ -55,13 +55,13 @@ De `build` het bezit bepaalt wat door gebrek gebeurt wanneer het bouwen van het 
 
 ```yaml
 # The toolstack used to build the application.
-type: php:8.1
+type: php:8.3
 build:
     flavor: none
 
 dependencies:
     php:
-        composer/composer: '2.2.4'
+        composer/composer: '2.7.2'
 ```
 
 ### Composer 2 installeren en gebruiken
