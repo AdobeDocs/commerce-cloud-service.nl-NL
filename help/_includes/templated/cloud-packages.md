@@ -1,7 +1,7 @@
 ---
-source-git-commit: 4dc60128f93f4595b0ed3e1a42cd64bb660e788f
+source-git-commit: ab9e2c8ca8c9a9c527aaa8b4cd5e2c2bc35bb718
 workflow-type: tm+mt
-source-wordcount: '2200'
+source-wordcount: '2184'
 ht-degree: 0%
 
 ---
@@ -23,17 +23,17 @@ Adobe Commerce on cloud Infrastructure gebruikt Composer om PHP-pakketten te beh
 
 De `composer.json` het bestand de lijst met pakketten declareert, terwijl het bestand `composer.lock` slaat een volledige lijst van de pakketten (een volledige versie van elk pakket en zijn gebiedsdelen) op die wordt gebruikt om een installatie van Adobe Commerce of Magento Open Source te bouwen.
 
-De volgende referentiedocumentatie wordt gegenereerd op basis van de `composer.lock` en omvat de vereiste pakketten die in Adobe Commerce zijn opgenomen op cloudinfrastructuur 2.4.6.
+De volgende referentiedocumentatie wordt gegenereerd op basis van de `composer.lock` en omvat de vereiste pakketten die in Adobe Commerce zijn opgenomen op cloudinfrastructuur 2.4.7.
 
 ## Afhankelijkheden
 
-`magento/magento-cloud-metapackage 2.4.6` heeft de volgende afhankelijkheden:
+`magento/magento-cloud-metapackage 2.4.7` heeft de volgende afhankelijkheden:
 
 ```config
 fastly/magento2: ^1.2.34
 magento/ece-tools: ^2002.1.0
 magento/module-paypal-on-boarding: ~100.5.0
-magento/product-enterprise-edition: >=2.4.6 <2.4.7
+magento/product-enterprise-edition: >=2.4.7 <2.4.8
 ```
 
 ## Licenties van derden
@@ -51,7 +51,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   <tbody>
   <tr>
     <td>
-      elasticsearch/elasticsearch
+      <a href="https://github.com/elastic/elasticsearch-php.git">elasticsearch/elasticsearch</a>
     </td>
     <td>bibliotheek</td>
     <td>PHP-client voor Elasticsearch</td>
@@ -132,13 +132,6 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
     </td>
     <td>bibliotheek</td>
     <td>BaconQrCode is een QR code generator voor PHP.</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/beberlei/assert.git">beberlei/assert</a>
-    </td>
-    <td>bibliotheek</td>
-    <td>Dunne assertiebibliotheek voor inputbevestiging in bedrijfsmodellen.</td>
   </tr>
   <tr>
     <td>
@@ -436,13 +429,6 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-zendframework-bridge.git">laminas/laminas-zendframework-bridge</a>
-    </td>
-    <td>bibliotheek</td>
-    <td>Alias legacy ZF class names to Laminas Project equivalents.</td>
-  </tr>
-  <tr>
-    <td>
       <a href="https://github.com/nikic/PHP-Parser.git">nikic/php-parser</a>
     </td>
     <td>bibliotheek</td>
@@ -482,6 +468,27 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
     </td>
     <td>magento-module</td>
     <td>Zend_Cache backend met Redis met volledige ondersteuning voor tags.</td>
+  </tr>
+  </tbody>
+</table>
+
+### ISC
+
+<table>
+  <thead>
+    <tr>
+      <th>Naam</th>
+      <th>Type</th>
+      <th>Beschrijving</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      <a href="https://github.com/paragonie/sodium_compat.git">paragonie/natrium_compat</a>
+    </td>
+    <td>bibliotheek</td>
+    <td>Puur PHP implementatie van libnatrium; gebruikt de PHP extensie als deze bestaat</td>
   </tr>
   </tbody>
 </table>
@@ -545,6 +552,13 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
     </td>
     <td>bibliotheek</td>
     <td>Een krachtig alternatief voor var_export(), dat sluitingen en objecten zonder __set_state() kan exporteren</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/CarbonPHP/carbon-doctrine-types.git">carbonfp/koolstof-doctrine-soorten</a>
+    </td>
+    <td>bibliotheek</td>
+    <td>Typen in doctrine te gebruiken koolstof</td>
   </tr>
   <tr>
     <td>
@@ -615,27 +629,6 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
     </td>
     <td>bibliotheek</td>
     <td>Start een proces zonder Xdebug opnieuw.</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/doctrine/annotations.git">doctrine/annotaties</a>
-    </td>
-    <td>bibliotheek</td>
-    <td>Parser Docblok-annotaties</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/doctrine/deprecations.git">doctrine/afgekeurde kleuren</a>
-    </td>
-    <td>bibliotheek</td>
-    <td>Een kleine laag bovenop trigger_error (E_USER_DEPRECATED) of het registreren PSR-3 met opties om alle afwaarderingen of selectief voor pakketten onbruikbaar te maken.</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/doctrine/lexer.git">doctrine/lexer</a>
-    </td>
-    <td>bibliotheek</td>
-    <td>PHP Doctrine Lexer parser bibliotheek die gebruikt kan worden in top-down, Recursive Descent Parsers.</td>
   </tr>
   <tr>
     <td>
@@ -803,7 +796,14 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/PhpGt/Dom.git">phpgt/dom</a>
     </td>
     <td>bibliotheek</td>
-    <td>De moderne DOM API voor PHP-projecten.</td>
+    <td>Moderne DOM API.</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/PhpGt/PropFunc.git">phpgt/propfunc</a>
+    </td>
+    <td>bibliotheek</td>
+    <td>Functies van accessoreigenschap en mutator.</td>
   </tr>
   <tr>
     <td>
@@ -821,10 +821,10 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/php-fig/cache.git">psr/cache</a>
+      <a href="https://github.com/php-fig/clock.git">psr/klok</a>
     </td>
     <td>bibliotheek</td>
-    <td>Algemene interface voor het in cache plaatsen van bibliotheken</td>
+    <td>Gemeenschappelijke interface voor het lezen van de klok.</td>
   </tr>
   <tr>
     <td>
@@ -905,7 +905,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/sabberworm/PHP-CSS-Parser.git">sabberworm/php-css-parser</a>
+      <a href="https://github.com/MyIntervals/PHP-CSS-Parser.git">sabberworm/php-css-parser</a>
     </td>
     <td>bibliotheek</td>
     <td>Parser voor CSS-bestanden geschreven in PHP</td>
@@ -1024,6 +1024,20 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
+      <a href="https://github.com/symfony/http-client.git">symfony/http-client</a>
+    </td>
+    <td>bibliotheek</td>
+    <td>Biedt krachtige methoden om HTTP-bronnen synchroon of asynchroon op te halen</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/symfony/http-client-contracts.git">symfony/http-client-Contracts</a>
+    </td>
+    <td>bibliotheek</td>
+    <td>Algemene abstracties met betrekking tot HTTP-clients</td>
+  </tr>
+  <tr>
+    <td>
       <a href="https://github.com/symfony/http-foundation.git">symfony/http-foundation</a>
     </td>
     <td>bibliotheek</td>
@@ -1041,7 +1055,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/symfony/intl.git">symfony/intl</a>
     </td>
     <td>bibliotheek</td>
-    <td>Verstrekt een PHP vervangingslaag voor de uitbreiding van C intl die extra gegevens van de ICU bibliotheek omvat</td>
+    <td>Verleent toegang tot de localisatiegegevens van de bibliotheek ICU</td>
   </tr>
   <tr>
     <td>
@@ -1108,6 +1122,13 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
+      <a href="https://github.com/symfony/polyfill-php83.git">symfony/polyfill-php83</a>
+    </td>
+    <td>bibliotheek</td>
+    <td>Symfony polyfill geeft een aantal functies van PHP 8.3+ terug naar lagere PHP versies</td>
+  </tr>
+  <tr>
+    <td>
       <a href="https://github.com/symfony/process.git">symfonie/proces</a>
     </td>
     <td>bibliotheek</td>
@@ -1164,17 +1185,17 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
+      <a href="https://github.com/symfony/var-exporter.git">symfony/var-exporter</a>
+    </td>
+    <td>bibliotheek</td>
+    <td>Hiermee wordt het exporteren van eventuele serialiseerbare PHP-gegevensstructuur naar normale PHP-code toegestaan</td>
+  </tr>
+  <tr>
+    <td>
       <a href="https://github.com/symfony/yaml.git">symfony/yaml</a>
     </td>
     <td>bibliotheek</td>
     <td>YAML-bestanden laden en dumpen</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/thecodingmachine/safe.git">de codeermachine/veilig</a>
-    </td>
-    <td>bibliotheek</td>
-    <td>PHP-kernfuncties die uitzonderingen genereren in plaats van FALSE te retourneren bij een fout</td>
   </tr>
   <tr>
     <td>
@@ -1220,17 +1241,31 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   <tbody>
   <tr>
     <td>
-      paypal/module-braintree-graph-ql
+      paypal/module-breintree-customer-balance
     </td>
     <td>magento2-module</td>
     <td>NVT</td>
   </tr>
   <tr>
     <td>
-      temando/module-Shipping-remover
+      paypal/module-braintree-gift-card-account
     </td>
     <td>magento2-module</td>
-    <td>Verwijdert de Temando multi-carrier verzendextensie uit Magento 2</td>
+    <td>NVT</td>
+  </tr>
+  <tr>
+    <td>
+      paypal/module-braintree-gift-wrapping
+    </td>
+    <td>magento2-module</td>
+    <td>NVT</td>
+  </tr>
+  <tr>
+    <td>
+      paypal/module-braintree-graph-ql
+    </td>
+    <td>magento2-module</td>
+    <td>NVT</td>
   </tr>
   </tbody>
 </table>
@@ -1246,13 +1281,6 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
     </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>
-      temando/module-Shipping
-    </td>
-    <td>pakket</td>
-    <td>Temando multicarrier Shipping extension for Magento 2</td>
-  </tr>
   </tbody>
 </table>
 
