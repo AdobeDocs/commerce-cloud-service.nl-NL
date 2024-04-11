@@ -3,9 +3,9 @@ title: Back-upbeheer
 description: Leer hoe u handmatig een back-up voor uw Adobe Commerce-infrastructuurproject in de cloud kunt maken en herstellen.
 feature: Cloud, Paas, Snapshots, Storage
 exl-id: 1cb00db7-2375-4761-9c07-1e20a74859e0
-source-git-commit: 1d8ffabb9f903e89495d11c973a9f0a5a8dd1d43
+source-git-commit: 069cbc233492d22932e8dce5bf0426dce8459727
 workflow-type: tm+mt
-source-wordcount: '682'
+source-wordcount: '685'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ U kunt een handmatige back-up van actieve Starter-omgevingen op elk gewenst mome
 
 Een back-up of _opname_ is een volledige back-up van omgevingsgegevens met alle permanente gegevens van actieve services (MySQL-database) en alle bestanden die zijn opgeslagen op de gekoppelde volumes (var, pub/media, app/etc). De opname doet dit _niet_ code opnemen, aangezien de code al is opgeslagen in de op Git gebaseerde gegevensopslagruimte. U kunt geen kopie van een opname downloaden.
 
-De back-upfunctie doet dit **niet** van toepassing zijn op de Pro-omgevingen. De Pro Staging- en Productieomgevingen ontvangen standaard regelmatige back-ups voor noodhersteldoeleinden, zie [Pro-back-up en noodherstel](../architecture/pro-architecture.md#backup-and-disaster-recovery). In tegenstelling tot de automatische live back-ups in de Pro Staging and Production-omgeving, zijn back-ups **niet** automatisch. Het is _uw_ verantwoordelijkheid om handmatig een back-up te maken of een uitsnijdtaak in te stellen om periodiek een back-up van uw Starter- of Pro-integratieomgevingen te maken.
+De functie voor back-up/momentopname doet dit **niet** van toepassing zijn op de Pro Staging and Production-omgevingen, die standaard regelmatige back-ups ontvangen voor noodhersteldoeleinden. Zie [Pro-back-up en noodherstel](../architecture/pro-architecture.md#backup-and-disaster-recovery) voor meer informatie . In tegenstelling tot de automatische live back-ups in de Pro Staging and Production-omgeving, zijn back-ups **niet** automatisch. Het is _uw_ verantwoordelijkheid om handmatig een back-up te maken of een uitsnijdtaak in te stellen om periodiek een back-up van uw Starter- of Pro-integratieomgevingen te maken.
 
 ## Een handmatige back-up maken
 
