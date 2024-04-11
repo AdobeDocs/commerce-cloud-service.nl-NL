@@ -6,9 +6,9 @@ feature: Cloud, Roles/Permissions
 last-substantial-update: 2023-06-27T00:00:00Z
 topic: Security
 exl-id: 3357a3ea-bf86-4a65-95d1-6b24f1152248
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: b85a163ff62f8a63430dff7c96b5cf391cf38d79
 workflow-type: tm+mt
-source-wordcount: '1441'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
@@ -161,7 +161,11 @@ U kunt de [[!DNL Cloud Console]](../../get-started/cloud-console.md) om machtigi
 
 1. Klik op **[!UICONTROL Add User]**.
 
-1. Nadat u gebruikers hebt toegevoegd, implementeert u alle omgevingen opnieuw om de wijzigingen toe te passen. Het toevoegen van een gebruiker activeert niet automatisch een plaatsing. Herplaatsing is een belangrijke stap om ervoor te zorgen dat de gebruiker tot een milieu kan toegang hebben gebruikend SSH.
+   >[!IMPORTANT]
+   >
+   >Het toevoegen van een gebruiker activeert niet automatisch een plaatsing.
+
+1. Nadat u gebruikers hebt toegevoegd, implementeert u alle omgevingen opnieuw om de wijzigingen toe te passen. Het toevoegen van een gebruiker activeert niet automatisch een plaatsing. Herplaatsing is een belangrijke stap om ervoor te zorgen dat de gebruiker tot een milieu kan toegang hebben gebruikend SSH of beheerderstaken uitvoeren.
 
 Nadat u de gebruiker hebt toegevoegd, stuurt Adobe een e-mail naar het opgegeven adres met instructies voor toegang tot de Adobe Commerce voor het infrastructuurproject in de cloud.
 
