@@ -1,33 +1,64 @@
 ---
-source-git-commit: 28aaae20fa03f31107bcd3fb569350a68842b152
+source-git-commit: 78e19b0cb274caf3799882d1f5d8242225c936ad
 workflow-type: tm+mt
-source-wordcount: '3125'
+source-wordcount: '4098'
 ht-degree: 0%
 
 ---
 # Gereedschappen
 
 <!-- The template to render with above values -->
-**Versie** 2002.1.14
+**Versie** 2002.1.18
 
-Deze verwijzing bevat 32 opdrachten die beschikbaar zijn via de `ece-tools` opdrachtregelprogramma.
+Deze verwijzing bevat 34 bevelen beschikbaar door `ece-tools` opdrachtregelprogramma.
 De eerste lijst wordt automatisch gegenereerd met de opdracht `ece-tools list` in Adobe Commerce op cloudinfrastructuur.
 
 >[!NOTE]
 >
 >Deze verwijzing wordt gegenereerd op basis van de toepassingscodebase. Als u de inhoud wilt wijzigen, kunt u de broncode voor de corresponderende opdrachtimplementatie bijwerken in het dialoogvenster [codebase](https://github.com/magento/magento-cloud-cli) opslaan en uw wijzigingen ter controle verzenden. Een andere manier is om _Feedback geven_ (zoek de koppeling in de rechterbovenhoek). Zie voor richtsnoeren voor bijdragen [Codebijdragen](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
 
-## `build`
+## `_complete`
 
-Builds-toepassing.
+Interne opdracht voor suggesties voor shell-voltooiing
 
 ```bash
-ece-tools build
+ece-tools _complete [-s|--shell SHELL] [-i|--input INPUT] [-c|--current CURRENT] [-a|--api-version API-VERSION] [-S|--symfony SYMFONY]
 ```
+
+### `--shell`, `-s`
+
+Het schelpdiertype (&quot;bash&quot;, &quot;fish&quot;, &quot;zsh&quot;)
+
+- Vereist een waarde
+
+### `--input`, `-i`
+
+Een array van invoertokens (bv. COMP_WORDS of argv)
+
+- Standaard: `[]`
+- Vereist een waarde
+
+### `--current`, `-c`
+
+De index van de &quot;input&quot;-array waarin de cursor zich bevindt (bijvoorbeeld COMP_CWORD)
+
+- Vereist een waarde
+
+### `--api-version`, `-a`
+
+De API-versie van het voltooiingsscript
+
+- Vereist een waarde
+
+### `--symfony`, `-S`
+
+verouderd
+
+- Vereist een waarde
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -55,14 +86,140 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--no-interaction`, `-n`
+
+Geen interactieve vraag stellen
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+
+## `build`
+
+Builds-toepassing.
+
+```bash
+ece-tools build
+```
+
+### `--help`, `-h`
+
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--quiet`, `-q`
+
+Geen bericht uitvoeren
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--verbose`, `-v|-vv|-vvv`
+
+Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--version`, `-V`
+
+Deze toepassingsversie weergeven
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--ansi`
+
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
+
+- Accepteert geen waarde
+
+### `--no-ansi`
+
+De optie &quot;—ansi&quot; negeren
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--no-interaction`, `-n`
+
+Geen interactieve vraag stellen
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+
+## `completion`
+
+Het shell-voltooiingsscript dumpen
+
+```bash
+ece-tools completion [--debug] [--] [<shell>]
+```
+
+
+### `shell`
+
+Het shell type (bijvoorbeeld &quot;bash&quot;), de waarde van &quot;$SHELL&quot; env var zal worden gebruikt als dit niet wordt gegeven
+
+
+### `--debug`
+
+Tik op het logbestand voor foutopsporing bij voltooien
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--help`, `-h`
+
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--quiet`, `-q`
+
+Geen bericht uitvoeren
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--verbose`, `-v|-vv|-vvv`
+
+Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--version`, `-V`
+
+Deze toepassingsversie weergeven
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--ansi`
+
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
+
+- Accepteert geen waarde
+
+### `--no-ansi`
+
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -107,7 +264,7 @@ Alternatieve directory gebruiken voor opslaan van dump
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -135,14 +292,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -165,7 +321,7 @@ ece-tools deploy
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -193,14 +349,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -245,7 +400,7 @@ Help bij de opdracht Uitvoeren
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -273,14 +428,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -298,7 +452,7 @@ Geen interactieve vraag stellen
 Lijstopdrachten
 
 ```bash
-ece-tools list [--raw] [--format FORMAT] [--] [<namespace>]
+ece-tools list [--raw] [--format FORMAT] [--short] [--] [<namespace>]
 ```
 
 
@@ -321,18 +475,16 @@ De uitvoerindeling (txt, xml, json of md)
 - Standaard: `txt`
 - Vereist een waarde
 
+### `--short`
 
-## `patch`
+Om het beschrijven van de argumenten van bevelen over te slaan
 
-Hiermee past u aangepaste patches toe.
-
-```bash
-ece-tools patch
-```
+- Standaard: `false`
+- Accepteert geen waarde
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -360,14 +512,70 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--no-interaction`, `-n`
+
+Geen interactieve vraag stellen
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+
+## `patch`
+
+Hiermee past u aangepaste patches toe.
+
+```bash
+ece-tools patch
+```
+
+### `--help`, `-h`
+
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--quiet`, `-q`
+
+Geen bericht uitvoeren
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--verbose`, `-v|-vv|-vvv`
+
+Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--version`, `-V`
+
+Deze toepassingsversie weergeven
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+### `--ansi`
+
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
+
+- Accepteert geen waarde
+
+### `--no-ansi`
+
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -390,7 +598,7 @@ ece-tools post-deploy
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -418,14 +626,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -458,7 +665,7 @@ Scenario(s)
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -486,14 +693,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -516,7 +722,7 @@ ece-tools backup:list
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -544,14 +750,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -587,7 +792,7 @@ Een specifiek pad voor bestandsherstel
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -615,14 +820,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -645,7 +849,7 @@ ece-tools build:generate
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -673,14 +877,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -703,7 +906,7 @@ ece-tools build:transfer
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -731,14 +934,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -768,7 +970,7 @@ Configuratie in JSON-indeling
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -796,14 +998,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -833,7 +1034,7 @@ Configuratie in JSON-indeling
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -861,14 +1062,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -891,7 +1091,7 @@ ece-tools cloud:config:validate
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -919,14 +1119,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -954,7 +1153,7 @@ ece-tools dump
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -982,14 +1181,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1012,7 +1210,7 @@ ece-tools cron:disable
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1040,14 +1238,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1070,7 +1267,7 @@ ece-tools cron:enable
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1098,14 +1295,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1128,7 +1324,7 @@ ece-tools cron:kill
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1156,14 +1352,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1193,7 +1388,7 @@ Taakcode uitsnijden die moet worden ontgrendeld.
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1221,14 +1416,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1251,7 +1445,7 @@ ece-tools dev:generate:schema-error
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1279,14 +1473,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1309,7 +1502,7 @@ ece-tools dev:git:update-composer
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1337,14 +1530,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1376,7 +1568,7 @@ Te tonen omgevingsvariabelen, mogelijke opties: services, routes, variabelen
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1404,14 +1596,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1447,7 +1638,7 @@ Wordt gebruikt voor het ophalen van resultaten in de JSON-indeling
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1475,14 +1666,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1505,7 +1695,7 @@ ece-tools module:refresh
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1533,14 +1723,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1563,7 +1752,7 @@ ece-tools schema:generate
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1591,14 +1780,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1621,7 +1809,7 @@ ece-tools wizard:ideal-state
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1649,14 +1837,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1679,7 +1866,7 @@ ece-tools wizard:master-slave
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1707,14 +1894,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1737,7 +1923,7 @@ ece-tools wizard:scd-on-build
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1765,14 +1951,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1795,7 +1980,7 @@ ece-tools wizard:scd-on-demand
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1823,14 +2008,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1853,7 +2037,7 @@ ece-tools wizard:scd-on-deploy
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1881,14 +2065,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1911,7 +2094,7 @@ ece-tools wizard:split-db-state
 
 ### `--help`, `-h`
 
-Dit Help-bericht weergeven
+Help weergeven voor de opgegeven opdracht. Wanneer geen opdracht is gegeven, wordt de Help weergegeven voor de \&lt;info>list\&lt;/info> command
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1939,14 +2122,13 @@ Deze toepassingsversie weergeven
 
 ### `--ansi`
 
-ANSI-uitvoer forceren
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
 
-- Standaard: `false`
 - Accepteert geen waarde
 
 ### `--no-ansi`
 
-ANSI-uitvoer uitschakelen
+De optie &quot;—ansi&quot; negeren
 
 - Standaard: `false`
 - Accepteert geen waarde

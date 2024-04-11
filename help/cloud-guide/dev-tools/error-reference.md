@@ -4,9 +4,9 @@ description: Zie een lijst met foutcodes en berichten die tijdens de Adobe Comme
 recommendations: noDisplay
 role: Developer
 exl-id: d8cc8d49-32da-43cf-a105-aa56b5334000
-source-git-commit: f8e35ecff4bcafda874a87642348e2d2bff5247b
+source-git-commit: 9dda6fe7f6a9d6064436820a3c8426ec982b5230
 workflow-type: tm+mt
-source-wordcount: '2719'
+source-wordcount: '2763'
 ht-degree: 4%
 
 ---
@@ -36,28 +36,28 @@ Foutberichten worden gecategoriseerd door een van de implementatiefasen: maken, 
 
 ## Kritieke fouten
 
-Kritieke fouten wijzen op een probleem met Adobe Commerce op de projectconfiguratie van de wolkeninfrastructuur die plaatsingsmislukking veroorzaakt, bijvoorbeeld onjuiste, niet gestaafde, of ontbrekende configuratie voor vereiste montages. Voordat u kunt implementeren, moet u de configuratie bijwerken om deze fouten op te lossen.
+Kritieke fouten wijzen op een probleem met Commerce op de projectconfiguratie van de wolkeninfrastructuur die plaatsingsmislukking veroorzaakt, bijvoorbeeld onjuiste, niet gestaafde, of ontbrekende configuratie voor vereiste montages. Voordat u kunt implementeren, moet u de configuratie bijwerken om deze fouten op te lossen.
 
 ### Werkgebied bouwen
 
 | Foutcode | Stap maken | Foutbeschrijving (titel) | Voorgestelde actie |
 | - | - | - | - |
 | 2 |  | Kan niet schrijven naar de `./app/etc/env.php` file | Implementatiescript kan geen vereiste wijzigingen aanbrengen in het dialoogvenster `/app/etc/env.php` bestand. Controleer de bestandssysteemmachtigingen. |
-| 3 |  | De configuratie wordt niet bepaald in `schema.yaml` file | Configuratie is niet gedefinieerd in het dialoogvenster `./vendor/magento/ece-tools/config/schema.yaml` bestand. Controleer of de naam van de configuratievariabele correct is en of deze is gedefinieerd. |
+| 3 |  | Configuratie is niet gedefinieerd in het dialoogvenster `schema.yaml` file | Configuratie is niet gedefinieerd in het dialoogvenster `./vendor/magento/ece-tools/config/schema.yaml` bestand. Controleer of de naam van de configuratievariabele correct en bepaald is. |
 | 4 |  | Parseren van `.magento.env.yaml` file | De `./.magento.env.yaml` bestandsindeling is ongeldig. Gebruik een parser YAML om de syntaxis te controleren en om het even welke fouten te bevestigen. |
 | 5 |  | Kan de `.magento.env.yaml` file | Kan de `./.magento.env.yaml` bestand. Controleer de bestandsmachtigingen. |
 | 6 |  | Kan de `.schema.yaml` file | Kan de `./vendor/magento/ece-tools/config/magento.env.yaml` bestand. Bestandsmachtigingen controleren en opnieuw implementeren (`magento-cloud environment:redeploy`). |
-| 7 | verfrissingsmodules | Kan niet schrijven naar de `./app/etc/config.php` file | Het plaatsingsmanuscript kan vereiste veranderingen in niet aanbrengen `/app/etc/config.php` bestand. Controleer de bestandssysteemmachtigingen. |
+| 7 | verfrissingsmodules | Kan niet schrijven naar de `./app/etc/config.php` file | Het plaatsingsmanuscript kan vereiste veranderingen in het `/app/etc/config.php` bestand. Controleer de bestandssysteemmachtigingen. |
 | 8 | validate-config | Kan de `composer.json` file | Kan de `./composer.json` bestand. Controleer de bestandsmachtigingen. |
-| 9 | validate-config | Composer.json ontbreekt de vereiste sectie voor automatisch laden | Vereist `autoload` sectie ontbreekt in de `composer.json` bestand. Vergelijk de sectie Automatisch laden met de `composer.json` en voeg de ontbrekende configuratie toe. |
-| 10 | validate-config | Het bestand `.magento.env.yaml` bevat een optie die niet in het schema is gedeclareerd of een optie die is geconfigureerd met een ongeldige waarde of een ongeldig werkgebied | De `./.magento.env.yaml` bestand bevat ongeldige configuratie. Controleer het foutenlogboek voor gedetailleerde informatie. |
+| 9 | validate-config | De `composer.json` vereist gedeelte voor automatisch laden van bestand ontbreekt | Vereist `autoload` sectie ontbreekt in de `composer.json` bestand. Vergelijk de sectie Automatisch laden met de `composer.json` en voeg de ontbrekende configuratie toe. |
+| 10 | validate-config | De `.magento.env.yaml` bestand bevat een optie die niet in het schema is gedeclareerd of een optie die is geconfigureerd met een ongeldige waarde of een ongeldig werkgebied | De `./.magento.env.yaml` bestand bevat ongeldige configuratie. Controleer het foutenlogboek voor gedetailleerde informatie. |
 | 11 | verfrissingsmodules | Opdracht is mislukt: `/bin/magento module:enable --all` | Uitvoeren `composer update` lokaal. Dan, verbind en duw bijgewerkt `composer.lock` bestand. Controleer ook de `cloud.log` voor meer informatie . Voor meer gedetailleerde beveloutput, voeg toe `VERBOSE_COMMANDS: '-vvv'` aan de `.magento.env.yaml` bestand. |
 | 12 | toepassen-patches | Kan patch niet toepassen |  |
 | 13 | set-report-dir-nesting-level | Kan niet schrijven naar het bestand `/pub/errors/local.xml` |  |
 | 14 | kopiëren-voorbeeld-gegevens | Kan voorbeeldgegevensbestanden niet kopiëren |  |
 | 15 | compile-di | Opdracht is mislukt: `/bin/magento setup:di:compile` | Controleer de `cloud.log` voor meer informatie . Toevoegen `VERBOSE_COMMANDS: '-vvv'` in `.magento.env.yaml` voor meer gedetailleerde beveloutput. |
 | 16 | dump-autoload | Opdracht is mislukt: `composer dump-autoload` | De `composer dump-autoload` command failed. Controleer de `cloud.log` voor meer informatie . |
-| 17 | renbaan | De uit te voeren opdracht `Baler` voor JavaScript-bundeling mislukt | Controleer de `SCD_USE_BALER` omgevingsvariabele om te controleren of de module Baler is geconfigureerd en ingeschakeld voor JS-bundeling. Als u de module Baler niet nodig hebt, stelt u `SCD_USE_BALER: false`. |
+| 17 | renbaan | De uit te voeren opdracht `Baler` voor Javascript-bundeling mislukt | Controleer de `SCD_USE_BALER` omgevingsvariabele om te controleren of de module Baler is geconfigureerd en ingeschakeld voor JS-bundeling. Als u de module Baler niet nodig hebt, stelt u `SCD_USE_BALER: false`. |
 | 18 | compress-static-content | Vereist hulpprogramma niet gevonden (timeout, bash) |  |
 | 19 | implementatie-statische inhoud | Opdracht `/bin/magento setup:static-content:deploy` mislukt | Controleer de `cloud.log` voor meer informatie . Voor meer gedetailleerde beveloutput, voeg toe `VERBOSE_COMMANDS: '-vvv'` aan de `.magento.env.yaml` bestand. |
 | 20 | compress-static-content | Statische inhoudscompressie is mislukt | Controleer de `cloud.log` voor meer informatie . |
@@ -66,7 +66,7 @@ Kritieke fouten wijzen op een probleem met Adobe Commerce op de projectconfigura
 | 23 |  | Kan geen logboekobject maken |  |
 | 24 | back-upgegevens: statische inhoud | Kan het bestand niet opschonen `./init/pub/static/` directory | Kan niet opschonen `./init/pub/static` map. Controleer de bestandssysteemmachtigingen. |
 | 25 |  | Kan het Composer-pakket niet vinden | Als u de Adobe Commerce-toepassingsversie rechtstreeks van de GitHub-opslagplaats hebt geïnstalleerd, controleert u of de `DEPLOYED_MAGENTO_VERSION_FROM_GIT` omgevingsvariabele is geconfigureerd. |
-| 26 | validate-config | Verwijder de configuratie van de module van de Braintree van het Magento die niet meer in Adobe Commerce en Magento Open Source 2.4 en recentere versies wordt gesteund. | De steun voor de module van de Braintree is niet meer inbegrepen met Handel 2.4.0 en later. Verwijder de variabele CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL uit de sectie Variabelen van het dialoogvenster `.magento.app.yaml` bestand. Gebruik in plaats daarvan een officiële extensie van de Commerce Marketplace voor de Braintree van de betalingsondersteuning. |
+| 26 | validate-config | Verwijder de configuratie van de module van de Braintree van het Magento die niet meer in Adobe Commerce en Magento Open Source 2.4 en recentere versies wordt gesteund. | Ondersteuning voor de module Braintree is niet meer opgenomen in Magento 2.4.0 en hoger. Verwijder de variabele CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL uit de sectie Variabelen van het dialoogvenster `.magento.app.yaml` bestand. Gebruik in plaats daarvan een officiële extensie van de Commerce Marketplace voor de Braintree van de betalingsondersteuning. |
 
 ### Werkgebied implementeren
 
@@ -74,11 +74,11 @@ Kritieke fouten wijzen op een probleem met Adobe Commerce op de projectconfigura
 | - | - | - | - |
 | 101 | vooraf implementeren: cache | Onjuiste cacheconfiguratie (ontbrekende poort of host) | De vereiste parameters ontbreken in de cacheconfiguratie `server` of `port`. Controleer de `cloud.log` voor meer informatie . |
 | 102 |  | Kan niet schrijven naar de `./app/etc/env.php` file | Implementatiescript kan geen vereiste wijzigingen aanbrengen in het dialoogvenster `/app/etc/env.php` bestand. Controleer de bestandssysteemmachtigingen. |
-| 103 |  | De configuratie wordt niet bepaald in `schema.yaml` file | Configuratie is niet gedefinieerd in het dialoogvenster `./vendor/magento/ece-tools/config/schema.yaml` bestand. Controleer of de naam van de configuratievariabele correct is en of deze is gedefinieerd. |
+| 103 |  | Configuratie is niet gedefinieerd in het dialoogvenster `schema.yaml` file | Configuratie is niet gedefinieerd in het dialoogvenster `./vendor/magento/ece-tools/config/schema.yaml` bestand. Controleer of de naam van de configuratievariabele correct is en of deze is gedefinieerd. |
 | 104 |  | Parseren van `.magento.env.yaml` file | Configuratie is niet gedefinieerd in het dialoogvenster `./vendor/magento/ece-tools/config/schema.yaml` bestand. Controleer of de naam van de configuratievariabele correct is en of deze is gedefinieerd. |
 | 105 |  | Kan de `.magento.env.yaml` file | Kan de `./.magento.env.yaml` bestand. Controleer de bestandsmachtigingen. |
 | 106 |  | Kan de `.schema.yaml` file |  |
-| 107 | vooraf implementeren: clean-redis-cache | Kan de Redis-cache niet opschonen | Kan de Redis-cache niet opschonen. Controleer of de cachemonfiguratie van Redis correct is en of de service Redis beschikbaar is. Zie [Redis-service instellen](../services/redis.md). |
+| 107 | vooraf implementeren: clean-redis-cache | Kan de Redis-cache niet opschonen | Kan de Redis-cache niet opschonen. Controleer of de cachemonfiguratie van Redis correct is en of de service Redis beschikbaar is. Zie [Redis-service instellen](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/redis.html). |
 | 108 | pre-implementatie: set-production-mode | Opdracht `/bin/magento maintenance:enable` mislukt | Controleer de `cloud.log` voor meer informatie . Voor meer gedetailleerde beveloutput, voeg toe `VERBOSE_COMMANDS: '-vvv'` aan de `.magento.env.yaml` bestand. |
 | 109 | validate-config | Onjuiste databaseconfiguratie | Controleer of de `DATABASE_CONFIGURATION` omgevingsvariabele is correct geconfigureerd. |
 | 110 | validate-config | Onjuiste sessieconfiguratie | Controleer of de `SESSION_CONFIGURATION` omgevingsvariabele is correct geconfigureerd. De configuratie moet ten minste het volgende bevatten `save` parameter. |
@@ -92,7 +92,7 @@ Kritieke fouten wijzen op een probleem met Adobe Commerce op de projectconfigura
 | 118 |  | Vereist hulpprogramma niet gevonden (timeout, bash) |  |
 | 119 | install-update: implementatie-static-content | Opdracht `/bin/magento setup:static-content:deploy` mislukt | Controleer de `cloud.log` voor meer informatie . Voor meer gedetailleerde beveloutput, voeg toe `VERBOSE_COMMANDS: '-vvv'` aan de `.magento.env.yaml` bestand. |
 | 120 | compress-static-content | Statische inhoudscompressie is mislukt | Controleer de `cloud.log` voor meer informatie . |
-| 121 | implementeren-statische inhoud:genereren | Kan de geïmplementeerde versie niet bijwerken | Kan het dialoogvenster niet bijwerken `./pub/static/deployed_version.txt` bestand. Controleer de bestandssysteemmachtigingen. |
+| 121 | implementeren-statische inhoud:genereren | Kan de geïmplementeerde versie niet bijwerken | Kan de `./pub/static/deployed_version.txt` bestand. Controleer de bestandssysteemmachtigingen. |
 | 122 | zuiver-statische inhoud | Kan bestanden met statische inhoud niet opschonen |  |
 | 123 | install-update: split-db | Opdracht `/bin/magento setup:db-schema:split` mislukt | Controleer de `cloud.log` voor meer informatie . Voor meer gedetailleerde beveloutput, voeg toe `VERBOSE_COMMANDS: '-vvv'` aan de `.magento.env.yaml` bestand. |
 | 124 | onbewerkt | Kan het bestand niet opschonen `var/view_preprocessed` map | Kan de `./var/view_preprocessed` map. Controleer de bestandssysteemmachtigingen. |
@@ -102,14 +102,14 @@ Kritieke fouten wijzen op een probleem met Adobe Commerce op de projectconfigura
 | 128 | uit-onderhoud-modus | Opdracht `/bin/magento maintenance:disable` mislukt | Controleer de `cloud.log` voor meer informatie . Toevoegen `VERBOSE_COMMANDS: '-vvv'` in `.magento.env.yaml` voor meer gedetailleerde beveloutput. |
 | 129 | install-update: reset-password | Kan de sjabloon voor opnieuw instellen van wachtwoord niet lezen |  |
 | 130 | install-update: cache_type | Opdracht is mislukt: `php ./bin/magento cache:enable` | Opdracht `php ./bin/magento cache:enable` wordt alleen uitgevoerd als Adobe Commerce is geïnstalleerd, maar `./app/etc/env.php` bestand was niet aanwezig of leeg aan het begin van de implementatie. Controleer de `cloud.log` voor meer informatie . Toevoegen `VERBOSE_COMMANDS: '-vvv'` in `.magento.env.yaml` voor meer gedetailleerde beveloutput. |
-| 131 | installeren-bijwerken | De `crypt/key` de sleutelwaarde bestaat niet in `./app/etc/env.php` of de `CRYPT_KEY` variabele cloudomgeving | Deze fout treedt op als `./app/etc/env.php` Het bestand is niet aanwezig wanneer de Adobe Commerce-implementatie wordt gestart of als de `crypt/key` waarde is ongedefinieerd. Als u de database uit een andere omgeving hebt gemigreerd, haalt u de waarde van de cryptsleutel uit die omgeving op. Voeg vervolgens de waarde toe aan de [CRYPT_KEY](../environment/variables-deploy.md#crypt_key) cloudomgevingsvariabele in uw huidige omgeving. Zie [De coderingssleutel voor het Magento toevoegen](../development/authentication-keys.md). Als u per ongeluk de `./app/etc/env.php` bestand, gebruikt u de volgende opdracht om het bestand te herstellen van de back-upbestanden die zijn gemaakt op basis van een vorige implementatie: `./vendor/bin/ece-tools backup:restore` CLI-opdracht.&quot; |
+| 131 | installeren-bijwerken | De `crypt/key`  de sleutelwaarde bestaat niet in `./app/etc/env.php` of de `CRYPT_KEY` variabele cloudomgeving | Deze fout treedt op als `./app/etc/env.php` Het bestand is niet aanwezig wanneer de Adobe Commerce-implementatie wordt gestart of als de `crypt/key` waarde is ongedefinieerd. Als u de database uit een andere omgeving hebt gemigreerd, haalt u de waarde van de cryptsleutel uit die omgeving op. Voeg vervolgens de waarde toe aan de [CRYPT_KEY](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-deploy.html#crypt_key) cloudomgevingsvariabele in uw huidige omgeving. Zie [Adobe Commerce-coderingssleutel](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/overview.html#gather-credentials). Als u per ongeluk de `./app/etc/env.php` bestand, gebruikt u de volgende opdracht om het bestand te herstellen van de back-upbestanden die zijn gemaakt op basis van een vorige implementatie: `./vendor/bin/ece-tools backup:restore` CLI-opdracht.&quot; |
 | 132 |  | Kan geen verbinding maken met de service Elasticsearch | Controleren op geldige Elasticsearch en controleren of de service wordt uitgevoerd |
 | 137 |  | Kan geen verbinding maken met de OpenSearch-service | Controleren op geldige OpenSearch-referenties en controleren of de service wordt uitgevoerd |
 | 133 | validate-config | Verwijder de configuratie van de module van de Braintree van het Magento die niet meer in Adobe Commerce of Magento Open Source 2.4 en recentere versies wordt gesteund. | Ondersteuning voor de module Braintree is niet meer inbegrepen bij Adobe Commerce of Magento Open Source 2.4.0 en hoger. Verwijder de variabele CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL uit de sectie Variabelen van het dialoogvenster `.magento.app.yaml` bestand. Gebruik voor ondersteuning door de Braintree in plaats daarvan een officiële verlenging van de Braintree van de Commerce Marketplace. |
 | 134 | validate-config | Adobe Commerce en Magento Open Source 2.4.0 vereisen dat de Elasticsearch-service wordt geïnstalleerd | Elasticsearch-service installeren |
 | 138 | validate-config | Adobe Commerce en Magento Open Source 2.4.4 vereisen dat de OpenSearch- of Elasticsearch-service wordt geïnstalleerd | OpenSearch-service installeren |
 | 135 | validate-config | De zoekmachine moet op Elasticsearch voor Adobe Commerce en Magento Open Source >= 2.4.0 worden ingesteld | Controleer de variabele SEARCH_CONFIGURATION voor de `engine` -optie. Als het wordt gevormd, verwijder de optie, of plaats de waarde aan &quot;elasticsearch&quot;. |
-| 136 | validate-config | Splitste database is verwijderd vanaf Adobe Commerce en Magento Open Source 2.5.0. | Als u gesplitste database gebruikt die u moet herstellen naar of migreren naar één database, of een alternatieve benadering moet gebruiken. |
+| 136 | validate-config | Splitste database is verwijderd vanaf Adobe Commerce en Magento Open Source 2.5.0. | Als u gesplitste database gebruikt, moet u terugkeren naar of migreren naar één database of een alternatieve benadering gebruiken. |
 | 139 | validate-config | Onjuiste zoekfunctie | Deze Adobe Commerce- of Magento Open Source-versie biedt geen ondersteuning voor OpenSearch. U moet de versies 2.3.7-p3, 2.4.3-p2 of hoger gebruiken |
 
 ### Positie na implementatie
@@ -118,11 +118,11 @@ Kritieke fouten wijzen op een probleem met Adobe Commerce op de projectconfigura
 | - | - | - | - |
 | 201 | is-implementatie-mislukt | Werkgebied implementeren is mislukt |  |
 | 202 |  | De `./app/etc/env.php` bestand is niet beschrijfbaar | Implementatiescript kan geen vereiste wijzigingen aanbrengen in het dialoogvenster `/app/etc/env.php` bestand. Controleer de bestandssysteemmachtigingen. |
-| 203 |  | De configuratie wordt niet bepaald in `schema.yaml` file | Configuratie is niet gedefinieerd in het dialoogvenster `./vendor/magento/ece-tools/config/schema.yaml` bestand. Controleer of de naam van de configuratievariabele correct is en of deze is gedefinieerd. |
+| 203 |  | Configuratie is niet gedefinieerd in het dialoogvenster `schema.yaml` file | Configuratie is niet gedefinieerd in het dialoogvenster `./vendor/magento/ece-tools/config/schema.yaml` bestand. Controleer of de naam van de configuratievariabele correct is en of deze is gedefinieerd. |
 | 204 |  | Parseren van `.magento.env.yaml` file | De `./.magento.env.yaml` bestandsindeling is ongeldig. Gebruik een parser YAML om de syntaxis te controleren en om het even welke fouten te bevestigen. |
 | 205 |  | Kan de `.magento.env.yaml` file | Controleer de bestandsmachtigingen. |
 | 206 |  | Kan de `.schema.yaml` file |  |
-| 207 | opwarmen | Opwarmen van sommige pagina&#39;s is mislukt |  |
+| 207 | opwarmen | Voorladen van enkele opwarmpagina&#39;s is mislukt |  |
 | 208 | time-to-firs-byte | Kan tijd naar eerste byte (TTFB) niet testen |  |
 | 227 | schone cache | Opdracht `/bin/magento cache:flush` mislukt | Controleer de `cloud.log` voor meer informatie . Toevoegen `VERBOSE_COMMANDS: '-vvv'` in `.magento.env.yaml` voor meer gedetailleerde beveloutput. |
 
@@ -136,6 +136,8 @@ Kritieke fouten wijzen op een probleem met Adobe Commerce op de projectconfigura
 | 246 |  | Kan de `.schema.yaml` file |  |
 | 247 |  | Kan geen module voor gebeurtenissen genereren | Controleer de `cloud.log` voor meer informatie . |
 | 248 |  | Kan een module voor gebeurtenissen niet inschakelen | Controleer de `cloud.log` voor meer informatie . |
+| 249 |  | Kan de module AdobeCommerceWebhoogins niet genereren | Controleer de `cloud.log` voor meer informatie . |
+| 250 |  | Kan de module AdobeCommerceWebhoogins niet inschakelen | Controleer de `cloud.log` voor meer informatie . |
 
 ## Waarschuwingsfouten
 
@@ -148,7 +150,7 @@ De fouten van de waarschuwing wijzen op een probleem met de Handel op het projec
 | 1001 | validate-config | Bestand app/etc/config.php bestaat niet |  |
 | 1002 | validate-config | De ./build_options.ini-bestand wordt niet meer ondersteund |  |
 | 1003 | validate-config | De modulesectie mist van het gedeelde configdossier |  |
-| 1004 | validate-config | De configuratie is niet compatibel met deze versie van Handel |  |
+| 1004 | validate-config | De configuratie is niet compatibel met deze versie van Magento |  |
 | 1005 | validate-config | SCD-opties genegeerd |  |
 | 1006 | validate-config | De geconfigureerde status is niet ideaal |  |
 | 1007 | renbaan | Baler JS-bundeling kan niet worden gebruikt |  |
@@ -176,7 +178,7 @@ De fouten van de waarschuwing wijzen op een probleem met de Handel op het projec
 | 2017 | validate-config | De huidige configuratie is niet compatibel met deze versie van Adobe Commerce |  |
 | 2018 | validate-config | Sommige services zijn overgegaan tot EOL |  |
 | 2019 | validate-config | De MySQL optie van de onderzoeksconfiguratie is verouderd | Gebruik in plaats hiervan Elasticsearch. |
-| 2029 | validate-config | De gesplitste Gegevensbestand werd afgekeurd in Adobe Commerce en Magento Open Source 2.4.2 en zal in 2.5 worden verwijderd. | Als u gespleten gegevensbestand gebruikt dat u zou moeten beginnen aan terugkeer aan of migreren aan één enkel gegevensbestand of een alternatieve benadering gebruiken. |
+| 2029 | validate-config | De gesplitste Gegevensbestand werd afgekeurd in Adobe Commerce en Magento Open Source 2.4.2 en zal in 2.5 worden verwijderd. | Als u gesplitste database gebruikt, moet u beginnen met het plannen om terug te keren naar of te migreren naar één database of een alternatieve benadering gebruiken. |
 | 2020 | installeren-bijwerken | Adobe Commerce-installatie voltooid, maar de `app/etc/env.php` configuratiebestand ontbreekt of is leeg. | De vereiste gegevens worden teruggezet vanuit omgevingsconfiguraties en vanuit het bestand .magento.env.yaml. |
 | 2021 | install-update:db-connection | Voor gesplitste databases die aangepaste verbindingen gebruiken |  |
 | 2022 | install-update:db-connection | U bent veranderd in een gegevensbestandconfiguratie die niet compatibel met de slave verbinding is. |  |
