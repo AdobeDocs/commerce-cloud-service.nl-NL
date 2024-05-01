@@ -4,7 +4,7 @@ description: Leer meer over de omgevingen die worden ondersteund door de Pro-arc
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 6807b572366d28fd54fbec89e7c119ec158b5e10
+source-git-commit: 95b033ba430cb5dc74fa654b9d519dfcd5b6d319
 workflow-type: tm+mt
 source-wordcount: '1472'
 ht-degree: 0%
@@ -196,12 +196,10 @@ RTO is afhankelijk van de grootte van de opslag. Grote EBS-volumes hebben meer t
 - Een middelgrote database (150 GB) kan 2 1/2 uur in beslag nemen
 - Een kleine database (60 GB) kan 1 uur duren
 
-{{pro-backups}}
-
 ## Schalen in Pro-clusters
 
 De grootte van de Pro-cluster en _berekenen_ afhankelijk van de gekozen cloudprovider (AWS, Azure), regio en serviceafhankelijkheden. De de wolkeninfrastructuur van de Adobe kan Pro clusters schrapen om verkeersverwachtingen en de dienstvereisten aan te passen aangezien de vraag verandert.
 
 De overtollige architectuur laat de Adobe wolkeninfrastructuur toe om zonder onderbreking te verhogen. Bij upscaling roteert elk van de drie instanties om de capaciteit te upgraden zonder dat dit invloed heeft op de sitebewerking. U kunt bijvoorbeeld extra webservers toevoegen aan een bestaande cluster als de beperking zich op PHP-niveau bevindt in plaats van op databaseniveau. Dit biedt _horizontale schaling_ om de verticale schaling aan te vullen die wordt geboden door extra CPU&#39;s op databaseniveau. Zie [Schaalbare architectuur](scaled-architecture.md).
 
-Als u een significante toename van verkeer voor een gebeurtenis of een andere reden verwacht, kunt u om een tijdelijke verhoging van capaciteit verzoeken. Zie [Een tijdelijke upgrade aanvragen](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/how-to-request-temporary-magento-upsize.html) in de _Hulp-centrum voor handel_.
+Als u een significante toename van verkeer voor een gebeurtenis of een andere reden verwacht, kunt u om een tijdelijke verhoging van capaciteit verzoeken. Zie [Een tijdelijke upgrade aanvragen](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/how-to-request-temporary-magento-upsize.html) in de _Commerce Help Center_.
