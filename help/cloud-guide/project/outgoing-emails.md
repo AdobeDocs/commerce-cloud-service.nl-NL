@@ -2,9 +2,9 @@
 title: Uitgaande e-mails configureren
 description: Leer hoe u uitgaande e-mails voor Adobe Commerce kunt inschakelen voor cloudinfrastructuur.
 exl-id: 814fe2a9-15bf-4bcb-a8de-ae288fd7f284
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: 59f82d891bb7b1953c1e19b4c1d0a272defb89c1
 workflow-type: tm+mt
-source-wordcount: '279'
+source-wordcount: '363'
 ht-degree: 0%
 
 ---
@@ -13,13 +13,21 @@ ht-degree: 0%
 
 U kunt uitgaande e-mails voor elke omgeving in- en uitschakelen vanuit de [!DNL Cloud Console] of vanaf de opdrachtregel. U kunt uitgaande e-mails voor integratie- en staging-omgevingen verzenden om dubbele verificatie uit te voeren of wachtwoordgegevens opnieuw in te stellen voor gebruikers van Cloud-projecten.
 
-Standaard is uitgaande e-mail ingeschakeld in productieomgevingen. De [!UICONTROL Enable outgoing emails] kan worden weergegeven als uitgeschakeld in de omgevingsinstellingen, ongeacht de status, totdat u de instelling [`enable_smtp` eigenschap](#enable-emails-in-the-cli).
+Standaard zijn uitgaande e-mails ingeschakeld in productie- en staging-omgevingen. Maar [!UICONTROL Enable outgoing emails] kan worden weergegeven als uitgeschakeld in de omgevingsinstellingen totdat u de instelling `enable_smtp` eigenschap via de [opdrachtregel](#enable-emails-in-the-cli) of [Cloud Console](outgoing-emails.md#enable-emails-in-the-cloud-console).
+
+De [!UICONTROL enable_smtp] eigenschapswaarde van [opdrachtregel](#enable-emails-in-the-cli) wijzigt ook de [!UICONTROL Enable outgoing emails] waarde instellen voor deze omgeving in de Cloud Console.
 
 {{redeploy-warning}}
 
-## E-mailberichten inschakelen in het dialoogvenster [!DNL Cloud Console]
+## E-mails inschakelen in de Cloud Console
 
 Gebruik de **[!UICONTROL Outgoing emails]** schakelen in de _Omgeving configureren_ om e-mailondersteuning in of uit te schakelen.
+
+Als uitgaande e-mailberichten moeten worden uitgeschakeld of opnieuw ingeschakeld in een Pro Production- of Staging-omgeving, kunt u een [Adobe Commerce-ondersteuningsticket](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide).
+
+>[!TIP]
+>
+>De status van uitgaande e-mail wordt mogelijk niet weerspiegeld voor Pro-omgevingen in de Cloud Console. Gebruik in plaats daarvan de opdracht [opdrachtregel](#enable-emails-in-the-cli) voor het inschakelen en testen van uitgaande e-mails.
 
 **E-mailondersteuning beheren vanuit de[!DNL Cloud Console]**:
 
@@ -61,4 +69,10 @@ U kunt de e-mailconfiguratie voor een actieve omgeving wijzigen met de opdracht 
 
    ```bash
    php -r 'mail("mail@example.com", "test message", "just testing", "From: tester@example.com");'
+   ```
+
+1. Controleer of het e-mailbericht is opgehaald door SendGrid.
+
+   ```bash
+   grep mail@example.com /var/log/mail.log
    ```
