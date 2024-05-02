@@ -3,9 +3,9 @@ title: Logbestanden weergeven en beheren
 description: Begrijp de typen logbestanden die beschikbaar zijn in de cloudinfrastructuur en waar u ze kunt vinden.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: 86af69eed16e8fe464de93bd0f33cfbfd4ed8f49
 workflow-type: tm+mt
-source-wordcount: '1024'
+source-wordcount: '1056'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,7 @@ ssh 1.ent-project-environment-id@ssh.region.magento.cloud "cat var/log/cron.log"
 
 >[!TIP]
 >
->In Pro-omgevingen zijn automatische rotatie, compressie en verwijdering van logbestanden ingeschakeld voor logbestanden met een vaste bestandsnaam. Elk logboekbestandstype heeft een roterend patroon en een levensduur. Starteromgevingen hebben geen logrotatie. U vindt volledige informatie over de logrotatie en de levensduur van gecomprimeerde logbestanden in de omgeving in: `/etc/logrotate.conf` en `/etc/logrotate.d/<various>`
+>Voor Pro Staging- en productieomgevingen zijn automatische logrotatie, compressie en verwijdering ingeschakeld voor logbestanden met een vaste bestandsnaam. Elk logboekbestandstype heeft een roterend patroon en een levensduur. Starteromgevingen hebben geen logrotatie. U vindt volledige informatie over de logrotatie en de levensduur van gecomprimeerde logbestanden in de omgeving in: `/etc/logrotate.conf` en `/etc/logrotate.d/<various>`. Logrotatie kan niet worden geconfigureerd in Pro-integratieomgevingen. Voor ProIntegratie, moet u een douaneoplossing/een manuscript uitvoeren en [uw kronn configureren](../application/crons-property.md) om het script zo nodig uit te voeren.
 
 ## Logboeken samenstellen en implementeren
 
