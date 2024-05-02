@@ -3,9 +3,9 @@ title: Crons, eigenschap
 description: Zie voorbeelden op hoe te om het bezit ` crons ` in te vormen [!DNL Commerce] toepassingsconfiguratiebestand.
 feature: Cloud, Configuration
 exl-id: 67d592c1-2933-4cdf-b4f6-d73cd44b9f59
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 1c0e05c3d8461bea473bcf6ec35162d65ef2774f
 workflow-type: tm+mt
-source-wordcount: '1063'
+source-wordcount: '1069'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ De `crons` het bezit beschrijft processen die op een programma worden teweeggebr
 - `shutdown_timeout`—(_Optioneel_) Als een uitsnijdtaak wordt geannuleerd, is dit het aantal seconden waarna een SIGKILL-signaal wordt verzonden om de taak of het proces te stoppen. De standaardwaarde is 10 seconden.
 - `timeout`—(_Optioneel_) De maximale tijdsduur dat een uitsnijdtaak kan worden uitgevoerd vóór een time-out. De standaardwaarde is 86400 seconden (24 uur).
 
-Door gebrek, heeft elk de wolkenproject van de Handel het volgende gebrek `crons` in de `.magento.app.yaml` bestand:
+Standaard heeft elk Commerce-wolkenproject de volgende standaardinstelling `crons` in de `.magento.app.yaml` bestand:
 
 ```yaml
 crons:
@@ -56,7 +56,7 @@ Hoewel u `crontab` Adobe Commerce gebruikt deze methode niet om de configuratie 
 
    >[!NOTE]
    >
-   >Als de `crontab -l` command retourneert een `Command not found` fout, u moet [Een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) om de auto-crons zelfbedienings configuratieoptie op uw Proproject toe te laten.
+   >Als de `crontab -l` command retourneert een `Command not found` fout (alleen in Pro Staging- en Production-omgevingen): [Een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) om de auto-crons zelfbedienings configuratieoptie op uw project toe te laten.
 
 In het volgende voorbeeld wordt het `crontab` uitvoer voor een omgeving die alleen de standaardinstelling heeft `crons` configuratie:
 
