@@ -2,11 +2,11 @@
 title: Cloud-patches voor handel
 description: Zie een lijst met de meest recente verbeteringen in het pakket met cloudpatches.
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-04-08T00:00:00Z
+last-substantial-update: 2024-05-21T00:00:00Z
 exl-id: ae6b511b-a37d-4776-9a5e-ad7d9f9f6611
-source-git-commit: d5ab7c4f1d2edbd85eab5a4ca098b3d156e562e5
+source-git-commit: 61c42a1bd1d5a28f90b8756032ee6f45be4565b2
 workflow-type: tm+mt
-source-wordcount: '2187'
+source-wordcount: '2208'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 De [Cloudpatches](https://github.com/magento/magento-cloud-patches) Dit pakket biedt een aantal vereiste patches die de integratie van alle Adobe Commerce-versies met Cloud-omgevingen verbeteren en snelle levering van kritieke oplossingen ondersteunen.
 
-Het pakket Cloud Patches for Commerce is een afhankelijkheid van het pakket ECE-Tools en wordt geïnstalleerd en bijgewerkt wanneer u het pakket ECE-Tools installeert of bijwerkt. U kunt Cloud Patches voor Handel ook gebruiken en beheren als een zelfstandig pakket om patches toe te passen op een Adobe Commerce-project dat zich niet op het Cloud-platform bevindt. In deze releaseopmerkingen worden de meest recente verbeteringen aan dit pakket beschreven.
+Het pakket Cloud Patches voor Commerce is afhankelijk van het pakket ECE-Tools en wordt geïnstalleerd en bijgewerkt wanneer u het pakket ECE-Tools installeert of bijwerkt. U kunt Cloud Patches voor Commerce ook gebruiken en beheren als een zelfstandig pakket om patches toe te passen op een Adobe Commerce-project dat zich niet op het Cloud-platform bevindt. In deze releaseopmerkingen worden de meest recente verbeteringen aan dit pakket beschreven.
 
 >[!TIP]
 >
@@ -29,7 +29,13 @@ De `magento/magento-cloud-patches` het pakket gebruikt de volgende versiereeks: 
 
 <!--Add release notes below-->
 
-## v1.0.26 {#latest}
+## v1.0.27 {#latest}
+
+Releasedatum: 21 mei 2024
+
+- **Ondersteuning voor PHP 8.3**—Deze patch verhelpt compatibiliteitsfouten tussen php 8.3 en de versie van het componentenpakket.
+
+## v1.0.26
 
 Releasedatum: 8 april 2024
 
@@ -59,17 +65,17 @@ Releasedatum: 31 juli 2023
 Releasedatum: 19 juni 2023
 
 - **Verbeterde wizard QPT CLI/uitvoer**—Toegevoegd een waarschuwing aan de tovenaar/output QPT CLI die u eraan herinnert om flarddetails en vereisten te verifiëren als er gebiedsdelen zijn.<!-- ACP2E-1963 -->
-- **Toegevoegde flarden voor Handel 2.4.6:**
+- **Toegevoegde patches voor Commerce 2.4.6:**
    - Vaste het `regexp cache tag` validatie.<!-- MCLOUD-10226 -->
    - Verbeterde prestaties door het aantal keren dat dezelfde implementatieconfiguraties worden geladen te verminderen.<!-- MCLOUD-10604 -->
-- **Toegevoegde flarden voor Handel 2.3.7 tot 2.4.6**—Oplossing voor een probleem dat een verhoging met een willekeurige waarde in plaats van een verhoging met 1 voor de `catalog_product_entity_*` tabellen.<!-- MCLOUD-10032 -->
-- **Toegevoegde flarden voor Handel 2.4.0 tot 2.4.6**—Oplossing voor een fout die aangeeft dat: `The file can't be deleted. Warning!unlink: No such file or directory`, die optrad bij het leegmaken van de JS/CSS-cache van de Admin.<!-- MCLOUD-10279 -->
+- **Toegevoegde patches voor Commerce 2.3.7 tot 2.4.6**—Oplossing voor een probleem dat een verhoging met een willekeurige waarde in plaats van een verhoging met 1 voor de `catalog_product_entity_*` tabellen.<!-- MCLOUD-10032 -->
+- **Toegevoegde patches voor Commerce 2.4.0 tot 2.4.6**—Oplossing voor een fout die aangeeft dat: `The file can't be deleted. Warning!unlink: No such file or directory`, die optrad bij het leegmaken van de JS/CSS-cache van de Admin.<!-- MCLOUD-10279 -->
 
 ## v1.0.21
 
 Releasedatum: 10 maart 2023
 
-- **Verbeterde ondersteuning voor PHP 8.2**—Oplossingen voor compatibiliteitsproblemen met bepaalde PHP 8.2.x-versies ter ondersteuning van Commerce 2.4.6.
+- **Verbeterde ondersteuning voor PHP 8.2**—Oplossing voor compatibiliteitsproblemen met bepaalde PHP 8.2.x-versies voor ondersteuning van Commerce 2.4.6.
 
 ## v1.0.20
 
@@ -210,7 +216,7 @@ Releasedatum: 26 juni 2020
 
 - **Prestatieverbeteringen voor Redis**—Voegt Redis-optimalisatiefuncties toe aan Adobe Commerce versie 2.3.3 en 2.3.4. Deze correcties zijn opgenomen in de Adobe Commerce-versie 2.3.5. Zie [Prestatieverbeteringen](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html#performance-boosts) in de _Opmerkingen bij de release Adobe Commerce 2.3.5_.<!--MCLOUD-5771-->
 
-- **New Relic log enricher**—Voegt de Monolog ProcessorInterface toe die nodig is ter ondersteuning van verbeteringen in New Relic-logboekmogelijkheden die zijn geïntroduceerd in Cloud Components of Commerce versie 1.0.4. Deze patch is vereist voor de implementatie van Adobe Commerce 2.1.x. Als het flard niet wordt toegepast, ontbreekt de bouwstijl tijdens `di:compile` proces.<!--MCLOUD-6029-->
+- **New Relic log enricher**—Voegt de Monolog ProcessorInterface toe die nodig is ter ondersteuning van verbeteringen in New Relic-logboekmogelijkheden die zijn geïntroduceerd in Cloud Components van Commerce versie 1.0.4. Deze patch is vereist voor de implementatie van Adobe Commerce 2.1.x. Als het flard niet wordt toegepast, ontbreekt de bouwstijl tijdens `di:compile` proces.<!--MCLOUD-6029-->
 
 ## v1.0.4
 
@@ -272,7 +278,7 @@ Deze release bevat de volgende patches en oplossingen voor problemen:
 
 - **Pagineringscorrectie voor catalogus van Elasticsearch** —Vervangen van de pagineringspatch voor de catalogus van de Elasticsearch die in magento/magento-cloud-patches v1.0 is geleverd met een efficiëntere oplossing.<!--MAGECLOUD-4847-->
 
-- **Patches voor Page Builder**—In Cloud Patches for Commerce 1.0.0 hebben we patches voor Page Builder gebundeld om een bekende RCE-kwetsbaarheid (Remote Code Execution) van Page Builder aan te pakken. De eerste oplossing is gebaseerd op Adobe Commerce 2.3.3. We hebben deze patches bijgewerkt met een stabielere implementatie op basis van Adobe Commerce 2.3.4., die meerdere optimalisaties voor het oplossen van het probleem omvat.<!--MAGECLOUD-4884-->
+- **Patches voor Page Builder**—In Cloud Patches voor Commerce 1.0.0 hebben we patches voor Page Builder gebundeld om een bekende RCE (Page Builder Remote Code Execution)-kwetsbaarheid aan te pakken. De eerste oplossing is gebaseerd op Adobe Commerce 2.3.3. We hebben deze patches bijgewerkt met een stabielere implementatie op basis van Adobe Commerce 2.3.4., die meerdere optimalisaties voor het oplossen van het probleem omvat.<!--MAGECLOUD-4884-->
 
   Als u het pakket magento/magento-cloud-patches 1.0.0 hebt, bent u nog steeds beschermd tegen de kwetsbaarheidsproblemen met RCE van Page Builder. Als u aan 1.0.1 of later bijwerkt, hebt u een betere implementatie van de zelfde moeilijke situatie.
 

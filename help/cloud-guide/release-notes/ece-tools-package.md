@@ -2,18 +2,18 @@
 title: Opmerkingen bij de release ECE-Tools
 description: Zie een lijst met de meest recente verbeteringen in het pakket ECE-Tools.
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-04-08T00:00:00Z
+last-substantial-update: 2024-05-21T00:00:00Z
 exl-id: a464b940-c56e-4a7c-9948-559539e25361
-source-git-commit: e21f21e34f89b62842bd22c99ff5705f984898e0
+source-git-commit: 923e2114270df22e134e0676ac97f84d770bb226
 workflow-type: tm+mt
-source-wordcount: '2905'
+source-wordcount: '2929'
 ht-degree: 0%
 
 ---
 
 # Opmerkingen bij de release ECE-Tools
 
-De [Gereedschappen](https://github.com/magento/ece-tools) Dit pakket is een set scripts en gereedschappen die zijn ontworpen voor het beheren en implementeren van Cloud-projecten. In deze releaseopmerkingen worden de meest recente verbeteringen van dit pakket beschreven, dat onderdeel is van het [Cloud Tools Suite voor handel](cloud-tools-suite.md).
+De [Gereedschappen](https://github.com/magento/ece-tools) Dit pakket is een set scripts en gereedschappen die zijn ontworpen voor het beheren en implementeren van Cloud-projecten. In deze releaseopmerkingen worden de meest recente verbeteringen van dit pakket beschreven, dat onderdeel is van het [Cloud Tools Suite voor Commerce](cloud-tools-suite.md).
 
 >[!NOTE]
 >
@@ -28,8 +28,14 @@ De opmerkingen bij de release omvatten:
 
 <!--Add release notes below-->
 
+## v2002.1.19 {#latest}
 
-## v2002.1.18 {#latest}
+Releasedatum: 21 mei 2024
+
+- ![nieuw pictogram](../../assets/new.svg) **Lua**—Toegevoegde optie useLua voor CACHE_CONFIGURATION.
+- ![fixepictogram](../../assets/fix.svg) **Validator**—Bijgewerkte validators voor nieuwe versies van Redis en RabbitMQ.
+
+## v2002.1.18
 
 Releasedatum: 8 april 2024
 
@@ -47,7 +53,7 @@ Releasedatum: 16 januari 2024
 
 Releasedatum: 16 oktober 2023
 
-- ![nieuw pictogram](../../assets/new.svg) **ENABLE_WEBHOOKS globale omgevingsvariabele**—Toegevoegd de [ENABLE_WEBHOOKS](../environment/variables-global.md#enable_webhooks) globale variabele voor gebruik met de Webhaken van de Handel om met een extern eindpunt, zoals runtime App Builder actie of een systeem van het de inventarisbeheer van de derde te verbinden.
+- ![nieuw pictogram](../../assets/new.svg) **ENABLE_WEBHOOKS globale omgevingsvariabele**—Toegevoegd de [ENABLE_WEBHOOKS](../environment/variables-global.md#enable_webhooks) globale variabele voor gebruik met de websites van Commerce om met een extern eindpunt, zoals runtime App Builder actie of een derdevoorraadbeheersysteem te verbinden.
 
 ## v2002.1.15
 
@@ -70,7 +76,7 @@ Releasedatum: 10 maart 2023
 
 Releasedatum: 27 oktober 2022
 
-- ![nieuw pictogram](../../assets/new.svg) **Toegevoegde ondersteuning voor Adobe I/O Events voor Adobe Commerce**. Extensieontwikkelaars kunnen nu de opdracht [Adobe I/O Events](https://developer.adobe.com/events/docs/) framework voor het verzenden van informatie over Commerce-gebeurtenissen van Cloud-instanties naar hun toepassingen die zijn geschreven voor [Adobe App Builder](https://developer.adobe.com/app-builder/docs/overview/). Adobe I/O Gebeurtenissen voor Adobe Commerce bevinden zich in Voorvertoning voor partners.<!-- CEXT-932 -->
+- ![nieuw pictogram](../../assets/new.svg) **Toegevoegde ondersteuning voor Adobe I/O Events voor Adobe Commerce**. Extensieontwikkelaars kunnen nu de opdracht [Adobe I/O Events](https://developer.adobe.com/events/docs/) framework om Commerce-gebeurtenisinformatie van Cloud-instanties te verzenden naar hun toepassingen die zijn geschreven voor [Adobe App Builder](https://developer.adobe.com/app-builder/docs/overview/). Adobe I/O Gebeurtenissen voor Adobe Commerce bevinden zich in Voorvertoning voor partners.<!-- CEXT-932 -->
 - ![nieuw pictogram](../../assets/new.svg) **Validator voor OPcache-configuratie**—Een validator toegevoegd om de OPcache-configuratie te controleren op uitgesloten paden.<!-- MCLOUD-9485 -->
 - ![fixepictogram](../../assets/fix.svg) **Probleem verholpen met GraphQL-cacheconfiguratie**—Nu houdt ECE-Tools de GraphQL `id_salt` waarde in `cache` in de `app/etc/env.php` bestand.<!-- MCLOUD-9486 -->
 
@@ -78,7 +84,7 @@ Releasedatum: 27 oktober 2022
 
 Releasedatum: 13 september 2022
 
-- ![nieuw pictogram](../../assets/new.svg) **Inschakelen`synchronous_replication`**—ECE-gereedschapssets `synchronous_replication=>true` in de `app/etc/env.php` bestand wanneer `MYSQL_USE_SLAVE_CONNECTION` is ingeschakeld. Deze configuratie beïnvloedt slechts Handel 2.4.6+. Zie de `MYSQL_USE_SLAVE_CONNECTION` variabele beschrijving in de [Variabelen implementeren](../environment/variables-deploy.md#mysql_use_slave_connection).<!-- MCLOUD-9142 -->
+- ![nieuw pictogram](../../assets/new.svg) **Inschakelen`synchronous_replication`**—ECE-gereedschapssets `synchronous_replication=>true` in de `app/etc/env.php` bestand wanneer `MYSQL_USE_SLAVE_CONNECTION` is ingeschakeld. Deze configuratie heeft alleen invloed op Commerce 2.4.6+. Zie de `MYSQL_USE_SLAVE_CONNECTION` variabele beschrijving in de [Variabelen implementeren](../environment/variables-deploy.md#mysql_use_slave_connection).<!-- MCLOUD-9142 -->
 - ![nieuw pictogram](../../assets/new.svg) **OpenSearch**—Toegevoegde functionaliteit om het `opensearch` motor voor de volgende Adobe Commerce-release 2.4.6. Zie [OpenSearch-service instellen](../services/opensearch.md).<!-- MCLOUD-9236 -->
 
 ## v2002.1.11
@@ -87,7 +93,7 @@ Releasedatum: 4 augustus 2022
 
 - ![fixepictogram](../../assets/fix.svg) **ElasticSuite-validatie en OpenSearch**—Fixed ElasticSuite integriteitscontrole validator issue when OpenSearch is installed.<!-- MCLOUD-8767 -->
 - ![fixepictogram](../../assets/fix.svg) **Terugkeertypen voor implementatieopdrachten**—Vaste terugkeertypes voor opstellen bevelen.<!-- AC-3208 -->
-- ![fixepictogram](../../assets/fix.svg) **[!DNL RabbitMQ]probleem met de nieuwe installatie van Commerce 2.4.5**—Vast [!DNL RabbitMQ] crashprobleem bij nieuwe installatie van Commerce 2.4.5.<!-- MCLOUD-9059 -->
+- ![fixepictogram](../../assets/fix.svg) **[!DNL RabbitMQ]probleem met nieuwe Commerce 2.4.5-installatie**—Vast [!DNL RabbitMQ] crash probleem bij nieuwe Commerce 2.4.5. installatie.<!-- MCLOUD-9059 -->
 
 ## v2002.1.10
 
@@ -209,7 +215,7 @@ Releasedatum: 9 november 2020
 
 **Updates van omgevingsvariabelen**—
 
-- ![nieuw pictogram](../../assets/new.svg) De [SKIP_COMPOSER_DUMP_AUTOLOAD](../environment/variables-build.md#skip_composer_dump_autoload) bouwstijlvariabele. De variabele instellen op `true` voorkomt dat de toepassing het `composer dump-autoload` gebruiken tijdens een installatie van Cloud Docker for Commerce. De variabele is alleen relevant voor Cloud Docker for Commerce-containers met beschrijfbare bestandssystemen (gemaakt voor testen en ontwikkelen met `./vendor/bin/ece-docker build:compose --with-test`). Met dergelijke installaties slaat u de `composer dump-autoload` voorkomt fouten bij het uitvoeren van andere opdrachten die bestanden proberen te openen vanuit een verwijderde `generated` directory.<!--MCLOUD-6939-->
+- ![nieuw pictogram](../../assets/new.svg) De [SKIP_COMPOSER_DUMP_AUTOLOAD](../environment/variables-build.md#skip_composer_dump_autoload) bouwstijlvariabele. De variabele instellen op `true` voorkomt dat de toepassing het `composer dump-autoload` gebruiken tijdens een installatie van Cloud Docker voor Commerce. De variabele is alleen relevant voor Cloud Docker voor Commerce-containers met schrijfbare bestandssystemen (gemaakt voor testen en ontwikkelen met `./vendor/bin/ece-docker build:compose --with-test`). Met dergelijke installaties slaat u de `composer dump-autoload` voorkomt fouten bij het uitvoeren van andere opdrachten die bestanden proberen te openen vanuit een verwijderde `generated` directory.<!--MCLOUD-6939-->
 
 ## v2002.1.2
 
@@ -217,7 +223,7 @@ Releasedatum: 5 augustus 2020
 
 **Verbeteringen voor validatie en logbestand**—
 
-- ![nieuw pictogram](../../assets/new.svg) De `schema.error.yaml` een bestand dat alle fout- en waarschuwingsmeldingen bevat die tijdens het proces voor het maken, implementeren en na de implementatie kunnen optreden, samen met suggesties voor het oplossen van de fouten. De informatie in dit bestand is ook beschikbaar in het dialoogvenster _Cloud Guide voor handel_. Zie [Referentie van foutbericht voor Griekenland-tools](../dev-tools/error-reference.md).<!--MCLOUD-5878-->
+- ![nieuw pictogram](../../assets/new.svg) De `schema.error.yaml` een bestand dat alle fout- en waarschuwingsmeldingen bevat die tijdens het proces voor het maken, implementeren en na de implementatie kunnen optreden, samen met suggesties voor het oplossen van de fouten. De informatie in dit bestand is ook beschikbaar in het dialoogvenster _Cloud Guide voor Commerce_. Zie [Referentie van foutbericht voor Griekenland-tools](../dev-tools/error-reference.md).<!--MCLOUD-5878-->
 
 - ![nieuw pictogram](../../assets/new.svg) Het foutenlogboek voor de cloud is gewijzigd (`/var/log/cloud.error.log`) worden ingevoerd in de indeling JSON, zodat het logboek beter programmatisch kan worden geparseerd.<!--MCLOUD-5879-->
 
@@ -313,7 +319,7 @@ Releasedatum: 6 februari 2020
 
 - ![nieuw pictogram](../../assets/new.svg) **Infrastructuurupdates**—
 
-   - ![nieuw pictogram](../../assets/new.svg) **Afzonderlijk pakket toegevoegd voor Cloud Docker voor Handel**—Het Docker-pakket losgekoppeld van het `ece-tools` pakket om de codekwaliteit te behouden en onafhankelijke releases te bieden. Updates en correcties voor `ece-tools` worden beheerd vanuit de [magento-cloud-docker](https://github.com/magento/magento-cloud-docker) GitHub-opslagplaats.<!--MAGECLOUD-2927-->
+   - ![nieuw pictogram](../../assets/new.svg) **Afzonderlijk pakket toegevoegd voor Cloud Docker voor Commerce**—Het Docker-pakket losgekoppeld van het `ece-tools` pakket om de codekwaliteit te behouden en onafhankelijke releases te bieden. Updates en correcties voor `ece-tools` worden beheerd vanuit de [magento-cloud-docker](https://github.com/magento/magento-cloud-docker) GitHub-opslagplaats.<!--MAGECLOUD-2927-->
 
    - ![nieuw pictogram](../../assets/new.svg) **Bijgewerkte patchmogelijkheden**—De patchfunctionaliteit is verplaatst van het pakket ECE-tools naar een aparte [magento-cloud-patches](https://github.com/magento/magento-cloud-patches) pakket. Tijdens de implementatie `ece-tools` gebruikt het nieuwe pakket om patches toe te passen. Zie [Opmerkingen bij de release Cloud Patches](cloud-patches.md).<!--MAGECLOUD-4567-->
 
