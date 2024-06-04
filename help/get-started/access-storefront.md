@@ -1,18 +1,18 @@
 ---
-title: Open het deelvenster Admin voor handel
-description: Leer hoe u toegang krijgt tot het deelvenster Admin voor handel.
+title: Open het deelvenster Commerce Admin
+description: Leer hoe u het deelvenster Commerce Admin kunt openen.
 recommendations: noDisplay, catalog
 exl-id: 9a8a0a49-b108-48bd-b413-ec9431370c06
-source-git-commit: 85ff1283f773823ff2c6e6ab8f391fd5b4aa00e4
+source-git-commit: 3ca09243dc0a714c1d86cccf9f0620a8a39fd1e1
 workflow-type: tm+mt
-source-wordcount: '228'
+source-wordcount: '323'
 ht-degree: 0%
 
 ---
 
-# Open het deelvenster Admin voor handel
+# Open het deelvenster Commerce Admin
 
-Gebruikers die toegang hebben tot het deelvenster Beheer van handels kunnen gebruikers toevoegen, opslagservices configureren, de installatie van de winkel en het aanpassingswerk voltooien, enzovoort.
+Gebruikers die beheerdersrechten hebben tot het deelvenster Commerce Admin kunnen gebruikers toevoegen, winkelservices configureren, de installatie van de winkel voltooien en aanpassingen uitvoeren, enzovoort.
 
 Voor een nieuw project, is de eerste stap na het ontvangen van welkome e-mail de toegang van Admin tot het project te beveiligen door het wachtwoord op de rekening van de Eigenaar van de Vergunning te veranderen. De standaardgebruikersnaam voor dit account is het e-mailadres van de eigenaar van de licentie.
 
@@ -27,3 +27,7 @@ Nadat u het verzoek tot wijziging van het wachtwoord hebt verzonden, controleert
 >[!TIP]
 >
 >Als het opnieuw instellen van het wachtwoord mislukt of als u zich niet kunt aanmelden bij het deelvenster Beheer, kan een gebruiker met beheerdersrechten verbinding maken met het project via SSH en een beheergebruiker toevoegen met behulp van het dialoogvenster `admin:user:create` CLI-opdracht. Zie [Een beheerdersaccount maken, bewerken of ontgrendelen](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/admin.html) in de _Installatiehandleiding_.
+
+## Gezondheid van site controleren
+
+De [Analyse voor de hele site](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/intro) is een proactief zelfbedieningshulpmiddel en een centrale gegevensopslagplaats die gedetailleerde systeeminzichten en aanbevelingen omvat om de veiligheid en de operabiliteit van uw installatie van Adobe Commerce te verzekeren. Het biedt 24/7 real-time prestatiescontrole, rapporten, en advies om potentiële kwesties en betere zichtbaarheid in plaatsgezondheid, veiligheid, en toepassingsconfiguraties te identificeren. Het helpt de resolutietijd te verminderen en de stabiliteit en prestaties van de site te verbeteren. U hebt rechtstreeks vanuit het dialoogvenster [Deelvenster Beheer](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-2-logging-in-to-your-site-wide-analysis-tool-dashboard-from-your-stores-admin-panel) of van de [toegewezen domein](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-1-logging-in-to-your-site-wide-analysis-tool-dashboard-directly-from-the-site-wide-analysis-tool-domain-for-adobe-commerce-on-cloud-infrastructure-only) (Adobe Commerce alleen voor infrastructuurprojecten in de cloud).
