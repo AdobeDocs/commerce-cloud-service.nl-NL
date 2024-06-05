@@ -3,9 +3,9 @@ title: RabbitMQ-service instellen
 description: Leer hoe u de RabbitMQ-service in staat stelt om berichtwachtrijen voor Adobe Commerce te beheren op cloudinfrastructuur.
 feature: Cloud, Services
 exl-id: 85794b8f-2260-4a6e-b5a6-a1b4c356594e
-source-git-commit: d4c36b084094846cfad69adc2bffd567a58fab26
+source-git-commit: adcfbb7217c70122a4003a66d1bec1a623fbf11a
 workflow-type: tm+mt
-source-wordcount: '378'
+source-wordcount: '399'
 ht-degree: 0%
 
 ---
@@ -114,7 +114,7 @@ Voor het zuiveren doeleinden, is het nuttig om met een de dienstinstantie op Ã©Ã
    }
    ```
 
-1. Schakel het doorsturen van lokale poorten naar RabbitMQ in.
+1. Laat lokale haven toe door:sturen aan RabbitMQ (als uw project op een verschillend gebied zoals V.S.-3, EU-5, of AP-3 gebied wordt gevestigd, substitueer ``us-3``/``eu-5``/``ap-3`` for ``us``)
 
    ```bash
    ssh -L <port-number>:rabbitmq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
