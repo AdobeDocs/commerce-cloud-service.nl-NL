@@ -17,9 +17,9 @@ De gebruikers die administratieve toegang tot Adobe Commerce op het project van 
 
 ## Beheerdersreferenties
 
-U kunt de geloofsbrieven van de Gebruiker Admin tijdens de installatie van de Handel met de variabelen van ADMIN in de volgende lijst met voeten treden.
+U kunt de aanmeldingsgegevens van Admin-gebruikers tijdens de Commerce-installatie overschrijven met de ADMIN-variabelen in de volgende tabel.
 
-Als u de waarden na installatie wilt wijzigen, maakt u verbinding met uw omgeving met behulp van SSH en gebruikt u de Adobe Commerce CLI [`admin:user` command](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/admin.html) om de Admin-gebruikersgegevens te maken of te bewerken.
+Als u de waarden na installatie wilt veranderen, verbind met uw milieu gebruikend SSH en gebruik het [`admin:user` bevel ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/admin.html) van Adobe Commerce CLI om de Admin gebruikersgeloofsbrieven tot stand te brengen of uit te geven.
 
 | Variabele | Standaard | Beschrijving |
 | -------------- | --------------------------- | ----------- |
@@ -32,13 +32,13 @@ Als u de waarden na installatie wilt wijzigen, maakt u verbinding met uw omgevin
 
 Gebruik de volgende omgevingsvariabele om de toegang tot uw beheerinterface te beveiligen. Indien opgegeven, overschrijft deze waarde de standaard-URL tijdens de installatie.
 
-`ADMIN_URL`—De relatieve URL voor toegang tot de beheerinterface. De standaard-URL is `/admin`. Om veiligheidsredenen raadt de Adobe u aan de standaardinstelling te wijzigen in een unieke, aangepaste Admin-URL die niet gemakkelijk te raden is.
+`ADMIN_URL` - De relatieve URL voor toegang tot de beheerinterface. De standaard-URL is `/admin` . Om veiligheidsredenen raadt de Adobe u aan de standaardinstelling te wijzigen in een unieke, aangepaste Admin-URL die niet gemakkelijk te raden is.
 
 ### De URL van de beheerder wijzigen
 
-Adobe raadt u aan de variabele op milieuniveau voor de URL van Admin na installatie te wijzigen. Configureer deze instelling om beveiligingsredenen voordat u vertakt vanuit de gekloonde `master` milieu. Alle vertakkingen die zijn gemaakt met de `master` de tak erft de milieu-vlakke variabelen en hun waarden.
+Adobe raadt u aan de variabele op milieuniveau voor de URL van Admin na installatie te wijzigen. Configureer deze instelling om beveiligingsredenen voordat u vertakt vanuit de gekloonde `master` -omgeving. Alle vertakkingen die zijn gemaakt in de `master` -vertakking overerven de variabelen op milieuniveau en de bijbehorende waarden.
 
-Gebruik de `magento-cloud variable:update` gebruiken om de waarde van de variabele bij te werken. (De `variable:set` is vervangen en is niet beschikbaar.) In het volgende voorbeeld wordt de ADMIN_URL bijgewerkt naar `newAdmin_A8v10`:
+Gebruik de opdracht `magento-cloud variable:update` om de waarde van de variabele bij te werken. (De opdracht `variable:set` is vervangen en is niet beschikbaar.) In het volgende voorbeeld wordt ADMIN_URL bijgewerkt naar `newAdmin_A8v10` :
 
 ```bash
 magento-cloud variable:update ADMIN_URL --value newAdmin_A8v10 -e master
@@ -46,27 +46,27 @@ magento-cloud variable:update ADMIN_URL --value newAdmin_A8v10 -e master
 
 >[!NOTE]
 >
->De `ADMIN_URL` Deze waarde accepteert letters (a-z of A-Z), getallen (0-9) en het onderstrepingsteken (_) voor een aangepast beheerpad. Spaties of andere tekens zijn **niet** aanvaard.
+>De `ADMIN_URL` -waarde accepteert letters (a-z of A-Z), getallen (0-9) en het onderstrepingsteken (_) voor een aangepast beheerpad. De ruimten of andere karakters worden **niet** toegelaten.
 
-**Als u de URL wilt wijzigen met de opdracht[!DNL Cloud Console]**:
+**om URL te veranderen gebruikend[!DNL Cloud Console]**:
 
-1. Aanmelden bij de [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. Meld u aan bij de map [[!DNL Cloud Console] ](https://console.adobecommerce.com) .
 
-1. Selecteer een project in het menu _Alle projecten_ lijst.
+1. Selecteer een project van de _Alle projecten_ lijst.
 
 1. In het projectoverzicht, selecteer het milieu en klik het configuratiepictogram.
 
-   ![Projectconfiguratie](../../assets/icon-configure.png){width="36"}
+   ![ de configuratie van het Project ](../../assets/icon-configure.png){width="36"}
 
-1. Selecteer de **Variabelen** tab.
+1. Selecteer de **Variabelen** tabel.
 
-1. Klikken **Variabele maken**.
+1. Klik **creëren Variabele**.
 
 1. Voer het volgende in:
 
-   - **Naam variabele** = `ADMIN_URL`
-   - **value** = Nieuwe URL. Stel bijvoorbeeld de URL van de beheerder in op `magento_A8v10`.
+   - **Veranderlijke naam** = `ADMIN_URL`
+   - **waarde** = Nieuwe URL. Stel bijvoorbeeld de URL voor beheer in op `magento_A8v10` .
 
-   Standaard, `Available during runtime` en `Make inheritable` zijn geselecteerd.
+   Standaard zijn `Available during runtime` en `Make inheritable` geselecteerd.
 
-1. Klikken **Variabele maken** en wacht tot de implementatie is voltooid. Deze knop is alleen zichtbaar wanneer de vereiste velden waarden bevatten.
+1. Klik **creeer variabele** en wacht tot de plaatsing voltooit. Deze knop is alleen zichtbaar wanneer de vereiste velden waarden bevatten.

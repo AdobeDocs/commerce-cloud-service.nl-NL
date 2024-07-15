@@ -12,5 +12,5 @@ ht-degree: 0%
 
 # De B2B-module inschakelen
 
-Als uw klanten bedrijven zijn, kunt u de Adobe Commerce B2B module installeren om uw Adobe Commerce op het project van de wolkeninfrastructuur Pro uit te breiden om een zaken-aan-bedrijfsmodel aan te passen. U vindt informatie over de installatie en configuratie van de B2B-module voor Adobe Commerce op cloudinfrastructuren in het [Adobe Commerce B2B-gebruikershandleiding](https://experienceleague.adobe.com/docs/commerce-admin/b2b/guide-overview.html).
+Als uw klanten bedrijven zijn, kunt u de Adobe Commerce B2B module installeren om uw Adobe Commerce op het project van de wolkeninfrastructuur Pro uit te breiden om een zaken-aan-bedrijfsmodel aan te passen. U kunt informatie vinden om de B2B module voor Adobe Commerce op wolkeninfrastructuur te installeren en te vormen, in de [ Gids van de Gebruiker van Adobe Commerce B2B ](https://experienceleague.adobe.com/docs/commerce-admin/b2b/guide-overview.html).
 

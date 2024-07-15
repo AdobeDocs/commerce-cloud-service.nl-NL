@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Regionale IP-adressen
 
-In de volgende tabellen worden de inkomende en uitgaande IP-adressen weergegeven die door Adobe Commerce worden gebruikt op cloudinfrastructuur [integratieomgevingen](../architecture/pro-architecture.md#integration-environment). Deze IP adressen zijn stabiel, maar zouden kunnen veranderen. De Adobe brengt klanten op de hoogte alvorens om het even welke IP adresveranderingen aan te brengen.
+De volgende lijsten maken een lijst van de inkomende en uitgaande IP adressen die door Adobe Commerce op de milieu&#39;s van de cloudinfrastructuur [ integratie ](../architecture/pro-architecture.md#integration-environment) worden gebruikt. Deze IP adressen zijn stabiel, maar zouden kunnen veranderen. De Adobe brengt klanten op de hoogte alvorens om het even welke IP adresveranderingen aan te brengen.
 
 De syntaxis voor het aanpakken van de integratieomgevingen is als volgt:
 
@@ -19,11 +19,11 @@ De syntaxis voor het aanpakken van de integratieomgevingen is als volgt:
 <branch>-<unique-ID>-<project-ID>.<region>.magentosite.cloud
 ```
 
-- **Unieke id** = 7 willekeurige alfanumerieke tekens
-- **Project-id** = project-id van 13 tekens
-- **Regio** = AWS- of Azure-regionaam
+- **Unieke identiteitskaart** = 7 willekeurige alpha-numerieke karakters
+- **identiteitskaart van het Project** = 13-karakter project identiteitskaart
+- **Gebied** = AWS of Azure gebiedsnaam
 
-U kunt de `ping` bevel om het inkomende IP adres terug te winnen:
+U kunt de opdracht `ping` gebruiken om het inkomende IP-adres op te halen:
 
 ```bash
 ping integration-abcd123-abcd78910.us-3.magentosite.cloud

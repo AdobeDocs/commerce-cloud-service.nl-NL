@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # Include-bestanden op de server
 
-[Include-bestanden op de server](https://nginx.org/en/docs/http/ngx_http_ssi_module.html) (SSI) zijn instructies in HTML-pagina&#39;s die op de server worden geëvalueerd terwijl de pagina&#39;s worden weergegeven. Met SSI kunt u dynamisch gegenereerde inhoud toevoegen aan een bestaande HTML-pagina zonder de hele pagina te bedienen.
+[ server-kant omvat ](https://nginx.org/en/docs/http/ngx_http_ssi_module.html) (SSI) zijn richtlijnen in HTML pagina&#39;s die op de server worden geëvalueerd terwijl de pagina&#39;s teruggeven. Met SSI kunt u dynamisch gegenereerde inhoud toevoegen aan een bestaande HTML-pagina zonder de hele pagina te bedienen.
 
-U kunt SSI op een per-routebasis in uw activeren of deactiveren `.magento/routes.yaml`; bijvoorbeeld:
+U kunt SSI per route in uw `.magento/routes.yaml` activeren of deactiveren; bijvoorbeeld:
 
 ```yaml
     "http://{default}/":
@@ -31,11 +31,11 @@ U kunt SSI op een per-routebasis in uw activeren of deactiveren `.magento/routes
             enabled: true
 ```
 
-SSI laat u toe om in uw HTML reactierichtlijnen te omvatten die de server ertoe brengen om delen van de HTML in te vullen, met inachtneming van om het even welk bestaand [caching-configuratie](caching.md).
+SSI laat u toe om in uw HTML reactierichtlijnen te omvatten die de server veroorzaken om delen van de HTML te vullen, die om het even welke bestaande [ in het voorgeheugen onderbrengende configuratie ](caching.md) respecteren.
 
 In het volgende voorbeeld ziet u hoe u een dynamisch datumbesturingselement boven aan een pagina invoegt en een ander datumbesturingselement onder aan dat elke 600 seconden wordt bijgewerkt:
 
-Voeg het volgende toe aan elke pagina, zoals `/index.php`:
+Voeg het volgende toe aan elke pagina, zoals `/index.php` :
 
 ```php?start_inline=1
 echo date(DATE_RFC2822);

@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Extensies beheren
 
-U kunt de mogelijkheden van uw Adobe Commerce-toepassing uitbreiden door een extensie toe te voegen via het [Commerce Marketplace](https://marketplace.magento.com). U kunt bijvoorbeeld een thema toevoegen om de vormgeving van uw winkel te wijzigen of u kunt een taalpakket toevoegen om uw winkel en Admin te lokaliseren.
+U kunt uw de toepassingsmogelijkheden van Adobe Commerce uitbreiden door een uitbreiding van de [ Commerce Marketplace ](https://marketplace.magento.com) toe te voegen. U kunt bijvoorbeeld een thema toevoegen om de vormgeving van uw winkel te wijzigen of u kunt een taalpakket toevoegen om uw winkel en Admin te lokaliseren.
 
 >[!NOTE]
 >
@@ -20,27 +20,27 @@ U kunt de mogelijkheden van uw Adobe Commerce-toepassing uitbreiden door een ext
 
 ## Composernaam van een extensie
 
-Hoewel in deze sectie wordt besproken hoe u de Composer-naam en -versie van een extensie kunt ophalen vanuit de Commerce Marketplace, kunt u de naam en versie van _alle_ in het Composer-bestand van de module. Open de `composer.json` in een teksteditor en noteer de `"name"` en `"version"` waarden.
+Hoewel deze sectie bespreekt hoe te om de naam Composer en de versie van een uitbreiding van Commerce Marketplace te krijgen, kunt u de naam en de versie van _om het even welke_ module in het dossier Composer van de module vinden. Open het bestand `composer.json` in een teksteditor en noteer de waarden `"name"` en `"version"` .
 
-**De Composer-naam van een module ophalen uit de Commerce Marketplace**:
+**om de naam Composer van een module van de Commerce Marketplace** te krijgen:
 
-1. Aanmelden bij [Commerce Marketplace](https://marketplace.magento.com) met de gebruikersnaam en het wachtwoord waarmee u de component hebt aangeschaft.
+1. Login aan [ Commerce Marketplace ](https://marketplace.magento.com) met de gebruikersbenaming en het wachtwoord u gebruikte om de component te kopen.
 
-1. Klik in de rechterbovenhoek op uw gebruikersnaam en selecteer **Mijn profiel**.
+1. In de hogere juiste hoek, klik uw gebruikersbenaming en selecteer **Mijn Profiel**.
 
-   ![Toegang tot uw Marketplace-account](../../assets/marketplace/my-profile.png)
+   ![ heb toegang tot uw rekening van de Marketplace ](../../assets/marketplace/my-profile.png)
 
-1. Op de _Mijn account_ pagina, klikt u **Mijn aankopen**.
+1. Op de _Mijn pagina van de Rekening_, klik **Mijn Aankopen**.
 
-   ![Aankoopgeschiedenis van Marketplace](../../assets/marketplace/my-purchases.png)
+   ![ de aankoopgeschiedenis van de Marketplace ](../../assets/marketplace/my-purchases.png)
 
-1. Op de _Mijn aankopen_ pagina, selecteert u een module die u hebt aangeschaft en klikt u op **Technische details**.
+1. Voor _Mijn Aankopen_ pagina, selecteer een module die u kocht en **Technische Details** klikt.
 
-1. Klikken **Kopiëren** om de [!UICONTROL Component name] naar het klembord.
+1. Klik **Exemplaar** om [!UICONTROL Component name] aan het klembord te kopiëren.
 
-1. Open een teksteditor en plak de componentnaam en voeg een dubbele punt toe (`:`).
+1. Open een tekstverwerker en plak de componentnaam en voeg een dubbele punt (`:`) toe.
 
-1. In **Technische details**, klikt u op **Kopiëren** om de [!UICONTROL Component version] naar het klembord.
+1. In **Technische Details**, klik **Exemplaar** om [!UICONTROL Component version] aan het klembord te kopiëren.
 
 1. Voeg in de teksteditor het versienummer toe aan de componentnaam na de dubbele punt. Bijvoorbeeld:
 
@@ -50,15 +50,15 @@ Hoewel in deze sectie wordt besproken hoe u de Composer-naam en -versie van een 
 
 ## Een extensie installeren
 
-Adobe raadt u aan in een ontwikkelingsvertakking te werken wanneer u een extensie toevoegt aan uw implementatie. Wanneer u een extensie installeert, wordt de extensienaam (`<VendorName>_<ComponentName>`) wordt automatisch ingevoegd in het dialoogvenster [`app/etc/config.php`](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/deployment-files.html) bestand. U hoeft het bestand niet rechtstreeks te bewerken.
+Adobe raadt u aan in een ontwikkelingsvertakking te werken wanneer u een extensie toevoegt aan uw implementatie. Wanneer het installeren van een uitbreiding, wordt de uitbreidingsnaam (`<VendorName>_<ComponentName>`) automatisch opgenomen in het [`app/etc/config.php` ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/files/deployment-files.html) dossier. U hoeft het bestand niet rechtstreeks te bewerken.
 
-**Een extensie installeren**:
+**om een uitbreiding** te installeren:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
-1. Maak of check een ontwikkelingsvertakking uit. Zie [vertakking](../development/cli-branches.md).
+1. Maak of check een ontwikkelingsvertakking uit. Zie [ vertakkend ](../development/cli-branches.md).
 
-1. Voeg de extensie met de naam en versie van de Composer toe aan de `require` van de `composer.json` bestand.
+1. Voeg de extensie met de naam en versie van de Composer toe aan de sectie `require` van het `composer.json` -bestand.
 
    ```bash
    composer require <extension-name>:<version> --no-update
@@ -86,7 +86,7 @@ Adobe raadt u aan in een ontwikkelingsvertakking te werken wanneer u een extensi
 
    >[!WARNING]
    >
-   >Wanneer u een extensie installeert, moet u de opdracht `composer.lock` bestand als u code wijzigt in de externe omgeving. De `composer install` de opdracht leest `composer.lock` bestand om de gedefinieerde afhankelijkheden in de externe omgeving in te schakelen.
+   >Wanneer u een extensie installeert, moet u het `composer.lock` -bestand opnemen wanneer u codewijzigingen doorvoert in de externe omgeving. De opdracht `composer install` leest het `composer.lock` -bestand om de gedefinieerde afhankelijkheden in de externe omgeving in te schakelen.
 
 1. Nadat de build en implementatie is voltooid, gebruikt u een SSH om u aan te melden bij de externe omgeving en om de geïnstalleerde extensie te controleren.
 
@@ -94,7 +94,7 @@ Adobe raadt u aan in een ontwikkelingsvertakking te werken wanneer u een extensi
    bin/magento module:status <extension-name>
    ```
 
-   De extensienaam gebruikt de indeling: `<VendorName>_<ComponentName>`.
+   Een extensienaam gebruikt de indeling: `<VendorName>_<ComponentName>` .
 
    Monsterrespons:
 
@@ -102,19 +102,19 @@ Adobe raadt u aan in een ontwikkelingsvertakking te werken wanneer u een extensi
    Module is enabled
    ```
 
-   Als u plaatsingsfouten ontmoet, zie [implementatiefout extensie](../deploy/recover-failed-deployment.md).
+   Als u plaatsingsfouten ontmoet, zie [ mislukking van de uitbreidingsplaatsing ](../deploy/recover-failed-deployment.md).
 
 ## Extensies beheren
 
-Wanneer u een uitbreiding gebruikend Composer toevoegt, laat het plaatsingsproces automatisch de uitbreiding toe. Als u reeds de uitbreiding hebt geïnstalleerd, kunt u de uitbreiding toelaten of onbruikbaar maken gebruikend CLI. Gebruik de indeling bij het beheren van extensies: `<VendorName>_<ComponentName>`
+Wanneer u een uitbreiding gebruikend Composer toevoegt, laat het plaatsingsproces automatisch de uitbreiding toe. Als u reeds de uitbreiding hebt geïnstalleerd, kunt u de uitbreiding toelaten of onbruikbaar maken gebruikend CLI. Gebruik de volgende indeling wanneer u extensies beheert: `<VendorName>_<ComponentName>`
 
 Schakel een extensie nooit in of uit wanneer u bent aangemeld bij de externe omgevingen.
 
-**Een extensie in- of uitschakelen**:
+**om een uitbreiding** toe te laten of onbruikbaar te maken:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
-1. Een module in- of uitschakelen. De `module` de opdracht werkt de `config.php` bestand met de gewenste status van de module.
+1. Een module in- of uitschakelen. Met de opdracht `module` werkt u het `config.php` -bestand bij met de gevraagde status van de module.
 
    >Een module inschakelen.
 
@@ -156,15 +156,15 @@ Schakel een extensie nooit in of uit wanneer u bent aangemeld bij de externe omg
 
 ## Een extensie upgraden
 
-Voordat u verdergaat, hebt u de naam en de versie van de Composer nodig voor de extensie. Controleer ook of de extensie compatibel is met uw project en de Adobe Commerce-versie. Met name: [de vereiste PHP-versie controleren](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) voordat u begint.
+Voordat u verdergaat, hebt u de naam en de versie van de Composer nodig voor de extensie. Controleer ook of de extensie compatibel is met uw project en de Adobe Commerce-versie. Met name, [ controleer de vereiste PHP versie ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) alvorens u begint.
 
-**Een extensie bijwerken**:
+**om een uitbreiding** bij te werken:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
-1. Maak of check een ontwikkelingsvertakking uit. Zie [vertakking](../development/cli-branches.md).
+1. Maak of check een ontwikkelingsvertakking uit. Zie [ vertakkend ](../development/cli-branches.md).
 
-1. Open de `composer.json` in een teksteditor.
+1. Open het `composer.json` -bestand in een teksteditor.
 
 1. Zoek de extensie en werk de versie bij.
 
@@ -190,4 +190,4 @@ Voordat u verdergaat, hebt u de naam en de versie van de Composer nodig voor de 
    git push origin <branch-names>
    ```
 
-Als u fouten tegenkomt, raadpleegt u [Herstellen van componentfout](../deploy/recover-failed-deployment.md). Ga voor meer informatie over het gebruik van extensies met Adobe Commerce naar [Extensies](https://experienceleague.adobe.com/docs/commerce-admin/start/resources/extensions.html) in de _Beheerdershandleiding_.
+Als u fouten ontmoet, zie [ Herstel van componentenmislukking ](../deploy/recover-failed-deployment.md). Meer over het gebruiken van uitbreidingen met Adobe Commerce leren, zie [ Uitbreidingen ](https://experienceleague.adobe.com/docs/commerce-admin/start/resources/extensions.html) in de _Gids Admin_.

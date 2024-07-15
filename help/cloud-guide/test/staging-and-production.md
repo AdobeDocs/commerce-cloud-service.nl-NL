@@ -15,11 +15,11 @@ Nadat de migratie van uw code, bestanden en gegevens naar Staging of Production 
 
 ## Logbestanden
 
-Controleer de logbestanden als er tijdens het testen fouten optreden bij de implementatie of andere problemen. Logbestanden bevinden zich onder de `var/log` directory.
+Controleer de logbestanden als er tijdens het testen fouten optreden bij de implementatie of andere problemen. Logbestanden bevinden zich onder de map `var/log` .
 
-Het plaatsingslogboek is binnen `/var/log/platform/<prodject-ID>/deploy.log`. De waarde van `<project-ID>` is afhankelijk van de project-id en of de omgeving is Staging of Production. Met bijvoorbeeld een project-id van `yw1unoukjcawe`, de gebruiker Staging is `yw1unoukjcawe_stg` en de productiegebruiker `yw1unoukjcawe`.
+Het implementatielogboek bevindt zich in `/var/log/platform/<prodject-ID>/deploy.log` . De waarde van `<project-ID>` is afhankelijk van de project-id en of de omgeving is Staging of Production. Met bijvoorbeeld de project-id `yw1unoukjcawe` is de testgebruiker `yw1unoukjcawe_stg` en de productiegebruiker `yw1unoukjcawe` .
 
-Wanneer het toegang tot logboeken in de milieu&#39;s van de Productie of van het Staging, gebruik SSH aan login aan elk van de drie knopen om van de logboeken de plaats te bepalen. U kunt ook [New Relic-logbeheer](../monitor/log-management.md) om samengevoegde logboekgegevens van alle knopen te bekijken en te vragen. Zie [Logboeken weergeven](log-locations.md#application-logs).
+Wanneer het toegang tot logboeken in de milieu&#39;s van de Productie of van het Staging, gebruik SSH aan login aan elk van de drie knopen om van de logboeken de plaats te bepalen. Of, kunt u [ het logboekbeheer van New Relic ](../monitor/log-management.md) gebruiken om samengevoegde logboekgegevens van alle knopen te bekijken en te vragen. Zie [ Logboeken van de Mening ](log-locations.md#application-logs).
 
 ## De basis van de code controleren
 
@@ -27,52 +27,52 @@ Controleer of de basis van uw code correct is geïmplementeerd in een testomgevi
 
 ## Configuratieinstellingen controleren
 
-Controleer de configuratie-instellingen via het deelvenster Beheer, waaronder de URL voor basis-beheer, URL voor basisbeheer, instellingen voor meerdere sites en meer. Als u aanvullende wijzigingen moet aanbrengen, voert u alle bewerkingen uit in de lokale Git-vertakking en drukt u op de knop `master` tak in Integratie, het Staging, en Productie.
+Controleer de configuratie-instellingen via het deelvenster Beheer, waaronder de URL voor basis-beheer, URL voor basisbeheer, instellingen voor meerdere sites en meer. Als u aanvullende wijzigingen moet aanbrengen, voert u alle bewerkingen uit in uw lokale Git-vertakking en drukt u naar de `master` -vertakking in Integratie, Staging en Productie.
 
 ## Snelle caching controleren
 
-[Snel configureren](../cdn/fastly-configuration.md) vereist zorgvuldige aandacht aan detail: het gebruiken van correcte Snelle identiteitskaart van de Dienst en Fastly API symbolengeloofsbrieven, het uploaden van de Fastly code VCL, het bijwerken van de DNS configuratie, en het toepassen van SSL/TLS certificaten op uw milieu&#39;s. Nadat u deze instellingstaken hebt uitgevoerd, kunt u controleren of het in cache opslaan en maken van bestanden snel is gelukt.
+[ Vormend snel ](../cdn/fastly-configuration.md) vereist zorgvuldige aandacht aan detail: het gebruiken van correcte Snelle identiteitskaart van de Dienst en Fastly API symbolische geloofsbrieven, uploadend de Snelle code VCL, die de DNS configuratie bijwerkt, en het toepassen van SSL/TLS certificaten op uw milieu&#39;s. Nadat u deze instellingstaken hebt uitgevoerd, kunt u controleren of het in cache opslaan en maken van bestanden snel is gelukt.
 
-**Om de Fastly de dienstconfiguratie te verifiëren**:
+**om de Snelle de dienstconfiguratie** te verifiëren:
 
-1. Meld u met de URL met `/admin`of de [bijgewerkte Admin-URL](../environment/variables-admin.md#admin-url).
+1. Login aan Admin voor het Opvoeren en Productie die URL met `/admin` gebruiken, of [ bijgewerkte Admin URL ](../environment/variables-admin.md#admin-url).
 
-1. Navigeren naar **Winkels** > **Instellingen** > **Configuratie** > **Geavanceerd** > **Systeem**. Schuiven en klikken **Volledige paginacache**.
+1. Navigeer aan **Slaat** > **Montages** > **Configuratie** > **Geavanceerd** > **Systeem**. De rol en klikt **het Volledige Geheime voorgeheugen van de Pagina**.
 
-1. Zorg ervoor dat de **Caching-toepassing** waarde is ingesteld op _Fastly CDN_ .
+1. Zorg ervoor dat de **Caching toepassing** waarde aan _snel CDN_ wordt geplaatst.
 
 1. Test de snelreferenties.
 
-   - Klikken **Snelle configuratie**.
+   - Klik **Snelle Configuratie**.
 
-   - Verifieer dat de waarden voor Fastly identiteitskaart van de Dienst en Fastly API symbolische geloofsbrieven. Zie [Snelle gebruikersgegevens ophalen](/help/cloud-guide/cdn/fastly-configuration.md#get-fastly-credentials).
+   - Verifieer dat de waarden voor Fastly identiteitskaart van de Dienst en Fastly API symbolische geloofsbrieven. Zie [ krijgen de Snelle geloofsbrieven ](/help/cloud-guide/cdn/fastly-configuration.md#get-fastly-credentials).
 
-   - Klikken **Referenties testen**.
+   - Klik **geloofsbrieven van de Test**.
 
    >[!WARNING]
    >
    >Zorg ervoor dat u de juiste Fastly identiteitskaart van de Dienst en API teken in uw het Opvoeren en milieu&#39;s van de Productie inging. Snelle geloofsbrieven worden gecreeerd en in kaart gebracht per de dienstmilieu. Als u het Opvoeren geloofsbrieven in uw milieu van de Productie ingaat, kunt u uw fragmenten niet uploaden VCL, het in cache plaatsen werkt correct niet, en uw caching configuratie richt aan de verkeerde server en opslag.
 
-**Het gedrag Snel in cache plaatsen controleren**:
+**om snel caching gedrag** te controleren:
 
-1. Controleren op kopteksten met de opdracht `dig` bevel-lijn nut om informatie over de plaatsconfiguratie te krijgen.
+1. Controleer op kopballen gebruikend het `dig` bevel-lijn nut om informatie over de plaatsconfiguratie te krijgen.
 
-   U kunt elke URL gebruiken met de `dig` gebruiken. In de volgende voorbeelden worden Pro-URL&#39;s gebruikt:
+   U kunt elke URL gebruiken met de opdracht `dig` . In de volgende voorbeelden worden Pro-URL&#39;s gebruikt:
 
    - Staging: `dig https://mcstaging.<your-domain>.com`
    - Productie: `dig https://mcprod.<your-domain>.com`
 
-   Voor extra `dig` testen, zie Fastly&#39;s [Testen voordat DNS wordt gewijzigd](https://docs.fastly.com/en/guides/working-with-domains).
+   Voor extra `dig` tests, zie het [ Testen van Fastly alvorens DNS ](https://docs.fastly.com/en/guides/working-with-domains) te veranderen.
 
-1. Gebruiken `cURL` om de informatie van de reactiekopbal te verifiëren.
+1. Gebruik `cURL` om de gegevens van de antwoordkoptekst te verifiëren.
 
    ```bash
    curl https://mcstaging.<your-domain>.com -H "host: mcstaging.<your-domain.com>" -k -vo /dev/null -H Fastly-Debug:1
    ```
 
-   Zie [Reactiekoppen controleren](../cdn/fastly-troubleshooting.md#check-cache-hit-and-miss-response-headers) voor meer informatie over het controleren van de kopteksten.
+   Zie [ de reactiekopballen van de Controle ](../cdn/fastly-troubleshooting.md#check-cache-hit-and-miss-response-headers) voor details over het verifiëren van de kopballen.
 
-1. Wanneer u live bent, gebruikt u `cURL` om uw livesite te controleren.
+1. Nadat u live bent, gebruikt u `cURL` om uw livesite te controleren.
 
    ```bash
    curl https://<your-domain> -k -vo /dev/null -H Fastly-Debug:1
@@ -127,7 +127,7 @@ Als u problemen ondervindt, slaat u de reproductiestappen, foutberichten, vreemd
 </td>
 </tr>
 <tr>
-<td>Orderbeheer</td>
+<td>Order Management</td>
 <td>
 <ul>
 <li>Een bestelling voor een klant maken</li>
@@ -198,20 +198,20 @@ Voordat u de toepassing start, kunt u het beste uitgebreide verkeers- en prestat
 
 Voordat u begint te testen, voert u een ticket in met ondersteuning voor de omgevingen die u test, welke gereedschappen u gebruikt en het tijdframe. Werk het kaartje met resultaten en informatie bij om prestaties te volgen. Wanneer u klaar bent met testen, voegt u de bijgewerkte resultaten toe en noteert u dat de kaarttest is voltooid met een datum- en tijdstempel.
 
-Controleer de [Prestatiewerkset](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) -opties als onderdeel van het gereedheidsproces voorafgaand aan de start.
+Herzie de [ Toolkit van Prestaties ](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) opties als deel van uw pre-lanceringsbereidheidsproces.
 
 Gebruik de volgende gereedschappen voor de beste resultaten:
 
-- [Toepassingsprestatie](../environment/variables-post-deploy.md#ttfb_tested_pages)—Test de toepassingsprestaties door te vormen `TTFB_TESTED_PAGES` omgevingsvariabele voor de responstijd van de testsite.
-- [Siege](https://www.joedog.org/siege-home/)—Verkeersvormende en testende software om uw winkel tot het uiterste te duwen. Plaats uw site met een configureerbaar aantal gesimuleerde clients. Siege ondersteunt basisverificatie, cookies, HTTP-, HTTPS- en FTP-protocollen.
-- [Jmeter](https://jmeter.apache.org)—Uitstekende ladingstests om prestaties voor verrijkt verkeer, zoals voor flitsverkoop te helpen meten. Aangepaste tests maken die op uw site worden uitgevoerd.
-- [New Relic](../monitor/new-relic-service.md) (verstrekt) - Helpt van processen en gebieden van de plaats de plaats te bepalen die langzame prestaties veroorzaken met bijgehouden tijd die per actie zoals het overbrengen van gegevens, vragen, Redis, en meer wordt doorgebracht.
-- [WebPageTest](https://www.webpagetest.org) en [VK](https://www.pingdom.com)—In real time analyse van uw plaatspagina&#39;s laadt tijd met verschillende oorsprongplaatsen. Het koninkrijk kan een vergoeding vragen. WebPageTest is een gratis hulpmiddel.
+- [ de prestatietest van de Toepassing ](../environment/variables-post-deploy.md#ttfb_tested_pages) - test toepassingsprestaties door de `TTFB_TESTED_PAGES` milieuvariabele te vormen om de tijd van de plaatsreactie te testen.
+- [ Siege ](https://www.joedog.org/siege-home/) - Verkeer die en software vormen te testen om uw opslag aan de grens te duwen. Plaats uw site met een configureerbaar aantal gesimuleerde clients. Siege ondersteunt basisverificatie, cookies, HTTP-, HTTPS- en FTP-protocollen.
+- [ Jmeter ](https://jmeter.apache.org) - Uitstekende lading het testen om prestaties voor verrijkt verkeer, als voor flitsverkoop te meten. Aangepaste tests maken die op uw site worden uitgevoerd.
+- [ New Relic ](../monitor/new-relic-service.md) (verstrekt) - Helpt van processen en gebieden van de plaats de plaats bepalen veroorzakend langzame prestaties met bijgehouden tijd die per actie wordt doorgebracht zoals het overbrengen van gegevens, vragen, Redis, en meer.
+- [ WebPageTest ](https://www.webpagetest.org) en [ het 3} - in real time analyse van uw pagina&#39;s van de plaats laden tijd met verschillende oorsprongsplaatsen. ](https://www.pingdom.com) Het koninkrijk kan een vergoeding vragen. WebPageTest is een gratis hulpmiddel.
 
 ## Functionele tests
 
-Met het MFTF (Magento Functional Testing Framework) kunt u functionele tests voor Adobe Commerce uitvoeren vanuit de Cloud Docker-omgeving. Zie [Toepassingen testen](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) in de _Handleiding Cloud Docker voor handel_.
+Met het MFTF (Magento Functional Testing Framework) kunt u functionele tests voor Adobe Commerce uitvoeren vanuit de Cloud Docker-omgeving. Zie [ het testen van de Toepassing ](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) in het _Dok van de Wolk voor de gids van Commerce_.
 
 ## Het gereedschap Beveiligingsscan instellen
 
-Er is een gratis hulpprogramma voor beveiligingsscan voor uw sites. Als u uw sites wilt toevoegen en het gereedschap wilt uitvoeren, raadpleegt u [Beveiligingsscan](../launch/overview.md#set-up-the-security-scan-tool).
+Er is een gratis hulpprogramma voor beveiligingsscan voor uw sites. Om uw plaatsen toe te voegen en het hulpmiddel in werking te stellen, zie [ het Scannen van de Veiligheid Hulpmiddel ](../launch/overview.md#set-up-the-security-scan-tool).

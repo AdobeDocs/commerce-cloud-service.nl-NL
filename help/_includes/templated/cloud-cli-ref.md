@@ -10,12 +10,12 @@ ht-degree: 0%
 <!-- The template to render with above values -->
 **Versie**: 1.46.1
 
-Deze verwijzing bevat 119 bevelen beschikbaar door `magento-cloud` opdrachtregelprogramma.
-De eerste lijst wordt automatisch gegenereerd met de opdracht `magento-cloud list` in Adobe Commerce op cloudinfrastructuur.
+Deze verwijzing bevat 119 opdrachten die beschikbaar zijn via het opdrachtregelprogramma van `magento-cloud` .
+De eerste lijst wordt automatisch gegenereerd met de opdracht `magento-cloud list` in Adobe Commerce op de cloud-infrastructuur.
 
 >[!NOTE]
 >
->Deze verwijzing wordt gegenereerd op basis van de toepassingscodebase. Als u de inhoud wilt wijzigen, kunt u de broncode voor de corresponderende opdrachtimplementatie bijwerken in het dialoogvenster [codebase](https://github.com/magento/magento-cloud-cli) opslaan en uw wijzigingen ter controle verzenden. Een andere manier is om _Feedback geven_ (zoek de koppeling in de rechterbovenhoek). Zie voor richtsnoeren voor bijdragen [Codebijdragen](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
+>Deze verwijzing wordt gegenereerd op basis van de toepassingscodebase. Om de inhoud te veranderen, kunt u de broncode voor de overeenkomstige bevelimplementatie in de [ codebase ](https://github.com/magento/magento-cloud-cli) bewaarplaats bijwerken en uw veranderingen voor overzicht voorleggen. Een andere manier is ons _geven terugkoppelt_ (vind de verbinding bij het hogere recht). Voor bijdragerichtsnoeren, zie {de Bijdragen van de Code 0} ](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).[
 
 ## `clear-cache`
 
@@ -1000,7 +1000,7 @@ De externe toepassingsnaam
 
 ### `--identity-file`, `-i`
 
-[Vervangen optie, niet meer gebruikt]
+[ Vervangen optie, niet meer gebruikt ]
 
 - Vereist een waarde
 
@@ -4660,7 +4660,7 @@ De project-id of URL
 
 ### `--environment`, `-e`
 
-[Vervangen optie, niet gebruikt]
+[ Vervangen optie, niet gebruikt ]
 
 - Vereist een waarde
 
@@ -4825,7 +4825,7 @@ De project-id of URL
 
 ### `--environment`, `-e`
 
-[Vervangen optie, niet gebruikt]
+[ Vervangen optie, niet gebruikt ]
 
 - Vereist een waarde
 
@@ -4906,7 +4906,7 @@ De project-id of URL
 
 ### `--environment`, `-e`
 
-[Vervangen optie, niet gebruikt]
+[ Vervangen optie, niet gebruikt ]
 
 - Vereist een waarde
 
@@ -5138,7 +5138,7 @@ De milieu-id&#39;s om uit te sluiten
 
 ### `--from-address`
 
-[Optioneel] Aangepast van adres voor e-mailberichten met een waarschuwing
+[ Facultatieve ] Douane van adres voor waakzame e-mails
 
 - Vereist een waarde
 
@@ -5717,7 +5717,7 @@ De milieu-id&#39;s om uit te sluiten
 
 ### `--from-address`
 
-[Optioneel] Aangepast van adres voor e-mailberichten met een waarschuwing
+[ Facultatieve ] Douane van adres voor waakzame e-mails
 
 - Vereist een waarde
 
@@ -6138,7 +6138,7 @@ Stel geen interactieve vragen. Accepteer standaardwaarden. Gelijk aan het gebrui
 
 ## `metrics:all`
 
-BETA toont de metriek van cpu, schijf en geheugen voor een milieu
+BETA toont CPU-, schijf- en geheugengegevens voor een omgeving
 
 ```bash
 magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6528,7 +6528,7 @@ Stel geen interactieve vragen. Accepteer standaardwaarden. Gelijk aan het gebrui
 
 ## `metrics:memory`
 
-BETA Toon geheugengebruik van een milieu
+BETA Geheugengebruik van een omgeving weergeven
 
 ```bash
 magento-cloud mem [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -7136,7 +7136,7 @@ Stel geen interactieve vragen. Accepteer standaardwaarden. Gelijk aan het gebrui
 
 ## `operation:list`
 
-Bewerkingen bij uitvoering van de BETA-lijst in een omgeving
+BETA List-runtimebewerkingen in een omgeving
 
 ```bash
 magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
@@ -7232,7 +7232,7 @@ Stel geen interactieve vragen. Accepteer standaardwaarden. Gelijk aan het gebrui
 
 ## `operation:run`
 
-BETA Voer een operatie uit op het milieu
+BETA Voer een bewerking uit op de omgeving
 
 ```bash
 magento-cloud operation:run [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-W|--no-wait] [--wait] [--] [<operation>]
@@ -8032,13 +8032,13 @@ De milieu-id. &quot;.&quot; gebruiken om de standaardomgeving van het project te
 
 ### `--app`, `-A`
 
-[Vervangen optie, niet meer gebruikt]
+[ Vervangen optie, niet meer gebruikt ]
 
 - Vereist een waarde
 
 ### `--identity-file`, `-i`
 
-[Vervangen optie, niet meer gebruikt]
+[ Vervangen optie, niet meer gebruikt ]
 
 - Vereist een waarde
 
@@ -8670,7 +8670,7 @@ magento-cloud mongo [--eval EVAL] [-r|--relationship RELATIONSHIP] [-i|--identit
 
 ### `--eval`
 
-Een JavaScript-fragment doorgeven aan de shell
+Een JavaScript-fragment aan de shell doorgeven
 
 - Vereist een waarde
 
@@ -9417,7 +9417,7 @@ Vernieuwen van certificaat forceren
 
 ### `--new-key`
 
-[Vervangen] Gebruik —nieuw in plaats hiervan
+[ Vervangen ] Gebruik - nieuw in plaats daarvan
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -10330,7 +10330,7 @@ Wacht tot de bewerking is voltooid (standaardwaarde)
 
 ### `--role`, `-r`
 
-[Vervangen: gebruik gebruiker:update om de rol(en) van een gebruiker te wijzigen]
+[ Afgekeurd: gebruik gebruiker:update om de rol(s) van een gebruiker te veranderen ]
 
 - Vereist een waarde
 
@@ -10811,7 +10811,7 @@ De milieu-id. &quot;.&quot; gebruiken om de standaardomgeving van het project te
 
 ### `--pipe`
 
-[Vervangen optie] Alleen de waarde van de variabele uitvoeren
+[ Vervangen optie ] Output de veranderlijke slechts waarde
 
 - Standaard: `false`
 - Accepteert geen waarde

@@ -17,48 +17,48 @@ ht-degree: 0%
 
 Adobe Commerce-projecten voor cloudinfrastructuur maken gebruik van rolgebaseerde toegang. Er zijn twee rollen beschikbaar op het projectniveau:
 
-- **Projectbeheerder**—Schrijf toegang tot alle projectmilieu&#39;s en kan gebruikers, duw code, en update projectmontages beheren.
-- **Projectviewer**—Alleen-weergeven toegang tot alle projectomgevingen.
+- **admin van het Project** - schrijf toegang tot alle projectmilieu&#39;s en kan gebruikers, duw code, en de montages van het updateproject beheren.
+- **de kijker van het Project** - mening-slechts toegang tot alle projectmilieu&#39;s.
 
 De kijkers van het project kunnen geen taken op om het even welk milieu uitvoeren; nochtans, kunt u projectkijkers toegang tot een specifiek milieutype verlenen schrijven.
 
-Toegang op milieuniveau is gebaseerd op het type milieu: productie, staging en ontwikkeling. Een gebruiker verlenen _viewer_ toestemming om _ontwikkeling_ omgevingen betekent dat ze kunnen bekijken **alles** ontwikkelomgevingen in het project. In de volgende tabel worden de mogelijkheden voor elk machtigingsniveau verduidelijkt:
+Toegang op milieuniveau is gebaseerd op het type milieu: productie, staging en ontwikkeling. Het verlenen van een gebruiker _kijker_ toestemming aan _ontwikkelings_ milieu&#39;s betekent dat zij **alle** ontwikkelomgevingen in het project kunnen bekijken. In de volgende tabel worden de mogelijkheden voor elk machtigingsniveau verduidelijkt:
 
 | Machtigingsniveau | Toegang | SSH-toegang |
 | ------------------ | ----------- | :----------: |
-| **Beheerder** | Voer beheerderstaken uit, zoals veranderingsmontages, dupcode, voer taken, en takbeheer uit, met inbegrip van het samenvoegen met het oudermilieu | Ja |
+| **Admin** | Voer beheerderstaken uit, zoals veranderingsmontages, dupcode, voer taken, en takbeheer uit, met inbegrip van het samenvoegen met het oudermilieu | Ja |
 | **Medewerker** | Code duwen en de omgeving vertakken; kan instellingen niet wijzigen of acties uitvoeren | Ja |
-| **Viewer** | Alleen-weergeven toegang tot het omgevingstype | Nee |
+| **Kijker** | Alleen-weergeven toegang tot het omgevingstype | Nee |
 | **Geen toegang** | Geen toegang tot het omgevingstype | Nee |
 
 {style="table-layout:auto"}
 
-U kunt gebruikers toevoegen en rollen toewijzen met behulp van de `magento-cloud` CLI of de [!DNL Cloud Console].
+U kunt gebruikers toevoegen en rollen toewijzen met behulp van de `magento-cloud` CLI of de [!DNL Cloud Console] .
 
 >[!BEGINSHADEBOX]
 
-**Vereisten:**
+**Eerste vereisten:**
 
-- Een geregistreerde gebruiker bij een Adobe ID. Een gebruiker moet [registreren voor een Adobe-account](https://account.adobe.com) en vervolgens [hun Cloud-account initialiseren](https://console.adobecommerce.com) voordat u ze aan een Cloud-project kunt toevoegen.
-- Een gebruiker heeft de **Beheerder** rol kan gebruikers niet beheren met de `magento-cloud` CLI. Alleen gebruikers aan wie de **Eigenaar account** de rol kan gebruikers beheren.
+- Een geregistreerde gebruiker bij een Adobe ID. Een gebruiker moet [ voor een rekening van de Adobe ](https://account.adobe.com) registreren en dan [ hun rekening van de Wolk ](https://console.adobecommerce.com) initialiseren alvorens u hen aan een project van de Wolk kunt toevoegen.
+- Een gebruiker toegewezen de **Admin** rol kan gebruikers met `magento-cloud` CLI niet leiden. Slechts kunnen de gebruikers die de **rol van de Eigenaar van de 0} Rekening worden verleend gebruikers beheren.**
 
 >[!ENDSHADEBOX]
 
 ## Gebruikers beheren met de CLI
 
-Gebruik de `magento-cloud` CLI voor het beheer van gebruikers en integratie met geautomatiseerde systemen:
+Gebruik de CLI van `magento-cloud` om gebruikers te beheren en met geautomatiseerde systemen te integreren:
 
-- `magento-cloud user:add`- voeg een gebruiker aan het project toe
-- `magento-cloud user:delete`-delete een gebruiker
-- `magento-cloud user:list [users]`-list projectgebruikers
-- `magento-cloud user:role`-view of verander de gebruikersrol
-- `magento-cloud user:update`-update gebruikersrol op een project
+- `magento-cloud user:add` - voeg een gebruiker aan het project toe
+- `magento-cloud user:delete` -delete een gebruiker
+- `magento-cloud user:list [users]` -list project users
+- `magento-cloud user:role` - bekijk of verander de gebruikersrol
+- `magento-cloud user:update` -update gebruikersrol in een project
 
-In de volgende voorbeelden worden de `magento-cloud` CLI om een gebruiker toe te voegen, rollen te vormen, projecttaken te wijzigen, en gebruikersrollen toe te wijzen.
+De volgende voorbeelden gebruiken `magento-cloud` CLI om een gebruiker toe te voegen, rollen te vormen, projecttaken te wijzigen, en gebruikersrollen toe te wijzen.
 
-**Een gebruiker toevoegen en rollen toewijzen**:
+**om een gebruiker toe te voegen en rollen** toe te wijzen:
 
-1. Gebruik de `magento-cloud` CLI om de gebruiker toe te voegen.
+1. Voeg de gebruiker toe met de CLI van `magento-cloud` .
 
    ```bash
    magento-cloud user:add
@@ -66,7 +66,7 @@ In de volgende voorbeelden worden de `magento-cloud` CLI om een gebruiker toe te
 
    >[!IMPORTANT]
    >
-   >De gebruiker moet een Adobe ID hebben; zie [voorwaarden](#add-users-and-manage-access).
+   >De gebruiker moet een Adobe ID hebben; zie de [ eerste vereisten ](#add-users-and-manage-access).
 
 1. Volg de herinneringen: specificeer het gebruikers e-mailadres, plaats het project en milieu-type rollen, en voeg de gebruiker toe.
 
@@ -113,7 +113,7 @@ Current role(s) of User (alice@example.com) on Production (project_id):
 
 ### Een gebruiker toevoegen aan meerdere omgevingen
 
-Een gebruiker toevoegen als een `viewer` op `Production` milieu en als `contributor` op een `Integration` milieu:
+U kunt als volgt een gebruiker toevoegen als een `viewer` in een `Production` -omgeving en als een `contributor` in een `Integration` -omgeving:
 
 ```bash
 magento-cloud user:add alice@example.com -r production:v -r integration:c
@@ -121,7 +121,7 @@ magento-cloud user:add alice@example.com -r production:v -r integration:c
 
 ### Machtigingen voor de gebruikersomgeving bijwerken
 
-Gebruikersomgevingsmachtigingen bijwerken naar `admin` op de `Production` milieu:
+U kunt als volgt gebruikersomgevingsmachtigingen bijwerken naar `admin` in de `Production` -omgeving:
 
 ```bash
 magento-cloud user:update alice@example.com -r production:a
@@ -129,35 +129,35 @@ magento-cloud user:update alice@example.com -r production:a
 
 ## Gebruikers beheren vanuit de [!DNL Cloud Console]
 
-U kunt de [[!DNL Cloud Console]](../../get-started/cloud-console.md) om machtigingen toe te voegen en de _Bewerken_ gebruiken om machtigingen voor een bestaande gebruiker te wijzigen.
+U kunt [[!DNL Cloud Console]](../../get-started/cloud-console.md) gebruiken om toestemmingen toe te voegen en _te gebruiken geef_ eigenschap uit om toestemmingen voor een bestaande gebruiker te wijzigen.
 
 >[!IMPORTANT]
 >
->De gebruiker moet een Adobe ID hebben; zie [voorwaarden](#add-users-and-manage-access).
+>De gebruiker moet een Adobe ID hebben; zie de [ eerste vereisten ](#add-users-and-manage-access).
 
 ### Een gebruiker toevoegen aan het project
 
-1. Aanmelden bij de [[!DNL Cloud Console]](https://console.adobecommerce.com/).
+1. Meld u aan bij de map [[!DNL Cloud Console] ](https://console.adobecommerce.com/) .
 
-1. Selecteer een project in het menu _Alle projecten_ lijst.
+1. Selecteer een project van de _Alle projecten_ lijst.
 
 1. Voor het dashboard van het Project, klik het configuratiepictogram in het hogere recht.
 
-1. Onder _Projectinstellingen_, klikt u op **[!UICONTROL Access]**.
+1. Onder _Montages van het Project_, klik **[!UICONTROL Access]**.
 
-1. In de _Toegang_ weergeven, klikken **[!UICONTROL Add]**.
+1. In de _mening van de Toegang_, klik **[!UICONTROL Add]**.
 
-1. Voltooi de _[!UICONTROL Add User]_formulier:
+1. Vul het _[!UICONTROL Add User]_-formulier in:
 
    - Voer het e-mailadres van de gebruiker in.
 
-   - **[!UICONTROL Project admin]**—Admin-rechten verlenen aan alle instellingen en omgevingstypen.
+   - **[!UICONTROL Project admin]** - geef beheerdersrechten op voor alle instellingen en omgevingstypen.
 
-   - **[!UICONTROL Environment types and permissions]**—verleent toegang en specifieke toestemmingsniveaus aan bepaalde milieutypes. _Geen toegang_, _Beheerder_ (instellingen wijzigen, actie uitvoeren, code samenvoegen), _Medewerker_ (pushcode), of _Viewer_ (alleen weergeven).
+   - **[!UICONTROL Environment types and permissions]** - geef toegang en specifieke toestemmingsniveaus aan bepaalde milieutypes. _Geen toegang_, _Admin_ (veranderingsmontages, voer actie uit, verenigt code), _Medewerker_ (duw code), of _Kijker_ (mening slechts).
 
    >[!TIP]
    >
-   >Alleen een **Projectbeheerder** kan gebruikers in om het even welke milieu beheren. Om een gebruiker toegang te verlenen tot **Toegang** tab, andere **Projectbeheerder** of de **Eigenaar account** moet deze gebruiker de **Projectbeheerder** rol.
+   >Slechts kan a **admin van het Project** gebruikers in om het even welk milieu beheren. Om een gebruikerstoegang tot het **lusje van de Toegang** te verlenen, moet een ander **Project admin** of de **Eigenaar van de Rekening** die gebruiker toewijzen **admin** rol van het Project.
 
 1. Klik op **[!UICONTROL Add User]**.
 
@@ -171,17 +171,17 @@ Nadat u de gebruiker hebt toegevoegd, stuurt Adobe een e-mail naar het opgegeven
 
 ## Vereisten voor gebruikersverificatie
 
-Voor extra veiligheid, verstrekt de Adobe project-vlakke multi-factor authentificatie (MFA) handhaving om twee-factor authentificatie (TFA) voor de toegang van SSH tot Adobe Commerce op de broncode en milieu&#39;s van het wolkeninfrastructuurproject te vereisen. Zie [MFA inschakelen voor SSH](multi-factor-authentication.md).
+Voor extra veiligheid, verstrekt de Adobe project-vlakke multi-factor authentificatie (MFA) handhaving om twee-factor authentificatie (TFA) voor de toegang van SSH tot Adobe Commerce op de broncode en milieu&#39;s van het wolkeninfrastructuurproject te vereisen. Zie [ MFA voor SSH ](multi-factor-authentication.md) toelaten.
 
 Wanneer MFA-handhaving is ingeschakeld op een Adobe Commerce op een cloudinfrastructuurproject, moeten alle gebruikers met SSH-toegang tot een omgeving in dat project TFA inschakelen op hun Adobe Commerce op een cloudinframeconferentieaccount. Voor geautomatiseerde processen kunt u een gebruiker van de computer en een API-token maken voor verificatie via de opdrachtregel.
 
 Nadat u een gebruiker aan een Cloud-project hebt toegevoegd, vraagt u de gebruiker om de beveiligingsinstellingen van zijn account te controleren en de volgende beveiligingsconfiguraties toe te voegen, indien nodig:
 
-- **TFA inschakelen**—Voldoe veiligheid en nalevingsnormen door tweefasenauthentificatie te vormen. Projecten geconfigureerd met [MFA-handhaving](multi-factor-authentication.md) vereisen TFA op rekeningen die SSH gebruiken om tot de projecten toegang te hebben.
+- **laat TFA** toe - ontmoet veiligheid en nalevingsnormen door twee-factor authentificatie te vormen. De projecten die met [ worden gevormd MFA handhaving ](multi-factor-authentication.md) vereisen TFA op rekeningen die SSH gebruiken om tot de projecten toegang te hebben.
 
-- **SSH-toetsen inschakelen**—Gebruikers die toegang tot Adobe Commerce nodig hebben voor broncodeopslagplaatsen voor cloudinfrastructuren, moeten SSH-sleutels voor hun account inschakelen. Zie [Beveiligde verbindingen](../development/secure-connections.md).
+- **laat de sleutels van SSH** toe - de Gebruikers die toegang tot Adobe Commerce op de gegevensopslagplaatsen van de bron van de wolkeninfrastructuur vereisen moeten de sleutels van SSH op hun rekening toelaten. Zie [ Veilige verbindingen ](../development/secure-connections.md).
 
-- **Een API-token maken**—Gebruikers moeten een API-token genereren dat wordt gebruikt voor SSH-toegang tot een omgeving. U hebt het token nodig om verificatieworkflows voor geautomatiseerde processen in te schakelen.
+- **creeer een API teken** - de gebruikers moeten een API teken produceren dat voor de toegang van SSH tot een milieu wordt gebruikt. U hebt het token nodig om verificatieworkflows voor geautomatiseerde processen in te schakelen.
 
   Bij projecten waarvoor MFA-handhaving is ingeschakeld, moet u het API-token gebruiken om SSH-toegangsverzoeken van geautomatiseerde accounts te verifiëren. Met het token kunnen geautomatiseerde processen verificatieworkflows omzeilen waarvoor TFA is vereist.
 
@@ -189,20 +189,20 @@ Nadat u een gebruiker aan een Cloud-project hebt toegevoegd, vraagt u de gebruik
 
 Adobe Commerce op cloud-infrastructuur ondersteunt TFA met een van de volgende toepassingen:
 
-- [Google Authenticator (Android/iPhone)](https://support.google.com/accounts/answer/1066447?hl=en)
-- [Autorisatie (Android/iPhone)](https://authy.com/features/)
-- [FreeOTP (Android)](https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp)
-- [GAuth-verificator (Firefox OS, desktop, anderen)](https://github.com/gbraad-apps/gauth)
+- [ de Authenticator van Google (Android/iPhone) ](https://support.google.com/accounts/answer/1066447?hl=en)
+- [ Authy (Android/iPhone) ](https://authy.com/features/)
+- [ FreeOTP (Android) ](https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp)
+- [ de Authenticator van de GAuth (OS Firefox, Desktop, anderen) ](https://github.com/gbraad-apps/gauth)
 
-De instructies voor het installeren van de authentificatortoepassing en het toelaten van TFA zijn beschikbaar op _Accountinstellingen_ pagina in de [!DNL Cloud Console].
+De instructies voor het installeren van de authentificatortoepassing en het toelaten van TFA zijn beschikbaar op de _montages van de Rekening_ pagina in [!DNL Cloud Console].
 
-**TFA inschakelen op uw gebruikersaccount**:
+**om TFA op uw gebruikersrekening** toe te laten:
 
-1. Aanmelden bij [uw account](https://console.adobecommerce.com).
+1. Login aan [ uw rekening ](https://console.adobecommerce.com).
 
-1. Klik in het accountmenu rechtsboven op **[!UICONTROL My Profile]**.
+1. Klik op **[!UICONTROL My Profile]** in het accountmenu rechtsboven.
 
-1. Op de _Beveiliging_ tabblad, klikt u op **[!UICONTROL Set up application]**.
+1. Voor het _lusje van de Veiligheid_, klik **[!UICONTROL Set up application]**.
 
 1. Als u geen goedgekeurde verificatietoepassing op uw mobiele apparaat hebt, gebruikt u de gekoppelde instructies om een toepassing te installeren.
 
@@ -210,47 +210,47 @@ De instructies voor het installeren van de authentificatortoepassing en het toel
 
    - Open de verificatietoepassing op uw mobiele apparaat. Voeg vervolgens de instellingscode toe aan de toepassing.
 
-   - In de [!UICONTROL **[!UICONTROL TFA set up - Application]**] pagina, typt u de TFA-code van uw mobiele apparaat in het dialoogvenster **[!UICONTROL Application verification code]** veld.
+   - Typ op de pagina [!UICONTROL **[!UICONTROL TFA set up - Application]**] de TFA-code van uw mobiele apparaat in het veld **[!UICONTROL Application verification code]** .
 
    - Klik op **[!UICONTROL Verify and save]**.
 
      Als de code geldig is, stuurt de Adobe een bericht naar het account-e-mailadres waarin wordt bevestigd dat de account nu TFA heeft.
 
-1. Optioneel. Inschakelen _Vertrouwde browser_ instellingen om de verificatiecode gedurende 30 dagen in de browser in cache te plaatsen.
+1. Optioneel. Laat _Vertrouwde browser_ montages toe om de authentificatiecode in browser voor 30 dagen in cache te plaatsen.
 
    Deze configuratie vermindert het aantal authentificatieuitdagingen tijdens projectlogin.
 
-1. Klikken **Opslaan** of **Overslaan**.
+1. Klik **sparen** of **Overslaan**.
 
 1. Sla de herstelcodes op.
 
-   - Op de _TFA-installatie - herstel_ codeert, kopieert en slaat de herstelcodes op, zodat u zich kunt aanmelden bij uw Adobe Commerce-project voor een cloudinfrastructuur wanneer u geen toegang hebt tot uw mobiele apparaat of verificatietoepassing.
+   - Voor de _opstelling van TFA - de codepagina van de Terugwinning_, kopieer en bewaar de terugwinningscodes zodat u in uw Adobe Commerce op het project van de wolkeninfrastructuur kunt registreren wanneer u niet tot uw mobiel apparaat of authentificatietoepassing kunt toegang hebben.
 
    - Kopieer de herstelcodes naar een andere locatie of noteer deze voor het geval dat u de toegang tot uw apparaat of verificatietoepassing verliest.
 
-   - Klikken **Opslaan** om de codes op te slaan op uw account, zodat u ze kunt bekijken en beheren vanuit de beveiligingsinstellingen van uw account.
+   - Klik **sparen** om de codes aan uw rekening te bewaren zodat kunt u hen van uw montages van de rekeningsveiligheid bekijken en beheren.
 
      >[!WARNING]
      >
-     >Als u toegang tot een rekening met TFA verliest en niet de lijst van terugwinningscodes hebt, moet u uw projectbeheerder contacteren, of [Een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) de TFA-toepassing opnieuw instellen.
+     >Als u toegang tot een rekening met TFA verliest en niet de lijst van terugwinningscodes hebt, moet u uw projectbeheerder contacteren, of [ een kaartje van de Steun van Adobe Commerce voorleggen ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) om de toepassing van TFA terug te stellen.
 
-1. Na de voltooiing van de opstelling van TFA, klik **Opslaan** om uw account bij te werken.
+1. Na de voltooiing van de opstelling van TFA, klik **sparen** om uw rekening bij te werken.
 
 1. Verifieer uw huidige zitting met TFA.
 
    - Afmelden bij uw account.
    - Meld u aan met uw gebruikersnaam en wachtwoord.
-   - Voer desgevraagd de TFA-code in voor de `accounts.magento.cloud` invoer van de verificatietoepassing op uw mobiele apparaat.
+   - Voer desgevraagd de TFA-code voor het `accounts.magento.cloud` -item in vanuit de verificatietoepassing op uw mobiele apparaat.
 
 ### TFA-configuratie en herstelcodes beheren
 
-U kunt de TFA-configuratie voor een Adobe Commerce op een cloud-infrastructuuraccount beheren via de _Beveiliging_ de _Mijn profiel_ pagina.
+U kunt de configuratie van TFA voor een Adobe Commerce op de rekening van de wolkeninfrastructuur van de _sectie van de Veiligheid_ op de _Mijn pagina van het Profiel_ beheren.
 
-1. Aanmelden bij [uw account](https://console.adobecommerce.com).
+1. Login aan [ uw rekening ](https://console.adobecommerce.com).
 
-1. Klik in het accountmenu rechtsboven op **[!UICONTROL My Profile]**.
+1. Klik op **[!UICONTROL My Profile]** in het accountmenu rechtsboven.
 
-1. Op de _Mijn profiel_ pagina, klikt u op de **[!UICONTROL Security]** tab.
+1. Voor de _Mijn pagina van het Profiel_, klik het **[!UICONTROL Security]** lusje.
 
 1. Gebruik de beschikbare koppelingen om de TFA-instellingen voor uw Adobe Commerce bij te werken op uw account voor cloudinfrastructuur:
 
@@ -269,16 +269,16 @@ Bij projecten waarvoor MFA-handhaving is ingeschakeld, moet u een API-token hebb
 >
 >Protect API-tokenwaarden voor uw account. Stel de waarde niet beschikbaar in codesteekproeven, het scherm vangt, of onveilige cliënt-server mededelingen. Stel ook niet de waarde in broncode bloot die in openbare bewaarplaatsen wordt opgeslagen.
 
-**Een API-token maken**:
+**om een API teken** tot stand te brengen:
 
-1. Aanmelden bij [uw account](https://console.adobecommerce.com).
+1. Login aan [ uw rekening ](https://console.adobecommerce.com).
 
-1. Klik in het accountmenu rechtsboven op **[!UICONTROL My Profile]**.
+1. Klik op **[!UICONTROL My Profile]** in het accountmenu rechtsboven.
 
-1. Op de _Mijn profiel_ pagina, klikt u op de **[!UICONTROL API tokens]** tab.
+1. Voor de _Mijn pagina van het Profiel_, klik het **[!UICONTROL API tokens]** lusje.
 
-1. Klikken **[!UICONTROL Create API token]** en voer bijvoorbeeld een naam in die overeenkomt met de systeemgebruiker of het geautomatiseerde proces dat het API-token gebruikt.
+1. Klik op **[!UICONTROL Create API token]** en voer een naam in, bijvoorbeeld een naam die overeenkomt met de gebruiker van de computer of een geautomatiseerd proces dat het API-token gebruikt.
 
-   ![API-tokens](../../assets/api-token-name.png)
+   ![ API tokens ](../../assets/api-token-name.png)
 
 1. Klik op **[!UICONTROL Create API token]**.

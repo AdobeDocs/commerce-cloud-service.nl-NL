@@ -21,9 +21,9 @@ U kunt op de volgende manieren herstellen van een mislukte implementatie:
 
 ## Reinigen, verwijderen en opnieuw implementeren
 
-Om van de vorige plaatsing schoon te maken, identificeer de component die werd toegevoegd of bijgewerkt en verwijder dan het. Meld u eerst aan bij de externe omgeving en wis handmatig de inhoud van de `var` directory. Verwijder vervolgens de component uit de `composer.json` en de omgeving opnieuw te implementeren.
+Om van de vorige plaatsing schoon te maken, identificeer de component die werd toegevoegd of bijgewerkt en verwijder dan het. Meld u eerst aan bij de externe omgeving en wis de inhoud van de map `var` handmatig. Verwijder vervolgens de component uit het `composer.json` -bestand en implementeer de omgeving opnieuw.
 
-**Als u de `var` mappen**:
+**om de `var` folders** schoon te maken:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
@@ -33,7 +33,7 @@ Om van de vorige plaatsing schoon te maken, identificeer de component die werd t
    magento-cloud ssh
    ```
 
-1. Wis de `var` mappen.
+1. Wis de mappen `var` .
 
    ```shell
    rm -rf var/*
@@ -41,7 +41,7 @@ Om van de vorige plaatsing schoon te maken, identificeer de component die werd t
 
 1. Afmelden.
 
-**De component verwijderen**:
+**om de component** te verwijderen:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
@@ -51,7 +51,7 @@ Om van de vorige plaatsing schoon te maken, identificeer de component die werd t
    composer clear-cache
    ```
 
-1. De component verwijderen uit de `composer.json` bestand.
+1. Verwijder de component uit het `composer.json` -bestand.
 
    ```bash
    composer remove <component-name>:<version>
@@ -81,6 +81,6 @@ Om van de vorige plaatsing schoon te maken, identificeer de component die werd t
 
 {{redeploy-warning}}
 
-Zie meer over het herstellen van een omgeving zonder back-up in [Omgeving herstellen](../development/restore-environment.md).
+Zie meer over het herstellen van een milieu zonder een steun in [ herstellen een milieu ](../development/restore-environment.md).
 
 {{stuck-deployment-tip}}

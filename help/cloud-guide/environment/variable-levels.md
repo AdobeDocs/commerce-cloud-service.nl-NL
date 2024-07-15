@@ -12,23 +12,23 @@ ht-degree: 0%
 
 # Variabele niveaus
 
-De variabelen van het project zijn op alle milieu&#39;s binnen het project van toepassing. Omgevingsvariabelen zijn van toepassing op een specifieke omgeving of vertakking. Een omgeving _overerven_ variabele definities van de bovenliggende omgeving.
+De variabelen van het project zijn op alle milieu&#39;s binnen het project van toepassing. Omgevingsvariabelen zijn van toepassing op een specifieke omgeving of vertakking. Een milieu _erft_ veranderlijke definities van het oudermilieu.
 
-U kunt een overgeërfde waarde met voeten treden door de variabele specifiek voor het milieu te bepalen. Als u bijvoorbeeld variabelen voor ontwikkeling wilt instellen, definieert u de variabelewaarden in het dialoogvenster `.magento.env.yaml` in de integratieomgeving. Alle omgevingen die vertakkingen ondervinden van de integratieomgeving nemen deze waarden over. Zie [Implementatieconfiguratie](configure-env-yaml.md) voor meer informatie over het configureren van uw omgeving met behulp van `.magento.env.yaml` bestand.
+U kunt een overgeërfde waarde met voeten treden door de variabele specifiek voor het milieu te bepalen. Als u bijvoorbeeld variabelen wilt instellen voor ontwikkeling, definieert u de waarden van variabelen in het `.magento.env.yaml` -bestand in de integratieomgeving. Alle omgevingen die vertakkingen ondervinden van de integratieomgeving nemen deze waarden over. Zie [ configuratie van de Plaatsing ](configure-env-yaml.md) voor details over het vormen van uw milieu gebruikend het `.magento.env.yaml` dossier.
 
 >[!BEGINTABS]
 
->[!TAB CLI]
+>[!TAB  CLI ]
 
-**Variabelen instellen met de Cloud CLI**:
+**om variabelen te plaatsen gebruikend Cloud CLI**:
 
-- **Projectspecifieke variabelen**—Dezelfde waarde instellen voor _alles_ in uw project. Deze variabelen zijn beschikbaar bij het samenstellen en uitvoeren in alle omgevingen.
+- **project-specifieke variabelen** - om de zelfde waarde voor _alle_ milieu&#39;s in uw project te plaatsen. Deze variabelen zijn beschikbaar bij het samenstellen en uitvoeren in alle omgevingen.
 
   ```bash
   magento-cloud variable:create --level project --name <variable-name> --value <variable-value>
   ```
 
-- **Omgevingsspecifieke variabelen**—Een unieke waarde instellen voor een _specifiek_ milieu. Deze variabelen zijn beschikbaar bij uitvoering en worden overgeërfd door onderliggende omgevingen. Geef de omgeving in de opdracht op met de opdracht `-e` -optie.
+- **milieu-specifieke variabelen** - om een unieke waarde voor a _specifiek_ milieu te plaatsen. Deze variabelen zijn beschikbaar bij uitvoering en worden overgeërfd door onderliggende omgevingen. Geef de omgeving in de opdracht op met de optie `-e` .
 
   ```bash
   magento-cloud variable:create --level environment --name <variable-name> --value <variable-value>
@@ -36,21 +36,21 @@ U kunt een overgeërfde waarde met voeten treden door de variabele specifiek voo
 
 Nadat u projectspecifieke variabelen hebt ingesteld, moet u de externe omgeving handmatig opnieuw implementeren voordat de wijziging van kracht wordt. Duw de nieuwe verplichtingen om een herplaatsing teweeg te brengen.
 
->[!TAB Console]
+>[!TAB  Console ]
 
-**Variabelen instellen met de opdracht[!DNL Cloud Console]**:
+**om variabelen te plaatsen gebruikend[!DNL Cloud Console]**:
 
-1. In de _[!DNL Cloud Console]_klikt u op het configuratiepictogram rechts van de projectnavigatie.
+1. Klik in _[!DNL Cloud Console]_op het configuratiepictogram rechts van de projectnavigatie.
 
-   ![Project configureren](../../assets/icon-configure.png){width="36"}
+   ![ vorm project ](../../assets/icon-configure.png){width="36"}
 
-1. Om een project-vlakke variabele te plaatsen, onder _Projectinstellingen_ klikken **Variabelen**.
+1. Om een project-vlakke variabele te plaatsen, onder _de Montages van het Project_ klikt **Variabelen**.
 
-   ![Projectvariabelen](../../assets/ui-project-variables.png)
+   ![ de variabelen van het Project ](../../assets/ui-project-variables.png)
 
-1. Om een milieu-vlakke variabele te plaatsen, in _Omgevingen_ selecteer een omgeving en klik op **[!UICONTROL Variables]** tab.
+1. Om een milieu-vlakke variabele, in de _lijst van Milieu&#39;s_ te plaatsen, selecteer een milieu en klik het **[!UICONTROL Variables]** lusje.
 
-   ![Het tabblad Omgevingsvariabelen](../../assets/ui-environment-variables.png)
+   ![ de variabelen van het Milieu tabel ](../../assets/ui-environment-variables.png)
 
 1. Klik op **[!UICONTROL Create variable]**.
 
@@ -66,18 +66,18 @@ Nadat u projectspecifieke variabelen hebt ingesteld, moet u de externe omgeving 
 
 >[!CAUTION]
 >
->Omgevingsspecifieke variabelen instellen in het dialoogvenster [!DNL Cloud Console] past automatisch de omgeving opnieuw in.
+>Door omgevingsspecifieke variabelen in te stellen in [!DNL Cloud Console] wordt de omgeving automatisch opnieuw geïmplementeerd.
 
 >[!ENDTABS]
 
 ## Zichtbaarheid
 
-U kunt de zichtbaarheid van een variabele tijdens het samenstellen of uitvoeren beperken met de opdracht `--visible-<build|runtime>` gebruiken. Er zijn ook opties om overerving en gevoeligheid in te stellen.
+Met de opdracht `--visible-<build|runtime>` kunt u de zichtbaarheid van een variabele tijdens het maken of uitvoeren beperken. Er zijn ook opties om overerving en gevoeligheid in te stellen.
 
 Gebruik de volgende opties om te voorkomen dat een variabele wordt gezien of overgeërfd:
 
-- `--inheritable false`—schakelt overerving voor kindmilieu&#39;s uit. Dit is handig als u alleen productiewaarden wilt instellen op de `master` vertakking en het toestaan van alle andere milieu&#39;s om een project-vlakke variabele van de zelfde naam te gebruiken.
-- `--sensitive true`—markeert de variabele als _onleesbaar_ in de [!DNL Cloud Console]. U kunt de variabele niet weergeven in de gebruikersinterface, maar u kunt de variabele wel vanuit de toepassingscontainer bekijken, net als elke andere variabele.
+- `--inheritable false` - schakelt overerving voor onderliggende omgevingen uit. Dit is nuttig om productie-enige waarden op de `master` tak te plaatsen en alle andere milieu&#39;s toe te staan om een project-vlakke variabele van de zelfde naam te gebruiken.
+- `--sensitive true` - merkt de variabele als _niet-leesbaar_ in [!DNL Cloud Console]. U kunt de variabele niet weergeven in de gebruikersinterface, maar u kunt de variabele wel vanuit de toepassingscontainer bekijken, net als elke andere variabele.
 
 Hieronder ziet u een specifiek geval waarin wordt voorkomen dat een variabele wordt gezien of overgeërfd. U kunt deze opties slechts in CLI specificeren. Dit geval heeft niet betrekking op alle beschikbare omgevingsvariabelen.
 

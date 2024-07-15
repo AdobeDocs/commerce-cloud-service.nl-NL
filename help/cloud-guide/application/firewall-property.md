@@ -1,6 +1,6 @@
 ---
 title: Firewall, eigenschap
-description: Zie voorbeelden op hoe te om het firewallbezit in het dossier van de de toepassingsconfiguratie van de Handel te vormen.
+description: Zie voorbeelden over het configureren van de firewalleigenschap in het configuratiebestand van de Commerce-toepassing.
 feature: Cloud, Configuration, Security
 exl-id: f169c008-c62a-41b7-a98d-cccd81c7291a
 source-git-commit: 74d88560db3b65294673a1e1827f9cea098d707a
@@ -16,21 +16,21 @@ ht-degree: 0%
 >
 >Alleen starter-projecten
 
-Voor de projecten van de Aanzet, `firewall` eigenschap voegt een _uitgaand_ aan de toepassing. Deze firewall heeft geen effect op binnenkomende aanvragen. Hiermee wordt gedefinieerd welke `tcp` uitgaande verzoeken kunnen _verlaten_ een Adobe Commerce-site. Dit wordt egress-filtering genoemd. De uitgaande firewall filtert wat kan binnendringen-weg of uw plaats ontsnappen. Door te beperken wat er kan ontsnappen, wordt een krachtig beveiligingsprogramma aan de server toegevoegd.
+Voor de projecten van de Aanzet, voegt het `firewall` bezit een _uitgaande_ firewall aan de toepassing toe. Deze firewall heeft geen effect op binnenkomende aanvragen. Het bepaalt welke `tcp` uitgaande verzoeken __ een plaats van Adobe Commerce kunnen verlaten. Dit wordt egress-filtering genoemd. De uitgaande firewall filtert wat kan binnendringen-weg of uw plaats ontsnappen. Door te beperken wat er kan ontsnappen, wordt een krachtig beveiligingsprogramma aan de server toegevoegd.
 
 ## Standaardbeperkingsbeleid
 
-De firewall verstrekt twee standaardbeleid om uitgaand verkeer te controleren: `allow` en `deny`. De `allow` beleid _toestaat_ al uitgaand verkeer door gebrek. En de `deny` beleid _ontzegging_ al uitgaand verkeer door gebrek. Maar wanneer u een regel toevoegt, wordt het standaardbeleid met voeten getreden, en de firewallblokken **alles** het uitgaande verkeer niet toegestaan door de regel.
+De firewall biedt twee standaardbeleidsregels voor de besturing van uitgaand verkeer: `allow` en `deny` . Het `allow` beleid _staat_ al uitgaand verkeer door gebrek toe. En het `deny` beleid _ontkent_ al uitgaand verkeer door gebrek. Maar wanneer u een regel toevoegt, wordt het standaardbeleid met voeten getreden, en de firewallblokken **al** uitgaand verkeer niet toegestaan door de regel.
 
-Voor de plannen van de Aanzet, wordt het standaardbeleid geplaatst aan `allow`. Dit het plaatsen zorgt ervoor dat al uw huidige uitgaande verkeer unlocked blijft tot u uw uitgang-filtrerende regels toevoegt. Het standaardbeleid kan worden ingesteld op `deny` op verzoek.
+Voor Starter-plannen is het standaardbeleid ingesteld op `allow` . Dit het plaatsen zorgt ervoor dat al uw huidige uitgaande verkeer unlocked blijft tot u uw uitgang-filtrerende regels toevoegt. Het standaardbeleid kan op verzoek aan `deny` worden geplaatst.
 
-**Uw standaardbeleid controleren**:
+**om uw standaardbeleid te controleren**:
 
 ```bash
 magento-cloud p:curl --project PROJECT_ID /settings | grep -i outbound
 ```
 
-Tenzij u `deny` voor uw beleid, zou het bevel uw beleid moeten tonen dat aan wordt geplaatst `allow`:
+Tenzij u `deny` voor uw beleid hebt aangevraagd, moet de opdracht de beleidsset weergeven op `allow` :
 
 ```terminal
 "outbound_restrictions_default_policy": "allow"
@@ -38,11 +38,11 @@ Tenzij u `deny` voor uw beleid, zou het bevel uw beleid moeten tonen dat aan wor
 
 >[!NOTE]
 >
->**Key taaway**: Wanneer u een uitgaande regel toevoegt, blokkeert u al uitgaand verkeer behalve de domeinen, IP adressen, of havens u aan de regel toevoegt. Het is dus belangrijk dat er een volledige uitgaande lijst wordt gedefinieerd en getest voordat deze aan uw productiesite wordt toegevoegd.
+>**Zeer belangrijke overname**: Wanneer u een uitgaande regel toevoegt, blokkeert u al uitgaand verkeer behalve de domeinen, IP adressen, of havens u aan de regel toevoegt. Het is dus belangrijk dat er een volledige uitgaande lijst wordt gedefinieerd en getest voordat deze aan uw productiesite wordt toegevoegd.
 
 ## Firewall-opties
 
-De volgende voorbeeldconfiguratie in de `.magento.app.yaml` het dossier toont al `firewall` opties die u kunt gebruiken om regels voor het filtreren van de uitgang toe te voegen.
+In de volgende voorbeeldconfiguratie in het `.magento.app.yaml` -bestand worden alle `firewall` -opties weergegeven die u kunt gebruiken om regels voor het filteren van de uitgang toe te voegen.
 
 ```yaml
 firewall:
@@ -138,50 +138,50 @@ De uitgaande firewallconfiguraties worden samengesteld uit regels. U kunt zoveel
 **Elke regel:**
 
 - Moet beginnen met een afbreekstreepje (`-`). Als u een opmerking op dezelfde regel toevoegt, kunt u de ene regel beter documenteren en visueel van de volgende regel scheiden.
-- U moet ten minste een van de volgende opties definiëren: `domains`, `ips`, of `ports`.
-- Moet de `tcp` protocol. Omdat dit het standaardprotocol voor alle regels is, kunt u het van de regel weglaten.
-- Kan definiëren `domains` of `ips`, maar niet beide in dezelfde regel.
-- Kan omvatten `yaml` opmerkingen (`#`) en regeleinden om de toegestane domeinen, IP-adressen en poorten in te delen.
+- U moet ten minste een van de volgende opties definiëren: `domains`, `ips` of `ports` .
+- Moet het `tcp` -protocol gebruiken. Omdat dit het standaardprotocol voor alle regels is, kunt u het van de regel weglaten.
+- Kan `domains` of `ips` definiëren, maar niet beide in dezelfde regel.
+- Kan `yaml` opmerkingen (`#`) en regeleinden bevatten om de toegestane domeinen, IP-adressen en poorten te ordenen.
 
 Elke regel gebruikt de volgende eigenschappen:
 
 ### `domains`
 
-De `domains` optie staat een lijst van volledig - gekwalificeerde domeinnamen (FQDN) toe.
+Met de optie `domains` kunt u een lijst met volledig gekwalificeerde domeinnamen (FQDN) maken.
 
-Als een regel definieert `domains` maar niet `ports`, staat de firewall domeinverzoeken op om het even welke haven toe.
+Als een regel `domains` maar niet `ports` definieert, staat de firewall domeinaanvragen toe op elke poort.
 
 ### `ips`
 
-De `ips` optie staat een lijst van IP adressen in de aantekening CIDR toe. U kunt enige IP adressen of waaiers van IP adressen specificeren.
+De optie `ips` staat een lijst van IP adressen in de CIDR aantekening toe. U kunt enige IP adressen of waaiers van IP adressen specificeren.
 
-Om één enkel IP adres te specificeren, voeg toe `/32` CIDR prefix aan het eind van uw IP adres:
+Als u één IP-adres wilt opgeven, voegt u het voorvoegsel `/32` CIDR toe aan het einde van het IP-adres:
 
 ```terminal
 172.217.11.174/32  # google.com
 ```
 
-Om een waaier van IP adressen te specificeren, gebruik [IP Waaier aan CIDR.](https://ipaddressguide.com/cidr) rekenmachine.
+Om een waaier van IP adressen te specificeren, gebruik de [ IP Waaier aan CIDR ](https://ipaddressguide.com/cidr) calculator.
 
-Als een regel definieert `ips` maar niet `ports`, staat de firewall IP verzoeken op om het even welke haven toe.
+Als een regel `ips` maar niet `ports` definieert, staat de firewall IP-aanvragen toe op elke poort.
 
 ### `ports`
 
-De `ports` optie staat een lijst van havens van 1 tot 65535 toe. Voor de meeste regels in het voorbeeld, havens `80` en `443` staan zowel HTTP- als HTTPS-aanvragen toe. Maar voor New Relic staan de regels alleen toegang toe tot domeinen en IP-adressen op de poort `443`, zoals aanbevolen in de documentatie van New Relic op [Netwerkverkeer](https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/#agents).
+Met de optie `ports` kunt u een lijst met poorten maken van 1 tot 65535. Voor de meeste regels in het voorbeeld staan poorten `80` en `443` zowel HTTP- als HTTPS-aanvragen toe. Maar voor New Relic, staan de regels slechts toegang tot domeinen en IP adressen op haven `443` toe, zoals geadviseerd in de documentatie van New Relic op [ het Verkeer van het Netwerk ](https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/#agents).
 
-Als een regel alleen definieert `ports`, verleent de firewall toegang tot alle domeinen en IP adressen voor de bepaalde havens.
+Als een regel alleen `ports` definieert, biedt de firewall toegang tot alle domeinen en IP-adressen voor de gedefinieerde poorten.
 
 >[!NOTE]
 >
->Poort `25`, wordt de SMTP-poort die e-mail moet verzenden altijd geblokkeerd, zonder uitzondering.
+>Poort `25`, de SMTP-poort voor het verzenden van e-mail, wordt altijd geblokkeerd, zonder uitzondering.
 
 ### `protocol`
 
-Zoals vermeld, is TCP het gebrek en slechts protocol toegestaan voor regels. UDP en zijn havens worden niet toegestaan. Daarom kunt u de opdracht `protocol` van alle regels. Als u deze toch wilt opnemen, moet u de waarde instellen op `tcp`, zoals in de eerste regel van het voorbeeld wordt getoond.
+Zoals vermeld, is TCP het gebrek en slechts protocol toegestaan voor regels. UDP en zijn havens worden niet toegestaan. Daarom kunt u de optie `protocol` uit alle regels weglaten. Als u deze toch wilt opnemen, moet u de waarde instellen op `tcp`, zoals in de eerste regel van het voorbeeld wordt getoond.
 
 ## Domeinnamen zoeken die zijn toegestaan
 
-Om u te helpen de domeinen identificeren om in uw uitgang-filtreren regels te omvatten, gebruik het volgende bevel om uw server te ontleden `dns.log` een lijst weergeven van alle DNS-verzoeken die uw site heeft geregistreerd:
+Om u te helpen de domeinen identificeren om in uw uitgang-filtreren regels te omvatten, gebruik het volgende bevel om het dossier van uw server `dns.log` te ontleden en een lijst van alle DNS verzoeken te tonen die uw plaats heeft geregistreerd:
 
 ```shell
 awk '($5 ~/query/)' /var/log/dns.log | awk '{print $6}' | sort | uniq -c | sort -rn
@@ -211,15 +211,15 @@ Na het verzamelen van en het vormen van toegangsregels voor de domeinen en IP ri
 
 Om uw uitgang-filtrerende regels te testen:
 
-1. Een shellscript maken van `curl` bevelen om tot de domeinen en IP adressen in uw regels toegang te hebben. Omvat bevelen die toegang tot domeinen en IP adressen testen die zouden moeten worden geblokkeerd.
+1. Maak een shellscript van `curl` -opdrachten voor toegang tot de domeinen en IP-adressen in uw regels. Omvat bevelen die toegang tot domeinen en IP adressen testen die zouden moeten worden geblokkeerd.
 
-1. Een `post_deploy` haak in uw `.magento.app.yaml` bestand om het script uit te voeren.
+1. Configureer een `post_deploy` haak in uw `.magento.app.yaml` -bestand om het script uit te voeren.
 
-1. Druk op `firewall` configuratie en uw testmanuscript aan uw `integration` vertakking.
+1. Duw de `firewall` configuratie en uw testmanuscript aan uw `integration` tak.
 
-1. Onderzoek de `post_deploy` uitvoer van uw `curl` opdrachten.
+1. Onderzoek de `post_deploy` output van uw `curl` bevelen.
 
-1. Verfijn uw `firewall` regels, update uw `curl` script, commit, push en repeat.
+1. Verfijn uw `firewall` -regels, werk uw `curl` -script bij, wijs toe, druk en herhaal deze.
 
 ### `curl` scriptvoorbeeld
 

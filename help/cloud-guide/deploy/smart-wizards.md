@@ -22,11 +22,11 @@ Elk van de slimme tovenaarsbevelen verstrekt een controlerespons en, indien van 
 
 | Opdracht | Beschrijving |
 | ------- | ------------|
-| `wizard:ideal-state` | Controleer of de SCD zich op de _build_ de `SKIP_HTML_MINIFICATION` variable is `true`en de functie post_implementatiehaak geconfigureerd in de cloud-omgeving. Niet voor gebruik in de lokale ontwikkelomgeving. |
-| `wizard:master-slave` | Controleer of de `REDIS_USE_SLAVE_CONNECTION` en de `MYSQL_USE_SLAVE_CONNECTION` variable is `true`. |
-| `wizard:scd-on-demand` | Controleer of de `SCD_ON_DEMAND` globale omgevingsvariabele is `true`. |
-| `wizard:scd-on-build` | Controleer of de `SCD_ON_DEMAND` globale omgevingsvariabele is `false` en de `SKIP_SCD` omgevingsvariabele is `false` voor de _build_ in het werkgebied. Hiermee wordt gecontroleerd of de `config.php` Het bestand bevat informatie voor winkels, winkelgroepen en websites. |
-| `wizard:scd-on-deploy` | Controleer of de `SCD_ON_DEMAND` globale omgevingsvariabele is `false` en de `SKIP_SCD` omgevingsvariabele is `false` voor de _inzetten_ in het werkgebied. Hiermee wordt gecontroleerd of de `config.php` bestand doet dit _NOT_ bevat de lijst met winkels, winkelgroepen en websites met verwante informatie. |
+| `wizard:ideal-state` | Controleer dat SCD op het _bouwt_ stadium is, is de `SKIP_HTML_MINIFICATION` variabele `true`, en de post_implementatiehaak die in het milieu van de Wolk wordt gevormd. Niet voor gebruik in de lokale ontwikkelomgeving. |
+| `wizard:master-slave` | Controleer of de variabele `REDIS_USE_SLAVE_CONNECTION` en de variabele `MYSQL_USE_SLAVE_CONNECTION` `true` zijn. |
+| `wizard:scd-on-demand` | Controleer of de globale omgevingsvariabele `SCD_ON_DEMAND` `true` is. |
+| `wizard:scd-on-build` | Controleer dat de `SCD_ON_DEMAND` globale milieuvariabele `false` is en de `SKIP_SCD` omgevingsvariabele `false` voor het _bouwt_ stadium is. Hiermee wordt gecontroleerd of het `config.php` -bestand informatie bevat voor winkels, opslaggroepen en websites. |
+| `wizard:scd-on-deploy` | Controleer dat de `SCD_ON_DEMAND` globale milieuvariabele `false` is en de `SKIP_SCD` omgevingsvariabele `false` voor __ stadium opstelt. Verifieert dat het `config.php` dossier _NIET_ de lijst van opslag, opslaggroepen, en websites met verwante informatie bevat. |
 
 Als voorbeeld, kunt u verifiëren dat uw configuratie behoorlijk SCD op bestelling eigenschap toelaat:
 
@@ -48,7 +48,7 @@ SCD on-demand is disabled
 
 ## Een ideale configuratie controleren
 
-De _ideaal_ De configuratie voor uw Cloud-project helpt implementatiedowntime te minimaliseren door de cache op te warmen en statische inhoud te genereren wanneer de gebruiker daarom vraagt. Deze tovenaar loopt automatisch tijdens het plaatsingsproces. Als uw cloud hiervoor niet is geconfigureerd _ideale status_ Vervolgens ontvangt u een bericht dat lijkt op het volgende:
+De _ideale_ configuratie voor uw project van de Wolk helpt om plaatsing onderbreking te minimaliseren door het geheime voorgeheugen te verwarmen en statische inhoud te produceren wanneer gevraagd door de gebruiker. Deze tovenaar loopt automatisch tijdens het plaatsingsproces. Als uw Wolk niet voor deze _ideale staat_ wordt gevormd, dan ontvangt u een bericht gelijkend op het volgende:
 
 ```terminal
 - SCD on build is not configured
@@ -79,7 +79,7 @@ Gebaseerd op de output, moet u de volgende correcties in uw configuratie aanbren
            php ./vendor/bin/ece-tools post-deploy
    ```
 
-1. Duw uw code verandert en stel de test opnieuw in werking. Wanneer uw configuratie _ideaal_, ontvangt u het volgende bericht.
+1. Duw uw code verandert en stel de test opnieuw in werking. Wanneer uw configuratie __ ideaal is, ontvangt u het volgende bericht.
 
    ```terminal
    Ideal state is configured

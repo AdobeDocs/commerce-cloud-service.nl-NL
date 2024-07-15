@@ -12,18 +12,18 @@ ht-degree: 0%
 
 # Implementatie op basis van scenario&#39;s
 
-Met `ece-tools` 2002.1.0 en later, kunt u de op scenario-gebaseerde plaatsingseigenschap gebruiken om het standaardplaatsingsgedrag aan te passen.
-Deze functie gebruikt **scenario&#39;s** en **stappen** in de configuratie:
+Met `ece-tools` 2002.1.0 en hoger kunt u de op scenario&#39;s gebaseerde implementatiefunctie gebruiken om het standaardimplementatiegedrag aan te passen.
+Deze eigenschap gebruikt **scenario&#39;s** en **stappen** in de configuratie:
 
-- **Scenario-configuratie**- Elke plaatsingshaak is a *scenario* Dit is een XML-configuratiebestand dat de volgorde en configuratieparameters beschrijft voor het uitvoeren van implementatietaken. U vormt de scenario&#39;s in `hooks` van de `.magento.app.yaml` bestand.
+- {de configuratie van het 0} Scenario **-Elke plaatsingshaak is a *scenario*, dat een de configuratiedossier is van XML dat de opeenvolging en configuratieparameters beschrijft om plaatsingstaken te voltooien.** U configureert de scenario&#39;s in de sectie `hooks` van het `.magento.app.yaml` -bestand.
 
-- **Stapconfiguratie**- Elk scenario gebruikt een opeenvolging van *stappen* die programmatically de verrichtingen beschrijven die worden vereist om plaatsingstaken te voltooien. U vormt de stappen in een op XML-Gebaseerd dossier van de scenarioconfiguratie.
+- **- elk scenario van de 1} Stap gebruikt een opeenvolging van *stappen* die programmatically de verrichtingen beschrijven die worden vereist om plaatsingstaken te voltooien.** U vormt de stappen in een op XML-Gebaseerd dossier van de scenarioconfiguratie.
 
-Adobe Commerce on cloud Infrastructure biedt een set [standaardscenario&#39;s](https://github.com/magento/ece-tools/tree/2002.1/scenario) en [standaardstappen](https://github.com/magento/ece-tools/tree/2002.1/src/Step) in de `ece-tools` pakket. U kunt plaatsingsgedrag aanpassen door de configuratiedossiers van douaneXML te creëren om de standaardconfiguratie met voeten te treden of aan te passen. U kunt ook scenario&#39;s en stappen gebruiken om code uit aangepaste modules uit te voeren.
+Adobe Commerce op wolkeninfrastructuur verstrekt een reeks [ standaardscenario&#39;s ](https://github.com/magento/ece-tools/tree/2002.1/scenario) en [ standaardstappen ](https://github.com/magento/ece-tools/tree/2002.1/src/Step) in het `ece-tools` pakket. U kunt plaatsingsgedrag aanpassen door de configuratiedossiers van douaneXML te creëren om de standaardconfiguratie met voeten te treden of aan te passen. U kunt ook scenario&#39;s en stappen gebruiken om code uit aangepaste modules uit te voeren.
 
 ## Voeg scenario&#39;s toe gebruikend bouw en opstellings haken
 
-U voegt de scenario&#39;s voor het bouwen en het opstellen van Adobe Commerce aan toe `hooks` van de `.magento.app.yaml` bestand. Elke haak specificeert de scenario&#39;s om tijdens elke fase te lopen. Het volgende voorbeeld toont de standaardscenario configuratie.
+U voegt de scenario&#39;s voor het bouwen en het opstellen van Adobe Commerce aan de `hooks` sectie van het `.magento.app.yaml` dossier toe. Elke haak specificeert de scenario&#39;s om tijdens elke fase te lopen. Het volgende voorbeeld toont de standaardscenario configuratie.
 
 > `magento.app.yaml` haken
 
@@ -41,11 +41,11 @@ hooks:
 
 >[!NOTE]
 >
->Met de release van `ece-tools` 2002.1.x, er is een nieuwe [hakenconfiguratie](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/hooks-property.html) gebruiken. De oudere indeling van `ece-tools` 2002.0.x-releases worden nog steeds ondersteund. Nochtans, moet u aan het nieuwe formaat bijwerken om de op scenario-gebaseerde plaatsingseigenschap te gebruiken.
+>Met de versie van `ece-tools` 2002.1.x, is er een nieuw [ hooks configuratie ](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/hooks-property.html) formaat. De oudere indeling uit `ece-tools` 2002.0.x-releases wordt nog steeds ondersteund. Nochtans, moet u aan het nieuwe formaat bijwerken om de op scenario-gebaseerde plaatsingseigenschap te gebruiken.
 
 ## Evaluatiescenario-stappen
 
-In de hakconfiguratie, is elk scenario een dossier van XML dat stappen bevat om bouwt, op te stellen, of post-stelt taken in werking te stellen. Bijvoorbeeld de `scenario/transfer` bestand bevat drie stappen: `compress-static-content`, `clear-init-directory`, en `backup-data`
+In de hakconfiguratie, is elk scenario een dossier van XML dat stappen bevat om bouwt, op te stellen, of post-stelt taken in werking te stellen. Het bestand `scenario/transfer` bevat bijvoorbeeld drie stappen: `compress-static-content` , `clear-init-directory` en `backup-data`
 
 > `scenario/transfer.xml`
 
@@ -90,9 +90,9 @@ Tijdens plaatsing, voegen de douanescenario&#39;s met standaard scenario-gebasee
 
 ### Standaardstappen verwijderen
 
-U verwijdert stappen uit standaardscenario&#39;s gebruikend `skip` parameter.
+Met de parameter `skip` verwijdert u stappen uit standaardscenario&#39;s.
 
-Als u bijvoorbeeld het dialoogvenster `enable-maintenance-mode` en `set-production-mode` de stappen in het gebrek stellen scenario, leiden tot een configuratiedossier dat de volgende configuratie omvat.
+Als u bijvoorbeeld de stappen `enable-maintenance-mode` en `set-production-mode` in het standaard implementatiescenario wilt overslaan, maakt u een configuratiebestand dat de volgende configuratie bevat.
 
 > `vendor/vendor-name/module-name/deploy-custom-mode-config.xml`
 
@@ -104,7 +104,7 @@ Als u bijvoorbeeld het dialoogvenster `enable-maintenance-mode` en `set-producti
 </scenario>
 ```
 
-Als u het aangepaste configuratiebestand wilt gebruiken, werkt u het standaardbestand bij `.magento.app.yaml` bestand.
+Als u het aangepaste configuratiebestand wilt gebruiken, werkt u het standaard `.magento.app.yaml` -bestand bij.
 
 > `.magento.app.yaml` met een aangepast implementatiescenario
 
@@ -124,13 +124,13 @@ hooks:
 
 De scenario&#39;s van de douane kunnen standaardstappen vervangen om douaneimplementatie te verstrekken. Hiervoor gebruikt u de standaardnaam voor de stap als naam voor de aangepaste stap.
 
-In het dialoogvenster [standaard implementatiescenario] de `enable-maintenance-mode` stap voert het gebrek uit [EnableMaintenanceMode PHP-script].
+Bijvoorbeeld, in het [ gebrek stelt scenario ] in werking de `enable-maintenance-mode` stap stelt het standaard [ EnableMaintenanceMode PHP manuscript ] in werking.
 
 ```xml
 <step name="enable-maintenance-mode" type="Magento\MagentoCloud\Step\EnableMaintenanceMode" priority="300"/>
 ```
 
-Als u deze stap wilt overschrijven, maakt u een aangepast scenario-configuratiebestand om een ander script uit te voeren wanneer de `enable-maintenance-mode` stap-uitvoering.
+Als u deze stap wilt overschrijven, maakt u een aangepast scenario-configuratiebestand om een ander script uit te voeren wanneer de stap `enable-maintenance-mode` wordt uitgevoerd.
 
 ```xml
 <?xml version="1.0"?>
@@ -142,7 +142,7 @@ Als u deze stap wilt overschrijven, maakt u een aangepast scenario-configuratieb
 
 ### De prioriteit van de stap wijzigen
 
-De scenario&#39;s van de douane kunnen de prioriteit van standaardstappen veranderen. In de volgende stap wordt de prioriteit van de `enable-maintenance-mode` stap van `300` tot `10` zodat de stap vroeger in stelt scenario in werking.
+De scenario&#39;s van de douane kunnen de prioriteit van standaardstappen veranderen. In de volgende stap wordt de prioriteit van de `enable-maintenance-mode` -stap gewijzigd van `300` in `10` , zodat de stap eerder wordt uitgevoerd in het implementatiescenario.
 
 ```xml
 <?xml version="1.0"?>
@@ -152,16 +152,16 @@ De scenario&#39;s van de douane kunnen de prioriteit van standaardstappen verand
 </scenario>
 ```
 
-In dit voorbeeld wordt `enable-maintenance-mode` De stappen bewegen zich aan het begin van het scenario omdat het een lagere prioriteit heeft dan alle andere stappen in het gebrek stelt scenario op.
+In dit voorbeeld gaat de stap `enable-maintenance-mode` naar het begin van het scenario omdat deze een lagere prioriteit heeft dan alle andere stappen in het standaard implementatiescenario.
 
 ### Voorbeeld: het implementatiescenario uitbreiden
 
-In het volgende voorbeeld worden de [standaard implementatiescenario] met de volgende wijzigingen:
+Het volgende voorbeeld past het [ gebrek toe stelt scenario ] met de volgende veranderingen op:
 
-- Vervangt de `remove-deploy-failed-flag` stap met een aangepaste stap
-- Hiermee slaat u de `clean-redis-cache` substap in de pre-implementatiestap
-- Hiermee slaat u de `unlock-cron-jobs` stap
-- Hiermee slaat u de `validate-config` stap om kritieke validators uit te schakelen
+- Hiermee vervangt u de stap `remove-deploy-failed-flag` door een aangepaste stap
+- Hiermee wordt de substap `clean-redis-cache` in de pre-implementatiestap overgeslagen
+- Hiermee wordt de stap `unlock-cron-jobs` overgeslagen
+- Hiermee slaat u de stap `validate-config` over om kritieke validators uit te schakelen
 - Voegt een nieuwe pre-implementatiestap toe
 
 > `vendor/vendor-name/module-name/deploy-extended.xml`
@@ -203,7 +203,7 @@ In het volgende voorbeeld worden de [standaard implementatiescenario] met de vol
 </scenario>
 ```
 
-Om dit manuscript in uw project te gebruiken, voeg de volgende configuratie aan toe `.magento.app.yaml` bestand voor uw Adobe Commerce-infrastructuurproject in de cloud:
+Als u dit script in uw project wilt gebruiken, voegt u de volgende configuratie toe aan het `.magento.app.yaml` -bestand voor uw Adobe Commerce-project voor cloudinfrastructuur:
 
 ```yaml
 hooks:
@@ -219,23 +219,23 @@ hooks:
 
 >[!TIP]
 >
->U kunt de [standaardscenario&#39;s](https://github.com/magento/ece-tools/tree/2002.1/scenario) en [standaardstapconfiguratie](https://github.com/magento/ece-tools/tree/2002.1/src/Step) in de `ece-tools` De bewaarplaats van GitHub om te bepalen welke scenario&#39;s en stappen voor uw project bouwen, opstellen, en post-opstelt taken.
+>U kunt de [ standaardscenario&#39;s ](https://github.com/magento/ece-tools/tree/2002.1/scenario) herzien en [ standaardstep configuratie ](https://github.com/magento/ece-tools/tree/2002.1/src/Step) in de `ece-tools` bewaarplaats GitHub om te bepalen welke scenario&#39;s en stappen voor uw project bouwen, opstellen, en post-opstelt taken.
 
-## Een uitgebreide aangepaste module toevoegen `ece-tools`
+## Een aangepaste module toevoegen om uit te breiden `ece-tools`
 
-De `ece-tools` pakket biedt standaard API-interfaces die voldoen aan de normen voor semantische versies. Alle API-interfaces zijn gemarkeerd met **@api** aantekening. U kunt de standaard-API-implementatie vervangen door uw eigen implementatie door een aangepaste module te maken en de standaardcode desgewenst te wijzigen.
+Het pakket `ece-tools` biedt standaard API-interfaces die voldoen aan de normen voor semantische versies. Alle API-interfaces zijn gemarkeerd met **@api** -annotatie. U kunt de standaard-API-implementatie vervangen door uw eigen implementatie door een aangepaste module te maken en de standaardcode desgewenst te wijzigen.
 
-Als u de aangepaste module met Adobe Commerce wilt gebruiken op een cloudinfrastructuur, moet u uw module registreren in de lijst met extensies voor het dialoogvenster `ece-tools` pakket. Het registratieproces is vergelijkbaar met het proces dat u gebruikt om modules te registreren in Adobe Commerce.
+Als u de aangepaste module met Adobe Commerce wilt gebruiken in de cloud-infrastructuur, moet u de module registreren in de lijst met extensies voor het `ece-tools` -pakket. Het registratieproces is vergelijkbaar met het proces dat u gebruikt om modules te registreren in Adobe Commerce.
 
-**Als u een module wilt registreren bij de `ece-tools` package**:
+**om een module met het `ece-tools` pakket** te registreren:
 
-1. Maak of breid de `registration.php` in de hoofdmap van uw module.
+1. Maak of breid het `registration.php` -bestand uit in de hoofdmap van uw module.
 
    ```php?start_inline=1
    \Magento\MagentoCloud\ExtensionRegistrar::register('module-name', __DIR__);
    ```
 
-1. Werk de `autoload` sectie voor uw dossier van de moduleconfiguratie om te omvatten `registration.php` bestand dat automatisch wordt geladen in modulebestanden in `composer.json`.
+1. Werk de sectie `autoload` voor het configuratiebestand van de module bij om het `registration.php` -bestand op te nemen dat modulebestanden automatisch laadt in `composer.json` .
 
    ```json
    {
@@ -253,7 +253,7 @@ Als u de aangepaste module met Adobe Commerce wilt gebruiken op een cloudinfrast
    }
    ```
 
-1. Voeg de `config/services.xml` in uw module. Deze configuratie wordt samengevoegd over `config/services.xml` van `ece-tools` pakket.
+1. Voeg het `config/services.xml` -bestand toe aan uw module. Deze configuratie wordt via `ece-tools` -pakket over `config/services.xml` samengevoegd.
 
    ```xml
    <?xml version="1.0" encoding="UTF-8" ?>
@@ -271,7 +271,7 @@ Als u de aangepaste module met Adobe Commerce wilt gebruiken op een cloudinfrast
    </container>
    ```
 
-Voor meer informatie over afhankelijkheidsinjectie raadpleegt u [Symfony Dependency Injection](https://symfony.com/doc/current/components/dependency_injection.html).
+Meer over gebiedsdeelinjectie leren, zie [ Injectie van de Afhankelijkheid van het Symfony ](https://symfony.com/doc/current/components/dependency_injection.html).
 
 <!-- link definitions -->
 

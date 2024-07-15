@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Meldingen instellen
 
-Standaard schrijft Adobe Commerce op de cloudinfrastructuur acties voor het maken en implementeren van `app/var/log/cloud.log` in de Adobe Commerce-hoofdmap van de toepassing. U kunt logbestanden ook naar een berichtensysteem verzenden, zoals Slack en e-mail, voor het ontvangen van realtime berichten.
+Standaard schrijft Adobe Commerce op de cloud-infrastructuur acties voor het maken en implementeren van acties naar het `app/var/log/cloud.log` -bestand in de Adobe Commerce-hoofdmap van de toepassing. U kunt logbestanden ook naar een berichtensysteem verzenden, zoals Slack en e-mail, voor het ontvangen van realtime berichten.
 
 Bijvoorbeeld, kon u een bericht van de Slack verzenden om een groep mensen te waarschuwen wanneer een plaatsing ontbreekt, en een onderzoek naar te veroorzaken wat verkeerd ging.
 
@@ -35,9 +35,9 @@ Bijvoorbeeld, tijdens aanvankelijke ontwikkeling kunt u e-mailberichten verkieze
 Meldingen configureren:
 
 1. Wijzig op uw lokale werkstation de projectmap.
-1. In de `.magento.env.yaml` dossier in uw projectwortel, voeg uw montages van het overseinensysteem, met inbegrip van aangewezen bericht toe [Logboekniveaus](log-handlers.md#log-levels).
+1. In het `.magento.env.yaml` dossier in uw projectwortel, voeg uw montages van het overseinensysteem, met inbegrip van aangewezen bericht [ niveaus van het Logboek ](log-handlers.md#log-levels) toe.
 
-   Bijvoorbeeld, om beide Slack te vormen _en_ e-mailconfiguraties, gebruik het volgende:
+   Bijvoorbeeld, om zowel Slack _als_ e-mailconfiguraties te vormen, gebruik het volgende:
 
    ```yaml
    log:
@@ -80,10 +80,10 @@ log:
     min_level: "info"
 ```
 
-- `token`—Uw Slack [gebruikerstoken](https://api.slack.com/docs/token-types#user). Met uw gebruikerstoken wordt Adobe Commerce op de cloudinfrastructuur gemachtigd om berichten te verzenden.
-- `channel`—Naam van het kanaal Adobe Commerce van de Slack op wolkeninfrastructuur verzendt berichten.
+- `token` - Uw Slack [ gebruikerstoken ](https://api.slack.com/docs/token-types#user). Met uw gebruikerstoken wordt Adobe Commerce op de cloudinfrastructuur gemachtigd om berichten te verzenden.
+- `channel` - Naam van het kanaal Adobe Commerce van de Slack op wolkeninfrastructuur verzendt berichten.
 - `username`—Gebruikersnaam Adobe Commerce op cloudinfrastructuur gebruikt om berichtberichten in Slack te verzenden.
-- `min_level`—Minimaal logniveau voor meldingen. We raden u aan `info`.
+- `min_level` - Min logniveau voor berichtberichten. We raden u aan `info` te gebruiken.
 
 ### Voorbeeld-e-mailconfiguratie
 
@@ -102,7 +102,7 @@ log:
     min_level: "notice"
 ```
 
-- `to`—E-mailadres Adobe Commerce op cloudinfrastructuur verzendt meldingen.
-- `from`—E-mailadres voor het verzenden van berichten aan ontvangers.
-- `subject`—Beschrijving van het e-mailbericht.
-- `min_level`—Minimaal logniveau voor meldingen. We raden u aan `notice` of `warning`.
+- `to` - Het e-mailadres Adobe Commerce op de cloudinfrastructuur verzendt meldingen.
+- `from` - E-mailadres voor het verzenden van berichtberichten aan ontvangers.
+- `subject` - Beschrijving van het e-mailbericht.
+- `min_level` - Min logniveau voor berichtberichten. We raden u aan `notice` of `warning` te gebruiken.

@@ -16,13 +16,13 @@ ht-degree: 0%
 
 De integraties zijn nuttig voor het gebruiken van externe dienst-zulke als het ontvangen van het Git of Slack bots-en het handhaven van uw huidige ontwikkelingsprocessen, zoals het gebruiken van de functie van het trekkingsverzoek van de codeherbeoordeling in GitHub. U kunt de volgende integraties toevoegen aan uw Adobe Commerce op het project van de wolkeninfrastructuur:
 
-![Integraties](/help/assets/integrations.png)
+![ Integraties ](/help/assets/integrations.png)
 
 >[!BEGINTABS]
 
->[!TAB CLI]
+>[!TAB  CLI ]
 
-**Integratie toevoegen met de Cloud CLI**:
+**om een integratie toe te voegen gebruikend Cloud CLI**:
 
 De volgende opdracht begint interactieve herinneringen om het type en de opties voor de nieuwe integratie te selecteren.
 
@@ -30,7 +30,7 @@ De volgende opdracht begint interactieve herinneringen om het type en de opties 
 magento-cloud integration:add
 ```
 
-**Om van de integratie een lijst te maken die voor uw project wordt gevormd**:
+**om van de integratie een lijst te maken die voor uw project** wordt gevormd:
 
 ```bash
 magento-cloud integration:list
@@ -50,13 +50,13 @@ Monsterrespons:
 +----------+--------------+---------------------------------------------------------------------------+
 ```
 
->[!TAB Console]
+>[!TAB  Console ]
 
-**Een integratie toevoegen met de opdracht[!DNL Cloud Console]**:
+**om een integratie toe te voegen gebruikend[!DNL Cloud Console]**:
 
-1. In _Projectinstellingen_, klikt u op **[!UICONTROL Integrations]**.
+1. In _Montages van het Project_, klik **[!UICONTROL Integrations]**.
 
-1. Klik op een integratietype of klik op **[!UICONTROL Add integration]**.
+1. Klik op een integratietype of klik op **[!UICONTROL Add integration]** .
 
 1. Stap door de van het integratietype selectie en configuratie stappen.
 
@@ -64,26 +64,26 @@ Monsterrespons:
 
 >[!ENDTABS]
 
-## Webhaken voor handel
+## Commerce-webhaken
 
-U kunt Commerce-websites configureren in uw Cloud-project met de [ENABLE_WEBHOOKS, globale variabele](../environment/variables-global.md#enable_webhooks). Websites van de handel verzenden verzoeken naar een externe server als reactie op door de handel gegenereerde gebeurtenissen. De [_Handleiding voor webhaken_](https://developer.adobe.com/commerce/extensibility/webhooks) beschrijft deze functie in detail.
+U kunt de websites van Commerce in uw project van de Wolk met [ vormen ENABLE_WEBHOOKS globale variabele ](../environment/variables-global.md#enable_webhooks). Commerce-websites verzenden aanvragen naar een externe server als reactie op door Commerce gegenereerde gebeurtenissen. De [_Gids van Webhooks_ ](https://developer.adobe.com/commerce/extensibility/webhooks) beschrijft deze eigenschap in detail.
 
 ## Algemene webhaken
 
-U kunt Cloud-infrastructuren en -opslaggebeurtenissen vastleggen en rapporteren met behulp van een aangepaste webhaintegratie `POST` JSON-berichten naar een _webhaak_ URL.
+U kunt de infrastructuur van de Wolk en bewaarplaats gebeurtenissen vangen en melden gebruikend een integratie van de douanewebsite aan `POST` JSON berichten aan a _webhaak_ URL.
 
-**Gebruik de volgende syntaxis om een URL voor een webhaak toe te voegen**:
+**om een webhaak URL toe te voegen, gebruik de volgende syntaxis**:
 
 ```bash
 magento-cloud integration:add --type=webhook --url=https://hook-url.example.com
 ```
 
-- `type`—Geef de `webhook` integratietype.
-- `url`—Geef de URL van de webhaak op die JSON-berichten kan ontvangen.
+- `type` - Geef het `webhook` integratietype op.
+- `url` - Geef de URL van de webhaak op die JSON-berichten kan ontvangen.
 
 De steekproefreactie toont een reeks herinneringen die een kans bieden om de integratie aan te passen. Het gebruiken van de standaard (lege) reactie verzendt berichten over alle gebeurtenissen op alle milieu&#39;s in een project.
 
-U kunt de integratie aanpassen om specifieke [gebeurtenissen](#events-to-report), zoals code naar een vertakking duwen. U kunt bijvoorbeeld de opdracht `environment.push` gebeurtenis die een bericht moet verzenden wanneer een gebruiker code naar een vertakking duwt:
+U kunt de integratie aanpassen om specifieke [ gebeurtenissen ](#events-to-report) te melden, zoals het duwen van code aan een tak. U kunt bijvoorbeeld de `environment.push` -gebeurtenis opgeven die een bericht verzendt wanneer een gebruiker code naar een vertakking duwt:
 
 ```terminal
 Events to report (--events)
@@ -93,7 +93,7 @@ Enter comma-separated values (or leave this blank)
 >
 ```
 
-U kunt gebeurtenissen in een `pending`, `in_progress`, of `complete` status:
+U kunt gebeurtenissen in een `pending`-, `in_progress` - of `complete` status rapporteren:
 
 ```terminal
 States to report (--states)
@@ -103,7 +103,7 @@ Enter comma-separated values (or leave this blank)
 >
 ```
 
-En je kunt _include_ of _uitsluiten_ berichten voor specifieke omgevingen:
+En u kunt _omvatten_ of __ berichten voor specifieke milieu&#39;s uitsluiten:
 
 ```terminal
 Included environments (--environments)
@@ -137,7 +137,7 @@ Created integration integration-ID (type: webhook)
 
 ### Bestaande integratie bijwerken
 
-U kunt een bestaande integratie bijwerken. Wijzig bijvoorbeeld de frames van `complete` tot `pending` met behulp van het volgende:
+U kunt een bestaande integratie bijwerken. Wijzig bijvoorbeeld de staten van `complete` in `pending` met behulp van het volgende:
 
 ```bash
 magento-cloud integration:update --states=pending <int-id>
@@ -171,14 +171,14 @@ Integration integration-ID (webhook) updated
 | `environment.branch` | Een tak is gecreeerd gebruikend de beheersconsole |
 | `environment.deactivate` | Een vertakking is &quot;gedeactiveerd&quot;. De code is er nog steeds, maar het milieu is vernietigd |
 | `environment.delete` | Een vertakking is verwijderd |
-| `environment.initialize` | De `master` tak van het project dat met eerste wordt geïnitialiseerd begaat |
+| `environment.initialize` | De `master` -vertakking van het project dat is geïnitialiseerd met een eerste bewerking |
 | `environment.merge` | Een actieve vertakking is samengevoegd met de beheerconsole of API |
 | `environment.push` | Een gebruiker heeft code naar een vertakking geduwd |
 | `environment.restore` | Een gebruiker heeft een opname hersteld |
 | `environment.route.create` | Een route is gecreeerd gebruikend de beheersconsole |
 | `environment.route.delete` | Een route is geschrapt gebruikend de beheersconsole |
 | `environment.route.update` | Een route is gewijzigd gebruikend de beheersconsole |
-| `environment.subscription.update` | De `master` omgeving is aangepast omdat het abonnement is gewijzigd, maar er zijn geen wijzigingen in de inhoud |
+| `environment.subscription.update` | De omgeving van `master` is aangepast omdat het abonnement is gewijzigd, maar er zijn geen wijzigingen in de inhoud |
 | `environment.synchronize` | In een omgeving zijn gegevens of code uit de bovenliggende omgeving opgehaald |
 | `environment.update.http_access` | De toegangsregels van HTTP voor een milieu zijn gewijzigd |
 | `environment.update.restrict_robots` | De functie voor alle robots voor blokken is in- of uitgeschakeld |

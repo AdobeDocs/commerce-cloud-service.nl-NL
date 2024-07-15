@@ -17,42 +17,42 @@ Wanneer de Adobe uw project van de wolkeninfrastructuur voorziet, ontvangt de Ei
 
 ## Gebruikerstoegang beheren
 
-Op een New Relic-account kan slechts één persoon worden toegewezen aan de rol Eigenaar. Als u de eigenaar van de account moet wijzigen, wijst u de beheerdersrol toe aan de huidige eigenaar en wijst u de rol Eigenaar toe aan een andere gebruiker. Zie [De rekeninghouder bijwerken](https://docs.newrelic.com/docs/accounts/original-accounts-billing/original-users-roles/users-roles-original-user-model/) in de _New Relic-documentatie_ voor instructies.
+Op een New Relic-account kan slechts één persoon worden toegewezen aan de rol Eigenaar. Als u de eigenaar van de account moet wijzigen, wijst u de beheerdersrol toe aan de huidige eigenaar en wijst u de rol Eigenaar toe aan een andere gebruiker. Zie [ de rekeningseigenaar ](https://docs.newrelic.com/docs/accounts/original-accounts-billing/original-users-roles/users-roles-original-user-model/) in de _documentatie van New Relic_ voor instructies bijwerken.
 
 Richtlijnen voor het beheer van New Relic-toegang:
 
 - Eigenaars van projecten en gebruikers van beheerders kunnen gebruikers toevoegen aan en verwijderen uit de New Relic-account.
-- Maak niet meer dan vijf volledige toegangsrechten **Gebruikers**.
+- Creëer niet meer dan vijf volledig-toegang **Gebruikers**.
 - Biedt alleen volledige toegang tot gebruikers die strikt toegang tot de volledige functieset vereisen.
-- Er zijn geen specifieke richtsnoeren voor gratis **Beperkt** gebruikers.
+- Er is geen specifieke begeleiding op vrije **Beperkte** gebruikers.
 
 >[!TIP]
 >
->Voordat u de rol Eigenaar toewijst aan een gebruiker, moet u controleren of de gebruiker aanwezig is op de New Relic-account voor Adobe Commerce in de cloud-infrastructuur. Als u de gebruiker aan dat account moet toevoegen en een bestaande accounteigenaar of beheerder niet kan helpen, heeft iedere gebruiker toegang tot de [Eigenaarsaccount Adobe-partnerschap](https://account.newrelic.com/accounts/1311131/users) voor New Relic kan namens de klant gebruikers toevoegen.
+>Voordat u de rol Eigenaar toewijst aan een gebruiker, moet u controleren of de gebruiker aanwezig is op de New Relic-account voor Adobe Commerce in de cloud-infrastructuur. Als u de gebruiker aan die rekening moet toevoegen en een bestaande rekeningsEigenaar of Admin kan niet helpen, kan om het even welke gebruiker met toegang tot de [ Rekening van de Eigenaar van het Partnerschap van de Adobe ](https://account.newrelic.com/accounts/1311131/users) voor New Relic gebruikers namens de klant toevoegen.
 
-Minstens één toevoegen **Beheerder** gebruiker aan uw New Relic-account die alle toegang, integratie en gereedschapsgebruik kan beheren.
+Voeg minstens één **Admin** gebruiker aan uw rekening van New Relic toe die al toegang, integratie, en hulpmiddelgebruik kan beheren.
 
-**Toegang tot gebruikersbeheer in New Relic**:
+**om tot Gebruikersbeheer in New Relic** toegang te hebben:
 
-1. Aanmelden bij uw [New Relic-account](https://login.newrelic.com/login).
+1. Login aan uw [ rekening van New Relic ](https://login.newrelic.com/login).
 
 1. Selecteer uw gebruikersnaam in de navigatie linksonder.
 
-1. Klikken **[!UICONTROL Administration]** en selecteer een van de volgende opties in de lijst:
+1. Klik op **[!UICONTROL Administration]** en selecteer een van de volgende opties in de lijst:
 
    - **[!UICONTROL User management]** om een gebruiker toe te voegen en actieve gebruikers en uitnodigingen in behandeling te beheren.
 
-   - **[!UICONTROL Access management]** om gebruikersgroepen, rollen, en rekeningen te beheren.
+   - **[!UICONTROL Access management]** om gebruikersgroepen, rollen en accounts te beheren.
 
-Zie [Gebruikersbeheer](https://docs.newrelic.com/docs/accounts/accounts-billing/new-relic-one-user-management/user-management-ui-and-tasks/) in de _New Relic_ documentatie.
+Zie [ Gebruikersbeheer ](https://docs.newrelic.com/docs/accounts/accounts-billing/new-relic-one-user-management/user-management-ui-and-tasks/) in de _New Relic_ documentatie.
 
 ## New Relic for Starter-omgeving configureren
 
 >[!NOTE]
 >
->**Pro-omgevingen** zijn vooraf geconfigureerd voor het gebruik van New Relic-services en kunnen instructies voor inschakelen en verbinden overslaan. Als New Relic APM niet is geïnstalleerd in de Staging and Production-omgeving of als de New Relic-infrastructuur niet beschikbaar is in de productieomgeving, [een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) om installatie aan te vragen.
+>**Pro milieu&#39;s** worden preconfigured om de diensten van New Relic te gebruiken en kunnen overslaan laat en verbindt instructies toe. Als New Relic APM niet geïnstalleerd op de het Opvoeren en van de Productie milieu&#39;s of de Infrastructuur van New Relic niet beschikbaar in het milieu van de Productie is, [ voorlegt een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) om installatie te verzoeken.
 
-Voor Starter-omgevingen moet u de `.magento.app.yaml` bestand om te controleren of de `runtime` bevat de New Relic-extensie. Als de extensie niet is geconfigureerd, voegt u het volgende toe:
+Voor Starter-omgevingen moet u het `.magento.app.yaml` -bestand controleren om te controleren of de sectie `runtime` de New Relic-extensie bevat. Als de extensie niet is geconfigureerd, voegt u het volgende toe:
 
 > `.magento.app.yaml`
 
@@ -66,37 +66,37 @@ runtime:
 
 Als u een Cloud-omgeving wilt verbinden met New Relic, voegt u de New Relic-licentiecode toe aan de omgeving.
 
-- Voor **Pro-projecten**, voegt Adobe de licentiecode toe aan uw productie- en staging-omgevingen tijdens het inrichtingsproces. U kunt zich aanmelden bij uw [New Relic-account](https://login.newrelic.com/login) om de connectiviteit tussen uw Adobe Commerce op de cloudinframesite en New Relic te controleren.
+- Voor **Pro projecten**, voegt de Adobe de vergunningssleutel aan uw Productie en het Staging milieu&#39;s tijdens het inrichtingsproces toe. U kunt login aan uw [ rekening van New Relic ](https://login.newrelic.com/login) om connectiviteit tussen uw Adobe Commerce op de plaats van de wolkeninfrastructuur en New Relic te verifiëren.
 
-- Voor **Startersprojecten**, hebt u een New Relic-licentiecode die ondersteuning biedt voor maximaal _drie_ omgevingen. U moet de sleutel aan uw omgevingsconfiguraties manueel toevoegen. Starteromgevingen zijn niet vooraf ingericht voor gebruik van de New Relic-service.
+- Voor **de projecten van de Aanzet**, hebt u een de vergunningssleutel van New Relic die tot _drie_ milieu&#39;s steunt. U moet de sleutel aan uw omgevingsconfiguraties manueel toevoegen. Starteromgevingen zijn niet vooraf ingericht voor gebruik van de New Relic-service.
 
-Voor Starter-omgevingen schakelt u de New Relic-integratie in door de New Relic-licentiecode toe te voegen aan de omgevingsconfiguratie. Voeg de sleutel toe aan de het Staging en milieu&#39;s van de Productie en één andere milieu van uw keus. Alleen de New Relic-licentiecode is vereist voor de configuratie. U vindt informatie over aanvullende configuratieopties in het dialoogvenster [New Relic Reporting](https://experienceleague.adobe.com/docs/commerce-admin/config/general/new-relic-reporting.html) in het _Adobe Commerce-gebruikershandleiding_.
+Voor Starter-omgevingen schakelt u de New Relic-integratie in door de New Relic-licentiecode toe te voegen aan de omgevingsconfiguratie. Voeg de sleutel toe aan de het Staging en milieu&#39;s van de Productie en één andere milieu van uw keus. Alleen de New Relic-licentiecode is vereist voor de configuratie. U kunt informatie over extra configuratieopties in [ New Relic vinden die ](https://experienceleague.adobe.com/docs/commerce-admin/config/general/new-relic-reporting.html) onderwerp in de _Gids van de Gebruiker van Adobe Commerce_ melden.
 
 {{redeploy-warning}}
 
 >[!PREREQUISITES]
 >
 >- Aanmeldingsgegevens voor de Adobe Commerce-accountpagina of voor de New Relic-licentie voor uw project
->- [Toegang op beheerniveau](../project/user-access.md) naar de Starter-omgevingen om
->- Bevoegdheden om toegang te krijgen tot de [Beheerder](https://experienceleague.adobe.com/docs/commerce-admin/systems/user-accounts/permissions.html) milieu
+>- [ Admin-vlakke toegang ](../project/user-access.md) aan de milieu&#39;s van de Aanzet om te vormen
+>- De geloofsbrieven om tot [ Admin ](https://experienceleague.adobe.com/docs/commerce-admin/systems/user-accounts/permissions.html) voor het milieu toegang te hebben
 
-**New Relic for Starter-omgevingen configureren**:
+**om New Relic voor Startermilieu&#39;s** te vormen:
 
-1. Zoek uw New Relic-licentiecode via [!DNL Cloud Console] of de Cloud CLI.
+1. Zoek uw New Relic-licentiecode via de CLI van [!DNL Cloud Console] of de Cloud.
 
-   **[!DNL Cloud Console]methode**:
+   **[!DNL Cloud Console]methode** :
 
-   - Uw cloud-project openen [accountpagina](https://accounts.magento.cloud/user).
+   - Open uw pagina van de wolkenproject [ rekening ](https://accounts.magento.cloud/user).
 
-   - Op de _Projecten_ , zoekt u uw project.
+   - Op het _lusje van Projecten_, vind uw project.
 
-   - Klikken **Details weergeven** voor informatie over de projectinfrastructuur.
+   - Klik **Details van de Mening** voor de informatie van de projectinfrastructuur.
 
-   - Breid uit **New Relic Service** om de licentiecode weer te geven.
+   - Breid de **sectie van de Dienst van New Relic** uit om de vergunningssleutel te bekijken.
 
    - Kopieer de licentiecode.
 
-   **Cloud CLI, methode**:
+   **Cloud CLI methode**:
 
    ```bash
    magento-cloud subscription:info services.newrelic
@@ -105,21 +105,21 @@ Voor Starter-omgevingen schakelt u de New Relic-integratie in door de New Relic-
 1. Voeg de New Relic-licentiecode toe aan een omgeving met behulp van de `magento-cloud` CLI.
 
    - Verandering in het milieu dat de vergunningssleutel vereist.
-   - Werk de waarde van de variabele als volgt bij `magento-cloud` CLI-opdracht:
+   - Werk de waarde van de variabele bij met behulp van de volgende `magento-cloud` CLI-opdracht:
 
      ```bash
      magento-cloud variable:update php:newrelic.license --value <newrelic-license-key>
      ```
 
-   U kunt het desgewenst toevoegen vanuit het dialoogvenster [Commerce Admin](https://experienceleague.adobe.com/docs/commerce-admin/start/reporting/new-relic-reporting.html#step-3%3A-configure-your-store).
+   Naar keuze, kunt u het van [ Commerce Admin ](https://experienceleague.adobe.com/docs/commerce-admin/start/reporting/new-relic-reporting.html#step-3%3A-configure-your-store) toevoegen.
 
-1. Aanmelden bij uw [New Relic-account](https://login.newrelic.com/login) om te controleren of u gegevens uit de Adobe Commerce-omgeving kunt bekijken. Zie [Prestaties onderzoeken](investigate-performance.md).
+1. Login aan uw [ rekening van New Relic ](https://login.newrelic.com/login) om te verifiëren dat u gegevens van het milieu van Adobe Commerce kunt bekijken. Zie [ prestaties ](investigate-performance.md) onderzoeken.
 
 ### Licentiecode verwijderen
 
 U kunt uw New Relic-licentiecode alleen in drie actieve omgevingen gebruiken. Als de sleutel in gebruik in drie milieu&#39;s is, moet u de sleutel uit één van de milieu&#39;s verwijderen alvorens u het aan een verschillende milieu kunt toevoegen.
 
-**Een licentiecode verwijderen uit een omgeving**:
+**om een vergunningssleutel uit een milieu** te verwijderen:
 
 1. Omgevingsvariabelen weergeven.
 
@@ -139,7 +139,7 @@ U kunt uw New Relic-licentiecode alleen in drie actieve omgevingen gebruiken. Al
 
    >[!WARNING]
    >
-   >Als u de licentiecode als een _project_ variabele, moet u die project-vlakke variabele verwijderen. Een projectvariabele voegt de licentie toe aan _elke_ omgevingsvertakking gemaakt, die de licentielimiet kan verbruiken of overschrijden. Projectvariabelen weergeven: `magento-cloud variable:list --level project`
+   >Als u de vergunningssleutel als a _project_ variabele toevoegde, moet u die project-vlakke variabele verwijderen. Een projectvariabele voegt de vergunning aan _toe elke_ gecreeerde milieutak, die de vergunningsgrens kan verbruiken of overschrijden. Projectvariabelen weergeven: `magento-cloud variable:list --level project`
 
 1. Verwijder de licentievariabele.
 

@@ -1,6 +1,6 @@
 ---
 title: Variables, eigenschap
-description: Gebruik het bezit van variabelen om opslagconfiguratieopties voor aan te passen [!DNL Commerce] toepassing.
+description: Gebruik het variabelenbezit om de opties van de opslagconfiguratie voor de  [!DNL Commerce]  toepassing aan te passen.
 feature: Cloud, Configuration
 exl-id: 5cd92fbb-8bff-48b1-9658-500140591344
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # Variables, eigenschap
 
-U kunt op toepassing-gebaseerde omgevingsvariabelen gebruiken om opslagconfiguraties aan te passen. Deze variabelen gebruiken een specifieke syntaxis. Zie [Configuratie-instellingen overschrijven](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/paths/override-config-settings.html) in de _Configuratiegids_.
+U kunt op toepassing-gebaseerde omgevingsvariabelen gebruiken om opslagconfiguraties aan te passen. Deze variabelen gebruiken een specifieke syntaxis. Zie [ configuratiemontages van de Overschrijving ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/paths/override-config-settings.html) in de _gids van de Configuratie_.
 
-In de `.magento.app.yaml` bestand is vereist voor specifieke versies van het [!DNL Commerce] toepassing.
+De volgende omgevingsvariabelen in het `.magento.app.yaml` -bestand zijn vereist voor specifieke versies van de [!DNL Commerce] -toepassing.
 
 Vereist voor Adobe Commerce 2.2.x tot 2.3.x:
 

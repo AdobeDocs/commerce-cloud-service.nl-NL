@@ -11,9 +11,9 @@ ht-degree: 4%
 ---
 
 
-# Handel in Cloud-infrastructuur {#user-guide}
+# Commerce on Cloud Infrastructure {#user-guide}
 
-+ [Handel](overview.md)
++ [Commerce](overview.md)
 + Architectuur {#architecture}
    + [Cloud-infrastructuur](architecture/cloud-architecture.md)
    + [Technologiestapel](architecture/tech-stack.md)
@@ -23,7 +23,7 @@ ht-degree: 4%
    + [Pro-workflow](architecture/pro-develop-deploy-workflow.md)
    + [Schaalbare architectuur](architecture/scaled-architecture.md)
    + [Automatisch schalen](architecture/autoscaling.md)
-+ [Aan de slag](https://experienceleague.adobe.com/docs/commerce-cloud-service/start/overview.html)
++ [ begonnen worden ](https://experienceleague.adobe.com/docs/commerce-cloud-service/start/overview.html)
 + Opmerkingen bij de release {#release-notes}
    + [Cloud Tools-suite](release-notes/cloud-tools-suite.md)
    + [ECE-gereedschapspakket](release-notes/ece-tools-package.md)
@@ -33,7 +33,7 @@ ht-degree: 4%
    + [Cloud Packages](release-notes/cloud-packages.md)
    + [Achteruit incompatibele wijzigingen](release-notes/backward-incompatible-changes.md)
    + [Archief met opmerkingen vrijgeven](release-notes/cloud-release-archive.md)
-+ Cloud-project {#project}
++ Cloudproject {#project}
    + [Overzicht van project](project/overview.md)
    + [Projectstructuur](project/file-structure.md)
    + [Toegang van gebruikers](project/user-access.md)
@@ -49,7 +49,7 @@ ht-degree: 4%
       + [CLI-overzicht](dev-tools/cloud-cli-overview.md)
       + [CLI-verwijzing](dev-tools/cloud-cli-reference.md)
    + [Cloud Docker](dev-tools/cloud-docker.md)
-   + ECE-gereedschappen {#ece-tools}
+   + ECE-Tools {#ece-tools}
       + [Overzicht van pakket](dev-tools/package-overview.md)
       + [Eenmalige upgrade voor gebruik van ECE-tools](dev-tools/install-package.md)
       + [Het pakket ECE-gereedschappen bijwerken](dev-tools/update-package.md)
@@ -92,7 +92,7 @@ ht-degree: 4%
       + [Back-upbeheer](storage/snapshots.md)
    + Upgrades en patches {#upgrade}
       + [Aanbevolen procedures](development/best-practices.md)
-      + [Versie voor upgradeopdracht](development/commerce-version.md)
+      + [Commerce-versie upgraden](development/commerce-version.md)
       + [Patches toepassen](development/apply-patches.md)
 + Configuratie {#configure}
    + [Overzicht](environment/overview.md)
@@ -118,7 +118,7 @@ ht-degree: 4%
          + [Algemeen](environment/variables-global.md)
          + [Opbouwen](environment/variables-build.md)
          + [Implementeren](environment/variables-deploy.md)
-         + [Na implementatie](environment/variables-post-deploy.md)
+         + [Post-implementatie](environment/variables-post-deploy.md)
       + Meldingen configureren {#log}
          + [Meldingen](environment/set-up-notifications.md)
          + [Logboekhandlers](environment/log-handlers.md)
@@ -134,7 +134,7 @@ ht-degree: 4%
       + [OpenSearch](services/opensearch.md)
       + [RabbitMQ](services/rabbitmq.md)
       + [Redis](services/redis.md)
-+ Sneldiensten {#cdn}
++ Snelle services {#cdn}
    + [Overzicht](cdn/fastly.md)
    + Snelle installatie {#setup-fastly}
       + [Services voor snel configureren](cdn/fastly-configuration.md)
@@ -150,7 +150,7 @@ ht-degree: 4%
       + [IP LIJST VAN GEWEZEN PERSONEN](cdn/fastly-vcl-blocking.md)
       + [Snelcache omzeilen](cdn/fastly-vcl-bypass-to-origin.md)
    + [Snelle probleemoplossing](cdn/fastly-troubleshooting.md)
-+ Opslaginstellingen {#configure-store}
++ Instellingen opslaan {#configure-store}
    + [Overzicht](store/overview.md)
    + [Aanbevolen procedures](store/best-practices.md)
    + [Aangepast thema](store/custom-theme.md)
@@ -164,7 +164,7 @@ ht-degree: 4%
    + [Overzicht](launch/overview.md)
    + [Checklist starten](launch/checklist.md)
    + [Stappen starten](launch/steps.md)
-+ Monitorsite {#monitor}
++ Site controleren {#monitor}
    + [Prestaties](monitor/performance.md)
    + New Relic-service {#new-relic}
       + [New Relic-overzicht](monitor/new-relic-service.md)

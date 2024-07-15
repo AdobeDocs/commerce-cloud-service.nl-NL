@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # Logboekhandlers
 
-U kunt logboekmanagers vormen om berichten naar een verre registrerenserver te verzenden. Een logboekmanager duwt bouw en stelt logboeken aan andere systemen op, gelijkaardig aan de manier u logboeken aan Slack en e-mail duwt. U kunt een _syslog_ handler, die ideaal is voor logboekberichten met betrekking tot hardware, of een Grijslogbestand Extended Log Format (GELF)-handler, die ideaal is voor het registreren van berichten van softwaretoepassingen.
+U kunt logboekmanagers vormen om berichten naar een verre registrerenserver te verzenden. Een logboekmanager duwt bouw en stelt logboeken aan andere systemen op, gelijkaardig aan de manier u logboeken aan Slack en e-mail duwt. U kunt a _syslog_ manager toelaten, die voor registrerenberichten met betrekking tot hardware, of een Graylog Uitgebreide manager van het Logboek van het Formaat (GELF) ideaal is, die voor registrerenberichten van softwaretoepassingen ideaal is.
 
-Het volgende voorbeeld vormt allebei van deze managers door de configuratie aan toe te voegen `.magento.env.yaml` bestand. Voor het minimale registratieniveau (`min_level`) waarden, zie [Logboekniveaus](#log-levels).
+In het volgende voorbeeld worden beide handlers geconfigureerd door de configuratie aan het `.magento.env.yaml` -bestand toe te voegen. Voor het minimale registrerenniveau (`min_level`) waarden, zie [ niveaus van het Logboek ](#log-levels).
 
 ```yaml
 log:
@@ -56,13 +56,13 @@ log:
 
 ## Logboekniveaus
 
-De niveaus van het logboek bepalen het niveau van detail in berichtberichten. De volgende categorieën van het logboekniveau omvatten elk logboekniveau onder het. Bijvoorbeeld een `debug` omvat het kappen van elk niveau, terwijl een `alert` alleen waarschuwingen en noodsituaties worden weergegeven.
+De niveaus van het logboek bepalen het niveau van detail in berichtberichten. De volgende categorieën van het logboekniveau omvatten elk logboekniveau onder het. Een niveau `debug` omvat bijvoorbeeld logbestanden op elk niveau, terwijl een niveau `alert` alleen waarschuwingen en noodsituaties weergeeft.
 
-- **foutopsporing**—gedetailleerde foutopsporingsgegevens
-- **info**—interessante gebeurtenissen, zoals een gebruikersaanmelding of SQL-logboek
-- **bericht**—normale, maar significante gebeurtenissen
-- **waarschuwing**—buitengewone gebeurtenissen die geen fouten zijn, zoals het gebruik van een vervangen API of slecht gebruik van een API
-- **fout**—uitvoeringsfouten die geen onmiddellijke actie vereisen
-- **kritisch**—kritieke omstandigheden, zoals een niet-beschikbare toepassingscomponent of een onverwachte uitzondering
-- **alert**—onmiddellijke actie vereist—zoals een website is neer of het gegevensbestand niet beschikbaar-dat een alarm van SMS teweegbrengt
-- **noodsituatie**—systeem onbruikbaar is
+- **zuivert** - gedetailleerd zuivert informatie
+- **info** - interessante gebeurtenissen, zoals een gebruikerslogin of SQL logboek
+- **bericht** - normaal, maar significante gebeurtenissen
+- **waarschuwing** - uitzonderlijke voorkomen die geen fouten, zoals het gebruik van afgekeurde API of slecht gebruik van API zijn
+- **fout** - runtime fouten die geen directe actie vereisen
+- **kritieke** - kritieke voorwaarden, zoals een niet beschikbare toepassingscomponent of een onverwachte uitzondering
+- **waakzaam** - directe vereiste actie-zulke als een website is neer of het gegevensbestand niet beschikbaar-dat een alarm van SMS teweegbrengt
+- **nood** - het systeem is onbruikbaar

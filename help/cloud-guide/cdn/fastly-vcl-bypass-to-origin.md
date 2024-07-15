@@ -20,19 +20,19 @@ U kunt het fragment vormen om snel caching voor verzoeken van een specifiek IP a
 >
 >Alvorens de configuratie van douaneVCL in een productiemilieu samen te voegen, zorg ervoor om de code in het het Opvoeren milieu te testen.
 
-**Vereisten:**
+**Eerste vereisten:**
 
 {{$include /help/_includes/vcl-snippet-prerequisites.md}}
 
-**Het snel cachegeheugen omzeilen op basis van IP-adres of URL**:
+**om het geheime voorgeheugen over te slaan dat op IP adres of URL** wordt gebaseerd:
 
 {{admin-login-step}}
 
-1. Klikken **Winkels** > Instellingen > **Configuratie** > **Geavanceerd** > **Systeem**.
+1. Klik **Opslag** > Montages > **Configuratie** > **Geavanceerd** > **Systeem**.
 
-1. Uitbreiden **Volledige paginacache** > **Snelle configuratie** > **Aangepaste VCL-fragmenten**.
+1. Breid **Volledige het Geheime voorgeheugen van de Pagina** > **Snelle Configuratie** uit > **de Fragmenten van VCL van de Douane**.
 
-1. Klikken **Aangepast fragment maken**.
+1. Klik **creëren het Fragment van de Douane**.
 
 1. Voeg de waarden van het VCL-fragment toe:
 
@@ -42,7 +42,7 @@ U kunt het fragment vormen om snel caching voor verzoeken van een specifiek IP a
 
    - **Prioriteit** — `5`
 
-   - **VCL** inhoud van fragmenten —
+   - **VCL** fragmentinhoud —
 
      In het volgende voorbeeld wordt Fastly overgeslagen voor een specifiek IP-adres:
 
@@ -58,13 +58,13 @@ U kunt het fragment vormen om snel caching voor verzoeken van een specifiek IP a
      if (req.url ~ "/media/feeds/GoogleShoppingHiVisNew.xml") {  return (pass);}
      ```
 
-     Voor een exacte URL-overeenkomst gebruikt u de `==` in plaats van de `~` operator. Zie de [Fastly VCL reference] voor meer informatie.
+     Voor een exacte URL-overeenkomst gebruikt u de operator `==` in plaats van de operator `~` . Zie de [ Snelle verwijzing VCL ] voor details.
 
-1. Klikken **Maken**.
+1. Klik **creëren**.
 
-   ![VCL-fragment snel omzeilen maken](/help/assets/cdn/fastly-create-bypass-snippet.png)
+   ![ creeer snel het fragment van de Bypass VCL ](/help/assets/cdn/fastly-create-bypass-snippet.png)
 
-1. Klik op **VCL snel uploaden naar** in de *Snelle configuratie* sectie.
+1. Na de pagina herlaadt, uploadt de klik **VCL aan Fastly** in de *Snelle sectie van de Configuratie*.
 
 1. Nadat het uploaden is voltooid, vernieuwt u de cache volgens het bericht boven aan de pagina.
 

@@ -1,5 +1,5 @@
 ---
-title: Variabelen na implementatie
+title: Post-implementatievariabelen
 description: Zie de lijst met omgevingsvariabelen die de acties in de Adobe Commerce na de implementatiefase van de cloudinfrastructuur besturen.
 feature: Cloud, Configuration, Cache
 recommendations: noDisplay, catalog
@@ -12,9 +12,9 @@ ht-degree: 0%
 
 ---
 
-# Variabelen na implementatie
+# Post-implementatievariabelen
 
-Het volgende _na implementatie_ variabelen besturen acties in de post-implementatiefase en kunnen waarden overnemen en overschrijven van de [Algemene variabelen](variables-global.md). Deze variabelen invoegen in het dialoogvenster `post-deploy` stadium van de `.magento.env.yaml` bestand:
+Het volgende _post-stelt_ variabelen controleacties in de post-opstelt fase op en kan waarden van de [ Globale variabelen ](variables-global.md) erven en met voeten treden. Voeg deze variabelen in het `post-deploy` werkgebied van het `.magento.env.yaml` -bestand in:
 
 ```yaml
 stage:
@@ -29,10 +29,10 @@ Voor meer informatie over het aanpassen van het bouwstijl en opstellen proces:
 
 ## `TTFB_TESTED_PAGES`
 
-- **Standaard**— `[]` (een lege array)
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek**— `[]` (een lege serie)
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Configureren _Tijd naar eerste byte_ (TTFB) testen op opgegeven pagina&#39;s om de prestaties van uw site te testen. Geef een absolute padverwijzing op, of een URL met protocol en host, voor elke pagina waarvoor de test nodig is.
+Vorm _Tijd aan Eerste Byte_ (TTFB) het testen voor gespecificeerde pagina&#39;s om uw plaatsprestaties te testen. Geef een absolute padverwijzing op, of een URL met protocol en host, voor elke pagina waarvoor de test nodig is.
 
 ```yaml
 stage:
@@ -43,7 +43,7 @@ stage:
        - "https://example.com/catalog/some-category"
 ```
 
-Nadat u de pagina&#39;s hebt opgegeven die u wilt testen en doorvoeren, _Tijd naar eerste byte_ de test wordt uitgevoerd tijdens de fase na de implementatie en de resultaten worden voor elk pad naar het cloudlog gepubliceerd:
+Nadat u de pagina&#39;s specificeert om uw veranderingen te testen en vast te leggen, de _Tijd aan Eerste de testlooppas van de Byte_ tijdens de post-opstellen fase en posten resultaten voor elke weg aan het wolkenlogboek:
 
 ```terminal
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.313s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/customer/account/create","status":200}
@@ -54,10 +54,10 @@ Voor omgeleide wegen, meldt het logboek de weg van het omleidingsdoel in plaats 
 
 ## `WARM_UP_CONCURRENCY`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Geef de limiet op voor gelijktijdige verzoeken om tijdens opwarmbewerkingen in het cachegeheugen te verzenden om de serverlading te verminderen. Deze waarde beperkt het aantal parallelle verbindingen en is nuttig voor omgevingsconfiguraties waarbij de `WARM_UP_PAGES` post-implementatievariabele specificeert verscheidene pagina&#39;s voor geheim voorladen geheim voorgeheugen.
+Geef de limiet op voor gelijktijdige verzoeken om tijdens opwarmbewerkingen in het cachegeheugen te verzenden om de serverlading te verminderen. Deze waarde beperkt het aantal parallelle verbindingen en is nuttig voor omgevingsconfiguraties waarbij de `WARM_UP_PAGES` post-implementatievariabele meerdere pagina&#39;s opgeeft voor het vooraf laden van de cache.
 
 ```yaml
 stage:
@@ -67,12 +67,12 @@ stage:
 
 ## `WARM_UP_PAGES`
 
-- **Standaard**— `index.php`
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek**— `index.php`
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-De lijst met pagina&#39;s aanpassen die worden gebruikt om de cache vooraf te laden in het dialoogvenster `post_deploy` in het werkgebied. U moet de post-opstellen haak vormen. Zie de [sectie haken](../application/hooks-property.md) van de `.magento.app.yaml` bestand.
+Pas de lijst aan met pagina&#39;s die worden gebruikt om de cache in het `post_deploy` -werkgebied vooraf te laden. U moet de post-opstellen haak vormen. Zie [ haken sectie ](../application/hooks-property.md) van het `.magento.app.yaml` dossier.
 
-- **enkele pagina&#39;s**—Geef één pagina op die u aan de cache wilt toevoegen. U hoeft de standaard basis-URL niet aan te geven. In het volgende voorbeeld wordt het `BASE_URL/index.php` pagina:
+- **enige pagina&#39;s** - specificeer één enkele pagina om aan het geheime voorgeheugen toe te voegen. U hoeft de standaard basis-URL niet aan te geven. In het volgende voorbeeld wordt de pagina `BASE_URL/index.php` in cache geplaatst:
 
   ```yaml
   stage:
@@ -81,7 +81,7 @@ De lijst met pagina&#39;s aanpassen die worden gebruikt om de cache vooraf te la
         - "index.php"
   ```
 
-- **meerdere domeinen**—Meerdere URL&#39;s weergeven. In het volgende voorbeeld worden pagina&#39;s van twee domeinen in cache opgeslagen:
+- **veelvoudige domeinen** - lijst veelvoudige URLs. In het volgende voorbeeld worden pagina&#39;s van twee domeinen in cache opgeslagen:
 
   ```yaml
   stage:
@@ -91,24 +91,24 @@ De lijst met pagina&#39;s aanpassen die worden gebruikt om de cache vooraf te la
         - 'http://example2.com/test'
   ```
 
-- **meerdere pagina&#39;s**—Gebruik de volgende indeling om meerdere pagina&#39;s in cache te plaatsen volgens een specifiek regulier expressiepatroon:
+- **veelvoudige pagina&#39;s** - gebruik het volgende formaat om veelvoudige pagina&#39;s volgens een specifiek regulier uitdrukkingspatroon in het voorgeheugen onder te brengen:
 
   ```terminal
   <entity_type>:<pattern|url|product_sku>:<store_id|store_code>
   ```
 
-   - `entity_type`: Mogelijke varianten `category`, `cms-page`, `product`, `store-page`
-   - `pattern|url|product_sku`: Een `regexp` patroon of exacte overeenkomst `url` om de URL&#39;s te filteren of een sterretje (\*) te gebruiken voor alle pagina&#39;s. ProductSKU gebruiken voor de `product` entiteitstype
-   - `store_id|store_code`: Gebruik de id of de code van de winkel of een sterretje (\*) voor alle winkels. U kunt meerdere winkel-id&#39;s of codes doorgeven die zijn gescheiden met `|`
+   - `entity_type`: Mogelijke varianten `category` , `cms-page` , `product` , `store-page`
+   - `pattern|url|product_sku`: gebruik een `regexp` patroon of een exacte overeenkomst `url` om de URL&#39;s te filteren, of gebruik een asterisk (\*) voor alle pagina&#39;s. ProductSKU gebruiken voor het eenheidstype `product`
+   - `store_id|store_code`: Gebruik de id of code van de winkel of een sterretje (\*) voor alle winkels. U kunt meerdere winkel-id&#39;s of -codes doorgeven, gescheiden door `|`
 
-  In het volgende voorbeeld wordt in cache geplaatst voor `category` en `cms-page` op deze criteria gebaseerde typen entiteiten:
-   - alle rubriekpagina&#39;s voor opslag met ID `1`
+  In het volgende voorbeeld worden op basis van deze criteria in cache geplaatst voor `category` - en `cms-page` -eenheidstypen:
+   - alle categoriepagina&#39;s voor opslag met id `1`
    - alle categoriepagina&#39;s voor winkels met code `store1` en `store2`
-   - rubriekspagina `cars` voor opslag met code `store_en`
+   - categoriepagina `cars` voor opslaan met code `store_en`
    - cms-pagina `contact` voor alle winkels
    - cms-pagina `contact` voor winkels met id `1` en `2`
-   - een categoriepagina die `car_` en eindigt met `html` voor opslag met ID 2
-   - een categoriepagina die `tires_` voor opslag met code `store_gb`
+   - elke categoriepagina die `car_` bevat en eindigt met `html` voor opslag met ID 2
+   - elke categoriepagina die `tires_` bevat voor opslag met code `store_gb`
 
      ```yaml
      stage:
@@ -123,12 +123,12 @@ De lijst met pagina&#39;s aanpassen die worden gebruikt om de cache vooraf te la
            - "category:|tires_.*|:store_gb"
      ```
 
-  In het volgende voorbeeld wordt de cache voor de `product` op basis van deze criteria:
+  In het volgende voorbeeld wordt het eenheidstype `product` op basis van deze criteria in cache geplaatst:
    - alle producten voor alle opslag (programmatically beperkt tot 100 per opslag om prestatieskwesties te vermijden)
-   - alle producten in de opslagplaats `store1`
+   - alle producten voor opslag `store1`
    - producten met `sku1` voor alle winkels
    - producten met `sku1` voor winkels met code `store1` en `store2`
-   - producten met `sku1`, `sku2` en `sku3` voor winkels met code `store1` en `store2`
+   - producten met `sku1` , `sku2` en `sku3` voor winkels met code `store1` en `store2`
 
      ```yaml
      stage:
@@ -141,10 +141,10 @@ De lijst met pagina&#39;s aanpassen die worden gebruikt om de cache vooraf te la
            - "product:sku1|sku2|sku3:store1|store2"
      ```
 
-  In het volgende voorbeeld wordt de cache voor de `store-page` op basis van deze criteria:
-   - page `/contact-us` voor alle winkels
-   - page `/contact-us` voor opslag met id `1`
-   - page `/contact-us` voor winkels met code `code1` en `code2`
+  In het volgende voorbeeld wordt het eenheidstype `store-page` op basis van deze criteria in cache geplaatst:
+   - pagina `/contact-us` voor alle winkels
+   - pagina `/contact-us` voor opslag met id `1`
+   - pagina `/contact-us` voor winkels met code `code1` en `code2`
 
   ```yaml
         stage:

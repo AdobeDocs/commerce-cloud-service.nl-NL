@@ -17,22 +17,22 @@ Nadat u uw Adobe Commerce hebt geconfigureerd en aangepast voor het infrastructu
 
 Tijdens de ontwikkeling is het belangrijk om end-to-end functionele tests uit te voeren op uw Adobe Commerce voor het infrastructuurproject van de cloud. Zie de volgende richtlijnen voor het uitvoeren van functionele tests in de Docker-omgeving:
 
-- **Toepassingen testen**—Gebruik de [Kader voor functionele tests van Magento&#39;s (MFTF)](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) voor het testen van toepassingen in de Cloud Docker-omgeving.
+- **het testen van de Toepassing** - gebruik het [ Magento Functional Testing Kader (MFTF) ](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) voor toepassing het testen in het milieu van het Dok van de Wolk.
 
-- **Code testen**—Gebruik de [Codeception testing framework for PHP](https://developer.adobe.com/commerce/cloud-tools/docker/test/code-testing/) voor het valideren van code die bedoeld is voor een bijdrage aan de opslagplaatsen van Cloud-pakketten.
+- **het testen van de Code** - gebruik het [ Codeception testende kader voor PHP ](https://developer.adobe.com/commerce/cloud-tools/docker/test/code-testing/) voor het bevestigen van code die voor bijdrage aan de het pakketbewaarplaatsen van de Wolk bedoeld is.
 
 ## Tips en trucs voor het starten
 
 U kunt de volgende testtypen het beste gebruiken voordat u de site start:
 
-- **Belastingtest**—Een belastingstest uitvoeren om het gedrag van het systeem onder een verwachte belasting te begrijpen. Test bijvoorbeeld een gelijktijdig aantal actieve gebruikers in de toepassing, waarbij elke gebruiker een specifiek aantal transacties binnen de ingestelde duur uitvoert. Deze test onthult de reactietijd van belangrijke zaken-kritieke transacties, zoals het gegevensbestand of het gedrag van de toepassingsserver. Een belastingstest kan helpen knelpunten op te sporen.
+- **test van de Lading** - voer een ladingstest uit om het gedrag van het systeem onder een verwachte lading te begrijpen. Test bijvoorbeeld een gelijktijdig aantal actieve gebruikers in de toepassing, waarbij elke gebruiker een specifiek aantal transacties binnen de ingestelde duur uitvoert. Deze test onthult de reactietijd van belangrijke zaken-kritieke transacties, zoals het gegevensbestand of het gedrag van de toepassingsserver. Een belastingstest kan helpen knelpunten op te sporen.
 
-- **Stresstest**—De bovengrenzen van de capaciteit binnen het systeem uitdagen om te bepalen of het systeem voldoende presteert wanneer de huidige belasting ver boven het verwachte maximum ligt.
+- **test van de Stress** - Uitdaging de hogere grenzen van capaciteit binnen het systeem om te bepalen als het systeem voldoende presteert wanneer de huidige lading veel boven het verwachte maximum gaat.
 
-- **Beveiligingsscan**—Adobe biedt een gratis [Beveiligingsscan](../launch/overview.md#set-up-the-security-scan-tool) voor uw sites.
+- **het Scannen van de Veiligheid** - Adobe verstrekt een vrij [ Hulpmiddel van het Scannen van de Veiligheid ](../launch/overview.md#set-up-the-security-scan-tool) voor uw plaatsen.
 
-- **Penetratietest**—Is een toegelaten gesimuleerde cyberaanval op een computersysteem dat wordt ontworpen om de veiligheid van het systeem te evalueren. De penetratietest helpt zwakke plekken of kwetsbaarheden te identificeren, waaronder de mogelijkheid voor onbevoegde partijen om toegang te krijgen tot systeemfuncties en gegevens.
+- **test van de Penetratie** - is een geoorloofde gesimuleerde cyberaanval op een computersysteem dat wordt ontworpen om de veiligheid van het systeem te evalueren. De penetratietest helpt zwakke plekken of kwetsbaarheden te identificeren, waaronder de mogelijkheid voor onbevoegde partijen om toegang te krijgen tot systeemfuncties en gegevens.
 
 >[!WARNING]
 >
->Klanten mogen geen beveiligingsbeoordelingen uitvoeren van de AWS-infrastructuur of de AWS-services zelf. Als u een beveiligingsprobleem ontdekt binnen een van de AWS-services die in uw beveiligingsevaluatie worden waargenomen, [contact opnemen met AWS Security](mailto:aws-security@amazon.com) onmiddellijk. Zie [AWS-beleid voor klanten voor het testen van pensioenen](https://aws.amazon.com/security/penetration-testing/).
+>Klanten mogen geen beveiligingsbeoordelingen uitvoeren van de AWS-infrastructuur of de AWS-services zelf. Als u een veiligheidskwestie binnen om het even welke diensten van AWS ontdekt die in uw veiligheidsbeoordeling worden waargenomen, [ contacteer de Veiligheid van AWS ](mailto:aws-security@amazon.com) onmiddellijk. Zie [ het beleid van de Klant van AWS voor het testen van de Overboeking ](https://aws.amazon.com/security/penetration-testing/).

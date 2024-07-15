@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Variabelen implementeren
 
-Het volgende _inzetten_ variabelen controleren acties in de opstellen fase en kunnen waarden van erven en met voeten treden [Algemene variabelen](variables-global.md). Deze variabelen invoegen in het dialoogvenster `deploy` stadium van de `.magento.env.yaml` bestand:
+Het volgende _stelt_ variabelen controleacties in in de opstellen fase op en kan waarden van de [ Globale variabelen ](variables-global.md) erven en met voeten treden. Voeg deze variabelen in het `deploy` werkgebied van het `.magento.env.yaml` -bestand in:
 
 ```yaml
 stage:
@@ -29,10 +29,10 @@ Voor meer informatie over het aanpassen van het bouwstijl en opstellen proces:
 
 ## `CACHE_CONFIGURATION`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Configureer Redis-pagina en standaardcaching. Wanneer u het `cm_cache_backend_redis` parameter, moet u specificeren `server`, `port`, en `database` opties.
+Configureer Redis-pagina en standaardcaching. Wanneer u de parameter `cm_cache_backend_redis` instelt, moet u de opties `server` , `port` en `database` opgeven.
 
 ```yaml
 stage:
@@ -63,7 +63,7 @@ stage:
             database: 11
 ```
 
-In het volgende voorbeeld wordt het [Redis, functie voor vooraf laden](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/redis/redis-pg-cache.html#redis-preload-feature) zoals gedefinieerd in het _Configuratiegids_:
+Het volgende voorbeeld gebruikt [ preload eigenschap ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/redis/redis-pg-cache.html#redis-preload-feature) zoals die in de _gids van de Configuratie_ wordt bepaald:
 
 ```yaml
 stage:
@@ -81,7 +81,7 @@ stage:
               - '061_SYSTEM_DEFAULT:hash'
 ```
 
-Een aangepaste [REDIS_BACKEND](#redis_backend) model (niet alleen vanuit de lijst van gewenste personen), stelt u de `_custom_redis_backend` optie voor `true` om de juiste validatie in te schakelen, zoals in het volgende voorbeeld:
+Om een douane [ REDIS_BACKEND ](#redis_backend) model (niet alleen van de lijst van gewenste personen) te gebruiken, plaats de `_custom_redis_backend` optie aan `true` om de correcte bevestiging zoals in het volgende voorbeeld toe te laten:
 
 ```yaml
 stage:
@@ -95,15 +95,15 @@ stage:
 
 ## `CLEAN_STATIC_FILES`
 
-- **Standaard**—`true`
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - `true`
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Schakelt reiniging in of uit [statische inhoudsbestanden](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-deployment.html) geproduceerd tijdens de bouwstijl of opstellen fase. De standaardwaarde gebruiken _true_ in ontwikkeling als beste praktijk.
+Laat of maakt het schoonmaken [ statische inhoudsdossiers ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-deployment.html) toe onbruikbaar tijdens de bouwstijl wordt geproduceerd of fase opstelt. Gebruik de standaardwaarde _waar_ in ontwikkeling als beste praktijken.
 
-- **`true`**—Verwijdert alle bestaande statische inhoud alvorens de bijgewerkte statische inhoud op te stellen.
-- **`false`**—De implementatie overschrijft alleen bestaande statische inhoudsbestanden als de gegenereerde inhoud een nieuwere versie bevat.
+- **`true`** - Hiermee verwijdert u alle bestaande statische inhoud voordat u de bijgewerkte statische inhoud implementeert.
+- **`false`** - De implementatie overschrijft alleen bestaande bestanden met statische inhoud als de gegenereerde inhoud een nieuwere versie bevat.
 
-Als u statische inhoud wijzigt via een afzonderlijk proces, stelt u de waarde in op _false_.
+Als u statische inhoud door een afzonderlijk proces wijzigt, plaats de waarde aan _vals_.
 
 ```yaml
 stage:
@@ -111,26 +111,26 @@ stage:
     CLEAN_STATIC_FILES: false
 ```
 
-Het niet opschonen van statische weergavebestanden vóór de implementatie kan problemen veroorzaken als u updates voor bestaande bestanden implementeert zonder de vorige versies te verwijderen. Vanwege [fallback van statische bestanden](https://developer.adobe.com/commerce/frontend-core/guide/caching/#clean-static-files-cache) regels, kunnen fallback-bewerkingen het verkeerde bestand weergeven als de map meerdere versies van hetzelfde bestand bevat.
+Het niet opschonen van statische weergavebestanden vóór de implementatie kan problemen veroorzaken als u updates voor bestaande bestanden implementeert zonder de vorige versies te verwijderen. Wegens [ statische dossierreserve ](https://developer.adobe.com/commerce/frontend-core/guide/caching/#clean-static-files-cache) regels, kunnen de reserveverrichtingen het verkeerde dossier tonen als de folder veelvoudige versies van het zelfde dossier bevat.
 
 ## `CRON_CONSUMERS_RUNNER`
 
-- **Standaard**—`cron_run = false`, `max_messages = 1000`
-- **Versie**—Adobe Commerce 2.2.0 en hoger
+- **Gebrek**— `cron_run = false`, `max_messages = 1000`
+- **Versie** - Adobe Commerce 2.2.0 en later
 
 Gebruik deze omgevingsvariabele om te bevestigen dat de berichtenrijen na een implementatie worden uitgevoerd.
 
-- `cron_run`—Een booleaanse waarde die de `consumers_runner` uitsnijdtaak (standaard = `false`).
-- `max_messages`—Een getal dat het maximum aantal berichten opgeeft dat elke consument moet verwerken voordat hij/zij afsluit (standaardwaarde = `1000`). U kunt instellen op `0` om te voorkomen dat de consument wordt beëindigd.
-- `consumers`—Een array van tekenreeksen die aangeven welke consumenten moeten worden uitgevoerd. Een lege array wordt uitgevoerd _alles_ consumenten.
+- `cron_run` - Een Booleaanse waarde die de `consumers_runner` cron-taak in- of uitschakelt (standaard = `false`).
+- `max_messages` - Een getal dat het maximum aantal berichten opgeeft dat elke consument moet verwerken voordat deze wordt beëindigd (standaardwaarde = `1000` ). U kunt de waarde instellen op `0` om te voorkomen dat de consument wordt beëindigd.
+- `consumers` - Een array van tekenreeksen die aangeven welke consumenten moeten worden uitgevoerd. Een lege serie stelt _alle_ consumenten in werking.
 
-- `multiple_processes`-Een getal dat het aantal processen opgeeft dat voor elke consument moet worden gekaapt. Ondersteund in de handel **2.4.4.** of hoger.
+- `multiple_processes` - Een getal dat het aantal processen opgeeft dat voor elke consument moet worden genaaid. Ondersteund in Commerce **2.4.4** of groter.
 
 >[!NOTE]
 >
->Om een lijst van berichtrij terug te keren `consumers`, voert u de `./bin/magento queue:consumers:list` in de externe omgeving.
+>Als u een lijst met berichtenwachtrij `consumers` wilt retourneren, voert u de opdracht `./bin/magento queue:consumers:list` uit in de externe omgeving.
 
-Voorbeeld van een array die specifiek wordt uitgevoerd `consumers` en de `multiple_processes` voor elke consument:
+Voorbeeld van een array die specifiek `consumers` en `multiple_processes` voor elke consument wordt uitgevoerd:
 
 ```yaml
 stage:
@@ -146,7 +146,7 @@ stage:
         example_consumer_2: 3
 ```
 
-Voorbeeld van een lege array die alles uitvoert `consumers`:
+Voorbeeld van een lege array die alles `consumers` uitvoert:
 
 ```yaml
 stage:
@@ -157,22 +157,22 @@ stage:
       consumers: []
 ```
 
-Standaard overschrijft het implementatieproces alle instellingen in de `env.php` bestand. Zie [Berichtenrijen beheren](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/manage-message-queues.html) in de _Handleiding voor configuratie_ voor Adobe Commerce ter plaatse.
+Standaard overschrijft het implementatieproces alle instellingen in het `env.php` -bestand. Zie [ berichtrijen ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/manage-message-queues.html) in de _Gids van de Configuratie van Commerce_ voor op-gebouw Adobe Commerce beheren.
 
 ## `CONSUMERS_WAIT_FOR_MAX_MESSAGES`
 
-- **Standaard**—`false`
-- **Versie**—Adobe Commerce 2.2.0 en hoger
+- **Gebrek** - `false`
+- **Versie** - Adobe Commerce 2.2.0 en later
 
-Configureren hoe `consumers` verwerkt berichten van de berichtrij door één van de volgende opties te kiezen:
+Configureer hoe `consumers` berichten uit de wachtrij met berichten verwerkt door een van de volgende opties te kiezen:
 
-- `false`—`Consumers` proces beschikbare berichten in de rij, sluit de verbinding van TCP, en beëindigt. `Consumers` wacht niet op extra berichten om de rij in te gaan, zelfs als het aantal verwerkte berichten minder dan is `max_messages` waarde opgegeven in het dialoogvenster `CRON_CONSUMERS_RUNNER` implementeert variabele.
+- `false` - `Consumers` proces beschikbare berichten in de rij, sluit de verbinding van TCP, en beëindigt. `Consumers` wacht niet op extra berichten om de rij in te gaan, zelfs als het aantal verwerkte berichten minder dan de `max_messages` waarde is die in `CRON_CONSUMERS_RUNNER` wordt gespecificeerd plaatsingsvariabele.
 
-- `true`—`Consumers` blijven berichten van de berichtrij verwerken tot het maximumaantal berichten (`max_messages`) opgegeven in de `CRON_CONSUMERS_RUNNER` Implementeer variabele voordat u de TCP-verbinding sluit en het consumentenproces beëindigt. Als de wachtrij wordt leeggemaakt voordat de wachtrij wordt bereikt `max_messages`, wacht de consument op meer berichten.
+- `true` - `Consumers` blijft berichten van de berichtrij verwerken tot het maximum aantal berichten (`max_messages`) wordt gespecificeerd in `CRON_CONSUMERS_RUNNER` opstelt variabele alvorens de verbinding van TCP te sluiten en het consumentenproces te beëindigen. Als de wachtrij leeg is voordat `max_messages` wordt bereikt, wacht de consument tot er meer berichten zijn.
 
 >[!WARNING]
 >
->Als u workers gebruikt om te starten `consumers` in plaats van een uitsnijdtaak te gebruiken, stelt u deze variabele in op true.
+>Als u workers gebruikt om `consumers` uit te voeren in plaats van een uitsnijdtaak te gebruiken, stelt u deze variabele in op true.
 
 ```yaml
 stage:
@@ -182,21 +182,21 @@ stage:
 
 ## `CRYPT_KEY`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.1.4 en later
 
 >[!WARNING]
 >
->Stel de `CRYPT_KEY` waarde door de [!DNL Cloud Console] in plaats van de `.magento.env.yaml` om te voorkomen dat de sleutel in de broncodeopslagplaats voor uw omgeving beschikbaar wordt gemaakt. Zie [Omgeving en projectvariabelen instellen](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/overview.html#configure-environment).
+>Stel de `CRYPT_KEY` -waarde in via [!DNL Cloud Console] in plaats van het `.magento.env.yaml` -bestand om te voorkomen dat de sleutel in de broncodeopslagplaats voor uw omgeving toegankelijk wordt gemaakt. Zie [ plaats milieu en projectvariabelen ](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/overview.html#configure-environment).
 
-Wanneer u het gegevensbestand van één milieu aan een andere zonder installatieproces verplaatst, hebt u de overeenkomstige cryptografische informatie nodig. Adobe Commerce gebruikt de coderingssleutelwaarde die is ingesteld in het dialoogvenster [!DNL Cloud Console] als de `crypt/key` waarde in de `env.php` bestand.
+Wanneer u het gegevensbestand van één milieu aan een andere zonder installatieproces verplaatst, hebt u de overeenkomstige cryptografische informatie nodig. Adobe Commerce gebruikt de waarde van de coderingssleutel die in de [!DNL Cloud Console] is ingesteld als de `crypt/key` -waarde in het `env.php` -bestand.
 
 ## `DATABASE_CONFIGURATION`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Als u een database in het dialoogvenster [relaties, eigenschap](../application/properties.md#relationships) van de `.magento.app.yaml` kunt u uw databaseverbindingen aanpassen voor implementatie.
+Als u een gegevensbestand in het [ verhoudingen bezit ](../application/properties.md#relationships) van het `.magento.app.yaml` dossier bepaalde, kunt u uw gegevensbestandverbindingen voor plaatsing aanpassen.
 
 ```yaml
 stage:
@@ -223,7 +223,7 @@ U kunt ook een tabelvoorvoegsel configureren.
 >
 >Als u de samenvoegoptie niet gebruikt met het tabelvoorvoegsel, moet u standaardverbindingsinstellingen opgeven of kan de implementatie niet worden gevalideerd.
 
-In het volgende voorbeeld wordt het `ece_` tabelvoorvoegsel met standaardverbindingsinstellingen in plaats van de `_merge` optie:
+In het volgende voorbeeld wordt het voorvoegsel van de tabel `ece_` gebruikt met standaardverbindingsinstellingen in plaats van de optie `_merge` :
 
 ```yaml
 stage:
@@ -260,10 +260,10 @@ MariaDB [main]> SHOW TABLES;
 
 ## `ELASTICSUITE_CONFIGURATION`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.2.0 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.2.0 en later
 
-Blijft aangepast [!DNL Elastic Suite] de dienstmontages tussen plaatsingen en gebruikt het in de &quot;systeem/gebrek/glimlach_elasticsuite_core_base_settings&quot;sectie van de belangrijkste [!DNL Elastic Suite] configuratie. Als de [!DNL Elastic Suite] samenstellingspakket is geïnstalleerd, automatisch geconfigureerd.
+Behoudt aangepaste [!DNL Elastic Suite] service-instellingen tussen implementaties en gebruikt deze in de sectie &#39;system/default/glimlach_elasticsuite_core_base_settings&#39; van de hoofdconfiguratie van [!DNL Elastic Suite] . Als het [!DNL Elastic Suite] composer-pakket is geïnstalleerd, wordt het automatisch geconfigureerd.
 
 ```yaml
 stage:
@@ -292,24 +292,24 @@ stage:
 
 **Bekende beperkingen**:
 
-- De zoekmachine wijzigen in een ander type dan `elasticsuite` veroorzaakt een implementatiefout vergezeld van een geschikte validatiefout
+- Als u de zoekmachine wijzigt in een ander type dan `elasticsuite` , treedt een implementatiefout op, vergezeld van een geschikte validatiefout
 - Het verwijderen van de dienst van de Elasticsearch veroorzaakt een implementatiefout vergezeld van een aangewezen bevestigingsfout
 
 >[!NOTE]
 >
->Voor meer informatie over het gebruik of het oplossen van problemen [!DNL Elastic Suite] met Adobe Commerce, raadpleegt u de [[!DNL Elastic Suite] documentatie](https://github.com/Smile-SA/elasticsuite).
+>Voor details bij het gebruiken van of het oplossen van problemen de [!DNL Elastic Suite] stop met Adobe Commerce, zie de [[!DNL Elastic Suite]  documentatie ](https://github.com/Smile-SA/elasticsuite).
 
 ## `ENABLE_GOOGLE_ANALYTICS`
 
-- **Standaard**—`false`
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - `false`
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Laat en maakt Googles Analytics toe onbruikbaar wanneer het opstellen aan het Opvoeren en de milieu&#39;s van de Integratie. Googles Analytics gelden standaard alleen voor de productieomgeving. Deze waarde instellen op `true` om Googles Analytics in de milieu&#39;s van het Staging en van de Integratie toe te laten.
+Laat en maakt Googles Analytics toe onbruikbaar wanneer het opstellen aan het Opvoeren en de milieu&#39;s van de Integratie. Googles Analytics gelden standaard alleen voor de productieomgeving. Stel deze waarde in op `true` als u Googles Analytics wilt inschakelen in de omgevingen voor Staging en Integratie.
 
-- **`true`**—Laat Googles Analytics op het Opvoeren en de milieu&#39;s van de Integratie toe.
-- **`false`**—Maakt Googles Analytics op het Opvoeren en de milieu&#39;s van de Integratie onbruikbaar.
+- **`true`** - Laat Googles Analytics op het Opvoeren en de milieu&#39;s van de Integratie toe.
+- **`false`** - Maakt Googles Analytics op het Opvoeren en de milieu&#39;s van de Integratie onbruikbaar.
 
-Voeg de `ENABLE_GOOGLE_ANALYTICS` omgevingsvariabele voor de `deploy` in de `.magento.env.yaml` bestand:
+Voeg de omgevingsvariabele `ENABLE_GOOGLE_ANALYTICS` toe aan het `deploy` werkgebied in het `.magento.env.yaml` -bestand:
 
 ```yaml
 stage:
@@ -323,10 +323,10 @@ stage:
 
 ## `FORCE_UPDATE_URLS`
 
-- **Standaard**—`true`
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - `true`
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Bij implementatie in een Pro- of Starter-testomgeving vervangt deze variabele Adobe Commerce-basis-URL&#39;s in de database door de project-URL&#39;s die zijn opgegeven door de [`MAGENTO_CLOUD_ROUTES`](variables-cloud.md) variabele. Gebruik deze instelling om het standaardgedrag van de [UPDATE_URLS](#update_urls) Implementeer variabele, die wordt genegeerd bij de implementatie in een testomgeving of productieomgeving.
+Bij implementatie in een Pro- of Starter-testomgeving vervangt deze variabele Adobe Commerce-basis-URL&#39;s in de database door de project-URL&#39;s die zijn opgegeven door de variabele [`MAGENTO_CLOUD_ROUTES`](variables-cloud.md) . Gebruik dit plaatsen om het standaardgedrag van [ met voeten te treden UPDATE_URLS ](#update_urls) veranderlijk opstelt, die wanneer het opstellen aan het Opvoeren of de milieu&#39;s van de Productie wordt genegeerd.
 
 ```yaml
 stage:
@@ -336,10 +336,10 @@ stage:
 
 ## `LOCK_PROVIDER`
 
-- **Standaard**—`file`
-- **Versie**—Adobe Commerce 2.2.5 en hoger
+- **Gebrek** - `file`
+- **Versie** - Adobe Commerce 2.2.5 en later
 
-De vergrendelingsprovider voorkomt het starten van dubbele snijtaken en afdekgroepen. Gebruik de `file` sluisprovider in de productieomgeving. Starter-omgevingen en de Pro-integratieomgeving maken geen gebruik van de [MAGENTO_CLOUD_LOCKS_DIR](variables-cloud.md) variabele, so `ece-tools` past de `db` automatisch vergrendelen.
+De vergrendelingsprovider voorkomt het starten van dubbele snijtaken en afdekgroepen. Gebruik de vergrendelingsprovider van `file` in de productieomgeving. De milieu&#39;s van de aanzet en het Pro integratiemilieu gebruiken niet [ MAGENTO_CLOUD_LOCKS_DIR ](variables-cloud.md) variabele, zodat `ece-tools` automatisch de `db` slotleverancier toepast.
 
 ```yaml
 stage:
@@ -347,18 +347,18 @@ stage:
     LOCK_PROVIDER: "db"
 ```
 
-Zie [De vergrendeling configureren](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/lock-provider.html) in de _Hulplijn installeren_.
+Zie [ vormen het slot ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/lock-provider.html) in _gids_ installeren.
 
 ## `MYSQL_USE_SLAVE_CONNECTION`
 
-- **Standaard**—`false`
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - `false`
+- **Versie** - Adobe Commerce 2.1.4 en later
 
 >[!TIP]
 >
->De `MYSQL_USE_SLAVE_CONNECTION` Variabele wordt alleen ondersteund in Adobe Commerce op staging- en Production Pro-clusteromgevingen met cloudinfrastructuur en wordt niet ondersteund in Starter-projecten.
+>De variabele `MYSQL_USE_SLAVE_CONNECTION` wordt alleen ondersteund in Adobe Commerce op omgevingen met Staging- en Production Pro-clusters met cloudinfrastructuur en niet in Starter-projecten.
 
-Adobe Commerce kan meerdere databases asynchroon lezen. Instellen op `true` om automatisch een _alleen-lezen_ verbinding met het gegevensbestand om read-only verkeer op een niet hoofdknoop te ontvangen. Deze verbinding verbetert prestaties door lading het in evenwicht brengen, omdat slechts één knoop lees-schrijf verkeer behandelt. Instellen op `false` om een bestaande alleen-lezen-verbindingsarray te verwijderen uit de `env.php` bestand.
+Adobe Commerce kan meerdere databases asynchroon lezen. Reeks aan `true` om a _read-only_ verbinding aan het gegevensbestand automatisch te gebruiken om read-only verkeer op een niet hoofdknoop te ontvangen. Deze verbinding verbetert prestaties door lading het in evenwicht brengen, omdat slechts één knoop lees-schrijf verkeer behandelt. Stel in op `false` om een bestaande alleen-lezen-verbindingsarray uit het `env.php` -bestand te verwijderen.
 
 ```yaml
 stage:
@@ -366,14 +366,14 @@ stage:
     MYSQL_USE_SLAVE_CONNECTION: true
 ```
 
-Wanneer de `MYSQL_USE_SLAVE_CONNECTION` variable is ingesteld op `true`de `synchronous_replication` parameter is ingesteld op `true` standaard in de `env.php` bestand op Pro Staging- en Productomgevingen. Wanneer de `MYSQL_USE_SLAVE_CONNECTION` is ingesteld op `false`de `synchronous_replication` parameter wordt niet gevormd.
+Wanneer de variabele `MYSQL_USE_SLAVE_CONNECTION` is ingesteld op `true` , wordt de parameter `synchronous_replication` standaard ingesteld op `true` in het `env.php` -bestand in Pro Staging and Production-omgevingen. Wanneer `MYSQL_USE_SLAVE_CONNECTION` op `false` wordt geplaatst, wordt de `synchronous_replication` parameter niet gevormd.
 
 ## `QUEUE_CONFIGURATION`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Gebruik deze omgevingsvariabele om aangepaste AMQP-service-instellingen tussen implementaties te behouden. Als u bijvoorbeeld liever een bestaande berichtwachtrij gebruikt in plaats van dat u de cloudinfrastructuur gebruikt om deze voor u te maken, gebruikt u de `QUEUE_CONFIGURATION` omgevingsvariabele om deze aan te sluiten op uw site:
+Gebruik deze omgevingsvariabele om aangepaste AMQP-service-instellingen tussen implementaties te behouden. Als u bijvoorbeeld liever een bestaande berichtwachtrij gebruikt in plaats van dat u de cloudinfrastructuur gebruikt om deze voor u te maken, gebruikt u de omgevingsvariabele `QUEUE_CONFIGURATION` om deze aan te sluiten op uw site:
 
 ```yaml
 stage:
@@ -412,8 +412,8 @@ stage:
 
 ## `REDIS_BACKEND`
 
-- **Standaard**—`Cm_Cache_Backend_Redis`
-- **Versie**—Adobe Commerce 2.3.0 en hoger
+- **Gebrek** - `Cm_Cache_Backend_Redis`
+- **Versie** - Adobe Commerce 2.3.0 en later
 
 Specificeert de achtergrondmodelconfiguratie voor het geheime voorgeheugen van Redis.
 
@@ -423,7 +423,7 @@ Adobe Commerce versie 2.3.0 en hoger bevat de volgende back-endmodellen:
 - `\Magento\Framework\Cache\Backend\Redis`
 - `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`
 
-Het voorbeeld hoe u instelt `REDIS_BACKEND`
+Het voorbeeld voor het instellen van `REDIS_BACKEND`
 
 ```yaml
 stage:
@@ -433,22 +433,22 @@ stage:
 
 >[!NOTE]
 >
->Als u `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` als het Redis-back-endmodel [L2-cache](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/level-two-cache.html), `ece-tools` genereert automatisch de cachemonfiguratie. Zie een voorbeeld [configuratiebestand](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/level-two-cache.html#configuration-example) in de _Adobe Commerce-configuratiegids_. Om de geproduceerde geheim voorgeheugenconfiguratie met voeten te treden, gebruik [CACHE_CONFIGURATION](#cache_configuration) implementeert variabele.
+>Als u `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` als Redis achterste model specificeert om [ L2 geheime voorgeheugen ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/level-two-cache.html) toe te laten, `ece-tools` produceert automatisch de geheim voorgeheugenconfiguratie. Zie een voorbeeld [ configuratiedossier ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/level-two-cache.html#configuration-example) in de _Gids van de Configuratie van Adobe Commerce_. Om de geproduceerde geheim voorgeheugenconfiguratie met voeten te treden, gebruik [ CACHE_CONFIGURATION ](#cache_configuration) veranderlijk opstelt.
 
 ## `REDIS_USE_SLAVE_CONNECTION`
 
-- **Standaard**—`false`
-- **Versie**—Adobe Commerce 2.1.16 en hoger
+- **Gebrek** - `false`
+- **Versie** - Adobe Commerce 2.1.16 en later
 
 >[!WARNING]
 >
->Do _niet_ deze variabele inschakelen op een [geschaalde architectuur](../architecture/scaled-architecture.md) project. Dit veroorzaakt verbindingsfouten van Redis. Redis-slaven zijn nog steeds actief, maar worden niet gebruikt voor Redis-lezen. Als alternatief raadt de Adobe aan Adobe Commerce 2.3.5 of hoger te gebruiken, een nieuwe Redis-back-endconfiguratie te implementeren en L2-caching voor Redis te implementeren.
+>Laat __ deze variabele op a [ geschaalde architectuur ](../architecture/scaled-architecture.md) project niet toe. Dit veroorzaakt verbindingsfouten van Redis. Redis-slaven zijn nog steeds actief, maar worden niet gebruikt voor Redis-lezen. Als alternatief raadt de Adobe aan Adobe Commerce 2.3.5 of hoger te gebruiken, een nieuwe Redis-back-endconfiguratie te implementeren en L2-caching voor Redis te implementeren.
 
 >[!TIP]
 >
->De `REDIS_USE_SLAVE_CONNECTION` Variabele wordt alleen ondersteund in Adobe Commerce op staging- en Production Pro-clusteromgevingen met cloudinfrastructuur en wordt niet ondersteund in Starter-projecten.
+>De variabele `REDIS_USE_SLAVE_CONNECTION` wordt alleen ondersteund in Adobe Commerce op omgevingen met Staging- en Production Pro-clusters met cloudinfrastructuur en niet in Starter-projecten.
 
-Adobe Commerce kan meerdere Redis-instanties asynchroon lezen. Instellen op `true` om automatisch een _alleen-lezen_ verbinding met een instantie Redis om alleen-lezen verkeer op een niet-hoofdknooppunt te ontvangen. Deze verbinding verbetert prestaties door lading het in evenwicht brengen, omdat slechts één knoop lees-schrijf verkeer behandelt. Instellen op `false` om een bestaande alleen-lezen-verbindingsarray te verwijderen uit de `env.php` bestand.
+Adobe Commerce kan meerdere Redis-instanties asynchroon lezen. Reeks aan `true` om a _read-only_ verbinding aan een Redis instantie automatisch te gebruiken om read-only verkeer op een niet hoofdknoop te ontvangen. Deze verbinding verbetert prestaties door lading het in evenwicht brengen, omdat slechts één knoop lees-schrijf verkeer behandelt. Stel in op `false` om een bestaande alleen-lezen-verbindingsarray uit het `env.php` -bestand te verwijderen.
 
 ```yaml
 stage:
@@ -456,18 +456,18 @@ stage:
     REDIS_USE_SLAVE_CONNECTION: true
 ```
 
-U moet een Redis-service hebben geconfigureerd in het dialoogvenster `.magento.app.yaml` en in het `services.yaml` bestand.
+U moet een Redis-service hebben geconfigureerd in het `.magento.app.yaml` -bestand en in het `services.yaml` -bestand.
 
-[ECE-Tools versie 2002.0.18](../release-notes/cloud-release-archive.md#v2002018) en gebruikt later meer fouttolerantie. Als Adobe Commerce geen gegevens van Redis kan lezen _slaven_ -instantie, leest het vervolgens gegevens van Redis _meester_ -instantie.
+[ ECE-Hulpmiddelen versie 2002.0.18 ](../release-notes/cloud-release-archive.md#v2002018) en later gebruik meer fout-verdraagzame montages. Als Adobe Commerce geen gegevens van Redis _slave_ instantie kan lezen, dan leest het gegevens van Redis _meester_ instantie.
 
-De alleen-lezen verbinding is niet beschikbaar voor gebruik in de integratieomgeving of als u de [`CACHE_CONFIGURATION` variabel](#cache_configuration).
+De read-only verbinding is niet beschikbaar voor gebruik in het integratiemilieu of als u [`CACHE_CONFIGURATION` variabele ](#cache_configuration) gebruikt.
 
 ## `RESOURCE_CONFIGURATION`
 
-- **Standaard**—Niet ingesteld
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - niet plaats
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Wijst een middelnaam aan een gegevensbestandverbinding toe. Deze configuratie komt overeen met de `resource` van de `env.php` bestand.
+Wijst een middelnaam aan een gegevensbestandverbinding toe. Deze configuratie komt overeen met de sectie `resource` van het `env.php` -bestand.
 
 {{merge-options}}
 
@@ -484,10 +484,10 @@ stage:
 
 ## `SCD_COMPRESSION_LEVEL`
 
-- **Standaard**—`4`
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - `4`
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Hiermee wordt opgegeven welke [gzip](https://www.gnu.org/software/gzip) compressieniveau (`0` tot `9`) te gebruiken bij het comprimeren van statische inhoud; `0` Schakelt compressie uit.
+Specificeert welk [ gzip ](https://www.gnu.org/software/gzip) compressieniveau (`0` aan `9`) te gebruiken wanneer het comprimeren van statische inhoud; `0` maakt compressie onbruikbaar.
 
 ```yaml
 stage:
@@ -497,8 +497,8 @@ stage:
 
 ## `SCD_COMPRESSION_TIMEOUT`
 
-- **Standaard**—`600`
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - `600`
+- **Versie** - Adobe Commerce 2.1.4 en later
 
 Wanneer de tijd die nodig is om de statische elementen te comprimeren, de time-outlimiet voor compressie overschrijdt, wordt het implementatieproces onderbroken. Stel de maximale uitvoeringstijd, in seconden, in voor de opdracht voor het comprimeren van statische inhoud.
 
@@ -510,12 +510,12 @@ stage:
 
 ## `SCD_MATRIX`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-U kunt meerdere landinstellingen per thema configureren. Deze aanpassing versnelt het implementatieproces door het aantal onnodige themabestanden te verminderen. U kunt bijvoorbeeld de _magento/backend_ thema in het Engels en een aangepast thema in andere talen.
+U kunt meerdere landinstellingen per thema configureren. Deze aanpassing versnelt het implementatieproces door het aantal onnodige themabestanden te verminderen. Bijvoorbeeld, kunt u het _magento/backend_ thema in het Engels en een douanethema in andere talen opstellen.
 
-In het volgende voorbeeld wordt het `Magento/backend` thema met drie landinstellingen:
+In het volgende voorbeeld wordt het thema `Magento/backend` geïmplementeerd met drie landinstellingen:
 
 ```yaml
 stage:
@@ -528,7 +528,7 @@ stage:
           - af_ZA
 ```
 
-U kunt ook _niet_ Stel een thema op:
+Ook, kunt u verkiezen om __ geen thema op te stellen:
 
 ```yaml
 stage:
@@ -539,8 +539,8 @@ stage:
 
 ## `SCD_MAX_EXECUTION_TIME`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.2.0 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.2.0 en later
 
 Staat u toe om de maximale verwachte uitvoeringstijd voor statische inhoudsplaatsing te verhogen.
 
@@ -556,10 +556,10 @@ stage:
 
 ## `SCD_NO_PARENT`
 
-- **Standaard**—`false`
-- **Versie**—Adobe Commerce 2.4.2 en hoger
+- **Gebrek** - `false`
+- **Versie** - Adobe Commerce 2.4.2 en later
 
-Voor de opstellen fase, reeks `SCD_NO_PARENT: true` zodat het genereren van statische inhoud voor bovenliggende thema&#39;s niet plaatsvindt tijdens de implementatiefase. Dit het plaatsen minimaliseert plaatsingstijd en verhindert plaatsonderbreking die kan voorkomen als de statische inhoud tijdens de plaatsing bouwt ontbreekt. Zie [Statische implementatie van inhoud](../deploy/static-content.md).
+Stel in de implementatiefase `SCD_NO_PARENT: true` zo in dat het genereren van statische inhoud voor bovenliggende thema&#39;s niet plaatsvindt tijdens de implementatiefase. Dit het plaatsen minimaliseert plaatsingstijd en verhindert plaatsonderbreking die kan voorkomen als de statische inhoud tijdens de plaatsing bouwt ontbreekt. Zie [ Statische inhoudsplaatsing ](../deploy/static-content.md).
 
 ```yaml
 stage:
@@ -569,16 +569,16 @@ stage:
 
 ## `SCD_STRATEGY`
 
-- **Standaard**—`quick`
-- **Versie**—Adobe Commerce 2.2.0 en hoger
+- **Gebrek** - `quick`
+- **Versie** - Adobe Commerce 2.2.0 en later
 
-Hiermee kunt u de [implementatiestrategie](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-strategy.html) voor statische inhoud. Zie [Statische weergavebestanden gebruiken](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-deployment.html).
+Staat u toe om de [ plaatsingsstrategie ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-strategy.html) voor statische inhoud aan te passen. Zie [ statische meningsdossiers ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-deployment.html) opstellen.
 
-Deze opties gebruiken _alleen_ als u meerdere landinstellingen hebt:
+Gebruik deze opties _slechts_ als u meer dan één scène hebt:
 
-- `standard`—implementeert alle statische weergavebestanden voor alle pakketten.
-- `quick`—(_default_) minimaliseert de implementatietijd.
-- `compact`—bespaart schijfruimte op de server. In Adobe Commerce versie 2.2.4 en eerder overschrijft deze instelling de waarde voor `scd_threads` met een waarde van `1`.
+- `standard` - implementeert alle statische weergavebestanden voor alle pakketten.
+- `quick` - (_gebrek_) minimaliseert plaatsingstijd.
+- `compact` - bespaart schijfruimte op de server. In Adobe Commerce versie 2.2.4 en lager overschrijft deze instelling de waarde voor `scd_threads` met de waarde `1` .
 
 ```yaml
 stage:
@@ -588,8 +588,8 @@ stage:
 
 ## `SCD_THREADS`
 
-- **Standaard**—Automatisch
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - automatisch
+- **Versie** - Adobe Commerce 2.1.4 en later
 
 Plaatst het aantal draden voor statische inhoudsplaatsing. De standaardwaarde wordt geplaatst gebaseerd op de ontdekte de draadtelling van cpu en overschrijdt geen waarde van 4. Verhoog het aantal draden versnelt de statische plaatsing van inhoud; het verminderen van het aantal draden vertraagt het. U kunt bijvoorbeeld de waarde van de thread instellen:
 
@@ -599,12 +599,12 @@ stage:
     SCD_THREADS: 2
 ```
 
-Gebruik [Configuratiebeheer](../store/store-settings.md) met de `scd-dump` bevel om statische plaatsing in de bouwstijlfase te bewegen.
+Om plaatsingstijd verder te verminderen, gebruik [ het Beheer van de Configuratie ](../store/store-settings.md) met het `scd-dump` bevel om statische plaatsing in de bouwstijlfase te bewegen.
 
 ## `SEARCH_CONFIGURATION`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.1.4 en later
 
 Gebruik deze omgevingsvariabele om aangepaste instellingen voor zoekservices tussen implementaties te behouden. Bijvoorbeeld:
 
@@ -621,7 +621,7 @@ stage:
       elasticsearch_server_timeout: '15'
 ```
 
-OpenSearch configuratie (voor Handel 2.4.6 en later):
+OpenSearch-configuratie (voor Commerce 2.4.6 en hoger):
 
 ```yaml
 stage:
@@ -649,10 +649,10 @@ stage:
 
 ## `SESSION_CONFIGURATION`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Configureer de Redis-sessieopslag. Vereist de `save`, `redis`, `host`, `port`, en `database` opties voor de sessieopslagvariabele. Bijvoorbeeld:
+Configureer de Redis-sessieopslag. Vereist de opties `save`, `redis`, `host`, `port` en `database` voor de opslagvariabele van de sessie. Bijvoorbeeld:
 
 ```yaml
 stage:
@@ -686,12 +686,12 @@ stage:
 
 ## `SKIP_SCD`
 
-- **Standaard**— _Niet ingesteld_
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Instellen op `true` om statische inhoudsplaatsing tijdens de opstellen fase over te slaan.
+Stel in op `true` om de implementatie van statische inhoud tijdens de implementatiefase over te slaan.
 
-Voor de opstellen fase, reeks `SKIP_SCD: true` zodat de statische inhoud bouwt niet tijdens de opstellen fase gebeurt. Dit het plaatsen minimaliseert plaatsingstijd en verhindert plaatsonderbreking die kan voorkomen als de statische inhoud tijdens de plaatsing bouwt ontbreekt. Zie [Statische implementatie van inhoud](../deploy/static-content.md).
+Voor de opstellen fase, plaats `SKIP_SCD: true` zodat de statische inhoudsbouwstijl niet tijdens de opstellen fase gebeurt. Dit het plaatsen minimaliseert plaatsingstijd en verhindert plaatsonderbreking die kan voorkomen als de statische inhoud tijdens de plaatsing bouwt ontbreekt. Zie [ Statische inhoudsplaatsing ](../deploy/static-content.md).
 
 ```yaml
 stage:
@@ -701,12 +701,12 @@ stage:
 
 ## `UPDATE_URLS`
 
-- **Standaard**—`true`
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - `true`
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Vervang bij implementatie Adobe Commerce basis-URL&#39;s in de database door de project-URL&#39;s die zijn opgegeven door de [`MAGENTO_CLOUD_ROUTES`](variables-cloud.md) variabele. Deze configuratie is handig voor lokale ontwikkeling, waarbij basis-URL&#39;s zijn ingesteld voor uw lokale omgeving. Wanneer u implementeert in een Cloud-omgeving, worden de URL&#39;s bijgewerkt zodat u toegang hebt tot uw winkel en beheerder met de project-URL&#39;s.
+Vervang bij implementatie Adobe Commerce basis-URL&#39;s in de database door het project-URL&#39;s die zijn opgegeven door de variabele [`MAGENTO_CLOUD_ROUTES`](variables-cloud.md) . Deze configuratie is handig voor lokale ontwikkeling, waarbij basis-URL&#39;s zijn ingesteld voor uw lokale omgeving. Wanneer u implementeert in een Cloud-omgeving, worden de URL&#39;s bijgewerkt zodat u toegang hebt tot uw winkel en beheerder met de project-URL&#39;s.
 
-Als u URL&#39;s moet bijwerken wanneer u deze implementeert in een Pro- of Starter-staging- en productieomgeving, gebruikt u de opdracht [`FORCE_UPDATE_URLS`](#force_update_urls) variabele.
+Gebruik de variabele [`FORCE_UPDATE_URLS`](#force_update_urls) als u URL&#39;s moet bijwerken bij de implementatie naar een Pro- of Starter-staging- en productieomgeving.
 
 ```yaml
 stage:
@@ -716,14 +716,14 @@ stage:
 
 ## `VERBOSE_COMMANDS`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Schakel de [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug-breedbeeldniveau voor `bin/magento` CLI bevelen die tijdens de plaatsingsfase worden uitgevoerd.
+Laat toe of maak [ Symfony ](https://symfony.com/doc/current/console/verbosity.html) onbruikbaar zuivert breedband niveau voor `bin/magento` bevelen CLI die tijdens de plaatsingsfase worden uitgevoerd.
 
 >[!NOTE]
 >
->De instelling VERBOSE_COMMANDS gebruiken om de details in de opdrachtuitvoer voor zowel geslaagd als mislukt te beheren `bin/magento` CLI-opdrachten, moet u instellen [MIN_LOGGING_LEVEL](variables-global.md#minlogginglevel) `debug`.
+>Om VERBOSE_COMMANDS het plaatsen te gebruiken om het detail in beveloutput voor zowel succesvolle als ontbroken `bin/magento` CLI bevelen te controleren, moet u [ MIN_LOGING_LEVEL ](variables-global.md#minlogginglevel) `debug` plaatsen.
 
 Kies het detailniveau in de logboeken:
 

@@ -1,6 +1,6 @@
 ---
-title: "Vertakkingen beheren met de [!DNL Cloud Console]"
-description: Leer hoe u de omgevingstakken voor Adobe Commerce op cloudinfrastructuur beheert met de [!DNL Cloud Console].
+title: "Beheer takken met  [!DNL Cloud Console]"
+description: Leer hoe te om de milieutakken voor Adobe Commerce op wolkeninfrastructuur te beheren gebruikend  [!DNL Cloud Console].
 role: Developer
 feature: Cloud, Install
 exl-id: 2c4ef149-fdb9-473f-91fd-5e6421ac5a43
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 # Vertakkingen beheren met de [!DNL Cloud Console]
 
-U kunt uw omgevingen beheren met de [!DNL Cloud Console] of de `magento-cloud` CLI. Uw projectbestanden worden opgeslagen in een Git-opslagplaats. U kunt Git-opdrachten gebruiken om uw code te beheren, maar de opdrachten `magento-cloud` CLI wordt ontworpen om met platformeigenschappen in wisselwerking te staan terwijl de bevelen van het Git niet. Zie [Opdrachten Git](../dev-tools/cloud-cli-overview.md#git-commands) in het Cloud CLI-onderwerp.
+U kunt uw omgevingen beheren met de [!DNL Cloud Console] of de `magento-cloud` CLI. Uw projectbestanden worden opgeslagen in een Git-opslagplaats. U kunt Git-opdrachten gebruiken om uw code te beheren, maar de CLI van `magento-cloud` is ontworpen voor interactie met platformfuncties, terwijl de opdrachten van Git dat niet doen. Zie [ bevelen van de Git ](../dev-tools/cloud-cli-overview.md#git-commands) in het onderwerp van wolk CLI.
 
-In dit onderwerp wordt besproken hoe u het dialoogvenster [!DNL Cloud Console] tot:
+In dit onderwerp wordt besproken hoe u de [!DNL Cloud Console] kunt gebruiken om:
 
 - Een omgeving toevoegen of verwijderen
-- Sync (`git pull`) van de bovenliggende omgeving
-- Samenvoegen (`git push`) aan de bovenliggende omgeving
+- Synchroniseren (`git pull`) vanuit de bovenliggende omgeving
+- Samenvoegen (`git push`) tot de bovenliggende omgeving
 
 >[!TIP]
 >
@@ -27,20 +27,20 @@ In dit onderwerp wordt besproken hoe u het dialoogvenster [!DNL Cloud Console] t
 
 ## Een omgeving maken
 
-De vertakkingsstrategie gebruikt een algemene Git-workflow waar u code ontwikkelt en extensies toevoegt in een ontwikkelingsvertakking. Zie [Starter](../architecture/starter-architecture.md) en [Pro](../architecture/starter-develop-deploy-workflow.md) architectuur-overzichten.
+De vertakkingsstrategie gebruikt een algemene Git-workflow waar u code ontwikkelt en extensies toevoegt in een ontwikkelingsvertakking. Zie [ Aanzet ](../architecture/starter-architecture.md) en [ Pro ](../architecture/starter-develop-deploy-workflow.md) architectuuroverzichten.
 
-- Voor Starter maakt u een `staging` vertakking van `master` vertakking, dan vertakking van `staging` voor ontwikkeling.
-- Voor Pro maakt u een ontwikkelingsvertakking vanuit de `Integration` milieu.
+- Maak bij Starter een `staging` -vertakking vanuit de `master` -vertakking en vertakking vanuit `staging` voor ontwikkeling.
+- Voor Pro maakt u een ontwikkelingsvertakking vanuit de `Integration` -omgeving.
 
-Uw account ondersteunt een beperkt aantal ![actieve vertakking](../../assets/icon-active.png){width="32"} (active) and an unlimited number of ![inactive branch](../../assets/icon-inactive.png){width="32"} (inactieve) ontwikkelingssectoren. Actieve en inactieve vertakkingen beheren door een vertakking toe te voegen of te verwijderen met alleen de [!DNL Cloud Console] of de Cloud CLI. Voordat u een vertakking kunt verwijderen, deactiveert u de vertakking, die in de _Omgevingen_ lijst als _inactief_. U kunt de vertakking later opnieuw activeren of [vertakking verwijderen](../dev-tools/cloud-cli-overview.md#) in omgevingen of met de Cloud CLI.
+Uw rekening steunt een beperkt aantal ![ actieve tak ](../../assets/icon-active.png){width="32"} (active) and an unlimited number of ![inactive branch](../../assets/icon-inactive.png){width="32"} (inactieve) ontwikkelingstakken. Actieve en inactieve vertakkingen beheren door een vertakking toe te voegen of te verwijderen met alleen de vertakking [!DNL Cloud Console] of de Cloud CLI. Alvorens u een tak kunt schrappen, deactiveert u de tak, die in de _1} lijst van Milieu&#39;s {als_ inactief _blijft._ U kunt de tak later opnieuw activeren of u kunt [ de tak ](../dev-tools/cloud-cli-overview.md#) in milieumontages schrappen of Cloud CLI gebruiken.
 
-Als u aanvullende actieve omgevingen nodig hebt voor ontwikkeling, dient u een [Ondersteuningsticket](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket).
+Als u extra actieve milieu&#39;s voor ontwikkeling nodig hebt, leg a [ kaartje van de Steun ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voor.
 
-**Een vertakking toevoegen**:
+**om een tak** toe te voegen:
 
-1. Aanmelden bij de [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. Meld u aan bij de map [[!DNL Cloud Console] ](https://console.adobecommerce.com) .
 
-1. Selecteer een project in het menu _Alle projecten_ lijst.
+1. Selecteer een project van de _Alle projecten_ lijst.
 
 1. Selecteer een omgeving.
 
@@ -50,25 +50,25 @@ Als u aanvullende actieve omgevingen nodig hebt voor ontwikkeling, dient u een [
 
 1. Klik op **[!UICONTROL Branch]**.
 
-   ![Een vertakking maken](../../assets/button-branch.png){width="150"}
+   ![ creeer een tak ](../../assets/button-branch.png){width="150"}
 
-1. In de _Vertakking vanaf ..._ Voer een naam voor een vertakking in.
+1. In het _Vertakking van.._ vorm, ga een taknaam in.
 
-   Het milieu _name_ verschilt van het milieu _ID_ alleen als u spaties of hoofdletters in de omgevingsnaam gebruikt. Een milieu-id bestaat uit alle kleine letters, getallen en toegestane symbolen. Hoofdletters in een omgevingsnaam worden omgezet in kleine letters in de id. Spaties in een omgevingsnaam worden omgezet in streepjes.
+   De milieu _naam_ is verschillend van milieu _identiteitskaart_ slechts als u ruimten of hoofdbrieven in de milieunaam gebruikt. Een milieu-id bestaat uit alle kleine letters, getallen en toegestane symbolen. Hoofdletters in een omgevingsnaam worden omgezet in kleine letters in de id. Spaties in een omgevingsnaam worden omgezet in streepjes.
 
-   Een omgevingsnaam **kan** include-tekens die zijn gereserveerd voor uw Linux-shell of voor reguliere expressies. Verboden tekens bevatten accolades (`{ }`), ronde haakjes, asterisk (`*`), punthaken (`>`), ampersand (`&`), percentage (<code>%</code>) en andere tekens.
+   Een milieu naam **kan** geen karakters omvatten die voor uw shell van Linux of voor regelmatige uitdrukkingen worden gereserveerd. De verboden karakters omvatten krullende steunen (`{ }`), haakjes, asterisk (`*`), punthaakjes (`>`), en ampersand (`&`), percenten (<code>%</code>) en andere tekens.
 
-1. Selecteer een **[!UICONTROL Environment type]**.
+1. Selecteer een **[!UICONTROL Environment type]** .
 
 1. Klik op **[!UICONTROL Create Branch]**.
 
 1. Wacht terwijl het milieu opstelt.
 
-   Tijdens de implementatie is de status van de omgeving  **In proces**. Na een geslaagde implementatie verandert de status in een groen vinkje voor **succes**.
+   Tijdens plaatsing, is de milieustatus **in proces**. Na een succesvolle plaatsing, verandert de status in een groen vinkje voor **succes**.
 
 ## Inactieve vertakking maken
 
-U kunt geen inactieve tak van de console van Adobe Commerce Cloud of CLI tot stand brengen. Als u een inactieve vertakking wilt maken, maakt u deze in de Git-opslagplaats en drukt u op de knop `environment.Parent` op de opdracht.
+U kunt geen inactieve tak van de console van Adobe Commerce Cloud of CLI tot stand brengen. Als u een inactieve vertakking wilt maken, maakt u deze in de Git-opslagplaats en drukt u met de optie `environment.Parent` op de opdracht.
 
 ```bash
 git push -o "environment.Parent=<parent branch>" <origin> <branch>
@@ -78,35 +78,35 @@ git push -o "environment.Parent=<parent branch>" <origin> <branch>
 
 Voordat u een omgeving kunt verwijderen, moet u deze deactiveren. Als een omgeving inactief is, kunt u deze verwijderen.
 
-**Een omgeving deactiveren**:
+**om een milieu** te deactiveren:
 
-1. Aanmelden bij de [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. Meld u aan bij de map [[!DNL Cloud Console] ](https://console.adobecommerce.com) .
 
-1. Selecteer een project in het menu _Alle projecten_ lijst.
+1. Selecteer een project van de _Alle projecten_ lijst.
 
-1. Selecteer de omgeving op de navigatiebalk _Omgeving_ lijst.
+1. Selecteer het milieu van de navigatiebar _lijst van het Milieu_.
 
 1. Klik op het configuratiepictogram aan de rechterkant van de bovenste navigatiebalk om de omgevingsinstellingen te openen.
 
-1. Op de _[!UICONTROL General]_tab, omlaag schuiven naar de_[!UICONTROL Deactivate environment]_ sectie en klik op **[!UICONTROL Deactivate environment and delete data]** en volgt u de instructies.
+1. Ga naar het tabblad _[!UICONTROL General]_, blader omlaag naar de_[!UICONTROL Deactivate environment]_ -sectie en klik **[!UICONTROL Deactivate environment and delete data]** en volg de instructies.
 
 ## Een omgeving synchroniseren
 
-Een omgeving (of vertakking) synchroniseren is hetzelfde als `git pull origin <parent>`. U kunt bijgewerkte code synchroniseren vanuit een bovenliggende omgeving. U kunt deze functie gebruiken via de [!DNL Cloud Console] voor alle Starter- en Pro-omgevingen.
+Een omgeving (of vertakking) synchroniseren is hetzelfde als `git pull origin <parent>` . U kunt bijgewerkte code synchroniseren vanuit een bovenliggende omgeving. U kunt deze functie gebruiken via [!DNL Cloud Console] voor alle Starter- en Pro-omgevingen.
 
-Voor een Pro-abonnement kunt u synchroniseren van Staging en Productie naar uw `master` vertakking. Deze synchronisatie trekt en duwt slechts code, niet gegevens. Om gegevens te synchroniseren, stort de gegevensbestandgegevens en duw het aan het gegevensbestand van een andere milieu. Zie [Statische bestanden en gegevens migreren en implementeren](/help/cloud-guide/deploy/staging-production.md#migrate-static-files).
+Voor een Pro-abonnement kunt u synchroniseren van Staging en Productie naar uw `master` -vertakking. Deze synchronisatie trekt en duwt slechts code, niet gegevens. Om gegevens te synchroniseren, stort de gegevensbestandgegevens en duw het aan het gegevensbestand van een andere milieu. Zie [ migreren en statische dossiers en gegevens ](/help/cloud-guide/deploy/staging-production.md#migrate-static-files) opstellen.
 
-**Een omgeving synchroniseren**:
+**om een milieu** te synchroniseren:
 
-1. Aanmelden bij de [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. Meld u aan bij de map [[!DNL Cloud Console] ](https://console.adobecommerce.com) .
 
-1. Selecteer een project in het menu _Alle projecten_ lijst.
+1. Selecteer een project van de _Alle projecten_ lijst.
 
 1. Klik in de lijst met omgevingen op de naam van de vertakking die u wilt synchroniseren.
 
 1. Klik (synchroniseren).
 
-   ![Een omgeving synchroniseren](../../assets/button-sync.png){width="150"}
+   ![ Synchroniseer een milieu ](../../assets/button-sync.png){width="150"}
 
 1. Selecteer de te synchroniseren items.
 
@@ -115,155 +115,155 @@ Voor een Pro-abonnement kunt u synchroniseren van Staging en Productie naar uw `
 
    Dit bouwt ook een bevel CLI voor u om te kopiëren en te gebruiken.
 
-1. Klikken **Sync**.
+1. Klik **Synchronisatie**.
 
 ## Samenvoegen met bovenliggende omgeving
 
-Een omgeving (of vertakking) samenvoegen is hetzelfde als `git push origin`. U voegt samen om bijgewerkte code van een milieu aan zijn oudermilieu te duwen. U kunt deze code samenvoegen tot `master`. U kunt in Staging en Productie implementeren met de `merge` gebruiken.
+Het samenvoegen van een omgeving (of vertakking) is hetzelfde als `git push origin` . U voegt samen om bijgewerkte code van een milieu aan zijn oudermilieu te duwen. U kunt deze code samenvoegen tot `master` . Met de opdracht `merge` kunt u de implementatie naar Staging en Productie uitvoeren.
 
-**Samenvoegen met de bovenliggende omgeving**:
+**om met het oudermilieu** samen te voegen:
 
-1. Aanmelden bij de [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. Meld u aan bij de map [[!DNL Cloud Console] ](https://console.adobecommerce.com) .
 
-1. Selecteer een project in het menu _Alle projecten_ lijst.
+1. Selecteer een project van de _Alle projecten_ lijst.
 
 1. Klik in de lijst met omgevingen op de naam van de vertakking die u wilt samenvoegen.
 
 1. Klik op Samenvoegen.
 
-   ![Een omgeving samenvoegen](../../assets/button-merge.png){width="150"}
+   ![ voeg een milieu ](../../assets/button-merge.png){width="150"} samen
 
-1. Klikken **Samenvoegen** en bevestig de actie.
+1. Klik **Fusie** en bevestig de actie.
 
 ## Logboeken weergeven
 
-Via de [!DNL Cloud Console], kunt u diverse logboeken voor milieu&#39;s met inbegrip van bouwstijl, implementatie, en plaatsingsgeschiedenis herzien.
+Via de [!DNL Cloud Console] kunt u verschillende logbestanden voor omgevingen bekijken, zoals de build, implementatie en implementatiegeschiedenis.
 
-Voor **Starter**, kunt u bouwt en opstelt logboeken en de plaatsingsgeschiedenis herzien. Deze omgevingen omvatten `master` (Productie) filiaal en alle filialen die daarvan zijn gemaakt.
+Voor **Starter**, kunt u bouwt en opstelt logboeken en de plaatsingsgeschiedenis. Deze omgevingen omvatten de `master` (Production) -vertakking en alle vertakkingen die daaruit zijn gemaakt.
 
-Voor **Pro** kunt u de volgende logbestanden in elke omgeving bekijken:
+Voor **Pro**, kunt u de volgende logboeken in elk milieu herzien:
 
 - Integratie-bouwt en opstelt en plaatsingsgeschiedenis
 - Staging—Bouw logbestanden en implementatiegeschiedenis samen. Gebruik SSH om u aan te melden bij de server om logboeken voor implementatie weer te geven.
 - Productie-bouw logboeken en plaatsingsgeschiedenis. Gebruik SSH om u aan te melden bij de server om logboeken voor implementatie weer te geven.
 
-**Als u aanmeldingen wilt weergeven in het dialoogvenster[!DNL Cloud Console]**:
+**om logboeken in[!DNL Cloud Console]** te bekijken:
 
-1. Aanmelden bij de [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. Meld u aan bij de map [[!DNL Cloud Console] ](https://console.adobecommerce.com) .
 
-1. Selecteer een project in het menu _Alle projecten_ lijst.
+1. Selecteer een project van de _Alle projecten_ lijst.
 
 1. Selecteer een omgeving.
 
-   De omgevingsweergave biedt een [Activiteitenlijst](activity-stream.md) dat toont _recent_ gebeurtenissen, één ingang per actie probeerde met inbegrip van syncs, fusies, takken, steunen, en meer. Klikken **Alles** voor de volledige plaatsingsgeschiedenis.
+   De omgevingsmening verstrekt een [ lijst van de Activiteit ](activity-stream.md) die _recente_ gebeurtenissen, één ingang per geprobeerd actie met inbegrip van syncs, fusies, takken, steunen, en meer toont. Klik **allen** voor de volledige plaatsingsgeschiedenis.
 
 1. Om het bouwstijllogboek te bekijken, selecteer het Succes of de Verbinding van de Mislukking per plaatsingsverslag op de rekening.
 
 >[!TIP]
 >
->Klik op de knop **Filteren op** voor een vervolgkeuzelijst en selecteer het type berichten dat u wilt weergeven.
+>Klik de **Filter door** pictogram voor een drop-down lijst en selecteer het type van berichten aan mening.
 
 ## Code ophalen uit een persoonlijke Git-opslagplaats
 
-Uw Adobe Commerce on cloud-infrastructuurproject kan code van een privéopslagplaats voor Git bevatten. U hebt bijvoorbeeld code voor een aangepaste module of een aangepast thema in een privérepo. Hiervoor moet u de openbare SSH-sleutel van uw project toevoegen aan uw persoonlijke Git-opslagplaats en uw project bijwerken `composer.json` bestand.
+Uw Adobe Commerce on cloud-infrastructuurproject kan code van een privéopslagplaats voor Git bevatten. U hebt bijvoorbeeld code voor een aangepaste module of een aangepast thema in een privérepo. Hiervoor moet u de openbare SSH-sleutel van uw project toevoegen aan uw persoonlijke Git-opslagplaats en het `composer.json` -projectbestand bijwerken.
 
 Om een plaatsingssleutel aan uw privé bewaarplaats toe te voegen GitHub, moet u de beheerder van die bewaarplaats zijn. GitHub staat u toe om sleutel voor één bewaarplaats slechts te gebruiken opstellen.
 
-Als u liever hebt dat uw project toegang krijgt tot meerdere opslagruimten, kunt u een SSH-sleutel aan een geautomatiseerde gebruikersaccount koppelen. Omdat dit account niet door een mens wordt gebruikt, wordt het een [computergebruiker](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys). Voeg de computeraccount toe als medewerker of voeg de gebruiker van de computer toe aan een team dat toegang heeft tot de opslagruimten.
+Als u liever hebt dat uw project toegang krijgt tot meerdere opslagruimten, kunt u een SSH-sleutel aan een geautomatiseerde gebruikersaccount koppelen. Omdat deze rekening niet door een mens wordt gebruikt, wordt het bedoeld als a [ machinegebruiker ](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys). Voeg de computeraccount toe als medewerker of voeg de gebruiker van de computer toe aan een team dat toegang heeft tot de opslagruimten.
 
 >[!INFO]
 >
 >Adobe raadt u aan deze code toe te voegen en samen te voegen aan uw Git-opslagruimten voor projecten. Als u de verbinding niet vormt, kunt u bouwstijlkwesties ervaren.
 
-**Om uw SSH openbare sleutel te vinden**:
+**om uw openbare sleutel van SSH te vinden**:
 
-1. Aanmelden bij de [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. Meld u aan bij de map [[!DNL Cloud Console] ](https://console.adobecommerce.com) .
 
-1. Selecteer een project in het menu _Alle projecten_ lijst.
+1. Selecteer een project van de _Alle projecten_ lijst.
 
 1. Klik op het configuratiepictogram rechts van de bovenste navigatiebalk.
 
-1. In _Projectinstellingen_, klikt u op **[!UICONTROL Deploy Key]**.
+1. In _Montages van het Project_, klik **[!UICONTROL Deploy Key]**.
 
 1. Kopieer de implementatiesleutel naar het klembord voor gebruik in een van de volgende op Git gebaseerde methoden:
 
 >[!BEGINTABS]
 
->[!TAB GitHub]
+>[!TAB  GitHub ]
 
 ### Ga uw sleutel van GitHub opstellen in
 
 Op GitHub, stel sleutels in read-only door gebrek op.
 
-**Om uw project openbare sleutel in te gaan aangezien GitHub sleutel opstelt**:
+**om uw project openbare sleutel in te gaan aangezien GitHub sleutel** opstelt:
 
 1. Meld u als beheerder aan bij uw GitHub-opslagplaats.
-1. Klik op de opslagplaats **[!UICONTROL Settings]** tab.
+1. Klik op de tab Opslagruimte **[!UICONTROL Settings]** .
 
    >[!NOTE]
    >
    >Als deze optie niet wordt weergegeven, wordt u niet aangemeld als beheerder van de gegevensopslagruimte en kunt u deze taak niet uitvoeren. Vraag uw beheerder van de bewaarplaats GitHub om dit te doen.
 
-1. Op de _Instellingen_ in de linkernavigatie klikt u op **[!UICONTROL Deploy Keys]**.
+1. Op het _lusje van Montages_ in de linkernavigatie, klik **[!UICONTROL Deploy Keys]**.
 1. Klik op **[!UICONTROL Add deploy key]**.
 1. Volg de aanwijzingen.
 
-In `composer.json`, gebruikt u de `<user>@<host>:<.git</code>` of `ssh://<user>@<host>:<port>/<path>.git` als u een niet-standaardpoort gebruikt.
+Gebruik in `composer.json` de `<user>@<host>:<.git</code>` -indeling of `ssh://<user>@<host>:<port>/<path>.git` als u een niet-standaardpoort gebruikt.
 
->[!TAB Bitmap]
+>[!TAB  Bitbucket ]
 
 ### Voer de implementatietoets voor bitmaps in
 
-**Om uw project openbare sleutel in te gaan als Bitbucket opstellen sleutel**:
+**om uw project openbare sleutel in te gaan aangezien Bitbucket sleutel** opstelt:
 
 1. Meld u als beheerder aan bij de opslagplaats voor bitmaps.
-1. Klik in de linkernavigatie op **[!UICONTROL Settings]**.
-1. Klik op Algemeen > **[!UICONTROL Deployment Keys]**.
+1. Klik in de linkernavigatie op **[!UICONTROL Settings]** .
+1. Klik op Algemeen > **[!UICONTROL Deployment Keys]** .
 1. Klik op **[!UICONTROL Add Key]**.
 1. Volg de aanwijzingen.
 
->[!TAB GitLab]
+>[!TAB  GitLab ]
 
 ### Voer uw GitLab-implementatietoets in
 
-**Om de openbare sleutel van SSH voor uw project toe te voegen zoals GitLab opstellen sleutel**:
+**om de openbare sleutel van SSH voor uw project toe te voegen aangezien GitLab sleutel** opstelt:
 
 1. Meld u als eigenaar aan bij de GitLab-opslagplaats.
-1. Controleer of de _Pijpleidingen_ Deze optie is ingeschakeld voor uw project:
+1. Verifieer dat de _optie van Pijpleidingen_ voor uw project wordt toegelaten:
 
-   1. Vouw in de projectinstellingen de **[!UICONTROL Visibility, project, features, permissions]** sectie.
+   1. Vouw de sectie **[!UICONTROL Visibility, project, features, permissions]** in de projectinstellingen uit.
    1. Klik indien nodig op **[!UICONTROL Pipelines]** om de optie in te schakelen.
 
 1. Voeg uw openbare sleutel van SSH aan de montages CI/CD toe.
 
-   1. Klik in de linkernavigatie op Instellingen > **[!UICONTROL CI / CD]**.
-   1. Klik op Toepassingssleutels **Uitbreiden** om de sleutel te vormen.
-   1. In de _Sleutel implementeren_ formulier, voeg een implementatiesleutel toe aan de **[!UICONTROL Title]** veld en plak de openbare SSH-toets in het dialoogvenster **[!UICONTROL Key]** veld.
-   1. Klikken **[!UICONTROL Add Key]** om de configuratie op te slaan.
+   1. Klik in de linkernavigatie op Instellingen > **[!UICONTROL CI / CD]** .
+   1. Klik op Deploy Keys **breid** uit om de sleutel te vormen.
+   1. In _stel Zeer belangrijke_ vorm op, voeg een opstellen zeer belangrijke naam aan het **[!UICONTROL Title]** gebied toe en kleef uw openbare sleutel van SSH op het **[!UICONTROL Key]** gebied.
+   1. Klik op **[!UICONTROL Add Key]** om de configuratie op te slaan.
 
 >[!ENDTABS]
 
 ## Beveiligde omgevingen en vertakkingen
 
-U kunt uw project en milieu&#39;s van om het even welke plaats door Webbrowser toegang hebben gebruikend [!DNL Cloud Console]. U kunt veiligheid hebben die voor uw milieu, opslag, en plaatsen van de Productie wordt geplaatst. Deze sectie helpt u uw milieu&#39;s van de Integratie en van het Staging voor strikt uw ontwikkelaars, DBAs, en meer beveiligen.
+U hebt vanuit elke locatie toegang tot uw project en omgevingen via een webbrowser met de [!DNL Cloud Console] . U kunt veiligheid hebben die voor uw milieu, opslag, en plaatsen van de Productie wordt geplaatst. Deze sectie helpt u uw milieu&#39;s van de Integratie en van het Staging voor strikt uw ontwikkelaars, DBAs, en meer beveiligen.
 
 >[!WARNING]
 >
->**NIET** de volgende methoden gebruiken voor het beveiligen van Pro Staging- en Production-omgevingen. Dit verbreekt snel caching. Gebruik de [Blokkeren](../cdn/fastly-vcl-blocking.md) beschikbaar in de snelste CDN voor Adobe Commerce.
+>**GEBRUIK NIET** de volgende methodes om de milieu&#39;s van het ProStaging en van de Productie te beveiligen. Dit verbreekt snel caching. Gebruik de [ Blokkerende ](../cdn/fastly-vcl-blocking.md) eigenschap beschikbaar in Fastly CDN voor Adobe Commerce.
 
-**Om omgevingen te beveiligen**:
+**aan veilige milieu&#39;s**:
 
-1. Aanmelden bij de [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. Meld u aan bij de map [[!DNL Cloud Console] ](https://console.adobecommerce.com) .
 
-1. Selecteer een project in het menu _Alle projecten_ lijst.
+1. Selecteer een project van de _Alle projecten_ lijst.
 
 1. Selecteer een omgeving en klik op het configuratiepictogram op de navigatiebalk.
 
-1. Omgevingsinstellingen _Algemeen_ tabblad, klikt u op **ON** for **[!UICONTROL HTTP access control enabled]** om veilige toegang mogelijk te maken. U kunt tussen geloofsbrieven of IP adressen kiezen om voor toegang te filtreren.
+1. Op het milieu montages _Algemene_ lusje, klik **** voor **[!UICONTROL HTTP access control enabled]** om veilige toegang toe te laten. U kunt tussen geloofsbrieven of IP adressen kiezen om voor toegang te filtreren.
 
-1. Als u wilt filteren op referenties, klikt u op **[!UICONTROL Add Login]**, voert u een gebruikersnaam en wachtwoord in en klikt u op **[!UICONTROL Add Login]** toe te voegen.
+1. Als u op referenties wilt filteren, klikt u op **[!UICONTROL Add Login]** , voert u een gebruikersnaam en wachtwoord in en klikt u op **[!UICONTROL Add Login]** om toe te voegen.
 
-1. Om door IP adres te filtreren, ga de IP adressen in een lijst met in `deny` of `allow`. Bijvoorbeeld:
+1. Als u op IP-adres wilt filteren, voert u de IP-adressen in een lijst in met `deny` of `allow` . Bijvoorbeeld:
 
    ```text
    123.456.789.111/29 allow

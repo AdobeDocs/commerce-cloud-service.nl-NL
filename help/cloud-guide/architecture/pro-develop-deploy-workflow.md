@@ -12,45 +12,45 @@ ht-degree: 0%
 
 # Workflow voor Pro-projecten
 
-Het Pro-project bevat één Git-opslagplaats met een globale `master` vertakking en drie hoofdomgevingen:
+Het Pro-project bevat één Git-opslagplaats met een globale `master` vertakking en drie grote omgevingen:
 
-1. **Productie** omgeving voor het lanceren en onderhouden van de livesite
-1. **Staging** omgeving voor testen met alle services
-1. **Integratie** omgeving voor ontwikkeling en testen
+1. **het milieu van de Productie** voor lancering en het handhaven van de levende plaats
+1. **het Opvoeren** milieu voor het testen met alle diensten
+1. **het milieu van de Integratie** voor ontwikkeling en het testen
 
-![Pro-omgevingslijst](../../assets/pro-environments.png)
+![ Pro milieulijst ](../../assets/pro-environments.png)
 
-Deze omgevingen zijn `read-only`, waarbij geïmplementeerde codewijzigingen worden geaccepteerd vanuit vertakkingen die vanuit uw lokale werkruimte worden doorgegeven. Zie [Pro-architectuur](pro-architecture.md) voor een volledig overzicht van de Pro-omgevingen. Zie [[!DNL Cloud Console]](../project/overview.md#cloud-console) voor een overzicht van de lijst met Pro-omgevingen in de projectweergave.
+Dit zijn `read-only` omgevingen die geïmplementeerde codewijzigingen accepteren vanuit vertakkingen die vanuit uw lokale werkruimte worden gepresenteerd. Zie [ Pro architectuur ](pro-architecture.md) voor een volledig overzicht van de Pro milieu&#39;s. Zie [[!DNL Cloud Console]](../project/overview.md#cloud-console) voor een overzicht van de lijst met Pro-omgevingen in de projectweergave.
 
-In de volgende afbeelding ziet u hoe de workflow voor het ontwikkelen en implementeren van Pro is gebaseerd op een eenvoudige, vertakkende aanpak. U [ontwikkelen](#development-workflow) code die een actieve vertakking gebruikt die op `integration` milieu, _duwen_ en _trekken_ de code verandert in en van uw verre, Actieve tak. U implementeert geverifieerde code door _samenvoegen_ de verre tak aan de basistak, die een geautomatiseerde [bouwen en implementeren](#deployment-workflow) proces voor die omgeving.
+In de volgende afbeelding ziet u hoe de workflow voor het ontwikkelen en implementeren van Pro is gebaseerd op een eenvoudige, vertakkende aanpak. U [ ontwikkelt ](#development-workflow) code gebruikend een actieve tak die op het `integration` milieu wordt gebaseerd, _duwend_ en _trekken_ codeveranderingen aan en van uw verre, Actieve tak. U stelt geverifieerde code door _samen te voegen_ de verre tak aan de basistak op, die een geautomatiseerd [ bouwt en ](#deployment-workflow) proces voor dat milieu opstelt.
 
-![Weergave op hoog niveau van de workflow voor de ontwikkeling van Pro-architectuur](../../assets/pro-dev-workflow.png)
+![ mening op hoog niveau van het Pro werkschema van de architectuurontwikkeling ](../../assets/pro-dev-workflow.png)
 
 ## Ontwikkelingsworkflow
 
-De integratieomgeving biedt één basis `integration` vertakking met uw Adobe Commerce op code voor de cloud-infrastructuur. U kunt één extra actieve omgevingsvertakking maken. Dit staat voor maximaal twee actieve takken toe die aan Platform als de dienstcontainers (PaaS) worden opgesteld. Het aantal niet-actieve omgevingen is onbeperkt.
+De integratieomgeving biedt één basisvertakking `integration` met uw Adobe Commerce op code voor de cloud-infrastructuur. U kunt één extra actieve omgevingsvertakking maken. Dit staat voor maximaal twee actieve takken toe die aan Platform als de dienstcontainers (PaaS) worden opgesteld. Het aantal niet-actieve omgevingen is onbeperkt.
 
 {{enhanced-integration-envs}}
 
-De projectmilieu&#39;s steunen een flexibel, ononderbroken integratieproces. Begin met het klonen van de `integration` vertakken naar uw lokale projectmap. Creeer een tak, of veelvoudige takken, ontwikkel nieuwe eigenschappen, vorm veranderingen, voeg uitbreidingen toe, en stel updates op:
+De projectmilieu&#39;s steunen een flexibel, ononderbroken integratieproces. Eerst kloont u de `integration` -vertakking naar uw lokale projectmap. Creeer een tak, of veelvoudige takken, ontwikkel nieuwe eigenschappen, vorm veranderingen, voeg uitbreidingen toe, en stel updates op:
 
-- **Ophalen** wijzigingen van `integration`
+- **Vetch** veranderingen van `integration`
 
-- **Branch** van `integration`
+- **Tak** van `integration`
 
-- **Ontwikkelen** code op een lokaal werkstation, inclusief [!DNL Composer] updates
+- **ontwikkelt** code op een lokaal werkstation, met inbegrip van [!DNL Composer] updates
 
-- **Push** code verandert in extern en valideert
+- **duw** codeveranderingen in ver en bevestigt
 
-- **Samenvoegen** tot `integration` en test
+- **Fusie** aan `integration` en test
 
-Met een ontwikkelde codetak en de overeenkomstige configuratiedossiers, zijn uw codeveranderingen klaar om aan samen te voegen `integration` vertakking voor uitgebreidere tests. De `integration` milieu is ook het beste voor :
+Met een ontwikkelde codevertakking en de overeenkomstige configuratiedossiers, zijn uw codeveranderingen klaar om aan de `integration` tak voor uitvoeriger het testen samen te voegen. De `integration` -omgeving is ook het meest geschikt voor:
 
-- **Integratie van services van derden**—Niet alle services zijn beschikbaar in de PaaS-omgeving.
+- **Integrerend derdediensten** - niet zijn alle diensten beschikbaar in het milieu PaaS.
 
-- **Configuratiebeheerbestanden genereren**—Sommige configuratie-instellingen zijn _Alleen-lezen_ in een geïmplementeerde omgeving.
+- **Genererend configuratiebeheersdossiers** - sommige configuratiemontages zijn _slechts Lees_ in een opgesteld milieu.
 
-- **Uw winkel configureren**—U zou alle opslagmontages volledig moeten vormen gebruikend het integratiemilieu. U kunt de **URL voor beheerder van winkel** op de _integratie_ de milieuweergave in de _[!DNL Cloud Console]_.
+- **Vormend uw opslag** - u zou alle opslagmontages volledig moeten vormen gebruikend het integratiemilieu. U kunt **Admin URL van de Opslag** op de _integratie_ milieumening in _[!DNL Cloud Console]_vinden.
 
 ## Implementatieworkflow
 
@@ -72,7 +72,7 @@ Scripthandelingen maken:
 
 Scripthandelingen implementeren:
 
-- Plaats de site in een doelomgeving _Onderhoud_ mode
+- Plaats de plaats in het doelmilieu op a _wijze van het Onderhoud_
 
 - Statische inhoud implementeren als deze niet is voltooid tijdens de build
 
@@ -80,17 +80,17 @@ Scripthandelingen implementeren:
 
 - Vorm het verpletteren voor verkeer
 
-Na het proces voor het maken en implementeren van code komt uw winkel online terug met de nieuwste codewijzigingen en -configuraties. Zie [Implementatieproces](../deploy/process.md).
+Na het proces voor het maken en implementeren van code komt uw winkel online terug met de nieuwste codewijzigingen en -configuraties. Zie [ proces van de Plaatsing ](../deploy/process.md).
 
 ### Samenvoegen tot integratie
 
-Combineer alle geverifieerde codeveranderingen door uw actieve ontwikkelingstak in de basis samen te voegen `integration` vertakking. U kunt al uw wijzigingen testen op het tabblad `integration` vertakken voordat wijzigingen in de Staging-omgeving worden bevorderd.
+Combineer alle geverifieerde codewijzigingen door uw actieve ontwikkelingsvertakking samen te voegen tot de basissvertakking `integration` . U kunt al uw wijzigingen in de `integration` -vertakking testen voordat u wijzigingen in de Staging-omgeving bevordert.
 
 ### Samenvoegen tot fasering
 
-Staging is een omgeving vóór de productie die alle services en instellingen zo dicht mogelijk bij de productieomgeving biedt. Pers altijd uw codeveranderingen van `integration` milieu voor de `staging` omgeving zodat u uitgebreide tests kunt uitvoeren met alle services. De eerste keer dat u de testomgeving gebruikt, moet u services configureren, zoals [Fastly CDN](../cdn/fastly.md) en [New Relic](../monitor/new-relic-service.md). Configureer betaalgateways, verzendingen, meldingen en andere essentiële services met sandbox- of testgegevens.
+Staging is een omgeving vóór de productie die alle services en instellingen zo dicht mogelijk bij de productieomgeving biedt. Duw altijd uw codeveranderingen van het `integration` milieu aan het `staging` milieu zodat u grondig het testen met alle diensten kunt uitvoeren. De eerste keer u het opvoeren milieu gebruikt, moet u de diensten, zoals [ snel CDN ](../cdn/fastly.md) en [ New Relic ](../monitor/new-relic-service.md) vormen. Configureer betaalgateways, verzendingen, meldingen en andere essentiële services met sandbox- of testgegevens.
 
-Het is best om elke dienst grondig te testen, uw prestaties testende hulpmiddelen te verifiëren, en het testen van UAT als beheerder en als klant uit te voeren, tot u vindt dat uw opslag klaar voor het productiemilieu is. Zie [Je winkel implementeren](../deploy/staging-production.md).
+Het is best om elke dienst grondig te testen, uw prestaties testende hulpmiddelen te verifiëren, en het testen van UAT als beheerder en als klant uit te voeren, tot u vindt dat uw opslag klaar voor het productiemilieu is. Zie [ uw opslag ](../deploy/staging-production.md) opstellen.
 
 ### Samenvoegen tot productie
 
@@ -101,6 +101,6 @@ Na grondig het testen in het opvoeren milieu, fusie aan het productiemilieu en g
 
 ### Samenvoegen tot algemene stramien
 
-Een kopie van de productiecode altijd naar de algemene `master` in het geval er een opkomende behoefte is om de productieomgeving te zuiveren zonder de diensten te onderbreken.
+Duw altijd een exemplaar van de productiecode aan Globaal `master` voor het geval er een opkomende behoefte is om het productiemilieu te zuiveren zonder de diensten te onderbreken.
 
-Do **niet** een vertakking maken van Global `master`. Gebruik de `integration` vertakking om nieuwe, actieve takken voor ontwikkeling en moeilijke situaties te creëren.
+Maak **** geen tak van Globaal `master`. Gebruik de `integration` -vertakking om nieuwe, actieve vertakkingen te maken voor ontwikkeling en oplossingen.

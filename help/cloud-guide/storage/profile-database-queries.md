@@ -14,9 +14,9 @@ ht-degree: 0%
 
 Wanneer u naar een database schrijft, kan het helpen om profilering uit te voeren om het effect van die wijzigingen te identificeren. Het profileren handhaaft een logboek van gegevensbestandvragen en verhoogt runtime precisie.
 
-**Om databasequery profiling in te schakelen**:
+**om gegevensbestandvraag toe te laten die** profileren:
 
-1. [Aanmelden bij de database](../services/mysql.md#connect-to-the-database).
+1. [ Login aan het gegevensbestand ](../services/mysql.md#connect-to-the-database).
 
 1. Profielen inschakelen.
 

@@ -17,16 +17,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->De projecten die vóór 5 juni 2020 werden verstrekt hadden veelvoudige, kleinere milieu&#39;s van de Integratie. Als u een grotere milieu van de Integratie voor het testen en de ontwikkeling nodig hebt, verzoek om een verbetering aan Verbeterde milieu&#39;s van de Integratie. Zie de [Aanvraag voor integratieomgeving](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/announcements/commerce-announcements/integration-environment-enhancement-request-pro-and-starter.html) artikel in het _Adobe Commerce Help Center_ voor meer informatie.
+>De projecten die vóór 5 juni 2020 werden verstrekt hadden veelvoudige, kleinere milieu&#39;s van de Integratie. Als u een grotere milieu van de Integratie voor het testen en de ontwikkeling nodig hebt, verzoek om een verbetering aan Verbeterde milieu&#39;s van de Integratie. Zie het [ verzoek van het Milieu van de Integratie ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/announcements/commerce-announcements/integration-environment-enhancement-request-pro-and-starter.html) artikel in het _Centrum van de Hulp van Adobe Commerce_ voor details.
 
 ## Samenvoegopties {#merge-options}
 
-Standaard overschrijft het implementatieproces alle instellingen in de `env.php` bestand, maar u kunt een of meer waarden voor een serviceconfiguratie samenvoegen zonder alle waarden te overschrijven.
+Standaard overschrijft het implementatieproces alle instellingen in het `env.php` -bestand. U kunt er echter voor kiezen een of meer waarden voor een serviceconfiguratie samen te voegen zonder alle waarden te overschrijven.
 
-Stel de `_merge` een van de volgende opties:
+Stel de optie `_merge` in op een van de volgende opties:
 
-- `true`—**Samenvoegen** de gevormde de de dienstwaarden met de milieu veranderlijke waarden.
-- `false`—**Overschrijven** de gevormde de de dienstwaarden met de milieu veranderlijke waarden.
+- `true` - **voeg** de gevormde de de dienstwaarden met de milieu veranderlijke waarden samen.
+- `false` - **overschrijft** de gevormde de de dienstwaarden met de milieu veranderlijke waarden.
 
 ## Persoonlijke opslagplaats {#private-repository}
 
@@ -38,36 +38,36 @@ Stel de `_merge` een van de volgende opties:
 
 >[!WARNING]
 >
->Sommige **Pro-projecten** vereisen een steunkaartje om de routeconfiguratie in bij te werken `routes.yaml` bestand en de uitsnijdconfiguratie in het dialoogvenster `.magento.app.yaml` bestand. De Adobe adviseert het bijwerken van en het testen van de configuratiedossiers van YAML in een milieu van de Integratie, dan het opstellen van veranderingen in het het Opvoeren milieu. Als uw veranderingen niet op het Opvoeren plaatsen nadat u zich herstelt en er geen verwante foutenmeldingen in het logboek zijn, dan u **MOET** [Een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) dat de poging tot configuratieveranderingen beschrijft. Neem de bijgewerkte YAML-configuratiebestanden op in het ticket.
+>Sommige **Pro projecten** vereisen een steunkaartje om de routeconfiguratie in het `routes.yaml` dossier en de kroonconfiguratie in het `.magento.app.yaml` dossier bij te werken. De Adobe adviseert het bijwerken van en het testen van de configuratiedossiers van YAML in een milieu van de Integratie, dan het opstellen van veranderingen in het het Opvoeren milieu. Als uw veranderingen niet op het Opvoeren plaatsen na u worden toegepast en er geen verwante foutenmeldingen in het logboek zijn, dan MOET u **[ een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voorleggen dat de geprobeerd configuratieveranderingen beschrijft.** Neem de bijgewerkte YAML-configuratiebestanden op in het ticket.
 
 ## Pro-services-ondersteuning {#pro-update-service}
 
 >[!TIP]
->Voor Pro-projecten moet u [een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) installeren of bijwerken [diensten](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/services-yaml.html) in `Staging` en `Production` alleen omgevingen.
+>Voor Pro projecten, moet u [ een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voorleggen om [ diensten ](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/services-yaml.html) in `Staging` en `Production` slechts milieu&#39;s te installeren of bij te werken.
 >
->Geef aan welke servicewijzigingen nodig zijn en neem uw bijgewerkte `.magento.app.yaml` en `services.yaml` en geef de PHP-versie op in het ticket. Voor zelfbedieningswijzigingen in PHP-versie, extensies of omgevingen raadpleegt u [PHP-instellingen](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/php-settings.html) in _Toepassingsconfiguratie_.
+>Geef aan welke servicewijzigingen nodig zijn, neem de bijgewerkte `.magento.app.yaml` - en `services.yaml` -bestanden op en geef de PHP-versie op in het ticket. Voor zelfbedienings veranderingen in PHP versie, uitbreidingen, of milieu montages, zie [ PHP montages ](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/php-settings.html) in _configuratie van de Toepassing_.
 >
->Voor wijzigingen in een _leven_ Productieomgeving (**Alleen Pro**), moet u een minimale opzegtermijn van 48 uur opgeven om het infrastructuurteam van de cloud voldoende tijd te geven om bronnen te zoeken en een beveiligde upgrade uit te voeren.
+>Voor veranderingen in a _levende_ milieu van de Productie (**Pro slechts**), moet u een minimum van 48 uurbericht verstrekken om het de infrastructuurteam van de Wolk voldoende tijd toe te staan om middelen te marshal en een veilige verbetering te leiden.
 
 ## Pro-back-ups {#pro-backups}
 
 >[!TIP]
 >
->In Pro Staging- en Productieomgevingen moet u [een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) om een specifieke steun terug te winnen noterend de datum, de tijd, en de tijdzone in het kaartje.
+>Op Pro het Opvoeren en de milieu&#39;s van de Productie, moet u [ een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voorleggen om een specifieke steun terug te winnen noterend de datum, de tijd, en de tijdzone in het kaartje.
 >
->Adobe doet **niet** herstel omgevingen vanuit een automatische back-up. Zie [Een DB-momentopname herstellen uit Staging of Productie](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production.html) voor hulp die een methode kiest om een Opname van het Staging of van de Productie te herstellen.
+>De Adobe herstelt **** geen milieu&#39;s van een automatische steun. Zie [ herstellen een momentopname van DB van het Opvoeren of Productie ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production.html) voor hulp die een methode kiezen om een het Opname van het Opvoeren of van de Productie te herstellen.
 
 ## Waarschuwing bij opnieuw implementeren {#redeploy-warning}
 
 >[!WARNING]
 >
->Het plaatsingsproces begint wanneer u een fusie, duw, of synchronisatie van uw milieu uitvoert, of wanneer u een handherplaatsing teweegbrengt, waarin [!DNL Commerce] de toepassing bevindt zich in de onderhoudsmodus. Voor een productieomgeving raadt de Adobe aan deze werkzaamheden tijdens de werkuren buiten de piekuren af te ronden om onderbreking van de service te voorkomen.
+>Het implementatieproces begint wanneer u een samenvoeging, push of synchronisatie van uw omgeving uitvoert of wanneer u een handmatige herimplementatie activeert, waarbij de toepassing van [!DNL Commerce] zich in de onderhoudsmodus bevindt. Voor een productieomgeving raadt de Adobe aan deze werkzaamheden tijdens de werkuren buiten de piekuren af te ronden om onderbreking van de service te voorkomen.
 
 ## Plaatsaanduiding voor route {#route-placeholder}
 
 >[!NOTE]
 >
->De volgende voorbeelden van de routeconfiguratie gebruiken routesjablonen met placeholders. De `{default}` placeholder vertegenwoordigt het standaarddomein dat voor uw plaats wordt gevormd. Als uw project meerdere domeinen heeft, gebruikt u de `{all}` placeholder om het verpletteren voor het standaarddomein en alle aliassen te vormen. Zie [Verbindingen vormen](/help/cloud-guide/routes/routes-yaml.md).
+>De volgende voorbeelden van de routeconfiguratie gebruiken routesjablonen met placeholders. De tijdelijke aanduiding `{default}` vertegenwoordigt het standaarddomein dat voor uw site is geconfigureerd. Als uw project veelvoudige domeinen heeft, gebruik placeholder `{all}` om het verpletteren voor het standaarddomein en alle aliassen te vormen. Zie [ routes ](/help/cloud-guide/routes/routes-yaml.md) vormen.
 
 ## SCD-timing {#scd-timing-warning}
 
@@ -79,33 +79,33 @@ Stel de `_merge` een van de volgende opties:
 
 >[!NOTE]
 >
->Met [!DNL ECE-Tools] 2002.1.0 en hoger kunt u de op scenario&#39;s gebaseerde implementatiefunctie gebruiken om de ontwikkelings-, implementatie- en postimplementatieprocessen voor uw Adobe Commerce aan te passen in het infrastructuurproject in de cloud. Zie [Implementatie op basis van scenario&#39;s](/help/cloud-guide/deploy/scenario-based.md).
+>Met [!DNL ECE-Tools] 2002.1.0 en hoger kunt u de op scenario&#39;s gebaseerde implementatiefunctie gebruiken om de build-, implementatie- en postimplementatieprocessen voor uw Adobe Commerce aan te passen in het infrastructuurproject in de cloud. Zie [ op scenario-Gebaseerde plaatsing ](/help/cloud-guide/deploy/scenario-based.md).
 
 ## Serviceinstructie {#service-instruction}
 
-Gebruik de volgende instructies voor de dienstopstelling op de milieu&#39;s van de Integratie Pro en van de Starter milieu&#39;s, met inbegrip van `master` vertakking.
+Gebruik de volgende instructies voor de dienstopstelling op de milieu&#39;s van de Integratie Pro en van de Starter milieu&#39;s, met inbegrip van de `master` tak.
 
 >[!NOTE]
 >
->[Een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) om de de dienstconfiguratie op ProProductie en het Opvoeren milieu&#39;s te veranderen.
+>[ leg een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voor om de de dienstconfiguratie op ProProductie en het Opvoeren milieu&#39;s te veranderen.
 
 ## Servicewijziging {#service-change-tip}
 
 >[!TIP]
 >
->Nadat u de service hebt ingesteld, kunt u de softwareversie van een geïnstalleerde service wijzigen door het `services.yaml` en `.magento.app.yaml` configuratiebestanden. Zie [Serviceversie wijzigen](/help/cloud-guide/services/services-yaml.md#change-service-version) richtsnoeren voor de verbetering of inkrimping van een dienst.
+>Nadat u de service hebt ingesteld, kunt u de softwareversie van een geïnstalleerde service wijzigen door de configuratiebestanden van `services.yaml` en `.magento.app.yaml` bij te werken. Zie [ de dienstversie van de Verandering ](/help/cloud-guide/services/services-yaml.md#change-service-version) voor begeleiding bij de bevordering of het degraderen van de dienst.
 
 ## Tip voor implementatie stoppen {#stuck-deployment-tip}
 
 >[!TIP]
 >
->Voor hulp bij vastgelopen implementaties kunt u de [Adobe Commerce-probleemoplossing voor implementatie](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/deployment/magento-deployment-troubleshooter.html) in de _Hulp-centrum voor handel_.
+>Voor hulp met gestadige plaatsingen, gebruik [ de plaatsingslos van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/deployment/magento-deployment-troubleshooter.html) in het _Centrum van de Hulp van Commerce_.
 
 ## Bijwerken naar ECE-gereedschappen {#ece-tools-package}
 
 >[!NOTE]
 >
->Als u een versie van Adobe Commerce gebruikt op een cloudinfrastructuur die de `ece-tools` pakket, dan moet u een [eenmalige upgrade](/help/cloud-guide/dev-tools/install-package.md) naar uw cloud-project om verouderde pakketten te verwijderen. Als u momenteel `ece-tools` en u moet het pakket bijwerken, zie [Het pakket ECE-gereedschappen bijwerken](/help/cloud-guide/dev-tools/update-package.md).
+>Als u een versie van Adobe Commerce op wolkeninfrastructuur gebruikt die niet het `ece-tools` pakket bevat, dan moet u a [ éénmalige verbetering ](/help/cloud-guide/dev-tools/install-package.md) aan uw wolkenproject uitvoeren om verouderde pakketten te verwijderen. Als u momenteel het `ece-tools` pakket gebruikt en u het moet bijwerken, zie [ Update het ECE-Hulppakket ](/help/cloud-guide/dev-tools/update-package.md).
 
 ## Upgradetip {#upgrade-tip}
 
@@ -117,12 +117,12 @@ Gebruik de volgende instructies voor de dienstopstelling op de milieu&#39;s van 
 
 ## Aanmelden bij beheerder {#admin-login-step}
 
-1. [Aanmelden](/help/get-started/onboarding.md#access-your-admin-panel) aan de beheerder.
+1. [ Login ](/help/get-started/onboarding.md#access-your-admin-panel) aan Admin.
 
 ## Aangepaste implementatie van VCL-fragmenten automatiseren {#automate-vcl-snippet-deployment}
 
 >[!NOTE]
 >
->In plaats van handmatig aangepaste VCL-fragmenten te uploaden, kunt u fragmenten toevoegen aan de `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` in uw omgeving. Fragmenten in deze map worden automatisch geüpload wanneer u op _VCL snel uploaden naar_ in de Commerce Admin. Zie [Geautomatiseerde implementatie van aangepaste VCL-fragmenten](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md#automated-custom-vcl-snippets-deployment) in de Fastly CDN module voor Magento 2 documentatie.
+>In plaats van handmatig aangepaste VCL-fragmenten te uploaden, kunt u fragmenten toevoegen aan de map `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` in uw omgeving. De fragmenten in deze folder uploaden automatisch wanneer u _klikt uploadt VCL aan Fastly_ in Commerce Admin. Zie [ Geautomatiseerde plaatsing van de fragmenten VCL van douaneVCL ](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md#automated-custom-vcl-snippets-deployment) in de Fastly CDN module voor Magento 2 documentatie.
 
 <!-- Fastly-related snippets end -->

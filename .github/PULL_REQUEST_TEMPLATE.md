@@ -15,7 +15,7 @@ Dit trekkingsverzoek (PR) ...
 
 - ...
 
-## Koppelingen naar de handelcode
+## Koppelingen naar Commerce-code
 
 <!--  OPTIONAL - REMOVE THIS SECTION IF NOT USED.
 If this pull request references a file in a Magento Open Source or Adobe Commerce codebase repository, add the link here. -->

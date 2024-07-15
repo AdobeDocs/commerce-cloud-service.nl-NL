@@ -27,13 +27,13 @@ U moet een GitLab-token en een webhaak verkrijgen om het proces voort te zetten.
 ## Vereisten
 
 - Beheerderstoegang tot de Adobe Commerce in het infrastructuurproject voor de cloud
-- [`magento-cloud` CLI](../dev-tools/cloud-cli-overview.md) in uw lokale omgeving
+- [`magento-cloud` CLI ](../dev-tools/cloud-cli-overview.md) in uw lokale omgeving
 - Een GitLab-account
-- Een GitLab persoonlijk toegangstoken met schrijven-toegang tot de bewaarplaats GitLab, moet het geselecteerde werkingsgebied minstens zijn: `api` en `read_repository`.
+- Een GitLab persoonlijke toegangstoken met schrijftoegang tot de GitLab-opslagplaats, moet het geselecteerde bereik ten minste zijn: `api` en `read_repository` .
 
 ## De opslagplaats voorbereiden
 
-Clone your Adobe Commerce on cloud Infrastructure project from an existing environment and migrate the project branches to a new, empty GitLab repository, preserve the same tak names. Het is **kritisch** om een identieke Git-structuur te behouden, zodat u geen bestaande omgevingen of vertakkingen in uw Adobe Commerce verliest voor het infrastructuurproject van de cloud.
+Clone your Adobe Commerce on cloud Infrastructure project from an existing environment and migrate the project branches to a new, empty GitLab repository, preserve the same tak names. Het is kritiek **om een identieke boom van het Git te behouden, zodat u geen bestaande milieu&#39;s of takken in uw Adobe Commerce op het project van de wolkeninfrastructuur verliest.**
 
 1. Meld u vanaf de terminal aan bij uw Adobe Commerce voor een infrastructuurproject voor de cloud.
 
@@ -59,7 +59,7 @@ Clone your Adobe Commerce on cloud Infrastructure project from an existing envir
    git remote add origin git@gitlab.com:<user-name>/<repo-name>.git
    ```
 
-   De standaardnaam voor de externe verbinding kan `origin` of `magento`. Indien `origin` bestaat, kunt u een verschillende naam kiezen of u kunt de bestaande verwijzing anders noemen of schrappen. Zie [documentatie op afstand](https://git-scm.com/docs/git-remote).
+   De standaardnaam voor de externe verbinding kan `origin` of `magento` zijn. Als `origin` bestaat, kunt u een verschillende naam kiezen of u kunt de bestaande verwijzing een andere naam geven of verwijderen. Zie [ git-verre documentatie ](https://git-scm.com/docs/git-remote).
 
 1. Controleer of u de GitLab-afstandsbediening correct hebt toegevoegd.
 
@@ -80,13 +80,13 @@ Clone your Adobe Commerce on cloud Infrastructure project from an existing envir
    git push -u origin master
    ```
 
-   Als u begint met een nieuwe GitLab-opslagplaats, moet u mogelijk `-f` omdat de externe opslagplaats niet overeenkomt met uw lokale kopie.
+   Als u begint met een nieuwe GitLab-opslagplaats, moet u mogelijk de optie `-f` gebruiken, omdat de externe opslagplaats niet overeenkomt met uw lokale kopie.
 
 1. Controleer of uw GitLab-opslagplaats al uw projectbestanden bevat.
 
 ## De integratie met GitLab inschakelen
 
-Gebruik de `magento-cloud integration` gebruiken om de integratie met GitLab mogelijk te maken en de Payload-URL voor de GitLab-webhaak te krijgen om updates van GitLab naar uw Adobe Commerce te verzenden via het cloudinfragment-infrastructuurproject.
+Gebruik de opdracht `magento-cloud integration` om de integratie met GitLab in te schakelen en de Payload-URL voor de GitLab-webhaak te gebruiken om updates van GitLab naar uw Adobe Commerce te verzenden via het infrastructuurproject in de cloud.
 
 ```bash
 magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your-GitLab-token> [--base-url=<GitLab-url> --server-project=<GitLab-project> --build-merge-requests={true|false} --merge-requests-clone-parent-data={true|false} --fetch-branches={true|false} --prune-branches={true|false}]
@@ -96,18 +96,18 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
 | ------ | ----------- |
 | `<project-ID>` | Projectid Adobe Commerce on cloud Infrastructure |
 | `<your-GitLab-token>` | Het persoonlijke toegangstoken dat u voor GitLab produceerde |
-| `--base-url` | URL van GitLab (`https://gitlab.com/` als GitLab wordt gebruikt in de SaaS-versie) |
+| `--base-url` | URL van GitLab (`https://gitlab.com/` als GitLab in zijn versie SaaS wordt gebruikt) |
 | `--server-project` | Projectnaam in GitLab (onderdeel na de basis-URL) |
-| `--build-merge-requests` | An _optioneel_ parameter die Adobe Commerce op cloudinfrastructuur opdraagt een nieuwe omgeving te bouwen voor elke samenvoegaanvraag (`true` standaard) |
-| `--merge-requests-clone-parent-data` | An _optioneel_ parameter die Adobe Commerce op cloudinfrastructuur opdraagt de gegevens van de bovenliggende omgeving te klonen voor samenvoegaanvragen (`true` standaard) |
-| `--fetch-branches` | An _optioneel_ parameter die ervoor zorgt dat Adobe Commerce op de cloudinfrastructuur alle vertakkingen van de externe omgeving ophaalt (als inactieve omgevingen) (`true` standaard) |
-| `--prune-branches` | An _optioneel_ parameter die Adobe Commerce instructies geeft over cloudinfrastructuur om vertakkingen te verwijderen die niet op de externe server bestaan (`true` standaard) |
+| `--build-merge-requests` | Een _facultatieve_ parameter die Adobe Commerce op wolkeninfrastructuur opdraagt om een nieuw milieu voor elk fusieverzoek (`true` door gebrek te bouwen) |
+| `--merge-requests-clone-parent-data` | Een _facultatieve_ parameter die Adobe Commerce op wolkeninfrastructuur opdraagt om de gegevens van het oudermilieu voor fusieverzoeken (`true` door gebrek te klonen) |
+| `--fetch-branches` | Een _facultatieve_ parameter die Adobe Commerce op wolkeninfrastructuur veroorzaakt om alle takken van ver (als inactieve milieu&#39;s) te halen (`true` door gebrek) |
+| `--prune-branches` | Een _facultatieve_ parameter die Adobe Commerce op wolkeninfrastructuur opdraagt om takken te schrappen die niet op ver (`true` door gebrek bestaan) |
 
 >[!WARNING]
 >
->De `magento-cloud integration` overschrijvingen van opdrachten _alles_ code in uw Adobe Commerce over het infrastructuurproject voor de cloud met de code uit uw GitLab-opslagplaats. Dit omvat alle vertakkingen, inclusief de `production` vertakking. Deze handeling gebeurt onmiddellijk en kan niet ongedaan worden gemaakt. Als beste praktijken, is het belangrijk om al uw takken van uw Adobe Commerce op het project van de wolkeninfrastructuur te klonen en hen te duwen aan uw bewaarplaats GitLab alvorens de integratie GitLab toe te voegen.
+>Het `magento-cloud integration` bevel beschrijft _alle_ code in uw Adobe Commerce op het project van de wolkeninfrastructuur met de code van uw bewaarplaats GitLab. Dit geldt voor alle vertakkingen, inclusief de `production` -vertakking. Deze handeling gebeurt onmiddellijk en kan niet ongedaan worden gemaakt. Als beste praktijken, is het belangrijk om al uw takken van uw Adobe Commerce op het project van de wolkeninfrastructuur te klonen en hen te duwen aan uw bewaarplaats GitLab alvorens de integratie GitLab toe te voegen.
 
-**De integratie met GitLab inschakelen**:
+**om de integratie GitLab** toe te laten:
 
 1. Voeg vanaf de terminal de GitLab-integratie toe aan uw Adobe Commerce-project voor cloudinfrastructuur:
 
@@ -115,7 +115,7 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
    magento-cloud integration:add --type gitlab --project=3txxjf32gtryos --token=qVUfeEn4ouze7A7JH --base-url=https://gitlab.com/ --server-project=my-agency/project-name --build-merge-requests=false --merge-requests-clone-parent-data=false --fetch-branches=true --prune-branches=true
    ```
 
-1. Typ desgevraagd `y` om de integratie toe te voegen.
+1. Voer `y` in wanneer u daarom wordt gevraagd om de integratie toe te voegen.
 
    ```terminal
    Warning: adding a 'gitlab' integration will automatically synchronize code from the external Git repository.
@@ -123,7 +123,7 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
    Are you sure you want to continue? [y/N] y
    ```
 
-1. De **Hook-URL** weergegeven door de geretourneerde uitvoer.
+1. Kopieer **Hook URL** die door de terugkeeroutput wordt getoond.
 
    ```terminal
    Hook URL: https://eu-3.magento.cloud/api/projects/3txxjf32gtryos/integrations/eolmpfizzg9lu/hook
@@ -146,20 +146,20 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
 
 ### Webhaak toevoegen in GitLab
 
-Als u gebeurtenissen, zoals een push- of samenvoegverzoek, wilt communiceren met uw Cloud Git-server, moet u [een webhaak maken](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#overview) voor uw GitLab-opslagplaats
+Om gebeurtenissen —zoals een duw of fusieverzoeken— met uw server van de Git van de Wolk mee te delen, moet u een webhaak ](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#overview) voor uw bewaarplaats van GitLab [ tot stand brengen
 
-1. Klik in uw GitLab-opslagplaats op de knop **Instellingen** tab.
+1. In uw bewaarplaats GitLab, klik de **Montages** tabel.
 
-1. Klik in de linkernavigatiebalk op **Webhaken**.
+1. In de linkernavigatiebar, klik **Webhooks**.
 
-1. In de _Webhaken_ bewerken, bewerkt u de volgende velden:
+1. In de _vorm Webhooks_, geef de volgende gebieden uit:
 
-   - **URL**: Voer de `Hook URL` teruggekeerd toen u de integratie GitLab toeliet.
-   - **Geheim token**: Voer zo nodig een verificatiegeheim in.
-   - **Trigger**: Controle `Merge request events` en/of `Push events` afhankelijk van uw behoeften.
-   - **SSL-verificatie inschakelen**: U moet deze optie selecteren.
+   - **URL**: Ga `Hook URL` teruggekeerd in wanneer u de integratie GitLab toeliet.
+   - **Geheime token**: Ga indien nodig een verificatiegeheim in.
+   - **Trekker**: Controle `Merge request events` en/of `Push events` afhankelijk van uw behoeften.
+   - **laat SSL controle** toe: U moet deze optie selecteren.
 
-1. Klikken **Webhaak toevoegen**.
+1. Klik **toevoegen webhaak**.
 
 ### Integratie testen
 
@@ -183,12 +183,12 @@ Of u kunt het testen door een eenvoudige verandering in uw bewaarplaats GitLab t
    git add . && git commit -m "Testing GitLab integration" && git push
    ```
 
-1. Aanmelden bij de [[!DNL Cloud Console]](../project/overview.md) en verifieer dat uw commit bericht wordt getoond en uw project het opstellen.
+1. Meld u aan bij de [[!DNL Cloud Console]](../project/overview.md) en controleer of uw commit-bericht wordt weergegeven en of uw project wordt geïmplementeerd.
 
 ## Een Cloud-vertakking maken
 
-Gebruik de `magento-cloud` CLI `environment:push` gebruiken om een nieuwe omgeving te maken en te activeren. Zie [Een Cloud-vertakking maken](bitbucket.md#create-a-cloud-branch).
+Gebruik de opdracht `magento-cloud` CLI `environment:push` om een nieuwe omgeving te maken en te activeren. Zie [ een tak van de Wolk ](bitbucket.md#create-a-cloud-branch) creëren.
 
 ## Integratie verwijderen
 
-Gebruik de `magento-cloud` CLI `integration:delete` gebruiken om de integratie te verwijderen. Zie [Integratie verwijderen](bitbucket.md#remove-the-integration).
+Gebruik de opdracht `magento-cloud` CLI `integration:delete` om de integratie te verwijderen. Zie [ de integratie ](bitbucket.md#remove-the-integration) verwijderen.

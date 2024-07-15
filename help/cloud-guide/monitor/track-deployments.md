@@ -14,24 +14,24 @@ ht-degree: 0%
 
 # Implementaties bijhouden
 
-U kunt de New Relic inschakelen _Wijzigingen bijhouden_ om implementatiegebeurtenissen op uw Handel in het project van de wolkeninfrastructuur te controleren.
+U kunt de de veranderingen _eigenschap van het Spoor van New Relic_ toelaten om plaatsingsgebeurtenissen op uw Commerce op het project van de wolkeninfrastructuur te controleren.
 
-De de gegevensinzameling van Plaatsingen helpt de invloed van plaatsingsveranderingen in algemene prestaties, zoals cpu, geheugen, reactietijd, en meer analyseren. Zie [Wijzigingen bijhouden met NerdGraph](https://docs.newrelic.com/docs/change-tracking/change-tracking-graphql/) in de _New Relic-documentatie_.
+De de gegevensinzameling van Plaatsingen helpt de invloed van plaatsingsveranderingen in algemene prestaties, zoals cpu, geheugen, reactietijd, en meer analyseren. Zie {de veranderingen van het 0} Spoor gebruikend NerdGraph ](https://docs.newrelic.com/docs/change-tracking/change-tracking-graphql/) in de _documentatie van New Relic_.[
 
 >[!PREREQUISITES]
 >
 >- `NR_API_URL`: New Relic API-eindpunt, in dit geval NerdGraph API-URL `https://api.newrelic.com/graphql`
->- `NR_API_KEY`: Een gebruikerssleutel maken, zie [New Relic API-toetsen](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys) in de _New Relic_ documentatie.
->- `NR_APP_GUID`: Een entiteit die gegevens aan New Relic rapporteert heeft een unieke identiteitskaart (GUID). Als voorbeeld, om op een milieu van het Staging toe te laten, pas de het Staging milieu aan `NR_APP_GUID` wolkenvariabele met _staging-entiteit GUID_ uit New Relic. Zie de [Meer informatie over New Relic-entiteiten](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/what-entity-new-relic/) en [NerdGraph-zelfstudie: entiteitsgegevens weergeven](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-entities-api-tutorial/) in de _New Relic_ documentatie.
+>- `NR_API_KEY`: Creeer een gebruikerssleutel, zie [ New Relic API Sleutels ](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys) in de _New Relic_ documentatie.
+>- `NR_APP_GUID`: Een entiteit die gegevens aan New Relic rapporteert heeft een unieke identiteitskaart (GUID). Als voorbeeld, om op een het Opvoeren milieu toe te laten, pas de het Opvoeren milieu `NR_APP_GUID` wolkenvariabele met _het opvoeren entiteit GUID_ van New Relic aan. Zie [ leren over de entiteiten van New Relic ](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/what-entity-new-relic/) en [ NerdGraph leerprogramma: De entiteitgegevens van de mening ](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-entities-api-tutorial/) in de _New Relic_ documentatie.
 
 ## Trackimplementaties inschakelen
 
-Volg uw Commerce-projectimplementatiegebeurtenissen in New Relic door een _script_ integratie.
+Spoor uw de gebeurtenissen van de projectplaatsing van Commerce in New Relic door a _manuscript_ integratie te creëren.
 
-**Om spoorplaatsingen toe te laten**:
+**om de spoorplaatsingen** toe te laten:
 
 1. Wijzig op uw lokale werkstation de projectmap.
-1. Een `action-integration.js` bestand. Kopieer de volgende code en plak deze in de `action-integration.js` bestand en opslaan:
+1. Maak een `action-integration.js` -bestand. Kopieer de volgende code en plak deze in het `action-integration.js` -bestand en sla het op:
 
    ```javascript
    function trackDeployments() {
@@ -91,7 +91,7 @@ Volg uw Commerce-projectimplementatiegebeurtenissen in New Relic door een _scrip
    trackDeployments();
    ```
 
-1. Een _script_ integratie met behulp van `magento-cloud` CLI-opdracht en verwijzing naar de `action-integration.js` bestand.
+1. Creeer de integratie van het a _manuscript_ gebruikend het `magento-cloud` CLI bevel en van verwijzingen het `action-integration.js` dossier.
 
    ```bash
    magento-cloud integration:add --type script --events='environment.restore, environment.push, environment.branch, environment.activate, environment.synchronize, environment.initialize, environment.merge, environment.redeploy, environment.variable.create, environment.variable.delete, environment.variable.update' --file ./action-integration.js --project=<YOUR_PROJECT_ID> --environments=<YOUR_ENVIRONMENT_ID>
@@ -220,10 +220,10 @@ Volg uw Commerce-projectimplementatiegebeurtenissen in New Relic door een _scrip
    {"data":{"changeTrackingCreateDeployment":{"deploymentId":"some-deployment-id","entityGuid":"SomeGUIDhere"}}}
    ```
 
-1. Aanmelden bij uw [New Relic-account](https://login.newrelic.com/login).
+1. Login aan uw [ rekening van New Relic ](https://login.newrelic.com/login).
 
-1. Klik in het navigatiemenu Verkenner op **[!UICONTROL APM & Services]**. Selecteer uw omgeving [!UICONTROL Name] en [!UICONTROL Account].
+1. Klik in het navigatiemenu Verkenner op **[!UICONTROL APM & Services]** . Selecteer de omgeving [!UICONTROL Name] en [!UICONTROL Account] .
 
-1. Onder _Gebeurtenissen_, klikt u op **[!UICONTROL Change tracking]**.
+1. Onder _Gebeurtenissen_, klik **[!UICONTROL Change tracking]**.
 
-   ![Inzet](../../assets/new-relic/deployments.png)
+   ![ Plaatsingen ](../../assets/new-relic/deployments.png)

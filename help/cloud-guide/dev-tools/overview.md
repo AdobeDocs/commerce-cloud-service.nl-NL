@@ -13,10 +13,10 @@ ht-degree: 0%
 
 # Overzicht van ontwikkelaarsgereedschappen
 
-Adobe biedt een Cloud Tools Suite voor handel, die pakketten omvat die zijn ontworpen voor de implementatie en het beheer van Adobe Commerce-installaties en -upgrades op het Cloud-platform.
+Adobe biedt een Cloud Tools Suite voor Commerce, die pakketten omvat die zijn ontworpen voor de implementatie en het beheer van Adobe Commerce-installaties en -upgrades op het Cloud-platform.
 
-- [Cloud CLI](cloud-cli-overview.md)—Cloud-projecten en -omgevingen beheren, routines uitvoeren en automatiseringstaken uitvoeren met `magento-cloud` CLI.
-- [Cloud Docker voor handel](cloud-docker.md)—Implementeer Adobe Commerce in een dockeromgeving voor lokale ontwikkelings-, test- en automatiseringstaken.
-- [Cloudpatches](../development/apply-patches.md)—Pas patches toe om Commerce-versies te integreren met Cloud-omgevingen en om snel kritieke oplossingen te bieden.
-- [ECE-gereedschapspakket](package-overview.md)—Configuraties beheren, de Adobe Commerce-toepassing bouwen en implementeren in externe cloudomgevingen.
-- [Integraties](../integrations/overview.md)—Gemeenschappelijke ontwikkelingsinstrumenten, zoals berichten, webhaken, en de Git-gebaseerde diensten integreren.
+- [ Cloud CLI ](cloud-cli-overview.md) - beheer de projecten en milieu&#39;s van de Wolk, voer routines uit, en stel automatiseringstaken met `magento-cloud` CLI in werking.
+- [ Docker van de Wolk voor Commerce ](cloud-docker.md) - stel Adobe Commerce aan een milieu van het Dok voor lokale ontwikkeling, het testen, en automatiseringstaken op.
+- [ de Patches van de Wolk ](../development/apply-patches.md) - passen flarden toe om de versies van Commerce met de milieu&#39;s van de Wolk te integreren en kritieke moeilijke situaties snel te leveren.
+- [ ECE-Hulpmiddelen pakket ](package-overview.md) - beheer configuraties, bouw, en stel de toepassing van Adobe Commerce aan de verre wolkenmilieu&#39;s op.
+- [ Integratie ](../integrations/overview.md) - integreer gemeenschappelijke ontwikkelingshulpmiddelen, zoals berichten, webhooks, en op git-Gebaseerde diensten.

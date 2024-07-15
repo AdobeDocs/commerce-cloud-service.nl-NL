@@ -1,6 +1,6 @@
 ---
 title: Blokverwijzingsspam
-description: Blokkeer verwijzingspamme van uw site met behulp van het snelste randwoordenboek en een aangepast VCL-fragment.
+description: Blokkeer de verwijzingspamme van uw site met behulp van het Fastly Edge-woordenboek en een aangepast VCL-fragment.
 feature: Cloud, Configuration, Security
 exl-id: 665bac93-75db-424f-be2c-531830d0e59a
 source-git-commit: 7a181af2149eef7bfaed4dd4d256b8fa19ae1dda
@@ -12,13 +12,13 @@ ht-degree: 0%
 
 # Blokverwijzingsspam
 
-Het volgende voorbeeld toont hoe te om te vormen [Dichtstbijliggend woordenboek](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) met een aangepast VCL-fragment om verwijzingsspam van uw Adobe Commerce te blokkeren op de cloudinframesite.
+Het volgende voorbeeld toont hoe te om [ Snelle Woordenboek van Edge ](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) met een fragment van douaneVCL te vormen om verwijzingsspam van uw Adobe Commerce op de plaats van de wolkeninfrastructuur te blokkeren.
 
 >[!NOTE]
 >
 >Wij adviseren toevoegend de configuraties van douaneVCL aan een het Opvoeren milieu waar u hen kunt testen alvorens hen tegen het milieu van de Productie in werking te stellen.
 
-**Vereisten:**
+**Eerste vereisten:**
 
 {{$include /help/_includes/vcl-snippet-prerequisites.md}}
 
@@ -26,43 +26,43 @@ Het volgende voorbeeld toont hoe te om te vormen [Dichtstbijliggend woordenboek]
 
 ## Een lijst van gewezen personen met referentie maken
 
-De Woordenboeken van de rand leiden tot sleutel-waardeparen die voor functies VCL tijdens VCL fragmentverwerking toegankelijk zijn. In dit voorbeeld maakt u een Edge-woordenboek met de lijst met referentiewebsites die u wilt blokkeren.
+Edge-woordenboeken maken sleutelwaardeparen die toegankelijk zijn voor VCL-functies tijdens de verwerking van VCL-fragmenten. In dit voorbeeld maakt u een Edge-woordenboek met de lijst met referentiewebsites die u wilt blokkeren.
 
 {{admin-login-step}}
 
-1. Klikken **Winkels** > **Instellingen** > **Configuratie** > **Geavanceerd** > **Systeem**.
+1. Klik **Slaat** op > **Montages** > **Configuratie** > **Geavanceerd** > **Systeem**.
 
-1. Uitbreiden **Volledige paginacache** > **Snelle configuratie** > **Randwoordenboeken**.
+1. Breid **Volledig Geheime voorgeheugen van de Pagina** > **Snelle Configuratie** uit > **Edge woordenboeken**.
 
 1. De container voor woordenboeken maken:
 
-   - Klikken **Container toevoegen**.
+   - Klik **toevoegen container**.
 
-   - Op de *Container* pagina, voert u een **Woordenboeknaam**—`referrer_blocklist`.
+   - Op de *pagina van de Container*, ga a **naam van het Woordenboek** in - `referrer_blocklist`.
 
-   - Selecteren **Activeren na de wijziging** om uw veranderingen in de versie van de Snelle de dienstconfiguratie op te stellen die u uitgeeft.
+   - Selecteer **activeren na de verandering** om uw veranderingen in de versie van de Snelle de dienstconfiguratie op te stellen die u uitgeeft.
 
-   - Klikken **Uploaden** om het woordenboek aan uw Fastly de dienstconfiguratie toe te voegen.
+   - Klik **uploaden** om het woordenboek aan uw Snelle de dienstconfiguratie vast te maken.
 
-1. Voeg de lijst met domeinnamen die u wilt blokkeren toe aan het dialoogvenster `referrer_blocklist` woordenboek:
+1. Voeg de lijst met domeinnamen die u wilt blokkeren toe aan het woordenboek `referrer_blocklist` :
 
-   - Klik op het pictogram Instellingen voor het dialoogvenster `referrer_blocklist` woordenboek.
+   - Klik op het pictogram Instellingen voor het woordenboek `referrer_blocklist` .
 
-   - U kunt sleutelwaardeparen toevoegen en opslaan in het nieuwe woordenboek. Voor dit voorbeeld, elk **Sleutel** is de domeinnaam van een referentie-URL die moet worden geblokkeerd en **Waarde** is `true`.
+   - U kunt sleutelwaardeparen toevoegen en opslaan in het nieuwe woordenboek. Voor dit voorbeeld, is elke **Sleutel** de domeinnaam van een verwijzer URL om te blokkeren en **Waarde** is `true`.
 
-     ![Slechte verwijzingenwoordenboekitems toevoegen](../../assets/cdn/fastly-referrer-blocklist-dictionary.png)
+     ![ voeg slechte punten van het verwijzingenwoordenboek ](../../assets/cdn/fastly-referrer-blocklist-dictionary.png) toe
 
-   - Klikken **Annuleren** om naar de pagina van de systeemconfiguratie terug te keren.
+   - Klik **annuleren** om aan de pagina van de systeemconfiguratie terug te keren.
 
-1. Klikken **Config opslaan**.
+1. Klik **sparen Config**.
 
 1. Vernieuw de cache volgens het bericht boven aan de pagina.
 
-Zie voor meer informatie over Edge-woordenboeken [Edge-woordenboeken maken en gebruiken](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) en [aangepaste VCL-fragmenten](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api#custom-vcl-examples) in de Fastly documentatie.
+Voor meer informatie over de Woordenboeken van Edge, zie [ Creërend en gebruikend de Woordenboeken van Edge ](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) en [ de fragmenten van douaneVCL ](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api#custom-vcl-examples) in de Fastly documentatie.
 
 ## Een aangepast VCL-fragment maken om verwijzingsspam te blokkeren
 
-De volgende aangepaste VCL-fragmentcode (JSON-indeling) toont de logica voor het controleren en blokkeren van aanvragen. Het VCL-fragment legt de host van een verwijzingswebsite vast in een header en vergelijkt vervolgens de hostnaam met de lijst met URL&#39;s in het dialoogvenster `referrer_blocklist` woordenboek. Als de hostnaam overeenkomt, wordt de aanvraag geblokkeerd met een `403 Forbidden` fout.
+De volgende aangepaste VCL-fragmentcode (JSON-indeling) toont de logica voor het controleren en blokkeren van aanvragen. Het VCL-fragment legt de host van een verwijzingswebsite vast in een header en vergelijkt vervolgens de hostnaam met de lijst met URL&#39;s in het `referrer_blocklist` -woordenboek. Als de hostnaam overeenkomt, wordt de aanvraag geblokkeerd door een `403 Forbidden` -fout.
 
 ```json
 {
@@ -76,31 +76,31 @@ De volgende aangepaste VCL-fragmentcode (JSON-indeling) toont de logica voor het
 
 Voordat u een op dit voorbeeld gebaseerd fragment maakt, controleert u de waarden om te bepalen of u wijzigingen wilt aanbrengen:
 
-- `name` — Naam voor het VCL-fragment. In dit voorbeeld hebben we `block_bad_referrer`.
+- `name` — Naam voor het VCL-fragment. In dit voorbeeld hebben we `block_bad_referrer` gebruikt.
 
-- `dynamic` — Waarde 0 geeft een [regulier fragment](https://docs.fastly.com/en/guides/using-regular-vcl-snippets) uploaden naar de versioned VCL voor de snelconfiguratie.
+- `dynamic` — Waarde 0 wijst op a [ regelmatig fragment ](https://docs.fastly.com/en/guides/using-regular-vcl-snippets) om aan versioned VCL voor de Snelle configuratie te uploaden.
 
-- `priority` — Hiermee bepaalt u wanneer het VCL-fragment wordt uitgevoerd. De prioriteit is `5` om deze fragmentcode uit te voeren vóór een van de standaard VCL-fragmenten voor Magento&#39;s (`magentomodule_*`) een prioriteit van 50. Stel de prioriteit voor elk aangepast fragment in op een waarde hoger of lager dan 50, afhankelijk van het tijdstip waarop het fragment moet worden uitgevoerd. Fragmenten met een lagere prioriteit worden eerst uitgevoerd.
+- `priority` — Hiermee bepaalt u wanneer het VCL-fragment wordt uitgevoerd. De prioriteit is `5` om deze fragmentcode in werking te stellen alvorens om het even welk standaard Magento VCL fragmenten (`magentomodule_*`) toegewezen een prioriteit van 50. Stel de prioriteit voor elk aangepast fragment in op een waarde hoger of lager dan 50, afhankelijk van het tijdstip waarop het fragment moet worden uitgevoerd. Fragmenten met een lagere prioriteit worden eerst uitgevoerd.
 
-- `type` — Geeft een locatie op die moet worden ingevoegd in het VCL-fragment. In dit voorbeeld is het VCL-fragment een `recv` fragment. Wanneer het fragment in de VCL-versie wordt ingevoegd, wordt het toegevoegd aan de `vcl_recv` subroutine, onder de standaard VCL-code Fastly en boven alle objecten.
+- `type` — Geeft een locatie op waar het fragment moet worden ingevoegd in de VCL-versie. In dit voorbeeld is het VCL-fragment een `recv` -fragment. Wanneer het fragment in de VCL-versie wordt ingevoegd, wordt het toegevoegd aan de `vcl_recv` -subroutine, onder de standaard VCL-code snel en boven alle objecten.
 
 - `content` — Het fragment van VCL-code dat op één regel wordt uitgevoerd, zonder regeleinden.
 
 Na het herzien van en het bijwerken van de code voor uw milieu, gebruik één van beiden van de volgende methodes om het fragment van douaneVCL aan uw Fastly de dienstconfiguratie toe te voegen:
 
-- [Het aangepaste VCL-fragment toevoegen vanuit Beheer](#add-the-custom-vcl-snippet). Deze methode wordt aanbevolen als u toegang kunt krijgen tot de beheerder. (Vereist [Snelle versie 1.2.58](fastly-configuration.md#upgrade) of hoger.)
+- [ voeg het fragment van douaneVCL van Admin ](#add-the-custom-vcl-snippet) toe. Deze methode wordt aanbevolen als u toegang kunt krijgen tot de beheerder. (Vereist [ Snelle versie 1.2.58 ](fastly-configuration.md#upgrade) of later.)
 
-- Sla het JSON-codevoorbeeld op in een bestand (bijvoorbeeld `allowlist.json`) en [uploaden met de snelheids-API](fastly-vcl-custom-snippets.md#manage-custom-vcl-snippets-using-the-api). Gebruik deze methode als u geen toegang hebt tot de beheerder.
+- Sparen het JSON codevoorbeeld aan een dossier (bijvoorbeeld, `allowlist.json`) en [ uploadt het gebruikend Fastly API ](fastly-vcl-custom-snippets.md#manage-custom-vcl-snippets-using-the-api). Gebruik deze methode als u geen toegang hebt tot de beheerder.
 
 ## Het aangepaste VCL-fragment toevoegen
 
 {{admin-login-step}}
 
-1. Klikken **Winkels** > Instellingen > **Configuratie** > **Geavanceerd** > **Systeem**.
+1. Klik **Opslag** > Montages > **Configuratie** > **Geavanceerd** > **Systeem**.
 
-1. Uitbreiden **Volledige paginacache** > **Snelle configuratie** > **Aangepaste VCL-fragmenten**.
+1. Breid **Volledige het Geheime voorgeheugen van de Pagina** > **Snelle Configuratie** uit > **de Fragmenten van VCL van de Douane**.
 
-1. Klikken **Aangepast fragment maken**.
+1. Klik **creëren het Fragment van de Douane**.
 
 1. Voeg de waarden van het VCL-fragment toe:
 
@@ -110,7 +110,7 @@ Na het herzien van en het bijwerken van de code voor uw milieu, gebruik één va
 
    - **Prioriteit** — `5`
 
-   - **VCL** inhoud van fragmenten —
+   - **VCL** fragmentinhoud —
 
      ```conf
      set req.http.Referer-Host = regsub(req.http.Referer,
@@ -120,11 +120,11 @@ Na het herzien van en het bijwerken van de code voor uw milieu, gebruik één va
      }
      ```
 
-1. Klikken **Maken**.
+1. Klik **creëren**.
 
-   ![VCL-fragment voor aangepast verwijzingsblok maken](/help/assets/cdn/fastly-create-referrer-block-snippet.png)
+   ![ creeer het fragment van het blok van de douaneverwijzing VCL ](/help/assets/cdn/fastly-create-referrer-block-snippet.png)
 
-1. Klik op **VCL snel uploaden naar** in de *Snelle configuratie* sectie.
+1. Na de pagina herlaadt, uploadt de klik **VCL aan Fastly** in de *Snelle sectie van de Configuratie*.
 
 1. Nadat het uploaden is voltooid, vernieuwt u de cache volgens het bericht boven aan de pagina.
 

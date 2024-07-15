@@ -12,24 +12,24 @@ ht-degree: 0%
 
 # Omgevingsvariabelen
 
-Met Adobe Commerce on cloud Infrastructure kunt u omgevingsvariabelen toewijzen om configuratieopties te overschrijven. De `ece-tools` pakket stelt waarden in in de `env.php` bestand op basis van waarden van [Cloud-variabelen](variables-cloud.md), variabelen die zijn ingesteld in het [!DNL Cloud Console]en de `.magento.env.yaml` configuratiebestand.
+Met Adobe Commerce on cloud Infrastructure kunt u omgevingsvariabelen toewijzen om configuratieopties te overschrijven. Het `ece-tools` pakket plaatst waarden in het `env.php` dossier dat op waarden van [ variabelen van de Wolk ](variables-cloud.md) wordt gebaseerd, variabelen die in [!DNL Cloud Console] worden geplaatst, en het `.magento.env.yaml` configuratiedossier.
 
-De omgevingsvariabelen in de `.magento.env.yaml` de Cloud-omgeving aanpassen door de bestaande Commerce-configuratie te overschrijven. Als een standaardwaarde is `Not Set`en vervolgens de `ece-tools` pakket neemt **NEE** handeling en gebruikt de [!DNL Commerce] standaard of de waarde van de `MAGENTO_CLOUD_RELATIONSHIPS` configuratie. Als de standaardwaarde is ingesteld, wordt `ece-tools` Deze standaardinstelling wordt ingesteld door het pakket.
+De omgevingsvariabelen in het `.magento.env.yaml` -bestand passen de Cloud-omgeving aan door de bestaande Commerce-configuratie te overschrijven. Als een standaardwaarde `Not Set` is, dan neemt het `ece-tools` pakket **** actie NO en gebruikt het [!DNL Commerce] gebrek of de waarde van de `MAGENTO_CLOUD_RELATIONSHIPS` configuratie. Als de standaardwaarde is ingesteld, wordt die standaardwaarde ingesteld door het `ece-tools` -pakket.
 
 De typen omgevingsvariabelen zijn:
 
-- [ADMIN](variables-admin.md)—variabelen overschrijven ADMIN-variabelen van project
-- [MAGENTO_CLOUD](variables-cloud.md)—specifieke variabelen voor cloudinfrastructuur
-- Variabelen gebruikt in het dialoogvenster `.magento.env.yaml` bestand:
-   - [Algemeen](variables-global.md)—variabelen beïnvloeden bouw, opstellen, en post-implementatiefasen
-   - [Opbouwen](variables-build.md)—variabelen: besturingselementen voor het samenstellen van handelingen
-   - [Implementeren](variables-deploy.md)—variabelen besturen implementatiehandelingen
-   - [Na implementatie](variables-post-deploy.md)—variabelen: besturingsacties na implementatie
+- [ ADMIN ](variables-admin.md) - variabelen treden projectADMIN variabelen met voeten
+- [ MAGENTO_CLOUD ](variables-cloud.md) - variabelen specifiek voor wolkeninfrastructuur
+- Variabelen gebruikt in het `.magento.env.yaml` -bestand:
+   - [ Globaal ](variables-global.md) - de variabelen beïnvloeden bouw, opstellen, en post-stelt stadia op
+   - [ bouwt ](variables-build.md)-variabelen controle bouwt acties
+   - [ stelt ](variables-deploy.md) op:stellen-variabelen de controle acties op
+   - [ Post-stelt ](variables-post-deploy.md)-variabelen controleacties na opstellen op
 
-Variabelen zijn _hiërarchisch_, wat betekent dat als een variabele niet wordt overschreven, deze wordt overgeërfd van de bovenliggende omgeving.
+De variabelen zijn _hiërarchisch_, zo betekent het dat als een variabele niet wordt met voeten getreden, het van het oudermilieu wordt geërft.
 
-U kunt instellen [ADMIN-variabelen](variables-admin.md) van de [!DNL Cloud Console] of met de Adobe Commerce CLI. U kunt andere omgevingsvariabelen beheren vanuit de [`.magento.env.yaml`](configure-env-yaml.md) bestand voor het beheer van ontwikkelings- en implementatieacties in al uw omgevingen, inclusief Pro Staging en Productie, zonder dat een ondersteuningsticket vereist is.
+U kunt [ variabelen ADMIN ](variables-admin.md) van [!DNL Cloud Console] plaatsen of Adobe Commerce CLI gebruiken. U kunt andere omgevingsvariabelen van het [`.magento.env.yaml`](configure-env-yaml.md) dossier beheren om bouw-en-implementatieacties over al uw milieu-met inbegrip van Pro het Staging en Productie-zonder een steunkaartje te vereisen.
 
 >[!TIP]
 >
->YAML-bestanden zijn hoofdlettergevoelig en staan geen tabs toe. Wees voorzichtig met het gebruik van consistente inspringing in de gehele `.magento.env.yaml` of uw configuratie werkt mogelijk niet zoals verwacht. De voorbeelden in deze documentatie en in het voorbeeldbestand gebruiken _met twee spaties_ inspringing. Gebruik de [ece-tools validate, opdracht](configure-env-yaml.md#validate-configuration-file) om uw configuratie te controleren.
+>YAML-bestanden zijn hoofdlettergevoelig en staan geen tabs toe. Wees voorzichtig met het gebruik van consistente inspringing in het `.magento.env.yaml` -bestand, anders werkt de configuratie mogelijk niet naar behoren. De voorbeelden in deze documentatie en in het steekproefdossier gebruiken _twee-ruimte_ inspringing. Gebruik de [ knoop-hulpmiddelen bevestigen bevel ](configure-env-yaml.md#validate-configuration-file) om uw configuratie te controleren.

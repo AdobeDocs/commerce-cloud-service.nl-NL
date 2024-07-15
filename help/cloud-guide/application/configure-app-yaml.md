@@ -1,6 +1,6 @@
 ---
 title: Implementatie van toepassingen configureren
-description: Leer hoe te om de eigenschappen in het dossier van de toepassingsconfiguratie te vormen die de manier controleren [!DNL Commerce] toepassingen worden ontwikkeld en geïmplementeerd in de cloud-omgeving.
+description: Leer hoe te om de eigenschappen in het dossier van de toepassingsconfiguratie te vormen die de manier controleren  [!DNL Commerce]  toepassing bouwt en aan het milieu van de Wolk opstelt.
 feature: Cloud, Configuration, Build, Deploy
 exl-id: 900da20d-98d2-4c9f-97ec-578aee775b55
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
@@ -12,13 +12,13 @@ ht-degree: 0%
 
 # Implementatie van toepassingen configureren
 
-De `.magento.app.yaml` Het bestand bepaalt de manier waarop uw toepassing wordt gemaakt en geïmplementeerd. Hoewel Adobe Commerce op cloudinfrastructuur meerdere toepassingen per project ondersteunt, heeft een project doorgaans één toepassing met de `.magento.app.yaml` in de hoofdmap van de opslagplaats.
+Het bestand `.magento.app.yaml` bepaalt de manier waarop uw toepassing wordt gemaakt en geïmplementeerd. Hoewel Adobe Commerce op cloudinfrastructuur meerdere toepassingen per project ondersteunt, heeft een project doorgaans één toepassing met het `.magento.app.yaml` -bestand aan de basis van de opslagplaats.
 
-De `.magento.app.yaml` heeft vele standaardwaarden, zie [een monster `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml). Altijd de `.magento.app.yaml` voor uw geïnstalleerde versie. Dit bestand kan in Adobe Commerce verschillen in versies van de cloudinfrastructuur.
+`.magento.app.yaml` heeft vele standaardwaarden, zie [ een steekproef `.magento.app.yaml` dossier ](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml). Controleer altijd `.magento.app.yaml` voor uw geïnstalleerde versie. Dit bestand kan in Adobe Commerce verschillen in versies van de cloudinfrastructuur.
 
-Gebruik de `.magento.app.yaml` bestand om de volgende configuratiewaarden te definiëren:
+Gebruik het bestand `.magento.app.yaml` om de volgende configuratiewaarden te definiëren:
 
-- [Eigenschappen](properties.md)—Definieer eigenschapswaarden voor de toepassingsinstantie.
-- [Variables, eigenschap](variables-property.md)—Omgevingsvariabelen controleren die vereist zijn voor de [!DNL Commerce] toepassingsversie.
-- [PHP-instellingen](php-settings.md)—PHP-opties voor uitvoering configureren.
-- [Cache instellen voor statische bestanden](set-cache.md)—Plaats geheime voorgeheugen TTL voor uw media en statische dossiers.
+- [ Eigenschappen ](properties.md) - bepaal bezitswaarden voor toepassingsinstantie.
+- [ het bezit van Variabelen ](variables-property.md) - de milieuvariabelen van het Overzicht die voor de [!DNL Commerce] toepassingsversie worden vereist.
+- [ PHP montages ](php-settings.md) - vorm runtime PHP opties.
+- [ plaats Geheime voorgeheugen voor Statische Dossiers ](set-cache.md) - plaats geheim voorgeheugen TTL voor uw media en statische dossiers.

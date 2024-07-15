@@ -27,80 +27,80 @@ Op basis van uw configuratie-instellingen voegt het fragment Fastly Image Optimi
 
 Schakel Fastly Image Optimization (Fastly IO) in vanuit het deelvenster Beheer door het fragment Fastly IO VCL te uploaden. Het fragment bevat de instructies voor een snelle configuratie voor het verwerken van alle afbeeldingen met behulp van standaardconfiguraties.
 
-**Vereisten:**
+**Eerste vereisten:**
 
 - Installeren of upgraden naar Fastly-module versie 1.2.62 of hoger
 - [Scherm met snelle oorsprong en backend configureren](fastly-custom-cache-configuration.md#configure-back-ends-and-origin-shielding)
 
-**Fastly IO inschakelen**:
+**om snel IO** toe te laten:
 
-1. Aanmelden bij uw lokale [Beheerder](../../get-started/onboarding.md#access-your-admin-panel) als beheerder.
+1. Login aan uw lokaal [ Admin ](../../get-started/onboarding.md#access-your-admin-panel) paneel als beheerder.
 
-1. Selecteren **Winkels** > **Instellingen** > **Configuratie** > **Geavanceerd** > **Systeem**.
+1. Selecteer **>** Montages **>** Configuratie **>** Geavanceerd **>** Systeem **.**
 
-1. Vouw in het rechterdeelvenster uit **Volledige paginacache**.
+1. In de juiste ruit, breid **Volledig Geheime voorgeheugen van de Pagina** uit.
 
-1. Selecteren **Snelle configuratie** > **Afbeelding optimaliseren** om de configuratie-instellingen op te geven.
+1. Selecteer **Snelle Configuratie** > **Optimalisering van het Beeld** om de configuratiemontages te specificeren.
 
-1. In de _Fastly IO, fragment_ veld, selecteren **In-/uitschakelen**.
+1. Op het _snelst IO fragment_ gebied, uitgezocht **toelaten/onbruikbaar maken**.
 
 1. Upload het fragment Fastly IO:
 
-   - Selecteren **Standaardopties voor IO-configuratie** om de standaardpagina met configuratieopties voor optimalisatie van afbeelding te openen.
-   - Selecteren **Uploaden** om het VCL-fragment naar uw server te uploaden.
+   - Selecteer **StandaardIO configuratieopties** om de standaard configuratieoptiepagina van het Beeld te openen optimalisering.
+   - Selecteer **uploaden** om het fragment VCL aan uw server te uploaden.
 
 ## SNELLE IO configureren
 
-Controleer en werk zo nodig de standaard IO-configuratie-instellingen voor optimalisatie van afbeeldingen bij. U kunt bijvoorbeeld WebP- en JPEG-kwaliteitsniveaus wijzigen voor indeling met verlies of de indeling wijzigen voor het weergeven van JPEG-afbeeldingen in _Progressief_ of _Basislijn_. Bovendien kunt u de snelste IO gebruiken voor meer functies voor het optimaliseren van afbeeldingen, zoals:
+Controleer en werk zo nodig de standaard IO-configuratie-instellingen voor optimalisatie van afbeeldingen bij. Bijvoorbeeld, zou u WebP en de kwaliteitsniveaus van de JPEG voor lossy formaten kunnen willen veranderen, of het formaat veranderen om de beelden van JPEG te dienen aan _Progressieve_ of _Basislijn_. Bovendien kunt u de snelste IO gebruiken voor meer functies voor het optimaliseren van afbeeldingen, zoals:
 
 - Omzetting met verlies forceren
 - Diepe optimalisatie van afbeeldingen
 - Aangepaste pixelverhoudingen
 
-**IO snel bijwerken**:
+**om snel IO** bij te werken:
 
-1. Op de _Snelle configuratie_ pagina in de _Standaardopties voor IO-configuratie_ veld, selecteren **Configureren**.
+1. Op de _Snelle pagina van de Configuratie_ op het _StandaardIO configuratieopties_ gebied, uitgezocht **vorm**.
 
-   ![De Fastly IO-configuratie-instellingen weergeven](../../assets/cdn/fastly-io-default-config.png)
+   ![ Mening de Snelle IO configuratiemontages ](../../assets/cdn/fastly-io-default-config.png)
 
-1. Controleer en werk de Fastly IO configuratie montages op de _Standaardconfiguratieopties voor optimalisatie van afbeeldingen_ pagina:
+1. Herzie en werk de Fastly IO configuratiemontages op de _standaard configuratieopties van het Beeld_ pagina bij:
 
-   ![SNELLE I/O-configuratie controleren](../../assets/cdn/fastly-io-config-options.png)
+   ](../../assets/cdn/fastly-io-config-options.png) van de het overzicht snel IO configuratie ![
 
-   - **Auto WebP?**—laat de standaardinstelling ongewijzigd (`Yes`) om afbeeldingen om te zetten in de WebP-indeling in browsers die deze ondersteunen. Als u de instelling wijzigt in **Nee** In Fastly wordt het afbeeldingsbestandstype gebruikt in plaats van de afbeelding om te zetten in de WebP-indeling.
+   - **AutoWebP?** - verlaat standaard het plaatsen (`Yes`) om beelden in formaat om te zetten WebP in browsers die het steunen. Als u het plaatsen in **Nr** verandert, gebruikt het snelst het type van beelddossier in plaats van het omzetten van het beeld in formaat WebP.
 
-   - **Standaardkwaliteit van WebP (met verlies)**—laat de standaardinstelling ongewijzigd (`85`) of typt u het compressieniveau voor afbeeldingen met een bestandsindeling met verlies. U kunt een geheel getal tussen 1 en 100 opgeven.
+   - **Standaard WebP (verlies) kwaliteit** - verlaat het gebrek dat (`85`) plaatst of het compressieniveau voor verlies dossier-geformatteerde beelden typt. U kunt een geheel getal tussen 1 en 100 opgeven.
 
-   - **Besturingselementen voor de standaardindeling JPEG** — laat de standaardinstelling (`Auto`) of selecteert u het type JPEG dat u wilt gebruiken wanneer u een afbeelding aanbiedt. Als de waarde is ingesteld op _Automatisch_, levert Fastly afbeeldingen met het uitvoertype dat overeenkomt met het invoertype. Selecteren _Basislijn_ om de afbeeldingen regel voor regel weer te geven, beginnend van linksboven naar rechtsonder. Selecteren _Progressief_ om een vage afbeelding weer te geven die tijdens het laden wordt gewist.
+   - **Standaard JPEG formaatcontroles** - verlaat het gebrek plaatsend (`Auto`), of selecteer het type van JPEG te gebruiken wanneer het dienen van een beeld. Als de waarde aan _Auto_ wordt geplaatst, levert de Fastly beelden met het outputtype dat het inputtype aanpast. Selecteer _Basislijn_ aan vertoningsbeelden lijn door lijn die van bovenkant links en naar het bodemrecht beginnen. Selecteer _Progressief_ om een vaag beeld te tonen dat duidelijk wordt aangezien het laadt.
 
-   - **Standaardkwaliteit JPEG**—laat de standaardinstelling ongewijzigd (`85`) of typt u het compressieniveau voor de kwaliteit van bestandsindelingen met verlies. Geef een geheel getal op tussen 1 en 100.
+   - **Standaard JPEG kwaliteit** - verlaat het gebrek dat (`85`) plaatst of het compressieniveau voor kwaliteit van lossy dossierformaten typt. Geef een geheel getal op tussen 1 en 100.
 
-   - **Upscaling toestaan?**—standaardinstelling verlaten (`No`), of selecteer `Yes` om afbeeldingen te retourneren die groter zijn dan het oorspronkelijke bronbestand, zodat ze binnen de gewenste afmetingen passen.
+   - **Upscaling toestaan?** - laat standaard het plaatsen (`No`), of selecteer `Yes` om beelden terug te keren groter dan het originele brondossier zodat kunnen zij de gevraagde afmetingen passen.
 
-   - **Formaat wijzigen, filter**—laat de standaardinstelling ongewijzigd (`Lancsoz3`) of selecteer een alternatief. Met deze instelling geeft u aan welk filter wordt gebruikt voor het leveren van een afbeelding waarvan de grootte is gewijzigd. Afhankelijk van het geselecteerde filter kan het gewijzigde formaat van de afbeelding een hoger of lager aantal pixels hebben.
+   - **Resize filter** - verlaat het gebrek plaatsend (`Lancsoz3`), of selecteer een alternatief. Met deze instelling geeft u aan welk filter wordt gebruikt voor het leveren van een afbeelding waarvan de grootte is gewijzigd. Afhankelijk van het geselecteerde filter kan het gewijzigde formaat van de afbeelding een hoger of lager aantal pixels hebben.
 
-      - `Lanczos3` (standaard) - Levert de afbeelding van de beste kwaliteit. Hierdoor wordt de mogelijkheid vergroot om randen en lineaire kenmerken in een afbeelding te detecteren en wordt _[!DNL sinc]_het aantal pixels wijzigen om de wederopbouw zo goed mogelijk te laten verlopen.
-      - `Lanczos2`—Hiermee wordt hetzelfde filter gebruikt als `Lancsoz3` maar met een minder nauwkeurige benadering van de _[!DNL sinc]_resamplingfunctie.
-      - `Bicubic`—Heeft een natuurlijk verscherpingseffect wanneer u een afbeelding kleiner maakt.
-      - `Bilinear`—Heeft een natuurlijk vloeiend effect wanneer u een afbeelding groter maakt.
-      - `Nearest`—Heeft een natuurlijk pixeleffect bij het vergroten of verkleinen van pixelillustraties.
+      - `Lanczos3` (standaard) - Levert de afbeelding van de beste kwaliteit. Het vergroot de mogelijkheid om randen en lineaire functies in een afbeelding te detecteren en het gebruik van _[!DNL sinc]_resampling voor de beste reconstructie.
+      - `Lanczos2` - Hiermee wordt hetzelfde filter gebruikt als `Lancsoz3` , maar met een minder nauwkeurige benadering van de functie Nieuwe pixels berekenen in _[!DNL sinc]_.
+      - `Bicubic` - Dit filter heeft een natuurlijk verscherpingseffect wanneer u een afbeelding kleiner maakt.
+      - `Bilinear` - Dit filter heeft een natuurlijk vloeiend effect wanneer u een afbeelding groter maakt.
+      - `Nearest` - Heeft een natuurlijk pixeleffect wanneer het resizing van pixelkunst.
 
-1. Nadat u de IO configuratie montages voor de Snelle dienst specificeert, selecteer **Annuleren** om terug te keren naar de instellingen voor snelle configuratie.
+1. Nadat u de IO configuratiemontages voor de Snelle dienst specificeert, annuleert de uitgezochte **** om aan de Fastly configuratiemontages terug te keren.
 
-1. In de configuratie voor optimalisatie van afbeeldingen _Diepgaande optimalisatie van afbeeldingen inschakelen_ veld, selecteren **Ja** om uitgebreide optimalisatie van afbeeldingen in te schakelen.
+1. In de configuratie van de Optimalisering van het Beeld _laat diep beeld optimalisering_ gebied toe, selecteer **ja** om diepe beeldoptimalisering aan te zetten.
 
-   ![Snelle IO-verdiepingen voor optimalisatie van afbeeldingen inschakelen](../../assets/cdn/fastly-io-deep-image-config.png)
+   ![ laat Snelle IO diepe beeldoptimalisering ](../../assets/cdn/fastly-io-deep-image-config.png) toe
 
-   Diepe optimalisatie van afbeeldingen is standaard uitgeschakeld. Als deze functie is ingeschakeld, wordt de ingebouwde functie voor het aanpassen van de grootte in Adobe Commerce uitgeschakeld en wordt het vergroten of verkleinen van de grootte overgelaten aan de Fastly IO-service. Optimalisatie van afbeeldingen geldt alleen voor productafbeeldingen. De grootte van CMS-afbeeldingen wordt niet gewijzigd. Zie de [Snelle documentatie](#deep-image-optimization).
+   Diepe optimalisatie van afbeeldingen is standaard uitgeschakeld. Als deze functie is ingeschakeld, wordt de ingebouwde functie voor het aanpassen van de grootte in Adobe Commerce uitgeschakeld en wordt het vergroten of verkleinen van de grootte overgelaten aan de Fastly IO-service. Optimalisatie van afbeeldingen geldt alleen voor productafbeeldingen. De grootte van CMS-afbeeldingen wordt niet gewijzigd. Zie de [ Snelle documentatie ](#deep-image-optimization).
 
-1. Nadat u een diepe optimalisatie van de afbeelding hebt ingeschakeld, schakelt u de optie [adaptieve pixelverhoudingen](#adaptive-pixel-ratios) functie voor het genereren van afbeeldingen die zijn geoptimaliseerd voor gebruik op responsieve websites.
+1. Nadat u diepe beeldoptimalisering toelaat, laat de [ adaptieve pixelverhouding ](#adaptive-pixel-ratios) eigenschap toe om beelden te produceren die voor gebruik in ontvankelijke websites worden geoptimaliseerd.
 
-   ![SNELLE I/O-adaptieve pixelverhoudingen inschakelen](../../assets/cdn/fastly-io-config-adaptive-pixel.png)
+   ![ laat snel IO aanpassende pixelverhoudingen ](../../assets/cdn/fastly-io-config-adaptive-pixel.png) toe
 
-   - In de _Pixelverhoudingen van adaptieve apparaten inschakelen_ veld, selecteren **Ja**.
-   - In de _Pixelverhoudingen van apparaat_ , accepteert u de standaardinstelling of selecteert u de optie **Systeeminvoer** Schakel het selectievakje in om de instelling te verwijderen. Selecteer vervolgens de gewenste verhouding. Een hogere instelling voor pixelverhoudingen voor apparaten levert grotere afbeeldingen op.
+   - Op _laat adaptieve de pixelverhoudingen van het apparatenapparaat_ gebied toe, uitgezochte **ja**.
+   - Op het _pixelverhoudingen van het Apparaat_ gebied, keur het gebrek het plaatsen goed, of selecteer het **de controlevakje van de Invoer van het Systeem** om het plaatsen te verwijderen. Selecteer vervolgens de gewenste verhouding. Een hogere instelling voor pixelverhoudingen voor apparaten levert grotere afbeeldingen op.
 
-1. Selecteren **Configuratie opslaan**.
+1. Selecteer **sparen Configuratie**.
 
 ### Omzetting met verlies forceren
 
@@ -111,12 +111,12 @@ Als u bijvoorbeeld de indeling JPEG of WEBp gebruikt in plaats van PNG, kan de g
 
 Afhankelijk van het kwaliteitsniveau dat is geselecteerd voor optimalisatie van de afbeelding, kunnen er visuele verschillen in afbeeldingen optreden. Alpha kanaal/transparanties worden bijvoorbeeld verwijderd en vervangen door een witte achtergrond, tenzij u de optie Diepe afbeelding optimaliseren gebruikt en de achtergrondkleur van uw thema gebruikt.
 
-Als u verliesconversie uitschakelt (`WebP Auto? = No`), wijzigt Fastly IO slechts JPEG beelden in formaat WEBP voor compatibele browsers. Er worden geen andere afbeeldingstypen gewijzigd. Als de oorspronkelijke afbeelding bijvoorbeeld PNG is, is de uitvoer van de service Fastly IO PNG.
+Als u het omzetten met verlies (`WebP Auto? = No`) uitschakelt, wijzigt Fastly IO slechts JPEG beelden in formaat WEBP voor compatibele browsers. Er worden geen andere afbeeldingstypen gewijzigd. Als de oorspronkelijke afbeelding bijvoorbeeld PNG is, is de uitvoer van de service Fastly IO PNG.
 
 ### Diepe optimalisatie van afbeeldingen
 
 Diepe optimalisatie van afbeeldingen is standaard uitgeschakeld. Als u deze optie inschakelt, wordt het formaat van de ingebouwde Adobe Commerce uitgeschakeld en wordt het volledig geoffload naar de Fastly IO-service.
-Met deze functie wordt alleen het formaat gewijzigd _product_ afbeeldingen. De grootte van CMS-afbeeldingen wordt niet gewijzigd.
+Deze eigenschap resizes _slechts productafbeeldingen 0}._ De grootte van CMS-afbeeldingen wordt niet gewijzigd.
 
 Als u uitgebreide optimalisatie van afbeeldingen inschakelt, voegt u een achtergrondkleurdefinitie toe aan elke afbeelding zoals die in uw thema is gedefinieerd. Het resultaat is dat WebP-afbeeldingen worden overgeschakeld van WebP-verlies naar WebP-verlies. Een van de belangrijkste verschillen tussen verliesloos en verlies is dat bij verlies het alfakanaal van PNG-afbeeldingen wordt verwijderd, wat veel kleinere afbeeldingen oplevert. Afbeeldingen met transparanties kunnen er echter vreemd uitzien op product- en campagnepagina&#39;s die een andere achtergrond gebruiken.
 
@@ -142,9 +142,9 @@ Wanneer de functie Fastly IO Deep image optimization is ingeschakeld, wordt de o
 
 ### Aangepaste pixelverhoudingen
 
-De functie Adaptieve pixelverhoudingen is handig voor het optimaliseren van afbeeldingen voor progressieve webtoepassingen. Hierdoor kunt u meerdere afbeeldingsgrootten en resoluties van één afbeeldingsbronbestand leveren door een `srcset` voor elke productafbeelding.
+De functie Adaptieve pixelverhoudingen is handig voor het optimaliseren van afbeeldingen voor progressieve webtoepassingen. Hiermee kunt u meerdere afbeeldingsgrootten en resoluties van één afbeeldingsbronbestand leveren door een `srcset` toe te voegen voor elke productafbeelding.
 
-Wanneer de functie Aangepaste pixelverhoudingen is ingeschakeld, biedt de Fastly IO-service een afbeelding met een vaste breedte die zich aan variaties kan aanpassen `device-pixel-ratios`.
+Wanneer de functie Aangepaste pixelverhoudingen is ingeschakeld, levert de Fastly IO-service een afbeelding met een vaste breedte die zich kan aanpassen aan variaties `device-pixel-ratios` .
 De service wijzigt bijvoorbeeld de definitie van de productafbeelding, zoals in het volgende voorbeeld wordt getoond:
 
 ```html
@@ -157,7 +157,7 @@ De service wijzigt bijvoorbeeld de definitie van de productafbeelding, zoals in 
      alt="Fusion Backpack"/>
 ```
 
-Zie `srcset` [browserondersteuning](https://caniuse.com/#feat=srcset) en [specificatie](https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-srcset).
+Zie `srcset` [ browser steun ](https://caniuse.com/#feat=srcset) en [ specificatie ](https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-srcset).
 
 ## SNEL IO valideren
 

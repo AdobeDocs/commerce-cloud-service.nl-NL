@@ -25,7 +25,7 @@ Wij adviseren ten zeerste het testen in de milieu&#39;s van de Integratie, het S
 
 - De milieu&#39;s van de integratie steunen niet sommige diensten die in het Opvoeren en Productie, zoals Fastly en New Relic beschikbaar zijn.
 
-- [Volledig testen](../test/guidance.md) uw site met verschillende tools in Staging voor belasting, stress, prestaties en site-elementen.
+- [ test volledig ](../test/guidance.md) uw plaats met diverse hulpmiddelen in het Opvoeren voor lading, stress, prestaties, en plaatselementen.
 
 - Omdat integratieomgevingen alleen databases hebben die zijn gevuld met testgegevens en die niet overeenkomen met een productieachtige omgeving, kunnen er extra fouten of onverwacht gedrag optreden tijdens het testen in testomgevingen of productieomgevingen.
 
@@ -39,11 +39,11 @@ U hebt de volgende informatie en bronnen nodig als voorbereiding op het starten 
 
 - SSL/TLS-certificaat
 
-Als onderdeel van Adobe Commerce voor een abonnement op een cloudinfrastructuur biedt Adobe een door domein gevalideerd SSL/TLS-certificaat dat is uitgegeven door Let&#39;s Encrypt. Elke Pro Productie, het Staging en de Productie van de Aanzet (`master`) heeft een uniek certificaat dat alle domeinen en subdomeinen in die omgeving dekt. Deze certificaten worden provisioned en aan uw plaats automatisch geupload nadat u uw DNS configuratie voor ontwikkeling en productie bijwerkt. Zie [SSL/TLS-certificaten leveren](../cdn/fastly-configuration.md#provision-ssltls-certificates).
+Als onderdeel van Adobe Commerce voor een abonnement op een cloudinfrastructuur biedt Adobe een door domein gevalideerd SSL/TLS-certificaat dat is uitgegeven door Let&#39;s Encrypt. Elke ProProductie, het Staging, en milieu van de Productie van de Aanzet (`master`) heeft een uniek certificaat dat alle domeinen en subdomeinen in dat milieu behandelt. Deze certificaten worden provisioned en aan uw plaats automatisch geupload nadat u uw DNS configuratie voor ontwikkeling en productie bijwerkt. Zie [ Levering SSL/TLS certificaten ](../cdn/fastly-configuration.md#provision-ssltls-certificates).
 
 >[!NOTE]
 >
->Als u uw eigen Uitgebreide SSL van de Bevestiging voor uw bedrijf in plaats van het gebruiken van het certificaat van de Encryptie van de Let wilt opstellen, contacteer uw CTA of [Een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket).
+>Als u uw eigen Uitgebreide SSL van de Bevestiging voor uw bedrijf in plaats van het gebruiken van het certificaat van de Encryptie van de Let wilt opstellen, contacteer uw CTA of [ leg een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voor.
 
 ## Het gereedschap Beveiligingsscan instellen
 
@@ -59,13 +59,13 @@ Als onderdeel van Adobe Commerce voor een abonnement op een cloudinfrastructuur 
 >
 >Voeg deze IP adressen aan een lijst van gewenste personen in uw regels van de netwerkfirewall toe om het hulpmiddel toe te staan om uw plaats af te tasten. Het hulpmiddel richt verzoeken aan havens 80 en 443 slechts.
 
-Met het hulpprogramma Beveiligingsscan kunt u regelmatig uw winkelwebsites controleren en updates ontvangen voor bekende beveiligingsrisico&#39;s, malware en verouderde software. Dit hulpmiddel is een gratis dienst beschikbaar voor alle implementaties en versies van Adobe Commerce op wolkeninfrastructuur. U hebt toegang tot het gereedschap via uw [Commerce Marketplace](https://account.magento.com/customer/account/login).
+Met het hulpprogramma Beveiligingsscan kunt u regelmatig uw winkelwebsites controleren en updates ontvangen voor bekende beveiligingsrisico&#39;s, malware en verouderde software. Dit hulpmiddel is een gratis dienst beschikbaar voor alle implementaties en versies van Adobe Commerce op wolkeninfrastructuur. U hebt toegang tot het hulpmiddel door uw [ rekening van de Commerce Marketplace ](https://account.magento.com/customer/account/login).
 
 - De beveiligingsstatus van uw sites controleren en beveiligingsupdates toepassen
 
 - Beveiligingsupdates en sitespecifieke meldingen ontvangen
 
-Zie de [Handboek](https://docs.magento.com/user-guide/magento/security-scan.html) voor informatie over het instellen en gebruiken van het hulpprogramma voor beveiligingsscan. Doorgaans gebruikt u dit gereedschap wanneer u met het testen van gebruikersacceptatie (UAT) begint.
+Zie de [ Gids van de Gebruiker ](https://docs.magento.com/user-guide/magento/security-scan.html) voor informatie over vestiging en het gebruiken van het hulpmiddel van het veiligheidsaftasten. Doorgaans gebruikt u dit gereedschap wanneer u met het testen van gebruikersacceptatie (UAT) begint.
 
 Elke site die u scant, moet zijn geregistreerd via het tabblad Beveiligingsscan. Tijdens het registratieproces moet u de disclaimer accepteren voordat u kunt beginnen met scannen. U beheert het schema en machtigt de gebruiker om meldingen te ontvangen wanneer elke scan is voltooid. U kunt scans voor een specifieke, terugkomende datum en tijd plannen, of een aftasten in werking stellen wanneer nodig.
 
@@ -80,17 +80,17 @@ Visbot/2.0 (+http://www.visvo.com/en/webmasters.jsp;bot@visvo.com)
 
 ## Uw site doorzoeken
 
-1. Toegang tot uw [Commerce Marketplace](https://account.magento.com/customer/account/login).
+1. Heb toegang tot uw [ rekening van de Commerce Marketplace ](https://account.magento.com/customer/account/login).
 
-1. Klik op het tabblad Beveiligingsscan en selecteer **Ga naar Beveiligingsscan**.
+1. Klik het Scanlusje van het Scannen van de Veiligheid en selecteer **gaan naar het Scannen van de Veiligheid**.
 
-1. In de _Handelingen_ kolom voor de site selecteert u **Scan uitvoeren**. De geplande scan wordt weergegeven met de meldingsstatus.
+1. In de _kolom van Acties_ voor de plaats, uitgezochte **Scannen van de Looppas**. De geplande scan wordt weergegeven met de meldingsstatus.
 
 ### U kunt als volgt het rapport bekijken:
 
 1. Wanneer het rapport voltooit, toont een berichtvertoningen.
 
-1. Selecteer in de sitelijst het rapport dat u wilt weergeven in het pop-upmenu **Rapporten** kolom. De volgorde is het meest recent.
+1. In de plaatstrij, selecteer het rapport u van de **kolom van Rapporten** wilt bekijken. De volgorde is het meest recent.
 
 Het rapport bevat een overzicht van problemen, zoals mislukte scans, niet-geïdentificeerde resultaten en geslaagde scans. Elk item bevat gedetailleerde informatie over de scan, een lijst met problemen die moeten worden onderzocht en de acties die moeten worden ondernomen. Voor sommige van deze handelingen moeten mogelijk beveiligingspatches worden gedownload en geïnstalleerd. Voeg om het even welke vereiste flarden aan een ontwikkelingstak op uw lokale werkstation toe alvorens hen aan de productievak toe te voegen.
 

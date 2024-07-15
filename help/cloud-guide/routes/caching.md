@@ -18,7 +18,7 @@ U kunt caching in uw het projectmilieu van de wolkeninfrastructuur toelaten. Als
 
 ## Opslaan in cache instellen
 
-Schakel caching in voor uw toepassing door cacheregels in te stellen in de `.magento/routes.yaml` bestand als volgt:
+Schakel caching voor uw toepassing in door cachemegels in het `.magento/routes.yaml` -bestand als volgt te configureren:
 
 ```yaml
 http://{default}/:
@@ -61,24 +61,24 @@ In het voorgaande voorbeeld worden de volgende routes in cache opgeslagen:
 - `http://{default}/path/more/`
 - `http://{default}/path/more/etc/`
 
-De volgende routes zijn **niet** in cache geplaatst:
+En de volgende routes zijn **niet** caching:
 
 - `http://{default}/path/`
 - `http://{default}/path/etc/`
 
 >[!NOTE]
 >
->Regelmatige expressies in routes zijn **niet** ondersteund.
+>De regelmatige uitdrukkingen in routes worden **niet** gesteund.
 
 ## Cacheduur
 
-De cacheduur wordt bepaald door de `Cache-Control` responsheader-waarde. Indien niet `Cache-Control` header staat in de reactie, de `default_ttl` key wordt gebruikt.
+De cacheduur wordt bepaald door de headerwaarde van `Cache-Control` response. Als er geen `Cache-Control` header in het antwoord staat, wordt de `default_ttl` -toets gebruikt.
 
 ## Cachesleutel
 
-Om te beslissen hoe u een reactie in de cache plaatst, bouwt Adobe Commerce een cachemoets die afhankelijk is van verschillende factoren en slaat het de reactie op die aan deze toets is gekoppeld. Wanneer een verzoek met de zelfde geheim voorgeheugensleutel komt, wordt de reactie opnieuw gebruikt. Het doel is vergelijkbaar met dat van HTTP [`Vary` header](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44).
+Om te beslissen hoe u een reactie in de cache plaatst, bouwt Adobe Commerce een cachemoets die afhankelijk is van verschillende factoren en slaat het de reactie op die aan deze toets is gekoppeld. Wanneer een verzoek met de zelfde geheim voorgeheugensleutel komt, wordt de reactie opnieuw gebruikt. Zijn doel is gelijkaardig aan de HTTP [`Vary` kopbal ](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44).
 
-De parameters `headers` en `cookies` kunt u deze cachemoets wijzigen.
+Met de parameters `headers` en `cookies` -toetsen kunt u deze cachemoets wijzigen.
 
 De standaardwaarde voor deze toetsen is als volgt:
 
@@ -93,13 +93,13 @@ cache:
 
 ### `enabled`
 
-Wanneer ingesteld op `true`, laat het geheime voorgeheugen voor deze route toe. Wanneer ingesteld op `false`, maak het geheime voorgeheugen voor deze route onbruikbaar.
+Wanneer reeks aan `true`, laat het geheime voorgeheugen voor deze route toe. Wanneer ingesteld op `false`, schakelt u de cache voor deze route uit.
 
 ### `headers`
 
 Definieert op welke waarden de cachetoets moet afhangen.
 
-Als de `headers` key is the following:
+Als de `headers` -toets bijvoorbeeld als volgt is:
 
 ```yaml
 cache:
@@ -111,7 +111,7 @@ Vervolgens plaatst Adobe Commerce een andere reactie in cache voor elke waarde v
 
 ### `cookies`
 
-De `cookies` key bepaalt op welke waarden de geheim voorgeheugensleutel moet afhangen.
+De sleutel `cookies` bepaalt op welke waarden de geheim voorgeheugensleutel moet afhangen.
 
 Bijvoorbeeld:
 
@@ -121,19 +121,19 @@ cache:
     cookies: ["value"]
 ```
 
-De cachetoets is afhankelijk van de waarde van de `value` cookie in de aanvraag.
+De cachemoets is afhankelijk van de waarde van het `value` -cookie in de aanvraag.
 
-Er bestaat een bijzonder geval als de `cookies` de sleutel heeft de `["*"]` waarde. Deze waarde betekent dat een aanvraag met een cookie de cache overslaat. Dit is de standaardwaarde.
+Er is een speciaal geval als de `cookies` -toets de `["*"]` -waarde heeft. Deze waarde betekent dat een aanvraag met een cookie de cache overslaat. Dit is de standaardwaarde.
 
 >[!NOTE]
 >
->U kunt geen jokertekens gebruiken in de naam van het cookie. Gebruik een exacte naam van een cookie of gebruik een sterretje (`*`). Bijvoorbeeld: `SESS*` of `~SESS` zijn momenteel **niet** geldige waarden.
+>U kunt geen jokertekens gebruiken in de naam van het cookie. Gebruik of een nauwkeurige koekjesnaam of gelijke alle koekjes met een asterisk (`*`). Bijvoorbeeld, `SESS*` of `~SESS` zijn momenteel **niet** geldige waarden.
 
 Cookies hebben de volgende beperkingen:
 
-- U kunt het maximum instellen van **50 cookies** in het systeem. Anders genereert de toepassing een `Unable to send the cookie. Maximum number of cookies would be exceeded` uitzondering.
-- Een maximale cookiegrootte is **4096 bytes**. Anders genereert de toepassing een `Unable to send the cookie. Size of '%name' is %size bytes` uitzondering.
+- U kunt maximum van **50 koekjes** in het systeem plaatsen. Anders genereert de toepassing een `Unable to send the cookie. Maximum number of cookies would be exceeded` -uitzondering.
+- Een maximumkoekjesgrootte is **4096 bytes**. Anders genereert de toepassing een `Unable to send the cookie. Size of '%name' is %size bytes` -uitzondering.
 
 ### `default_ttl`
 
-Als de reactie geen `Cache-Control` header, de `default_ttl` -toets wordt gebruikt om de duur van de cache in seconden te definiëren. De standaardwaarde is `0`, wat betekent dat er niets in de cache wordt opgeslagen.
+Als de reactie geen `Cache-Control` koptekst heeft, wordt de `default_ttl` -toets gebruikt om de duur van de cache in seconden te definiëren. De standaardwaarde is `0` , wat betekent dat er niets in de cache wordt opgeslagen.

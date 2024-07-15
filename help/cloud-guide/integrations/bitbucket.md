@@ -19,14 +19,14 @@ U kunt uw opslagplaats van Bitbucket vormen om automatisch een milieu te bouwen 
 ## Vereisten
 
 - Beheerderstoegang tot de Adobe Commerce in het infrastructuurproject voor de cloud
-- [`magento-cloud` CLI](../dev-tools/cloud-cli-overview.md) in uw lokale omgeving
+- [`magento-cloud` CLI ](../dev-tools/cloud-cli-overview.md) in uw lokale omgeving
 - Een Bitmap-account
 - Beheerderstoegang tot de opslagplaats van Bitmap
 - Een SSH-toegangstoets voor de Bitmap-opslagplaats
 
 ## De opslagplaats voorbereiden
 
-Clone your Adobe Commerce on cloud Infrastructure project from an existing environment and migrate the project Branches to a new, empty Bitbucket repository, preserve the same taknames. Het is **kritisch** om een identieke Git-structuur te behouden, zodat u geen bestaande omgevingen of vertakkingen in uw Adobe Commerce verliest voor het infrastructuurproject van de cloud.
+Clone your Adobe Commerce on cloud Infrastructure project from an existing environment and migrate the project Branches to a new, empty Bitbucket repository, preserve the same taknames. Het is kritiek **om een identieke boom van het Git te behouden, zodat u geen bestaande milieu&#39;s of takken in uw Adobe Commerce op het project van de wolkeninfrastructuur verliest.**
 
 1. Meld u vanaf de terminal aan bij uw Adobe Commerce voor een infrastructuurproject voor de cloud.
 
@@ -52,7 +52,7 @@ Clone your Adobe Commerce on cloud Infrastructure project from an existing envir
    git remote add origin git@bitbucket.org:<user-name>/<repo-name>.git
    ```
 
-   De standaardnaam voor de externe verbinding kan `origin` of `magento`. Indien `origin` bestaat, kunt u een verschillende naam kiezen of u kunt de bestaande verwijzing anders noemen of schrappen. Zie [documentatie op afstand](https://git-scm.com/docs/git-remote).
+   De standaardnaam voor de externe verbinding kan `origin` of `magento` zijn. Als `origin` bestaat, kunt u een verschillende naam kiezen of u kunt de bestaande verwijzing een andere naam geven of verwijderen. Zie [ git-verre documentatie ](https://git-scm.com/docs/git-remote).
 
 1. Controleer of u de optie Bitmap op de juiste manier hebt toegevoegd.
 
@@ -73,39 +73,39 @@ Clone your Adobe Commerce on cloud Infrastructure project from an existing envir
    git push -u origin master
    ```
 
-   Als u begint met een nieuwe opslagplaats voor bitmaps, moet u mogelijk de `-f` omdat de externe opslagplaats niet overeenkomt met uw lokale kopie.
+   Als u begint met een nieuwe opslagplaats voor bitmaps, moet u mogelijk de optie `-f` gebruiken, omdat de externe opslagruimte niet overeenkomt met uw lokale kopie.
 
 1. Controleer of uw Bitmap-opslagplaats al uw projectbestanden bevat.
 
 ## Een OAuth-consument maken
 
-Voor de integratie met Bitmap is een [OAuth Consumer](https://support.atlassian.com/bitbucket-cloud/docs/use-oauth-on-bitbucket-cloud/). U hebt de OAuth nodig `key` en `secret` van deze consument om de volgende sectie in te vullen.
+De integratie Bitbucket vereist een [ consument OAuth ](https://support.atlassian.com/bitbucket-cloud/docs/use-oauth-on-bitbucket-cloud/). U hebt de OAuth `key` en `secret` van deze consument nodig om de volgende sectie te voltooien.
 
-**Een OAuth-consument maken in Bitbucket**:
+**om een consument OAuth in Bitbucket** te creëren:
 
-1. Aanmelden bij uw [Bitmap](https://id.atlassian.com/login) account.
+1. Login aan uw [ Bitmap ](https://id.atlassian.com/login) rekening.
 
-1. Klikken **Instellingen** > **Toegangsbeheer** > **OAuth**.
+1. Klik **Montages** > **Beheer van de Toegang** > **OAuth**.
 
-1. Klikken **Consumenten toevoegen** en configureren als volgt:
+1. Klik **toevoegen consument** en vormen het als volgt:
 
-   ![Configuratie van bitemmer voor OAuth-gebruik](../../assets/oauth-consumer-config.png)
+   ![ Bitbucket OAuth de configuratie van de consument ](../../assets/oauth-consumer-config.png)
 
    >[!WARNING]
    >
-   >Een geldige **URL voor terugbellen** is niet vereist, maar u moet een waarde in dit veld invoeren om de integratie te voltooien.
+   >Een geldige **Callback URL** wordt niet vereist, maar u moet een waarde op dit gebied ingaan om de integratie met succes te voltooien.
 
-1. Klikken **Opslaan**.
+1. Klik **sparen**.
 
-1. Klik op de consument **Naam** om uw OAuth te onthullen `key` en `secret`.
+1. Klik de consument **Naam** om uw OAuth `key` en `secret` te openbaren.
 
-1. OAuth kopiëren `key` en `secret` voor het configureren van de integratie.
+1. Kopieer uw OAuth `key` en `secret` voor het configureren van de integratie.
 
 ## De integratie configureren
 
 1. Navigeer vanaf de terminal naar uw Adobe Commerce op het infrastructuurproject voor de cloud.
 
-1. Een tijdelijk bestand maken met de naam `bitbucket.json` en voeg het volgende toe: vervang de variabelen tussen punthaken door uw waarden:
+1. Maak een tijdelijk bestand met de naam `bitbucket.json` en voeg het volgende toe: vervang de variabelen tussen punthaakjes door uw waarden:
 
    ```json
    {
@@ -126,11 +126,11 @@ Voor de integratie met Bitmap is een [OAuth Consumer](https://support.atlassian.
    >
    >Zorg ervoor dat u de naam van de opslagplaats voor bitmaps gebruikt en niet de URL. De integratie mislukt als u een URL gebruikt.
 
-1. Voeg de integratie aan uw project toe gebruikend `magento-cloud` CLI-gereedschap.
+1. Voeg de integratie aan uw project toe gebruikend het `magento-cloud` CLI hulpmiddel.
 
    >[!WARNING]
    >
-   >De volgende opdracht overschrijft _alles_ code in uw Adobe Commerce over een wolkeninfrastructuurproject met code uit uw Bitbucket-opslagplaats. Dit omvat alle vertakkingen, inclusief de `production` vertakking. Deze handeling gebeurt onmiddellijk en kan niet ongedaan worden gemaakt. Het is belangrijk dat u alle vertakkingen van uw Adobe Commerce op het infrastructuurproject van de cloud kloont en deze naar uw Bitbucket-opslagplaats duwt **voor** toevoegen van de integratie met Bitmap.
+   >Het volgende bevel beschrijft _alle_ code in uw Adobe Commerce op het project van de wolkeninfrastructuur met code van uw bewaarplaats Bitbucket. Dit geldt voor alle vertakkingen, inclusief de `production` -vertakking. Deze handeling gebeurt onmiddellijk en kan niet ongedaan worden gemaakt. Als beste praktijken, is het belangrijk om al uw takken van uw Adobe Commerce op het project van de wolkeninfrastructuur te klonen en hen te duwen aan uw Bitbucket bewaarplaats **alvorens** de integratie toe te voegen Bitbucket.
 
    ```bash
    magento-cloud project:curl -p '<project-ID>' /integrations -i -X POST -d "$(< bitbucket.json)"
@@ -138,7 +138,7 @@ Voor de integratie met Bitmap is een [OAuth Consumer](https://support.atlassian.
 
    Dit retourneert een lange HTTP-respons met headers. Een geslaagde integratie retourneert een 200- of 201-statuscode. De status 400 of hoger geeft aan dat er een fout is opgetreden.
 
-1. Tijdelijk verwijderen `bitbucket.json` bestand.
+1. Verwijder het tijdelijke `bitbucket.json` bestand.
 
 1. Controleer de projectintegratie.
 
@@ -156,35 +156,35 @@ Voor de integratie met Bitmap is een [OAuth Consumer](https://support.atlassian.
    +----------+-----------+--------------------------------------------------------------------------------+
    ```
 
-   Noteer de **Hook-URL** om een webhaak in BitBucket te vormen.
+   Maak een nota van **Hook URL** om een webhaak in BitBucket te vormen.
 
 ### Webhaak toevoegen in BitBucket
 
 Als u gebeurtenissen, zoals een push-systeem, wilt communiceren met uw Cloud Git-server, is het dan nodig om een webhaak voor uw BitBucket-opslagplaats te hebben. Als u een op de juiste wijze gevolgde Bitmap-integratie instelt, wordt automatisch een webhaak gemaakt. Het is belangrijk dat u de webhaak controleert om te voorkomen dat er meerdere integraties ontstaan.
 
-1. Aanmelden bij uw [Bitmap](https://id.atlassian.com/login) account.
+1. Login aan uw [ Bitmap ](https://id.atlassian.com/login) rekening.
 
-1. Klikken **Opslagplaatsen** en selecteer uw project.
+1. Klik **Bewaarplaatsen** en selecteer uw project.
 
-1. Klikken **Instellingen voor opslagplaats** > **Workflow** > **Webhaken**.
+1. Klik **Montages van de Bewaarplaats** > **Werkschema** > **Webhooks**.
 
 1. Controleer de webhaak voordat u verdergaat.
 
-   Als de haak actief is, slaat u de resterende stappen over en [Integratie testen](#test-the-integration). De haak moet een naam hebben die lijkt op **&quot;Adobe Commerce over cloudinfrastructuur &lt;project_id>&quot;** en een formaat van haak URL gelijkend op: `https://<zone>.magento.cloud/api/projects/<project_id>/integrations/<id>/hook`
+   Als de haak actief is, sla de resterende stappen over en [ test de integratie ](#test-the-integration). De haak zou een naam moeten hebben gelijkend op **&quot;Adobe Commerce op wolkeninfrastructuur &lt;project_id>&quot;** en een formaat van haak URL gelijkend op: `https://<zone>.magento.cloud/api/projects/<project_id>/integrations/<id>/hook`
 
-1. Klikken **Webhaak toevoegen**.
+1. Klik **toevoegen webhaak**.
 
-1. In de _Nieuwe webhaak toevoegen_ Bewerk de volgende velden:
+1. In _voeg nieuwe webhaak_ mening toe, geef de volgende gebieden uit:
 
-   - **Titel**: Adobe Commerce-integratie
-   - **URL**: Gebruik de URL van de pagina `magento-cloud` integratielijst
-   - **Triggers**: De standaardwaarde is een basis _Push in opslagplaats_
+   - **Titel**: De Integratie van Adobe Commerce
+   - **URL**: Gebruik Hook URL van uw `magento-cloud` integratielijst
+   - **Trekkers**: Het gebrek is een basis _duw van de Bewaarplaats_
 
-1. Klikken **Opslaan**.
+1. Klik **sparen**.
 
 ### Integratie testen
 
-Na het vormen van de integratie Bitbucket kunt u verifiëren dat de integratie operationeel is gebruikend `magento-cloud` CLI:
+Na het vormen van de integratie Bitbucket, kunt u verifiëren dat de integratie gebruikend `magento-cloud` CLI operationeel is:
 
 ```bash
 magento-cloud integration:validate
@@ -204,17 +204,17 @@ U kunt het ook testen door een eenvoudige wijziging door te drukken in de opslag
    git add . && git commit -m "Testing Bitbucket integration" && git push
    ```
 
-1. Aanmelden bij de [[!DNL Cloud Console]](../project/overview.md) en verifieer dat uw commit bericht wordt getoond en uw project het opstellen.
+1. Meld u aan bij de [[!DNL Cloud Console]](../project/overview.md) en controleer of uw commit-bericht wordt weergegeven en of uw project wordt geïmplementeerd.
 
-   ![De integratie van het bitemenu testen](../../assets/bitbucket-integration.png)
+   ![ het Testen van de integratie Bitbucket ](../../assets/bitbucket-integration.png)
 
 ## Een Cloud-vertakking maken
 
-De integratie met Bitmap kan geen nieuwe omgevingen in uw Adobe Commerce activeren voor een infrastructuurproject in de cloud. Als u een omgeving maakt met Bitmap, moet u de omgeving handmatig activeren. Om deze extra stap te vermijden, is het aan te raden om omgevingen te maken met de `magento-cloud` CLI-gereedschap of de [!DNL Cloud Console].
+De integratie met Bitmap kan geen nieuwe omgevingen in uw Adobe Commerce activeren voor een infrastructuurproject in de cloud. Als u een omgeving maakt met Bitmap, moet u de omgeving handmatig activeren. Om deze extra stap te voorkomen, kunt u het beste omgevingen maken met het gereedschap `magento-cloud` CLI of [!DNL Cloud Console] .
 
-**Een vertakking activeren die is gemaakt met Bitmap**:
+**om een tak te activeren die met Bitbucket** wordt gecreeerd:
 
-1. Gebruik de `magento-cloud` CLI om de vertakking te duwen.
+1. Gebruik de CLI van `magento-cloud` om de vertakking te duwen.
 
    ```bash
    magento-cloud environment:push from-bitbucket
@@ -251,7 +251,7 @@ Nadat u een omgeving hebt gemaakt, kunt u de corresponderende vertakking met de 
 
 U kunt de integratie met Bitmap veilig verwijderen uit uw project zonder dat dit van invloed is op uw code.
 
-**De integratie met Bitmap verwijderen**:
+**om de integratie Bitbucket** te verwijderen:
 
 1. Meld u vanaf de terminal aan bij uw Adobe Commerce voor een infrastructuurproject voor de cloud.
 
@@ -267,14 +267,14 @@ U kunt de integratie met Bitmap veilig verwijderen uit uw project zonder dat dit
    magento-cloud integration:delete <int-ID>
    ```
 
-Bovendien kunt u de integratie met Bitmap verwijderen door u aan te melden bij uw Bitmap-account en de OAuth-subsidie voor de account in te trekken _Instellingen_ pagina.
+Ook, kunt u de integratie van de Bitmap verwijderen door het programma te openen aan uw Bitmap rekening en het intrekken van de OAuth subsidie op de 1} pagina van de rekening _Montages {._
 
 ## Integratie van bitmapserver
 
 Als u de integratie met de Bitmap-server wilt gebruiken, hebt u het volgende nodig:
 
-- [Toegangstoken bitmap](https://confluence.atlassian.com/bitbucketserver/http-access-tokens-939515499.html)—Genereer een token dat Project subsidieert `read` toegang en opslagplaats `admin` toegang
-- [URL van bitmapserver](https://confluence.atlassian.com/bitbucketserver/specify-the-bitbucket-base-url-776640392.html)—Voeg de basis-URL van de Bitmap-instantie toe
+- [ Toegangstoken Bitmap ](https://confluence.atlassian.com/bitbucketserver/http-access-tokens-939515499.html) - produceer een teken dat de toegang van het Project `read` en Repository `admin` toegang verleent
+- [ Bitmap server URL ](https://confluence.atlassian.com/bitbucketserver/specify-the-bitbucket-base-url-776640392.html) - voeg de basis URL van uw instantie Bitmap toe
 
 Hoewel u de CLI van de Wolk kunt gebruiken om door de stappen van de de serverintegratie van Bitbucket te lopen, kijkt het volledige bevel gelijkaardig aan het volgende:
 

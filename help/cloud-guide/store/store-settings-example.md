@@ -14,58 +14,58 @@ ht-degree: 0%
 
 In dit voorbeeld wordt getoond hoe u configuratiebeheer kunt gebruiken om de opslaginstellingen in alle omgevingen consistent te houden.
 
-In het voorbeeld wordt de volgende procedure gebruikt die in [Opslaginstellingen](store-settings.md):
+Het voorbeeld gebruikt de volgende procedure die in [ wordt bepaald montages van de Opslag ](store-settings.md):
 
 1. Voer uw configuraties in in de winkel Admin van uw integratieomgeving in.
-1. Een `config.php` en breng het naar uw lokale werkstation over.
-1. Push `config.php` naar de externe integratieomgeving.
+1. Maak een `config.php` -bestand en breng dit over naar uw lokale werkstation.
+1. Duw `config.php` naar de externe integratieomgeving.
 1. Controleer of uw instellingen niet kunnen worden bewerkt in Beheer.
 1. Breng de gewenste wijzigingen aan:
 
    * Wijzig de configuratie-instellingen in de integratieomgeving.
-   * Om configuraties toe te voegen, stel het bevel in werking om te creëren `config.php` opnieuw. Nieuwe configuraties worden aan het bestand toegevoegd.
+   * Als u configuraties wilt toevoegen, voert u de opdracht uit om `config.php` opnieuw te maken. Nieuwe configuraties worden aan het bestand toegevoegd.
    * Als u bestaande configuraties wilt verwijderen of bewerken, bewerkt u het bestand handmatig.
    * Vastleggen en duwen.
 
 U kunt bijvoorbeeld de volgende instellingen instellen:
 
-* Uitschakelen [landinstelling](https://glossary.magento.com/locale) en de statische montages van de dossieroptimalisering in uw integratiemilieu
+* Maak [ scène ](https://glossary.magento.com/locale) en statische montages van de dossieroptimalisering in uw integratiemilieu onbruikbaar
 * Optimalisatie van statische bestanden inschakelen in testomgevingen en productieomgevingen
 * Vorm snel in het Staging en Productie met specifieke geloofsbrieven voor elk
 
-_Statische bestandoptimalisatie_ betekent het samenvoegen en miniaturen van JavaScript en CSS (Cascading Style Sheets) en het miniaturen van HTML-sjablonen. Zie [Statische strategieën voor implementatie van inhoud](../deploy/static-content.md).
+_Statische dossieroptimalisering_ betekent het samenvoegen en het miniaturen van JavaScript en Cascading Style Sheets, en het miniaturen van HTML malplaatjes. Zie [ Statische strategieën van de inhoudsplaatsing ](../deploy/static-content.md).
 
 ## Vereisten
 
 Om deze taken van het configuratiebeheer te voltooien, hebt u het volgende nodig:
 
-* Rol projectlezer met [omgeving &quot;admin&quot;](../project/user-access.md) rechten
+* De lezerrol van het project met [ milieu &quot;admin&quot;](../project/user-access.md) voorrechten
 * Admin URL en geloofsbrieven voor integratie, het Opvoeren, en de milieu&#39;s van de Productie
 
-## Admin van de Handel vormen
+## Commerce Admin configureren
 
-In de integratieomgeving kunt u zich aanmelden bij de beheerder om de systeemconfiguratie-instellingen voor winkels, websites, modules of extensies, de optimalisatie van statische bestanden en systeemwaarden te wijzigen voor de implementatie van statische inhoud. Zie [Configuratiegegevens](store-settings.md#scd-performance).
+In de integratieomgeving kunt u zich aanmelden bij de beheerder om de systeemconfiguratie-instellingen voor winkels, websites, modules of extensies, de optimalisatie van statische bestanden en systeemwaarden te wijzigen voor de implementatie van statische inhoud. Zie [ gegevens van de Configuratie ](store-settings.md#scd-performance).
 
-**Optimalisatie-instellingen voor landinstellingen en statische bestanden wijzigen**:
+**om scène en statische montages van de dossieroptimalisering** te veranderen:
 
-1. Meld u aan bij de beheerder van de integratieomgeving. U hebt toegang tot deze URL via [[!DNL Cloud Console]](../project/overview.md).
-1. Navigeren naar **Winkels** > Instellingen > **Configuratie** > Algemeen > **Algemeen**.
-1. Vouw in de paginanavigatie de **Landinstellingen**.
-1. Van de **Landinstelling** wijzigt u de landinstelling. U kunt deze later wijzigen.
+1. Meld u aan bij de beheerder van de integratieomgeving. U hebt toegang tot deze URL via [[!DNL Cloud Console]](../project/overview.md) .
+1. Navigeer aan **Slaat** > Montages > **Configuratie** > Algemeen > **Algemeen**.
+1. In de paginanavigatie, breid **Opties van de Landinstelling** uit.
+1. Van de **Lijst van de Landinstelling**, verander de scène. U kunt deze later wijzigen.
 
-   ![De landinstelling wijzigen](../../assets/locale-options.png)
+   ![ verander de scène ](../../assets/locale-options.png)
 
-1. Klikken **Config opslaan**.
-1. Indien gevraagd, [cachegeheugen leegmaken](https://docs.magento.com/user-guide/system/cache-management.html).
+1. Klik **sparen Config**.
+1. Indien ertoe aangezet, [ spoel het geheime voorgeheugen ](https://docs.magento.com/user-guide/system/cache-management.html).
 1. Afmelden bij de beheerder.
 
 ## Waarden exporteren en config.php overbrengen naar uw lokale systeem
 
-Deze stap leidt tot en brengt `config.php` configuratiebestand op de integratieomgeving gebruiken met een opdracht die u op uw lokale computer uitvoert.
+Met deze stap wordt het `config.php` -configuratiebestand in de integratieomgeving gemaakt en overgebracht met behulp van een opdracht die u op uw lokale computer uitvoert.
 
-Deze procedure komt overeen met stap 2 in de [aanbevolen procedure](store-settings.md). Nadat u `config.php`, breng het over naar uw lokale systeem zodat u het aan Git kunt toevoegen.
+Deze procedure beantwoordt aan stap 2 in de [ geadviseerde procedure ](store-settings.md). Nadat u `config.php` hebt gemaakt, brengt u deze over naar uw lokale systeem, zodat u deze aan Git kunt toevoegen.
 
-**Om te creëren en over te brengen`config.php`**:
+**om te creëren en over te brengen`config.php`**:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
@@ -81,7 +81,7 @@ Deze procedure komt overeen met stap 2 in de [aanbevolen procedure](store-settin
    magento-cloud db:dump
    ```
 
-Het volgende fragment uit `config.php` toont een voorbeeld van het wijzigen van de standaardlandinstelling in `en_GB` en wijzigen van de optimalisatie-instellingen voor statische bestanden:
+In het volgende fragment uit `config.php` ziet u een voorbeeld van het wijzigen van de standaardlandinstelling in `en_GB` en het wijzigen van de optimalisatie-instellingen voor statische bestanden:
 
 ```php?start_inline=1
 'general' => [
@@ -112,42 +112,42 @@ Het volgende fragment uit `config.php` toont een voorbeeld van het wijzigen van 
 
 ## config.php naar omgevingen duwen en implementeren
 
-Nu hebt u `config.php` en deze naar uw lokale systeem overbrengen, deze toewijzen aan Git en naar uw omgeving duwen. Deze procedure komt overeen met de stappen 3 en 4 in de [aanbevolen procedure](store-settings.md).
+Nu u `config.php` hebt gemaakt en naar uw lokale systeem hebt overgebracht, koppelt u het aan Git en duwt u het naar uw omgevingen. Deze procedure beantwoordt aan stap 3 en 4 in de [ geadviseerde procedure ](store-settings.md).
 
-Met de volgende opdracht voegt u opdrachten toe aan de `master` vertakking:
+Met de volgende opdracht voegt u de `master` -vertakking toe, verbindt u zich en drukt u deze door:
 
 ```bash
 git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
 ```
 
-Volledige codeplaatsing aan het Staging en Productie. Voor Starter drukt u op `staging` en `master` bijkantoren. Voor details op plaatsingsbevelen, zie [Je winkel implementeren](../deploy/staging-production.md).
+Volledige codeplaatsing aan het Staging en Productie. Bij Starter drukt u op `staging` en `master` vertakkingen. Voor details op plaatsingsbevelen, zie [ uw opslag ](../deploy/staging-production.md) opstellen.
 
 Wacht tot de implementatie in alle omgevingen is voltooid.
 
 ## Wijzigingen in configuratie controleren
 
-Nadat u `config.php` in uw omgeving zijn gewijzigde waarden alleen-lezen in de beheertoepassing. In dit voorbeeld zijn de gewijzigde standaardinstellingen voor landinstellingen en optimalisatie van statische bestanden niet bewerkbaar in Beheer. Deze configuratie-instellingen worden ingesteld in `config.php`.
+Nadat u `config.php` in uw omgeving hebt geplaatst, moeten alle gewijzigde waarden alleen-lezen zijn in de beheerfunctie. In dit voorbeeld zijn de gewijzigde standaardinstellingen voor landinstellingen en optimalisatie van statische bestanden niet bewerkbaar in Beheer. Deze configuratie-instellingen worden ingesteld in `config.php` .
 
 Om uw configuratieveranderingen te verifiëren:
 
 1. Log uit van de beheerder in een van de omgevingen.
 1. Meld u weer aan bij de beheerder.
-1. Klikken **Winkels** > Instellingen > **Configuratie** > Algemeen > **Algemeen**.
-1. Vouw in het rechterdeelvenster uit **Landinstellingen**.
+1. Klik **Slaat** op > Montages > **Configuratie** > Algemeen > **Algemeen**.
+1. In de juiste ruit, breid **Opties van de Landinstelling** uit.
 
-   U ziet dat verschillende velden niet kunnen worden bewerkt, zoals in het volgende voorbeeld wordt getoond. Deze configuratiemontages worden gehandhaafd door `config.php`.
+   U ziet dat verschillende velden niet kunnen worden bewerkt, zoals in het volgende voorbeeld wordt getoond. Deze configuratie-instellingen blijven behouden door `config.php` .
 
-   ![Bepaalde waarden kunnen niet meer worden bewerkt in Beheer](../../assets/locale-options-disabled.png)
+   ![ Bepaalde waarden niet meer editable in Admin ](../../assets/locale-options-disabled.png)
 
 1. Afmelden bij de beheerder.
 
 ## Systeemspecifieke configuratie-instellingen wijzigen en bijwerken
 
-Als u een van deze instellingen moet wijzigen, wijzigt u de instelling `config.php` bestand handmatig met een teksteditor. Nadat u de bewerkingen of verwijderingen hebt voltooid, kunt u deze doorvoeren en naar de externe omgeving verplaatsen volgens de vorige stappen.
+Als u een van deze instellingen moet wijzigen, wijzigt u het bestand `config.php` handmatig met een teksteditor. Nadat u de bewerkingen of verwijderingen hebt voltooid, kunt u deze doorvoeren en naar de externe omgeving verplaatsen volgens de vorige stappen.
 
 Om configuraties toe te voegen, wijzig uw integratiemilieu en stel het bevel opnieuw in werking om het dossier te produceren. Nieuwe configuraties worden toegevoegd aan de code in het bestand. Duw het aan Git na de vorige stappen.
 
-In dit voorbeeld wijzigt u de optimalisatie-instellingen voor statische bestanden en voegt u een nieuwe instelling voor JavaScript toe.
+In dit voorbeeld wijzigt u de optimalisatie-instellingen voor statische bestanden en voegt u een nieuwe instelling toe voor JavaScript.
 
 ### Configuraties toevoegen in integratie
 
@@ -155,11 +155,11 @@ Configuratiewaarden toevoegen in de integratieomgeving Admin. In dit voorbeeld w
 
 1. Meld u af bij de integratie-beheerder.
 1. Meld u weer aan bij de integratiebeheerder.
-1. Klikken **Winkels** > Instellingen > **Configuratie** > **Geavanceerd** > **Ontwikkelaar**.
-1. Vouw in het rechterdeelvenster uit **JavaScript-instellingen**.
-1. Van de **JavaScript-bestanden samenvoegen** lijst, klik **Ja**.
-1. Klikken **Config opslaan**.
-1. Indien gevraagd, [cachegeheugen leegmaken](https://docs.magento.com/user-guide/system/cache-management.html).
+1. Klik **Slaat** op > Montages > **Configuratie** > **Geavanceerd** > **Ontwikkelaar**.
+1. In de juiste ruit, breid **Montages van JavaScript** uit.
+1. Van de **lijst van de Dossiers van JavaScript van de Fusie**, klik **ja**.
+1. Klik **sparen Config**.
+1. Indien ertoe aangezet, [ spoel het geheime voorgeheugen ](https://docs.magento.com/user-guide/system/cache-management.html).
 1. Afmelden bij de beheerder.
 
 Door het dumpbevel opnieuw in werking te stellen, wordt de nieuwe configuratie toegevoegd aan het dossier.
@@ -170,7 +170,7 @@ magento-cloud db:dump
 
 ### config.php bewerken met nieuwe instellingen
 
-Op uw lokale computer gebruikt u een teksteditor om de bijgewerkte `app/etc/config.php` bestand. Bewerk deze instellingen om miniaturen voor JavaScript-, HTML- en CSS-bestanden in te schakelen.
+Bewerk het bijgewerkte `app/etc/config.php` -bestand via een teksteditor. Bewerk deze instellingen om miniaturen voor JavaScript-, HTML- en CSS-bestanden in te schakelen.
 
 ```php?start_inline=1
  'dev' => [
@@ -192,7 +192,7 @@ Op uw lokale computer gebruikt u een teksteditor om de bijgewerkte `app/etc/conf
      ],
 ```
 
-Als u instellingen wilt wijzigen om miniaturen toe te staan, bewerkt u `'0'` tot `'1'` for `'minify_html'` en elk `'minify_files'` optie:
+Als u instellingen wilt wijzigen om minificatie toe te staan, bewerkt u `'0'` naar `'1'` for `'minify_html'` en elke `'minify_files'` optie:
 
 ```php?start_inline=1
  'dev' => [

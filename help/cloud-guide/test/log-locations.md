@@ -12,15 +12,15 @@ ht-degree: 0%
 
 # Logbestanden weergeven en beheren
 
-Logbestanden voor Adobe Commerce voor infrastructuurprojecten in de cloud zijn handig voor het oplossen van problemen met betrekking tot [haken maken en implementeren](../application/hooks-property.md), cloudservices en de Adobe Commerce-toepassing.
+De logboeken voor Adobe Commerce op de projecten van de wolkeninfrastructuur zijn nuttig voor het oplossen van problemenproblemen met betrekking tot [ bouwen en stellen haken ](../application/hooks-property.md), de wolkendiensten, en de toepassing van Adobe Commerce op.
 
-U kunt de logboeken weergeven vanuit het bestandssysteem, de [!DNL Cloud Console]en de `magento-cloud` CLI.
+U kunt de logboeken van het dossiersysteem, [!DNL Cloud Console], en `magento-cloud` CLI bekijken.
 
-- **Bestandssysteem**—De `/var/log` systeemdirectory bevat logboeken voor alle omgevingen. De `var/log/` Deze map bevat toepassingsspecifieke logs die uniek zijn voor een bepaalde omgeving. Deze mappen worden niet gedeeld tussen knooppunten in een cluster. In Pro Productie en het Staging milieu&#39;s, moet u de logboeken op elke knoop controleren.
+- **het systeem van het Dossier** - de `/var/log` systeemfolder bevat logboeken voor alle milieu&#39;s. De map `var/log/` bevat toepassingsspecifieke logs die uniek zijn voor een bepaalde omgeving. Deze mappen worden niet gedeeld tussen knooppunten in een cluster. In Pro Productie en het Staging milieu&#39;s, moet u de logboeken op elke knoop controleren.
 
-- **[!DNL Cloud Console]**—U kunt bouw zien, opstellen, en post-opstellen logboekinformatie in het milieu _berichten_ lijst.
+- **[!DNL Cloud Console]** - u kunt zien bouwen, opstellen, en post-stelt logboekinformatie in het milieu _berichten_ lijst op.
 
-- **Cloud CLI**—U kunt logboeken van lokale milieu bekijken gebruikend `magento-cloud log` de opdracht of externe omgevingslogboeken gebruiken `magento-cloud ssh` gebruiken.
+- **Cloud CLI** - u kunt lokale milieulogboeken bekijken gebruikend het `magento-cloud log` bevel of verre milieu logboeken gebruikend het `magento-cloud ssh` bevel.
 
 ## Loglocaties
 
@@ -28,11 +28,11 @@ Systeemlogboeken worden opgeslagen op de volgende locaties:
 
 - Integratie: `/var/log/<log-name>.log`
 - Pro Staging: `/var/log/platform/<project-ID>_stg/<log-name>.log`
-- Pro-productie: `/var/log/platform/<project-ID>/<log-name>.log`
+- Pro Production: `/var/log/platform/<project-ID>/<log-name>.log`
 
-De waarde van `<project-ID>` afhankelijk is van het project en of het milieu aan het staging of aan de productie is. Met bijvoorbeeld een project-id van `yw1unoukjcawe`, de Staging-omgevingsgebruiker is `yw1unoukjcawe_stg` en de productieomgeving `yw1unoukjcawe`.
+De waarde van `<project-ID>` is afhankelijk van het project en of de omgeving Staging of Production is. Met bijvoorbeeld een project-id `yw1unoukjcawe` is de gebruiker van de omgeving Staging `yw1unoukjcawe_stg` en de gebruiker van de productieomgeving `yw1unoukjcawe` .
 
-Gebruikend dat voorbeeld, stelt logboek op is: `/var/log/platform/yw1unoukjcawe_stg/deploy.log`
+In dat voorbeeld is het implementatielogbestand: `/var/log/platform/yw1unoukjcawe_stg/deploy.log`
 
 ### Logboeken voor externe omgevingen weergeven
 
@@ -50,7 +50,7 @@ Monsterrespons:
 3.ent-project-environment-id@ssh.region.magento.cloud
 ```
 
-**Een lijst met externe omgevingslogboeken weergeven**:
+**om een lijst van verre milieu logboeken** te bekijken:
 
 ```bash
 magento-cloud ssh -e <environment-ID> "ls var/log"
@@ -62,7 +62,7 @@ Voorbeeld voor Pro:
 ssh 1.ent-project-environment-id@ssh.region.magento.cloud "ls var/log | grep error"
 ```
 
-**Een extern logboek weergeven**:
+**om een ver logboek** te bekijken:
 
 ```bash
 magento-cloud ssh -e <environment-ID> "cat var/log/cron.log"
@@ -76,11 +76,11 @@ ssh 1.ent-project-environment-id@ssh.region.magento.cloud "cat var/log/cron.log"
 
 >[!TIP]
 >
->Voor Pro Staging- en productieomgevingen zijn automatische logrotatie, compressie en verwijdering ingeschakeld voor logbestanden met een vaste bestandsnaam. Elk logboekbestandstype heeft een roterend patroon en een levensduur. Starteromgevingen hebben geen logrotatie. U vindt volledige informatie over de logrotatie en de levensduur van gecomprimeerde logbestanden in de omgeving in: `/etc/logrotate.conf` en `/etc/logrotate.d/<various>`. Logrotatie kan niet worden geconfigureerd in Pro-integratieomgevingen. Voor ProIntegratie, moet u een douaneoplossing/een manuscript uitvoeren en [uw kronn configureren](../application/crons-property.md) om het script zo nodig uit te voeren.
+>Voor Pro Staging- en productieomgevingen zijn automatische logrotatie, compressie en verwijdering ingeschakeld voor logbestanden met een vaste bestandsnaam. Elk logboekbestandstype heeft een roterend patroon en een levensduur. Starteromgevingen hebben geen logrotatie. Meer informatie over de logrotatie en de levensduur van gecomprimeerde logbestanden in de omgeving vindt u in: `/etc/logrotate.conf` en `/etc/logrotate.d/<various>` . Logrotatie kan niet worden geconfigureerd in Pro-integratieomgevingen. Voor ProIntegratie, moet u een douaneoplossing/manuscript uitvoeren en [ vormt uw kruin ](../application/crons-property.md) om het manuscript in werking te stellen zoals nodig.
 
 ## Logboeken samenstellen en implementeren
 
-Na het duwen van veranderingen in uw milieu, kunt u het registreren van elke haak in herzien `var/log/cloud.log` bestand. Het logboek bevat begin en eindeberichten voor elke haak. In het volgende voorbeeld zijn de berichten &quot;`Starting post-deploy.`&quot; en &quot;`Post-deploy is complete.`&quot;
+Nadat u wijzigingen in uw omgeving hebt aangebracht, kunt u de logboekregistratie bekijken vanaf elke haak in het `var/log/cloud.log` -bestand. Het logboek bevat begin en eindeberichten voor elke haak. In het volgende voorbeeld, zijn de berichten &quot;`Starting post-deploy.`&quot;en &quot;`Post-deploy is complete.`&quot;
 
 Controleer de tijdstempels op logboekingangen, verifieer, en bepaal de plaats van de logboeken voor een specifieke plaatsing. Hieronder ziet u een beknopt voorbeeld van loguitvoer die u kunt gebruiken voor het oplossen van problemen:
 
@@ -101,27 +101,27 @@ Re-deploying environment project-integration-ID
 
 >[!TIP]
 >
->Wanneer u uw Cloud-omgeving configureert, kunt u [op logbestanden gebaseerde Slack- en e-mailmeldingen](../environment/set-up-notifications.md) voor bouw en stel acties op.
+>Wanneer u uw milieu van de Wolk vormt, kunt u opstelling [ op logboek-gebaseerde Slack en e-mailberichten ](../environment/set-up-notifications.md) voor bouwt en stelt acties op.
 
 De volgende logboeken hebben een gemeenschappelijke plaats voor alle projecten van de Wolk:
 
-- **Implementatielogboek**: `var/log/cloud.log`
-- **Logbestand met laatste implementatiefout**: `var/log/cloud.error.log`
-- **Foutopsporingslogbestand**: `var/log/debug.log`
-- **Uitzonderingslogboek**: `var/log/exception.log`
-- **Systeemlogboek**: `var/log/system.log`
-- **Ondersteuningslogboek**: `var/log/support_report.log`
+- **Logboek van de Plaatsing**: `var/log/cloud.log`
+- **laatste logboek van de plaatsingsfout**: `var/log/cloud.error.log`
+- **zuivert logboek**: `var/log/debug.log`
+- **Logboek van de Uitzondering**: `var/log/exception.log`
+- **Logboek van het Systeem**: `var/log/system.log`
+- **Logboek van de Steun**: `var/log/support_report.log`
 - **Rapporten**: `var/report/`
 
-Hoewel de `cloud.log` Het dossier bevat terugkoppelt van elk stadium van het plaatsingsproces, logboeken die door de opstellen haak worden gecreeerd zijn uniek aan elke milieu. Het milieu-specifieke opstellen logboek is in de volgende folders:
+Hoewel het `cloud.log` dossier terugkoppelt van elk stadium van het plaatsingsproces bevat, zijn de logboeken die door de op te stellen haak worden gecreeerd uniek aan elke milieu. Het milieu-specifieke opstellen logboek is in de volgende folders:
 
-- **Starter en Pro-integratie**: `/var/log/deploy.log`
-- **Pro Staging**: `/var/log/platform/<project-ID>_stg/deploy.log`
-- **Pro Production**: `/var/log/platform/<project-ID>/deploy.log`
+- **Begin en Pro integratie**: `/var/log/deploy.log`
+- **Pro het Staging**: `/var/log/platform/<project-ID>_stg/deploy.log`
+- **Proproductie**: `/var/log/platform/<project-ID>/deploy.log`
 
 ### Logbestand implementeren
 
-Het logboek voor elke plaatsing schakelt aan specifiek samen `deploy.log` bestand. Het volgende voorbeeld drukt het opstellen logboek van het huidige milieu in de terminal af:
+Het logboek voor elke plaatsing schakelt aan het specifieke `deploy.log` dossier aaneen. Het volgende voorbeeld drukt het opstellen logboek van het huidige milieu in de terminal af:
 
 ```bash
 magento-cloud log -e <environment-ID> deploy
@@ -143,9 +143,9 @@ Reading log file projectID-branchname-ID--mymagento@ssh.zone.magento.cloud:/var/
 
 ### Foutlogboek
 
-De fout en de waarschuwingsberichten die tijdens het plaatsingsproces worden geproduceerd worden geschreven aan zowel `var/log/cloud.log` en de `var/log/cloud.error.log` bestanden. Het logbestand met fouten in de cloud bevat alleen fouten en waarschuwingen van de meest recente implementatie. Een leeg bestand geeft aan dat de implementatie zonder fouten is gelukt.
+Fout- en waarschuwingsberichten die tijdens het implementatieproces worden gegenereerd, worden zowel naar de `var/log/cloud.log` - als naar de `var/log/cloud.error.log` -bestanden geschreven. Het logbestand met fouten in de cloud bevat alleen fouten en waarschuwingen van de meest recente implementatie. Een leeg bestand geeft aan dat de implementatie zonder fouten is gelukt.
 
-U kunt het logbestand weergeven met de opdracht [Cloud CLI SSH](#view-remote-environment-logs)U kunt ook ECE-Tools gebruiken om de fouten weer te geven met suggesties:
+U kunt het logboekdossier bekijken gebruikend [ Cloud CLI SSH ](#view-remote-environment-logs), of u kunt ECE-Hulpmiddelen gebruiken om de fouten met suggesties te tonen:
 
 ```bash
 magento-cloud ssh -e <environment-ID> "./vendor/bin/ece-tools error:show"
@@ -178,7 +178,7 @@ title: The configured state is not ideal
 type: warning
 ```
 
-De meeste foutberichten bevatten een beschrijving en voorgestelde actie. Gebruik de [Referentie van foutbericht voor ECE-Tools](../dev-tools/error-reference.md) om de foutcode voor verdere instructies te raadplegen. Voor verdere richtsnoeren gebruikt u de [Adobe Commerce-probleemoplossing voor implementatie](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/deployment/magento-deployment-troubleshooter.html).
+De meeste foutberichten bevatten een beschrijving en voorgestelde actie. Gebruik de [ het berichtverwijzing van de Fout voor ECE-Hulpmiddelen ](../dev-tools/error-reference.md) om de foutencode voor verdere begeleiding op te zoeken. Voor verdere begeleiding, gebruik de [ de plaatsingsprobleemoplosser van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/deployment/magento-deployment-troubleshooter.html).
 
 ## Toepassingslogboeken
 
@@ -186,29 +186,29 @@ Toepassingslogboeken zijn net als logboeken voor implementatie uniek voor elke o
 
 | Logbestand | Starter en Pro-integratie | Beschrijving |
 | ------------------- | --------------------------- | ------------------------------------------------- |
-| **Logbestand implementeren** | `/var/log/deploy.log` | Activiteit van de [inzetten, haak](../application/hooks-property.md). |
-| **Logboek na implementatie** | `/var/log/post_deploy.log` | Activiteit van de [naimplementatiehaak](../application/hooks-property.md). |
-| **Uitsnijdlog** | `/var/log/cron.log` | Uitvoer van snijtaken. |
-| **Logboek voor Nginx-toegang** | `/var/log/access.log` | Bij Nginx-start worden HTTP-fouten gegenereerd voor ontbrekende mappen en uitgesloten bestandstypen. |
-| **Logbestand met fouten in Nginx** | `/var/log/error.log` | Opstartberichten die nuttig zijn voor foutopsporing in configuratiefouten die aan Nginx zijn gekoppeld. |
-| **PHP-toegangslogboek** | `/var/log/php.access.log` | Verzoeken aan de PHP service. |
-| **PHP FPM log** | `/var/log/app.log` | |
+| **Deploy logboek** | `/var/log/deploy.log` | De activiteit van [ stelt haak ](../application/hooks-property.md) op. |
+| **Post-stelt logboek** op | `/var/log/post_deploy.log` | De activiteit van [ post-stelt haak ](../application/hooks-property.md) op. |
+| **het logboek van het Gewas** | `/var/log/cron.log` | Uitvoer van snijtaken. |
+| **Nginx toegangslogboek** | `/var/log/access.log` | Bij Nginx-start worden HTTP-fouten gegenereerd voor ontbrekende mappen en uitgesloten bestandstypen. |
+| **Nginx foutenlogboek** | `/var/log/error.log` | Opstartberichten die nuttig zijn voor foutopsporing in configuratiefouten die aan Nginx zijn gekoppeld. |
+| **PHP toegangslogboek** | `/var/log/php.access.log` | Verzoeken aan de PHP service. |
+| **PHP FPM logboek** | `/var/log/app.log` | |
 
-Voor Pro Staging- en productieomgevingen zijn de logbestanden Implementeren, Post-implementeren en Uitsnijden alleen beschikbaar op het eerste knooppunt in de cluster:
+Voor Pro Staging- en productieomgevingen zijn de logbestanden Implementeren, Post implementeren en Uitsnijden alleen beschikbaar op het eerste knooppunt in de cluster:
 
 | Logbestand | Pro Staging | Pro Production |
 | ------------------- | --------------------------------------------------- | ----------------------------------------------- |
-| **Logbestand implementeren** | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>_stg/deploy.log` | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>/deploy.log` |
-| **Logboek na implementatie** | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>/post_deploy.log` |
-| **Uitsnijdlog** | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>_stg/cron.log` | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>/cron.log` |
-| **Logboek voor Nginx-toegang** | `/var/log/platform/<project-ID>_stg/access.log` | `/var/log/platform/<project-ID>/access.log` |
-| **Logbestand met fouten in Nginx** | `/var/log/platform/<project-ID>_stg/error.log` | `/var/log/platform/<project-ID>/error.log` |
-| **PHP-toegangslogboek** | `/var/log/platform/<project-ID>_stg/php.access.log` | `/var/log/platform/<project-ID>/php.access.log` |
-| **PHP FPM log** | `/var/log/platform/<project-ID>_stg/php5-fpm.log` | `/var/log/platform/<project-ID>/php5-fpm.log` |
+| **Deploy logboek** | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>_stg/deploy.log` | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>/deploy.log` |
+| **Post-stelt logboek** op | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>/post_deploy.log` |
+| **het logboek van het Gewas** | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>_stg/cron.log` | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>/cron.log` |
+| **Nginx toegangslogboek** | `/var/log/platform/<project-ID>_stg/access.log` | `/var/log/platform/<project-ID>/access.log` |
+| **Nginx foutenlogboek** | `/var/log/platform/<project-ID>_stg/error.log` | `/var/log/platform/<project-ID>/error.log` |
+| **PHP toegangslogboek** | `/var/log/platform/<project-ID>_stg/php.access.log` | `/var/log/platform/<project-ID>/php.access.log` |
+| **PHP FPM logboek** | `/var/log/platform/<project-ID>_stg/php5-fpm.log` | `/var/log/platform/<project-ID>/php5-fpm.log` |
 
 ### Gearchiveerde logbestanden
 
-De toepassingslogboeken worden eenmaal per dag gecomprimeerd en gearchiveerd en één jaar bewaard. De gecomprimeerde logbestanden krijgen een naam met een unieke id die overeenkomt met de naam `Number of Days Ago + 1`. In Pro-productieomgevingen wordt bijvoorbeeld een PHP-toegangslogboek voor 21 dagen in het verleden opgeslagen en als volgt benoemd:
+De toepassingslogboeken worden eenmaal per dag gecomprimeerd en gearchiveerd en één jaar bewaard. De gecomprimeerde logbestanden krijgen een naam met een unieke id die overeenkomt met de naam `Number of Days Ago + 1` . In Pro-productieomgevingen wordt bijvoorbeeld een PHP-toegangslogboek voor 21 dagen in het verleden opgeslagen en als volgt benoemd:
 
 ```terminal
 /var/log/platform/<project-ID>/php.access.log.22.gz
@@ -218,28 +218,28 @@ De gearchiveerde logboekdossiers worden altijd opgeslagen in de folder waar het 
 
 >[!NOTE]
 >
->**Implementeren** en **Na implementatie** logbestanden worden niet geroteerd en gearchiveerd. De volledige plaatsingsgeschiedenis wordt geschreven binnen die logboekdossiers.
+>**stelt** op en **Post-stelt** logboekdossiers op worden niet geroteerd en gearchiveerd. De volledige plaatsingsgeschiedenis wordt geschreven binnen die logboekdossiers.
 
 ## Servicelogboeken
 
 Omdat elke dienst in een afzonderlijke container loopt, zijn de de dienstlogboeken niet beschikbaar in het integratiemilieu. Adobe Commerce on cloud Infrastructure biedt alleen toegang tot de webservercontainer in de integratieomgeving. De volgende locaties van het servicelogboek zijn bestemd voor de Pro Production- en Staging-omgevingen:
 
-- **Redis log**: `/var/log/platform/<project-ID>_stg/redis-server-<project-ID>_stg.log`
-- **Logboek Elasticsearch**: `/var/log/elasticsearch/elasticsearch.log`
-- **Java garbage collection log**: `/var/log/elasticsearch/gc.log`
-- **E-maillogboek**: `/var/log/mail.log`
+- **Redis logboek**: `/var/log/platform/<project-ID>_stg/redis-server-<project-ID>_stg.log`
+- **logboek van de Elasticsearch**: `/var/log/elasticsearch/elasticsearch.log`
+- **logboek van de huisvuilinzameling van Java**: `/var/log/elasticsearch/gc.log`
+- **het logboek van de Post**: `/var/log/mail.log`
 - **MySQL foutenlogboek**: `/var/log/mysql/mysql-error.log`
-- **MySQL slowaakse logboeken**: `/var/log/mysql/mysql-slow.log`
-- **RabbitMQ-logboek**: `/var/log/rabbitmq/rabbit@host1.log`
+- **MySQL langzaam logboek**: `/var/log/mysql/mysql-slow.log`
+- **het logboek van RabbitMQ**: `/var/log/rabbitmq/rabbit@host1.log`
 
 De logboeken van de dienst worden gearchiveerd en voor verschillende periodes, afhankelijk van het logboektype bewaard. In MySQL-logboeken is bijvoorbeeld de kortste levensduur verwijderd na zeven dagen.
 
 >[!TIP]
 >
->De bestandslocaties van logbestanden in de geschaalde architectuur zijn afhankelijk van het type knooppunt. Zie [Loglocaties in de geschaalde architectuur](../architecture/scaled-architecture.md#log-locations) onderwerp.
+>De bestandslocaties van logbestanden in de geschaalde architectuur zijn afhankelijk van het type knooppunt. Zie {de plaatsen van het 0} Logboek in het Schaalde architectuur ](../architecture/scaled-architecture.md#log-locations) onderwerp.[
 
 ## Loggegevens voor Pro Production en Staging
 
-In Pro-productie- en staging-omgevingen kunt u [New Relic-logbeheer](../monitor/log-management.md) geïntegreerd met uw project voor het beheer van geaggregeerde loggegevens van alle logbestanden die bij uw Adobe Commerce horen voor het infrastructuurproject in de cloud.
+Voor ProProductie en het Opvoeren milieu&#39;s, gebruik [ New Relic logboekbeheer ](../monitor/log-management.md) geïntegreerd met uw project om samengevoegde logboekgegevens van alle logboeken te beheren verbonden aan uw Adobe Commerce op het project van de wolkeninfrastructuur.
 
-De New Relic Logs-toepassing biedt een gecentraliseerd logbeheerdashboard om Adobe Commerce problemen op te lossen en te controleren in productieomgevingen en testomgevingen voor cloudinfrastructuur. Het dashboard verleent ook toegang tot logboekgegevens voor de Snelle diensten van CDN, de Optimalisering van het Beeld, en van de de toepassingsfirewall van het Web (WAF). Zie [New Relic-services](../monitor/new-relic-service.md).
+De New Relic Logs-toepassing biedt een gecentraliseerd logbeheerdashboard om Adobe Commerce problemen op te lossen en te controleren in productieomgevingen en testomgevingen voor cloudinfrastructuur. Het dashboard verleent ook toegang tot logboekgegevens voor de Snelle diensten van CDN, de Optimalisering van het Beeld, en van de de toepassingsfirewall van het Web (WAF). Zie {de diensten van 0} New Relic ](../monitor/new-relic-service.md).[

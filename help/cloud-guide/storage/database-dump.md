@@ -12,29 +12,29 @@ ht-degree: 0%
 
 # Back-up maken van de database
 
-U kunt een kopie van uw database maken met de `ece-tools db-dump` bevel zonder alle omgevingsgegevens van de diensten en de steunen te vangen. Met deze opdracht maakt u standaard back-ups in het dialoogvenster `/app/var/dump-main` directory voor alle databaseverbindingen die in de omgevingsconfiguratie zijn opgegeven. De de stortplaatsverrichting van DB schakelt de toepassing aan onderhoudswijze, houdt de processen van de consumentenrij tegen, en maakt cron banen onbruikbaar alvorens de stortplaats begint.
+U kunt een kopie van uw database maken met de opdracht `ece-tools db-dump` zonder alle omgevingsgegevens van services en montage vast te leggen. Met deze opdracht maakt u standaard back-ups in de map `/app/var/dump-main` voor alle databaseverbindingen die in de omgevingsconfiguratie zijn opgegeven. De de stortplaatsverrichting van DB schakelt de toepassing aan onderhoudswijze, houdt de processen van de consumentenrij tegen, en maakt cron banen onbruikbaar alvorens de stortplaats begint.
 
 Overweeg de volgende richtlijnen voor stortplaats van DB:
 
 - Voor Productomgevingen, adviseert de Adobe de verrichtingen van de gegevensbestandstortplaats tijdens off-peak uren te voltooien om de dienstverstoringen te minimaliseren die voorkomen wanneer de plaats op onderhoudswijze is.
-- Als een fout tijdens de stortplaatsverrichting voorkomt, schrapt het bevel het stortplaatsdossier om schijfruimte te besparen. Bekijk de logboeken voor meer informatie (`var/log/cloud.log`).
-- Voor ProProductie-omgevingen wordt deze opdracht alleen dumpt vanuit _één_ van de drie high-availability knopen, zodat zouden de productiegegevens die aan een verschillende knoop tijdens de stortplaats worden geschreven niet kunnen worden gekopieerd. De opdracht genereert een `var/dbdump.lock` bestand om te voorkomen dat de opdracht op meer dan één knooppunt wordt uitgevoerd.
-- Voor een back-up van alle milieuservices raadt de Adobe aan een [back-up](snapshots.md).
+- Als een fout tijdens de stortplaatsverrichting voorkomt, schrapt het bevel het stortplaatsdossier om schijfruimte te besparen. Bekijk de logboeken voor details (`var/log/cloud.log`).
+- Voor Pro de milieu&#39;s van de Productie, dumpt dit bevel slechts van _één_ van de drie high-availability knopen, zodat zouden de productiegegevens die aan een verschillende knoop tijdens de stortplaats worden geschreven niet kunnen worden gekopieerd. De opdracht genereert een `var/dbdump.lock` -bestand om te voorkomen dat de opdracht op meer dan één knooppunt wordt uitgevoerd.
+- Voor een steun van alle milieudiensten, adviseert de Adobe creërend a [ steun ](snapshots.md).
 
-U kunt verkiezen aan file veelvoudige gegevensbestanden door de gegevensbestandnamen aan het bevel toe te voegen. In het volgende voorbeeld wordt een back-up gemaakt van twee databases: `main` en `sales`:
+U kunt verkiezen aan file veelvoudige gegevensbestanden door de gegevensbestandnamen aan het bevel toe te voegen. In het volgende voorbeeld wordt een back-up gemaakt van twee databases: `main` en `sales` :
 
 ```bash
 php vendor/bin/ece-tools db-dump main sales
 ```
 
-Gebruik de `php vendor/bin/ece-tools db-dump --help` voor meer opties:
+Gebruik de opdracht `php vendor/bin/ece-tools db-dump --help` voor meer opties:
 
-- `--dump-directory=<dir>`—Kies een doeldirectory voor de databasedumpel
-- `--remove-definers`—Verwijder DEFINER-instructies uit de databasedumpit
+- `--dump-directory=<dir>` - Kies een doelmap voor de databasedumpit
+- `--remove-definers`—Verwijder DEFINITIEVE instructies uit de databasedumpdump
 
-**Om een gegevensbestandstortplaats in het Opvoeren of het milieu van de Productie te creëren**:
+**om een gegevensbestandstortplaats in het het Opvoeren of milieu van de Productie te creëren**:
 
-1. [SSH gebruiken om u aan te melden of een tunnel te maken om verbinding te maken met de externe omgeving](../development/secure-connections.md) die de te kopiëren database bevat.
+1. [ SSH van het Gebruik aan login of creeer een tunnel om met het verre milieu ](../development/secure-connections.md) te verbinden die het gegevensbestand aan exemplaar bevat.
 
 1. Maak een lijst van de omgevingsverhoudingen en neem nota van de gegevens van de gegevensbestandlogin.
 
@@ -48,7 +48,7 @@ Gebruik de `php vendor/bin/ece-tools db-dump --help` voor meer opties:
    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
    ```
 
-1. Maak een back-up van de database. Om een doelfolder voor de stortplaats van DB te kiezen, gebruik `--dump-directory` -optie.
+1. Maak een back-up van de database. Als u een doelmap voor de DB-dump wilt kiezen, gebruikt u de optie `--dump-directory` .
 
    ```bash
    php vendor/bin/ece-tools db-dump -- main
@@ -71,8 +71,8 @@ Gebruik de `php vendor/bin/ece-tools db-dump --help` voor meer opties:
    [2020-01-28 16:38:11] NOTICE: Maintenance mode is disabled.
    ```
 
-1. De `db-dump` maakt een opdracht `dump-<timestamp>.sql.gz` archiefbestand in de externe projectmap.
+1. Met de opdracht `db-dump` maakt u een `dump-<timestamp>.sql.gz` -archiefbestand in de externe projectmap.
 
 >[!TIP]
 >
->Als u deze gegevens naar een specifieke omgeving wilt verplaatsen, raadpleegt u [Gegevens en statische bestanden migreren](../deploy/staging-production.md#migrate-static-files).
+>Als u deze gegevens aan een specifiek milieu wilt duwen, zie [ gegevens en statische dossiers migreren ](../deploy/staging-production.md#migrate-static-files).

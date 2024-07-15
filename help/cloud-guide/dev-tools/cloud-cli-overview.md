@@ -12,11 +12,11 @@ ht-degree: 0%
 
 # Cloud CLI
 
-De `magento-cloud` Met het CLI-hulpprogramma kunnen ontwikkelaars en systeembeheerders Cloud-projecten en -omgevingen beheren, routines uitvoeren en automatiseringstaken uitvoeren. De `magento-cloud` CLI breidt de eigenschappen en de functionaliteit van uit [[!DNL Cloud Console]](../../get-started/cloud-console.md). Nadat u de `magento-cloud` CLI op uw lokale werkstation, kunt u het gebruiken om uw Adobe Commerce op de milieu&#39;s van de Aanzet en van de integratie van de wolkeninfrastructuur te beheren Pro.
+Met het CLI-hulpprogramma van `magento-cloud` kunnen ontwikkelaars en systeembeheerders Cloud-projecten en -omgevingen beheren, routines uitvoeren en automatiseringstaken uitvoeren. De CLI van `magento-cloud` breidt de eigenschappen en de functionaliteit van [[!DNL Cloud Console]](../../get-started/cloud-console.md) uit. Nadat u de CLI van `magento-cloud` op uw lokale werkstation hebt geïnstalleerd, kunt u deze gebruiken om uw Adobe Commerce te beheren in de Starter- en Pro-integratieomgevingen van de cloudinfrastructuur.
 
-**Als u het dialoogvenster `magento-cloud` CLI**:
+**om `magento-cloud` CLI** te installeren:
 
-1. Wijzig op uw lokale werkstation de directory waarin u het Cloud-project wilt klonen en waar de [eigenaar van bestandssysteem](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) heeft _schrijven_ toegang.
+1. Op uw lokaal werkstation, verandering in de folder waar u van plan bent het project van de Wolk te klonen en waar de [ eigenaar van het dossiersysteem ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) _heeft schrijven_ toegang.
 
 1. Installeer de `magento-cloud` CLI.
 
@@ -24,7 +24,7 @@ De `magento-cloud` Met het CLI-hulpprogramma kunnen ontwikkelaars en systeembehe
    curl -sS https://accounts.magento.cloud/cli/installer | php
    ```
 
-1. Toevoegen `magento-cloud` CLI naar het basisprofiel.
+1. Voeg `magento-cloud` CLI aan het basisprofiel toe.
 
    ```bash
    export PATH=$PATH:$HOME/.magento-cloud/bin
@@ -36,7 +36,7 @@ De `magento-cloud` Met het CLI-hulpprogramma kunnen ontwikkelaars en systeembehe
    . ~/.bash_profile
    ```
 
-1. Om CLI in werking te stellen, roep `magento-cloud` en voer uw aanmeldingsgegevens voor uw Cloud-account in wanneer hierom wordt gevraagd.
+1. Als u de CLI wilt starten, roept u `magento-cloud` aan en voert u de referenties van uw Cloud-account in wanneer u hierom wordt gevraagd.
 
    ```bash
    magento-cloud
@@ -48,7 +48,7 @@ De `magento-cloud` Met het CLI-hulpprogramma kunnen ontwikkelaars en systeembehe
    Your email address or username:
    ```
 
-1. Controleer de `magento-cloud` bevindt zich in uw pad. In het volgende voorbeeld worden de beschikbare opdrachten weergegeven.
+1. Controleer of de opdracht `magento-cloud` zich in het pad bevindt. In het volgende voorbeeld worden de beschikbare opdrachten weergegeven.
 
    ```bash
    magento-cloud list
@@ -56,9 +56,9 @@ De `magento-cloud` Met het CLI-hulpprogramma kunnen ontwikkelaars en systeembehe
 
 ## Algemene opdrachten
 
-Adobe heeft deze opdrachten ontworpen om omgevingen voor cloudintegratie te beheren en raadt u aan de `magento-cloud` CLI van een projectfolder zodat kunt u weglaten `-p <project-ID>` parameter.
+Adobe heeft deze opdrachten ontworpen om omgevingen voor cloudintegratie te beheren en raadt u aan de CLI van `magento-cloud` uit te voeren vanuit een projectmap zodat u de parameter `-p <project-ID>` kunt weglaten.
 
-De volgende lijst met veelgebruikte `magento-cloud` CLI-opdrachten bevatten alleen de vereiste opties. U kunt de `--help` optie met om het even welk bevel om meer informatie te zien.
+De volgende lijst met veelgebruikte `magento-cloud` CLI-opdrachten bevat alleen de vereiste opties. U kunt de optie `--help` met elke opdracht gebruiken om meer informatie weer te geven.
 
 | Opdracht | Beschrijving |
 | ------------------------------------ | -------------------------------------------------- |
@@ -70,15 +70,15 @@ De volgende lijst met veelgebruikte `magento-cloud` CLI-opdrachten bevatten alle
 | `magento-cloud variables` | Variabelen weergeven in deze omgeving. |
 | `magento-cloud ssh` | Gebruik SSH om verbinding te maken met de externe omgeving. |
 | `magento-cloud url` | Open de Adobe Commerce storefront in een browser. |
-| `magento-cloud web` | Open de [!DNL Cloud Console]. |
+| `magento-cloud web` | Open de lus [!DNL Cloud Console] . |
 
 ## Omgeving, opdrachten
 
-Het milieu _name_ verschilt van het milieu _ID_ alleen als u spaties of hoofdletters in de omgevingsnaam gebruikt. Een milieu-id bestaat uit alle kleine letters, getallen en toegestane symbolen. Hoofdletters in een omgevingsnaam worden omgezet in kleine letters in de id. Spaties in een omgevingsnaam worden omgezet in streepjes.
+De milieu _naam_ is verschillend van milieu _identiteitskaart_ slechts als u ruimten of hoofdbrieven in de milieunaam gebruikt. Een milieu-id bestaat uit alle kleine letters, getallen en toegestane symbolen. Hoofdletters in een omgevingsnaam worden omgezet in kleine letters in de id. Spaties in een omgevingsnaam worden omgezet in streepjes.
 
-Een omgevingsnaam _kan_ include-tekens die zijn gereserveerd voor uw Linux-shell of voor reguliere expressies. Verboden tekens bevatten accolades (`{ }`), ronde haakjes, asterisk (`*`), punthaken (`< >`), ampersand (`&`), percentage (`%`) en andere tekens.
+Een milieu naam _kan_ geen karakters omvatten die voor uw shell van Linux of voor regelmatige uitdrukkingen worden gereserveerd. De verboden karakters omvatten krullende steunen (`{ }`), haakjes, asterisk (`*`), punthaakjes (`< >`), en het en (`&`), percenten (`%`), en andere karakters.
 
-De `magento-cloud environment:list` bevel toont omgevingshiërarchieën, terwijl `git branch` niet. Als u een geneste omgeving hebt, gebruikt u het volgende:
+De opdracht `magento-cloud environment:list` geeft omgevingshiërarchieën weer, maar `git branch` niet. Als u een geneste omgeving hebt, gebruikt u het volgende:
 
 ```bash
 magento-cloud environment:list
@@ -102,9 +102,9 @@ Are you sure you want to redeploy the environment <environment-name>? [Y/n]
 
 ## Opdrachten Git
 
-Het kan zijn dat sommige van deze opdrachten lijken op de opdrachten bij Git. De `magento-cloud` maakt rechtstreeks verbinding met het op Git gebaseerde Cloud-project met extra functies. Als u een vertakking maakt zonder de opdracht `magento-cloud` CLI, wordt het niet &quot;geactiveerd&quot;en bouwt niet automatisch wanneer u veranderingen in het verre milieu duwt. De `magento-cloud` CLI-opdracht omvat activering.
+Het kan zijn dat sommige van deze opdrachten lijken op de opdrachten bij Git. De opdrachten van `magento-cloud` maken rechtstreeks verbinding met het op Git gebaseerde Cloud-project met extra functies. Als u een vertakking maakt zonder de CLI van `magento-cloud` te gebruiken, wordt deze niet geactiveerd en wordt deze niet automatisch gegenereerd wanneer u wijzigingen in de externe omgeving aanbrengt. De opdracht `magento-cloud` CLI bevat activering.
 
-Als u een vertakking wilt maken, gebruikt u de opdracht `magento-cloud` de tak wordt geactiveerd.
+Als u een vertakking wilt maken, gebruikt u de opdracht `magento-cloud` , zodat de vertakking wordt geactiveerd.
 
 ```bash
 magento-cloud environment:branch <new-name> <parent-branch>
@@ -112,8 +112,8 @@ magento-cloud environment:branch <new-name> <parent-branch>
 
 Voor de status van een vertakking:
 
-- Gebruik de `magento-cloud env` gebruiken om een lijst weer te geven van de vertakkingen van de omgeving en hun status: actief of inactief.
-- Gebruik de `magento-cloud environment:activate` gebruiken om een omgevingsvertakking te activeren.
+- Gebruik de opdracht `magento-cloud env` om een lijst weer te geven met de vertakkingen van de omgeving en hun status: actief of inactief.
+- Gebruik de opdracht `magento-cloud environment:activate` om een omgevingsvertakking te activeren.
 
 Druk op een lege Git om een implementatie te activeren. Bijvoorbeeld:
 
@@ -129,7 +129,7 @@ De volgende stappen tonen het gebruiken van CLI en van het Git bevelen onderling
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
-1. Schakel over naar de [eigenaar van bestandssysteem](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html).
+1. Schakelaar aan de [ eigenaar van het dossiersysteem ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html).
 
 1. Meld u aan bij uw project.
 
@@ -151,7 +151,7 @@ De volgende stappen tonen het gebruiken van CLI en van het Git bevelen onderling
 
    >[!NOTE]
    >
-   >Het is belangrijk om de `magento-cloud environment:list` gebruiken omdat er omgevingshiërarchieën worden weergegeven, terwijl de `git branch` niet wordt uitgevoerd.
+   >Het is belangrijk dat u de opdracht `magento-cloud environment:list` gebruikt, omdat deze omgevingshiërarchieën weergeeft, maar de opdracht `git branch` niet.
 
 1. Zoek de laatste code naar de vertakkingen van de oorsprong.
 
@@ -165,11 +165,11 @@ De volgende stappen tonen het gebruiken van CLI en van het Git bevelen onderling
    magento-cloud environment:checkout <environment-ID>
    ```
 
-   Met Git-opdrachten kunt u alleen de Git-vertakking uitchecken. De `magento-cloud checkout` het bevel controleert de tak en schakelaars aan het actieve milieu.
+   Met Git-opdrachten kunt u alleen de Git-vertakking uitchecken. De opdracht `magento-cloud checkout` checkt de vertakking uit en schakelt over naar de actieve omgeving.
 
    >[!TIP]
    >
-   >U kunt een omgevingsvertakking maken met de opdracht `magento-cloud environment:branch <environment-name> <parent-environment-ID>` opdrachtsyntaxis. Het kan enige extra tijd duren om een omgevingsvertakking te maken en te activeren.
+   >U kunt een omgevingsvertakking maken met de opdrachtsyntaxis `magento-cloud environment:branch <environment-name> <parent-environment-ID>` . Het kan enige extra tijd duren om een omgevingsvertakking te maken en te activeren.
 
 1. Gebruik de milieu-id om bijgewerkte code aan uw lokale computer te trekken. Dit is niet nodig als de omgevingsvertakking nieuw is.
 
@@ -177,7 +177,7 @@ De volgende stappen tonen het gebruiken van CLI en van het Git bevelen onderling
    git pull origin <environment-ID>
    ```
 
-1. (_Optioneel_) Maak een [opname](../storage/snapshots.md) van de omgeving als back-up.
+1. (_Facultatieve_) creeer a [ momentopname ](../storage/snapshots.md) van het milieu als steun.
 
    ```bash
    magento-cloud snapshot:create -e <environment-ID>
@@ -185,9 +185,9 @@ De volgende stappen tonen het gebruiken van CLI en van het Git bevelen onderling
 
 ## CLI bijwerken
 
-De `magento-cloud` CLI controleert beschikbare updates wanneer u login, maar u kunt op updates controleren gebruikend `self:update` gebruiken. Als er een update beschikbaar is, volg de instructies om CLI bij te werken.
+De CLI van `magento-cloud` controleert op beschikbare updates wanneer u login, maar u kunt op updates controleren gebruikend het `self:update` bevel. Als er een update beschikbaar is, volg de instructies om CLI bij te werken.
 
-Als uw `magento-cloud` CLI is bijgewerkt, ziet u de volgende reactie:
+Als uw `magento-cloud` CLI bijgewerkt is, ziet u de volgende reactie:
 
 ```bash
 magento-cloud update

@@ -1,5 +1,5 @@
 ---
-title: Configureren [!DNL Xdebug]
+title: Configureren  [!DNL Xdebug]
 description: Leer hoe u de Xdebug-extensie configureert voor foutopsporing in uw Adobe Commerce op het gebied van projecten voor cloudinfrastructuur.
 exl-id: bf2d32d8-fab7-439e-8df3-b039e53009d4
 source-git-commit: 751456f50e7b017b47c2ff43e008c2d04a558d96
@@ -11,44 +11,44 @@ ht-degree: 0%
 
 # Xdebug configureren
 
-[!DNL Xdebug] is een extensie voor foutopsporing in uw PHP. Hoewel u winde van uw keus kunt gebruiken, verklaart het volgende hoe te te vormen [!DNL Xdebug] en [!DNL PhpStorm] om fouten op te sporen in uw lokale omgeving.
+[!DNL Xdebug] is een extensie voor foutopsporing in uw PHP. Hoewel u IDE van uw keus kunt gebruiken, verklaart het volgende hoe te om [!DNL Xdebug] en [!DNL PhpStorm] te vormen om in uw lokale milieu te zuiveren.
 
 >[!NOTE]
 >
->U kunt [!DNL Xdebug] om in de Cloud Docker-omgeving voor lokale foutopsporing uit te voeren zonder de projectconfiguratie van uw Adobe Commerce op de cloud-infrastructuur te wijzigen. Zie [Xdebug configureren voor Docker](https://developer.adobe.com/commerce/cloud-tools/docker/test/configure-xdebug/).
+>U kunt [!DNL Xdebug] zo configureren dat deze wordt uitgevoerd in de Cloud Docker-omgeving voor lokale foutopsporing zonder de projectconfiguratie van de Adobe Commerce op de cloud-infrastructuur te wijzigen. Zie [ Xdebug voor Docker ](https://developer.adobe.com/commerce/cloud-tools/docker/test/configure-xdebug/) vormen.
 
-Inschakelen [!DNL Xdebug], moet u een dossier in uw bewaarplaats van de Git vormen, uw winde vormen, en de haven van opstelling door:sturen. U kunt bepaalde instellingen configureren in het dialoogvenster `magento.app.yaml` bestand. Na het bewerken voert u de Git-wijzigingen door in alle Starter-omgevingen en Pro-integratieomgevingen om [!DNL Xdebug]. [!DNL Xdebug] is al beschikbaar in Pro Staging &amp; Production-omgevingen.
+Om [!DNL Xdebug] toe te laten, moet u een dossier in uw bewaarplaats van de it vormen, uw winde vormen, en de opstellingspoort door:sturen. U kunt bepaalde instellingen configureren in het `magento.app.yaml` -bestand. Nadat u de Git-wijzigingen hebt bewerkt, kunt u deze activeren door de Git-wijzigingen door te voeren in alle Starter-omgevingen en Pro-integratieomgevingen [!DNL Xdebug] . [!DNL Xdebug] is al beschikbaar in Pro Staging &amp; Production-omgevingen.
 
-Zodra gevormd, kunt u bevelen CLI, Webverzoeken, en code zuiveren. Houd er rekening mee dat alle omgevingen met cloudinfrastructuren alleen-lezen zijn. Kloont de code aan uw lokale ontwikkelomgeving om het zuiveren uit te voeren. Voor Pro Staging- en Productomgevingen raadpleegt u [aanvullende instructies](#debug-for-pro-staging-and-production) for [!DNL Xdebug].
+Zodra gevormd, kunt u bevelen CLI, Webverzoeken, en code zuiveren. Houd er rekening mee dat alle omgevingen met cloudinfrastructuren alleen-lezen zijn. Kloont de code aan uw lokale ontwikkelomgeving om het zuiveren uit te voeren. Voor Pro het Staging en de milieu&#39;s van de Productie, zie [ extra instructies ](#debug-for-pro-staging-and-production) voor [!DNL Xdebug].
 
 ## Vereisten
 
-Uitvoeren en gebruiken [!DNL Xdebug], hebt u de SSH-URL voor de omgeving nodig. U kunt de informatie vinden via de [[!DNL Cloud Console]](../project/overview.md) of uw [!DNL Cloud Onboarding UI].
+Als u [!DNL Xdebug] wilt uitvoeren en gebruiken, hebt u de SSH-URL voor de omgeving nodig. U kunt de informatie vinden via [[!DNL Cloud Console]](../project/overview.md) of de [!DNL Cloud Onboarding UI] .
 
 ## Xdebug configureren
 
-Om te vormen [!DNL Xdebug]Voer de volgende stappen uit:
+Voer de volgende stappen uit om [!DNL Xdebug] te configureren:
 
 - [In een vertakking werken om updates van bestanden door te voeren](#get-started-with-a-branch)
-- [Inschakelen [!DNL Xdebug] voor omgevingen](#enable-xdebug-in-your-environment)
+- [Laat  [!DNL Xdebug]  voor milieu&#39;s toe](#enable-xdebug-in-your-environment)
 - [Vorm uw winde](#configure-phpstorm)
 - [Poorten doorsturen instellen](#set-up-port-forwarding)
 
 ### Aan de slag met een vertakking
 
-Toevoegen [!DNL Xdebug], raadt de Adobe aan [een ontwikkelingsafdeling](../dev-tools/cloud-cli-overview.md#create-an-environment-branch).
+Om [!DNL Xdebug] toe te voegen, adviseert de Adobe het werken in [ een ontwikkelingstak ](../dev-tools/cloud-cli-overview.md#create-an-environment-branch).
 
 ### Xdebug inschakelen in uw omgeving
 
-U kunt [!DNL Xdebug] rechtstreeks naar alle Starter-omgevingen en Pro-integratieomgevingen. Deze configuratiestap is niet vereist voor Pro Production &amp; Staging-omgevingen. Zie [Foutopsporing voor Pro Staging en Production](#debug-for-pro-staging-and-production).
+U kunt [!DNL Xdebug] rechtstreeks inschakelen voor alle Starter-omgevingen en Pro-integratieomgevingen. Deze configuratiestap is niet vereist voor Pro Production &amp; Staging-omgevingen. Zie [ zuiveren voor Pro het Opvoeren en de Productie ](#debug-for-pro-staging-and-production).
 
-Inschakelen [!DNL Xdebug] voor uw project toevoegen `xdebug` aan de `runtime:extensions` van de `.magento.app.yaml` bestand.
+Als u [!DNL Xdebug] wilt inschakelen voor uw project, voegt u `xdebug` toe aan de sectie `runtime:extensions` van het `.magento.app.yaml` -bestand.
 
-**Xdebug inschakelen**:
+**om Xdebug** toe te laten:
 
-1. In uw lokale terminal, open `.magento.app.yaml` in een teksteditor.
+1. Open het bestand `.magento.app.yaml` in de lokale terminal in een teksteditor.
 
-1. In de `runtime` sectie, onder `extensions`, toevoegen `xdebug`. Bijvoorbeeld:
+1. Voeg in de sectie `runtime` onder `extensions` toe `xdebug` . Bijvoorbeeld:
 
    ```yaml
    runtime:
@@ -60,7 +60,7 @@ Inschakelen [!DNL Xdebug] voor uw project toevoegen `xdebug` aan de `runtime:ext
            - xdebug
    ```
 
-1. Sla uw wijzigingen op in het dialoogvenster `.magento.app.yaml` en sluit de teksteditor af.
+1. Sla de wijzigingen op in het `.magento.app.yaml` -bestand en sluit de teksteditor af.
 
 1. Voeg de wijzigingen toe, begaan en duw deze om de omgeving opnieuw te implementeren.
 
@@ -76,54 +76,54 @@ Inschakelen [!DNL Xdebug] voor uw project toevoegen `xdebug` aan de `runtime:ext
    git push origin <environment-ID>
    ```
 
-Bij implementatie in Starter-omgevingen en Pro-integratieomgevingen, [!DNL Xdebug] is nu beschikbaar. Ga door met het configureren van uw IDE. Voor PHPStorm raadpleegt u [PhpStorm configureren](#configure-phpstorm).
+Wanneer [!DNL Xdebug] wordt geïmplementeerd in Starter-omgevingen en Pro-integratieomgevingen, is het nu beschikbaar. Ga door met het configureren van uw IDE. Voor PHPStorm, zie [ PHPStorm ](#configure-phpstorm) vormen.
 
 ### PhpStorm configureren
 
-De [PhpStorm](https://www.jetbrains.com/phpstorm/) IDE moet worden gevormd om behoorlijk met te werken [!DNL Xdebug].
+[ PpStorm ](https://www.jetbrains.com/phpstorm/) winde moet worden gevormd om behoorlijk met [!DNL Xdebug] te werken.
 
-**PHPStorm configureren voor gebruik met Xdebug**:
+**om PhpStorm te vormen om met Xdebug** te werken:
 
-1. Open in uw PhpStorm-project de **Instellingen** deelvenster.
+1. In uw project PhpStorm, open het **paneel van Montages**.
 
-   - _macOS_—Selecteren **PhpStorm** > **Voorkeuren**.
-   - _Windows/Linux_—Selecteren **Bestand** > **Instellingen**.
+   - _macOS_ - selecteer **PHPStorm** > **Voorkeur**.
+   - _Vensters/Linux_ - selecteer **Dossier** > **Montages**.
 
-1. In de _Instellingen_ het deelvenster, vouwt u de **Talen en kaders** > **PHP** > **Servers** sectie.
+1. In het _paneel van Montages_, breid uit en bepaal de plaats van **Talen &amp; Frameworks** > **PHP** > **sectie van Servers**.
 
-1. Klik op de knop **+** een serverconfiguratie toevoegen. De projectnaam is grijs bovenaan.
+1. Klik **+** om een serverconfiguratie toe te voegen. De projectnaam is grijs bovenaan.
 
-1. [Optioneel] Configureer de volgende instellingen voor de nieuwe serverconfiguratie. Zie [Geen foutopsporingsserver geconfigureerd](https://www.jetbrains.com/help/phpstorm/troubleshooting-php-debugging.html#no-debug-server-is-configured) in de _PHPStorm_ documentatie.
+1. [ Facultatieve ] vorm de volgende montages voor de nieuwe serverconfiguratie. Zie [ Geen zuivert server die ](https://www.jetbrains.com/help/phpstorm/troubleshooting-php-debugging.html#no-debug-server-is-configured) in de _wordt gevormd PHPStorm_ documentatie.
 
-   - **Naam**—Ga het zelfde als hostname in. Deze waarde moet overeenkomen met de waarde voor de `PHP_IDE_CONFIG` variabele in [Foutopsporing CLI-opdrachten](#debug-cli-commands) om CLI voor het zuiveren te gebruiken.
-   - **Host**—Voer de hostnaam in.
-   - **Poort**—Enter `443`.
-   - **Foutopsporing**—Selecteren `Xdebug`.
+   - **Naam** - ga het zelfde als hostname in. Deze waarde moet de waarde voor de `PHP_IDE_CONFIG` variabele in [ aanpassen zuivert CLI bevelen ](#debug-cli-commands) om CLI voor het zuiveren te gebruiken.
+   - **Gastheer** - ga hostname in.
+   - **Haven** - ga `443` binnen.
+   - **Debugger** - selecteer `Xdebug`.
 
-1. Selecteren **Padtoewijzingen gebruiken**. In de _Bestand/map_ deelvenster, de hoofdmap van het project voor het deelvenster `serverName` worden weergegeven.
+1. Selecteer **de wegafbeeldingen van het Gebruik**. In de _ruit van het Dossier/van de Folder_, de wortel van het project voor de `serverName` vertoningen.
 
-1. In de **Absoluut pad op de server** kolom, klikt u op de **Bewerken** en voegt een instelling toe op basis van de omgeving.
+1. In de **Absolute weg op de server** kolom, klik **geef** pictogram uit en voeg het plaatsen toe die op het milieu wordt gebaseerd.
 
-   - Voor alle Starter-omgevingen en Pro-integratieomgevingen is het externe pad `/app`.
+   - Voor alle Starter-omgevingen en Pro-integratieomgevingen is het externe pad `/app` .
    - Voor Pro Staging- en Productieomgevingen:
 
       - Productie: `/app/<project_code>/`
-      - Staging:  `/app/<project_code>_stg/`
+      - Staging: `/app/<project_code>_stg/`
 
-1. Wijzig de [!DNL Xdebug] haven aan 9000 in **Talen en kaders** > **PHP** > **Foutopsporing** > **Xdebug** > **Foutopsporingspoort** deelvenster.
+1. Verander de [!DNL Xdebug] haven in 9000 in de **Talen &amp; Frameworks** > **PHP** > **zuivert** > **Xdebug** > **zuivert het paneel van de Haven**.
 
-1. Klikken **Toepassen**.
+1. Klik **toepassen**.
 
 ### Poorten doorsturen instellen
 
-Wijs de `XDEBUG` verbinding van de server met uw lokale systeem. Voor elk type foutopsporing moet u poort 9000 van uw Adobe Commerce op de server van de cloudinfrastructuur doorsturen naar uw lokale computer. Zie een van de volgende secties:
+Wijs de `XDEBUG` verbinding van de server aan uw lokaal systeem toe. Voor elk type foutopsporing moet u poort 9000 van uw Adobe Commerce op de server van de cloudinfrastructuur doorsturen naar uw lokale computer. Zie een van de volgende secties:
 
 - [Poorten doorsturen in Mac of UNIX](#port-forwarding-on-mac-or-unix)
 - [Poorten doorsturen in Windows](#port-forwarding-on-windows)
 
 #### Poorten doorsturen op Mac of UNIX®
 
-**Aan opstellings haven die op een Mac of in een milieu UNIX® door:sturen**:
+**aan opstellingshaven die op een Mac of in een milieu UNIX®** door:sturen:
 
 1. Open een terminal.
 
@@ -133,11 +133,11 @@ Wijs de `XDEBUG` verbinding van de server met uw lokale systeem. Voor elk type f
    ssh -R 9000:localhost:9000 <ssh url>
    ```
 
-   Gebruik de `-v` (verbose) optie zodat wanneer een contactdoos met de haven wordt verbonden die door:sturen het in de terminal toont.
+   Gebruik de optie `-v` (verbose) zodat wanneer een socket is verbonden met de poort die wordt doorgestuurd, deze in de terminal wordt weergegeven.
 
    Als een &quot;onbekwaam om&quot;te verbinden of &quot;niet aan haven op verre&quot;fout kon luisteren wordt getoond, kon er een andere actieve zitting van SSH die op de server voortduurt die haven 9000 bezet. Als die verbinding niet wordt gebruikt, kunt u het eindigen.
 
-**Verbinding problemen oplossen**:
+**om de verbinding** problemen op te lossen:
 
 1. Gebruik SSH om u aan te melden bij de externe integratie, staging of productieomgeving.
 
@@ -147,7 +147,7 @@ Wijs de `XDEBUG` verbinding van de server met uw lokale systeem. Voor elk type f
 
    - integratie: gebruikersnamen zijn vergelijkbaar met `dd2q5ct7mhgus`
    - Staging: gebruikersnamen zijn vergelijkbaar met `dd2q5ct7mhgus_stg`
-   - Productie: gebruikersnamen lijken op `dd2q5ct7mhgus`
+   - Productie: gebruikersnamen zijn vergelijkbaar met `dd2q5ct7mhgus`
 
 1. Voor een gebruikerszitting die ouder is dan van u, vind de pseudo-terminal (PTS) waarde, zoals `pts/0`.
 
@@ -172,44 +172,44 @@ Wijs de `XDEBUG` verbinding van de server met uw lokale systeem. Voor elk type f
 
 #### Poorten doorsturen in Windows
 
-Aan opstellingshaven door:sturen (het een tunnel graven van SSH) op Vensters, moet u uw eindtoepassing van Vensters vormen. Dit voorbeeld stappen door het creëren van een tunnel van SSH gebruikend [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). U kunt andere toepassingen gebruiken, zoals Cygwin. Raadpleeg de documentatie van de leverancier bij deze toepassingen voor meer informatie over andere toepassingen.
+Aan opstellingshaven door:sturen (het een tunnel graven van SSH) op Vensters, moet u uw eindtoepassing van Vensters vormen. Dit voorbeeldstappen door een tunnel van SSH tot stand te brengen gebruikend [ Putty ](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). U kunt andere toepassingen gebruiken, zoals Cygwin. Raadpleeg de documentatie van de leverancier bij deze toepassingen voor meer informatie over andere toepassingen.
 
-**Om een tunnel van SSH op Vensters te vestigen die Putty gebruikt**:
+**aan opstelling een tunnel van SSH op Vensters gebruikend Putty**:
 
-1. Als u dit nog niet hebt gedaan, downloadt u [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+1. Als u dit nog niet hebt gedaan, download [ Putty ](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
 1. Start Putty.
 
-1. Klik in het deelvenster Categorie op **Sessie**.
+1. In de ruit van de Categorie, klik **Zitting**.
 
 1. Voer de volgende gegevens in:
 
-   - **Hostnaam (of IP-adres)** veld: voer de [SSH-URL](../development/secure-connections.md#connect-to-a-remote-environment) voor uw Cloud-server
-   - **Poort** veld: Enter `22`
+   - **Hostname (of IP adres)** gebied: Ga [ SSH URL ](../development/secure-connections.md#connect-to-a-remote-environment) voor uw server van de Wolk in
+   - **Poort** gebied: Ga `22` binnen
 
-   ![Putty instellen](../../assets/xdebug/putty-session.png)
+   ![ Putty van de Opstelling ](../../assets/xdebug/putty-session.png)
 
-1. In de _Categorie_ deelvenster, klikt u op **Verbinding** > **SSH** > **Tunnels**.
+1. In de _ruit van de Categorie_, klik **Verbinding** > **SSH** > **Tunnels**.
 
 1. Voer de volgende gegevens in:
 
-   - **Bronpoort** veld: Enter `9000`
-   - **Doel** veld: Enter `127.0.0.1:9000`
-   - Klikken **Extern**
+   - **Source haven** gebied: Ga `9000` binnen
+   - **Doel** gebied: Ga `127.0.0.1:9000` binnen
+   - Klik **Verre**
 
-1. Klikken **Toevoegen**.
+1. Klik **toevoegen**.
 
-   ![Een SSH-tunnel maken in Putty](../../assets/xdebug/putty-tunnels.png)
+   ![ creeer een tunnel van SSH in Putty ](../../assets/xdebug/putty-tunnels.png)
 
-1. In de _Categorie_ deelvenster, klikt u op **Sessie**.
+1. In de _ruit van de Categorie_, klik **Zitting**.
 
-1. In de **Opgeslagen sessies** gebied, ga een naam voor deze tunnel van SSH in.
+1. Op het **Bewaarde gebied van Zittingen**, ga een naam voor deze tunnel van SSH in.
 
-1. Klikken **Opslaan**.
+1. Klik **sparen**.
 
-   ![Uw SSH-tunnel opslaan](../../assets/xdebug/putty-session-save.png)
+   ![ sparen uw tunnel van SSH ](../../assets/xdebug/putty-session-save.png)
 
-1. Om de tunnel van SSH te testen, klik **Laden** en klik vervolgens op **Openen**.
+1. Om de tunnel van SSH te testen, klik **Lading**, dan klik **Open**.
 
    Als de fout &quot;Kan geen verbinding maken&quot; wordt weergegeven, controleert u het volgende:
 
@@ -218,15 +218,15 @@ Aan opstellingshaven door:sturen (het een tunnel graven van SSH) op Vensters, mo
 
 ## SSH-toegang tot Xdebug-omgevingen
 
-Voor het in werking stellen van het zuiveren, het uitvoeren van opstelling, en meer, hebt u de bevelen van SSH voor de toegang tot van de milieu&#39;s nodig. U kunt deze informatie via de [[!DNL Cloud Console]](../development/secure-connections.md#use-an-ssh-command) en uw projectspreadsheet.
+Voor het in werking stellen van het zuiveren, het uitvoeren van opstelling, en meer, hebt u de bevelen van SSH voor de toegang tot van de milieu&#39;s nodig. U kunt deze informatie door [[!DNL Cloud Console]](../development/secure-connections.md#use-an-ssh-command) en uw projectspreadsheet krijgen.
 
-Voor Starter-omgevingen en Pro-integratieomgevingen kunt u het volgende gebruiken `magento-cloud` CLI bevel aan SSH in die milieu&#39;s:
+Voor Starter-omgevingen en Pro-integratieomgevingen kunt u de volgende `magento-cloud` CLI-opdracht gebruiken om SSH in die omgevingen te gebruiken:
 
 ```bash
 magento-cloud environment:ssh --pipe -e <environment-ID>
 ```
 
-Te gebruiken [!DNL Xdebug], SSH voor het milieu als volgt:
+Om [!DNL Xdebug] te gebruiken, SSH aan het milieu als volgt:
 
 ```bash
 ssh -R <xdebug listen port>:<host>:<xdebug listen port> <SSH-URL>
@@ -242,22 +242,22 @@ ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 
 >[!NOTE]
 >
->In Pro Staging &amp; Production-omgevingen, [!DNL Xdebug] is altijd beschikbaar omdat deze omgevingen een speciale installatie hebben voor [!DNL Xdebug]. Alle normale webaanvragen worden gerouteerd naar een speciaal PHP-proces dat niet [!DNL Xdebug]. Daarom worden deze verzoeken op normale wijze verwerkt en zijn zij niet onderworpen aan de verslechtering van de prestaties wanneer [!DNL Xdebug] is geladen. Wanneer een webaanvraag wordt verzonden die de [!DNL Xdebug] key, het wordt gerouteerd naar een afzonderlijk PHP proces dat [!DNL Xdebug] geladen.
+>In Pro Staging &amp; Production-omgevingen is [!DNL Xdebug] altijd beschikbaar omdat deze omgevingen een speciale installatie hebben voor [!DNL Xdebug] . Alle normale webaanvragen worden gerouteerd naar een speciaal PHP-proces zonder [!DNL Xdebug] . Deze aanvragen worden daarom op de normale manier verwerkt en zijn niet onderhevig aan de prestatievermindering wanneer [!DNL Xdebug] wordt geladen. Wanneer een webaanvraag wordt verzonden die de sleutel [!DNL Xdebug] heeft, wordt deze gerouteerd naar een afzonderlijk PHP-proces dat [!DNL Xdebug] heeft geladen.
 
-Te gebruiken [!DNL Xdebug] specifiek op Pro plan het Staging en van de Productie milieu, creeert u een afzonderlijke tunnel van SSH en Webzitting slechts u toegang tot hebt. Dit gebruik verschilt van typische toegang, die slechts toegang tot u en niet aan alle gebruikers verleent.
+Als u [!DNL Xdebug] specifiek wilt gebruiken in de Pro-omgeving voor Staging en Productie van abonnementen, maakt u een aparte SSH-tunnel en websessie waartoe alleen u toegang hebt. Dit gebruik verschilt van typische toegang, die slechts toegang tot u en niet aan alle gebruikers verleent.
 
 U hebt het volgende nodig:
 
-- SSH-opdrachten voor toegang tot de omgevingen. U kunt deze informatie via de [[!DNL Cloud Console]](../project/overview.md) of uw [!DNL Cloud Onboarding UI].
-- De `xdebug_key` ingestelde waarde bij het configureren van de Staging- en Pro-omgevingen.
+- SSH-opdrachten voor toegang tot de omgevingen. U kunt deze gegevens ophalen via de [[!DNL Cloud Console]](../project/overview.md) of de [!DNL Cloud Onboarding UI] .
+- De `xdebug_key` -waarde die is ingesteld bij het configureren van de Staging- en Pro-omgevingen.
 
-  De `xdebug_key` kan worden gevonden door SSH te gebruiken aan login aan de primaire knoop en het uitvoeren:
+  De `xdebug_key` kan worden gevonden door SSH te gebruiken om zich aan te melden bij het primaire knooppunt en het uitvoeren:
 
   ```bash
   cat /etc/platform/*/nginx.conf | grep xdebug.sock | head -n1
   ```
 
-**Om een tunnel van SSH aan een het Staging of milieu van de Productie te vestigen**:
+**aan opstelling een tunnel SSH aan een het Opvoeren of milieu van de Productie**:
 
 1. Open een terminal.
 
@@ -273,19 +273,19 @@ U hebt het volgende nodig:
    ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
    ```
 
-**Foutopsporing starten met de URL van de omgeving**:
+**beginnen het zuiveren gebruikend het milieu URL**:
 
-1. Foutopsporing op afstand inschakelen; de site in de browser bezoeken en het volgende aan de URL toevoegen waar `KEY` is waarde voor `xdebug_key`.
+1. Foutopsporing op afstand inschakelen; ga naar de site in de browser en voeg het volgende toe aan de URL waar `KEY` de waarde voor `xdebug_key` is.
 
    ```http
    ?XDEBUG_SESSION_START=KEY
    ```
 
-   Met deze stap wordt het cookie ingesteld dat de browserverzoeken verzendt om te activeren [!DNL Xdebug].
+   Met deze stap stelt u het cookie in dat browserverzoeken verzendt om [!DNL Xdebug] te activeren.
 
-1. Voltooi de foutopsporing met [!DNL Xdebug].
+1. Voltooi de foutopsporing met [!DNL Xdebug] .
 
-1. Wanneer u klaar bent om de zitting te beëindigen, gebruik het volgende bevel om het koekje te verwijderen en het zuiveren door browser te beëindigen waar `KEY` is waarde voor `xdebug_key`.
+1. Wanneer u klaar bent om de sessie te beëindigen, gebruikt u de volgende opdracht om de cookie te verwijderen en de foutopsporing te beëindigen via de browser waar `KEY` de waarde voor `xdebug_key` is.
 
    ```http
    ?XDEBUG_SESSION_STOP=KEY
@@ -293,7 +293,7 @@ U hebt het volgende nodig:
 
    >[!NOTE]
    >
-   >De `XDEBUG_SESSION_START` doorgegeven door `POST` aanvragen worden niet ondersteund.
+   >De `XDEBUG_SESSION_START` die door `POST` -aanvragen wordt doorgegeven, worden niet ondersteund.
 
 ## Foutopsporing CLI-opdrachten
 
@@ -324,7 +324,7 @@ U kunt bijvoorbeeld runtime-opties toevoegen:
    php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 bin/magento cache:clean
    ```
 
-   In een Pro-testomgeving moet u het pad naar de [!DNL Xdebug] PHP-configuratiebestand bij foutopsporing in CLI-opdrachten, bijvoorbeeld:
+   In een Pro Staging- en Production-omgeving moet u het pad naar het [!DNL Xdebug] PHP-configuratiebestand opgeven wanneer u foutopsporing uitvoert voor CLI-opdrachten, bijvoorbeeld:
 
    ```bash
    php -c /etc/platform/USERNAME/php.xdebug.ini bin/magento cache:clean
@@ -334,41 +334,41 @@ U kunt bijvoorbeeld runtime-opties toevoegen:
 
 De volgende stappen helpen u Webverzoeken zuiveren.
 
-1. Op de _Extensie_ menu, klikt u op **Foutopsporing** om in te schakelen.
+1. Voor het _menu van de Uitbreiding_, klik **zuivert** om toe te laten.
 
-1. Klik met de rechtermuisknop, selecteer het optiemenu en stel de IDE-toets in op **PHPSTORM**.
+1. Klik met de rechtermuisknop, selecteer het optiemenu en stel de IDE-sleutel in op **PHPSTORM** .
 
-1. Installeer de [!DNL Xdebug] op de browser. Vorm en laat het toe.
+1. Installeer de [!DNL Xdebug] -client in de browser. Vorm en laat het toe.
 
 ### Voorbeeld: Chrome instellen
 
-In deze sectie wordt besproken hoe u het programma kunt gebruiken [!DNL Xdebug] in Chrome met de [!DNL Xdebug] Helperextensie. Voor informatie over [!DNL Xdebug] raadpleeg de documentatie van de browser voor andere browsers.
+In deze sectie wordt beschreven hoe u [!DNL Xdebug] in Chrome kunt gebruiken met de extensie [!DNL Xdebug] Helper. Raadpleeg de documentatie van de browser voor informatie over [!DNL Xdebug] -gereedschappen voor andere browsers.
 
-**Xdebug Helper gebruiken met Chrome**:
+**om Helper Xdebug met Chrome** te gebruiken:
 
-1. Een [SSH-tunnel](#ssh-access-to-xdebug-environments) naar de Cloud-server.
+1. Creeer een [ tunnel van SSH ](#ssh-access-to-xdebug-environments) aan de server van de Wolk.
 
-1. Installeer de [Xdebug Helper-extensie](https://chromewebstore.google.com/detail/eadndfjplgieldjbigjakmdgkmoaaaoc) in de Chrome-winkel.
+1. Installeer de [ uitbreiding van de Helper Xdebug ](https://chromewebstore.google.com/detail/eadndfjplgieldjbigjakmdgkmoaaaoc) van de opslag van Chrome.
 
-1. Laat de uitbreiding in Chrome toe zoals aangetoond in het volgende cijfer.
+1. Schakel de extensie in Chrome in zoals in de volgende afbeelding.
 
-   ![Xdebug-extensie inschakelen in Chrome](../../assets/xdebug/enable-chrome-ext.png)
+   ![ laat de uitbreiding Xdebug in Chrome ](../../assets/xdebug/enable-chrome-ext.png) toe
 
-1. Klik in Chrome met de rechtermuisknop op het groene hulppictogram op de werkbalk Chrome.
+1. Klik in Chrome met de rechtermuisknop op het groene hulppictogram op de Chrome-werkbalk.
 
-1. Klik in het pop-upmenu op **Opties**.
+1. Van pop-up menu, klik **Opties**.
 
-1. Van de _IDE-sleutel_ lijst, klik **PhpStorm**.
+1. Van de _Belangrijke winde_ lijst, klik **PhpStorm**.
 
-1. Klikken **Opslaan**.
+1. Klik **sparen**.
 
-   ![Xdebug Helper-opties](../../assets/xdebug/helper-options.png)
+   ![ Xdebug Helper opties ](../../assets/xdebug/helper-options.png)
 
 1. Open uw PhpStorm-project.
 
-1. Klik in de bovenste navigatiebalk op de knop **Beginnen met luisteren** pictogram.
+1. In de hoogste navigatiebar, klik het **Begin luisterend** pictogram.
 
-   Als de navigatiebalk niet wordt weergegeven, klikt u **Weergave** > **Navigatiebalk**.
+   Als de navigatiebar niet wordt getoond, klik **Mening** > **de Bar van de Navigatie**.
 
 1. Dubbelklik in het navigatievenster PHP op het PHP-bestand dat u wilt testen.
 
@@ -380,17 +380,17 @@ De methode die u kiest, is aan u. U hebt de volgende opties:
 
 - Code uitchecken vanuit Git en uitvoeren `composer install`
 
-  Deze methode werkt tenzij `composer.json` verwijst naar pakketten in privéopslagruimten waartoe u geen toegang hebt. Met deze methode krijgt u de volledige Adobe Commerce-codebase.
+  Deze methode werkt alleen als `composer.json` verwijst naar pakketten in privéopslagruimten waartoe u geen toegang hebt. Met deze methode krijgt u de volledige Adobe Commerce-codebase.
 
-- De `vendor`, `app`, `pub`, `lib`, en `setup` mappen
+- Kopieer de mappen `vendor` , `app` , `pub` , `lib` en `setup` .
 
   Deze methode leidt ertoe dat u alle code hebt die u mogelijk kunt testen. Afhankelijk van het aantal statische elementen waarover u beschikt, kan dit resulteren in een lange overdracht met een groot volume bestanden.
 
-- De `vendor` alleen directory
+- Alleen de map `vendor` kopiëren
 
-  Omdat het grootste deel van de code zich in de `vendor` Deze methode zal waarschijnlijk resulteren in goede tests, hoewel de volledige codebase niet wordt getest.
+  Omdat het grootste deel van de code zich in de map `vendor` bevindt, zal deze methode waarschijnlijk resulteren in goede tests, hoewel de volledige codebase niet wordt getest.
 
-**Bestanden comprimeren en naar de lokale computer kopiëren**:
+**om dossiers te comprimeren en hen te kopiëren aan uw lokale machine**:
 
 1. Gebruik SSH om u aan te melden bij de externe omgeving.
 
@@ -400,7 +400,7 @@ De methode die u kiest, is aan u. U hebt de volgende opties:
    tar -czf /tmp/<file-name>.tgz <directory list>
    ```
 
-   Als u bijvoorbeeld het dialoogvenster `vendor` alleen directory:
+   Als u bijvoorbeeld alleen de map `vendor` wilt comprimeren:
 
    ```bash
    tar -czf /tmp/vendor.tgz vendor

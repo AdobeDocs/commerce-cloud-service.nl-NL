@@ -15,11 +15,11 @@ ht-degree: 0%
 
 U kunt de volgende services gebruiken om de prestaties van uw cloudomgevingen te controleren:
 
-- [Gezondheidsmeldingen](../integrations/health-notifications.md)—Een integratie die een schijfaruimalarm op Starter en Pro integratiemilieu&#39;s verstrekt.
-- [Waarneming voor Adobe Commerce Guide](https://experienceleague.adobe.com/docs/commerce-operations/tools/observation-for-adobe-commerce/intro.html)—Uitgebreide controle voor alle plaatsen van de Handel die logboekgegevens van veelvoudige bronnen combineren om u te helpen uw de plaatsprestaties van Adobe Commerce beter beheren en kwesties diagnostiseren.
+- [ de berichten van de Gezondheid ](../integrations/health-notifications.md) - een integratie die een alarm van de schijfruimte op Starter en Pro integratiemilieu&#39;s verstrekt.
+- [ Waarneming voor de Gids van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-operations/tools/observation-for-adobe-commerce/intro.html) - Uitgebreide controle voor alle plaatsen van Commerce die logboekgegevens van veelvoudige bronnen combineert om u te helpen uw de plaatsprestaties van Adobe Commerce beter beheren en kwesties diagnostiseren.
 
 ## New Relic-service
 
-Bewaak uw Adobe Commerce-prestaties op het gebied van Staging- en Productieomgevingen met behulp van de [New Relic-service voor prestatiebewaking](new-relic-service.md).
+Controleer uw prestaties van Adobe Commerce op het Opvoeren en van de Productie milieu&#39;s gebruikend de [ dienst van New Relic voor prestaties controle ](new-relic-service.md).
 
-- [Beleid voor beheerde waarschuwingen voor Adoben](investigate-performance.md#monitor-performance-with-managed-alerts)—Een beleid dat verschillende prestatiesmetriek volgt en een inzameling van alarm omvat dat drempels plaatst om waarschuwing en kritieke berichten teweeg te brengen wanneer de plaatsinfrastructuur of de toepassingskwesties prestaties beïnvloeden.
+- [ Adobe Beheerde het beleid van het Alarm ](investigate-performance.md#monitor-performance-with-managed-alerts) - een beleid dat verschillende prestatiesmetriek volgt en een inzameling van alarm omvat die drempels plaatsen om waarschuwing en kritieke berichten te teweegbrengen wanneer de plaatsinfrastructuur of de toepassingskwesties prestaties beïnvloeden.

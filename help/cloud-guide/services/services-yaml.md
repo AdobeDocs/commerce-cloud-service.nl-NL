@@ -12,13 +12,13 @@ ht-degree: 0%
 
 # Services configureren
 
-De `services.yaml` In dit bestand worden de services gedefinieerd die door Adobe Commerce worden ondersteund en gebruikt op cloudinfrastructuur, zoals MySQL, Redis en Elasticsearch of OpenSearch. U hoeft zich niet in te schrijven op externe serviceproviders. Dit bestand staat in het dialoogvenster `.magento` directory van uw project.
+In het bestand `services.yaml` worden de services gedefinieerd die door Adobe Commerce worden ondersteund en gebruikt op cloudinfrastructuur, zoals MySQL, Redis en Elasticsearch of OpenSearch. U hoeft zich niet in te schrijven op externe serviceproviders. Dit bestand staat in de map `.magento` van uw project.
 
-Het plaatsingsmanuscript gebruikt de configuratiedossiers in `.magento` directory to provision the environment with the configured services. Een service wordt beschikbaar voor uw toepassing als deze is opgenomen in het dialoogvenster [`relationships`](../application/properties.md#relationships) eigendom van de `.magento.app.yaml` bestand. De `services.yaml` bevat het bestand _type_ en _schijf_ waarden. Het type van de dienst bepaalt de dienst _name_ en _versie_.
+Het plaatsingsmanuscript gebruikt de configuratiedossiers in de `.magento` folder aan voorziening het milieu met de gevormde diensten. Een service wordt beschikbaar voor uw toepassing als deze wordt opgenomen in de eigenschap [`relationships`](../application/properties.md#relationships) van het `.magento.app.yaml` -bestand. Het `services.yaml` dossier bevat het _type_ en _schijf_ waarden. Het type van dienst bepaalt de dienst _naam_ en _versie_.
 
 Het veranderen van een de dienstconfiguratie veroorzaakt een plaatsing aan voorziening het milieu met de bijgewerkte diensten, die de volgende milieu&#39;s beïnvloedt:
 
-- Alle startomgevingen inclusief productie `master`
+- Alle starteromgevingen, inclusief productie `master`
 - Pro-integratieomgevingen
 
 {{pro-update-service}}
@@ -33,7 +33,7 @@ De cloudinfrastructuur ondersteunt en implementeert de volgende services:
 - [Elasticsearch](elasticsearch.md)
 - [OpenSearch](opensearch.md)
 
-U kunt standaardversies en schijfwaarden weergeven in de huidige versie, [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). In het volgende voorbeeld wordt het `mysql`, `redis`, `opensearch` of `elasticsearch`, en `rabbitmq` in de `services.yaml` configuratiebestand:
+U kunt standaardversies en schijfwaarden in het huidige, [ standaard `services.yaml` dossier ](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml) bekijken. In het volgende voorbeeld worden de services `mysql` , `redis` , `opensearch` of `elasticsearch` en `rabbitmq` getoond die in het configuratiebestand `services.yaml` zijn gedefinieerd:
 
 ```yaml
 mysql:
@@ -54,7 +54,7 @@ rabbitmq:
 
 ## Servicewaarden
 
-U moet de dienst identiteitskaart en de configuratie van het de diensttype verstrekken `type: <name>:<version>`. Als de service blijvende opslag gebruikt, moet u een schijfwaarde opgeven.
+U moet de service-id en de configuratie van het servicetype opgeven `type: <name>:<version>` . Als de service blijvende opslag gebruikt, moet u een schijfwaarde opgeven.
 
 Gebruik de volgende indeling:
 
@@ -66,9 +66,9 @@ Gebruik de volgende indeling:
 
 ### `service-id`
 
-De `service-id` de waarde identificeert de dienst in het project. U kunt alleen alfanumerieke tekens in kleine letters gebruiken: `a` tot `z` en `0` tot `9`, zoals `redis`.
+De `service-id` -waarde identificeert de service in het project. U kunt alleen alfanumerieke tekens in kleine letters gebruiken: `a` tot `z` en `0` tot `9` , zoals `redis` .
 
-Dit _service-id_ waarde wordt gebruikt in het dialoogvenster [`relationships`](../application/properties.md#relationships) eigendom van de `.magento.app.yaml` configuratiebestand:
+Deze _dienst-identiteitskaart_ waarde wordt gebruikt in het [`relationships`](../application/properties.md#relationships) bezit van het `.magento.app.yaml` configuratiedossier:
 
 ```yaml
 relationships:
@@ -85,14 +85,14 @@ redis2:
     type: redis:<version>
 ```
 
-De naam van een service wijzigen in het dialoogvenster `services.yaml` file **permanent verwijderen** het volgende:
+Het anders noemen van de dienst in het `services.yaml` dossier **verwijdert permanent** het volgende:
 
 - De bestaande service voordat u een service met de nieuwe naam maakt die u opgeeft.
-- Alle bestaande gegevens voor de service worden verwijderd. Adobe raadt u ten zeerste aan [back-up maken van uw Starter-omgeving](../storage/snapshots.md) voordat u de naam van een bestaande service wijzigt.
+- Alle bestaande gegevens voor de service worden verwijderd. De Adobe adviseert sterk dat u [ steun uw milieu van de Aanzet ](../storage/snapshots.md) alvorens u de naam van een bestaande dienst verandert.
 
 ### `type`
 
-De `type` value geeft de servicenaam en -versie aan. Bijvoorbeeld:
+De `type` -waarde geeft de servicenaam en -versie op. Bijvoorbeeld:
 
 ```yaml
 mysql:
@@ -101,7 +101,7 @@ mysql:
 
 ### `disk`
 
-De `disk` value geeft de grootte aan van de permanente schijfopslag (in MB) die aan de service moet worden toegewezen. De diensten die blijvende opslag, zoals MySQL gebruiken, moeten een schijfwaarde verstrekken. Voor services die geheugen gebruiken in plaats van permanente opslag, zoals Redis, is geen schijfwaarde vereist.
+De `disk` -waarde geeft de grootte aan van de permanente schijfopslag (in MB) die aan de service moet worden toegewezen. De diensten die blijvende opslag, zoals MySQL gebruiken, moeten een schijfwaarde verstrekken. Voor services die geheugen gebruiken in plaats van permanente opslag, zoals Redis, is geen schijfwaarde vereist.
 
 ```yaml
 mysql:
@@ -113,11 +113,11 @@ Het huidige standaard opslagbedrag per project is 5 GB of 512 0MB. U kunt dit be
 
 ## Servicerelaties
 
-In Adobe Commerce voor cloud-infrastructuurprojecten, service [relaties](../application/properties.md#relationships) geconfigureerd in het dialoogvenster `.magento.app.yaml` bepalen welke services beschikbaar zijn voor uw toepassing.
+In Adobe Commerce op de projecten van de wolkeninfrastructuur, de dienst [ verhoudingen ](../application/properties.md#relationships) die in het `.magento.app.yaml` dossier worden gevormd bepalen welke diensten aan uw toepassing beschikbaar zijn.
 
-U kunt de configuratiegegevens voor alle de dienstverhoudingen van terugwinnen [`$MAGENTO_CLOUD_RELATIONSHIPS`](../environment/variables-cloud.md) omgevingsvariabele. De configuratiegegevens omvatten de de dienstnaam, type, en versie samen met om het even welke vereiste verbindingsdetails zoals havenaantal en login geloofsbrieven.
+U kunt de configuratiegegevens voor alle de dienstverhoudingen van de [`$MAGENTO_CLOUD_RELATIONSHIPS`](../environment/variables-cloud.md) omgevingsvariabele terugwinnen. De configuratiegegevens omvatten de de dienstnaam, type, en versie samen met om het even welke vereiste verbindingsdetails zoals havenaantal en login geloofsbrieven.
 
-**Relaties in lokale omgeving verifiëren**:
+**om verhoudingen in lokaal milieu** te verifiëren:
 
 1. Geef in uw lokale omgeving de relaties voor de actieve omgeving weer.
 
@@ -125,7 +125,7 @@ U kunt de configuratiegegevens voor alle de dienstverhoudingen van terugwinnen [
    magento-cloud relationships
    ```
 
-1. Bevestig de `service` en `type` uit het antwoord. De reactie verstrekt verbindingsinformatie, zoals het IP adres en havenaantal.
+1. Bevestig de `service` en `type` in het antwoord. De reactie verstrekt verbindingsinformatie, zoals het IP adres en havenaantal.
 
    >Afkorting van monsterrespons
 
@@ -147,7 +147,7 @@ U kunt de configuratiegegevens voor alle de dienstverhoudingen van terugwinnen [
            port: 3306
    ```
 
-**Relaties in externe omgevingen verifiëren**:
+**om verhoudingen in verre milieu&#39;s** te verifiëren:
 
 1. Gebruik SSH om u aan te melden bij de externe omgeving.
 
@@ -157,44 +157,44 @@ U kunt de configuratiegegevens voor alle de dienstverhoudingen van terugwinnen [
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
    ```
 
-   of, gebruik het volgende `ece-tools` opdracht om relaties weer te geven:
+   U kunt ook de volgende opdracht `ece-tools` gebruiken om relaties weer te geven:
 
    ```bash
    php ./vendor/bin/ece-tools env:config:show services
    ```
 
-1. Bevestig de `service` en `type` uit het antwoord. De reactie verstrekt verbindingsinformatie, zoals het IP adres en havenaantal en om het even welke vereiste gebruikersbenaming en wachtwoordgeloofsbrieven.
+1. Bevestig de `service` en `type` in het antwoord. De reactie verstrekt verbindingsinformatie, zoals het IP adres en havenaantal en om het even welke vereiste gebruikersbenaming en wachtwoordgeloofsbrieven.
 
 ## Serviceversies
 
-Serviceversie en compatibiliteitsondersteuning voor Adobe Commerce op cloudinfrastructuur worden bepaald door versies die worden geïmplementeerd en getest op de cloudinfrastructuur en verschillen soms van versies die worden ondersteund door Adobe Commerce-implementaties op locatie. Zie [Systeemvereisten](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) in de _Installatie_ gids voor een lijst van derdesoftwaregebiedsdelen die de Adobe met specifieke versies van Adobe Commerce en van de Magento Open Source heeft getest.
+Serviceversie en compatibiliteitsondersteuning voor Adobe Commerce op cloudinfrastructuur worden bepaald door versies die worden geïmplementeerd en getest op de cloudinfrastructuur en verschillen soms van versies die worden ondersteund door Adobe Commerce-implementaties op locatie. Zie {de vereisten van het 0} Systeem ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) in de _gids van de Installatie_ voor een lijst van derdesoftware gebiedsdelen die de Adobe met specifieke versies van Adobe Commerce en van de Magento Open Source heeft getest.[
 
 ### Software EOL-controles
 
-Tijdens het implementatieproces `ece-tools` worden de geïnstalleerde de dienstversies vergeleken met de einddatum (EOL) voor elke dienst.
+Tijdens het implementatieproces controleert het `ece-tools` -pakket de geïnstalleerde serviceversies op de einddatums (EOL) voor elke service.
 
 - Als een de dienstversie binnen drie maanden na de datum EOL is, toont een bericht in het opstellen logboek.
 - Als de datum EOL in het verleden is, toont een waarschuwingsbericht.
 
-Om de veiligheid van de opslag te handhaven, werk geïnstalleerde softwareversies bij alvorens zij EOL bereiken. U kunt de EOL-datums bekijken in het dialoogvenster [Gereedschappen `eol.yaml` file](https://github.com/magento/ece-tools/blob/develop/config/eol.yaml).
+Om de veiligheid van de opslag te handhaven, werk geïnstalleerde softwareversies bij alvorens zij EOL bereiken. U kunt de data EOL in het `eol.yaml` dossier van 0} controleren-hulpmiddelen ](https://github.com/magento/ece-tools/blob/develop/config/eol.yaml).[
 
 ### Migreren naar OpenSearch
 
 {{elasticsearch-support}}
 
-Voor Adobe Commerce versie 2.4.4 en hoger raadpleegt u [OpenSearch-service instellen](opensearch.md).
+Voor versie 2.4.4 van Adobe Commerce en recenter, zie [ de dienst van OpenSearch van de Opstelling ](opensearch.md).
 
 ## Serviceversie wijzigen
 
 U kunt de versie van de geïnstalleerde service upgraden voor compatibiliteit met de Adobe Commerce-versie die in uw cloud-omgeving is geïmplementeerd.
 
-U kunt de de dienstversie voor een geïnstalleerde dienst niet direct degraderen. U kunt echter wel een service met de vereiste versie maken. Zie [De dienstversie van de downgrade](#downgrade-version).
+U kunt de de dienstversie voor een geïnstalleerde dienst niet direct degraderen. U kunt echter wel een service met de vereiste versie maken. Zie [ de dienstversie van de Verlaag ](#downgrade-version).
 
 ### Installatieversie van de service upgraden
 
-U kunt de geïnstalleerde de dienstversie bevorderen door de de dienstconfiguratie in bij te werken `services.yaml` bestand.
+U kunt de geïnstalleerde de dienstversie bevorderen door de de dienstconfiguratie in het `services.yaml` dossier bij te werken.
 
-1. Wijzig de [`type`](#type) waarde voor de dienst in `.magento/services.yaml` bestand:
+1. Wijzig de [`type`](#type) -waarde voor de service in het `.magento/services.yaml` -bestand:
 
    > Oorspronkelijke servicedefinitie
 
@@ -234,19 +234,19 @@ U kunt een geïnstalleerde service niet rechtstreeks downgraden. U hebt twee opt
 
 1. Creeer de dienst en sla de gegevens van de bestaande dienst op.
 
-Wanneer u de de dienstversie verandert, moet u de de dienstconfiguratie in bijwerken `services.yaml` en de relaties in het dialoogvenster `.magento.app.yaml` bestand.
+Wanneer u de serviceversie wijzigt, moet u de serviceconfiguratie in het `services.yaml` -bestand bijwerken en de relaties in het `.magento.app.yaml` -bestand bijwerken.
 
-**Om een de dienstversie te degraderen door een bestaande dienst anders te noemen**:
+**om een de dienstversie te degraderen door de bestaande dienst** anders te noemen:
 
-1. Wijzig de naam van de bestaande service in het dialoogvenster `.magento/services.yaml` en wijzigt u de versie.
+1. Wijzig de naam van de bestaande service in het `.magento/services.yaml` -bestand en wijzig de versie.
 
    >[!WARNING]
    >
    >Als u de naam van een bestaande service wijzigt, wordt deze vervangen en worden alle gegevens verwijderd. Als u de gegevens wilt behouden, maakt u een service in plaats van de naam van de bestaande service te wijzigen.
 
-   Als u bijvoorbeeld de MariaDB-versie wilt verlagen voor de _mysql_ van versie 10.4 naar 10.3 _service-id_ en _type_ configuratie.
+   Bijvoorbeeld, om de versie MariaDB voor de _mysql_ dienst van versie 10.4 tot 10.3 te degraderen, verander de bestaande _dienst-identiteitskaart_ en _type_ configuratie.
 
-   > Origineel `services.yaml` definitie
+   > Oorspronkelijke `services.yaml` definitie
 
    ```yaml
    mysql:
@@ -254,7 +254,7 @@ Wanneer u de de dienstversie verandert, moet u de de dienstconfiguratie in bijwe
        disk: 5120
    ```
 
-   > Nieuw `services.yaml` definitie
+   > Nieuwe definitie `services.yaml`
 
    ```yaml
    mysql2:
@@ -262,16 +262,16 @@ Wanneer u de de dienstversie verandert, moet u de de dienstconfiguratie in bijwe
         disk: 5120
    ```
 
-1. De relaties in het dialoogvenster bijwerken `.magento.app.yaml` bestand.
+1. Werk de relaties in het `.magento.app.yaml` -bestand bij.
 
-   > Origineel `.magento.app.yaml` configuratie
+   > Oorspronkelijke `.magento.app.yaml` configuratie
 
    ```yaml
    relationships:
        database: "mysql:mysql"
    ```
 
-   > Bijgewerkt `.magento.app.yaml` configuratie
+   > Bijgewerkte `.magento.app.yaml` configuratie
 
    ```yaml
    relationships:
@@ -280,9 +280,9 @@ Wanneer u de de dienstversie verandert, moet u de de dienstconfiguratie in bijwe
 
 1. U kunt wijzigingen in de code toevoegen, doorvoeren en doorvoeren.
 
-**Om de dienst te degraderen door de dienst te creëren**:
+**om de dienst te degraderen door de dienst** te creëren:
 
-1. Voeg een de dienstdefinitie aan toe `services.yaml` bestand voor uw project met de gedowngradeerde versiespecificatie. Zie _mysql2_ in het volgende voorbeeld:
+1. Voeg een de dienstdefinitie aan het `services.yaml` dossier voor uw project met de gedowngraded versiespecificatie toe. Zie _mysql2_ in het volgende voorbeeld:
 
    > services.yaml
 
@@ -295,16 +295,16 @@ Wanneer u de de dienstversie verandert, moet u de de dienstconfiguratie in bijwe
        disk: 5120
    ```
 
-1. Wijzig de relatieconfiguratie in het dialoogvenster `.magento.app.yaml` bestand om de nieuwe service te gebruiken.
+1. Wijzig de relatieconfiguratie in het `.magento.app.yaml` dossier om de nieuwe dienst te gebruiken.
 
-   > Origineel `.magento.app.yaml` configuratie
+   > Oorspronkelijke `.magento.app.yaml` configuratie
 
    ```yaml
    relationships:
        database: "mysql:mysql"
    ```
 
-   > Nieuw `.magento.app.yaml` configuratie
+   > Nieuwe `.magento.app.yaml` configuratie
 
    ```yaml
    relationships:

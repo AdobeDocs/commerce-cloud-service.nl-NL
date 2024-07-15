@@ -28,9 +28,9 @@ Als in uw toepassing een kritieke kwetsbaarheid wordt gedetecteerd, wordt de Git
 
 Er zijn twee typen blokken die worden uitgevoerd:
 
-1. **Volledig blok**—voor ontwikkelingswebsites. Het foutbericht bij `git push` biedt gedetailleerde informatie over de kwetsbaarheid.
+1. **Volledig blok** - voor ontwikkelingswebsites. Het foutbericht dat `git push` begeleidt, bevat gedetailleerde informatie over de kwetsbaarheid.
 
-1. **Gedeeltelijk blok**—voor productiewebsites, waardoor de site grotendeels online kan blijven. Afhankelijk van de aard van de kwetsbaarheid, kunnen delen van een verzoek, zoals een vraagkoord, koekjes, of om het even welke extra kopballen, uit GET verzoeken worden verwijderd. Alle andere verzoeken kunnen volledig worden geblokkeerd, zoals het aanmelden, het verzenden van formulieren of het afrekenen van producten.
+1. **Gedeeltelijk blok** - voor productiewebsites, die de plaats toestaat om hoofdzakelijk online te blijven. Afhankelijk van de aard van de kwetsbaarheid, kunnen delen van een verzoek, zoals een vraagkoord, koekjes, of om het even welke extra kopballen, uit GET verzoeken worden verwijderd. Alle andere verzoeken kunnen volledig worden geblokkeerd, zoals het aanmelden, het verzenden van formulieren of het afrekenen van producten.
 
 Het deblokkeren wordt geautomatiseerd bij het oplossen van het veiligheidsrisico. Het blok wordt verwijderd kort nadat u een beveiligingsupgrade hebt uitgevoerd waarmee de kwetsbaarheid wordt verwijderd.
 
@@ -38,7 +38,7 @@ Het deblokkeren wordt geautomatiseerd bij het oplossen van het veiligheidsrisico
 
 Het beschermende blok is er om u te beschermen tegen bekende kwetsbaarheden in de software die u Adobe Commerce op cloudinfrastructuur implementeert.
 
-U kunt echter de optie Weigeren kiezen door het volgende toe te voegen aan [`.magento.app.yaml`](../application/configure-app-yaml.md):
+U kunt de optie Weigeren echter toevoegen aan [`.magento.app.yaml`](../application/configure-app-yaml.md) door het volgende toe te voegen:
 
 ```yaml
    preflight:

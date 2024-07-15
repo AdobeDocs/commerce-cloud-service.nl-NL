@@ -23,25 +23,25 @@ De SMTP-proxy van SendGrid is niet bedoeld voor gebruik als e-mailserver voor al
 
 >[!TIP]
 >
->U kunt SendGrid-details voor uw account vinden in het dialoogvenster [UI Onboarding](https://cloud.magento.com) en selecteert u de **Projectdetails** > **Hostgegevens** tab.
+>U kunt details SendGrid voor uw rekening in [ op het instappen UI ](https://cloud.magento.com) vinden en de **Details van het Project** selecteren > **het ontvangen Info** tabel.
 
 ## E-mail in- of uitschakelen
 
 U kunt uitgaande e-mailberichten voor elke omgeving in- of uitschakelen via de cloudconsole of de opdrachtregel.
 
-Standaard zijn uitgaande e-mails ingeschakeld in Pro Production- en Staging-omgevingen. Maar [!UICONTROL Outgoing emails] kan worden weergegeven als uitgeschakeld in de omgevingsinstellingen totdat u de instelling `enable_smtp` eigenschap via de [opdrachtregel](outgoing-emails.md#enable-emails-in-the-cli) of [Cloud Console](outgoing-emails.md#enable-emails-in-the-cloud-console). U kunt uitgaande e-mails voor integratie- en staging-omgevingen inschakelen om tweefasenverificatie te verzenden of wachtwoorde-mails voor gebruikers van Cloud-projecten opnieuw in te stellen. Zie [E-mails configureren voor testen](outgoing-emails.md).
+Standaard zijn uitgaande e-mails ingeschakeld in Pro Production- en Staging-omgevingen. Nochtans, [!UICONTROL Outgoing emails] kan gehandicapt in de milieu montages verschijnen tot u het `enable_smtp` bezit door de [ bevellijn ](outgoing-emails.md#enable-emails-in-the-cli) of [ Console van de Wolk ](outgoing-emails.md#enable-emails-in-the-cloud-console) plaatst. U kunt uitgaande e-mails voor integratie- en staging-omgevingen inschakelen om tweefasenverificatie te verzenden of wachtwoorde-mails voor gebruikers van Cloud-projecten opnieuw in te stellen. Zie [ e-mails voor het testen ](outgoing-emails.md) vormen.
 
-Als uitgaande e-mailberichten moeten worden uitgeschakeld of opnieuw ingeschakeld in een Pro Production- of Staging-omgeving, kunt u een [Adobe Commerce-ondersteuningsticket](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide).
+Als de uitgaande e-mails moeten worden onbruikbaar gemaakt of op ProProductie of het Opvoeren milieu&#39;s opnieuw worden toegelaten, kunt u een [ kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide) voorleggen.
 
 >[!TIP]
 >
->De [!UICONTROL enable_smtp] eigenschapswaarde van [opdrachtregel](outgoing-emails.md#enable-emails-in-the-cli) wijzigt ook de [!UICONTROL Enable outgoing emails] waarde instellen voor deze omgeving op de [Cloud Console](outgoing-emails.md#enable-emails-in-the-cloud-console).
+>Het bijwerken van de [!UICONTROL enable_smtp] bezitswaarde door [ bevellijn ](outgoing-emails.md#enable-emails-in-the-cli) verandert ook de [!UICONTROL Enable outgoing emails] plaatsende waarde voor dit milieu op de [ Console van de Wolk ](outgoing-emails.md#enable-emails-in-the-cloud-console).
 
 ## SendGrid-dashboard
 
 Alle Cloud-projecten worden beheerd onder een centraal account, zodat alleen Support toegang heeft tot het SendGrid-dashboard. SendGrid biedt geen beperkingen voor subaccounts.
 
-U kunt als volgt de activiteitenlogboeken controleren op de leveringsstatus of op een lijst met teruggestuurde, geweigerde of geblokkeerde e-mailadressen: [een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket). Het ondersteuningsteam **kan** activiteitslogboeken ophalen die ouder zijn dan 30 dagen.
+Om de logboeken van de Activiteit voor leveringsstatus of een lijst van teruggestuurde, verworpen of geblokkeerde e-mailadressen te herzien, [ een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) voorleggen. Het team van de Steun **kan** activiteitenlogboeken niet terugwinnen ouder dan 30 dagen.
 
 Indien mogelijk, neem de volgende informatie met uw verzoek op:
 
@@ -51,28 +51,28 @@ Indien mogelijk, neem de volgende informatie met uw verzoek op:
 
 ## DomainKeys Identified Mail (DKIM)
 
-DKIM is een technologie van de e-mailauthentificatie die de Dienstverleners van Internet (ISPs) toelaat om zowel wettige als nep afzenderadressen, een techniek te identificeren die algemeen in phishing en e-mailzwendel wordt gebruikt. DKIM is afhankelijk van een domeineigenaar die de DNS-records beheert. Wanneer u DKIM gebruikt, gebruikt de server van de afzender een persoonlijke sleutel om de berichten te ondertekenen. De eigenaar van het domein voegt ook een DKIM-record toe. Dit is een gewijzigd bestand `TXT` record, naar de DNS-records van het zender-domein. Dit `TXT` het verslag bevat een openbare sleutel die de ontvankelijke postservers gebruiken om de handtekening van een bericht te verifiëren. De DKIM-cryptografie met openbare sleutels stelt ontvangers in staat de authenticiteit van een afzender te verifiëren. Zie [DKIM-records uitleg](https://docs.sendgrid.com/ui/account-and-settings/dkim-records).
+DKIM is een technologie van de e-mailauthentificatie die de Dienstverleners van Internet (ISPs) toelaat om zowel wettige als nep afzenderadressen, een techniek te identificeren die algemeen in phishing en e-mailzwendel wordt gebruikt. DKIM is afhankelijk van een domeineigenaar die de DNS-records beheert. Wanneer u DKIM gebruikt, gebruikt de server van de afzender een persoonlijke sleutel om de berichten te ondertekenen. Bovendien voegt de eigenaar van het domein een DKIM-record (een gewijzigde `TXT` -record) toe aan de DNS-records van het afzender-domein. Deze `TXT` -record bevat een openbare sleutel die door e-mailservers van ontvangers wordt gebruikt om de handtekening van een bericht te controleren. De DKIM-cryptografie met openbare sleutels stelt ontvangers in staat de authenticiteit van een afzender te verifiëren. Zie ](https://docs.sendgrid.com/ui/account-and-settings/dkim-records) Verklaarde Verslagen DKIM [.
 
 >[!WARNING]
 >
->De handtekeningen SendGrid DKIM en de steun van de domeinauthentificatie zijn slechts beschikbaar voor Pro projecten en niet de projecten van de Aanzet. Als gevolg hiervan worden uitgaande e-mailberichten over transacties waarschijnlijk gemarkeerd door spamfilters. Het gebruik van DKIM verbetert de leveringssnelheid als een geverifieerde e-mailafzender. Om de snelheid van de berichtlevering te verbeteren, kunt u van Starter aan Pro bevorderen of uw eigen server SMTP of dienstverlener van de e-maillevering gebruiken. Zie [E-mailverbindingen configureren](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) in de _Handleiding Admin Systems_.
+>De handtekeningen SendGrid DKIM en de steun van de domeinauthentificatie zijn slechts beschikbaar voor Pro projecten en niet de projecten van de Aanzet. Als gevolg hiervan worden uitgaande e-mailberichten over transacties waarschijnlijk gemarkeerd door spamfilters. Het gebruik van DKIM verbetert de leveringssnelheid als een geverifieerde e-mailafzender. Om de snelheid van de berichtlevering te verbeteren, kunt u van Starter aan Pro bevorderen of uw eigen server SMTP of dienstverlener van de e-maillevering gebruiken. Zie [ E-mailverbindingen ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) in de _gids van Systemen Admin_ vormen.
 
 ### Afzender en domeinverificatie
 
-Voor SendGrid om transactie-e-mails namens u van de milieu&#39;s van de Proproductie of van het Staging te verzenden, moet u uw DNS montages vormen om de drie subdomeinDNS ingangen te omvatten SendGrid. Aan elke SendGrid-account is een unieke waarde toegewezen `TXT` record waarmee uitgaande e-mailberichten worden geverifieerd.
+Voor SendGrid om transactie-e-mails namens u van de milieu&#39;s van de Proproductie of van het Staging te verzenden, moet u uw DNS montages vormen om de drie subdomeinDNS ingangen te omvatten SendGrid. Aan elke SendGrid-account wordt een unieke `TXT` -record toegewezen waarmee uitgaande e-mailberichten worden geverifieerd.
 
-**Domeinverificatie inschakelen**:
+**om domeinauthentificatie** toe te laten:
 
-1. Een [ondersteuningsticket](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) om het toelaten van DKIM voor een specifiek domein (**Pro Staging- en productieomgevingen**).
-1. Werk uw DNS configuratie met de `TXT` en `CNAME` dossiers die aan u in het steunkaartje worden verstrekt.
+1. Verzend a [ steunkaartje ](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) om het toelaten van DKIM voor een specifiek domein (**Pro het Opvoeren en de milieu&#39;s van de Productie slechts**) te verzoeken.
+1. Werk uw DNS-configuratie bij met de `TXT` - en `CNAME` -records die in het ondersteuningsticket aan u worden geleverd.
 
-**Voorbeeld `TXT` opnemen met account-id**:
+**Voorbeeld `TXT` verslag met rekeningsidentiteitskaart**:
 
 ```text
 v=spf1 include:u17504801.wl.sendgrid.net -all
 ```
 
-**Voorbeeld `CNAME` records**:
+**Voorbeeld `CNAME` verslagen**:
 
 | Domein | Punten naar | Recordtype |
 | ---------- | ---------- | ------------- |
@@ -84,7 +84,7 @@ v=spf1 include:u17504801.wl.sendgrid.net -all
 
 U kunt kiezen tussen geautomatiseerde en handmatige beveiliging wanneer u een geverifieerd domein instelt. Als u geautomatiseerde veiligheid kiest, beheert SendGrid automatisch uw DKIM en SPF verslagen. Wanneer u een nieuw specifiek verzendend IP adres aan uw rekening toevoegt, werkt SendGrid uw DNS montages en handtekening DKIM onmiddellijk bij. Als u automatische beveiliging uitschakelt, bent u verantwoordelijk voor het bijwerken van uw DKIM-handtekening wanneer u uw verzendend domein wijzigt.
 
-**Voorbeeld van geautomatiseerde beveiliging ingeschakeld**:
+**Geautomatiseerde toegelaten veiligheid van het Voorbeeld**:
 
 ```text
 subdomain.mydomain.com. | CNAME | uxxxxxx.wl.sendgrid.net
@@ -92,7 +92,7 @@ s1._domainkey.mydomain.com. | CNAME | s1.domainkey.uxxxxxx.wl.sendgrid.net
 s2._domainkey.mydomain.com. | CNAME | s2.domainkey.uxxxxxx.wl.sendgrid.net
 ```
 
-**Voorbeeld van automatische beveiliging uitgeschakeld**:
+**Geautomatiseerde van het Voorbeeld gehandicapte veiligheid**:
 
 ```text
 me12345.mydomain.com | MX | mx.sendgrid.net
@@ -100,7 +100,7 @@ me12345.mydomain.com | TXT | v=spf1 include:sendgrid.net ~all
 m1._mydomain.com | TXT | k=rsa; t=s; p=<public-key>
 ```
 
-Nadat de domeinauthentificatie opstelling is, behandelt SendGrid automatisch het Kader van het Beleid van de Veiligheid (SPF) en DKIM verslagen voor u. Nadat SendGrid de `CNAME` de verslagen aan uw DNS verslagen toe te voegen, kunt u specifieke IP adressen toevoegen en andere rekeningsupdates maken zonder het moeten uw verslagen van SPF manueel beheren. Zie [Automatische beveiliging en uw DKIM-handtekening](https://docs.sendgrid.com/ui/account-and-settings/dkim-records#automated-security-and-your-dkim-signature).
+Nadat de domeinauthentificatie opstelling is, behandelt SendGrid automatisch het Kader van het Beleid van de Veiligheid (SPF) en DKIM verslagen voor u. Nadat SendGrid de `CNAME` verslagen verstrekt om aan uw DNS verslagen toe te voegen, kunt u specifieke IP adressen toevoegen en andere rekeningsupdates maken zonder het moeten uw SPF verslagen manueel beheren. Zie [ Geautomatiseerde Veiligheid en Uw Ondertekening DKIM ](https://docs.sendgrid.com/ui/account-and-settings/dkim-records#automated-security-and-your-dkim-signature).
 
 Om uw DNS configuratie te testen:
 
@@ -114,9 +114,9 @@ dig CNAME s2._domainkey.domain_name
 
 De drempel voor transactie-e-mail verwijst naar het aantal transactie-e-mailberichten dat u vanuit Pro-omgevingen binnen een specifieke periode kunt verzenden, zoals 12.000 e-mailberichten per maand vanuit niet-productieomgevingen. De drempel is ontworpen om te beschermen tegen het verzenden van spam en mogelijk uw e-mailreputatie te beschadigen.
 
-Er zijn geen harde grenzen aan het aantal e-mails dat kan worden verzonden in de Productieomgeving, zolang de score voor de reproductie van de afzender meer dan 95% bedraagt. De reputatie wordt beïnvloed door het aantal gebrande of verworpen e-mails en of op DNS-Gebaseerde spamregisters uw domein als potentiële spambron hebben gemarkeerd. Zie [E-mails niet verzonden wanneer SendGrid-credits op Adobe Commerce worden overschreden](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/emails-not-being-sent-sendgrid-credits-exceeded) in de _Kennisbank handelsondersteuning_.
+Er zijn geen harde grenzen aan het aantal e-mails dat kan worden verzonden in de Productieomgeving, zolang de score voor de reproductie van de afzender meer dan 95% bedraagt. De reputatie wordt beïnvloed door het aantal gebrande of verworpen e-mails en of op DNS-Gebaseerde spamregisters uw domein als potentiële spambron hebben gemarkeerd. Zie [ E-mails niet verzonden wanneer de credits SendGrid op Adobe Commerce ](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/emails-not-being-sent-sendgrid-credits-exceeded) in de _Kennisbank van de Steun van Commerce_ werden overschreden.
 
-**Controleren of de maximale credits worden overschreden**:
+**om te controleren als de maximumkredieten** worden overschreden:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
@@ -126,10 +126,10 @@ Er zijn geen harde grenzen aan het aantal e-mails dat kan worden verzonden in de
    magento-cloud ssh
    ```
 
-1. Controleer de `/var/log/mail.log` for `authentication failed : Maxium credits exceeded` vermeldingen.
+1. Controleer de `/var/log/mail.log` op `authentication failed : Maxium credits exceeded` -items.
 
-   Als u een `authentication failed` logbestandvermeldingen en de **E-mailverzendingsreputatie** minimaal 95 is, kunt u [Een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) om een verhoging van de krediettoewijzing aan te vragen.
+   Als u om het even welke `authentication failed` logboekingangen ziet en **E-mail verzendende reputatie** is bij een minimum van 95, kunt u [ een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) voorleggen om een verhoging van de krediettoewijzing te verzoeken.
 
 ### E-mailverzendingsreputatie
 
-Een e-mailverzendende reputatie is een score die door een Internet Service Provider (ISP) wordt toegewezen aan een bedrijf dat e-mailberichten verzendt. Hoe hoger de score, des te waarschijnlijker is ISP berichten aan inbox van een ontvanger moet leveren. Als de score onder een bepaald niveau valt, kan ISP berichten aan de spamomslag van ontvangers leiden, of zelfs berichten volledig verwerpen. De reputatie score wordt bepaald door verscheidene factoren zoals een 30 daggemiddelde van uw IP adressen rangschikt tegen andere IP adressen en het tarief van de spamklacht. Zie [8 manieren om te controleren hoe je e-mailbericht wordt verzonden](https://sendgrid.com/en-us/blog/5-ways-check-sending-reputation).
+Een e-mailverzendende reputatie is een score die door een Internet Service Provider (ISP) wordt toegewezen aan een bedrijf dat e-mailberichten verzendt. Hoe hoger de score, des te waarschijnlijker is ISP berichten aan inbox van een ontvanger moet leveren. Als de score onder een bepaald niveau valt, kan ISP berichten aan de spamomslag van ontvangers leiden, of zelfs berichten volledig verwerpen. De reputatie score wordt bepaald door verscheidene factoren zoals een 30 daggemiddelde van uw IP adressen rangschikt tegen andere IP adressen en het tarief van de spamklacht. Zie [ 8 Manieren om Uw E-mail te controleren die Reputatie ](https://sendgrid.com/en-us/blog/5-ways-check-sending-reputation) verzendt.

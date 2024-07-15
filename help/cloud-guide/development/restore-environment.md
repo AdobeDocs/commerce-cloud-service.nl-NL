@@ -13,10 +13,10 @@ ht-degree: 0%
 
 # Omgeving herstellen
 
-Als u problemen tegenkomt in de integratieomgeving en geen [geldige back-up](../storage/snapshots.md)kunt u de omgeving op een van de volgende manieren herstellen:
+Als u kwesties in het integratiemilieu ontmoet en geen a [ geldige steun ](../storage/snapshots.md) hebt, probeer het herstellen van uw milieu gebruikend één van de volgende methodes:
 
 - De code in de Git-vertakking herstellen of herstellen
-- De installatie van de [!DNL Commerce] toepassing
+- De toepassing [!DNL Commerce] verwijderen
 - Herplaatsing forceren
 - De database handmatig opnieuw instellen
 
@@ -26,11 +26,11 @@ Als u problemen tegenkomt in de integratieomgeving en geen [geldige back-up](../
 
 Als u de Git-vertakking opnieuw instelt, wordt de code in het verleden teruggezet naar een stabiele status.
 
-**De vertakking opnieuw instellen**:
+**om uw tak** terug te stellen:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
-1. Bekijk de Git commit geschiedenis. Gebruiken `--oneline` om afgekorte verbintenissen op één regel weer te geven:
+1. Bekijk de Git commit geschiedenis. Gebruik `--oneline` om afgekorte komma&#39;s op één regel weer te geven:
 
    ```bash
    git log --oneline
@@ -49,7 +49,7 @@ Als u de Git-vertakking opnieuw instelt, wordt de code in het verleden teruggeze
 
 1. Kies een commit hash die de laatst bekende stabiele staat van uw code vertegenwoordigt.
 
-   Als u de oorspronkelijke geïnitialiseerde status van de vertakking wilt herstellen, zoekt u eerst naar de instelling waarmee de vertakking is gemaakt. U kunt `--reverse` om de geschiedenis in omgekeerde chronologische volgorde weer te geven.
+   Als u de oorspronkelijke geïnitialiseerde status van de vertakking wilt herstellen, zoekt u eerst naar de instelling waarmee de vertakking is gemaakt. Met `--reverse` kunt u de historie in omgekeerde chronologische volgorde weergeven.
 
 1. Met de optie voor het opnieuw instellen van de vaste waarden kunt u de vertakking herstellen. Wees voorzichtig met het gebruik van deze opdracht omdat alle wijzigingen worden verwijderd sinds de gekozen toewijzen.
 
@@ -65,15 +65,15 @@ Als u de Git-vertakking opnieuw instelt, wordt de code in het verleden teruggeze
 
 ## Commerce verwijderen
 
-De installatie van de [!DNL Commerce] de toepassing keert uw milieu aan een originele staat terug door het gegevensbestand te herstellen, de plaatsingsconfiguratie te verwijderen en `var/` submappen. Deze richtlijn stelt ook uw git tak aan een vroegere stabiele staat terug. Als u geen recente back-up hebt, maar de externe omgeving wel kunt openen met behulp van SSH, voert u de volgende stappen uit om uw omgeving te herstellen:
+Als u de [!DNL Commerce] -toepassing verwijdert, wordt de oorspronkelijke toestand van de omgeving hersteld door de database te herstellen, de implementatieconfiguratie te verwijderen en de submappen van `var/` te wissen. Deze richtlijn stelt ook uw git tak aan een vroegere stabiele staat terug. Als u geen recente back-up hebt, maar de externe omgeving wel kunt openen met behulp van SSH, voert u de volgende stappen uit om uw omgeving te herstellen:
 
 - Configuratiebeheer uitschakelen
 - Adobe Commerce verwijderen
 - De grijsvertakking herstellen
 
-Als u de Adobe Commerce-software verwijdert, wordt de database neergezet en hersteld, wordt de implementatieconfiguratie verwijderd en wordt de `var/` submappen. Het is belangrijk om [Configuratiebeheer](../store/store-settings.md) zodat de vorige configuratie-instellingen tijdens de volgende implementatie niet automatisch worden toegepast. Zorg ervoor dat uw `app/etc/` map bevat niet de `config.php` bestand.
+Als u de Adobe Commerce-software verwijdert, wordt de database neergezet en hersteld, wordt de implementatieconfiguratie verwijderd en worden de submappen van `var/` gewist. Het is belangrijk om [ beheer van de Configuratie ](../store/store-settings.md) onbruikbaar te maken zodat het niet automatisch de vorige configuratiemontages tijdens de volgende plaatsing toepast. Controleer of de map `app/etc/` het bestand `config.php` niet bevat.
 
-**De Adobe Commerce-software verwijderen**:
+**om de software van Adobe Commerce** te desinstalleren:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
@@ -110,7 +110,7 @@ Als u de Adobe Commerce-software verwijdert, wordt de database neergezet en hers
    [SUCCESS]: Magento uninstallation complete.
    ```
 
-1. Wis de `var/` submappen.
+1. Wis de submappen `var/` .
 
    ```bash
    rm -rf var/*
@@ -138,7 +138,7 @@ git commit --allow-empty -m "<message>" && git push <origin> <branch>
 
 Als u hebt geprobeerd om Adobe Commerce te verwijderen en de opdracht is mislukt of niet kan worden voltooid, kunt u de database handmatig opnieuw instellen.
 
-**De database opnieuw instellen**:
+**om het gegevensbestand** terug te stellen:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
@@ -154,13 +154,13 @@ Als u hebt geprobeerd om Adobe Commerce te verwijderen en de opdracht is mislukt
    mysql -h database.internal
    ```
 
-1. Zet de `main` database.
+1. Zet de `main` -database neer.
 
    ```shell
    drop database main;
    ```
 
-1. Een leeg bestand maken `main` database.
+1. Maak een lege `main` -database.
 
    ```shell
    create database main;

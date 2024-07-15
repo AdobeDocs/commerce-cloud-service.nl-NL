@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Schijfruimte beheren
 
-U kunt de totale opslagcapaciteit voor uw Cloud-project vinden in uw Adobe Commerce op basis van een cloudinfrastructuurcontract en op uw [accountpagina](https://accounts.magento.cloud/user). Op elke projectkaart in uw account wordt het aantal _omgevingen_ de _opslag_ capaciteit in GB en het aantal _gebruikers_. U kunt ook de volgende Cloud-opdracht gebruiken:
+U kunt de totale opslagcapaciteit voor uw project van de Wolk in uw Adobe Commerce op het contract van de wolkeninfrastructuur en op uw [ rekeningspagina ](https://accounts.magento.cloud/user) vinden. Elke projectkaart in uw rekening toont het aantal _milieu&#39;s_, de _opslag_ capaciteit in GB, en het aantal _gebruikers_. U kunt ook de volgende Cloud-opdracht gebruiken:
 
 ```bash
 magento-cloud subscription:info | grep storage
@@ -30,7 +30,7 @@ Voorbeeldmelding:
 
 >[!BEGINSHADEBOX]
 
-_&quot;Onze controle heeft dossieropslag op uw cluster (project-id-milieu) ontdekt bijna volledig. Het schijfgebruik bevindt zich momenteel op kritieke gebruiksniveaus met nog geen 1 GiB. Het volume van de gedeelde opslag wordt momenteel verhoogd van 60 GiB tot 70 GiB om uw diensten in gebruik te houden. Kijk eens naar het gebruik van productie- en staging-bestanden om te zien of u wat ruimte kunt opruimen.&quot;_
+_&quot;Onze controle heeft dossieropslag op uw cluster (project-id-milieu) ontdekt bijna volledig. Het schijfgebruik bevindt zich momenteel op kritieke gebruiksniveaus met nog geen 1 GiB. Het volume van de gedeelde opslag wordt momenteel verhoogd van 60 GiB tot 70 GiB om uw diensten in gebruik te houden. Gelieve te nemen een blik bij de productie en het opvoeren van dossiergebruik om te zien of kunt u wat ruimte ontruimen.&quot;_
 
 >[!ENDSHADEBOX]
 
@@ -40,9 +40,9 @@ _&quot;Onze controle heeft dossieropslag op uw cluster (project-id-milieu) ontde
 
 ## Integratieomgeving controleren
 
-U kunt het schijfruimtegebruik voor uw integratiemilieu controleren gebruikend `magento-cloud` CLI.
+U kunt het gebruik van schijfruimte voor uw integratieomgeving controleren met behulp van `magento-cloud` CLI.
 
-**Schijfruimtegebruik bij benadering controleren**:
+**om het benaderende gebruik van de schijfruimte te controleren**:
 
 ```bash
 magento-cloud db:size
@@ -60,9 +60,9 @@ Checking database service mysql...
 +----------------+-----------------+--------+
 ```
 
-Alle bevestigingen delen een schijf. U kunt met de `magento-cloud` CLI.
+Alle bevestigingen delen een schijf. Met de CLI `magento-cloud` kunt u het gebruik van schijfruimte voor montage controleren.
 
-**Het geschatte gebruik van schijfruimte voor montage controleren**:
+**om het benaderende gebruik van de schijfruimte voor steunen** te controleren:
 
 ```bash
 magento-cloud mount:size
@@ -85,15 +85,15 @@ Checking disk usage for all mounts on <project>-<environment>-mymagento@ssh.us.m
 
 ## Specifieke clusters controleren
 
-Voor Pro Staging- en Productieomgevingen kunt u het gebruik van schijfruimte in elke omgeving controleren met de `disk free` gebruiken, die de hoeveelheid schijfruimte rapporteert die door het bestandssysteem wordt gebruikt. U moet SSH gebruiken aan login aan een verre milieu.
+Voor Pro Staging- en productieomgevingen kunt u het gebruik van schijfruimte in elke omgeving controleren met de opdracht `disk free` , die de hoeveelheid schijfruimte rapporteert die door het bestandssysteem wordt gebruikt. U moet SSH gebruiken aan login aan een verre milieu.
 
 ```bash
 df -h
 ```
 
-De `-h` geeft het rapport weer met een leesbare indeling (KB, MB of GB).
+Met de optie `-h` wordt het rapport weergegeven in een leesbare indeling (KB, MB of GB).
 
-In de volgende voorbeeldreactie wordt `/mnt/shared` de montage toont de schijfruimte voor media en `/data/mysql/` Bij monteren wordt schijfruimte voor de database weergegeven:
+In de volgende voorbeeldreactie geeft de koppeling `/mnt/shared` de schijfruimte voor media weer en geeft de koppeling `/data/mysql/` schijfruimte voor de database weer:
 
 ```terminal
 Filesystem                                    Size  Used Avail Use% Mounted on
@@ -128,21 +128,21 @@ Filesystem                                    Size  Used Avail Use% Mounted on
 
 ## Schijfruimte toewijzen
 
-Twee [configuratiebestanden](../environment/overview.md) de toewijzing van schijfruimte in de Cloud-omgeving regelen: de `.magento.app.yaml` en de `.magento/services.yaml` bestand. Elk bestand bevat de `disk` eigenschap, die de waarde van de schijfgrootte in MB voor de respectievelijke configuratie definieert. U kunt de toewijzing van schijfruimte alleen wijzigen in Pro-integratie- en Starter-omgevingen.
+Twee [ configuratiedossiers ](../environment/overview.md) controleren de toewijzing van schijfruimte in de milieu&#39;s van de Wolk: het `.magento.app.yaml` dossier en het `.magento/services.yaml` dossier. Elk bestand bevat de eigenschap `disk` , die de waarde van de schijfgrootte in MB voor de respectievelijke configuratie definieert. U kunt de toewijzing van schijfruimte alleen wijzigen in Pro-integratie- en Starter-omgevingen.
 
 >[!IMPORTANT]
 >
->Voor Pro Production- en Staging-omgevingen moet u [Een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) om de toewijzing van schijfruimte te wijzigen. Een grootteverhoging van de milieu&#39;s van de Proproductie en van het Staging kan slechts met bepaalde intervallen voorkomen, zodat, afhankelijk van uw huidig gebruik van de schijfruimte, de steun zou kunnen adviseren om schijftoewijzing met een minimum van 10 GB te verhogen. Als deze eenmaal zijn toegewezen, kan de opslagverhoging voor Pro-opslag en -productie niet worden teruggedraaid. Opslag kan niet opnieuw worden toegewezen of herverdeeld tussen bronnen. Als u meer opslagruimte voor bestanden wilt toevoegen, verkleint u de schijfruimte die aan MySQL is toegewezen.
+>Voor ProProductie en het Opvoeren milieu&#39;s, moet u [ een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voorleggen om de toewijzing van de schijfruimte te veranderen. Een grootteverhoging van de milieu&#39;s van de Proproductie en van het Staging kan slechts met bepaalde intervallen voorkomen, zodat, afhankelijk van uw huidig gebruik van de schijfruimte, de steun zou kunnen adviseren om schijftoewijzing met een minimum van 10 GB te verhogen. Als deze eenmaal zijn toegewezen, kan de opslagverhoging voor Pro-opslag en -productie niet worden teruggedraaid. Opslag kan niet opnieuw worden toegewezen of herverdeeld tussen bronnen. Als u meer opslagruimte voor bestanden wilt toevoegen, verkleint u de schijfruimte die aan MySQL is toegewezen.
 
 ### Schijfruimte van toepassing
 
-De `.magento.app.yaml` bestand bestuurt de [vaste schijfruimte](../application/properties.md#disk) beschikbaar voor de toepassing.
+Het `.magento.app.yaml` dossier controleert de [ blijvende schijfruimte ](../application/properties.md#disk) beschikbaar aan de toepassing.
 
-**De schijfruimte voor uw toepassing vergroten**:
+**om schijfruimte voor uw toepassing** te verhogen:
 
-1. Open in uw lokale ontwikkelomgeving de `.magento.app.yaml` configuratiebestand.
+1. Open het configuratiebestand van `.magento.app.yaml` in uw lokale ontwikkelomgeving.
 
-1. Een nieuwe waarde instellen voor de `disk` eigenschap (in MB).
+1. Stel een nieuwe waarde in voor de eigenschap `disk` (in MB).
 
    ```yaml
    disk: <value-mb>
@@ -160,13 +160,13 @@ De `.magento.app.yaml` bestand bestuurt de [vaste schijfruimte](../application/p
 
 ### Schijfruimte van service
 
-De `.magento/services.yaml` het dossier controleert de schijfruimte beschikbaar aan elke dienst, zoals MySQL en Redis.
+Het bestand `.magento/services.yaml` bestuurt de schijfruimte die beschikbaar is voor elke service, zoals MySQL en Redis.
 
-**Om schijfruimte voor de dienst te verhogen**:
+**om schijfruimte voor de dienst** te verhogen:
 
-1. Open in uw lokale ontwikkelomgeving de `.magento/services.yaml` configuratiebestand.
+1. Open het configuratiebestand van `.magento/services.yaml` in uw lokale ontwikkelomgeving.
 
-1. Voeg een service toe of zoek een service in het bestand. Zie [meer over het vormen van de diensten](../services/services-yaml.md).
+1. Voeg een service toe of zoek een service in het bestand. Zie [ meer over het vormen van de diensten ](../services/services-yaml.md).
 
 1. Stel een nieuwe waarde in voor de eigenschap disk (in MB).
 
@@ -188,11 +188,11 @@ De `.magento/services.yaml` het dossier controleert de schijfruimte beschikbaar 
 
 ## Schijfruimte van monitor
 
-In een Pro Production-omgeving kunt u de schijfruimte en andere prestatie-indicatoren controleren aan de hand van de Beheerde waarschuwingen voor het Adobe Commerce-waarschuwingsbeleid voor New Relic. Zie voor meer informatie [Prestaties bewaken met beheerde waarschuwingen](../monitor/investigate-performance.md#monitor-performance-with-managed-alerts). Zie voor meer informatie [Aanbevolen procedures om prestatieproblemen met databases op te lossen](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/maintenance/resolve-database-performance-issues.html).
+In een Pro Production-omgeving kunt u de schijfruimte en andere prestatie-indicatoren controleren aan de hand van de Beheerde waarschuwingen voor het Adobe Commerce-waarschuwingsbeleid voor New Relic. Voor details, zie [ prestaties van de Monitor met Beheerde Alarm ](../monitor/investigate-performance.md#monitor-performance-with-managed-alerts). Voor verdere begeleiding, zie [ Beste praktijken om de kwesties van gegevensbestandprestaties ](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/maintenance/resolve-database-performance-issues.html) op te lossen.
 
 ## Geen ruimte meer over
 
-De buildcache kan na verloop van tijd groter worden. Als u een waarschuwing ontvangt dat de status `No space left on device`, probeer het bouwstijlgeheime voorgeheugen te ontruimen en opnieuw op te stellen:
+De buildcache kan na verloop van tijd groter worden. Als u een waarschuwing ontvangt met de status `No space left on device` , probeert u de cache voor samenstellen te wissen en opnieuw te implementeren:
 
 ```bash
 magento-cloud project:clear-build-cache

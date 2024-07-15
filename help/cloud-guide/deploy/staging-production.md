@@ -18,51 +18,51 @@ Wanneer u klaar bent om uw opslag op te stellen, moet u plaatsing en het testen 
 
 >[!TIP]
 >
->Adobe beveelt aan een [back-up](../storage/snapshots.md) van de omgeving vóór implementatie.
+>De Adobe adviseert het creëren van a [ steun ](../storage/snapshots.md) van het milieu vóór plaatsingen.
 
-Ook kunt u [Implementaties bijhouden met New Relic](../monitor/track-deployments.md) om plaatsingsgebeurtenissen te controleren en u te helpen prestaties tussen plaatsingen analyseren.
+Ook, kunt u [ plaatsingen van het Spoor met New Relic ](../monitor/track-deployments.md) toelaten om plaatsingsgebeurtenissen te controleren en u te helpen prestaties tussen plaatsingen analyseren.
 
 ## Startimplementatiestroom
 
-Adobe beveelt aan een `staging` vertakking van `master` vertakking om uw het planontwikkeling en plaatsing van de Aanzet het best te steunen. Dan hebt u twee van uw vier actieve milieu&#39;s klaar: `master` voor productie en `staging` voor Staging.
+Adobe raadt u aan een `staging` -vertakking van de `master` -vertakking te maken om de ontwikkeling en implementatie van uw Starter-abonnement het beste te ondersteunen. Dan hebt u twee van uw vier actieve milieu&#39;s klaar: `master` voor Productie en `staging` voor Staging.
 
-Zie voor meer informatie over het proces [Starter Developer and Deploy Workflow](../architecture/starter-develop-deploy-workflow.md).
+Voor gedetailleerde informatie van het proces, zie [ Begin Ontwikkelen en Werkschema ](../architecture/starter-develop-deploy-workflow.md) opstellen.
 
 ## Pro-implementatiestroom
 
-Pro wordt geleverd met een grote integratieomgeving met twee actieve vertakkingen, een wereldwijd `master` vertakkingen, Staging en Productie. Wanneer u uw project creeert, is de code klaar om zich te vertakken, te ontwikkelen, en te duwen voor de bouw van en het opstellen van uw plaats. Hoewel de integratieomgeving vele vertakkingen kan hebben, hebben het Staging en de Productie slechts één tak voor elk milieu.
+Pro wordt geleverd met een grote integratieomgeving met twee actieve vertakkingen, een globale `master` vertakking, Staging en Production vertakkingen. Wanneer u uw project creeert, is de code klaar om zich te vertakken, te ontwikkelen, en te duwen voor de bouw van en het opstellen van uw plaats. Hoewel de integratieomgeving vele vertakkingen kan hebben, hebben het Staging en de Productie slechts één tak voor elk milieu.
 
-Zie voor meer informatie over het proces [Pro-workflow voor ontwikkelen en implementeren](../architecture/pro-develop-deploy-workflow.md).
+Voor gedetailleerde informatie van het proces, zie [ Pro Ontwikkelen en Werkschema ](../architecture/pro-develop-deploy-workflow.md) opstellen.
 
 ## Code implementeren naar fasering
 
-De het Staging milieu verstrekt een bijna-productiemilieu dat een gegevensbestand, Webserver, en alle diensten met inbegrip van Fastly en New Relic omvat. U kunt volledig duwen, samenvoegen en opstellen door [[!DNL Cloud Console]](../project/overview.md) of [Cloud CLI-opdrachten](../dev-tools/cloud-cli-overview.md) via een terminaltoepassing.
+De het Staging milieu verstrekt een bijna-productiemilieu dat een gegevensbestand, Webserver, en alle diensten met inbegrip van Fastly en New Relic omvat. U kunt volledig duwen, samenvoegen, en door [[!DNL Cloud Console]](../project/overview.md) of [ Cloud CLI bevelen ](../dev-tools/cloud-cli-overview.md) door een eindtoepassing opstellen.
 
 ### Code implementeren met de [!DNL Cloud Console]
 
-De [!DNL Cloud Console] biedt functies voor het maken, beheren en implementeren van code in integratie-, staging- en productieomgevingen voor Starter- en Pro-plannen.
+[!DNL Cloud Console] verstrekt eigenschappen om, code in de milieu&#39;s van de Integratie, het Staging, en van de Productie voor Startpagina en Pro plannen tot stand te brengen te beheren en op te stellen.
 
-**Implementeer voor Pro-projecten de integratiesector in de testfase**:
+**voor Pro projecten, stel de integratietak aan het opvoeren** op:
 
-1. [Aanmelden](https://accounts.magento.cloud) naar uw project.
-1. Selecteer de `integration` vertakking.
-1. Selecteer de **Samenvoegen** optie voor implementatie in Staging.
+1. [ Login ](https://accounts.magento.cloud) aan uw project.
+1. Selecteer de `integration` -vertakking.
+1. Selecteer de **optie van de Fusie** om aan het Opvoeren op te stellen.
 
-   ![Samenvoegen](../../assets/button-merge.png){width="150"}
+   ![ Fusie ](../../assets/button-merge.png){width="150"}
 
-1. Alles voltooien [testen](../test/staging-and-production.md) in de testomgeving.
-1. Selecteer de optie **Samenvoegen** optie om in Productie op te stellen.
+1. Voltooi al [ het testen ](../test/staging-and-production.md) in het milieu van het Staging.
+1. Wanneer het Staging klaar is, selecteer de **1} optie van de Fusie {om aan Productie op te stellen.**
 
-**Voor Starter, stel de ontwikkelingstak aan het opvoeren op**:
+**voor Begin, stel de ontwikkelingstak aan het opvoeren** op:
 
-1. [Aanmelden](https://accounts.magento.cloud) naar uw project.
+1. [ Login ](https://accounts.magento.cloud) aan uw project.
 1. Selecteer de voorbereide codevertakking.
-1. Selecteer de **Samenvoegen** optie voor implementatie in Staging.
+1. Selecteer de **optie van de Fusie** om aan het Opvoeren op te stellen.
 
-   ![Samenvoegen](../../assets/button-merge.png){width="150"}
+   ![ Fusie ](../../assets/button-merge.png){width="150"}
 
-1. Alles voltooien [testen](../test/staging-and-production.md) in de testomgeving.
-1. Selecteer de optie **Samenvoegen** optie om in te zetten op productie (`master`).
+1. Voltooi al [ het testen ](../test/staging-and-production.md) in het milieu van het Staging.
+1. Wanneer het Staging klaar is, selecteer de **1} optie van de Fusie {om aan Productie (`master`) op te stellen.**
 
 ### Code implementeren met de opdrachtregel
 
@@ -140,11 +140,11 @@ De Cloud CLI bevat opdrachten voor het implementeren van code. U hebt SSH en Git
 
 ## Statische bestanden migreren
 
-[Statische bestanden](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) worden opgeslagen in `mounts`. Er zijn twee methoden voor het migreren van bestanden van een bronmontagelocatie, zoals uw lokale omgeving, naar een doellocatie. Beide methoden gebruiken de `rsync` nut, maar de Adobe adviseert het gebruiken van `magento-cloud` CLI voor het verplaatsen van bestanden tussen de lokale en externe omgeving. En Adobe raadt u aan de `rsync` methode voor het verplaatsen van bestanden van een externe bron naar een andere externe locatie.
+[ de Statische dossiers ](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) worden opgeslagen in `mounts`. Er zijn twee methoden voor het migreren van bestanden van een bronmontagelocatie, zoals uw lokale omgeving, naar een doellocatie. Beide methoden gebruiken het hulpprogramma `rsync` , maar Adobe raadt u aan de CLI van `magento-cloud` te gebruiken om bestanden tussen de lokale en externe omgeving te verplaatsen. En Adobe raadt u aan de methode `rsync` te gebruiken wanneer u bestanden van een externe bron naar een andere externe locatie verplaatst.
 
 ### Bestanden migreren met CLI
 
-U kunt de `mount:upload` en `mount:download` CLI bevelen om dossiers tussen het lokale en verre milieu te migreren. Beide opdrachten gebruiken de `rsync` nut, maar de CLI bevelen verstrekken opties en herinneringen die aan de Adobe Commerce op het milieu van de wolkeninfrastructuur worden aangepast. Bijvoorbeeld, als u het eenvoudige bevel zonder opties gebruikt, vraagt CLI u om te selecteren welke optelling of ophangingen om te uploaden of te downloaden.
+Met de opdrachten `mount:upload` en `mount:download` CLI kunt u bestanden migreren tussen de lokale en externe omgeving. Beide opdrachten maken gebruik van het hulpprogramma `rsync` , maar de CLI-opdrachten bieden opties en aanwijzingen die zijn afgestemd op de Adobe Commerce op de cloud-infrastructuuromgeving. Bijvoorbeeld, als u het eenvoudige bevel zonder opties gebruikt, vraagt CLI u om te selecteren welke optelling of ophangingen om te uploaden of te downloaden.
 
 ```bash
 magento-cloud mount:download
@@ -168,7 +168,7 @@ Downloading files from the remote mount pub/media to pub/media
 Are you sure you want to continue? [Y/n] Y
 ```
 
-**Bestanden uploaden van een lokale `pub/media/` naar de externe map `pub/media/` map voor de huidige omgeving**:
+**om dossiers van een lokale `pub/media/` omslag aan de verre `pub/media/` omslag voor het huidige milieu** te uploaden:
 
 ```bash
 magento-cloud mount:upload --source /path/to/project/pub/media/ --mount pub/media/
@@ -189,11 +189,11 @@ Are you sure you want to continue? [Y/n] Y
   total size is 154.57K  speedup is 18.23
 ```
 
-Gebruik de `--help` voor de `mount:upload` en `mount:download` voor meer opties. Er is bijvoorbeeld een `--delete` om tijdens de migratie overbodige bestanden te verwijderen.
+Gebruik de optie `--help` voor de opdrachten `mount:upload` en `mount:download` om meer opties weer te geven. Er is bijvoorbeeld een optie `--delete` om tijdens de migratie andere bestanden te verwijderen.
 
 ### Bestanden migreren via synchroniseren
 
-U kunt ook de opdracht `rsync` gebruiken om bestanden te migreren.
+U kunt ook het hulpprogramma `rsync` gebruiken om bestanden te migreren.
 
 ```bash
 rsync -azvP <source> <destination>
@@ -202,29 +202,29 @@ rsync -azvP <source> <destination>
 Voor deze opdracht worden de volgende opties gebruikt:
 
 - `a`-archive
-- `z`-bestanden comprimeren tijdens de migratie
+- `z` bestanden comprimeren tijdens de migratie
 - `v`-verbose
-- `P`gedeeltelijke voortgang
+- `P` gedeeltelijke voortgang
 
-Zie [rsync](https://linux.die.net/man/1/rsync) help.
+Zie ](https://linux.die.net/man/1/rsync) hulp 0} opnieuw synchroniseren.[
 
 >[!NOTE]
 >
->Om media van ver-aan-verre milieu&#39;s direct over te brengen, moet u de agent van SSH toelaten door:sturen, zie [GitHub-richtlijnen](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding).
+>Om media van ver-aan-verre milieu&#39;s direct over te brengen, moet u de agent van SSH toelaten door:sturen, zie {de begeleiding van 0} GitHub ](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding).[
 
-**Statische bestanden rechtstreeks migreren van externe naar externe omgevingen (snelle benadering)**:
+**om statische dossiers van ver-aan-verre milieu&#39;s direct te migreren (snelle benadering)**:
 
-1. Gebruik SSH om u aan te melden bij de bronomgeving. Gebruik de `magento-cloud` CLI. Met de `-A` de optie is belangrijk omdat het door:sturen van de verbinding van de authentificatieagent toelaat.
+1. Gebruik SSH om u aan te melden bij de bronomgeving. Gebruik de `magento-cloud` CLI niet. Het gebruik van de optie `-A` is belangrijk omdat hiermee het doorsturen van de verbinding met de verificatieagent wordt ingeschakeld.
 
    >[!TIP]
    >
-   >Als u de **SSH-toegang** koppeling in uw [!DNL Cloud Console], selecteert u de omgeving en klikt u op **Site openen**.
+   >Om de **toegang van SSH** verbinding in uw [!DNL Cloud Console] te vinden, selecteer het milieu en klik **Plaats van de Toegang**.
 
    ```bash
    ssh -A <environment_ssh_link@ssh.region.magento.cloud>
    ```
 
-1. Gebruik de `rsync` de opdracht kopiëren `pub/media` van uw bronomgeving naar een andere externe omgeving.
+1. Gebruik de opdracht `rsync` om de map `pub/media` van uw bronomgeving naar een andere externe omgeving te kopiëren.
 
    ```bash
    rsync -azvP pub/media/ <destination_environment_ssh_link@ssh.region.magento.cloud>:pub/media/
@@ -240,29 +240,29 @@ Zie [rsync](https://linux.die.net/man/1/rsync) help.
 
 >[!BEGINSHADEBOX]
 
-**Vereiste:** Een gegevensbestandstortplaats (zie Stap 3) zou gegevensbestandtrekkers moeten omvatten. Bevestig dat u de [TRIGGER-bevoegdheid](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger).
+**Vereiste:** Een gegevensbestandstortplaats (zie Stap 3) zou gegevensbestandtrekkers moeten omvatten. Voor het dumpen van hen, bevestig u het [ voorrechten van de TRIGGER ](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger) hebt.
 
 >[!IMPORTANT]
 >
 >De gegevensbank van het integratiemilieu is strikt voor ontwikkelingstests en kan gegevens omvatten die u niet in het Opvoeren en Productie wilt migreren.
 
-Voor continue integratie-implementaties, Adobe **adviseert niet** migrerende gegevens van Integratie aan het Opvoeren en Productie. U kunt testgegevens doorgeven of belangrijke gegevens overschrijven. Om het even welke vitale configuraties worden overgegaan gebruikend [configuratiebestand](../store/store-settings.md) en `setup:upgrade` bevel tijdens bouwstijl en opstellen.
+Voor ononderbroken integratieplaatsingen, adviseert de Adobe **niet** migrerende gegevens van Integratie aan het Opvoeren en de Productie. U kunt testgegevens doorgeven of belangrijke gegevens overschrijven. Om het even welke vitale configuraties worden overgegaan gebruikend het [ configuratiedossier ](../store/store-settings.md) en `setup:upgrade` bevel tijdens bouwstijl en opstellen.
 
 >[!ENDSHADEBOX]
 
-Adobe **beveelt aan** Gegevens migreren van Productie naar Staging om uw site volledig te testen en op te slaan in een vrijwel productieomgeving met alle services en instellingen.
+Adobe **adviseert** migrerend gegevens van Productie in het Opvoeren om uw plaats volledig te testen en in een dichtbij-productiemilieu met alle diensten en montages op te slaan.
 
 >[!NOTE]
 >
->Om media van ver-aan-verre milieu&#39;s rechtstreeks over te brengen moet u ssh agent het door:sturen toelaten, zie [GitHub-richtlijnen](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding).
+>Om media van ver-aan-verre milieu&#39;s rechtstreeks over te brengen moet u de agent toelaten door:sturen, zie {de begeleiding van 0} GitHub ](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding).[
 
 ### Back-up maken van de database
 
-U kunt het beste een back-up van de database maken. In de volgende procedure worden de richtsnoeren van [Back-up maken van de database](../storage/database-dump.md).
+U kunt het beste een back-up van de database maken. De volgende procedure gebruikt de begeleiding van [ file het gegevensbestand ](../storage/database-dump.md).
 
-**Om het gegevensbestand te dumpen**:
+**om het gegevensbestand** te dumpen:
 
-1. [SSH gebruiken om u aan te melden bij de externe omgeving](../development/secure-connections.md#use-an-ssh-command) die de te kopiëren database bevat.
+1. [ SSH van het Gebruik aan login aan het verre milieu ](../development/secure-connections.md#use-an-ssh-command) dat het gegevensbestand aan exemplaar bevat.
 
 1. Maak een lijst van de omgevingsverhoudingen en neem nota van de gegevens van de gegevensbestandlogin.
 
@@ -270,19 +270,19 @@ U kunt het beste een back-up van de database maken. In de volgende procedure wor
    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
    ```
 
-   Voor Pro Staging en Productie staat de naam van de database in het dialoogvenster `MAGENTO_CLOUD_RELATIONSHIPS` variabele (doorgaans dezelfde naam als de toepassingsnaam en gebruikersnaam).
+   Voor Pro Staging en Production staat de naam van de database in de variabele `MAGENTO_CLOUD_RELATIONSHIPS` (doorgaans gelijk aan de toepassingsnaam en gebruikersnaam).
 
-1. Maak een back-up van de database. Om een doelfolder voor de stortplaats van DB te kiezen, gebruik `--dump-directory` -optie.
+1. Maak een back-up van de database. Als u een doelmap voor de DB-dump wilt kiezen, gebruikt u de optie `--dump-directory` .
 
-   Voor Starter-omgevingen en Pro-integratieomgevingen kunt u `main` als naam van de database:
+   Voor Starter-omgevingen en Pro-integratieomgevingen gebruikt u `main` als de naam van de database:
 
    ```bash
    php vendor/bin/ece-tools db-dump main
    ```
 
    Snelopties:
-   - `--dump-directory=<dir>`—Kies een doeldirectory voor de databasedumpel
-   - `--remove-definers`—Verwijder DEFINER-instructies uit de databasedumpit
+   - `--dump-directory=<dir>` - Kies een doelmap voor de databasedumpit
+   - `--remove-definers`—Verwijder DEFINITIEVE instructies uit de databasedumpdump
 
 1. Hoewel de ECE-Hulpmiddelen methode de voorkeur heeft, moet een andere methode een dossier van de gegevensbestandstortplaats creëren gebruikend inheems MySQL in formaat GZIP.
 
@@ -296,15 +296,15 @@ U kunt het beste een back-up van de database maken. In de volgende procedure wor
    mysqldump -h <database-host> --user=<database-username> --password=<password> --single-transaction --triggers --ignore-table=<database-name>.tfa_user_config --ignore-table=<database-name>.tfa_country_codes <database-name> | gzip - > /tmp/database.sql.gz
    ```
 
-1. Type `logout` om de verbinding van SSH te eindigen.
+1. Typ `logout` om de SSH-verbinding te beëindigen.
 
 ### De database neerzetten en opnieuw maken
 
 Bij het importeren van gegevens moet u een database neerzetten en maken.
 
-**De database neerzetten en opnieuw maken**:
+**om het gegevensbestand** te laten vallen en opnieuw te creëren:
 
-1. Een [SSH-tunnel](../development/secure-connections.md#ssh-tunneling) naar de externe omgeving.
+1. Vestig een [ tunnel van SSH ](../development/secure-connections.md#ssh-tunneling) aan het verre milieu.
 
 1. Maak verbinding met de databaseservice.
 
@@ -312,7 +312,7 @@ Bij het importeren van gegevens moet u een database neerzetten en maken.
    mysql --host=127.0.0.1 --user='<database-username>' --pass='<user-password>' --database='<name>' --port='<port>'
    ```
 
-1. Bij de `MariaDB [main]>` vragen, de database neerzetten.
+1. Laat de database vallen bij de `MariaDB [main]>` prompt.
 
    Voor Starter- en Pro-integratie:
 

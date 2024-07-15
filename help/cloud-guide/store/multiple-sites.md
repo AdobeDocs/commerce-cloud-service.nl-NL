@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Meerdere websites of winkels instellen
 
-U kunt Adobe Commerce zo configureren dat er meerdere websites of winkels zijn, zoals een Engelse winkel, een Franse winkel en een Duitse winkel. Zie [Werken met websites, winkels en winkelweergaven](best-practices.md#store-views).
+U kunt Adobe Commerce zo configureren dat er meerdere websites of winkels zijn, zoals een Engelse winkel, een Franse winkel en een Duitse winkel. Zie [ Begrijpend websites, opslag, en opslagmeningen ](best-practices.md#store-views).
 
 >[!WARNING]
 >
@@ -36,7 +36,7 @@ https://store.com/second/
 
 >[!TIP]
 >
->Als u een opslagweergave wilt toevoegen aan de basis-URL van de site, hoeft u geen meerdere mappen te maken. Zie [De code van de winkel toevoegen aan de basis-URL](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html) in de _Configuratiegids_.
+>Als u een opslagweergave wilt toevoegen aan de basis-URL van de site, hoeft u geen meerdere mappen te maken. Zie [ de opslagcode aan basisURL ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html) in de _Gids van de Configuratie_ toevoegen.
 
 ## Domeinen toevoegen
 
@@ -46,30 +46,30 @@ Het proces om een domein toe te voegen hangt af van het type Cloud-account:
 
 - Voor Pro Staging en Productie
 
-  Het nieuwe domein snel toevoegen, zie [Domeinen beheren](../cdn/fastly-custom-cache-configuration.md#manage-domains)of een ondersteuningsticket openen om hulp aan te vragen. Bovendien moet u [Een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) om nieuwe domeinen aan te vragen om aan een cluster worden toegevoegd.
+  Voeg het nieuwe domein aan Fastly toe, zie [ domeinen ](../cdn/fastly-custom-cache-configuration.md#manage-domains) beheren, of open een steunkaartje om hulp te verzoeken. Bovendien moet u [ een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voorleggen om nieuwe domeinen te verzoeken om aan een cluster worden toegevoegd.
 
 - Alleen voor startproductie
 
-  Het nieuwe domein snel toevoegen, zie [Domeinen beheren](../cdn/fastly-custom-cache-configuration.md#manage-domains), of [Een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) om bijstand te verzoeken. Daarnaast moet u het nieuwe domein toevoegen aan de **Domeinen** in de [!DNL Cloud Console]: `https://<zone>.magento.cloud/projects/<project-ID>/edit`
+  Voeg het nieuwe domein aan Fastly toe, zie [ domeinen ](../cdn/fastly-custom-cache-configuration.md#manage-domains) beheren, of [ leg een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voor om hulp te verzoeken. Bovendien moet u het nieuwe domein aan het **lusje van Domeinen** in [!DNL Cloud Console] toevoegen: `https://<zone>.magento.cloud/projects/<project-ID>/edit`
 
 ## Lokale installatie configureren
 
-Om uw lokale installatie te vormen om veelvoudige opslag te gebruiken, zie [Meerdere websites of winkels][config-multiweb] in de _Configuratiegids_.
+Om uw lokale installatie te vormen om veelvoudige opslag te gebruiken, zie [ Veelvoudige websites of opslag ][config-multiweb] in de _Gids van de Configuratie_.
 
 Nadat u de lokale installatie hebt gemaakt en getest om meerdere winkels te kunnen gebruiken, moet u de integratieomgeving voorbereiden:
 
-1. **Vorm routes of plaatsen**—specificeer hoe de inkomende URLs door Adobe Commerce wordt behandeld
+1. **vorm routes of plaatsen** - specificeer hoe inkomende URLs door Adobe Commerce wordt behandeld
 
    - [Routes voor afzonderlijke domeinen](#configure-routes-for-separate-domains)
    - [Locaties voor gedeelde domeinen](#configure-locations-for-shared-domains)
 
-1. **Websites, winkels en winkels instellen**—configureren met de gebruikersinterface van Adobe Commerce Admin
-1. **Variabelen wijzigen**—specificeer de waarden van `MAGE_RUN_TYPE` en `MAGE_RUN_CODE` variabelen in de `magento-vars.php` file
-1. **Implementeer- en testomgevingen**—implementeren en testen `integration` vertakking
+1. **Opstelling websites, opslag, en opslagmeningen** - vorm gebruikend Adobe Commerce Admin UI
+1. **wijzigt variabelen** - specificeer de waarden van `MAGE_RUN_TYPE` en `MAGE_RUN_CODE` variabelen in het `magento-vars.php` dossier
+1. **stelt en test milieu&#39;s** op - stel en test de `integration` tak op
 
 >[!TIP]
 >
->U kunt een lokale omgeving gebruiken om meerdere websites of winkels in te stellen. Zie de instructies van Cloud Docker voor [Meerdere websites of winkels instellen](https://developer.adobe.com/commerce/cloud-tools/docker/configure/multiple-sites/).
+>U kunt een lokale omgeving gebruiken om meerdere websites of winkels in te stellen. Zie de instructies van het Dok van de Wolk aan [ Opstelling veelvoudige websites of opslag ](https://developer.adobe.com/commerce/cloud-tools/docker/configure/multiple-sites/).
 
 ### Configuratie-updates voor Pro-omgevingen
 
@@ -77,13 +77,13 @@ Nadat u de lokale installatie hebt gemaakt en getest om meerdere winkels te kunn
 
 ### Vorm routes voor afzonderlijke domeinen
 
-Routes bepalen hoe binnenkomende URLs wordt verwerkt. Voor meerdere opslagruimten met unieke domeinen moet u elk domein in het dialoogvenster `routes.yaml` bestand. De manier u routes vormt hangt van af hoe u uw plaats wilt werken.
+Routes bepalen hoe binnenkomende URLs wordt verwerkt. Voor meerdere opslagruimten met unieke domeinen moet u elk domein in het `routes.yaml` -bestand definiëren. De manier u routes vormt hangt van af hoe u uw plaats wilt werken.
 
-**Om routes in een integratiemilieu te vormen**:
+**om routes in een integratiemilieu** te vormen:
 
-1. Open op uw lokale werkstation de `.magento/routes.yaml` in een teksteditor.
+1. Open het bestand `.magento/routes.yaml` in een teksteditor op uw lokale werkstation.
 
-1. Definieer het domein en de subdomeinen. De `mymagento` De upstream-waarde is dezelfde waarde als de name-eigenschap in de `.magento.app.yaml` bestand.
+1. Definieer het domein en de subdomeinen. De waarde `mymagento` upstream is dezelfde waarde als de eigenschap name in het `.magento.app.yaml` -bestand.
 
    ```yaml
    "http://{default}/":
@@ -95,17 +95,17 @@ Routes bepalen hoe binnenkomende URLs wordt verwerkt. Voor meerdere opslagruimte
        upstream: "mymagento:http"
    ```
 
-1. Sla uw wijzigingen op in het dialoogvenster `routes.yaml` bestand.
+1. Sla de wijzigingen op in het `routes.yaml` -bestand.
 
-1. Doorgaan naar [Websites, winkels en winkels instellen](#set-up-websites-stores-and-store-views).
+1. Ga aan [ Vastgestelde websites, opslag, en opslagmeningen ](#set-up-websites-stores-and-store-views) voort.
 
 ### Locaties voor gedeelde domeinen configureren
 
-Waar de routeneconfiguratie bepaalt hoe URLs wordt verwerkt, `web` eigenschap in de `.magento.app.yaml` bepaalt hoe uw toepassing aan het Web wordt blootgesteld. Web _locaties_ meer granulariteit toestaan voor inkomende verzoeken. Als uw domein bijvoorbeeld `store.com`kunt u `/first` (standaardsite) en `/second` voor aanvragen naar twee verschillende winkels die een domein delen.
+Waar de routeneconfiguratie bepaalt hoe URLs wordt verwerkt, bepaalt het `web` bezit in het `.magento.app.yaml` dossier hoe uw toepassing aan het Web wordt blootgesteld. Het Web _plaatsen_ staat meer granulariteit voor inkomende verzoeken toe. Als uw domein bijvoorbeeld `store.com` is, kunt u `/first` (standaardsite) en `/second` gebruiken voor aanvragen bij twee verschillende winkels die een domein delen.
 
-**Een nieuwe weblocatie configureren**:
+**om een nieuwe Webplaats** te vormen:
 
-1. Een alias voor het hoofdknooppunt maken (`/`). In dit voorbeeld is de alias `&app` op regel 3.
+1. Creeer een alias voor de wortel (`/`). In dit voorbeeld is de alias `&app` op regel 3.
 
    ```yaml
    web:
@@ -119,9 +119,9 @@ Waar de routeneconfiguratie bepaalt hoe URLs wordt verwerkt, `web` eigenschap in
                ...
    ```
 
-1. Een pass-through voor de website maken (`/website`) en verwijst u naar de hoofdmap met de alias van de vorige stap.
+1. Maak een pass-through voor de website (`/website`) en verwijs naar de hoofdmap met de alias van de vorige stap.
 
-   De alias staat toe `website` om toegang te krijgen tot waarden van de hoofdlocatie. In dit voorbeeld wordt de website `passthru` staat op regel 21.
+   Met de alias krijgt `website` toegang tot waarden vanaf de hoofdlocatie. In dit voorbeeld bevindt de website `passthru` zich op regel 21.
 
    ```yaml
    web:
@@ -148,9 +148,9 @@ Waar de routeneconfiguratie bepaalt hoe URLs wordt verwerkt, `web` eigenschap in
              ...
    ```
 
-**Een locatie configureren met een andere map**:
+**om een plaats met een verschillende folder** te vormen:
 
-1. Een alias voor het hoofdknooppunt maken (`/`) en voor de statische (`/static`) locaties.
+1. Creeer een alias voor de wortel (`/`) en voor de statische (`/static`) plaatsen.
 
    ```yaml
    web:
@@ -166,9 +166,9 @@ Waar de routeneconfiguratie bepaalt hoe URLs wordt verwerkt, `web` eigenschap in
                root: "pub/static"
    ```
 
-1. Een submap maken voor de website onder het dialoogvenster `pub` map: `pub/<website>`
+1. Maak een submap voor de website onder de map `pub` : `pub/<website>`
 
-1. De `pub/index.php` in het bestand `pub/<website>` en werk de map bij `bootstrap` pad (`/../../app/bootstrap.php`).
+1. Kopieer het `pub/index.php` -bestand naar de `pub/<website>` -map en werk het `bootstrap` -pad (`/../../app/bootstrap.php`) bij.
 
    ```
    try {
@@ -176,7 +176,7 @@ Waar de routeneconfiguratie bepaalt hoe URLs wordt verwerkt, `web` eigenschap in
    } catch (\Exception $e) { 
    ```
 
-1. Een pass-through-bewerking maken voor de `index.php` bestand.
+1. Maak een doorvoerbewerking voor het `index.php` -bestand.
 
    ```yaml
    web:
@@ -208,24 +208,24 @@ Waar de routeneconfiguratie bepaalt hoe URLs wordt verwerkt, `web` eigenschap in
 
 1. Leg de gewijzigde bestanden vast en duw erop.
 
-   - `pub/<website>/index.php` (Als dit bestand zich in `.gitignore`de drukknop de krachtoptie nodig heeft.)
+   - `pub/<website>/index.php` (Als dit bestand zich in `.gitignore` bevindt, heeft de drukknop mogelijk de optie force nodig.)
    - `.magento.app.yaml`
 
 ### Websites, winkels en winkels instellen
 
-In de _Gebruikersinterface van beheerder_, Adobe Commerce instellen **Websites**, **Winkels**, en **Winkelweergaven**. Zie [Meerdere websites instellen, weergaven opslaan en opslaan in de beheerfunctie](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html) in de _Configuratiegids_.
+In _Admin UI_, opstelling uw Websites van Adobe Commerce ****, **Sporen**, en **Mening van de Opslag**. Zie [ Opstelling veelvoudige websites, opslag, en opslagmeningen in Admin ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html) in de _Gids van de Configuratie_.
 
-Het is belangrijk om dezelfde naam en code van uw websites te gebruiken, en meningen van uw Admin op te slaan wanneer u opstelling uw lokale installatie. U hebt deze waarden nodig wanneer u de `magento-vars.php` bestand.
+Het is belangrijk om dezelfde naam en code van uw websites te gebruiken, en meningen van uw Admin op te slaan wanneer u opstelling uw lokale installatie. U hebt deze waarden nodig wanneer u het `magento-vars.php` -bestand bijwerkt.
 
 ### Variabelen wijzigen
 
-In plaats van een virtuele NGINX-host te configureren, geeft u de `MAGE_RUN_CODE` en `MAGE_RUN_TYPE` variabelen die de `magento-vars.php` in uw hoofdmap van het project.
+In plaats van een virtuele NGINX-host te configureren, geeft u de variabelen `MAGE_RUN_CODE` en `MAGE_RUN_TYPE` door met behulp van het bestand `magento-vars.php` in de hoofdmap van het project.
 
-**Variabelen doorgeven met de opdracht `magento-vars.php` file**:
+**om variabelen over te gaan die het `magento-vars.php` dossier** gebruiken:
 
-1. Open de `magento-vars.php` in een teksteditor.
+1. Open het `magento-vars.php` -bestand in een teksteditor.
 
-   De [default `magento-vars.php` file](https://github.com/magento/magento-cloud/blob/master/magento-vars.php) zou als het volgende moeten kijken:
+   Het [ standaard `magento-vars.php` dossier ](https://github.com/magento/magento-cloud/blob/master/magento-vars.php) zou als het volgende moeten kijken:
 
    ```php
    <?php
@@ -244,7 +244,7 @@ In plaats van een virtuele NGINX-host te configureren, geeft u de `MAGE_RUN_CODE
    }
    ```
 
-1. De opmerkingen verplaatsen `if` blokkeren zodat het _na_ de `function` en heeft geen commentaar meer.
+1. Verplaats het gecommenteerde `if` blok zodat het _na_ het `function` blok is en niet meer gecommentarieerd.
 
    ```php
    <?php
@@ -265,12 +265,12 @@ In plaats van een virtuele NGINX-host te configureren, geeft u de `MAGE_RUN_CODE
    }
    ```
 
-1. Vervang de volgende waarden in het dialoogvenster `if (isHttpHost("example.com"))` blok:
-   - `example.com`—met de basis-URL van uw _website_
-   - `default`—met de unieke CODE voor uw _website_ of _winkelweergave_
+1. Vervang de volgende waarden in het blok `if (isHttpHost("example.com"))` :
+   - `example.com` - met de basis URL van uw _website_
+   - `default` - met unieke CODE voor uw _website_ of _opslagmening_
    - `store`—met een van de volgende waarden:
-      - `website`—laad de _website_ in de winkel
-      - `store`—load a _winkelweergave_ in de winkel
+      - `website` - laad de _website_ in de storefront
+      - `store` - laad a _opslagmening_ in de storefront
 
    Voor meerdere sites die unieke domeinen gebruiken:
 
@@ -293,7 +293,7 @@ In plaats van een virtuele NGINX-host te configureren, geeft u de `MAGE_RUN_CODE
    }
    ```
 
-   Voor meerdere sites met hetzelfde domein moet u de opdracht _host_ en de _URI_:
+   Voor veelvoudige plaatsen met het zelfde domein, moet u de _gastheer_ en _URI_ controleren:
 
    ```php
    <?php
@@ -319,7 +319,7 @@ In plaats van een virtuele NGINX-host te configureren, geeft u de `MAGE_RUN_CODE
    }
    ```
 
-1. Sla uw wijzigingen op in het dialoogvenster `magento-vars.php` bestand.
+1. Sla de wijzigingen op in het `magento-vars.php` -bestand.
 
 ### Implementeren en testen op de integratieserver
 
@@ -335,19 +335,19 @@ Breng uw wijzigingen aan in uw Adobe Commerce op de integratieomgeving van de cl
 
 1. Na de implementatie opent u de URL van je winkel in een webbrowser.
 
-   Met een uniek domein, gebruik het formaat: `http://<magento-run-code>.<site-URL>`
+   Gebruik voor een uniek domein de volgende indeling: `http://<magento-run-code>.<site-URL>`
 
    Bijvoorbeeld: `http://french.master-name-projectID.us.magentosite.cloud/`
 
-   Gebruik de indeling bij een gedeeld domein: `http://<site-URL>/<magento-run-code>`
+   Gebruik voor een gedeeld domein de volgende indeling: `http://<site-URL>/<magento-run-code>`
 
    Bijvoorbeeld: `http://master-name-projectID.us.magentosite.cloud/french/`
 
-1. Test uw site grondig en voeg de code samen met de `integration` vertakking voor verdere implementatie.
+1. Test uw site grondig en voeg de code samen naar de `integration` -vertakking voor verdere implementatie.
 
 ## Distribueren naar Staging en Productie
 
-Volg het implementatieproces voor [implementatie naar Staging en Productie](../deploy/staging-production.md). Voor Starter- en Pro-omgevingen gebruikt u de [!DNL Cloud Console] om code door milieu&#39;s te duwen.
+Volg het plaatsingsproces voor [ het opstellen aan het Opvoeren en de Productie ](../deploy/staging-production.md). Voor Starter- en Pro-omgevingen gebruikt u [!DNL Cloud Console] om code in verschillende omgevingen te plaatsen.
 
 Adobe beveelt aan om volledig te testen in de testomgeving voordat naar de productieomgeving wordt geduwd. Breng codeveranderingen in het integratiemilieu aan en begin het proces om over milieu&#39;s opnieuw op te stellen.
 

@@ -33,17 +33,17 @@ U moet een teken GitHub en een webhaak verkrijgen om het proces voort te zetten.
 
 ## Een GitHub-token genereren
 
-Creeer een klassiek persoonlijk toegangstoken in de ontwikkelaarmontages van GitHub. U moet een lid van een groep met schrijven-toegang tot de bewaarplaats zijn GitHub, zodat u kunt _duwen_ naar de gegevensopslagruimte. Neem het volgende bereik op bij het maken van uw token:
+Creeer een klassiek persoonlijk toegangstoken in de ontwikkelaarmontages van GitHub. U moet een lid van een groep met schrijven-toegang tot de bewaarplaats zijn GitHub, zodat u _duw_ aan de bewaarplaats kunt. Neem het volgende bereik op bij het maken van uw token:
 
 - `admin:repo_hook`—Webhaken maken
 - `repo`—Integreren met uw gegevensopslagruimte
-- `read:org`—Integreer met uw organisatorische opslagplaats
+- `read:org`—Integreer met de opslagplaats van uw organisatie
 
-Zie [GitHub: Maken](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+Zie [ GitHub: creeer ](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
 ## De opslagplaats voorbereiden
 
-Clone uw Adobe Commerce op het project van de wolkeninfrastructuur van een bestaand milieu en migreer de projecttakken aan een nieuwe, lege bewaarplaats GitHub, die de zelfde taknamen bewaart. Het is **kritisch** om een identieke Git-structuur te behouden, zodat u geen bestaande omgevingen of vertakkingen in uw Adobe Commerce verliest voor het infrastructuurproject van de cloud.
+Clone uw Adobe Commerce op het project van de wolkeninfrastructuur van een bestaand milieu en migreer de projecttakken aan een nieuwe, lege bewaarplaats GitHub, die de zelfde taknamen bewaart. Het is kritiek **om een identieke boom van het Git te behouden, zodat u geen bestaande milieu&#39;s of takken in uw Adobe Commerce op het project van de wolkeninfrastructuur verliest.**
 
 1. Meld u vanaf de terminal aan bij uw Adobe Commerce voor een infrastructuurproject voor de cloud.
 
@@ -69,7 +69,7 @@ Clone uw Adobe Commerce op het project van de wolkeninfrastructuur van een besta
    git remote add origin git@github.com:<user-name>/<repo-name>.git
    ```
 
-   De standaardnaam voor de externe verbinding kan `origin` of `magento`. Indien `origin` bestaat, kunt u een verschillende naam kiezen of u kunt de bestaande verwijzing anders noemen of schrappen. Zie [documentatie op afstand](https://git-scm.com/docs/git-remote).
+   De standaardnaam voor de externe verbinding kan `origin` of `magento` zijn. Als `origin` bestaat, kunt u een verschillende naam kiezen of u kunt de bestaande verwijzing een andere naam geven of verwijderen. Zie [ git-verre documentatie ](https://git-scm.com/docs/git-remote).
 
 1. Verifieer dat u ver GitHub correct toevoegde.
 
@@ -90,28 +90,28 @@ Clone uw Adobe Commerce op het project van de wolkeninfrastructuur van een besta
    git push -u origin master
    ```
 
-   Als u met een nieuwe bewaarplaats begint GitHub, kunt u moeten gebruiken `-f` omdat de externe opslagplaats niet overeenkomt met uw lokale kopie.
+   Als u met een nieuwe bewaarplaats GitHub begint, kunt u de `-f` optie moeten gebruiken, omdat de verre bewaarplaats niet uw lokale exemplaar aanpast.
 
 1. Verifieer dat uw bewaarplaats GitHub al uw projectdossiers bevat.
 
 ## De integratie met GitHub inschakelen
 
-Alvorens u begint, moeten uw projectcode en milieu&#39;s in de bewaarplaats zijn GitHub. Na het toelaten van de integratie, wordt de bewaarplaats GitHub de codebron. Als u op de oorspronkelijke code drukt `magento` bewaarplaats, wordt het overschreven door de integratie wanneer u codeveranderingen in uw bewaarplaats GitHub duwt.
+Alvorens u begint, moeten uw projectcode en milieu&#39;s in de bewaarplaats zijn GitHub. Na het toelaten van de integratie, wordt de bewaarplaats GitHub de codebron. Als u code verandert in de originele `magento` bewaarplaats, wordt het overschreven door de integratie wanneer u codeveranderingen in uw bewaarplaats GitHub duwt.
 
 Het volgende laat de integratie GitHub toe en verstrekt een nuttige URL om te gebruiken wanneer het creëren van een webhaak.
 
 >[!WARNING]
 >
->De volgende opdracht overschrijft _alles_ code in uw Adobe Commerce over het project van de wolkeninfrastructuur met code van uw bewaarplaats van GitHub, die alle takken omvat, met inbegrip van `production` vertakking. Deze handeling gebeurt onmiddellijk en kan niet ongedaan worden gemaakt. Als beste praktijken, is het belangrijk om al uw takken van uw Adobe Commerce op het project van de wolkeninfrastructuur te klonen en hen te duwen aan uw bewaarplaats GitHub **voor** toevoegen van de integratie GitHub.
+>Het volgende bevel beschrijft _alle_ code in uw Adobe Commerce op het project van de wolkeninfrastructuur met code van uw bewaarplaats GitHub, die alle takken, met inbegrip van de `production` tak omvat. Deze handeling gebeurt onmiddellijk en kan niet ongedaan worden gemaakt. Als beste praktijken, is het belangrijk om alle takken van uw Adobe Commerce op het project van de wolkeninfrastructuur te klonen en hen te duwen aan uw bewaarplaats GitHub **alvorens** de integratie GitHub toe te voegen.
 
-U kunt verkiezen om door de CLI herinneringen te stappen gebruikend `magento-cloud integration:add` of u kunt de integratieopdracht bouwen met de volgende opties:
+U kunt verkiezen om door de CLI herinneringen te stappen gebruikend `magento-cloud integration:add` of u kunt het integratiebevel met de volgende opties bouwen:
 
 | Optie | Vereist? | Beschrijving |
 | ----------------------- | --------- | --------------------------------- |
-| `--base-url` | Ja | De basis-URL van de serverinstallatie, die mogelijk `https://github.com/` of een aangepaste waarde. Laat deze optie weg als uw gegevensopslagruimte wordt gehost met openbare Github. |
+| `--base-url` | Ja | De basis-URL van de serverinstallatie, die `https://github.com/` of een aangepast item kan zijn. Laat deze optie weg als uw gegevensopslagruimte wordt gehost met openbare Github. |
 | `--token` | Ja | Het persoonlijke toegangstoken dat u voor GitHub produceerde |
-| `--repository` | Ja | De naam van de opslagplaats: `owner-or-organisation/repository` |
-| `--build-pull-requests` | Optioneel | Instrueert Adobe Commerce op cloudinfrastructuur te implementeren nadat u een pull-verzoek hebt samengevoegd (`true` standaard) |
+| `--repository` | Ja | De naam van de gegevensopslagruimte: `owner-or-organisation/repository` |
+| `--build-pull-requests` | Optioneel | Instrueert Adobe Commerce op wolkeninfrastructuur om op te stellen nadat u een trekkrachtverzoek samenvoegt (`true` door gebrek) |
 | `--fetch-branches` | Optioneel | Zorgt ervoor dat Adobe Commerce op cloudinfrastructuur vertakkingen bijhoudt en implementeert nadat u een vertakking hebt bijgewerkt (`true` standaard) |
 | `--prune-branches` | Optioneel | Vertakkingen verwijderen die niet op de externe server bestaan (`true` standaard) |
 
@@ -121,7 +121,7 @@ Er zijn veel meer opties en u kunt deze weergeven met de optie Help:
 magento-cloud integration:add --help
 ```
 
-**Om de integratie van GitHub toe te laten**:
+**om de integratie GitHub** toe te laten:
 
 1. De integratie inschakelen.
 
@@ -143,7 +143,7 @@ magento-cloud integration:add --help
 
 1. Voer de vereiste informatie in wanneer u hierom wordt gevraagd.
 
-1. De **Payload URL** weergegeven door de geretourneerde uitvoer.
+1. Kopieer **Payload URL** getoond door de terugkeeroutput.
 
    ```terminal
    Created integration <integration-ID> (type: github)
@@ -157,25 +157,25 @@ magento-cloud integration:add --help
 
 Om gebeurtenissen-zulke zoals een duw-met uw server van de it van de Plaats van de Wolk mee te delen, moet u een webhaak voor uw bewaarplaats van GitHub tot stand brengen:
 
-1. In uw bewaarplaats van GitHub, klik **Instellingen** tab.
+1. In uw bewaarplaats GitHub, klik de **Montages** tabel.
 
-1. Klik in de linkernavigatiebalk op **Webhaken**.
+1. In de linkernavigatiebar, klik **Webhooks**.
 
-1. In de _Webhaken_ deelvenster, klikt u op **Webhaak toevoegen**.
+1. In de _ruit Webhooks_, klik **webhaak** toevoegen.
 
-1. In de _Webhaken/webhaak toevoegen_ bewerken, bewerkt u de volgende velden:
+1. In _Webhooks/voeg webhaak_ vorm toe, geef de volgende gebieden uit:
 
    - **Payload URL**: Ga URL in teruggekeerd toen u de integratie GitHub toeliet.
-   - **Inhoudstype**: Kies **application/json** in de lijst.
-   - **Geheim**: Voer een verificatiegeheim in.
-   - **Welke gebeurtenissen wilt u deze webhaak activeren?**: Select **Alles verzenden**.
-   - Selecteer de **Actief** selectievakje.
+   - **Type van Inhoud**: Kies **toepassing/json** van de lijst.
+   - **Geheim**: Ga een verificatiegeheim in.
+   - **Welke gebeurtenissen wilt u deze webhaak teweegbrengen?**: Selecteer **verzend me alles**.
+   - Selecteer **Actieve** checkbox.
 
-1. Klikken **Webhaak toevoegen**.
+1. Klik **toevoegen webhaak**.
 
 ## Integratie testen
 
-Na het vormen van de integratie GitHub, kunt u verifiëren dat de integratie operationeel is gebruikend `magento-cloud` CLI:
+Na het vormen van de integratie GitHub, kunt u verifiëren dat de integratie operationeel gebruikend `magento-cloud` CLI is:
 
 ```bash
 magento-cloud integration:validate
@@ -195,13 +195,13 @@ Of u kunt het testen door een eenvoudige verandering in uw bewaarplaats te duwen
    git add . && git commit -m "Testing GitHub integration" && git push
    ```
 
-1. Aanmelden bij de [[!DNL Cloud Console]](../project/overview.md) en verifieer dat uw commit bericht wordt getoond en uw project het opstellen.
+1. Meld u aan bij de [[!DNL Cloud Console]](../project/overview.md) en controleer of uw commit-bericht wordt weergegeven en of uw project wordt geïmplementeerd.
 
 ## Integratie verwijderen
 
 U kunt de integratie van GitHub uit uw project veilig verwijderen zonder uw code te beïnvloeden.
 
-**De integratie met GitHub verwijderen**:
+**om de integratie te verwijderen GitHub**:
 
 1. Meld u vanaf de terminal aan bij uw Adobe Commerce voor een infrastructuurproject voor de cloud.
 
@@ -217,4 +217,4 @@ U kunt de integratie van GitHub uit uw project veilig verwijderen zonder uw code
    magento-cloud integration:delete <int-ID>
    ```
 
-Ook, kunt u de integratie verwijderen GitHub door binnen aan uw rekening te registreren GitHub en de Webhaak in te verwijderen _Webhaken_ tabblad van de gegevensopslagruimte _Instellingen_.
+Ook, kunt u de integratie verwijderen GitHub door aan uw rekening te registreren GitHub en de Webhaak in _Webhooks_ tabel van de bewaarplaats _Montages_ te verwijderen.

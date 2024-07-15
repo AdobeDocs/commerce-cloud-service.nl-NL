@@ -12,19 +12,19 @@ ht-degree: 0%
 
 # Het pakket ECE-gereedschappen bijwerken
 
-Een update van de `ece-tools` pakket werkt ook het andere [Cloud Tools Suite voor handelspakketten](../release-notes/cloud-tools-suite.md), waarvoor `ece-tools`. Daarom moet u een versie van Adobe Commerce op wolkeninfrastructuur gebruiken die de `ece-tools` pakket.
+Een update aan het `ece-tools` pakket werkt ook de andere [ Reeks van Hulpmiddelen van de Wolk voor de pakketten van Commerce ](../release-notes/cloud-tools-suite.md) bij, die gebiedsdelen voor `ece-tools` zijn. Daarom moet u een versie van Adobe Commerce gebruiken op cloudinfrastructuur die het `ece-tools` -pakket ondersteunt.
 
 {{ece-tools-package}}
 
-**Vereisten**:
+**Eerste vereisten**:
 
-- Voordat u gaat bijwerken `ece-tools`, de [Opmerkingen bij de release Cloud Tools Suite voor handel](../release-notes/cloud-tools-suite.md).
-- Als u bijwerkt vanuit `ece-tools` 2002.0.22 of eerder tot en met 2002.1.0 [Achterwaartse incompatibele wijzigingen](../release-notes/backward-incompatible-changes.md) en breng de vereiste wijzigingen aan in uw Adobe Commerce-infrastructuurproject voor de cloud.
-- Controleren [Upgrades en patches](../development/commerce-version.md#upgrade-from-older-versions) om te bepalen welke versies van ECE-Tools compatibel zijn met uw Adobe Commerce voor het infrastructuurproject in de cloud.
+- Alvorens u `ece-tools` bijwerkt, herzie de [ Reeks van Hulpmiddelen van de Wolk voor de versienota&#39;s van Commerce ](../release-notes/cloud-tools-suite.md).
+- Als u van `ece-tools` 2002.0.22 of vroeger aan 2002.1.0 bijwerkt, herzie [ Achteruit onverenigbare veranderingen ](../release-notes/backward-incompatible-changes.md) en breng om het even welke vereiste veranderingen in uw Adobe Commerce op het project van de wolkeninfrastructuur aan.
+- Het overzicht [ Verbeteringen en Patches ](../development/commerce-version.md#upgrade-from-older-versions) om de ECE-Hulpmiddelen versies compatibel met uw Adobe Commerce op het project van de wolkeninfrastructuur te bepalen.
 
 {{upgrade-tip}}
 
-**Als u het dialoogvenster `ece-tools` package**:
+**om het `ece-tools` pakket** bij te werken:
 
 1. Voer op uw lokale werkstation een update uit met Composer.
 
@@ -34,7 +34,7 @@ Een update van de `ece-tools` pakket werkt ook het andere [Cloud Tools Suite voo
 
    >[!NOTE]
    >
-   >Als u niet verder kunt bijwerken `ece-tools` versie 2002.0.8, zie [Upgradeproject voor gebruik van het pakket ECE-Tools](install-package.md).
+   >Als u niet voorbij `ece-tools` versie 2002.0.8 kunt bijwerken, zie [ het project van de Verbetering om ECE-Hulpmiddelen pakket ](install-package.md) te gebruiken.
 
 1. Wijzigingen in code toevoegen, vastleggen en doorvoeren.
 

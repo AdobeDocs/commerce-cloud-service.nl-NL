@@ -24,84 +24,84 @@ ht-degree: 0%
     <tbody>
         <tr>
             <td>
-                bcmath<br>
+                bcmath <br>
                 bz2<br>
-                kalender<br>
+                Kalender <br>
                 exif<br>
                 gd<br>
-                gettext<br>
-                intl<br>
-                libxml<br>
-                mysqli<br>
-                opcache<br>
-                openswoofer<br>
-                pcntl<br>
-                pdo_mysql<br>
-                Reflectie<br>
-                zeep<br>
-                sockets<br>
-                SPL<br>
-                standaard<br>
-                sysvmsg<br>
-                sysvsem<br>
-                sysvshm<br>
+                gettext <br>
+                intl <br>
+                libxml <br>
+                mysqli <br>
+                opcache <br>
+                openswoole <br>
+                pcntl <br>
+                pdo_mysql <br>
+                Reflectie <br>
+                soap <br>
+                sockets <br>
+                SPL <br>
+                standard<br>
+                sysvmsg <br>
+                sysvsem <br>
+                sysvshm <br>
                 zip<br>
-                zlib<br>
+                zlib <br>
             </td>
             <td>
                 ctype<br>
-                krullen<br>
-                date<br>
-                dba<br>
-                dom<br>
-                fileinfo<br>
-                filter<br>
-                ftp<br>
-                hash<br>
-                iconv<br>
+                curl <br>
+                date <br>
+                dba <br>
+                dom <br>
+                fileinfo <br>
+                filter <br>
+                ftp <br>
+                hash <br>
+                iconv <br>
                 json<br>
-                mbstring<br>
-                mysqlnd<br>
-                openssl<br>
-                pcr<br>
+                mbstring <br>
+                mysqlnd <br>
+                openssl <br>
+                pcre <br>
                 pdo<br>
                 pdo_sqlite<br>
-                phar<br>
-                posix<br>
-                readline<br>
-                sessie<br>
-                sqlite3<br>
-                tokenizer<br>
+                phar <br>
+                posix <br>
+                readline <br>
+                session<br>
+                sqlite3 <br>
+                tokenizer <br>
                 xml<br>
-                xmlreader<br>
-                xmlwriter<br>
+                xmlreader <br>
+                xmlwriter <br>
             </td>
             <td>
-                geoip<br>
-                gmp<br>
-                igbinary<br>
-                verbeeldend<br>
-                imap<br>
-                ldap<br>
-                postpars<br>
-                mcrypt<br>
-                msgpack<br>
-                mysqli<br>
-                oauth<br>
-                pdo_mysql<br>
-                propro<br>
-                pspelling<br>
+                geoip <br>
+                gmp <br>
+                igbinary <br>
+                fantaick <br>
+                imap <br>
+                ldap <br>
+                mailparse <br>
+                mcrypt <br>
+                msgpack <br>
+                mysqli <br>
+                oauth <br>
+                pdo_mysql <br>
+                propro <br>
+                pspell <br>
                 raphf<br>
-                recoderen<br>
-                redis<br>
-                shmop sockets<br>
-                natrium<br>
+                recode <br>
+                redis <br>
+                shmop-sockets <br>
+                natrium <br>
                 ssh2<br>
-                gespannen<br>
-                xdebug<br>
-                xmlrpc<br>
+                tidy <br>
+                xdebug <br>
+                xmlrpc <br>
                 xsl<br>
-                yaml<br>
+                yaml <br>
             </td>
         </tr>
     </tbody>

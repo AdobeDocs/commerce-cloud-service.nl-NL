@@ -12,19 +12,19 @@ ht-degree: 0%
 
 # Upgradeproject voor gebruik van het pakket ECE-Tools
 
-Adobe heeft de `magento/magento-cloud-configuration` en `magento/ece-patches` pakketten ten gunste van de `ece-tools` pakket, dat veel cloudprocessen vereenvoudigt. Als u een ouder Adobe Commerce gebruikt voor een infrastructuurproject in de cloud _niet_ bevatten `ece-tools` en moet u een eenmalige, handmatige _upgrade_ aan uw project te verwerken.
+Adobe heeft de pakketten `magento/magento-cloud-configuration` en `magento/ece-patches` vervangen door het pakket `ece-tools` , dat veel cloudprocessen vereenvoudigt. Als u een oudere Adobe Commerce op het project van de wolkeninfrastructuur gebruikt dat _niet_ het `ece-tools` pakket bevat, dan moet u een eenmalig, manueel _verbetering_ proces aan uw project uitvoeren.
 
 >[!WARNING]
 >
->Als uw project de `ece-tools` kunt u de volgende upgrade overslaan. Om te verifiëren, wint terug [!DNL Commerce] versie die de `php vendor/bin/ece-tools -V` in de lokale hoofdmap van het project.
+>Als uw project het `ece-tools` -pakket bevat, kunt u de volgende upgrade overslaan. Als u wilt controleren, haalt u de [!DNL Commerce] -versie op met de opdracht `php vendor/bin/ece-tools -V` in de lokale hoofdmap van het project.
 
-Voor dit upgradeproces van het project moet u het `magento/magento-cloud-metapackage` versiebeperking in de `composer.json` bestand in de hoofdmap. Met deze beperking kunnen updates voor Adobe Commerce worden uitgevoerd op metapakketten voor cloudinfrastructuur, zoals het verwijderen van verouderde pakketten, zonder dat de huidige Adobe Commerce-versie wordt bijgewerkt.
+Voor dit upgradeproces van het project moet u de versiebeperking `magento/magento-cloud-metapackage` bijwerken in het `composer.json` -bestand in de hoofdmap. Met deze beperking kunnen updates voor Adobe Commerce worden uitgevoerd op metapakketten voor cloudinfrastructuur, zoals het verwijderen van verouderde pakketten, zonder dat de huidige Adobe Commerce-versie wordt bijgewerkt.
 
 {{upgrade-tip}}
 
 ## Vervangen pakketten verwijderen
 
-Voordat u een upgrade uitvoert, moet u de opdracht `ece-tools` pakket, controleer de `composer.lock` bestand voor de volgende vervangen pakketten:
+Voordat u een upgrade uitvoert voor het gebruik van het `ece-tools` -pakket, controleert u het `composer.lock` -bestand op de volgende verouderde pakketten:
 
 - `magento/magento-cloud-configuration`
 - `magento/ece-patches`
@@ -37,12 +37,12 @@ Voor elke Adobe Commerce-versie is een andere beperking vereist op basis van het
 >=current_version <next_version
 ```
 
-- Voor `current_version`, geeft u de Adobe Commerce-versie op die u wilt installeren.
-- Voor `next_version`geeft u de volgende patchversie op na de waarde die is opgegeven in `current_version`.
+- Geef bij `current_version` de Adobe Commerce-versie op die u wilt installeren.
+- Geef bij `next_version` de volgende patchversie op na de waarde die is opgegeven in `current_version` .
 
-Als u Adobe Commerce wilt installeren `2.3.5-p2`, set `current_version` tot `2.3.5` en de `next_version` tot `2.3.6`. De beperking `">=2.3.5 <2.3.6"` Hiermee installeert u het nieuwste beschikbare pakket voor 2.3.5.
+Als u Adobe Commerce `2.3.5-p2` wilt installeren, stelt u `current_version` in op `2.3.5` en `next_version` op `2.3.6` . Met de restrictie `">=2.3.5 <2.3.6"` wordt het meest recente beschikbare pakket voor 2.3.5 geïnstalleerd.
 
-U kunt de meest recente metapakketbeperking altijd vinden in het dialoogvenster [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json).
+U kunt de recentste metapakketbeperking in het [`magento-cloud` malplaatje ](https://github.com/magento/magento-cloud/blob/master/composer.json) altijd vinden.
 
 In het volgende voorbeeld wordt een beperking voor het Adobe Commerce-pakket voor de infrastructuur van de cloud geplaatst in elke versie die hoger is dan of gelijk is aan de huidige versie 2.4.7 en lager is dan de volgende versie 2.4.8:
 
@@ -54,11 +54,11 @@ In het volgende voorbeeld wordt een beperking voor het Adobe Commerce-pakket voo
 
 ## Het project upgraden
 
-Om uw project te bevorderen om te gebruiken `ece-tools` moet u het pakket metapakket en de `.magento.app.yaml` Koppelt eigenschappen en voert een Composer-update uit.
+Als u uw project wilt upgraden voor gebruik van het `ece-tools` -pakket, moet u het metapakket en de `.magento.app.yaml` hooks-eigenschappen bijwerken en een Composer-update uitvoeren.
 
-**Om project te bevorderen om Griekenland-hulpmiddelen te gebruiken**:
+**om project te bevorderen om knoop-hulpmiddelen** te gebruiken:
 
-1. Werk de `magento/magento-cloud-metapackage` versiebeperking in de `composer.json` bestand.
+1. Werk de `magento/magento-cloud-metapackage` version-restrictie in het `composer.json` -bestand bij.
 
    ```bash
    composer require "magento/magento-cloud-metapackage":">=2.4.7 <2.4.8" --no-update
@@ -70,7 +70,7 @@ Om uw project te bevorderen om te gebruiken `ece-tools` moet u het pakket metapa
    composer update magento/magento-cloud-metapackage
    ```
 
-1. Wijzig de haakbevelen in `magento.app.yaml` bestand.
+1. Wijzig de haakbevelen in het `magento.app.yaml` dossier.
 
    ```yaml
    hooks:
@@ -87,7 +87,7 @@ Om uw project te bevorderen om te gebruiken `ece-tools` moet u het pakket metapa
            php ./vendor/bin/ece-tools run scenario/post-deploy.xml
    ```
 
-1. Controleren op en verwijderen de [verouderde pakketten](#remove-deprecated-packages). De vervangen pakketten kunnen een geslaagde upgrade verhinderen.
+1. Controle voor en verwijder de [ afgekeurde pakketten ](#remove-deprecated-packages). De vervangen pakketten kunnen een geslaagde upgrade verhinderen.
 
    ```bash
    composer remove magento/magento-cloud-configuration
@@ -97,7 +97,7 @@ Om uw project te bevorderen om te gebruiken `ece-tools` moet u het pakket metapa
    composer remove magento/ece-patches
    ```
 
-1. Het kan nodig zijn de `ece-tools` pakket.
+1. Het kan nodig zijn om het `ece-tools` -pakket bij te werken.
 
    ```bash
    composer update magento/ece-tools
@@ -111,7 +111,7 @@ Om uw project te bevorderen om te gebruiken `ece-tools` moet u het pakket metapa
    composer.lock
    ```
 
-1. Verduw uw codeveranderingen in de verre server en voeg deze tak met samen `integration` vertakking.
+1. Duw de codeveranderingen in de verre server en voeg deze tak met de `integration` tak samen.
 
    ```bash
    git push origin <branch-name>

@@ -1,6 +1,6 @@
 ---
 title: Eigenschappen
-description: Gebruik de eigenschappenlijst als een referentie bij het configureren van de [!DNL Commerce] toepassing voor de bouw en de implementatie in de wolkeninfrastructuur.
+description: Gebruik de bezitslijst als verwijzing wanneer configuratie de  [!DNL Commerce]  toepassing voor bouwt en aan de wolkeninfrastructuur opstelt.
 feature: Cloud, Configuration, Build, Deploy, Roles/Permissions, Storage
 exl-id: 58a86136-a9f9-4519-af27-2f8fa4018038
 source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Eigenschappen voor toepassingsconfiguratie
 
-De `.magento.app.yaml` het dossier gebruikt eigenschappen voor het beheer van omgevingssteun voor [!DNL Commerce] toepassing.
+Het bestand `.magento.app.yaml` gebruikt eigenschappen voor het beheer van de omgevingsondersteuning voor de toepassing [!DNL Commerce] .
 
 | Naam | Beschrijving | Standaard | Vereist |
 | ------ | --------------------------------- | ------- | -------- |
@@ -25,9 +25,9 @@ De `.magento.app.yaml` het dossier gebruikt eigenschappen voor het beheer van om
 | [`mounts`](#mounts) | Paden instellen | Paden:<ul><li>`"var": "shared:files/var"`</li><li>`"app/etc": "shared:files/etc"`</li><li>`"pub/media": "shared:files/media"`</li><li>`"pub/static": "shared:files/static"`</li></ul> | Nee |
 | [`name`](#name) | De toepassingsnaam definiëren | `mymagento` | Ja |
 | [`relationships`](#relationships) | Kaartservices | Services:<ul><li>`database: "mysql:mysql"`</li><li>`redis: "redis:redis"`</li><li>`opensearch: "opensearch:opensearch"`</li></ul> | Nee |
-| [`runtime`](#runtime) | De runtime-eigenschap bevat extensies die vereist zijn voor de [!DNL Commerce] toepassing. | Extensies:<ul><li>`xsl`</li><li>`newrelic`</li><li>`sodium`</li></ul> | Ja |
+| [`runtime`](#runtime) | De runtime-eigenschap omvat extensies die door de [!DNL Commerce] -toepassing worden vereist. | Extensies:<ul><li>`xsl`</li><li>`newrelic`</li><li>`sodium`</li></ul> | Ja |
 | [`type`](#type-and-build) | De basiscontainerafbeelding instellen | `php:8.3` | Ja |
-| [`variables`](variables-property.md) | Pas een omgevingsvariabele toe voor een specifieke versie van de Handel | — | Nee |
+| [`variables`](variables-property.md) | Een omgevingsvariabele toepassen voor een specifieke Commerce-versie | — | Nee |
 | [`web`](web-property.md) | Externe verzoeken afhandelen | — | Ja |
 | [`workers`](workers-property.md) | Externe verzoeken afhandelen | — | Ja, als de webeigenschap niet wordt gebruikt |
 
@@ -35,7 +35,7 @@ De `.magento.app.yaml` het dossier gebruikt eigenschappen voor het beheer van om
 
 ## `name`
 
-De `name` eigenschap bevat de toepassingsnaam die in het dialoogvenster [`routes.yaml`](../routes/routes-yaml.md) bestand om de HTTP upstream te definiëren (standaard), `mymagento:http`). Als bijvoorbeeld de waarde van `name` is `app`moet u `app:http` in het upstreamveld.
+De eigenschap `name` biedt de toepassingsnaam die in het [`routes.yaml`](../routes/routes-yaml.md) -bestand wordt gebruikt om de HTTP-upstream te definiëren (standaard `mymagento:http` ). Als de waarde van `name` bijvoorbeeld `app` is, moet u `app:http` in het upstreamveld gebruiken.
 
 >[!WARNING]
 >
@@ -43,7 +43,7 @@ De `name` eigenschap bevat de toepassingsnaam die in het dialoogvenster [`routes
 
 ## `type` en `build`
 
-De `type`  en `build` eigenschappen verstrekken informatie over het beeld van de basiscontainer om het project te bouwen en in werking te stellen.
+De eigenschappen `type` en `build` bevatten informatie over de basiscontainerafbeelding voor het samenstellen en uitvoeren van het project.
 
 De ondersteunde `type` taal is PHP. Geef de PHP-versie als volgt op:
 
@@ -51,7 +51,7 @@ De ondersteunde `type` taal is PHP. Geef de PHP-versie als volgt op:
 type: php:<version>
 ```
 
-De `build` het bezit bepaalt wat door gebrek gebeurt wanneer het bouwen van het project. De `flavor` geeft een standaardset bouwtaken aan die moet worden uitgevoerd. Het volgende voorbeeld toont de standaardconfiguratie voor `type` en `build` van `magento-cloud/.magento.app.yaml`:
+De eigenschap `build` bepaalt wat er standaard gebeurt bij het bouwen van het project. In `flavor` wordt een standaardset bouwtaken opgegeven die moet worden uitgevoerd. In het volgende voorbeeld wordt de standaardconfiguratie voor `type` en `build` from `magento-cloud/.magento.app.yaml` getoond:
 
 ```yaml
 # The toolstack used to build the application.
@@ -66,13 +66,13 @@ dependencies:
 
 ### Composer 2 installeren en gebruiken
 
-De `build: flavor:` Deze eigenschap wordt niet gebruikt voor Composer 2.x. Daarom moet u Composer handmatig installeren tijdens de constructiefase. Als u Composer 2.x wilt installeren en gebruiken in uw Starter- en Pro-projecten, moet u drie wijzigingen aanbrengen in uw `.magento.app.yaml` configuratie:
+De eigenschap `build: flavor:` wordt niet gebruikt voor Composer 2.x. Daarom moet u Composer handmatig installeren tijdens de constructiefase. Als u Composer 2.x wilt installeren en gebruiken in uw Starter- en Pro-projecten, moet u drie wijzigingen aanbrengen in de `.magento.app.yaml` -configuratie:
 
-1. Verwijderen `composer` als de `build: flavor:` en toevoegen `none`. Door deze wijziging wordt voorkomen dat Cloud de standaardversie 1.x van Composer gebruikt voor het uitvoeren van ontwikkeltaken.
-1. Toevoegen `composer/composer: '^2.0'` als `php` afhankelijkheid voor het installeren van Composer 2.x.
-1. Voeg de `composer` taken aan een `build` haak om de bouwstijltaken in werking te stellen gebruikend Composer 2.x.
+1. Verwijder `composer` als `build: flavor:` en voeg `none` toe. Door deze wijziging wordt voorkomen dat Cloud de standaardversie 1.x van Composer gebruikt voor het uitvoeren van ontwikkeltaken.
+1. Voeg `composer/composer: '^2.0'` toe als een `php` -afhankelijkheid voor het installeren van Composer 2.x.
+1. Voeg `composer` bouwtaken aan een `build` haak toe om bouwstijltaken in werking te stellen gebruikend Composer 2.x.
 
-Gebruik de volgende configuratiefragmenten in uw eigen configuratie `.magento.app.yaml` configuratie:
+Gebruik de volgende configuratiefragmenten in uw eigen `.magento.app.yaml` configuratie:
 
 ```yaml
 # 1. Change flavor to none.
@@ -91,7 +91,7 @@ hooks:
         composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 ```
 
-Zie [Vereiste pakketten](../development/overview.md#required-packages) voor meer informatie over Composer.
+Zie [ Vereiste pakketten ](../development/overview.md#required-packages) voor meer informatie over Composer.
 
 ## `dependencies`
 
@@ -103,7 +103,7 @@ Adobe Commerce ondersteunt afhankelijkheden voor de volgende talen:
 - Ruby
 - Node.js
 
-Die gebiedsdelen zijn onafhankelijk van de uiteindelijke gebiedsdelen van uw toepassing, en zijn beschikbaar in `PATH`, tijdens het constructieproces en in de runtimeomgeving van uw toepassing.
+Deze afhankelijkheden zijn onafhankelijk van de uiteindelijke afhankelijkheden van uw toepassing en zijn beschikbaar in de `PATH` , tijdens het ontwikkelproces en in de runtimeomgeving van uw toepassing.
 
 U kunt die gebiedsdelen als volgt specificeren:
 
@@ -126,7 +126,7 @@ runtime:
         - sodium
 ```
 
-Zie [PHP-instellingen](php-settings.md) voor meer informatie over het inschakelen van extensies.
+Zie [ PHP montages ](php-settings.md) voor details over het toelaten van uitbreidingen.
 
 ## `disk`
 
@@ -136,17 +136,17 @@ Definieert de permanente schijfgrootte van de toepassing in MB.
 disk: 5120
 ```
 
-De minimale aanbevolen schijfgrootte is 256 MB. Als u de fout ziet `UserError: Error building the project: Disk size may not be smaller than 128MB`, vergroot de grootte tot 256 MB.
+De minimale aanbevolen schijfgrootte is 256 MB. Als de fout `UserError: Error building the project: Disk size may not be smaller than 128MB` wordt weergegeven, vergroot u de grootte tot 256 MB.
 
 >[!NOTE]
 >
->Voor Pro Staging- en Productomgevingen moet u [Een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) om de `mounts` en `disk` configuratie voor uw toepassing. Wanneer u het kaartje indient, wijs op de vereiste configuratieveranderingen en neem een bijgewerkte versie van uw `.magento.app.yaml` bestand.
+>Voor Pro het Opvoeren en van de Productie milieu&#39;s, moet u [ een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voorleggen om de `mounts` en `disk` configuratie voor uw toepassing bij te werken. Wanneer u het ticket verzendt, geeft u de vereiste configuratiewijzigingen aan en neemt u een bijgewerkte versie van het `.magento.app.yaml` -bestand op.
 
 ## `relationships`
 
 Definieert de servicetoewijzing in de toepassing.
 
-De relatie `name` is beschikbaar voor de toepassing in de `MAGENTO_CLOUD_RELATIONSHIPS` omgevingsvariabele. De `<service-name>:<endpoint-name>` relatie wordt toegewezen aan de naam en typewaarden die zijn gedefinieerd in het dialoogvenster `.magento/services.yaml` bestand.
+De relatie `name` is beschikbaar voor de toepassing in de omgevingsvariabele `MAGENTO_CLOUD_RELATIONSHIPS` . De `<service-name>:<endpoint-name>` -relatie wordt toegewezen aan de naam en typewaarden die zijn gedefinieerd in het `.magento/services.yaml` -bestand.
 
 ```yaml
 relationships:
@@ -163,11 +163,11 @@ relationships:
     rabbitmq: "rabbitmq:rabbitmq"
 ```
 
-Zie [Services](../services/services-yaml.md) voor een volledige lijst van momenteel gesteunde de diensttypes en eindpunten.
+Zie ](../services/services-yaml.md) de Diensten van 0} {voor een volledige lijst van momenteel gesteunde de diensttypes en eindpunten.[
 
 ## `mounts`
 
-Een object waarvan de sleutels paden zijn die relatief zijn ten opzichte van de hoofdmap van de toepassing. De koppeling is een beschrijfbaar gebied op de schijf voor bestanden. Het volgende is een standaardlijst van steunen die in worden gevormd `magento.app.yaml` bestand gebruiken met de `volume_id[/subpath]` syntaxis:
+Een object waarvan de sleutels paden zijn die relatief zijn ten opzichte van de hoofdmap van de toepassing. De koppeling is een beschrijfbaar gebied op de schijf voor bestanden. Hieronder volgt een standaardlijst met toewijzingen die in het `magento.app.yaml` -bestand worden geconfigureerd met de syntaxis van `volume_id[/subpath]` :
 
 ```yaml
  # The mounts that will be performed when the package is deployed.
@@ -184,28 +184,28 @@ De indeling voor het toevoegen van de hoeveelheid aan deze lijst is als volgt:
 "/public/sites/default/files": "shared:files/files"
 ```
 
-- `shared`—Deelt een volume tussen uw toepassingen binnen een omgeving.
-- `disk`—Definieert de beschikbare grootte voor het gedeelde volume.
+- `shared` - Deel een volume tussen uw toepassingen binnen een omgeving.
+- `disk` - Hiermee definieert u de grootte die beschikbaar is voor het gedeelde volume.
 
 >[!NOTE]
 >
->Voor Pro Staging- en Productomgevingen moet u [Een Adobe Commerce-ondersteuningsticket verzenden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) om de `mounts` en `disk` configuratie voor uw toepassing. Wanneer u het kaartje indient, wijs op de vereiste configuratieveranderingen en neem een bijgewerkte versie van uw `.magento.app.yaml` bestand.
+>Voor Pro het Opvoeren en van de Productie milieu&#39;s, moet u [ een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voorleggen om de `mounts` en `disk` configuratie voor uw toepassing bij te werken. Wanneer u het ticket verzendt, geeft u de vereiste configuratiewijzigingen aan en neemt u een bijgewerkte versie van het `.magento.app.yaml` -bestand op.
 
-U kunt het montagekweb toegankelijk maken door het aan de [`web`](web-property.md) blok locaties.
+U kunt het koppelingsweb toegankelijk maken door het toe te voegen aan het [`web`](web-property.md) -blok met locaties.
 
 >[!WARNING]
 >
->Als uw site gegevens bevat, wijzigt u de `subpath` deel van de koppelingsnaam. Deze waarde is de unieke id voor de `files` gebied. Als u deze naam wijzigt, gaan alle sitegegevens verloren die op de oude locatie zijn opgeslagen.
+>Wijzig niet het `subpath` -gedeelte van de montagenaam als uw site gegevens bevat. Deze waarde is de unieke id voor het `files` -gebied. Als u deze naam wijzigt, gaan alle sitegegevens verloren die op de oude locatie zijn opgeslagen.
 
 ## `access`
 
-De `access` Het bezit wijst op een minimum niveau van de gebruikersrol dat de toegang van SSH tot de milieu&#39;s wordt verleend. De beschikbare gebruikersrollen zijn:
+De eigenschap `access` geeft een minimale gebruikersrolniveau aan dat SSH-toegang tot de omgevingen wordt toegestaan. De beschikbare gebruikersrollen zijn:
 
-- `admin`—Kan instellingen wijzigen en acties uitvoeren in de omgeving; heeft _contribuant_ en _viewer_ rechten.
-- `contributor`—Kan code naar deze omgeving duwen en de omgeving vertakken; heeft _viewer_ rechten.
-- `viewer`—Alleen de omgeving kan worden weergegeven.
+- `admin` - kan montages veranderen en acties in het milieu uitvoeren; heeft _contribuant_ en _kijker_ rechten.
+- `contributor` - kan code aan dit milieu duwen en zich van het milieu vertakken; heeft _kijker_ rechten.
+- `viewer` - Kan alleen de omgeving weergeven.
 
-De standaardgebruikersrol is `contributor`, die de toegang van SSH van gebruikers slechts met beperkt _viewer_ rechten. U kunt de gebruikersrol wijzigen in `viewer` SSH-toegang alleen toestaan voor gebruikers met _viewer_ rechten:
+De standaardgebruikersrol is `contributor`, die de toegang van SSH van gebruikers met slechts _kijker_ rechten beperkt. U kunt de gebruikersrol in `viewer` veranderen om de toegang van SSH voor gebruikers met slechts _kijker_ rechten toe te staan:
 
 ```yaml
 access:

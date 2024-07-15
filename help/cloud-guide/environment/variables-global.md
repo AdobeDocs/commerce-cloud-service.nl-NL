@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Algemene variabelen
 
-Algemene variabelen beheren acties in elke fase van de [!DNL Commerce] implementatieproces: maken, implementeren en achteraf implementeren. Omdat globale variabelen elke fase beïnvloeden, moet u hen in plaatsen `global` stadium van de `.magento.env.yaml` bestand:
+Globale variabelen beheren acties in elke fase van het [!DNL Commerce] implementatieproces: maken, implementeren en na implementatie. Omdat globale variabelen elke fase beïnvloeden, moet u hen in het `global` stadium van het `.magento.env.yaml` dossier plaatsen:
 
 ```yaml
 stage:
@@ -29,14 +29,14 @@ Voor meer informatie over het aanpassen van het bouwstijl en opstellen proces:
 
 ## `ENABLE_EVENTING`
 
-- **Standaard**-_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.4.5 en hoger
+- **Gebrek** - _niet plaatste_
+- **Versie** - Adobe Commerce 2.4.5 en later
 
-Wanneer ingesteld op `true`, laat cron toe om berichtrijconsumenten in werking te stellen. Adobe I/O Gebeurtenissen voor Adobe Commerce gebruiken berichtenrijen om de levering van kritieke gebeurtenissen te versnellen.
+Als deze optie is ingesteld op `true` , kunnen gebruikers in de wachtrij met berichten worden uitgevoerd met uitsnijden. Adobe I/O Gebeurtenissen voor Adobe Commerce gebruiken berichtenrijen om de levering van kritieke gebeurtenissen te versnellen.
 
-Adobe raadt u aan ook de [`CRON_CONSUMERS_RUNNER`](./variables-deploy.md#cron_consumers_runner) aan de `deploy` stadium van de `.magento.env.yaml` bestand met `cron_run` instellen op `true`.
+Adobe raadt u aan ook de variabele [`CRON_CONSUMERS_RUNNER`](./variables-deploy.md#cron_consumers_runner) toe te voegen aan het `deploy` werkgebied van het `.magento.env.yaml` -bestand met `cron_run` ingesteld op `true` .
 
-Het volgende voorbeeld toont volledig gevormd `ENABLE_EVENTING` variabele.
+In het volgende voorbeeld wordt een volledig geconfigureerde `ENABLE_EVENTING` variabele getoond.
 
 ```yaml
 stage:
@@ -51,10 +51,10 @@ stage:
 
 ## ENABLE_WEBHOOKS
 
-- **Standaard**-_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.4.4 en hoger
+- **Gebrek** - _niet plaatste_
+- **Versie** - Adobe Commerce 2.4.4 en later
 
-Wanneer ingesteld op `true`, schakelt webhooks voor handel in. De webhaak wordt uitgevoerd op een extern eindpunt, zoals een runtimeactie van App Builder of een voorraadbeheersysteem van derden. De [_Handleiding voor webhaken_](https://developer.adobe.com/commerce/extensibility/webhooks) beschrijft deze functie in detail.
+Als deze optie is ingesteld op `true` , worden Commerce-webhaken ingeschakeld. De webhaak wordt uitgevoerd op een extern eindpunt, zoals een App Builder-runtimeactie of een voorraadbeheersysteem van derden. De [_Gids van Webhooks_ ](https://developer.adobe.com/commerce/extensibility/webhooks) beschrijft deze eigenschap in detail.
 
 ```yaml
 stage:
@@ -64,10 +64,10 @@ stage:
 
 ## `MIN_LOGGING_LEVEL`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Overschrijft het minimale registrerenniveau voor alle outputstromen zonder de code te veranderen, die wanneer het oplossen van problemenproblemen met plaatsing helpt. Bijvoorbeeld, als uw plaatsing ontbreekt, kunt u deze variabele gebruiken om de registrerengranulariteit globaal te verhogen. Zie [Logboekniveaus](log-handlers.md#log-levels). De `min_level` waarde in Logging-handlers overschrijft deze instelling.
+Overschrijft het minimale registrerenniveau voor alle outputstromen zonder de code te veranderen, die wanneer het oplossen van problemenproblemen met plaatsing helpt. Bijvoorbeeld, als uw plaatsing ontbreekt, kunt u deze variabele gebruiken om de registrerengranulariteit globaal te verhogen. Zie [ niveaus van het Logboek ](log-handlers.md#log-levels). De `min_level` -waarde in Logging-handlers overschrijft deze instelling.
 
 ```yaml
 stage:
@@ -77,16 +77,16 @@ stage:
 
 >[!WARNING]
 >
->De instelling voor de `MIN_LOGGING_LEVEL` variable verandert niet de configuratie van het logboekniveau voor de dossiermanager, die aan wordt geplaatst `debug` standaard.
+>De instelling voor de variabele `MIN_LOGGING_LEVEL` wijzigt de configuratie op logniveau voor de bestandshandler niet. Deze is standaard ingesteld op `debug` .
 
 ## `SCD_ON_DEMAND`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.1.4 en later
 
 Het genereren van statische inhoud op verzoek van een gebruiker (SCD) inschakelen. Statische inhoud op aanvraag is ideaal voor de ontwikkelings- en testworkflow, omdat hierdoor de implementatietijd afneemt.
 
-De cache vooraf laden met behulp van de [`post_deploy` haak](../application/hooks-property.md) verlaagt downtime van sites. De opwarming van het geheime voorgeheugen is beschikbaar slechts voor Pro projecten die het Opvoeren en de milieu&#39;s van de Productie in het [!DNL Cloud Console] en voor Starter-projecten. Voeg de `SCD_ON_DEMAND` omgevingsvariabele voor de `global` in de `.magento.env.yaml` bestand:
+Het vooraf laden van de cache met behulp van de [`post_deploy` haak ](../application/hooks-property.md) verlaagt de downtime van de site. De opwarming van het geheime voorgeheugen is beschikbaar slechts voor Pro projecten die het Opvoeren en van de Productie milieu&#39;s in [!DNL Cloud Console] bevatten en voor de projecten van de Aanzet. Voeg de omgevingsvariabele `SCD_ON_DEMAND` toe aan het `global` werkgebied in het `.magento.env.yaml` -bestand:
 
 ```yaml
 stage:
@@ -94,7 +94,7 @@ stage:
     SCD_ON_DEMAND: true
 ```
 
-De `SCD_ON_DEMAND` de variabele slaat SCD in beide fasen (bouwt en opstelt) over, ontruimt `pub/static` en `var/view_preprocessed` en schrijft het volgende naar de `app/etc/env.php` bestand:
+De variabele `SCD_ON_DEMAND` slaat het SCD in beide fasen over (bouwen en implementeren), wist de mappen `pub/static` en `var/view_preprocessed` en schrijft het volgende naar het `app/etc/env.php` -bestand:
 
 ```php?start_inline=1
 return array(
@@ -106,8 +106,8 @@ return array(
 
 ## `SCD_MAX_EXECUTION_TIME`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.2.0 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.2.0 en later
 
 Staat u toe om de maximale verwachte uitvoeringstijd voor statische inhoudsplaatsing te verhogen.
 
@@ -123,10 +123,10 @@ stage:
 
 ## `SCD_NO_PARENT`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.4.2 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.4.2 en later
 
-Instellen op `true` om het produceren van statische inhoud voor ouderthema&#39;s tijdens de bouw en plaatsingsfasen te verhinderen. Wanneer deze optie is ingesteld op `true`, wordt minder statische inhoud geproduceerd, die uw algemene bouwstijl en plaatsingstijden verbetert.
+Stel in op `true` om te voorkomen dat er statische inhoud voor bovenliggende thema&#39;s wordt gegenereerd tijdens de bouw- en implementatiefase. Wanneer deze optie op `true` wordt geplaatst, wordt minder statische inhoud geproduceerd, die uw algemene bouwstijl en plaatsingstijden verbetert.
 
 ```yaml
 stage:
@@ -136,12 +136,12 @@ stage:
 
 ## `SCD_USE_BALER`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.3.0 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.3.0 en later
 
-[Baler](https://github.com/magento/baler) is een module die uw gegenereerde JavaScript-code scant en een geoptimaliseerde JavaScript-bundel maakt. Als u de geoptimaliseerde bundel op uw site implementeert, kan het aantal netwerkaanvragen bij het laden van uw site afnemen en de laadtijden van de pagina verbeteren.
+[ Baler ](https://github.com/magento/baler) is een module die uw geproduceerde code van JavaScript aftasten en tot een geoptimaliseerde bundel van JavaScript leidt. Als u de geoptimaliseerde bundel op uw site implementeert, kan het aantal netwerkaanvragen bij het laden van uw site afnemen en de laadtijden van de pagina verbeteren.
 
-Instellen op `true` om Baler uit te voeren na het uitvoeren van statische inhoudsimplementatie.
+Stel dit in op `true` om Baler uit te voeren nadat u statische inhoud hebt geïmplementeerd.
 
 ```yaml
 stage:
@@ -155,17 +155,17 @@ stage:
 
 ## `SKIP_HTML_MINIFICATION`
 
-- **Standaard**:
-   - `true`—for `ece-tools` 2002.0.13 en hoger
+- **Gebrek**:
+   - `true`—voor `ece-tools` 2002.0.13 en hoger
    - `false`—voor eerdere versies van `ece-tools`
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Hiermee schakelt u het kopiëren van statische weergavebestanden naar de `<magento_root>/init/` directory aan het einde van het bouwstijlstadium. Indien ingesteld op `true`, worden de bestanden niet gekopieerd en is minificatie van de HTML beschikbaar op verzoek. Deze waarde instellen op `true` om downtime te reduceren bij de implementatie naar omgevingen voor Staging en Productie.
+Hiermee schakelt u het kopiëren van statische weergavebestanden naar de map `<magento_root>/init/` aan het einde van het werkgebied voor het bouwen in of uit. Als deze optie is ingesteld op `true` , worden de bestanden niet gekopieerd en is minificatie van de HTML op aanvraag beschikbaar. Stel deze waarde in op `true` om de downtime te verminderen bij de implementatie in de omgeving voor Staging en Productie.
 
-- **`false`**—Kopieert de `view_preprocessed` aan de `<magento_root>/init/` directory aan het eind van de bouwstijlfase, en herstelt de folder in `<magento_root>/var` aan het begin van de implementatiefase.
-- **`true`**—Schakelt HTML-minificatie op aanvraag in; doet dit _niet_ kopieer de `<magento_root>var/view_preprocessed` aan de `<magento_root>/init/` directory aan het eind van de bouwstijlfase.
+- **`false`** - Kopieert de `view_preprocessed` map naar de `<magento_root>/init/` -map aan het einde van de constructiefase en herstelt de map in de `<magento_root>/var` -map aan het begin van de implementatiefase.
+- **`true`** - laat op bestelling HTML minificatie toe; kopieert _niet_ `<magento_root>var/view_preprocessed` aan de `<magento_root>/init/` folder aan het eind van de bouwstijlfase.
 
-Voeg de `SKIP_HTML_MINIFICATION` omgevingsvariabele voor de `global` in de `.magento.env.yaml` bestand:
+Voeg de omgevingsvariabele `SKIP_HTML_MINIFICATION` toe aan het `global` werkgebied in het `.magento.env.yaml` -bestand:
 
 ```yaml
 stage:
@@ -175,19 +175,19 @@ stage:
 
 ## `X_FRAME_CONFIGURATION`
 
-- **Standaard**—_Niet ingesteld_
-- **Versie**—Adobe Commerce 2.1.4 en hoger
+- **Gebrek** - _niet plaats_
+- **Versie** - Adobe Commerce 2.1.4 en later
 
-Gebruik de `X_FRAME_CONFIGURATION` variabele om de [`X-Frame-Options`](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/xframe-options.html) headerconfiguratie voor je Adobe Commerce-site. Deze configuratie bepaalt hoe de browser een pagina in een `<frame>`, `<iframe>`, of `<object>`. Gebruik een van de volgende opties:
+Gebruik de `X_FRAME_CONFIGURATION` variabele om de [`X-Frame-Options` ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/xframe-options.html) kopbalconfiguratie voor uw plaats van Adobe Commerce te veranderen. Deze configuratie bepaalt hoe de browser een pagina in een `<frame>`, `<iframe>` of `<object>` rendert. Gebruik een van de volgende opties:
 
-- `DENY`—Pagina kan niet in een kader worden weergegeven.
-- `SAMEORIGIN`— (De standaard Adobe Commerce-instelling.) De pagina kan alleen worden weergegeven in een kader dat zich op dezelfde oorsprong bevindt als de pagina zelf.
+- `DENY` - De pagina kan niet in een kader worden getoond.
+- `SAMEORIGIN`—(De standaard Adobe Commerce-instelling.) De pagina kan alleen worden weergegeven in een kader dat zich op dezelfde oorsprong bevindt als de pagina zelf.
 
 >[!WARNING]
 >
->De `ALLOW-FROM <uri>` Deze optie is vervangen omdat de door Adobe Commerce ondersteunde browsers deze niet meer ondersteunen. Zie [Browsercompatibiliteit](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility).
+>De optie `ALLOW-FROM <uri>` is vervangen omdat deze niet meer wordt ondersteund door browsers die door Adobe Commerce worden ondersteund. Zie [ Browser verenigbaarheid ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility).
 
-Voeg de `X_FRAME_CONFIGURATION` omgevingsvariabele voor de `global` in de `.magento.env.yaml` bestand:
+Voeg de omgevingsvariabele `X_FRAME_CONFIGURATION` toe aan het `global` werkgebied in het `.magento.env.yaml` -bestand:
 
 ```yaml
 stage:

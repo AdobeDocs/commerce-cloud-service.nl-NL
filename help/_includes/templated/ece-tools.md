@@ -8,14 +8,14 @@ ht-degree: 0%
 # Gereedschappen
 
 <!-- The template to render with above values -->
-**Versie** 2002.1.18
+**Versie**: 2002.1.18
 
-Deze verwijzing bevat 34 bevelen beschikbaar door `ece-tools` opdrachtregelprogramma.
-De eerste lijst wordt automatisch gegenereerd met de opdracht `ece-tools list` in Adobe Commerce op cloudinfrastructuur.
+Deze verwijzing bevat 34 opdrachten die beschikbaar zijn via het opdrachtregelprogramma van `ece-tools` .
+De eerste lijst wordt automatisch gegenereerd met de opdracht `ece-tools list` in Adobe Commerce op de cloud-infrastructuur.
 
 >[!NOTE]
 >
->Deze verwijzing wordt gegenereerd op basis van de toepassingscodebase. Als u de inhoud wilt wijzigen, kunt u de broncode voor de corresponderende opdrachtimplementatie bijwerken in het dialoogvenster [codebase](https://github.com/magento/magento-cloud-cli) opslaan en uw wijzigingen ter controle verzenden. Een andere manier is om _Feedback geven_ (zoek de koppeling in de rechterbovenhoek). Zie voor richtsnoeren voor bijdragen [Codebijdragen](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
+>Deze verwijzing wordt gegenereerd op basis van de toepassingscodebase. Om de inhoud te veranderen, kunt u de broncode voor de overeenkomstige bevelimplementatie in de [ codebase ](https://github.com/magento/magento-cloud-cli) bewaarplaats bijwerken en uw veranderingen voor overzicht voorleggen. Een andere manier is ons _geven terugkoppelt_ (vind de verbinding bij het hogere recht). Voor bijdragerichtsnoeren, zie {de Bijdragen van de Code 0} ](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).[
 
 ## `_complete`
 
@@ -33,7 +33,7 @@ Het schelpdiertype (&quot;bash&quot;, &quot;fish&quot;, &quot;zsh&quot;)
 
 ### `--input`, `-i`
 
-Een array van invoertokens (bv. COMP_WORDS of argv)
+Een array van invoertokens (bijvoorbeeld COMP_WORDS of argv)
 
 - Standaard: `[]`
 - Vereist een waarde
@@ -243,7 +243,7 @@ ece-tools db-dump [-d|--remove-definers] [-a|--dump-directory DUMP-DIRECTORY] [-
 
 ### `databases`
 
-Databases voor back-up. Beschikbare waarden: [belangrijkste prijsopgave]. Als de argumentwaarde niet wordt gespecificeerd, zullen de gegevensbestandsteunen worden gecreeerd gebruikend de geloofsbrieven die in worden opgeslagen `MAGENTO_CLOUD_RELATIONSHIP` omgevingsvariabele of/en de `stage.deploy.DATABASE_CONFIGURATION` eigenschap van het .magento.env.yaml-configuratiebestand.
+Databases voor back-up. Beschikbare Waarden: [ belangrijkste citaatverkoop ]. Als de argumentwaarde niet wordt gespecificeerd, zullen de gegevensbestandsteunen worden gecreeerd gebruikend de geloofsbrieven die in `MAGENTO_CLOUD_RELATIONSHIP` worden opgeslagen omgevingsvariabele of/en het `stage.deploy.DATABASE_CONFIGURATION` bezit van het .magento.env.yaml configuratiedossier.
 
 - Standaard: `[]`
 
@@ -955,7 +955,7 @@ Geen interactieve vraag stellen
 
 ## `cloud:config:create`
 
-Maakt een `.magento.env.yaml` bestand met de opgegeven configuratie voor het samenstellen, implementeren en achteraf implementeren van variabelen. Hiermee overschrijft u bestaande `.magento,.env.yaml` bestand.
+Maakt een `.magento.env.yaml` -bestand met de opgegeven configuratie van variabelen voor samenstellen, implementeren en achteraf implementeren. Hiermee overschrijft u een bestaand `.magento,.env.yaml` -bestand.
 
 ```bash
 ece-tools cloud:config:create <configuration>
@@ -1019,7 +1019,7 @@ Geen interactieve vraag stellen
 
 ## `cloud:config:update`
 
-Hiermee werkt u het bestaande `.magento.env.yaml` bestand met de opgegeven configuratie. Creates `.magento.env.yaml` bestand als dit niet bestaat.
+Werkt het bestaande `.magento.env.yaml` dossier met de gespecificeerde configuratie bij. Maakt een `.magento.env.yaml` -bestand als dit niet bestaat.
 
 ```bash
 ece-tools cloud:config:update <configuration>
@@ -1083,7 +1083,7 @@ Geen interactieve vraag stellen
 
 ## `cloud:config:validate`
 
-Valideert `.magento.env.yaml` configuratiebestand
+Valideert het configuratiebestand `.magento.env.yaml`
 
 ```bash
 ece-tools cloud:config:validate

@@ -15,16 +15,16 @@ ht-degree: 0%
 
 Uw Adobe Commerce on cloud Infrastructure Pro-architectuur ondersteunt meerdere omgevingen die u kunt gebruiken om uw winkel te ontwikkelen, te testen en te starten.
 
-- **Master**—Biedt een `master` tak die aan Platform als de dienstcontainers (PaaS) wordt opgesteld.
-- **Integratie**—Verstrekt één enkele `integration` vertakking voor ontwikkeling, hoewel u één extra tak kunt tot stand brengen. Dit maakt maximaal twee _actief_ de takken die aan Platform als de dienstcontainers (PaaS) worden opgesteld.
-- **Staging**—Verstrekt één enkele `staging` tak die aan specifieke Infrastructuur als dienstcontainers (IaaS) wordt opgesteld.
-- **Productie**—Verstrekt één enkele `production` tak die aan specifieke Infrastructuur als dienstcontainers (IaaS) wordt opgesteld.
+- **Meester** - verstrekt a `master` tak die aan Platform als de dienstcontainers (PaaS) wordt opgesteld.
+- **Integratie** - verstrekt één enkele `integration` tak voor ontwikkeling, hoewel u één extra tak kunt tot stand brengen. Dit staat voor maximaal twee _actieve_ takken toe die aan Platform als de dienstcontainers (PaaS) worden opgesteld.
+- **het Opvoeren** - verstrekt één enkele `staging` tak die aan specifieke Infrastructuur als de dienstcontainers (IaaS) wordt opgesteld.
+- **Productie** - verstrekt één enkele `production` tak die aan specifieke Infrastructuur als de dienstcontainers (IaaS) wordt opgesteld.
 
 De volgende tabel geeft een overzicht van de verschillen tussen omgevingen:
 
 |                                        | INTEGRATIE | STAGING | PRODUCTIE |
 | -------------------------------------- | ----------- | ----------------- | -------------------- |
-| Ondersteunt het instellingenbeheer in het dialoogvenster [!DNL Cloud Console] | Ja | Beperkt | Beperkt |
+| Ondersteunt het instellingenbeheer in de [!DNL Cloud Console] | Ja | Beperkt | Beperkt |
 | Ondersteunt meerdere takken | Ja | Nee (alleen Staging) | Nee (alleen productie) |
 | Gebruikt YAML-bestanden voor configuratie | Ja | Nee | Nee |
 | Wordt uitgevoerd op toegewezen IaaS-hardware | Nee | Ja | Ja |
@@ -34,27 +34,27 @@ De volgende tabel geeft een overzicht van de verschillen tussen omgevingen:
 
 >[!NOTE]
 >
->Adobe biedt het hulpprogramma Cloud Docker for Commerce voor het implementeren naar een lokale Cloud Docker-omgeving zodat u Adobe Commerce-projecten kunt ontwikkelen en testen. Zie [Dockingontwikkeling](../dev-tools/cloud-docker.md).
+>Adobe biedt het hulpprogramma Cloud Docker voor Commerce voor het implementeren naar een lokale Cloud Docker-omgeving zodat u Adobe Commerce-projecten kunt ontwikkelen en testen. Zie {de ontwikkeling van 0} Docker ](../dev-tools/cloud-docker.md).[
 
 ## Omgevingsarchitectuur
 
-Uw project is één Git-opslagplaats met drie belangrijke omgevingsvertakkingen: `integration`, `staging`, en `production`. Het volgende diagram toont de hiërarchische verhouding van Pro milieu&#39;s:
+Uw project is één Git-opslagplaats met drie belangrijke omgevingsvertakkingen: `integration`, `staging` en `production` . Het volgende diagram toont de hiërarchische verhouding van Pro milieu&#39;s:
 
-![Weergave op hoog niveau van de Pro-omgevingsarchitectuur](../../assets/pro-branch-architecture.png)
+![ mening op hoog niveau van Pro milieuarchitectuur ](../../assets/pro-branch-architecture.png)
 
 ### Hoofdomgeving
 
-Bij Pro-projecten worden de `master` de tak verstrekt een actieve milieu van PaaS met uw productiemilieu. Een kopie van de productiecode altijd naar de `master` milieu zodat u het productiemilieu kunt zuiveren zonder de diensten te onderbreken.
+Bij Pro-projecten biedt de `master` -vertakking een actieve PaaS-omgeving met uw productieomgeving. Duw altijd een exemplaar van de productiecode aan het `master` milieu zodat u het productiemilieu kunt zuiveren zonder de diensten te onderbreken.
 
-**Voorbehouden:**
+**beveats:**
 
-- Do **niet** een vertakking maken op basis van de `master` vertakking. Gebruik de integratieomgeving om actieve vertakkingen voor ontwikkeling te maken.
+- Creëer **** geen tak die op de `master` tak wordt gebaseerd. Gebruik de integratieomgeving om actieve vertakkingen voor ontwikkeling te maken.
 
-- Gebruik de `master` omgeving voor ontwikkelings-, UAT- of prestatietests
+- Gebruik de `master` -omgeving niet voor ontwikkelings-, UAT- of prestatietests
 
 ### Integratieomgeving
 
-De integratieomgeving wordt uitgevoerd in een Linux-container (LXC) op een raster met servers die PaaS wordt genoemd. Elke omgeving bevat een webserver en database waarmee u uw site kunt testen. Zie [Regionale IP-adressen](../project/regional-ip-addresses.md) voor een lijst van AWS en Azure IP adressen.
+De integratieomgeving wordt uitgevoerd in een Linux-container (LXC) op een raster met servers die PaaS wordt genoemd. Elke omgeving bevat een webserver en database waarmee u uw site kunt testen. Zie [ Regionale IP Adressen ](../project/regional-ip-addresses.md) voor een lijst van AWS en Azure IP adressen.
 
 **Aanbevolen gebruiksgevallen:**
 
@@ -72,15 +72,15 @@ Voor de beste prestaties in de integratieomgeving volgt u de volgende aanbevolen
 
 - Snijtaken uitschakelen en indien nodig handmatig uitvoeren
 
-**Voorbehouden:**
+**beveats:**
 
 - Snelle CDN- en New Relic-services zijn niet toegankelijk in een integratieomgeving
 
 - De architectuur van het integratiemilieu past niet de Staging en architectuur van de Productie aan
 
-- Gebruik de `integration` omgeving voor het testen van de ontwikkeling, het testen van de prestaties, of het testen van de gebruikersacceptatie (UAT)
+- Gebruik de `integration` -omgeving niet voor het testen van de ontwikkeling, het testen van de prestaties of het testen van de gebruikersacceptatie (UAT)
 
-- Gebruik de `integration` omgeving om B2B voor Adobe Commerce-functionaliteit te testen
+- Gebruik de `integration` -omgeving niet om B2B voor Adobe Commerce-functionaliteit te testen
 
 - U kunt de database niet terugzetten in de integratieomgeving vanuit de databaseproductie of -staging
 
@@ -92,7 +92,7 @@ De testomgeving biedt een omgeving voor bijna-productie om uw site te testen. De
 
 **Aanbevolen gebruiksgevallen:**
 
-De omgeving komt overeen met de productiearchitectuur en is ontworpen voor UAT, inhoudstaging en definitieve revisie voordat de functies naar de `production` milieu. U kunt bijvoorbeeld de opdracht `staging` omgeving om de volgende taken uit te voeren:
+De omgeving komt overeen met de productiearchitectuur en is ontworpen voor UAT, inhoudstaging en definitieve revisie voordat de functies naar de `production` -omgeving worden verplaatst. U kunt bijvoorbeeld de `staging` -omgeving gebruiken om de volgende taken uit te voeren:
 
 - Regressietest aan de hand van productiegegevens
 
@@ -106,52 +106,52 @@ De omgeving komt overeen met de productiearchitectuur en is ontworpen voor UAT, 
 
 - De configuratie van de uitsnede aanpassen en de taken voor uitsnijden testen
 
-Zie [Implementatieworkflow](pro-develop-deploy-workflow.md#deployment-workflow) en [Implementatie testen](../test/staging-and-production.md).
+Zie [ het werkschema van de Plaatsing ](pro-develop-deploy-workflow.md#deployment-workflow) en [ plaatsing van de Test ](../test/staging-and-production.md).
 
-**Voorbehouden:**
+**beveats:**
 
 - Na het lanceren van de productielocatie, gebruik het het opvoeren milieu hoofdzakelijk om flarden voor productie-kritieke insectenmoeilijke situaties te testen.
 
-- U kunt geen vertakking maken van de `staging` vertakking. In plaats daarvan voert u wijzigingen in de code uit `integration` vertakken naar `staging` vertakking.
+- U kunt geen vertakking maken van de `staging` -vertakking. In plaats daarvan verandert de code van de `integration` -vertakking in de `staging` -vertakking.
 
 ### Productieomgeving
 
-De productieomgeving voert uw openbare, naar wens enkelvoudige en multisite winkels uit. Deze omgeving wordt uitgevoerd op toegewezen IaaS-hardware met redundante knooppunten met hoge beschikbaarheid voor continue toegang en failover-beveiliging voor uw klanten. De productieomgeving omvat alle services in de testomgeving, plus de [New Relic Infrastructure (NRI)](../monitor/new-relic-service.md#new-relic-infrastructure) service, die automatisch verbinding maakt met de toepassingsgegevens en prestatieanalyses voor dynamische serverbewaking.
+De productieomgeving voert uw openbare, naar wens enkelvoudige en multisite winkels uit. Deze omgeving wordt uitgevoerd op toegewezen IaaS-hardware met redundante knooppunten met hoge beschikbaarheid voor continue toegang en failover-beveiliging voor uw klanten. Het productiemilieu omvat alle diensten in het opvoeren milieu, plus de [ dienst van de Infrastructuur van New Relic (NRI) ](../monitor/new-relic-service.md#new-relic-infrastructure), die automatisch met de toepassingsgegevens en prestatiesanalyses verbindt om dynamische servercontrole te verstrekken.
 
-**Voorbehoud:**
+**Beveat:**
 
-U kunt geen vertakking maken van de `production` vertakking. In plaats daarvan voert u wijzigingen in de code uit `staging` vertakken naar `production` vertakking.
+U kunt geen vertakking maken van de `production` -vertakking. In plaats daarvan verandert de code van de `staging` -vertakking in de `production` -vertakking.
 
 ### Stapel productietechnologie
 
 De productieomgeving heeft drie virtuele machines (VM&#39;s) achter een Elastic Load Balancer die wordt beheerd door een HAProxy per VM. Elke VM bevat de volgende technologieën:
 
-- **Fastly CDN**—HTTP-caching en CDN
+- **snel CDN** - HTTP caching en CDN
 
-- **NGINX**—webserver met PHP-FPM, één instantie met meerdere workers
+- **NGINX** - Webserver die PHP-FPM gebruikt, één instantie met veelvoudige arbeiders
 
-- **GlusterFS**—bestandsserver voor het beheer van alle implementaties van statische bestanden en synchronisatie met vier directorymontageprogramma&#39;s:
+- **GlusterFS** - dossierserver voor het beheren van alle statische dossierplaatsingen en synchronisatie met vier foldersteunen:
 
    - `var`
    - `pub/media`
    - `pub/static`
    - `app/etc`
 
-- **Redis**—één server per VM met slechts één actief en de andere twee als replica&#39;s
+- **herstelt** - één server per VM met slechts één actief en andere twee als replica&#39;s
 
-- **Elasticsearch**—Adobe Commerce zoeken naar cloudinfrastructuur 2.2 tot 2.4.3-p2
+- **Elasticsearch** - onderzoek naar Adobe Commerce op wolkeninfrastructuur 2.2 aan 2.4.3-p2
 
-- **OpenSearch**—Adobe Commerce zoeken naar cloudinfrastructuur 2.3.7-p3, 2.4.3-p2, 2.4.4 en hoger
+- **OpenSearch** - onderzoek naar Adobe Commerce op wolkeninfrastructuur 2.3.7-p3, 2.4.3-p2, 2.4.4 en later
 
-- **Galera**—databasecluster met één MariaDB MySQL-database per knooppunt met een automatisch verhogende instelling van drie voor unieke id&#39;s voor elke database
+- **Galera** - gegevensbestandcluster met één gegevensbestand MariaDB MySQL per knoop met auto-verhogen het plaatsen van drie voor unieke identiteitskaarts over elk gegevensbestand
 
 De volgende afbeelding toont de technologieën die in de productieomgeving worden gebruikt:
 
-![Stapel productietechnologie](../../assets/az-stack-diagram.png)
+![ de technologiestapel van de Productie ](../../assets/az-stack-diagram.png)
 
 ## Redundante hardware
 
-In plaats van een traditioneel, actief-passief `master` Voor een primaire secundaire configuratie voert Adobe Commerce op cloudinfrastructuur een _redundante architectuur_ waarbij alle drie instanties lezen en schrijven accepteren. Deze architectuur biedt geen onderbreking wanneer het schrapen aan en verstrekt gewaarborgde transactionele integriteit.
+Eerder dan het in werking stellen van een traditioneel, actief-passief `master` of een primair-secundaire opstelling, stelt Adobe Commerce op wolkeninfrastructuur a _overtollige architectuur_ in werking waar alle drie instanties lezen en schrijven goedkeuren. Deze architectuur biedt geen onderbreking wanneer het schrapen aan en verstrekt gewaarborgde transactionele integriteit.
 
 Vanwege de unieke, redundante hardware kan Adobe drie gatewayservers leveren. De meeste externe diensten laten u toe om veelvoudige IP adressen aan een lijst van gewenste personen toe te voegen, zodat heeft meer dan één vast IP adres geen probleem is. De drie gateways wijzen aan de drie servers in uw cluster van het productiemilieu toe en behouden statische IP adressen. Het is volledig overtollig en hoogst beschikbaar op elk niveau:
 
@@ -162,13 +162,13 @@ Vanwege de unieke, redundante hardware kan Adobe drie gatewayservers leveren. De
 
 ## Back-up en noodherstel
 
-Adobe Commerce op cloudinfrastructuur maakt gebruik van een architectuur met hoge beschikbaarheid die elk Pro-project repliceert op drie aparte AWS- of Azure-beschikbaarheidszones, elke zone met een afzonderlijk datacenter. Naast deze overtolligheid, ontvangen de Pro het opvoeren en productiemilieu&#39;s regelmatige, levende steunen die voor gebruik in gevallen van worden ontworpen _catastrofale fout_.
+Adobe Commerce op cloudinfrastructuur maakt gebruik van een architectuur met hoge beschikbaarheid die elk Pro-project repliceert op drie aparte AWS- of Azure-beschikbaarheidszones, elke zone met een afzonderlijk datacenter. Naast deze overtolligheid, ontvangen de Pro het opvoeren en productiemilieu&#39;s regelmatige, levende steunen die voor gebruik in gevallen van _catastrofale mislukking_ worden ontworpen.
 
-**Automatische back-ups** bevat permanente gegevens van alle actieve services, zoals de MySQL-database en bestanden die zijn opgeslagen op de gekoppelde volumes. De back-ups worden opgeslagen in gecodeerde EBS (Elastic Block Storage) in hetzelfde gebied als de productieomgeving. De automatische steunen zijn niet openbaar toegankelijk omdat zij in een afzonderlijk systeem worden opgeslagen.
+**Automatische steunen** omvatten blijvende gegevens van alle lopende diensten, zoals het gegevensbestand MySQL en dossiers die op de opgezette volumes worden opgeslagen. De back-ups worden opgeslagen in gecodeerde EBS (Elastic Block Storage) in hetzelfde gebied als de productieomgeving. De automatische steunen zijn niet openbaar toegankelijk omdat zij in een afzonderlijk systeem worden opgeslagen.
 
 {{pro-backups}}
 
-U kunt een **handmatige back-up** van het gegevensbestand voor uw het Opvoeren en milieu&#39;s van de Productie die CLI bevelen gebruiken. Zie [Back-up maken van de database](../storage/database-dump.md). Voor `integration` Adobe raadt u aan een back-up te maken als eerste stap nadat u uw Adobe Commerce hebt benaderd voor een infrastructuurproject in de cloud en voordat u belangrijke wijzigingen aanbrengt. Zie [Back-upbeheer](../storage/snapshots.md).
+U kunt a **handsteun** van het gegevensbestand voor uw het Opvoeren en milieu&#39;s van de Productie tot stand brengen gebruikend bevelen CLI. Zie [ file het gegevensbestand ](../storage/database-dump.md). Voor `integration` -omgevingen raadt de Adobe aan een back-up te maken als eerste stap nadat ze uw Adobe Commerce hebben benaderd voor een cloud-infrastructuurproject en voordat ze belangrijke wijzigingen aanbrengen. Zie [ Reservekopiebeheer ](../storage/snapshots.md).
 
 ### Doelstelling herstelpunt
 
@@ -198,8 +198,8 @@ RTO is afhankelijk van de grootte van de opslag. Grote EBS-volumes hebben meer t
 
 ## Schalen in Pro-clusters
 
-De grootte van de Pro-cluster en _berekenen_ afhankelijk van de gekozen cloudprovider (AWS, Azure), regio en serviceafhankelijkheden. De de wolkeninfrastructuur van de Adobe kan Pro clusters schrapen om verkeersverwachtingen en de dienstvereisten aan te passen aangezien de vraag verandert.
+Het Pro cluster rangschikken en _verwerkt_ configuraties afhankelijk van de gekozen wolkenleverancier (AWS, Azure), gebied, en de dienstgebiedsdelen. De de wolkeninfrastructuur van de Adobe kan Pro clusters schrapen om verkeersverwachtingen en de dienstvereisten aan te passen aangezien de vraag verandert.
 
-De overtollige architectuur laat de Adobe wolkeninfrastructuur toe om zonder onderbreking te verhogen. Bij upscaling roteert elk van de drie instanties om de capaciteit te upgraden zonder dat dit invloed heeft op de sitebewerking. U kunt bijvoorbeeld extra webservers toevoegen aan een bestaande cluster als de beperking zich op PHP-niveau bevindt in plaats van op databaseniveau. Dit biedt _horizontale schaling_ om de verticale schaling aan te vullen die wordt geboden door extra CPU&#39;s op databaseniveau. Zie [Schaalbare architectuur](scaled-architecture.md).
+De overtollige architectuur laat de Adobe wolkeninfrastructuur toe om zonder onderbreking te verhogen. Bij upscaling roteert elk van de drie instanties om de capaciteit te upgraden zonder dat dit invloed heeft op de sitebewerking. U kunt bijvoorbeeld extra webservers toevoegen aan een bestaande cluster als de beperking zich op PHP-niveau bevindt in plaats van op databaseniveau. Dit verstrekt _horizontaal schrapen_ om het verticale schrapen aan te vullen die door extra CPUs op het gegevensbestandniveau wordt verstrekt. Zie [ Schaalde architectuur ](scaled-architecture.md).
 
-Als u een significante toename van verkeer voor een gebeurtenis of een andere reden verwacht, kunt u om een tijdelijke verhoging van capaciteit verzoeken. Zie [Een tijdelijke upgrade aanvragen](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/how-to-request-temporary-magento-upsize.html) in de _Commerce Help Center_.
+Als u een significante toename van verkeer voor een gebeurtenis of een andere reden verwacht, kunt u om een tijdelijke verhoging van capaciteit verzoeken. Zie [ hoe te om een tijdelijke upsize ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/how-to-request-temporary-magento-upsize.html) in het _Centrum van de Hulp van Commerce_ te verzoeken.

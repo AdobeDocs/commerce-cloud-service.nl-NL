@@ -10,21 +10,21 @@ ht-degree: 0%
 
 ---
 
-# Instellen [!DNL RabbitMQ] service
+# [!DNL RabbitMQ] -service instellen
 
-De [Het Kader van de Rij van het bericht (MQF)](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) is een systeem in Adobe Commerce dat een [module](https://glossary.magento.com/module) om berichten aan rijen te publiceren. Het bepaalt ook de consumenten die de berichten asynchroon ontvangen.
+Het [ Kader van de Rij van het Bericht (MQF) ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) is een systeem binnen Adobe Commerce dat a [ module ](https://glossary.magento.com/module) toestaat om berichten aan rijen te publiceren. Het bepaalt ook de consumenten die de berichten asynchroon ontvangen.
 
-Het MQF-gebruik [RabbitMQ](https://www.rabbitmq.com/) als overseinenmakelaar, die een scalable platform voor het verzenden van en het ontvangen van berichten verstrekt. Het omvat ook een mechanisme voor het opslaan van niet-geleverde berichten. [!DNL RabbitMQ] is gebaseerd op de Geavanceerde specificatie 0.9.1 van het Protocol van de Een rij vormen van het Bericht (AMQP).
+MQF gebruikt [ RabbitMQ ](https://www.rabbitmq.com/) als overseinenmakelaar, die een scalable platform voor het verzenden van en het ontvangen van berichten verstrekt. Het omvat ook een mechanisme voor het opslaan van niet-geleverde berichten. [!DNL RabbitMQ] is gebaseerd op de Geavanceerde specificatie 0.9.1 van het een rij vormen van het Bericht van het Protocol (AMQP).
 
 >[!WARNING]
 >
->Als u liever een bestaande AMQP-service gebruikt, zoals [!DNL RabbitMQ]in plaats van op Adobe Commerce te vertrouwen op cloudinfrastructuur om deze voor u te maken, kunt u de [`QUEUE_CONFIGURATION`](../environment/variables-deploy.md#queue_configuration) omgevingsvariabele om deze aan te sluiten op uw site.
+>Als u liever een bestaande AMQP-gebaseerde service gebruikt, zoals [!DNL RabbitMQ] , in plaats van Adobe Commerce op cloudinfrastructuur te vertrouwen om deze voor u te maken, gebruikt u de [`QUEUE_CONFIGURATION`](../environment/variables-deploy.md#queue_configuration) -omgevingsvariabele om deze aan uw site te koppelen.
 
 {{service-instruction}}
 
-**RabbitMQ inschakelen**:
+**om RabbitMQ** toe te laten:
 
-1. Voeg de vereiste naam, het type en de schijfwaarde (in MB) toe aan de `.magento/services.yaml` samen met de geïnstalleerde versie van RabbitMQ.
+1. Voeg de vereiste naam, het type en de schijfwaarde (in MB) toe aan het `.magento/services.yaml` -bestand en aan de geïnstalleerde RabbitMQ-versie.
 
    ```yaml
    rabbitmq:
@@ -32,7 +32,7 @@ Het MQF-gebruik [RabbitMQ](https://www.rabbitmq.com/) als overseinenmakelaar, di
        disk: 1024
    ```
 
-1. Configureer de relaties in de `.magento.app.yaml` bestand.
+1. Configureer de relaties in het `.magento.app.yaml` -bestand.
 
    ```yaml
    relationships:
@@ -53,7 +53,7 @@ Het MQF-gebruik [RabbitMQ](https://www.rabbitmq.com/) als overseinenmakelaar, di
    git push origin <branch-name>
    ```
 
-1. [Verifieer de de dienstverhoudingen](services-yaml.md#service-relationships).
+1. [ verifieer de de dienstverhoudingen ](services-yaml.md#service-relationships).
 
 {{service-change-tip}}
 
@@ -67,7 +67,7 @@ Voor het zuiveren doeleinden, is het nuttig om met een de dienstinstantie op é�
 
 ### Verbinding maken met uw lokale ontwikkelomgeving
 
-1. Aanmelden bij de `magento-cloud` CLI en project:
+1. Meld u aan bij de `magento-cloud` CLI en het project:
 
    ```bash
    magento-cloud login
@@ -85,7 +85,7 @@ Voor het zuiveren doeleinden, is het nuttig om met een de dienstinstantie op é�
    magento-cloud ssh
    ```
 
-1. Haal de gegevens van de RabbitMQ-verbinding en aanmeldingsgegevens op via [$MAGENTO_CLOUD_RELATIONSHIPS](../application/properties.md#relationships) variabele:
+1. Haal de de verbindingsdetails van RabbitMQ en login geloofsbrieven van [$MAGENTO_CLOUD_RELATIONSHIPS ](../application/properties.md#relationships) variabele terug:
 
    ```bash
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
@@ -114,7 +114,7 @@ Voor het zuiveren doeleinden, is het nuttig om met een de dienstinstantie op é�
    }
    ```
 
-1. Laat lokale haven toe door:sturen aan RabbitMQ (als uw project op een verschillend gebied zoals V.S.-3, EU-5, of AP-3 gebied wordt gevestigd, substitueer ``us-3``/``eu-5``/``ap-3`` for ``us``)
+1. Enable local port forward to RabbitMQ (als uw project zich op een verschillend gebied zoals V.S.-3, EU-5, of AP-3 gebied bevindt, substitueer ``us-3``/``eu-5``/``ap-3`` for ``us``)
 
    ```bash
    ssh -L <port-number>:rabbitmq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
@@ -126,11 +126,11 @@ Voor het zuiveren doeleinden, is het nuttig om met een de dienstinstantie op é�
    ssh -L 15672:rabbitmq.internal:15672 <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
    ```
 
-1. Terwijl de sessie geopend is, kunt u een RabbitMQ-client naar keuze starten vanaf uw lokale werkstation, geconfigureerd om verbinding te maken met de `localhost:<portnumber>` het gebruiken van het havenaantal, gebruikersbenaming, en wachtwoordinformatie van de MAGENTO_CLOUD_RELATIONSHIPS variabele.
+1. Terwijl de zitting open is, kunt u een cliënt van RabbitMQ van uw keus van uw lokaal werkstation beginnen, die wordt gevormd om met `localhost:<portnumber>` te verbinden gebruikend het havenaantal, gebruikersbenaming, en wachtwoordinformatie van de variabele MAGENTO_CLOUD_RELATIONSHIPS.
 
 ### Verbinding maken vanuit de toepassing
 
-Als u verbinding wilt maken met RabbitMQ die wordt uitgevoerd in een toepassing, installeert u een client, zoals [amqp-utils](https://github.com/dougbarth/amqp-utils), als projectafhankelijkheid in uw `.magento.app.yaml` bestand.
+Om met RabbitMQ te verbinden die in een toepassing loopt, installeer een cliënt, zoals [ amqp-utils ](https://github.com/dougbarth/amqp-utils), als projectgebiedsdeel in uw `.magento.app.yaml` dossier.
 
 Bijvoorbeeld:
 
@@ -140,8 +140,8 @@ dependencies:
         amqp-utils: "0.5.1"
 ```
 
-Wanneer u zich aanmeldt bij uw PHP-container, voert u een `amqp-` beschikbaar om uw rijen te beheren.
+Wanneer u zich aanmeldt bij uw PHP-container, voert u een `amqp-` -opdracht in die beschikbaar is voor het beheren van uw wachtrijen.
 
 ### Verbinding maken met uw PHP-toepassing
 
-Als u verbinding wilt maken met RabbitMQ via uw PHP-toepassing, voegt u een PHP toe [bibliotheek](https://glossary.magento.com/library) naar de bronstructuur.
+Om met RabbitMQ te verbinden gebruikend uw toepassing PHP, voeg een PHP [ bibliotheek ](https://glossary.magento.com/library) aan uw bronboom toe.

@@ -1,6 +1,6 @@
 ---
 title: Omgeving configureren
-description: Leer hoe te om bouwstijl te vormen en acties over alle Handel op de milieu's van de wolkeninfrastructuur, met inbegrip van Pro het Staging en Productie op te stellen, gebruikend omgevingsvariabelen.
+description: Leer hoe u ontwikkelings- en implementatieacties in alle Commerce kunt configureren in omgevingen met cloudinfrastructuren, waaronder Pro Staging en Production, met behulp van omgevingsvariabelen.
 feature: Cloud, Build, Configuration, Deploy, SCD
 role: Developer
 exl-id: 66e257e2-1eca-4af5-9b56-01348341400b
@@ -13,40 +13,40 @@ ht-degree: 0%
 
 # Omgevingsvariabelen voor implementatie configureren
 
-De `.magento.env.yaml` het dossier gebruikt omgevingsvariabelen om het beheer van bouwstijl te centraliseren en acties over al uw milieu&#39;s, met inbegrip van Pro het Staging en Productie op te stellen. Om unieke acties in elke milieu te vormen, moet u dit dossier in elke milieu wijzigen.
+Het bestand van `.magento.env.yaml` gebruikt omgevingsvariabelen om het beheer van het maken en implementeren van acties in al uw omgevingen te centraliseren, inclusief Pro Staging en Production. Om unieke acties in elke milieu te vormen, moet u dit dossier in elke milieu wijzigen.
 
 >[!TIP]
 >
->YAML-bestanden zijn hoofdlettergevoelig en staan geen tabs toe. Wees voorzichtig met het gebruik van consistente inspringing in de gehele `.magento.env.yaml` of uw configuratie werkt mogelijk niet zoals verwacht. De voorbeelden in de documentatie en in het voorbeeldbestand gebruiken _met twee spaties_ inspringing. Gebruik de [ece-tools validate, opdracht](#validate-configuration-file) om uw configuratie te controleren.
+>YAML-bestanden zijn hoofdlettergevoelig en staan geen tabs toe. Wees voorzichtig met het gebruik van consistente inspringing in het `.magento.env.yaml` -bestand, anders werkt de configuratie mogelijk niet naar behoren. De voorbeelden in de documentatie en in het steekproefdossier gebruiken _twee-ruimte_ inspringing. Gebruik de [ knoop-hulpmiddelen bevestigen bevel ](#validate-configuration-file) om uw configuratie te controleren.
 
 ## Bestandsstructuur
 
-De `.magento.env.yaml` bestand bevat twee secties: `stage` en `log`. De `stage` sectie controleert acties die tijdens de fasen van [Implementatieproces voor cloud](../deploy/process.md).
+Het bestand `.magento.env.yaml` bevat twee secties: `stage` en `log` . De `stage` sectie controleert acties die tijdens de fasen van het [ de plaatsingsproces van de Wolk ](../deploy/process.md) voorkomen.
 
-- `stage`—Gebruik de sectie Werkgebied om bepaalde acties voor de volgende stadia van plaatsing te bepalen:
-   - `global`—Controles acties in zowel de bouw, opstellen, en post-opstelt fasen. U kunt deze montages in bouwstijl met voeten treden, opstelt, en post-opstelt secties.
-   - `build`—Controls acties in de bouwstijlfase slechts. Als u geen montages in deze sectie specificeert, gebruikt de bouwstijlfase montages van de globale sectie.
-   - `deploy`—Controles acties in opstellen slechts fase. Als u geen montages in deze sectie specificeert, de plaatsingsfase gebruikt montages van de globale sectie.
-   - `post-deploy`—Besturingsacties _na_ de implementatie van uw toepassing en _na_ de container begint met het accepteren van verbindingen.
-- `log`—Gebruik de logboeksectie om te vormen [meldingen](set-up-notifications.md), met inbegrip van de soorten meldingen en de mate van gedetailleerdheid.
-   - `slack`—Configureer een bericht om naar een Slack bot te verzenden.
-   - `email`—Configureer een e-mailbericht om naar een of meer e-mailontvangers te verzenden.
-   - [loghandlers](log-handlers.md)—Configureer hardware- en softwaretoepassingsberichten die naar een externe logboekserver worden verzonden.
+- `stage` - Gebruik de sectie Werkgebied om bepaalde acties voor de volgende stadia van plaatsing te bepalen:
+   - `global` - Beheert acties in zowel de bouw, opstelling, als post-opstelt fasen. U kunt deze montages in bouwstijl met voeten treden, opstelt, en post-opstelt secties.
+   - `build` - Beheert acties in de bouwstijlfase slechts. Als u geen montages in deze sectie specificeert, gebruikt de bouwstijlfase montages van de globale sectie.
+   - `deploy` - Beheert acties in de opstellen slechts fase. Als u geen montages in deze sectie specificeert, de plaatsingsfase gebruikt montages van de globale sectie.
+   - `post-deploy` - de acties van Controles _na_ het opstellen van uw toepassing en _nadat_ de container begint goedkeurend verbindingen.
+- `log` - gebruik de logboeksectie om [ berichten ](set-up-notifications.md), met inbegrip van berichttypes en niveau van detail te vormen.
+   - `slack` - Vorm een bericht om naar een Slack te verzenden allebei.
+   - `email` - Configureer een e-mail om deze naar een of meer e-mailontvangers te verzenden.
+   - [ logboekmanagers ](log-handlers.md) - vorm hardware en softwaretoepassingsberichten die naar een verre registrerenserver worden verzonden.
 
 ### Omgevingsvariabelen
 
-De `ece-tools` pakket stelt waarden in in de `env.php` bestand op basis van waarden van [Cloud-variabelen](variables-cloud.md), variabelen die zijn ingesteld in het [!DNL Cloud Console]en de `.magento.env.yaml` configuratiebestand. De omgevingsvariabelen in de `.magento.env.yaml` de Cloud-omgeving aanpassen door de bestaande Commerce-configuratie te overschrijven. Als een standaardwaarde is `Not Set`en vervolgens de `ece-tools` pakket neemt **NEE** handeling en gebruikt de [!DNL Commerce] gebrek of de waarde van de configuratie MAGENTO_CLOUD_RELATIONSHIPS. Als de standaardwaarde is ingesteld, wordt `ece-tools` Deze standaardinstelling wordt ingesteld door het pakket.
+Het `ece-tools` pakket plaatst waarden in het `env.php` dossier dat op waarden van [ variabelen van de Wolk ](variables-cloud.md) wordt gebaseerd, variabelen die in [!DNL Cloud Console] worden geplaatst, en het `.magento.env.yaml` configuratiedossier. De omgevingsvariabelen in het `.magento.env.yaml` -bestand passen de Cloud-omgeving aan door de bestaande Commerce-configuratie te overschrijven. Als een standaardwaarde `Not Set` is, dan neemt het `ece-tools` pakket **NO** actie en gebruikt het [!DNL Commerce] gebrek of de waarde van de configuratie MAGENTO_CLOUD_RELATIONSHIPS. Als de standaardwaarde is ingesteld, wordt die standaardwaarde ingesteld door het `ece-tools` -pakket.
 
-De volgende onderwerpen bevatten gedetailleerde definities, zoals of een standaardwaarde is ingesteld of niet, van alle variabelen die u kunt gebruiken in het dialoogvenster `.magento.env.yaml` bestand:
+De volgende onderwerpen bevatten gedetailleerde definities, zoals of een standaardwaarde is ingesteld of niet, van alle variabelen die u in het `.magento.env.yaml` -bestand kunt gebruiken:
 
-- [Algemeen](variables-global.md)—variabelen de controleacties in elke fase: bouw, stel, en post-opstellen op
-- [Opbouwen](variables-build.md)—variabelen: besturingselementen voor het samenstellen van handelingen
-- [Implementeren](variables-deploy.md)—variabelen besturen implementatiehandelingen
-- [Na implementatie](variables-post-deploy.md)—variabelen: besturingsacties na implementatie
+- [ Globaal ](variables-global.md) - variabelen controleacties in elke fase: bouw, stel, en post-opstellen op
+- [ bouwt ](variables-build.md)-variabelen controle bouwt acties
+- [ stelt ](variables-deploy.md) op:stellen-variabelen de controle acties op
+- [ Post-stelt ](variables-post-deploy.md)-variabelen controleacties na opstellen op
 
 ### Configuratiebestand maken van CLI
 
-U kunt een `.magento.env.yaml` configuratiebestand voor een Cloud-omgeving met het volgende: `ece-tools` opdrachten.
+U kunt een `.magento.env.yaml` -configuratiebestand voor een Cloud-omgeving genereren met behulp van de volgende `ece-tools` -opdrachten.
 
 >Maakt een configuratiebestand
 
@@ -60,13 +60,13 @@ php ./vendor/bin/ece-tools cloud:config:create `<configuration-json>`
 php ./vendor/bin/ece-tools cloud:config:update `<configuration-json>`
 ```
 
-Voor beide opdrachten is één argument vereist: een array in JSON-indeling die een waarde opgeeft voor ten minste één variabele voor build, implementatie of implementatie na implementatie. Met de volgende opdracht stelt u bijvoorbeeld waarden in voor de `SCD_THREADS` en `CLEAN_STATIC_FILES` variabelen:
+Voor beide opdrachten is één argument vereist: een array in JSON-indeling die een waarde opgeeft voor ten minste één variabele voor build, implementatie of implementatie na implementatie. Met de volgende opdracht stelt u bijvoorbeeld waarden in voor de variabelen `SCD_THREADS` en `CLEAN_STATIC_FILES` :
 
 ```bash
 php vendor/bin/ece-tools cloud:config:create '{"stage":{"build":{"SCD_THREADS":5}, "deploy":{"CLEAN_STATIC_FILES":false}}}'
 ```
 
-En maakt een `.magento.env.yaml` bestand met de volgende instellingen:
+En maakt een `.magento.env.yaml` -bestand met de volgende instellingen:
 
 ```yaml
 stage:
@@ -76,7 +76,7 @@ stage:
     CLEAN_STATIC_FILES: false
 ```
 
-U kunt de `cloud:config:update` gebruiken om het nieuwe bestand bij te werken. Met de volgende opdracht wijzigt u bijvoorbeeld de opdracht `SCD_THREADS` en voegt de `SCD_COMPRESSION_TIMEOUT` configuratie:
+U kunt de opdracht `cloud:config:update` gebruiken om het nieuwe bestand bij te werken. Met de volgende opdracht wijzigt u bijvoorbeeld de waarde `SCD_THREADS` en voegt u de configuratie `SCD_COMPRESSION_TIMEOUT` toe:
 
 ```bash
 php vendor/bin/ece-tools cloud:config:update '{"stage":{"build":{"SCD_THREADS":3, "SCD_COMPRESSION_TIMEOUT":1000}}}'
@@ -95,7 +95,7 @@ stage:
 
 ### Configuratiebestand valideren
 
-Gebruik het volgende `ece-tools` bevel om te bevestigen `.magento.env.yaml` configuratiebestand voordat wijzigingen in de externe cloud-omgeving worden doorgevoerd.
+Gebruik de volgende opdracht `ece-tools` om het configuratiebestand van `.magento.env.yaml` te valideren voordat u wijzigingen aanbrengt in de externe cloud-omgeving.
 
 ```bash
 php ./vendor/bin/ece-tools cloud:config:validate
@@ -112,7 +112,7 @@ The NOT_EXIST_OPTION variable is not allowed in configuration.
 
 ## PHP-constanten
 
-U kunt PHP-constanten gebruiken in `.magento.env.yaml` bestandsdefinities in plaats van waarden voor harde codes. In het volgende voorbeeld wordt het `driver_options` gebruiken van een PHP-constante:
+U kunt PHP-constanten gebruiken in `.magento.env.yaml` -bestandsdefinities in plaats van hard-coderingswaarden. In het volgende voorbeeld wordt de `driver_options` gedefinieerd met behulp van een PHP-constante:
 
 ```yaml
 stage:
@@ -130,11 +130,11 @@ stage:
 
 >[!WARNING]
 >
->Constante parsering werkt niet wanneer u een `symfony/yaml` pakketversie ouder dan 3.2.
+>Constante parsering werkt niet wanneer u een pakketversie van `symfony/yaml` gebruikt die ouder is dan 3.2.
 
 ## Foutafhandeling
 
-Wanneer een fout optreedt als gevolg van een onverwachte waarde in het dialoogvenster `.magento.env.yaml` configuratiebestand, ontvangt u een foutbericht. In het volgende foutbericht wordt bijvoorbeeld een lijst met voorgestelde wijzigingen in elk item met een onverwachte waarde weergegeven, waarbij soms geldige opties worden geboden:
+Wanneer een fout optreedt als gevolg van een onverwachte waarde in het configuratiebestand van `.magento.env.yaml` , ontvangt u een foutbericht. In het volgende foutbericht wordt bijvoorbeeld een lijst met voorgestelde wijzigingen in elk item met een onverwachte waarde weergegeven, waarbij soms geldige opties worden geboden:
 
 ```terminal
 - Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:
@@ -151,7 +151,7 @@ Breng de gewenste correcties aan, wijs deze toe en duw op de wijzigingen. Als u 
 
 ## Optimalisatie van configuratiebeheer
 
-Als u het Beheer van de Configuratie na het dumpen van de configuraties hebt toegelaten, zou u de variabelen SCD_* van opstellen aan het bouwstijlstadium moeten bewegen. Zie [Statische strategieën voor implementatie van inhoud](../deploy/static-content.md).
+Als u het Beheer van de Configuratie na het dumpen van de configuraties hebt toegelaten, zou u de variabelen SCD_* van opstellen aan het bouwstijlstadium moeten bewegen. Zie [ Statische strategieën van de inhoudsplaatsing ](../deploy/static-content.md).
 
 >Voor configuratiebeheer:
 

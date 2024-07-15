@@ -15,29 +15,29 @@ ht-degree: 0%
 
 U moet een verificatietoets hebben om toegang te krijgen tot de Adobe Commerce-opslagplaats en om installatie- en updateopdrachten voor uw Adobe Commerce in te schakelen voor het infrastructuurproject in de cloud. Er zijn twee methoden om de autorisatiegegevens van de Composer op te geven.
 
-- **verificatiebestand**—Een bestand dat uw Adobe Commerce bevat [autorisatiegegevens](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/authentication-keys.html) in uw Adobe Commerce op de hoofdmap van de cloud-infrastructuur.
-- **omgevingsvariabele**—Een omgevingsvariabele voor het instellen van verificatietoetsen in uw Adobe Commerce op een cloudinfragment om blootstelling door een ongeluk te voorkomen.
+- **authentificatiedossier** - een dossier dat uw 2} autorisatiereferenties van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/authentication-keys.html) in uw Adobe Commerce op de folder van de de wortelfolder van de wolkeninfrastructuur bevat.[
+- **milieu veranderlijk** - een milieu variabele aan opstellingsauthentificatietoetsen in uw Adobe Commerce op het project van de wolkeninfrastructuur om toevallige blootstelling te verhinderen.
 
 >[!BEGINSHADEBOX]
 
-**Beveiligingsnotitie**
+**nota van de Veiligheid**
 
-Adobe raadt u aan de [omgevingsvariabele](#composer-auth-environment-variable) met uw cloud-project om te voorkomen dat uw autorisatiegegevens per ongeluk worden weergegeven.
+De Adobe adviseert gebruikend de [ milieu veranderlijke ](#composer-auth-environment-variable) methode met uw wolkenproject om toevallige blootstelling van uw vergunningsgeloofsbrieven te verhinderen.
 
-De methode van het authentificatiedossier is ideaal wanneer het gebruiken van Docker van de Wolk voor Handel als lokaal ontwikkelingshulpmiddel, maar ben zorgvuldig niet uploadt `auth.json` bestand naar een openbare Git-opslagplaats. U kunt de `auth.json` aan de [`.gitignore` file](../project/file-structure.md#ignoring-files).
+De methode voor het verificatiebestand is ideaal als u Cloud Docker voor Commerce gebruikt als lokaal ontwikkelingsprogramma, maar zorg ervoor dat u het `auth.json` -bestand niet uploadt naar een openbare Git-opslagplaats. U kunt het `auth.json` dossier aan het [`.gitignore` dossier ](../project/file-structure.md#ignoring-files) toevoegen.
 
 >[!ENDSHADEBOX]
 
 ## Verificatiebestand
 
-**Om een `auth.json` file**:
+**om een `auth.json` dossier** tot stand te brengen:
 
-1. Als u geen `auth.json` in uw hoofdmap van het project, maakt u er een.
+1. Als u geen `auth.json` dossier in uw folder van de projectwortel hebt, creeer één.
 
-   - Maak met een teksteditor een `auth.json` in uw hoofdmap van het project.
-   - Kopieer de inhoud van het dialoogvenster [monster `auth.json`](https://github.com/magento/magento2/blob/2.3/auth.json.sample) in de nieuwe `auth.json` bestand.
+   - Maak met een teksteditor een `auth.json` -bestand in de hoofdmap van het project.
+   - Kopieer de inhoud van de [ steekproef `auth.json` ](https://github.com/magento/magento2/blob/2.3/auth.json.sample) in het nieuwe `auth.json` dossier.
 
-1. Vervangen `<public-key>` en `<private-key>` met uw Adobe Commerce-verificatiegegevens.
+1. Vervang `<public-key>` en `<private-key>` door uw Adobe Commerce-verificatiereferenties.
 
    ```json
    {
@@ -56,19 +56,19 @@ De methode van het authentificatiedossier is ideaal wanneer het gebruiken van Do
 
 De volgende methode is de beste manier om onbedoelde blootstelling van gevoelige gegevens in een openbare Git-opslagplaats te voorkomen.
 
-**Verificatietoetsen toevoegen met behulp van een omgevingsvariabele**:
+**om authentificatietoetsen toe te voegen gebruikend een omgevingsvariabele**:
 
-1. In de _[!DNL Cloud Console]_klikt u op het configuratiepictogram rechts van de projectnavigatie.
+1. Klik in _[!DNL Cloud Console]_op het configuratiepictogram rechts van de projectnavigatie.
 
-   ![Project configureren](../../assets/icon-configure.png){width="36"}
+   ![ vorm project ](../../assets/icon-configure.png){width="36"}
 
-1. In de _Projectinstellingen_ lijst, klik **[!UICONTROL Variables]**.
+1. In de _lijst van de Montages van het Project_, klik **[!UICONTROL Variables]**.
 
 1. Klik op **[!UICONTROL Create variable]**.
 
-1. In de **[!UICONTROL Variable name]** veld, Enter `env:COMPOSER_AUTH`.
+1. Typ `env:COMPOSER_AUTH` in het veld **[!UICONTROL Variable name]** .
 
-1. In de _Waarde_ veld, voeg het volgende toe en vervang `<public-key>` en `<private-key>` met uw Adobe Commerce-verificatiegegevens:
+1. Op het _gebied van de Waarde_, voeg het volgende toe en vervang `<public-key>` en `<private-key>` met uw de authentificatiegeloofsbrieven van Adobe Commerce:
 
    ```json
    {
@@ -81,8 +81,8 @@ De volgende methode is de beste manier om onbedoelde blootstelling van gevoelige
    }
    ```
 
-1. Selecteren **[!UICONTROL Available during buildtime]** en deselecteren **[!UICONTROL Available during runtime]**.
+1. Selecteer **[!UICONTROL Available during buildtime]** en hef de selectie van **[!UICONTROL Available during runtime]** op.
 
 1. Klik op **[!UICONTROL Create variable]**.
 
-1. Verwijder de `auth.json` bestand uit elke omgeving.
+1. Verwijder het `auth.json` -bestand uit elke omgeving.

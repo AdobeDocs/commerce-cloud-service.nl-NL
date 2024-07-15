@@ -12,42 +12,42 @@ ht-degree: 0%
 
 # Starter-projectworkflow
 
-De Adobe Commerce on cloud-infrastructuur omvat één Git-opslagplaats met een `master` vertakking voor het productiemilieu dat kan worden vertakt om een opvoerende en veelvoudige integratiemilieu&#39;s voor test en ontwikkelingswerk tot stand te brengen. U kunt maximaal vier actieve omgevingen hebben, waaronder een `master` omgeving voor uw productieserver. Zie [Starter-architectuur](starter-architecture.md) voor een overzicht.
+De Adobe Commerce on cloud-infrastructuur omvat één Git-opslagplaats met een `master` -vertakking voor de productieomgeving die kan worden vertakt om een testomgeving en meerdere integratieomgevingen te creëren voor test- en ontwikkelingswerk. U kunt maximaal vier actieve omgevingen hebben, waaronder een `master` -omgeving voor uw productieserver. Zie [ architectuur van de Aanzet ](starter-architecture.md) voor een overzicht.
 
-Volg voor uw omgevingen de [!UICONTROL Development > Staging > Production] werkwijze voor het ontwikkelen en implementeren van uw site.
+Volg voor uw omgevingen de [!UICONTROL Development > Staging > Production] -workflow om uw site te ontwikkelen en te implementeren.
 
-- **Productieomgeving (livesite)**—Verstrekt een volledig productiemilieu met alle diensten die worden gebouwd en van de code op worden opgesteld `master` vertakking.
-- **Stationele omgeving**—Verstrekt een volledig het opvoeren milieu dat het productiemilieu met alle diensten aanpast die van worden gebouwd en worden opgesteld `staging` vertakking die u maakt door te klonen van `master`.
-- **Integratieomgevingen**—Biedt maximaal twee actieve ontwikkelomgevingen die u maakt van de `staging` vertakking. De `integration` -omgeving biedt geen ondersteuning voor services van derden zoals Fastly en New Relic.
+- **het milieu van de Productie (levende plaats)** - verstrekt een volledig productiemilieu met alle diensten die worden gebouwd en van de code op de `master` tak worden opgesteld.
+- **het Staging milieu** - verstrekt een volledig het opvoeren milieu dat het productiemilieu met alle diensten aanpast die worden gebouwd en van a `staging` tak worden opgesteld die u door het klonen van `master` creeert.
+- **milieu&#39;s van de Integratie** - verstrekt tot twee actieve ontwikkelomgevingen die u van de `staging` tak creeert. De `integration` -omgeving biedt geen ondersteuning voor services van derden zoals Fastly en New Relic.
 
 Voor uw takken, kunt u om het even welke ontwikkelingsmethodologie volgen. U kunt bijvoorbeeld een gangbare methode volgen, zoals scrum, om vertakkingen te maken voor elke sprint.
 
-Vanuit elke sprint kunt u vertakkingen maken voor elk gebruikersartikel. Alle verhalen worden testbaar. U kunt voortdurend samenvoegen tot de verftak en die vertakking doorlopend valideren. Wanneer de sprint eindigt, kunt u de sprintvertakking samenvoegen tot `master` alle wijzigingen in de productie van sprot te implementeren zonder een testknelpunt aan te pakken.
+Vanuit elke sprint kunt u vertakkingen maken voor elk gebruikersartikel. Alle verhalen worden testbaar. U kunt voortdurend samenvoegen tot de verftak en die vertakking doorlopend valideren. Wanneer de sprint eindigt, kunt u de sprinttak aan `master` samenvoegen om alle sprintveranderingen in productie op te stellen zonder het moeten een het testen knelpunt behandelen.
 
 ## Ontwikkelingsworkflow
 
-De ontwikkeling en de plaatsing op de plannen van de Aanzet beginnen met uw aanvankelijke project. U maakt uw project met de &quot;lege site&quot;, een Adobe Commerce on cloud-infrastructuursjablooncode met een volledig voorbereide winkel. Hiermee maakt u een `master` vertakken met een exemplaar van de code van uw productiemilieu.
+De ontwikkeling en de plaatsing op de plannen van de Aanzet beginnen met uw aanvankelijke project. U maakt uw project met de &quot;lege site&quot;, een Adobe Commerce on cloud-infrastructuursjablooncode met een volledig voorbereide winkel. Hiermee maakt u een `master` -vertakking met een kopie van de code uit de productieomgeving.
 
 De ontwikkelingsworkflow omvat het volgende:
 
-- [Klonen en vertakking](#clone-and-branch) van de `master` om `staging` en ontwikkelingsbijkantoren
-- [Code ontwikkelen](#develop-code) en installeer extensies lokaal in een ontwikkelingsvertakking, inclusief [!DNL Composer] updates
-- [Configureren](#configure-store) uw opslag- en extensie-instellingen
-- [Configuratie genereren](#generate-configuration-management-files) beheerbestanden
-- [Push-code](#push-code-and-test) en configuratie om aan te bouwen en op te stellen `staging` en `production` omgevingen
+- [ Kloon en tak ](#clone-and-branch) van `master` om `staging` en ontwikkelingstakken tot stand te brengen
+- [ ontwikkelt code ](#develop-code) en installeert uitbreidingen plaatselijk in een ontwikkelingstak, met inbegrip van [!DNL Composer] updates
+- [ vorm ](#configure-store) uw opslag en uitbreidingsmontages
+- [ produceer configuratie ](#generate-configuration-management-files) beheersdossiers
+- [ duw code ](#push-code-and-test) en configuratie om aan de `staging` en `production` milieu&#39;s te bouwen en op te stellen
 
-![Workflow ontwikkelen en implementeren](../../assets/starter/workflow.png)
+![ ontwikkelt en stelt werkschema ](../../assets/starter/workflow.png) op
 
 U hebt ook een paar optionele stappen om u te helpen uw code en uw opslaggegevens te ontwikkelen en te testen:
 
-- [Voorbeeldgegevens installeren](#optional-install-sample-data) in uw winkel
-- [Gegevens in de productieopslagplaats volledig opvullen](#optional-pull-production-data) tot omgevingen
+- [ installeer steekproefgegevens ](#optional-install-sample-data) aan uw opslag
+- [ de gegevens van de productieopslag van de Trek ](#optional-pull-production-data) neer aan milieu&#39;s
 
-Hierbij wordt ervan uitgegaan dat u uw [lokale ontwikkelaarswerkruimte](../development/overview.md).
+Dit proces veronderstelt dat u opstelling uw [ lokale ontwikkelaarswerkruimte ](../development/overview.md) hebt.
 
 ### Klonen en vertakking
 
-Voor een nieuw project van het Plan van de Aanzet, a `master` vertakking is gekloond vanuit de Adobe Commerce op de Git-opslagplaats voor cloudinfrastructuur. Als u vertakking wilt starten en wilt werken met code, kloont u de opdracht `master` vertakken naar uw lokale omgeving.
+Voor een nieuw Starter Plan-project is een `master` -vertakking uit de Adobe Commerce gekloond op de Git-opslagplaats voor cloudinfrastructuur. Als u vertakking wilt starten en wilt werken met code, kloont u de `master` -vertakking naar uw lokale omgeving.
 
 De indeling van de opdracht Git-kloon is:
 
@@ -59,9 +59,9 @@ git fetch origin
 git pull origin <environment-ID>
 ```
 
-De eerste keer dat u in vertakkingen voor uw Starter-project begint te werken, maakt u een `staging` vertakking. Hiermee maakt u een codevertakking die overeenkomt met de `master` tak die aan een het Opvoeren milieu aan testconfiguratie en codeveranderingen alvorens aan het productiemilieu opstelt op te stellen.
+De eerste keer dat u in vertakkingen voor uw Starter-project begint te werken, maakt u een `staging` -vertakking. Dit leidt tot een codetak die de `master` tak aanpast die aan een het Opvoeren milieu aan testconfiguratie en codeveranderingen alvorens aan het productiemilieu opstelt.
 
-Volgende, vertakkingen maken van `staging` om code te ontwikkelen, uitbreidingen toe te voegen, en derdesintegratie te vormen. Telkens als u douanecode ontwikkelt, voegt uitbreidingen toe, integreert met de derdedienst, het werk in een ontwikkelingstak die van wordt gecreeerd `staging` vertakking. U hebt vier actieve integratieomgevingen beschikbaar. Wanneer u een actieve vertakking duwt, stelt één van deze integratiemilieu&#39;s automatisch uw code aan test op.
+Maak vervolgens vertakkingen vanuit `staging` om code te ontwikkelen, extensies toe te voegen en integratie van derden te configureren. Telkens wanneer u douanecode ontwikkelt, voeg uitbreidingen toe, integreer met de derdedienst, werk in een ontwikkelingstak die van de `staging` tak wordt gecreeerd. U hebt vier actieve integratieomgevingen beschikbaar. Wanneer u een actieve vertakking duwt, stelt één van deze integratiemilieu&#39;s automatisch uw code aan test op.
 
 De indeling van de opdracht voor de Git-vertakking is:
 
@@ -69,13 +69,13 @@ De indeling van de opdracht voor de Git-vertakking is:
 git checkout <branch-name>
 ```
 
-De indeling van de Cloud CLI `branch` opdracht is:
+De indeling van de opdracht Cloud CLI `branch` is:
 
 ```bash
 magento-cloud environment:branch <environment-name> <parent-environment-ID>
 ```
 
-![Vertakking van stramien](../../assets/starter/branching.png)
+![ Tak van Stramien ](../../assets/starter/branching.png)
 
 ### Code ontwikkelen
 
@@ -96,84 +96,84 @@ Totdat uw winkel volledig is gebouwd, geconfigureerd en klaar is om te worden ge
 >
 >Voer nog geen configuraties in uw lokale werkstation uit.
 
-![Code vanuit lokaal netwerk duwen](../../assets/starter/push-code.png)
+![ duw code van lokale ](../../assets/starter/push-code.png)
 
 ### Winkel configureren
 
-Wanneer u klaar bent om uw opslag te vormen, duw al uw code aan `integration` milieu. Configureer uw opslaginstellingen vanuit de beheerfunctie voor de integratieomgeving, niet in uw lokale omgeving. U kunt de URL vinden door op **Toegang tot site** in de [!DNL Cloud Console]
+Wanneer u klaar bent om uw winkel te configureren, drukt u op al uw code naar de `integration` -omgeving. Configureer uw opslaginstellingen vanuit de beheerfunctie voor de integratieomgeving, niet in uw lokale omgeving. U kunt URL vinden door **plaats van de Toegang** in [!DNL Cloud Console] te klikken
 
 Raadpleeg de documentatie voor Adobe Commerce en de geïnstalleerde extensies voor de beste informatie over configuraties. Hier volgen enkele koppelingen en ideeën die u helpen om aan de slag te gaan:
 
-- [Aanbevolen procedures voor winkelconfiguratie](../store/best-practices.md) voor specifieke best practices in de cloud
-- [Basisconfiguratie](https://docs.magento.com/user-guide/configuration/configuration-basic.html) voor toegang tot opslagbeheerders, naam, talen, valuta&#39;s, branding, sites, winkelweergaven en meer
-- [Thema](https://docs.magento.com/user-guide/design/design-theme.html) voor uw visie op de site en winkels, waaronder CSS en lay-outs
-- [Systeemconfiguratie](https://docs.magento.com/user-guide/system/system.html) voor rollen, hulpmiddelen, berichten en uw encryptiesleutel voor uw gegevensbestand
+- [ Beste praktijken voor opslagconfiguratie ](../store/best-practices.md) voor specifieke beste praktijken in de wolk
+- [ Basisconfiguratie ](https://docs.magento.com/user-guide/configuration/configuration-basic.html) voor opslag admin toegang, naam, talen, valuta, branding, plaatsen, opslagmeningen en meer
+- [ Thema ](https://docs.magento.com/user-guide/design/design-theme.html) voor uw blik en gevoel van de plaats en opslag met inbegrip van CSS en lay-outs
+- [ configuratie van het Systeem ](https://docs.magento.com/user-guide/system/system.html) voor rollen, hulpmiddelen, berichten, en uw encryptiesleutel voor uw gegevensbestand
 - Instellingen voor extensies gebruiken in de documentatie
 
-Buiten enkel opslagmontages, kunt u veelvoudige plaatsen en opslag, de gevormde diensten, en meer verder vormen. Zie [Uw winkel configureren](../store/overview.md).
+Buiten enkel opslagmontages, kunt u veelvoudige plaatsen en opslag, de gevormde diensten, en meer verder vormen. Zie [ uw opslag ](../store/overview.md) vormen.
 
 ### Configuratiebeheerbestanden genereren
 
 Als u vertrouwd bent met Adobe Commerce, kunt u zich zorgen maken over hoe te om uw configuratiemontages van uw gegevensbestand in ontwikkeling aan de het opvoeren en productiemilieu&#39;s te krijgen. Eerder, moest u al uw configuratiemontages neer op papier of aan een dossier kopiëren, en dan manueel de montages toepassen op andere milieu&#39;s. Of u hebt uw database mogelijk gedumpt en deze gegevens naar een andere omgeving geduwd.
 
-Adobe Commerce on cloud Infrastructure biedt twee [Configuratiebeheer](../store/store-settings.md) opdrachten waarmee u configuratie-instellingen vanuit uw omgeving kunt exporteren naar een bestand. Deze opdrachten zijn alleen beschikbaar voor **Adobe Commerce over cloudinfrastructuur 2.2 en hoger**.
+Adobe Commerce op wolkeninfrastructuur verstrekt een reeks twee [ bevelen van het Beheer van de Configuratie ](../store/store-settings.md) die configuratiemontages van uw milieu in een dossier uitvoeren. Deze bevelen zijn slechts beschikbaar voor **Adobe Commerce op wolkeninfrastructuur 2.2 en later**.
 
-- `php .vendor/bin/ece-tools config:dump`—Exporteert alleen de configuratie-instellingen die u hebt ingevoerd of gewijzigd vanuit standaardinstellingen in een configuratiebestand. _Aanbevolen_.
-- `php bin/magento app:config:dump`—Exporteert elke configuratie-instelling, inclusief gewijzigd en standaard, naar een configuratiebestand.
+- `php .vendor/bin/ece-tools config:dump` - Exporteert alleen de configuratie-instellingen die u hebt ingevoerd of gewijzigd op basis van standaardinstellingen in een configuratiebestand. _geadviseerd_.
+- `php bin/magento app:config:dump` - Exporteert elke configuratie-instelling, inclusief gewijzigd en standaard, naar een configuratiebestand.
 
-Het gegenereerde bestand is `app/etc/config.php`.
+Het gegenereerde bestand is `app/etc/config.php` .
 
 Genereer het bestand in de integratieomgeving waarin u Adobe Commerce hebt geconfigureerd. Stap door het proces om het dossier te produceren, het toe te voegen aan uw tak, en het op te stellen.
 
-**Belangrijke opmerkingen** over configuratiebeheer:
+**Belangrijke nota&#39;s** op het Beheer van de Configuratie:
 
-- Elke configuratie-instelling die is opgenomen in het bestand dat is gegenereerd op basis van de `app:config:dump` opdracht is vergrendeld voor het bewerken of alleen-lezen in de geïmplementeerde omgeving. Dit is een van de redenen waarom de Adobe aanbeveelt de `.vendor/bin/ece-tools config:dump` gebruiken.
+- Elke configuratie-instelling die is opgenomen in het bestand dat is gegenereerd via de opdracht `app:config:dump` , is vergrendeld voor bewerking of alleen-lezen in de geïmplementeerde omgeving. Dit is een van de redenen waarom de Adobe het gebruik van de opdracht `.vendor/bin/ece-tools config:dump` aanbeveelt.
 
-  U installeert bijvoorbeeld een module voor Snel in uw ontwikkelomgeving. U kunt deze module in het opvoeren en productiemilieu slechts vormen. Met de `.vendor/bin/ece-tools config:dump` houdt het bevel die standaardgebieden editable wanneer u uw ontwikkelingsveranderingen in het het Opvoeren en productiemilieu opstelt.
+  U installeert bijvoorbeeld een module voor Snel in uw ontwikkelomgeving. U kunt deze module in het opvoeren en productiemilieu slechts vormen. Als u de opdracht `.vendor/bin/ece-tools config:dump` gebruikt, blijven deze standaardvelden bewerkbaar wanneer u uw ontwikkelingswijzigingen implementeert in de omgeving van Staging en Productie.
 
-- Het gegenereerde bestand kan lang zijn, afhankelijk van de grootte van uw implementatie. De `.vendor/bin/ece-tools config:dump` wordt een kleiner bestand gegenereerd dan het bestand dat wordt gegenereerd door de opdracht `app:config:dump` gebruiken.
+- Het gegenereerde bestand kan lang zijn, afhankelijk van de grootte van uw implementatie. De opdracht `.vendor/bin/ece-tools config:dump` genereert een kleiner bestand dan het bestand dat met de opdracht `app:config:dump` wordt gegenereerd.
 
-Als u Adobe Commerce versie 2.2 of hoger gebruikt, bieden de opdrachten voor configuratiebeheer een extra functie om vertrouwelijke gegevens te beschermen, zoals referenties van sandboxen voor een PayPal-module. Tijdens het exportproces worden alle waarden met vertrouwelijke gegevens geëxporteerd naar een afzonderlijk configuratiebestand—`env.php` in de `app/etc/` directory. Dit bestand blijft in uw lokale omgeving en wordt niet gekopieerd wanneer u de code naar een andere vertakking verplaatst. U kunt ook omgevingsvariabelen maken met CLI-opdrachten in alle Adobe Commerce-versies van cloudinfrastructuur.
+Als u Adobe Commerce versie 2.2 of hoger gebruikt, bieden de opdrachten voor configuratiebeheer een extra functie om vertrouwelijke gegevens te beschermen, zoals referenties van sandboxen voor een PayPal-module. Tijdens het uitvoerproces, worden om het even welke waarden die gevoelige gegevens bevatten uitgevoerd naar afzonderlijk configuratiedossier— `env.php` in de `app/etc/` folder. Dit bestand blijft in uw lokale omgeving en wordt niet gekopieerd wanneer u de code naar een andere vertakking verplaatst. U kunt ook omgevingsvariabelen maken met CLI-opdrachten in alle Adobe Commerce-versies van cloudinfrastructuur.
 
-![Omgevingsvariabelen genereren](../../assets/starter/env-variables.png)
+![ de variabelen van het Milieu produceren ](../../assets/starter/env-variables.png)
 
-Zie [Configuratiebeheer](../store/store-settings.md).
+Zie [ Beheer van de Configuratie ](../store/store-settings.md).
 
 ### Pushcode en test
 
-Op dit punt zou u een ontwikkelde codetak met een configuratiedossier moeten hebben (`config.local.php` of `config.php`) klaar om te testen.
+Op dit punt, zou u een ontwikkelde codetak met een configuratiedossier (`config.local.php` of `config.php`) klaar moeten hebben om te testen.
 
 Telkens als u code van uw lokale milieu duwt, bouwt een reeks en stelt manuscripten in werking in werking. Deze manuscripten produceren nieuwe code en stellen het aan het verre milieu op. Bijvoorbeeld, als u een ontwikkelingstak van uw lokale milieu aan de verre tak duwt, werkt een passende milieu de diensten, code, en statische inhoud bij.
 
 U hebt rechtstreeks toegang tot deze omgeving via een winkel-URL, een Admin-URL en een SSH. Deze milieu&#39;s omvatten een Webserver, gegevensbestand, en de gevormde diensten. Als u klaar bent, kunt u beginnen met het implementeren en testen in de testomgeving.
 
-Zie voor meer informatie [Implementatieworkflow](#deployment-workflow).
+Voor meer informatie, zie [ het werkschema van de Plaatsing ](#deployment-workflow).
 
 ### Optioneel: voorbeeldgegevens installeren
 
-Als u voorbeeldgegevens nodig hebt bij het ontwikkelen van uw winkel, kunt u voorbeeldgegevens installeren. Deze gegevens simuleren een actieve opslag, met inbegrip van klanten, producten, en andere gegevens. Deze voorbeeldgegevens werken het best met een &quot;lege site&quot; Adobe Commerce op de sjablooninstallatie van de cloudinfrastructuur wanneer u uw project maakt. U kunt het beste de voorbeeldgegevens verwijderen voordat u live gaat. Zie [Optionele voorbeeldgegevens installeren](../test/sample-data.md).
+Als u voorbeeldgegevens nodig hebt bij het ontwikkelen van uw winkel, kunt u voorbeeldgegevens installeren. Deze gegevens simuleren een actieve opslag, met inbegrip van klanten, producten, en andere gegevens. Deze voorbeeldgegevens werken het best met een &quot;lege site&quot; Adobe Commerce op de sjablooninstallatie van de cloudinfrastructuur wanneer u uw project maakt. U kunt het beste de voorbeeldgegevens verwijderen voordat u live gaat. Zie [ facultatieve steekproefgegevens installeren ](../test/sample-data.md).
 
-![Optionele voorbeeldgegevens installeren](../../assets/starter/sample-data.png)
+![ installeer facultatieve steekproefgegevens ](../../assets/starter/sample-data.png)
 
 ### Optioneel: volledige productiegegevens
 
-Voeg al uw producten, catalogi, site-inhoud enzovoort rechtstreeks toe aan de `production` milieu. Door deze gegevens toe te voegen aan de productieomgeving, kunt u bijgewerkte prijzen, coupons, voorraad, verkoopmededelingen, informatie over toekomstig aanbod en meer voor uw klanten verstrekken. Deze gegevens omvatten geen uitbreidingsconfiguraties, die u in uw lokale ontwikkelingstak vormt.
+Voeg al uw producten, catalogi, site-inhoud enzovoort rechtstreeks toe aan de `production` -omgeving. Door deze gegevens toe te voegen aan de productieomgeving, kunt u bijgewerkte prijzen, coupons, voorraad, verkoopmededelingen, informatie over toekomstig aanbod en meer voor uw klanten verstrekken. Deze gegevens omvatten geen uitbreidingsconfiguraties, die u in uw lokale ontwikkelingstak vormt.
 
-Als u functies ontwikkelt, extensies toevoegt en thema&#39;s ontwerpt, is het handig om echte gegevens te gebruiken. U kunt op elk gewenst moment [een databasedumpdump maken](../storage/database-dump.md) van de productieomgeving en druk die naar uw Staging- en integratieomgeving als dat nodig is.
+Als u functies ontwikkelt, extensies toevoegt en thema&#39;s ontwerpt, is het handig om echte gegevens te gebruiken. Op elk ogenblik, kunt u een gegevensbestandstortplaats ](../storage/database-dump.md) van het productiemilieu tot stand brengen en duwen dat aan uw het Opvoeren en integratiemilieu&#39;s zonodig.[
 
 Productiegegevens exporteren als testgegevens voor gebruik in staging- en integratieomgevingen:
 
-- [Voer de hulpprogramma&#39;s voor ondersteuning uit](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/run-support-utilities.html) CLI-opdrachten (aanbevolen) bij het exporteren van een beveiligde back-up van klanten en het opslaan van gegevens met behulp van de Adobe Commerce-coderingssleutel
+- [ stel de bevelen van de steunnut ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/run-support-utilities.html) CLI (geadviseerd) in werking wanneer het uitvoeren van een beschermde steun van klant en opslaggegevens gebruikend uw de encryptiesleutel van Adobe Commerce
 
-- [Gegevensverzameling](https://docs.magento.com/user-guide/system/support-data-collector.html) hulpmiddel voor het genereren en exporteren van gegevens
+- [ het hulpmiddel van de Inzameling van Gegevens ](https://docs.magento.com/user-guide/system/support-data-collector.html) om gegevens te produceren en uit te voeren
 
-Als u deze gegevens wilt migreren, raadpleegt u [Statische bestanden en gegevens migreren en implementeren](../deploy/staging-production.md#migrate-static-files).
+Om dit gegeven te migreren, zie [ en stel statische dossiers en gegevens ](../deploy/staging-production.md#migrate-static-files) op.
 
-![Productiegegevens aftrekken en ontsmetten](../../assets/starter/data-code-process.png)
+![ Trek en ontsmet productiegegevens ](../../assets/starter/data-code-process.png)
 
 >[!NOTE]
 >
->Voordat u de gegevens naar een andere omgeving verplaatst, moet u overwegen de gegevens te ontsmetten. U hebt een aantal opties, waaronder [gebruiken, hulpprogramma&#39;s](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/run-support-utilities.html) of het ontwikkelen van een manuscript om klantengegevens te schrobben.
+>Voordat u de gegevens naar een andere omgeving verplaatst, moet u overwegen de gegevens te ontsmetten. U hebt een paar opties met inbegrip van [ gebruikend steunnut ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/run-support-utilities.html) of het ontwikkelen van een manuscript om klantengegevens te schrobben.
 
 >[!WARNING]
 >
@@ -211,27 +211,27 @@ Scripts implementeren:
 
 Wanneer uw winkel volledig is voltooid, kunt u online terugkeren, live, met al uw bijgewerkte code en configuraties.
 
-Zie [Implementatieproces](../deploy/process.md).
+Zie [ proces van de Plaatsing ](../deploy/process.md).
 
 ### Naar testfase duwen en testen
 
-Pers altijd uw code in herhalingen aan `staging` omgeving voor volledige testen. De eerste keer dat u deze omgeving gebruikt, moet u een aantal services configureren, waaronder [Snel](/help/cloud-guide/cdn/fastly.md) en [New Relic](../monitor/new-relic-service.md). Configureer ook betaalgateways, verzendingen, meldingen en andere essentiële services met sandbox- of testgegevens.
+Duw uw code altijd in herhalingen aan het `staging` milieu voor volledige het testen. De eerste keer u dit milieu gebruikt, moet u een paar diensten, met inbegrip van [ snel ](/help/cloud-guide/cdn/fastly.md) en [ New Relic ](../monitor/new-relic-service.md) vormen. Configureer ook betaalgateways, verzendingen, meldingen en andere essentiële services met sandbox- of testgegevens.
 
 Staging is een omgeving vóór de productie die alle services en instellingen zo dicht mogelijk bij de productie biedt. Test grondig elke dienst, verifieer uw prestaties testende hulpmiddelen, voer het testen van UAT als beheerder en als klant uit, tot u uw opslag klaar voor productie voelt.
 
-Zie [Je winkel implementeren](../deploy/staging-production.md).
+Zie [ uw opslag ](../deploy/staging-production.md) opstellen.
 
 ### Verschuiven naar productie
 
-Wanneer u op de knop `master` vertakt, duikt u naar `production` milieu. Voltooi configuratie- en testactiviteiten in de productieomgeving, net als in de testomgeving, met één belangrijk verschil. Gebruik in de productieomgeving live referenties voor configuratie en testen. Wanneer u uw site start, kunnen klanten hun aankopen voltooien en kunnen beheerders de live winkel beheren.
+Wanneer u naar de `master` -vertakking drukt, gaat u door naar de `production` -omgeving. Voltooi configuratie- en testactiviteiten in de productieomgeving, net als in de testomgeving, met één belangrijk verschil. Gebruik in de productieomgeving live referenties voor configuratie en testen. Wanneer u uw site start, kunnen klanten hun aankopen voltooien en kunnen beheerders de live winkel beheren.
 
-Zie [Je winkel implementeren](../deploy/staging-production.md).
+Zie [ uw opslag ](../deploy/staging-production.md) opstellen.
 
 ### Site starten
 
 Er is een duidelijke doorloop om met uw site te gaan wonen. Nadat u deze stappen hebt uitgevoerd, kan uw winkel producten in uw aangepaste thema meteen verkopen.
 
-Zie [Site starten](../launch/overview.md).
+Zie [ lancering van de Plaats ](../launch/overview.md).
 
 ## Continue integratie
 
@@ -241,8 +241,8 @@ Alle omgevingen met cloudinfrastructuren ondersteunen continue integratie voor c
 
 - Ontwikkeltakken maken met toekomstige functies en wijzigingen
 
-- Test de code in uw `integration` milieu
+- De code in uw `integration` -omgeving testen
 
-- Implementeren en testen in `staging` milieu
+- Implementeren en testen in `staging` -omgeving
 
-- Distribueren naar de `production` milieu
+- Distribueren naar de `production` -omgeving

@@ -1,5 +1,5 @@
 ---
-title: Versie voor upgradeopdracht
+title: Commerce-versie upgraden
 description: Leer hoe u de Adobe Commerce-versie kunt upgraden in het cloud-infrastructuurproject.
 feature: Cloud, Upgrade
 exl-id: 87821007-4979-4a20-940b-aa3c82c192d8
@@ -10,17 +10,17 @@ ht-degree: 0%
 
 ---
 
-# Versie voor upgradeopdracht
+# Commerce-versie upgraden
 
-U kunt de Adobe Commerce-codebasis upgraden naar een nieuwere versie. Voordat u uw project upgradet, moet u de [Systeemvereisten](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) in de _Installatie_ handleiding voor de meest recente vereisten voor softwareversies.
+U kunt de Adobe Commerce-codebasis upgraden naar een nieuwere versie. Alvorens uw project te bevorderen, herzie de [ vereisten van het Systeem ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) in de _gids van de Installatie_ voor de recentste vereisten van de softwareversie.
 
 Afhankelijk van uw projectconfiguratie, kunnen uw verbeteringstaken het volgende omvatten:
 
 - Werk services bij, bijvoorbeeld MariaDB (MySQL), OpenSearch, RabbitMQ en Redis, voor compatibiliteit met nieuwe Adobe Commerce-versies.
 - Converteer een ouder configuratiebeheerbestand.
-- Werk de `.magento.app.yaml` bestand met nieuwe instellingen voor haken en omgevingsvariabelen.
+- Werk het `.magento.app.yaml` dossier met nieuwe montages voor haken en omgevingsvariabelen bij.
 - Voer een upgrade uit van externe extensies naar de nieuwste ondersteunde versie.
-- Werk de `.gitignore` bestand.
+- Werk het `.gitignore` bestand bij.
 
 {{upgrade-tip}}
 
@@ -28,14 +28,14 @@ Afhankelijk van uw projectconfiguratie, kunnen uw verbeteringstaken het volgende
 
 ## Upgrade uitvoeren vanaf oudere versies
 
-Als u een upgrade start vanaf een versie van Commerce die ouder is dan versie 2.1, kunnen sommige beperkingen in de Adobe Commerce-codebasis van invloed zijn op de mogelijkheid om _update_ naar een specifieke ECE-Tools-versie of naar _upgrade_ naar de volgende ondersteunde handelsversie. Gebruik de volgende tabel om het beste pad te bepalen:
+Als u met een verbetering van een versie van Commerce ouder dan 2.1 begint, kunnen sommige beperkingen in de codebasis van Adobe Commerce uw capaciteit beïnvloeden om __ aan een specifieke ECE-Hulpmiddelen versie of aan _verbetering_ aan de volgende gesteunde versie van Commerce bij te werken. Gebruik de volgende tabel om het beste pad te bepalen:
 
 | Huidige versie | Upgradepad |
 | ----------------- | ------------ |
-| 2.1.3 en eerdere versies | Upgrade Adobe Commerce naar versie 2.1.4 of hoger voordat u verdergaat. Voer vervolgens een [eenmalige upgrade voor de installatie van ECE-tools](../dev-tools/install-package.md). |
-| 2.1.4 - 2.1.14 | [ECE-gereedschappen bijwerken](../dev-tools/update-package.md) pakket.<br>Zie opmerkingen bij de release voor [2002,0,9](../release-notes/cloud-release-archive.md#v200209) en hoger versies van 2002.0.x. |
-| 2.1.15 - 2.1.16 | [ECE-gereedschappen bijwerken](../dev-tools/update-package.md) pakket.<br>Zie opmerkingen bij de release voor[2002,0,9](../release-notes/cloud-release-archive.md#v200209) en later. |
-| 2.2.x en hoger | [ECE-gereedschappen bijwerken](../dev-tools/update-package.md) pakket.<br>Zie opmerkingen bij de release voor[2002,0,8](../release-notes/cloud-release-archive.md#v200208) en later. |
+| 2.1.3 en eerdere versies | Upgrade Adobe Commerce naar versie 2.1.4 of hoger voordat u verdergaat. Dan voer a [ eenmalig verbetering uit om ECE-Hulpmiddelen ](../dev-tools/install-package.md) te installeren. |
+| 2.1.4 - 2.1.14 | [ Update ECE-Hulpmiddelen ](../dev-tools/update-package.md) pakket.<br> zie versienota&#39;s voor [ 2002.0.9 ](../release-notes/cloud-release-archive.md#v200209) en recentere versies 2002.0.x. |
+| 2.1.15 - 2.1.16 | [ Update ECE-Hulpmiddelen ](../dev-tools/update-package.md) pakket.<br> zie versienota&#39;s voor [ 2002.0.9 ](../release-notes/cloud-release-archive.md#v200209) en later. |
+| 2.2.x en hoger | [ Update ECE-Hulpmiddelen ](../dev-tools/update-package.md) pakket.<br> zie versienota&#39;s voor [ 2002.0.8 ](../release-notes/cloud-release-archive.md#v200208) en later. |
 
 {style="table-layout:auto"}
 
@@ -43,15 +43,15 @@ Als u een upgrade start vanaf een versie van Commerce die ouder is dan versie 2.
 
 ## Configuratiebeheer
 
-Oudere versies van Adobe Commerce, zoals 2.1.4 of hoger naar 2.2.x of hoger, gebruikten een `config.local.php` bestand voor configuratiebeheer. Adobe Commerce versie 2.2.0 en hoger `config.php` bestand, dat precies hetzelfde werkt als het `config.local.php` bestand, maar het heeft andere configuratie-instellingen die een lijst met de ingeschakelde modules en aanvullende configuratieopties bevatten.
+Oudere versies van Adobe Commerce, zoals 2.1.4 of hoger tot 2.2.x of hoger, hebben een `config.local.php` -bestand gebruikt voor configuratiebeheer. Adobe Commerce versie 2.2.0 en hoger gebruiken het `config.php` -bestand, dat precies hetzelfde werkt als het `config.local.php` -bestand, maar dat andere configuratie-instellingen heeft, waaronder een lijst met de ingeschakelde modules en aanvullende configuratieopties.
 
-Wanneer u een upgrade uitvoert vanaf een oudere versie, moet u de opdracht `config.local.php` bestand gebruiken om nieuwer te gebruiken `config.php` bestand. Gebruik de volgende stappen om een back-up van het configuratiebestand te maken en een bestand te maken.
+Wanneer u een upgrade uitvoert vanaf een oudere versie, moet u het `config.local.php` -bestand migreren om het nieuwere `config.php` -bestand te kunnen gebruiken. Gebruik de volgende stappen om een back-up van het configuratiebestand te maken en een bestand te maken.
 
-**Een tijdelijke `config.php` file**:
+**om een tijdelijk `config.php` dossier** te creëren:
 
-1. Een kopie maken van `config.local.php` bestand en noem het bestand `config.php`.
+1. Maak een kopie van het `config.local.php` -bestand en noem het `config.php` .
 
-1. Dit bestand toevoegen aan de `app/etc` van uw project.
+1. Voeg dit bestand toe aan de map `app/etc` van uw project.
 
 1. Voeg het bestand toe en wijs het toe aan uw vertakking.
 
@@ -61,21 +61,21 @@ Wanneer u een upgrade uitvoert vanaf een oudere versie, moet u de opdracht `conf
 
 >[!WARNING]
 >
->Na de upgrade kunt u de `config.php` en een nieuw, volledig bestand genereren. U kunt dit bestand alleen deze keer verwijderen om het te vervangen. Na het genereren van een nieuwe, volledige `config.php` kunt u het bestand niet verwijderen om een nieuw bestand te genereren. Zie [Configuratiebeheer en implementatie van pijpleidingen](../store/store-settings.md).
+>Na de upgrade kunt u het `config.php` -bestand verwijderen en een nieuw, volledig bestand genereren. U kunt dit bestand alleen deze keer verwijderen om het te vervangen. Nadat u een nieuw, volledig `config.php` bestand hebt gegenereerd, kunt u het bestand niet verwijderen om een nieuw bestand te genereren. Zie [ het Beheer van de Configuratie en Plaatsing van de Pijpleiding ](../store/store-settings.md).
 
 ### Afhankelijkheden van Zend Framework-composer verifiëren
 
-Bij upgrade naar **2.3.x of hoger vanaf 2.2.x**, controleert u of de afhankelijkheden van het Zend Framework zijn toegevoegd aan de `autoload` eigendom van de `composer.json` bestand ter ondersteuning van Laminas. Deze insteekmodule ondersteunt nieuwe vereisten voor het Zend Framework, dat naar het Laminas-project is gemigreerd. Zie [Migratie van Zend Framework naar het Laminas-project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) op de _Magento DevBlog_.
+Wanneer bevordering aan **2.3.x of recenter van 2.2.x**, verifieer dat de gebiedsdelen van het Kader van Zend aan het `autoload` bezit van het `composer.json` dossier zijn toegevoegd om Laminas te steunen. Deze insteekmodule ondersteunt nieuwe vereisten voor het Zend Framework, dat naar het Laminas-project is gemigreerd. Zie [ Migratie van Kader van Zend aan het Project van Laminas ](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) op het _Magento DevBlog_.
 
-**Als u de opdracht `auto-load:psr-4` configuratie**:
+**om de `auto-load:psr-4` configuratie** te controleren:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
 1. Ontdek je integratietak.
 
-1. Open de `composer.json` in een teksteditor.
+1. Open het `composer.json` -bestand in een teksteditor.
 
-1. Controleer de `autoload:psr-4` voor de Zend plugin manager implementatie voor controlemechanismeafhankelijkheid.
+1. Controleer de sectie `autoload:psr-4` voor de Zend plugin manager implementatie voor controlemechanismeafhankelijkheid.
 
    ```json
     "autoload": {
@@ -88,9 +88,9 @@ Bij upgrade naar **2.3.x of hoger vanaf 2.2.x**, controleert u of de afhankelijk
    }
    ```
 
-1. Als de Zend-afhankelijkheid ontbreekt, werkt u de `composer.json` bestand:
+1. Als de Zend-afhankelijkheid ontbreekt, werkt u het `composer.json` -bestand bij:
 
-   - Voeg de volgende regel toe aan de `autoload:psr-4` sectie.
+   - Voeg de volgende regel toe aan de sectie `autoload:psr-4` .
 
      ```json
      "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
@@ -120,17 +120,17 @@ Bij upgrade naar **2.3.x of hoger vanaf 2.2.x**, controleert u of de afhankelijk
 
 ## Configuratiebestanden
 
-Voordat u de toepassing kunt upgraden, moet u de projectconfiguratiebestanden bijwerken om rekening te houden met wijzigingen in de standaardconfiguratie-instellingen voor Adobe Commerce op de cloudinfrastructuur of de toepassing. De meest recente standaardwaarden vindt u in het gedeelte [magento-cloud GitHub-opslagplaats](https://github.com/magento/magento-cloud).
+Voordat u de toepassing kunt upgraden, moet u de projectconfiguratiebestanden bijwerken om rekening te houden met wijzigingen in de standaardconfiguratie-instellingen voor Adobe Commerce op de cloudinfrastructuur of de toepassing. De recentste gebreken kunnen in de [ magento-cloud bewaarplaats GitHub ](https://github.com/magento/magento-cloud) worden gevonden.
 
 ### .magento.app.yaml
 
-Controleer altijd de waarden in het dialoogvenster [.magento.app.yaml](../application/configure-app-yaml.md) bestand voor uw geïnstalleerde versie, omdat deze de manier bepaalt waarop uw toepassing wordt gebouwd en geïmplementeerd in de cloudinfrastructuur. Het volgende voorbeeld is voor versie 2.4.7 en gebruikt Composer 2.7.2. De `build: flavor:` eigenschap wordt niet gebruikt voor Composer 2.x; zie [Composer 2 installeren en gebruiken](../application/properties.md#installing-and-using-composer-2).
+Controleer altijd de waarden in het [ .magento.app.yaml ](../application/configure-app-yaml.md) dossier voor uw geïnstalleerde versie, omdat het de manier controleert uw toepassing bouwt en aan de wolkeninfrastructuur opstelt. Het volgende voorbeeld is voor versie 2.4.7 en gebruikt Composer 2.7.2. Het `build: flavor:` bezit wordt niet gebruikt voor Composer 2.x; zie [ Installerend en gebruikend Composer 2 ](../application/properties.md#installing-and-using-composer-2).
 
-**Als u het dialoogvenster `.magento.app.yaml` file**:
+**om het `.magento.app.yaml` dossier** bij te werken:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
-1. Open en bewerk de `magento.app.yaml` bestand.
+1. Open en bewerk het `magento.app.yaml` -bestand.
 
 1. Werk de PHP-opties bij.
 
@@ -144,7 +144,7 @@ Controleer altijd de waarden in het dialoogvenster [.magento.app.yaml](../applic
            composer/composer: '2.7.2'
    ```
 
-1. Wijzig de `hooks` eigenschap `build` en `deploy` opdrachten.
+1. Wijzig de opdrachten `hooks` property `build` en `deploy` .
 
    ```yaml
    hooks:
@@ -189,11 +189,11 @@ Controleer altijd de waarden in het dialoogvenster [.magento.app.yaml](../applic
 
 ### composer.json
 
-Controleer vóór de upgrade altijd of de afhankelijkheden in de `composer.json` zijn compatibel met de Adobe Commerce-versie.
+Controleer voordat u de upgrade uitvoert of de afhankelijkheden in het `composer.json` -bestand compatibel zijn met de Adobe Commerce-versie.
 
-**Als u het dialoogvenster `composer.json` bestand voor Adobe Commerce versie 2.4.4 en hoger**:
+**om het `composer.json` dossier voor versie 2.4.4 van Adobe Commerce en later bij te werken**:
 
-1. Voeg het volgende toe `allow-plugins` aan de `config` sectie:
+1. Voeg het volgende `allow-plugins` toe aan de sectie `config` :
 
    ```json
    "config": {
@@ -205,7 +205,7 @@ Controleer vóór de upgrade altijd of de afhankelijkheden in de `composer.json`
    },
    ```
 
-1. Voeg de volgende plug-in toe aan de `require` sectie:
+1. Voeg de volgende plug-in toe aan de sectie `require` :
 
    ```json
    "require": {
@@ -213,7 +213,7 @@ Controleer vóór de upgrade altijd of de afhankelijkheden in de `composer.json`
    },
    ```
 
-1. Voeg de volgende component aan toe `extra:component_paths` sectie:
+1. Voeg de volgende component toe aan de sectie `extra:component_paths` :
 
    ```json
    "extra": {
@@ -231,7 +231,7 @@ Controleer vóór de upgrade altijd of de afhankelijkheden in de `composer.json`
 
 We raden u aan een back-up van uw project te maken voordat u de upgrade uitvoert. Gebruik de volgende stappen om een back-up te maken van uw integratie-, staging- en productieomgevingen.
 
-**Een back-up maken van de database en code van uw integratieomgeving**:
+**aan file uw gegevensbestand van het integratiemilieu en code**:
 
 1. Maak een lokale back-up van de externe database.
 
@@ -241,7 +241,7 @@ We raden u aan een back-up van uw project te maken voordat u de upgrade uitvoert
 
    >[!NOTE]
    >
-   >De `magento-cloud db:dump` bevel stelt het bevel in werking [mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) gebruiken met de `--single-transaction` markering, die u aan file uw gegevensbestand toestaat zonder de lijsten te sluiten.
+   >Het `magento-cloud db:dump` bevel stelt het [ mysqldump ](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) bevel met de `--single-transaction` vlag in werking, die u aan file uw gegevensbestand zonder de lijsten te sluiten toestaat.
 
 1. Maak een back-up van code en media.
 
@@ -249,29 +249,29 @@ We raden u aan een back-up van uw project te maken voordat u de upgrade uitvoert
    php bin/magento setup:backup --code [--media]
    ```
 
-   U kunt desgewenst weglaten `[--media]` als u een groot aantal statische dossiers hebt die reeds in broncontrole zijn.
+   U kunt `[--media]` ook weglaten als u een groot aantal statische bestanden hebt die al in bronbeheer staan.
 
-**Om een back-up te maken van uw milieu-database voor Staging of Productie voordat u deze implementeert**:
+**aan file uw het Staging of milieu gegevensbestand van de Productie alvorens** op te stellen:
 
 1. Gebruik SSH om u aan te melden bij de externe omgeving.
 
-1. Een [databasedruk](../storage/database-dump.md). Om een doelfolder voor de stortplaats van DB te kiezen, gebruik `--dump-directory` -optie.
+1. Creeer a [ gegevensbestandstortplaats ](../storage/database-dump.md). Als u een doelmap voor de DB-dump wilt kiezen, gebruikt u de optie `--dump-directory` .
 
    ```bash
    vendor/bin/ece-tools db-dump
    ```
 
-   De stortplaatsverrichting leidt tot een `dump-<timestamp>.sql.gz` archiefbestand in uw externe projectmap. Zie [Back-up van database maken](../storage/database-dump.md).
+   Met de dump-bewerking maakt u een `dump-<timestamp>.sql.gz` archiefbestand in uw externe projectmap. Zie [ file gegevensbestand ](../storage/database-dump.md).
 
 ## Toepassingsupgrade
 
-Controleer de [serviceversies](../services/services-yaml.md#service-versions) informatie voor de meest recente vereisten voor softwareversies voordat u uw toepassing upgradet.
+Herzie de [ informatie van de de dienstversies ](../services/services-yaml.md#service-versions) voor de recentste vereisten van de softwareversie alvorens uw toepassing te bevorderen.
 
-**De toepassingsversie upgraden**:
+**om de toepassingsversie** te bevorderen:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
-1. De upgradeversie instellen met de [syntaxis voor versiebeperking](overview.md#cloud-metapackage).
+1. Plaats de verbeteringsversie gebruikend de [ syntaxis van de versiebeperking ](overview.md#cloud-metapackage).
 
    ```bash
    composer require "magento/magento-cloud-metapackage":">=CURRENT_VERSION <NEXT_VERSION" --no-update
@@ -279,7 +279,7 @@ Controleer de [serviceversies](../services/services-yaml.md#service-versions) in
 
    >[!NOTE]
    >
-   >U moet de syntaxis van de versiebeperking gebruiken om de `ece-tools` pakket. U kunt de versiebeperking vinden in de `composer.json` bestand voor de versie van het [toepassingssjabloon](https://github.com/magento/magento-cloud/blob/master/composer.json) u gebruikt voor de upgrade.
+   >U moet de syntaxis van de versiebeperking gebruiken om het `ece-tools` -pakket bij te werken. U kunt de versiebeperking in het `composer.json` dossier voor de versie van het [ toepassingsmalplaatje ](https://github.com/magento/magento-cloud/blob/master/composer.json) vinden u voor de verbetering gebruikt.
 
 1. Werk het project bij.
 
@@ -301,7 +301,7 @@ Controleer de [serviceversies](../services/services-yaml.md#service-versions) in
    git push origin <branch-name>
    ```
 
-   `git add -A` is vereist om alle veranderde dossiers aan broncontrole wegens de manier toe te voegen Composer basispakketten marshals. Beide `composer install` en `composer update` marshal-bestanden uit het basispakket (`magento/magento2-base` en `magento/magento2-ee-base`) in de hoofdmap van het pakket.
+   `git add -A` is vereist om alle gewijzigde bestanden toe te voegen aan bronbesturing vanwege de manier waarop Composer basispakketten marshals. Zowel `composer install` als `composer update` marshal dossiers van het basispakket (`magento/magento2-base` en `magento/magento2-ee-base`) in de pakketwortel.
 
    De bestanden die Composer marshals hebben, horen bij de nieuwe versie van Adobe Commerce, om de verouderde versie van dezelfde bestanden te overschrijven. Op dit moment is het rangschikken in Adobe Commerce uitgeschakeld, dus u moet de gemarcheerde bestanden toevoegen aan bronbesturing.
 
@@ -315,23 +315,23 @@ Controleer de [serviceversies](../services/services-yaml.md#service-versions) in
 
 ### Een bestand config.php maken
 
-Zoals vermeld in [Configuratiebeheer](#configuration-management), na de upgrade moet u een bijgewerkte `config.php` bestand. Voltooi eventuele aanvullende configuratiewijzigingen via de beheerfunctie in uw integratieomgeving.
+Zoals vermeld in [ beheer van de Configuratie ](#configuration-management), na bevordering, moet u een bijgewerkt `config.php` dossier creëren. Voltooi eventuele aanvullende configuratiewijzigingen via de beheerfunctie in uw integratieomgeving.
 
-**Een systeemspecifiek configuratiebestand maken**:
+**om een systeem-specifiek configuratiedossier** tot stand te brengen:
 
-1. Van de terminal, gebruik een bevel van SSH om te produceren `/app/etc/config.php` bestand voor de omgeving.
+1. Gebruik vanaf de terminal een SSH-opdracht om het `/app/etc/config.php` -bestand voor de omgeving te genereren.
 
    ```bash
    ssh <SSH-URL> "<Command>"
    ```
 
-   Bijvoorbeeld voor Pro, om `scd-dump` op de `integration` vertakking:
+   Als u bijvoorbeeld voor Pro de instructie `scd-dump` wilt uitvoeren op de `integration` -vertakking:
 
    ```bash
    ssh <project-id-integration>@ssh.us.magentosite.cloud "php vendor/bin/ece-tools config:dump"
    ```
 
-1. Breng de `config.php` bestand naar uw lokale werkstations met `rsync` of `scp`. U kunt dit bestand alleen lokaal aan de vertakking toevoegen.
+1. Breng het `config.php` -bestand via `rsync` of `scp` over naar uw lokale werkstations. U kunt dit bestand alleen lokaal aan de vertakking toevoegen.
 
    ```bash
    rsync <SSH-URL>:app/etc/config.php ./app/etc/config.php
@@ -343,17 +343,17 @@ Zoals vermeld in [Configuratiebeheer](#configuration-management), na de upgrade 
    git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
    ```
 
-   Hiermee wordt een bijgewerkte versie gegenereerd `/app/etc/config.php` bestand met een modulelijst en configuratie-instellingen.
+   Hiermee wordt een bijgewerkt `/app/etc/config.php` -bestand gegenereerd met een lijst met modules en configuratie-instellingen.
 
 >[!WARNING]
 >
->Voor een upgrade verwijdert u het dialoogvenster `config.php` bestand. Nadat dit bestand aan de code is toegevoegd, moet u **niet** verwijderen. Als u instellingen moet verwijderen of bewerken, bewerkt u het bestand handmatig.
+>Voor een upgrade verwijdert u het bestand `config.php` . Zodra dit dossier aan uw code wordt toegevoegd, zou u **niet** het moeten schrappen. Als u instellingen moet verwijderen of bewerken, bewerkt u het bestand handmatig.
 
 ### Extensies upgraden
 
 Bekijk de extensie- en modulepagina&#39;s van derden in Marketplace of andere bedrijfssites en controleer de ondersteuning voor Adobe Commerce en Adobe Commerce op cloudinfrastructuur. Als u extensies en modules van derden moet bijwerken, raadt de Adobe aan te werken in een nieuwe integratievertakking met uw extensies uitgeschakeld.
 
-**Uw extensies verifiëren en upgraden**:
+**om uw uitbreidingen** te verifiëren en te bevorderen:
 
 1. Maak een vertakking op uw lokale werkstation.
 
@@ -371,11 +371,11 @@ Bekijk de extensie- en modulepagina&#39;s van derden in Marketplace of andere be
 
 1. Druk op de testomgeving om te testen in een pre-productieomgeving.
 
-Adobe beveelt ten zeerste aan uw productieomgeving te upgraden _voor_ inclusief de bijgewerkte extensies in het startproces van uw site.
+De Adobe adviseert sterk bevordering uw milieu van de Productie _vóór_ met inbegrip van de promotieuitbreidingen in uw proces van de plaatslancering.
 
 >[!NOTE]
 >
->Wanneer u uw toepassingsversie verbetert, werkt het verbeteringsproces aan de recentste versie van het [Fastly CDN-module](../cdn/fastly.md#fastly-cdn-module-for-magento-2) automatisch.
+>Wanneer u uw toepassingsversie bevordert, werkt het verbeteringsproces aan de recentste versie van de [ Snelle CDN module ](../cdn/fastly.md#fastly-cdn-module-for-magento-2) automatisch bij.
 
 ## Upgrade problemen oplossen
 
@@ -387,7 +387,7 @@ Exception printing is disabled by default for security reasons.
   Error log record number: <error-number>
 ```
 
-**De fout oplossen**:
+**om de fout** op te lossen:
 
 1. Wijzig op uw lokale werkstation de projectmap.
 
@@ -397,9 +397,9 @@ Exception printing is disabled by default for security reasons.
    magento-cloud ssh
    ```
 
-1. Open de `./app/var/report/<error number>` bestand.
+1. Open het `./app/var/report/<error number>` -bestand.
 
-1. [De logboeken controleren](../test/log-locations.md) en bepaalt u de bron van de uitgave.
+1. [ onderzoek de logboeken ](../test/log-locations.md) en bepaal de bron van de kwestie.
 
 1. Wijzigingen in code toevoegen, vastleggen en doorvoeren.
 
