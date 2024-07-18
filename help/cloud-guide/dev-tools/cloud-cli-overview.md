@@ -2,7 +2,7 @@
 title: Cloud CLI
 description: Leer meer over de magento-cloud CLI en hoe u hiermee lokale ontwikkelomgevingen voor uw Adobe Commerce kunt beheren op het infrastructuurproject voor de cloud.
 exl-id: 70dddd62-0269-4af4-bd2a-1a4fbf11a131
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '741'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Met het CLI-hulpprogramma van `magento-cloud` kunnen ontwikkelaars en systeembeh
    magento-cloud
    ```
 
-   ```terminal
+   ```
    Welcome to Magento Cloud!
    Please log in using your Magento Cloud account.
    Your email address or username:
@@ -94,7 +94,7 @@ magento-cloud environment:redeploy
 
 Monsterrespons:
 
-```terminal
+```
 Are you sure you want to redeploy the environment <environment-name>? [Y/n]
 ```
 
@@ -193,7 +193,7 @@ Als uw `magento-cloud` CLI bijgewerkt is, ziet u de volgende reactie:
 magento-cloud update
 ```
 
-```terminal
+```
 Checking for Magento Cloud CLI updates (current version: X.XX.X)
 No updates found
 ```

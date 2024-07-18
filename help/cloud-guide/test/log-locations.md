@@ -3,7 +3,7 @@ title: Logbestanden weergeven en beheren
 description: Begrijp de typen logbestanden die beschikbaar zijn in de cloudinfrastructuur en waar u ze kunt vinden.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 86af69eed16e8fe464de93bd0f33cfbfd4ed8f49
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 0%
@@ -44,7 +44,7 @@ magento-cloud ssh -p <project-ID> -e <environment-ID> --all
 
 Monsterrespons:
 
-```terminal
+```
 1.ent-project-environment-id@ssh.region.magento.cloud
 2.ent-project-environment-id@ssh.region.magento.cloud
 3.ent-project-environment-id@ssh.region.magento.cloud
@@ -84,7 +84,7 @@ Nadat u wijzigingen in uw omgeving hebt aangebracht, kunt u de logboekregistrati
 
 Controleer de tijdstempels op logboekingangen, verifieer, en bepaal de plaats van de logboeken voor een specifieke plaatsing. Hieronder ziet u een beknopt voorbeeld van loguitvoer die u kunt gebruiken voor het oplossen van problemen:
 
-```terminal
+```
 Re-deploying environment project-integration-ID
   Executing post deploy hook for service `mymagento`
     [2019-01-03 19:44:11] NOTICE: Starting post-deploy.
@@ -129,7 +129,7 @@ magento-cloud log -e <environment-ID> deploy
 
 Monsterrespons:
 
-```terminal
+```
 Reading log file projectID-branchname-ID--mymagento@ssh.zone.magento.cloud:/var/log/'deploy.log'
 
 [2023-04-24 18:58:03.080678] Launching command 'b'php ./vendor/bin/ece-tools run scenario/deploy.xml\n''.
@@ -153,7 +153,7 @@ magento-cloud ssh -e <environment-ID> "./vendor/bin/ece-tools error:show"
 
 Monsterrespons:
 
-```terminal
+```
 errorCode: 1001
 stage: build
 step: validate-config
@@ -187,19 +187,19 @@ Toepassingslogboeken zijn net als logboeken voor implementatie uniek voor elke o
 | Logbestand | Starter en Pro-integratie | Beschrijving |
 | ------------------- | --------------------------- | ------------------------------------------------- |
 | **Deploy logboek** | `/var/log/deploy.log` | De activiteit van [ stelt haak ](../application/hooks-property.md) op. |
-| **Post-stelt logboek** op | `/var/log/post_deploy.log` | De activiteit van [ post-stelt haak ](../application/hooks-property.md) op. |
+| **Logboek van de post-opstellen** | `/var/log/post_deploy.log` | De activiteit van [ post-stelt haak ](../application/hooks-property.md) op. |
 | **het logboek van het Gewas** | `/var/log/cron.log` | Uitvoer van snijtaken. |
 | **Nginx toegangslogboek** | `/var/log/access.log` | Bij Nginx-start worden HTTP-fouten gegenereerd voor ontbrekende mappen en uitgesloten bestandstypen. |
 | **Nginx foutenlogboek** | `/var/log/error.log` | Opstartberichten die nuttig zijn voor foutopsporing in configuratiefouten die aan Nginx zijn gekoppeld. |
 | **PHP toegangslogboek** | `/var/log/php.access.log` | Verzoeken aan de PHP service. |
 | **PHP FPM logboek** | `/var/log/app.log` | |
 
-Voor Pro Staging- en productieomgevingen zijn de logbestanden Implementeren, Post implementeren en Uitsnijden alleen beschikbaar op het eerste knooppunt in de cluster:
+Voor Pro Staging- en productieomgevingen zijn de logbestanden Implementeren, Post-implementeren en Uitsnijden alleen beschikbaar op het eerste knooppunt in de cluster:
 
 | Logbestand | Pro Staging | Pro Production |
 | ------------------- | --------------------------------------------------- | ----------------------------------------------- |
 | **Deploy logboek** | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>_stg/deploy.log` | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>/deploy.log` |
-| **Post-stelt logboek** op | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>/post_deploy.log` |
+| **Logboek van de post-opstellen** | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>/post_deploy.log` |
 | **het logboek van het Gewas** | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>_stg/cron.log` | Alleen eerste knooppunt:<br>`/var/log/platform/<project-ID>/cron.log` |
 | **Nginx toegangslogboek** | `/var/log/platform/<project-ID>_stg/access.log` | `/var/log/platform/<project-ID>/access.log` |
 | **Nginx foutenlogboek** | `/var/log/platform/<project-ID>_stg/error.log` | `/var/log/platform/<project-ID>/error.log` |
@@ -210,7 +210,7 @@ Voor Pro Staging- en productieomgevingen zijn de logbestanden Implementeren, Pos
 
 De toepassingslogboeken worden eenmaal per dag gecomprimeerd en gearchiveerd en één jaar bewaard. De gecomprimeerde logbestanden krijgen een naam met een unieke id die overeenkomt met de naam `Number of Days Ago + 1` . In Pro-productieomgevingen wordt bijvoorbeeld een PHP-toegangslogboek voor 21 dagen in het verleden opgeslagen en als volgt benoemd:
 
-```terminal
+```
 /var/log/platform/<project-ID>/php.access.log.22.gz
 ```
 
@@ -218,7 +218,7 @@ De gearchiveerde logboekdossiers worden altijd opgeslagen in de folder waar het 
 
 >[!NOTE]
 >
->**stelt** op en **Post-stelt** logboekdossiers op worden niet geroteerd en gearchiveerd. De volledige plaatsingsgeschiedenis wordt geschreven binnen die logboekdossiers.
+>**stelt** en **op:stellen** logboekdossiers op worden niet geroteerd en gearchiveerd. De volledige plaatsingsgeschiedenis wordt geschreven binnen die logboekdossiers.
 
 ## Servicelogboeken
 

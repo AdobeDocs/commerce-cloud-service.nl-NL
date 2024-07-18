@@ -4,7 +4,7 @@ description: Leer hoe u de verificatievereisten voor SSH-toegang tot Adobe Comme
 feature: Cloud, Security
 topic: Security
 exl-id: 754b2c22-f197-49be-a699-fb3bedf053fc
-source-git-commit: ec1e59c3aafae6452ad1590fdb9de37c68b94ed9
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1051'
 ht-degree: 0%
@@ -68,7 +68,7 @@ U kunt uw lokale milieu vormen om het certificaat van SSH automatisch te produce
 
    >Volg het antwoord:
 
-   ```terminal
+   ```
    Please open the following URL in a browser and log in:
    http://127.0.0.1:5000
    
@@ -115,7 +115,7 @@ Voor projecten die met MFA handhaving worden toegelaten, vereist de toegang van 
 
    > Monsterrespons:
 
-   ```terminal
+   ```
    Generating SSH certificate...
      Expires at: 2020-07-13T15:28:13-04:00
      Multi-factor authentication: verified
@@ -132,7 +132,7 @@ Voor projecten die met MFA handhaving worden toegelaten, vereist de toegang van 
    ssh abcdef7uyxabce-master-7rqtwti--mymagento@ssh.us-5.magento.cloud
    ```
 
-   ```terminal
+   ```
     __  __                   _          ___ _             _
    |  \/  |__ _ __ _ ___ _ _| |_ ___   / __| |___ _  _ __| |
    | |\/| / _` / _` / -_) ' \  _/ _ \ | (__| / _ \ || / _` |
@@ -167,7 +167,7 @@ Wanneer u broncode voor Adobe Commerce beheert voor cloud-infrastructuurprojecte
 
    > Monsterrespons:
 
-   ```terminal
+   ```
    Generating SSH certificate...
      Expires at: 2020-07-13T15:28:13-04:00
      Multi-factor authentication: verified
@@ -186,7 +186,7 @@ Wanneer u broncode voor Adobe Commerce beheert voor cloud-infrastructuurprojecte
 
    > Monsterrespons:
 
-   ```terminal
+   ```
    Cloning into 'myproject'...
    Connection to git.us-3.magento.cloud port 22 [tcp/ssh] succeeded!
    remote: counting objects: 22, done.
@@ -218,7 +218,7 @@ Voor verificatie met een API-token moet nog steeds een SSH-certificaat worden ge
 
 1. Voer bij de prompt de waarde voor een geldig API-token in.
 
-   ```terminal
+   ```
    Please enter an API token:
    >
    
@@ -273,7 +273,7 @@ Gebruik de volgende informatie om fouten in SSH-verbindingsaanvragen door verifi
 
 Als uw verzoek geen geldig certificaat oplevert, wordt een bericht weergegeven dat lijkt op het volgende:
 
-```terminal
+```
 to Hello user-test (UUID: abaacca12-5cd1-4b123-9096-411add578998), you successfully
 authenticated, but could not connect to service abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud:>
 (reason: access requires MFA)
@@ -320,7 +320,7 @@ Probeer de volgende het oplossen van problemenprocedures om de verbindingskwesti
 
 Als de SSH-sleutel ontbreekt of ongeldig is, retourneert de SSH-verbindingsaanvraag een `Permission denied (publickey)` -fout.
 
-```terminal
+```
 Hello user-test (UUID: abaacca12-5cd1-4b123-9096-411add578998), you successfully authenticated, but could not connect to service oh2wi6klp5ytk-mc-35985-integration-nnulm4a--mymagento (reason: service doesn't exist or you do not have access to it)
 oh2wi6klp5ytk-mc-35985-integration-nnulm4a--mymagento@ssh.eu-3.magento.cloud: Permission denied (publickey).
 ```
@@ -337,7 +337,7 @@ ssh abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud
 
 Monsterrespons:
 
-```terminal
+```
 abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud: Permission denied (publickey).
 ```
 

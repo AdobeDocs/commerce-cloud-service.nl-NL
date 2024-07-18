@@ -3,7 +3,7 @@ title: Slimme wizards
 description: Leer hoe u slimme wizards gebruikt om te beoordelen of uw Adobe Commerce on cloud Infrastructure-project de best practices voor implementatie volgt.
 feature: Cloud, Build, Deploy, SCD
 exl-id: eb79431c-8835-4ae4-b453-9c4932c5d5ac
-source-git-commit: 225fba1acfd8b3ce4d7ce989c7851e7b0b218680
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 0%
@@ -36,13 +36,13 @@ Als voorbeeld, kunt u verifiëren dat uw configuratie behoorlijk SCD op bestelli
 
 Een geslaagde configuratie retourneert:
 
-```terminal
+```
 SCD on-demand is enabled
 ```
 
 Een mislukte configuratie retourneert:
 
-```terminal
+```
 SCD on-demand is disabled
 ```
 
@@ -50,7 +50,7 @@ SCD on-demand is disabled
 
 De _ideale_ configuratie voor uw project van de Wolk helpt om plaatsing onderbreking te minimaliseren door het geheime voorgeheugen te verwarmen en statische inhoud te produceren wanneer gevraagd door de gebruiker. Deze tovenaar loopt automatisch tijdens het plaatsingsproces. Als uw Wolk niet voor deze _ideale staat_ wordt gevormd, dan ontvangt u een bericht gelijkend op het volgende:
 
-```terminal
+```
 - SCD on build is not configured
 - Post-deploy hook is not configured
 - Skip HTML minification is disabled
@@ -81,6 +81,6 @@ Gebaseerd op de output, moet u de volgende correcties in uw configuratie aanbren
 
 1. Duw uw code verandert en stel de test opnieuw in werking. Wanneer uw configuratie __ ideaal is, ontvangt u het volgende bericht.
 
-   ```terminal
+   ```
    Ideal state is configured
    ```

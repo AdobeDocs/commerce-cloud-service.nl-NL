@@ -3,7 +3,7 @@ title: Schaalbare architectuur
 description: Lees meer over de gesplitste architectuur en hoe deze geschaald kan worden uitgebreid om aan de vraag te voldoen.
 feature: Cloud, Auto Scaling, Iaas, Logs
 exl-id: c54d8772-b6cc-41cc-b1ab-bef7d6f13bf2
-source-git-commit: 8a0523f1714b6ea41887e99b5c31294cf5e5255e
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '816'
 ht-degree: 0%
@@ -70,7 +70,7 @@ ssh <node>.<project-ID>-<environment>-<user-ID>@ssh.<region>.magento.com
 
 De reactie van het voorbeeld aangezien u login aan a **de dienstknoop** omvat _verenigde_ rol:
 
-```terminal
+```
  __  __                   _          ___ _             _
 |  \/  |__ _ __ _ ___ _ _| |_ ___   / __| |___ _  _ __| |
 | |\/| / _` / _` / -_) ' \  _/ _ \ | (__| / _ \ || / _` |
@@ -86,7 +86,7 @@ project-id@server-id:~$
 
 De reactie van het voorbeeld aangezien u login aan a **Webknoop** omvat de _Web_ rol:
 
-```terminal
+```
  __  __                   _          ___ _             _
 |  \/  |__ _ __ _ ___ _ _| |_ ___   / __| |___ _  _ __| |
 | |\/| / _` / _` / -_) ' \  _/ _ \ | (__| / _ \ || / _` |

@@ -3,7 +3,7 @@ title: Firewall, eigenschap
 description: Zie voorbeelden over het configureren van de firewalleigenschap in het configuratiebestand van de Commerce-toepassing.
 feature: Cloud, Configuration, Security
 exl-id: f169c008-c62a-41b7-a98d-cccd81c7291a
-source-git-commit: 74d88560db3b65294673a1e1827f9cea098d707a
+source-git-commit: a8ecebc87bfae5deaf0fc7ff3e7dd3b255fe3f24
 workflow-type: tm+mt
 source-wordcount: '844'
 ht-degree: 0%
@@ -32,7 +32,7 @@ magento-cloud p:curl --project PROJECT_ID /settings | grep -i outbound
 
 Tenzij u `deny` voor uw beleid hebt aangevraagd, moet de opdracht de beleidsset weergeven op `allow` :
 
-```terminal
+```json
 "outbound_restrictions_default_policy": "allow"
 ```
 
@@ -157,7 +157,7 @@ De optie `ips` staat een lijst van IP adressen in de CIDR aantekening toe. U kun
 
 Als u één IP-adres wilt opgeven, voegt u het voorvoegsel `/32` CIDR toe aan het einde van het IP-adres:
 
-```terminal
+```
 172.217.11.174/32  # google.com
 ```
 
@@ -189,7 +189,7 @@ awk '($5 ~/query/)' /var/log/dns.log | awk '{print $6}' | sort | uniq -c | sort 
 
 Dit bevel toont ook DNS verzoeken die door uw uitgang-filtrerende regels werden gemaakt maar geblokkeerd. De uitvoer geeft niet aan welke domeinen zijn geblokkeerd, alleen dat er aanvragen zijn ingediend. De output toont geen verzoeken die gebruikend een IP adres worden gemaakt.
 
-```terminal
+```
 Example output:
 
 97 magento.com

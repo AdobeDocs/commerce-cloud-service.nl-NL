@@ -5,7 +5,7 @@ role: Developer
 feature: Cloud, Integration
 last-substantial-update: 2024-02-06T00:00:00Z
 exl-id: 2dddba73-5b88-4b5d-a0e1-2f1c1f52354c
-source-git-commit: abe9aa36b907be8bdfdf42e6f28f1e1eac68fecf
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '564'
 ht-degree: 0%
@@ -38,7 +38,7 @@ magento-cloud integration:list
 
 Monsterrespons:
 
-```terminal
+```
 +----------+--------------+---------------------------------------------------------------------------+
 | ID       | Type         | Summary                                                                   |
 +----------+--------------+---------------------------------------------------------------------------+
@@ -85,7 +85,7 @@ De steekproefreactie toont een reeks herinneringen die een kans bieden om de int
 
 U kunt de integratie aanpassen om specifieke [ gebeurtenissen ](#events-to-report) te melden, zoals het duwen van code aan een tak. U kunt bijvoorbeeld de `environment.push` -gebeurtenis opgeven die een bericht verzendt wanneer een gebruiker code naar een vertakking duwt:
 
-```terminal
+```
 Events to report (--events)
 A list of events to report, e.g. environment.push
 Default: *
@@ -95,7 +95,7 @@ Enter comma-separated values (or leave this blank)
 
 U kunt gebeurtenissen in een `pending`-, `in_progress` - of `complete` status rapporteren:
 
-```terminal
+```
 States to report (--states)
 A list of states to report, e.g. pending, in_progress, complete
 Default: complete
@@ -105,7 +105,7 @@ Enter comma-separated values (or leave this blank)
 
 En u kunt _omvatten_ of __ berichten voor specifieke milieu&#39;s uitsluiten:
 
-```terminal
+```
 Included environments (--environments)
 The environment IDs to include
 Default: *
@@ -120,7 +120,7 @@ Enter comma-separated values (or leave this blank)
 
 Wanneer de integratie is voltooid, ontvangt u een overzicht van de waarden:
 
-```terminal
+```
 Created integration integration-ID (type: webhook)
 +-----------------------+------------------------------+
 | Property              | Value                        |
@@ -145,7 +145,7 @@ magento-cloud integration:update --states=pending <int-id>
 
 Monsterrespons:
 
-```terminal
+```
 Integration integration-ID (webhook) updated
 +-----------------------+------------------------------+
 | Property              | Value                        |

@@ -3,7 +3,7 @@ title: Herstellen van componentfout
 description: Leer hoe u kunt herstellen als een component niet correct wordt geïmplementeerd in Adobe Commerce op de cloudinfrastructuur.
 feature: Cloud, Deploy
 exl-id: 4855be0c-6883-4ab1-a364-316d10e97250
-source-git-commit: b44d97f82ef09288807c648010202422c9ac04eb
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '220'
 ht-degree: 0%
@@ -59,7 +59,7 @@ Om van de vorige plaatsing schoon te maken, identificeer de component die werd t
 
    Als het volgende bericht wordt weergegeven, hoeft u niets meer te doen:
 
-   ```terminal
+   ```
    Package "<name>:<version>" listed for update is not installed. Ignoring.
    ```
 

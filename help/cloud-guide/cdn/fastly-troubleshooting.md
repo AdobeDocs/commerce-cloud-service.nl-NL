@@ -3,7 +3,7 @@ title: Snelle probleemoplossing
 description: Leer hoe u de snelste CDN-module en -services voor Adobe Commerce kunt oplossen en beheren.
 feature: Cloud, Configuration, Cache, Services
 exl-id: e4c47035-cbad-4838-8d44-fa5eaaac42d1
-source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1834'
 ht-degree: 0%
@@ -184,7 +184,7 @@ Controleer of de geretourneerde reactie de volgende informatie bevat:
 
 In het volgende fragment uit de uitvoer van de opdracht cURL worden de juiste waarden voor de headers `Pragma` , `X-Magento-Tags` en `Fastly-Module-Enabled` weergegeven:
 
-```terminal
+```
 * STATE: INIT => CONNECT handle 0x600057800; line 1402 (connection #-5000)
 * Rebuilt URL to: https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud/
 * Added connection 0. The cache now contains 1 members

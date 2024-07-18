@@ -3,7 +3,7 @@ title: Beheer van winkelconfiguratie
 description: Leer hoe u de configuratie-instellingen van de winkel in alle Adobe Commerce kunt beheren en synchroniseren in omgevingen met cloudinfrastructuren.
 feature: Cloud, Configuration, SCD
 exl-id: f2dd876d-24ee-4d47-b9ac-44fcf77b61b5
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1439'
 ht-degree: 0%
@@ -162,7 +162,7 @@ Wanneer u de omgeving wijzigt via Beheer en de opdracht opnieuw uitvoert, worden
 
 Kopieën van de oorspronkelijke `app/etc/env.php` - en `app/etc/config.php` -bestanden zijn gemaakt tijdens het implementatieproces en in dezelfde map opgeslagen. Hieronder ziet u de BAK (back-upbestanden) en PHP (oorspronkelijke bestanden) in dezelfde map `app/etc` :
 
-```terminal
+```
 ...
 config.php.bak
 di.xml
@@ -192,7 +192,7 @@ Oudere configuraties hebben het bestand `app/etc/config.local.php` gebruikt. Zie
 
    Monsterrespons:
 
-   ```terminal
+   ```
    The list of backup files:
    app/etc/env.php
    app/etc/config.php

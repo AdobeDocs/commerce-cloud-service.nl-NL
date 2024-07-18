@@ -5,7 +5,7 @@ feature: Cloud, Configuration, Cache
 recommendations: noDisplay, catalog
 role: Developer
 exl-id: e460335f-cd2b-4c98-b1ff-32504599b33d
-source-git-commit: 8b02757591c4e8f607e936de4eda74d76953d9b7
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '511'
 ht-degree: 0%
@@ -45,7 +45,7 @@ stage:
 
 Nadat u de pagina&#39;s specificeert om uw veranderingen te testen en vast te leggen, de _Tijd aan Eerste de testlooppas van de Byte_ tijdens de post-opstellen fase en posten resultaten voor elke weg aan het wolkenlogboek:
 
-```terminal
+```
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.313s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/customer/account/create","status":200}
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.408s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/checkout/cart","status":200}
 ```
@@ -93,7 +93,7 @@ Pas de lijst aan met pagina&#39;s die worden gebruikt om de cache in het `post_d
 
 - **veelvoudige pagina&#39;s** - gebruik het volgende formaat om veelvoudige pagina&#39;s volgens een specifiek regulier uitdrukkingspatroon in het voorgeheugen onder te brengen:
 
-  ```terminal
+  ```
   <entity_type>:<pattern|url|product_sku>:<store_id|store_code>
   ```
 

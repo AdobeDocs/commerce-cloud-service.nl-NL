@@ -4,7 +4,7 @@ description: Leer hoe u ontwikkelings- en implementatieacties in alle Commerce k
 feature: Cloud, Build, Configuration, Deploy, SCD
 role: Developer
 exl-id: 66e257e2-1eca-4af5-9b56-01348341400b
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '697'
 ht-degree: 0%
@@ -42,7 +42,7 @@ De volgende onderwerpen bevatten gedetailleerde definities, zoals of een standaa
 - [ Globaal ](variables-global.md) - variabelen controleacties in elke fase: bouw, stel, en post-opstellen op
 - [ bouwt ](variables-build.md)-variabelen controle bouwt acties
 - [ stelt ](variables-deploy.md) op:stellen-variabelen de controle acties op
-- [ Post-stelt ](variables-post-deploy.md)-variabelen controleacties na opstellen op
+- [ post-opstellen ](variables-post-deploy.md) - variabelen controleacties na opstellen
 
 ### Configuratiebestand maken van CLI
 
@@ -103,7 +103,7 @@ php ./vendor/bin/ece-tools cloud:config:validate
 
 De volgende voorbeeldreactie bevat een lijst met te corrigeren items:
 
-```terminal
+```
 Environment configuration is not valid. Correct the following items in your .magento.env.yaml file:
 The SCD_THREADS variable contains an invalid value of type string. Use the following type: integer.
 The SCD_STRATEGY variable contains an invalid value fast. Use one of the available value options: compact, quick, standard.
@@ -136,7 +136,7 @@ stage:
 
 Wanneer een fout optreedt als gevolg van een onverwachte waarde in het configuratiebestand van `.magento.env.yaml` , ontvangt u een foutbericht. In het volgende foutbericht wordt bijvoorbeeld een lijst met voorgestelde wijzigingen in elk item met een onverwachte waarde weergegeven, waarbij soms geldige opties worden geboden:
 
-```terminal
+```
 - Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:
   Item CRON_CONSUMERS_RUNNER is not supposed to be in stage build. Please move it to one of possible stages: global, deploy
   Item SKIP_SCD has unexpected type string. Please use one of next types: boolean

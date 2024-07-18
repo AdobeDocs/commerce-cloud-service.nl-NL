@@ -3,7 +3,7 @@ title: Robots voor site-toewijzing en zoekprogramma's toevoegen
 description: Leer hoe u robots voor sites met hyperlinks en zoekprogramma's aan Adobe Commerce kunt toevoegen op cloudinfrastructuur.
 feature: Cloud, Configuration, Search, Site Navigation
 exl-id: b98f43fa-1878-466d-8ea0-1e7207af8b60
-source-git-commit: ee1db75c73c086e0ea54e1a7591ca7f2b4d2b36d
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '517'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Een poging om het `sitemap.xml` -bestand te genereren en naar de hoofdmap te schrijven, resulteert in de volgende fout:
 
-```terminal
+```
 Please make sure that "/" is writable by the web-server.
 ```
 
