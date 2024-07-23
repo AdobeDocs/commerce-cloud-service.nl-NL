@@ -3,9 +3,9 @@ title: Distribueren naar Staging en Productie
 description: Leer hoe u uw Adobe Commerce-code voor cloudinfrastructuur kunt implementeren in de Staging- en Productomgevingen voor verdere tests.
 feature: Cloud, Console, Deploy, SCD, Storage
 exl-id: 4b82289f-ee04-4b14-a0ed-7a8a19fc6a6a
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: ae7eb6a0c3de773377c8e1efb5ce2e92c06506bd
 workflow-type: tm+mt
-source-wordcount: '1289'
+source-wordcount: '1310'
 ht-degree: 0%
 
 ---
@@ -340,6 +340,8 @@ Bij het importeren van gegevens moet u een database neerzetten en maken.
    create database main;
    ```
 
+1. De database importeren.
+
    Invoer voor productie:
 
    ```shell
@@ -351,3 +353,5 @@ Bij het importeren van gegevens moet u een database neerzetten en maken.
    ```shell
    zcat <cluster-ID_stg>.sql.gz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h 127.0.0.1 -p -u <database-username> <database-name>;
    ```
+
+   Deze opdrachten decomprimeren het databaseddump-bestand, verwijderen de instructies `DEFINER` en importeren de database met de opgegeven referenties.
