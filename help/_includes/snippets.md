@@ -1,7 +1,7 @@
 ---
-source-git-commit: b08443d937dfc18120daa0d6a1277b9c7bca67aa
+source-git-commit: 762ce3cb6268401b0f5fae5b2280a870aa9c83a5
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '857'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ Stel de optie `_merge` in op een van de volgende opties:
 >
 >Geef aan welke servicewijzigingen nodig zijn, neem de bijgewerkte `.magento.app.yaml` - en `services.yaml` -bestanden op en geef de PHP-versie op in het ticket. Voor zelfbedienings veranderingen in PHP versie, uitbreidingen, of milieu montages, zie [ PHP montages ](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/php-settings.html) in _configuratie van de Toepassing_.
 >
->Voor veranderingen in a _levende_ milieu van de Productie (**Pro slechts**), moet u een minimum van 48 uurbericht verstrekken om het de infrastructuurteam van de Wolk voldoende tijd toe te staan om middelen te marshal en een veilige verbetering te leiden.
+>Voor veranderingen in a _levende_ milieu van de Productie (**Pro slechts**), moet u een minimum van 48 uurbericht verstrekken om het de infrastructuurteam van de Wolk voldoende tijd toe te staan om middelen te marshal en een veilige verbetering te leiden. De opzegtermijn omvat geen weekends. Als u bijvoorbeeld wilt dat de upgrades van de service op maandag worden uitgevoerd, moet u het verzoek op de vorige woensdag indienen.
 
 ## Pro-back-ups {#pro-backups}
 
