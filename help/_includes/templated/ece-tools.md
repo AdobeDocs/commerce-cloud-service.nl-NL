@@ -1,5 +1,5 @@
 ---
-source-git-commit: 6d8c082d78259f8f7adb0fb7f11ff4fcdb234124
+source-git-commit: a58ad3254cb00a8fcafd11f1541f55ea86ad18eb
 workflow-type: tm+mt
 source-wordcount: '4030'
 ht-degree: 0%
@@ -8,7 +8,7 @@ ht-degree: 0%
 # Gereedschappen
 
 <!-- The template to render with above values -->
-**Versie**: 2002.1.18
+**Versie**: 2002.1.19
 
 Deze verwijzing bevat 34 opdrachten die beschikbaar zijn via het opdrachtregelprogramma van `ece-tools` .
 De eerste lijst wordt automatisch gegenereerd met de opdracht `ece-tools list` in Adobe Commerce op de cloud-infrastructuur.
@@ -33,7 +33,7 @@ Het schelpdiertype (&quot;bash&quot;, &quot;fish&quot;, &quot;zsh&quot;)
 
 ### `--input`, `-i`
 
-Een array van invoertokens (bijvoorbeeld COMP_WORDS of argv)
+Een array van invoertokens (bv. COMP_WORDS of argv)
 
 - Standaard: `[]`
 - Vereist een waarde
