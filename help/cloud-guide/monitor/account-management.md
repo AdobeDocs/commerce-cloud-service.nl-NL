@@ -4,9 +4,9 @@ description: Leer hoe u toegang krijgt tot uw New Relic-account en toegang, inte
 feature: Cloud, Observability
 role: Admin
 exl-id: ee639e2e-4074-4384-8f68-152bc3bac93b
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 1fc488d7e13952ad70d4c864327899f38ea48af1
 workflow-type: tm+mt
-source-wordcount: '833'
+source-wordcount: '660'
 ht-degree: 0%
 
 ---
@@ -17,20 +17,9 @@ Wanneer de Adobe uw project van de wolkeninfrastructuur voorziet, ontvangt de Ei
 
 ## Gebruikerstoegang beheren
 
-Op een New Relic-account kan slechts één persoon worden toegewezen aan de rol Eigenaar. Als u de eigenaar van de account moet wijzigen, wijst u de beheerdersrol toe aan de huidige eigenaar en wijst u de rol Eigenaar toe aan een andere gebruiker. Zie [ de rekeningseigenaar ](https://docs.newrelic.com/docs/accounts/original-accounts-billing/original-users-roles/users-roles-original-user-model/) in de _documentatie van New Relic_ voor instructies bijwerken.
-
-Richtlijnen voor het beheer van New Relic-toegang:
-
-- Eigenaars van projecten en gebruikers van beheerders kunnen gebruikers toevoegen aan en verwijderen uit de New Relic-account.
-- Creëer niet meer dan vijf volledig-toegang **Gebruikers**.
-- Biedt alleen volledige toegang tot gebruikers die strikt toegang tot de volledige functieset vereisen.
-- Er is geen specifieke begeleiding op vrije **Beperkte** gebruikers.
-
->[!TIP]
+>[!NOTE]
 >
->Voordat u de rol Eigenaar toewijst aan een gebruiker, moet u controleren of de gebruiker aanwezig is op de New Relic-account voor Adobe Commerce in de cloud-infrastructuur. Als u de gebruiker aan die rekening moet toevoegen en een bestaande rekeningsEigenaar of Admin kan niet helpen, kan om het even welke gebruiker met toegang tot de [ Rekening van de Eigenaar van het Partnerschap van de Adobe ](https://account.newrelic.com/accounts/1311131/users) voor New Relic gebruikers namens de klant toevoegen.
-
-Voeg minstens één **Admin** gebruiker aan uw rekening van New Relic toe die al toegang, integratie, en hulpmiddelgebruik kan beheren.
+>Biedt alleen volledige toegang tot gebruikers die strikt toegang tot de volledige functieset vereisen.
 
 **om tot Gebruikersbeheer in New Relic** toegang te hebben:
 
