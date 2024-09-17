@@ -4,9 +4,9 @@ description: Leer hoe te om uw Adobe Commerce op het project van de wolkeninfras
 feature: Cloud, Integration
 last-substantial-update: 2023-05-25T00:00:00Z
 exl-id: 5305452f-4c8d-438c-ac78-e2e1ec2f8cd9
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: b162faadf114423a7da23ecf94c96eccbcaeb72b
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '949'
 ht-degree: 0%
 
 ---
@@ -108,7 +108,7 @@ U kunt verkiezen om door de CLI herinneringen te stappen gebruikend `magento-clo
 
 | Optie | Vereist? | Beschrijving |
 | ----------------------- | --------- | --------------------------------- |
-| `--base-url` | Ja | De basis-URL van de serverinstallatie, die `https://github.com/` of een aangepast item kan zijn. Laat deze optie weg als uw gegevensopslagruimte wordt gehost met openbare Github. |
+| `--base-url` | Ja | De basis-URL van de serverinstallatie, die `https://github.com/` of een aangepast item kan zijn. Laat deze optie weg als uw gegevensopslagruimte wordt gehost met openbare Github of als uw gegevensopslagruimte niet wordt gehost op particuliere servers. Laat deze optie weg als uw gegevensopslagplaats URL aan `https://github.com/{account}/{repository-name}` gelijkaardig is. Dit kan tot fouten zoals `Unable to connect to GitHub: repository not found` leiden. |
 | `--token` | Ja | Het persoonlijke toegangstoken dat u voor GitHub produceerde |
 | `--repository` | Ja | De naam van de gegevensopslagruimte: `owner-or-organisation/repository` |
 | `--build-pull-requests` | Optioneel | Instrueert Adobe Commerce op wolkeninfrastructuur om op te stellen nadat u een trekkrachtverzoek samenvoegt (`true` door gebrek) |
