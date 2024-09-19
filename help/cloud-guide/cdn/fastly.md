@@ -3,9 +3,9 @@ title: Overzicht van snelle services
 description: Leer hoe u met de snelste services die bij Adobe Commerce worden geleverd via de cloudinfrastructuur de levering van inhoud voor uw Adobe Commerce-sites kunt optimaliseren en beveiligen.
 feature: Cloud, Configuration, Iaas, Paas, Cache, Security, Services
 exl-id: dc4500bf-f037-47f0-b7ec-5cd1291f73a1
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: dc331df378074af8a8776a33784b73082a39cf10
 workflow-type: tm+mt
-source-wordcount: '1392'
+source-wordcount: '1426'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ In Fastly worden de volgende services geleverd voor het optimaliseren en beveili
 
 - **Veiligheid** - nadat u de Snelle diensten voor de plaatsen van Adobe Commerce toelaat, zijn de extra veiligheidseigenschappen beschikbaar om uw plaatsen en netwerk te beschermen:
 
-   - ](fastly-waf-service.md) (WAF) - de Beheerde dienst van de de firewalltoepassing van het Web van 0} Firewall van de Toepassing van het Web die PCI-Volgzame bescherming verleent om kwaadwillig verkeer te blokkeren alvorens het uw productie Adobe Commerce op de plaatsen van de wolkeninfrastructuur en netwerk kan beschadigen. [ De WAF-service is alleen beschikbaar in Pro- en Starter Production-omgevingen.
+   - ](fastly-waf-service.md) (WAF) - de Beheerde dienst van de de firewalltoepassing van het Web van 0} Firewall van de Toepassing van het Web die PCI-Volgzame bescherming verleent om kwaadwillig verkeer te blokkeren alvorens het uw productieAdobe Commerce op de plaatsen van de wolkeninfrastructuur en netwerk kan beschadigen. [ De WAF-service is alleen beschikbaar in Pro- en Starter Production-omgevingen.
 
    - [ Verdeelde Ontkenning van de bescherming van de Dienst (DDoS) ](#ddos-protection) - ingebouwde bescherming DDoS tegen gemeenschappelijke aanvallen zoals het Pingelen van Dood, de aanvallen van Smurf, en andere op ICMP-Gebaseerde overstromingsaanvallen.
 
@@ -42,7 +42,7 @@ In Fastly worden de volgende services geleverd voor het optimaliseren en beveili
 
      Adobe Commerce biedt een door een domein gevalideerd SSL/TLS-certificaat voor elke staging- en productieomgeving. Adobe Commerce voltooit domeinvalidatie en certificaatprovisioning tijdens het installatieproces van Snel.
 
-- **Oorsprong het camoufleren** - verhindert verkeer snel WAF te mijden en verbergt de IP adressen van uw oorsprongsservers om hen tegen directe toegang en aanvallen te beschermen DDoS.
+- **Oorsprong het camoufleren** - verhindert verkeer om snel WAF te mijden en verbergt de IP adressen van uw oorsprongsservers om hen tegen directe toegang en aanvallen te beschermen DDoS.
 
   Oorspronkelijke camouflage is standaard ingeschakeld in Adobe Commerce op cloudinfrastructuur Pro Production-projecten. Om oorsprong het camoufleren op Adobe Commerce op de projecten van de Productie van de Aanzet van de wolkeninfrastructuur toe te laten, leg een [ kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voor. Als u verkeer hebt dat geen caching vereist, kunt u de Fastly de dienstconfiguratie aanpassen om verzoeken toe te staan om [ het Fastly geheime voorgeheugen ](fastly-vcl-bypass-to-origin.md) te mijden.
 
@@ -58,7 +58,9 @@ Bij eerste levering of upgrade van uw Adobe Commerce-project installeert Adobe d
 
 ## Snelle de dienstrekening en geloofsbrieven
 
-Voor opmerkingen over Adobe van projecten met cloudinfrastructuur is geen speciale Fastly-account of accounteigenaar vereist. In plaats daarvan heeft elke omgeving voor Staging en Productie unieke snelle referenties (API-token en service-id) voor het configureren en beheren van snelle services van de beheerder. U hebt ook de aanmeldingsgegevens nodig om snel API-aanvragen in te dienen.
+Adobe Commerce on cloud Infrastructure projects krijgt geen toegewezen Fastly account. De snelservice wordt beheerd in een gecentraliseerde account die is geregistreerd voor Adobe en het beheerdashboard is alleen toegankelijk voor het ondersteuningsteam voor cloud.
+
+In plaats daarvan heeft elke omgeving voor Staging en Productie unieke Fastly-referenties (API-token en service-id) voor het configureren en beheren van Fastly-services van Commerce Admin. De snelste API is beschikbaar voor het uitvoeren van geavanceerd beheer van de sneldienst, die de geloofsbrieven zal vereisen om die verzoeken voor te leggen.
 
 Tijdens projectlevering, voegt de Adobe uw project aan de Fastly de dienstrekening voor Adobe Commerce op wolkeninfrastructuur toe en voegt de Fastly geloofsbrieven aan de configuratie voor de het Opvoeren en milieu&#39;s van de Productie toe. Zie [ krijgen de Snelle geloofsbrieven ](fastly-configuration.md#get-fastly-credentials).
 
