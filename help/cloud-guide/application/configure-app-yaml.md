@@ -3,9 +3,9 @@ title: Implementatie van toepassingen configureren
 description: Leer hoe te om de eigenschappen in het dossier van de toepassingsconfiguratie te vormen die de manier controleren  [!DNL Commerce]  toepassing bouwt en aan het milieu van de Wolk opstelt.
 feature: Cloud, Configuration, Build, Deploy
 exl-id: 900da20d-98d2-4c9f-97ec-578aee775b55
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: c9339137d957840a9ae33ed45950c613eea93660
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '184'
 ht-degree: 0%
 
 ---
@@ -22,3 +22,7 @@ Gebruik het bestand `.magento.app.yaml` om de volgende configuratiewaarden te de
 - [ het bezit van Variabelen ](variables-property.md) - de milieuvariabelen van het Overzicht die voor de [!DNL Commerce] toepassingsversie worden vereist.
 - [ PHP montages ](php-settings.md) - vorm runtime PHP opties.
 - [ plaats Geheime voorgeheugen voor Statische Dossiers ](set-cache.md) - plaats geheim voorgeheugen TTL voor uw media en statische dossiers.
+
+>[!NOTE]
+>
+>Het `.magento.app.yaml` -bestand wordt lokaal of in de it-opslagplaats beheerd. De configuratie wordt slechts gelezen voor het doel van de plaatsing en bouwt proces en wordt verwijderd nadat de plaatsing is voltooid, zodat zult u het niet op de server vinden.
