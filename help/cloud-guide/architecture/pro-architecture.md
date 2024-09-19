@@ -4,9 +4,9 @@ description: Leer meer over de omgevingen die worden ondersteund door de Pro-arc
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: eccf69d792f5f8bbd32fb24ac731fffa1eeb91ba
+source-git-commit: 66b1f86c8c674d0de4e2895e328a5a850eadf903
 workflow-type: tm+mt
-source-wordcount: '1511'
+source-wordcount: '1559'
 ht-degree: 0%
 
 ---
@@ -167,6 +167,10 @@ Vanwege de unieke, redundante hardware kan Adobe drie gatewayservers leveren. De
 Adobe Commerce op cloudinfrastructuur maakt gebruik van een architectuur met hoge beschikbaarheid die elk Pro-project repliceert op drie aparte AWS- of Azure-beschikbaarheidszones, elke zone met een afzonderlijk datacenter. Naast deze overtolligheid, ontvangen de Pro het opvoeren en productiemilieu&#39;s regelmatige, levende steunen die voor gebruik in gevallen van _catastrofale mislukking_ worden ontworpen.
 
 **Automatische steunen** omvatten blijvende gegevens van alle lopende diensten, zoals het gegevensbestand MySQL en dossiers die op de opgezette volumes worden opgeslagen. De back-ups worden opgeslagen in gecodeerde EBS (Elastic Block Storage) in hetzelfde gebied als de productieomgeving. De automatische steunen zijn niet openbaar toegankelijk omdat zij in een afzonderlijk systeem worden opgeslagen.
+
+>[!NOTE]
+>
+>De opgezette volumes omvatten slechts/verwijzen naar de [ beschrijfbare steunen ](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/configure/app/properties/properties#mounts) en zullen niet al uw `app/` folder omvatten. Zoals voor de andere dossiers, worden zij gecreeerd/geproduceerd door [ bouwt en plaatsingsproces ](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/architecture/pro-develop-deploy-workflow#deployment-workflow), en u zult ook uw bewaarplaats van het Git voor resterende dossiers moeten controleren.
 
 {{pro-backups}}
 
