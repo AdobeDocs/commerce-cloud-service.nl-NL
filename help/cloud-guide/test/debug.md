@@ -2,9 +2,9 @@
 title: Configureren  [!DNL Xdebug]
 description: Leer hoe u de Xdebug-extensie configureert voor foutopsporing in uw Adobe Commerce op het gebied van projecten voor cloudinfrastructuur.
 exl-id: bf2d32d8-fab7-439e-8df3-b039e53009d4
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 7b42174663b79b673ee5af05b794090ddc5bdd75
 workflow-type: tm+mt
-source-wordcount: '1747'
+source-wordcount: '1765'
 ht-degree: 0%
 
 ---
@@ -272,6 +272,12 @@ U hebt het volgende nodig:
    ```bash
    ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
    ```
+
+>[!NOTE]
+>
+>U kunt als volgt de juiste waarde voor `USERNAME@CLUSTER.ent.magento.cloud` verkrijgen:
+>- Methode 1: magento-cloud CLI: `magento-cloud ssh --all`
+>- Methode 2: Commerce Console: https://CONSOLE-URL/ENVIRONMENT, klik `SSH v` dropdown
 
 **beginnen het zuiveren gebruikend het milieu URL**:
 
