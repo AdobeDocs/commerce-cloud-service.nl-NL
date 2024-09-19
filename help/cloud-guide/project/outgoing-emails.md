@@ -2,20 +2,20 @@
 title: Uitgaande e-mails configureren
 description: Leer hoe u uitgaande e-mails voor Adobe Commerce kunt inschakelen voor cloudinfrastructuur.
 exl-id: 814fe2a9-15bf-4bcb-a8de-ae288fd7f284
-source-git-commit: 59f82d891bb7b1953c1e19b4c1d0a272defb89c1
+source-git-commit: ec9192caa5daa1cd25a3eec6095c2c3cf8fbefb4
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '373'
 ht-degree: 0%
 
 ---
 
 # Uitgaande e-mails configureren
 
-U kunt uitgaande e-mails voor elke omgeving in- en uitschakelen via de [!DNL Cloud Console] of de opdrachtregel. U kunt uitgaande e-mails voor integratie- en staging-omgevingen verzenden om dubbele verificatie uit te voeren of wachtwoordgegevens opnieuw in te stellen voor gebruikers van Cloud-projecten.
+U kunt uitgaande e-mails voor elke omgeving in- en uitschakelen via de [!DNL Cloud Console] of de opdrachtregel. U kunt uitgaande e-mails voor integratie (en het opvoeren voor alleen Starter)-omgevingen inschakelen om tweefelige verificatie te verzenden of wachtwoorde-mails voor gebruikers van Cloud-projecten opnieuw in te stellen.
 
-Standaard zijn uitgaande e-mails ingeschakeld in productie- en staging-omgevingen. Nochtans, [!UICONTROL Enable outgoing emails] kan gehandicapt in de milieu montages verschijnen tot u het `enable_smtp` bezit door de [ bevellijn ](#enable-emails-in-the-cli) of [ Console van de Wolk ](outgoing-emails.md#enable-emails-in-the-cloud-console) plaatst.
+Standaard zijn uitgaande e-mails ingeschakeld in Productie- en Staging-omgevingen (alleen Pro). Nochtans, kan het **[!UICONTROL Enable outgoing emails]** plaatsen gehandicapt in de milieu montages ongeacht status lijken tot u het `enable_smtp` bezit door de [ bevellijn ](#enable-emails-in-the-cli) of [ Console van de Wolk ](outgoing-emails.md#enable-emails-in-the-cloud-console) plaatst.
 
-Het bijwerken van de [!UICONTROL enable_smtp] bezitswaarde door [ bevellijn ](#enable-emails-in-the-cli) verandert ook de [!UICONTROL Enable outgoing emails] plaatsende waarde voor dit milieu op de Console van de Wolk.
+Het bijwerken van de `enable_smtp` bezitswaarde door [ bevellijn ](#enable-emails-in-the-cli) verandert ook de [!UICONTROL Enable outgoing emails] plaatsende waarde voor dit milieu op de Console van de Wolk.
 
 {{redeploy-warning}}
 
