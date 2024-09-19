@@ -2,9 +2,9 @@
 title: Cloud CLI
 description: Leer meer over de magento-cloud CLI en hoe u hiermee lokale ontwikkelomgevingen voor uw Adobe Commerce kunt beheren op het infrastructuurproject voor de cloud.
 exl-id: 70dddd62-0269-4af4-bd2a-1a4fbf11a131
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: f09c461c3b9cafd773cbed6c9dee1e514415bcde
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '782'
 ht-degree: 0%
 
 ---
@@ -12,11 +12,17 @@ ht-degree: 0%
 
 # Cloud CLI
 
-Met het CLI-hulpprogramma van `magento-cloud` kunnen ontwikkelaars en systeembeheerders Cloud-projecten en -omgevingen beheren, routines uitvoeren en automatiseringstaken uitvoeren. De CLI van `magento-cloud` breidt de eigenschappen en de functionaliteit van [[!DNL Cloud Console]](../../get-started/cloud-console.md) uit. Nadat u de CLI van `magento-cloud` op uw lokale werkstation hebt geïnstalleerd, kunt u deze gebruiken om uw Adobe Commerce te beheren in de Starter- en Pro-integratieomgevingen van de cloudinfrastructuur.
+Met het CLI-hulpprogramma van `magento-cloud` kunnen ontwikkelaars en systeembeheerders Cloud-projecten en -omgevingen beheren, routines uitvoeren en automatiseringstaken lokaal uitvoeren. De CLI van `magento-cloud` breidt de eigenschappen en de functionaliteit van [[!DNL Cloud Console]](../../get-started/cloud-console.md) uit. Nadat u de CLI van `magento-cloud` op uw lokale werkstation hebt geïnstalleerd, kunt u deze gebruiken om uw Adobe Commerce te beheren in de Starter- en Pro-integratieomgevingen van de cloudinfrastructuur.
+
+>[!NOTE]
+>
+>Dit is een lokaal programma en kan met deze methode niet worden geïnstalleerd in de cloud-omgeving (alleen-lezen). U kunt modules op het milieu van de Wolk door het **plaatsingswerkschema** slechts installeren
+>- [ Pro plaatsingswerkschema ](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/architecture/pro-develop-deploy-workflow#deployment-workflow)
+>- [ de plaatsingswerkschema van de Aanzet ](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/architecture/starter-develop-deploy-workflow)
 
 **om `magento-cloud` CLI** te installeren:
 
-1. Op uw lokaal werkstation, verandering in de folder waar u van plan bent het project van de Wolk te klonen en waar de [ eigenaar van het dossiersysteem ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) _heeft schrijven_ toegang.
+1. Op uw _lokale werkstation_, verandering in de folder waar u van plan bent het project van de Wolk te klonen en waar de [ eigenaar van het dossiersysteem ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) _heeft schrijven_ toegang.
 
 1. Installeer de `magento-cloud` CLI.
 
