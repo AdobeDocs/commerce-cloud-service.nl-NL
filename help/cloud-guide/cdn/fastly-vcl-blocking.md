@@ -3,9 +3,9 @@ title: Aangepaste VCL voor het blokkeren van aanvragen
 description: Blok inkomende verzoeken door IP adres gebruikend een lijst van het Toegangsbeheer van Edge (ACL) met een fragment van douaneVCL.
 feature: Cloud, Configuration, Security
 exl-id: 1f637612-3858-49d0-91f7-9b8823933cc9
-source-git-commit: 0e9ace747cc56808108781e42b97c86756089818
+source-git-commit: 16c34b6c693c4d4d5c67b21c79e0cd5d198e047b
 workflow-type: tm+mt
-source-wordcount: '961'
+source-wordcount: '996'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,15 @@ De volgende voorbeelden tonen hoe te om verzoeken te blokkeren gebruikend gealig
 
 >[!WARNING]
 >
->In deze voorbeelden is de VCL-code opgemaakt als een JSON-payload die naar een bestand kan worden opgeslagen en in een Fastly API-aanvraag kan worden verzonden. U kunt het [ fragment VCL van Admin ](#add-the-custom-vcl-snippet) voorleggen, of als koord JSON gebruikend Snelle API. Als u validatie wilt voorkomen wanneer u de snelheids-API gebruikt met een JSON-tekenreeks, moet u een backslash gebruiken om speciale tekens te verwijderen.
+>In deze voorbeelden is de VCL-code opgemaakt als een JSON-payload die naar een bestand kan worden opgeslagen en in een Fastly API-aanvraag kan worden verzonden. U kunt het [ fragment VCL van Admin ](#add-the-custom-vcl-snippet) voorleggen, of als koord JSON gebruikend Snelle API. Als u validatiefouten wilt voorkomen wanneer u de snelheids-API gebruikt met een JSON-tekenreeks, moet u een backslash gebruiken om speciale tekens te verwijderen.
+
+>[!NOTE]
+>Als u het VCL-fragment vanuit Beheer verzendt, haalt u de afzonderlijke waarden uit de VCL-voorbeeldcode en voert u deze in de desbetreffende velden in. Bijvoorbeeld:
+>- Naam: `<name of the VCL>`
+>- Dynamisch: `<0/1>`
+>- Type: `<type>`
+>- Prioriteit: `<priority>`
+>- Inhoud: `<content>`
 
 Zie [ Gebruikend dynamische fragmenten VCL ](https://docs.fastly.com/vcl/vcl-snippets/) in de Fastly documentatie VCL.
 
