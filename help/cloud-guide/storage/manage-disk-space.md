@@ -3,7 +3,7 @@ title: Schijfruimte beheren
 description: Leer hoe u schijfruimte beheert met behulp van de opdrachtregelinterface.
 feature: Cloud, Storage
 exl-id: 480cb33b-ac83-441d-946e-5b4de09ad84e
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 0cc0b8e49e2cccf4266ecf84ef935f24fde1c7a4
 workflow-type: tm+mt
 source-wordcount: '714'
 ht-degree: 0%
@@ -93,7 +93,7 @@ df -h
 
 Met de optie `-h` wordt het rapport weergegeven in een leesbare indeling (KB, MB of GB).
 
-In de volgende voorbeeldreactie geeft de koppeling `/mnt/shared` de schijfruimte voor media weer en geeft de koppeling `/data/mysql/` schijfruimte voor de database weer:
+In de volgende voorbeeldreactie geeft de koppeling `/data/exports` de schijfruimte voor media weer en geeft de koppeling `/data/mysql/` schijfruimte voor de database weer:
 
 ```
 Filesystem                                    Size  Used Avail Use% Mounted on
