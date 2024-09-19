@@ -3,7 +3,7 @@ title: Snelle probleemoplossing
 description: Leer hoe u de snelste CDN-module en -services voor Adobe Commerce kunt oplossen en beheren.
 feature: Cloud, Configuration, Cache, Services
 exl-id: e4c47035-cbad-4838-8d44-fa5eaaac42d1
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: e066e9c7e1a6010c9d316f66f1632e28a0c40652
 workflow-type: tm+mt
 source-wordcount: '1834'
 ht-degree: 0%
@@ -119,7 +119,7 @@ Wanneer er een fout van 503 optreedt, wordt de reden snel geretourneerd op de fo
 
 Als het apex-domein en de subdomeinen voor uw Adobe Commerce on cloud-infrastructuurproject al zijn gekoppeld aan een bestaand Fastly-account met een toegewezen Service-id, kunt u pas starten wanneer u de Fastly-configuratie bijwerkt:
 
-- Werk de apex- en subdomeinconfiguratie bij op de bestaande Fastly-account. Zie [ Veelvoudige Snelle rekeningen en toegewezen domeinen ](fastly.md#domain).
+- Werk de apex- en subdomeinconfiguratie bij op de bestaande Fastly-account. Zie [ Veelvoudige Snelle rekeningen en toegewezen domeinen ](fastly.md#multiple-fastly-accounts-and-assigned-domains).
 
 - [ laat en vormt snel ](fastly-configuration.md#enable-fastly-caching) toe en voltooit de [ DNS configuratie ](../launch/checklist.md#update-dns-configuration-with-production-settings)
 
