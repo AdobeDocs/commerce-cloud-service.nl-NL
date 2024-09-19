@@ -3,9 +3,9 @@ title: Starter-architectuur
 description: Meer informatie over de omgevingen die door de Starter-architectuur worden ondersteund.
 feature: Cloud, Paas
 exl-id: 03365d32-4eb4-42d4-82a7-771df5e7b3da
-source-git-commit: c61d711b1041ecf76ec6468cd225a34fd77c24b1
+source-git-commit: e5cb79cab4e22d1c787859ab98e6bab6cd2dc2eb
 workflow-type: tm+mt
-source-wordcount: '903'
+source-wordcount: '942'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,9 @@ Integratieomgevingen zijn ontworpen voor beperkte tests en ontwikkeling. U kunt 
 
 Voor de beste prestaties in de integratieomgeving volgt u de volgende aanbevolen procedures:
 
-- Catalogusgrootte beperken
+- Beperk de catalogusgrootte - Ter referentie bevat de voorbeeldgegevens ongeveer 2.048 producten. Verklein uw catalogus tot ongeveer 4.000-5.000 producten.
+
+- Verminder het aantal klantengroepen - Het hebben van teveel klantengroepen kan de indexerende prestaties en algemene prestaties beïnvloeden.
 
 - Gebruik beperken tot een of twee gelijktijdige gebruikers
 
