@@ -2,9 +2,9 @@
 title: E-mailservice SendGrid
 description: Leer over de SendGrid e-mailservice voor Adobe Commerce op cloudinfrastructuur en hoe u uw DNS-configuratie kunt testen.
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: 1226be333deb1b1da402b4c0d2e141f9be1eb93b
+source-git-commit: b5c8dc062a940e9e202d9bd4cca6901b07109e07
 workflow-type: tm+mt
-source-wordcount: '1128'
+source-wordcount: '1273'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ DKIM is een technologie van de e-mailauthentificatie die de Dienstverleners van 
 
 >[!WARNING]
 >
->De handtekeningen SendGrid DKIM en de steun van de domeinauthentificatie zijn slechts beschikbaar voor Pro projecten en niet de projecten van de Aanzet. Als gevolg hiervan worden uitgaande e-mailberichten over transacties waarschijnlijk gemarkeerd door spamfilters. Het gebruik van DKIM verbetert de leveringssnelheid als een geverifieerde e-mailafzender. Om de snelheid van de berichtlevering te verbeteren, kunt u van Starter aan Pro bevorderen of uw eigen server SMTP of dienstverlener van de e-maillevering gebruiken. Zie [ E-mailverbindingen ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) in de _gids van Systemen Admin_ vormen.
+>De handtekeningen SendGrid DKIM en de steun van de domeinauthentificatie zijn slechts beschikbaar op de Productie en het Staging milieu&#39;s voor Pro projecten, maar niet voor alle milieu&#39;s van de Aanzet. Als gevolg hiervan worden uitgaande e-mailberichten over transacties waarschijnlijk gemarkeerd door spamfilters. Het gebruik van DKIM verbetert de leveringssnelheid als een geverifieerde e-mailafzender. Om de snelheid van de berichtlevering te verbeteren, kunt u van Starter aan Pro bevorderen of uw eigen server SMTP of dienstverlener van de e-maillevering gebruiken. Zie [ E-mailverbindingen ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) in de _gids van Systemen Admin_ vormen.
 
 ### Afzender en domeinverificatie
 
@@ -137,3 +137,13 @@ Er zijn geen harde grenzen aan het aantal e-mails dat kan worden verzonden in de
 ### E-mailverzendingsreputatie
 
 Een e-mailverzendende reputatie is een score die door een Internet Service Provider (ISP) wordt toegewezen aan een bedrijf dat e-mailberichten verzendt. Hoe hoger de score, des te waarschijnlijker is ISP berichten aan inbox van een ontvanger moet leveren. Als de score onder een bepaald niveau valt, kan ISP berichten aan de spamomslag van ontvangers leiden, of zelfs berichten volledig verwerpen. De reputatie score wordt bepaald door verscheidene factoren zoals een 30 daggemiddelde van uw IP adressen rangschikt tegen andere IP adressen en het tarief van de spamklacht. Zie [ 8 Manieren om Uw E-mail te controleren die Reputatie ](https://sendgrid.com/en-us/blog/5-ways-check-sending-reputation) verzendt.
+
+### E-mailsuppressielijsten
+
+Een lijst met e-mailsuppressies is een lijst met ontvangers waarnaar geen e-mailberichten mogen worden verzonden als dit nadelige gevolgen zou hebben voor uw verzendingsreputatie en leveringspercentages. Het wordt vereist door de CAN-SPAM Akte om ervoor te zorgen dat de e-mailafzenders een methode hebben om ontvangers uit te kiezen die e-mail als spam opsloot of duidelijk maakten. De suppressielijst verzamelt ook e-mails die stuiteren, worden geblokkeerd of ongeldig zijn.
+
+Om e-mails te verhinderen worden verzonden naar de spamomslag in de eerste plaats, volg het beste praktijken artikel van Sendgrid, [ waarom Mijn e-mails naar Spam gaan?](https://sendgrid.com/en-us/blog/10-tips-to-keep-email-out-of-the-spam-folder).
+
+Als sommige ontvangers uw e-mails niet ontvangen, kunt u [ een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) voorleggen om een overzicht van de suppressielijsten te verzoeken en ontvanger(s) indien nodig te verwijderen.
+
+Voor meer details, verwijs naar [ wat een Lijst van de Onderdrukking is?](https://sendgrid.com/en-us/blog/what-is-a-suppression-list)
