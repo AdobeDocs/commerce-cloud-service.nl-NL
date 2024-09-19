@@ -6,9 +6,9 @@ feature: Cloud, Roles/Permissions
 last-substantial-update: 2023-06-27T00:00:00Z
 topic: Security
 exl-id: 3357a3ea-bf86-4a65-95d1-6b24f1152248
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 5e4be034a392716ea55e2878d336cb9ecac1e052
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1459'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Adobe Commerce-projecten voor cloudinfrastructuur maken gebruik van rolgebaseerde toegang. Er zijn twee rollen beschikbaar op het projectniveau:
 
-- **admin van het Project** - schrijf toegang tot alle projectmilieu&#39;s en kan gebruikers, duw code, en de montages van het updateproject beheren.
+- **admin van het Project** - schrijf toegang tot alle projectmilieu&#39;s en kan gebruikers, duw code, en de montages van het updateproject beheren. (vroeger gekend als **Super admin**)
 - **de kijker van het Project** - mening-slechts toegang tot alle projectmilieu&#39;s.
 
 De kijkers van het project kunnen geen taken op om het even welk milieu uitvoeren; nochtans, kunt u projectkijkers toegang tot een specifiek milieutype verlenen schrijven.
