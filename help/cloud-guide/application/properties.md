@@ -3,9 +3,9 @@ title: Eigenschappen
 description: Gebruik de bezitslijst als verwijzing wanneer configuratie de  [!DNL Commerce]  toepassing voor bouwt en aan de wolkeninfrastructuur opstelt.
 feature: Cloud, Configuration, Build, Deploy, Roles/Permissions, Storage
 exl-id: 58a86136-a9f9-4519-af27-2f8fa4018038
-source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
+source-git-commit: 1d671d7d2b9ef8742f50b23aa56020d82c701fa4
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '816'
 ht-degree: 0%
 
 ---
@@ -141,6 +141,8 @@ De minimale aanbevolen schijfgrootte is 256 MB. Als de fout `UserError: Error bu
 >[!NOTE]
 >
 >Voor Pro het Opvoeren en van de Productie milieu&#39;s, moet u [ een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voorleggen om de `mounts` en `disk` configuratie voor uw toepassing bij te werken. Wanneer u het ticket verzendt, geeft u de vereiste configuratiewijzigingen aan en neemt u een bijgewerkte versie van het `.magento.app.yaml` -bestand op.
+>
+>Het is niet mogelijk om de schijfopslag in Staging of Productie tijdelijk te verhogen; dit proces is niet omkeerbaar.
 
 ## `relationships`
 
