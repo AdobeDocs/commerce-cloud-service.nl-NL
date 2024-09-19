@@ -3,16 +3,21 @@ title: Services configureren
 description: Leer hoe u services die door Adobe Commerce worden gebruikt op cloudinfrastructuur configureert.
 feature: Cloud, Configuration, Services
 exl-id: 48091c10-c53f-4aad-afbe-b4516653bda1
-source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
+source-git-commit: 0262fca6e94d9815e8af0fb0c026e36fecc1f939
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1046'
 ht-degree: 0%
 
 ---
 
 # Services configureren
 
-In het bestand `services.yaml` worden de services gedefinieerd die door Adobe Commerce worden ondersteund en gebruikt op cloudinfrastructuur, zoals MySQL, Redis en Elasticsearch of OpenSearch. U hoeft zich niet in te schrijven op externe serviceproviders. Dit bestand staat in de map `.magento` van uw project.
+In het bestand `services.yaml` worden de services gedefinieerd die door Adobe Commerce worden ondersteund en gebruikt op cloudinfrastructuur, zoals MySQL, Redis en Elasticsearch of OpenSearch. U hoeft zich niet in te schrijven op externe serviceproviders.
+
+>[!NOTE]
+>
+>Het bestand `.magento/services.yaml` wordt lokaal beheerd in de map `.magento` van uw project. De configuratie wordt betreden tijdens het bouwstijlproces om de vereiste de dienstversies in het integratiemilieu slechts te bepalen, en wordt verwijderd zodra de plaatsing is voltooid, zodat zult u hen niet op de server vinden.
+
 
 Het plaatsingsmanuscript gebruikt de configuratiedossiers in de `.magento` folder aan voorziening het milieu met de gevormde diensten. Een service wordt beschikbaar voor uw toepassing als deze wordt opgenomen in de eigenschap [`relationships`](../application/properties.md#relationships) van het `.magento.app.yaml` -bestand. Het `services.yaml` dossier bevat het _type_ en _schijf_ waarden. Het type van dienst bepaalt de dienst _naam_ en _versie_.
 
