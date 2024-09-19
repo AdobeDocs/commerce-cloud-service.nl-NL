@@ -4,16 +4,16 @@ description: Leer hoe u de Adobe Commerce-toepassing kunt verwijderen uit een cl
 role: Developer
 topic: Development
 exl-id: b76bd6c3-986e-4adc-abd0-5b27db0d8a3b
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 9e4e58d2470b73b221168c182c7d563ce6f6502f
 workflow-type: tm+mt
-source-wordcount: '480'
+source-wordcount: '493'
 ht-degree: 0%
 
 ---
 
 # Omgeving herstellen
 
-Als u kwesties in het integratiemilieu ontmoet en geen a [ geldige steun ](../storage/snapshots.md) hebt, probeer het herstellen van uw milieu gebruikend één van de volgende methodes:
+Als u kwesties in het integratiemilieu ontmoet en geen a [ geldige steun ](../storage/snapshots.md) hebt, of het milieu aan een lege plaats zou willen terugstellen, kunt u uw milieu herstellen/terugstellen gebruikend één van de volgende methodes:
 
 - De code in de Git-vertakking herstellen of herstellen
 - De toepassing [!DNL Commerce] verwijderen
