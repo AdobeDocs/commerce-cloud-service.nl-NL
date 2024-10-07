@@ -2,11 +2,11 @@
 title: Opmerkingen bij de release ECE-Tools
 description: Zie een lijst met de meest recente verbeteringen in het pakket ECE-Tools.
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-05-21T00:00:00Z
+last-substantial-update: 2024-10-07T00:00:00Z
 exl-id: a464b940-c56e-4a7c-9948-559539e25361
-source-git-commit: 923e2114270df22e134e0676ac97f84d770bb226
+source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
 workflow-type: tm+mt
-source-wordcount: '2929'
+source-wordcount: '2990'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,16 @@ De opmerkingen bij de release omvatten:
 
 <!--Add release notes below-->
 
-## v2002.1.19 {#latest}
+## v2002.2.0 {#latest}
+
+Releasedatum: 7 oktober 2024
+
+- ![ nieuw pictogram ](../../assets/new.svg) **MariaDB 11.4**-Toegevoegde steun van MariaDB 11.4.
+- ![ fixpictogram ](../../assets/fix.svg) **Refactored code** - Verwijderde steun van oude PHP versies 7.4, 7.3, 7.2 en verwante bibliotheken.<!-- MCLOUD-9278 -->
+- ](../../assets/fix.svg) **Bevestigingspictogram ![ Bevorderde versie Monolog** - Toegevoegde steun voor monolog 3.6.<!-- MCLOUD-12855 -->
+- ![ fixpictogram ](../../assets/fix.svg) **Validator voor RabbitMQ, MariaDB, en PHP** - Vaste validator die een misleidend bericht over de verkeerde versie van de dienst produceerde.
+
+## v2002.1.19
 
 Releasedatum: 21 mei 2024
 
@@ -40,7 +49,7 @@ Releasedatum: 21 mei 2024
 Releasedatum: 8 april 2024
 
 - ![ nieuw pictogram ](../../assets/new.svg) **PHP** — Toegevoegde steun voor PHP 8.3.
-- ![ fixpictogram ](../../assets/fix.svg) Validator - Bijgewerkte validator EOL.
+- ![ fixpictogram ](../../assets/fix.svg) **Validator** - Bijgewerkte validator EOL.
 
 ## v2002.1.17
 

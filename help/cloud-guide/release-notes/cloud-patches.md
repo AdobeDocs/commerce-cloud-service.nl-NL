@@ -2,11 +2,11 @@
 title: Cloudpatches voor Commerce
 description: Zie een lijst met de meest recente verbeteringen in het pakket met cloudpatches.
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-05-21T00:00:00Z
+last-substantial-update: 2024-10-07T00:00:00Z
 exl-id: ae6b511b-a37d-4776-9a5e-ad7d9f9f6611
-source-git-commit: 61c42a1bd1d5a28f90b8756032ee6f45be4565b2
+source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
 workflow-type: tm+mt
-source-wordcount: '2208'
+source-wordcount: '2275'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,15 @@ Het pakket `magento/magento-cloud-patches` gebruikt de volgende versiereeks: `<m
 
 <!--Add release notes below-->
 
-## v1.0.27 {#latest}
+## v1.1.0 {#latest}
+
+Releasedatum: 7 oktober 2024
+
+- ![ fixpictogram ](../../assets/fix.svg) **Refactored code** - Verwijderde steun van oude PHP versies (7.4, 7.3, 7.2) en verwante bibliotheken.<!-- MCLOUD-9278 - -->
+- ](../../assets/fix.svg) **Bevestigingspictogram ![ Bevorderde versie Monolog** - Toegevoegde steun voor monolog 3.6.<!-- MCLOUD-12855 - -->
+- ![ fixpictogram ](../../assets/fix.svg) **Reparatie voor de Server van de Toepassing** - lost een bekende kwestie met de Server van de Toepassing van GraphQL op. Specifiek, bevatte `CatalogGraphQl\\Model\\Config\\AttributeReader` in versie 2.4.7 een insect dat tot GraphQL verzoeken kon leiden die reacties terugwinnen op verouderde configuratie van Attributen worden gebaseerd.<!-- ACPT-1876 -->
+
+## v1.0.27
 
 Releasedatum: 21 mei 2024
 

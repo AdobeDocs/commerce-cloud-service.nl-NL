@@ -3,11 +3,11 @@ title: Cloud Docker-pakket
 description: Zie een lijst met de meest recente verbeteringen in het Cloud Docker-pakket.
 feature: Cloud, Docker, Release Notes
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-04-08T00:00:00Z
+last-substantial-update: 2024-10-07T00:00:00Z
 exl-id: 907d977f-2e9c-4553-a46b-000bc6a57b28
-source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
+source-git-commit: fdb596430fbc532bed4a6b251872f44c5321d375
 workflow-type: tm+mt
-source-wordcount: '3662'
+source-wordcount: '3684'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,13 @@ De opmerkingen bij de release omvatten:
 
 <!--Add release notes below-->
 
-## v1.3.7 {#latest}
+## v1.4.0 {#latest}
+
+Releasedatum: 7 oktober 2024
+
+- ![ fixpictogram ](../../assets/fix.svg) **Refactored code** - Verwijderde steun van oude PHP versies (7.4, 7.3, 7.2) en verwante bibliotheken en beelden.
+
+## v1.3.7
 
 Releasedatum: 8 april 2024
 

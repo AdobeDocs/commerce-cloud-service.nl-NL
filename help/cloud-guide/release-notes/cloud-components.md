@@ -3,9 +3,9 @@ title: Cloud Components voor Commerce
 description: Zie een lijst met de meest recente verbeteringen in het pakket met Cloud Components.
 recommendations: noDisplay, catalog
 exl-id: b4e2508a-3558-4fa8-bae0-3eb76c7b2775
-source-git-commit: c02dfd2709cdc63ac1630edaa8c89cad5f737ea1
+source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '590'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,18 @@ De opmerkingen bij de release omvatten:
 
 <!--Add release notes below-->
 
-## v1.0.14 {#latest}
+## v1.1.0 {#latest}
+
+Releasedatum: 7 oktober 2024
+
+- ![ fixpictogram ](../../assets/fix.svg) **Refactored code** - Verwijderde steun van oude PHP versies 7.4, 7.3, 7.2 en verwante bibliotheken.<!-- MCLOUD-9278 - -->
+- ](../../assets/fix.svg) **Bevestigingspictogram ![ Bevorderde versie Monolog** - Toegevoegde steun voor monolog 3.6.<!-- MCLOUD-12855 - -->
+
+## v1.0.14
 
 Releasedatum: 8 april 2024
 
-- ![ nieuw pictogram ](../../assets/new.svg) **PHP** — Toegevoegde steun voor PHP 8.3.
+- ![ nieuw pictogram ](../../assets/new.svg) **PHP** - toegevoegde steun voor PHP 8.3.
 
 ## v1.0.13
 
@@ -121,4 +128,4 @@ Releasedatum: 12 juni 2019
 
 Dit is de eerste versie van het pakket [`magento/magento-cloud-components` ](https://github.com/magento/magento-cloud-components) . Dit is een nieuwe afhankelijkheid voor pakketversie 2002.0.20 en hoger van `ece-tools` .
 
-- ![ nieuw pictogram ](../../assets/new.svg) voegde het vermogen toe om regex patronen te gebruiken om de **WAM_UP_PAGES** omgevingsvariabele te vormen om enige pagina&#39;s, veelvoudige domeinen, en veelvoudige pagina&#39;s in het voorgeheugen onder te brengen. Zie [ Post-stelt variabelen ](../environment/variables-post-deploy.md#warm_up_pages) op.<!--MAGECLOUD-3258-->
+- ![ nieuw pictogram ](../../assets/new.svg) voegde het vermogen toe om regex patronen te gebruiken om de **WAM_UP_PAGES** omgevingsvariabele te vormen om enige pagina&#39;s, veelvoudige domeinen, en veelvoudige pagina&#39;s in het voorgeheugen onder te brengen. Zie [ variabelen van de post-opstellen ](../environment/variables-post-deploy.md#warm_up_pages).<!--MAGECLOUD-3258-->
