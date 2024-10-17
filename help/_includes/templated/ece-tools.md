@@ -1,232 +1,179 @@
 ---
-source-git-commit: f2bf3f597aafa19fc4af0974523a8307a1f37b8e
+source-git-commit: 63c86bab0f3feb5a3a641a7a785ea625338045f4
 workflow-type: tm+mt
-source-wordcount: '4030'
+source-wordcount: '921'
 ht-degree: 0%
 
 ---
 # Gereedschappen
 
-<!-- The template to render with above values -->
 **Versie**: 2002.2.0
 
 Deze verwijzing bevat 34 opdrachten die beschikbaar zijn via het opdrachtregelprogramma van `ece-tools` .
 De eerste lijst wordt automatisch gegenereerd met de opdracht `ece-tools list` in Adobe Commerce op de cloud-infrastructuur.
 
->[!NOTE]
->
->Deze verwijzing wordt gegenereerd op basis van de toepassingscodebase. Om de inhoud te veranderen, kunt u de broncode voor de overeenkomstige bevelimplementatie in de [ codebase ](https://github.com/magento/magento-cloud-cli) bewaarplaats bijwerken en uw veranderingen voor overzicht voorleggen. Een andere manier is ons _geven terugkoppelt_ (vind de verbinding bij het hogere recht). Voor bijdragerichtsnoeren, zie {de Bijdragen van de Code 0} ](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).[
+## Algemeen
+
+Deze verwijzing wordt gegenereerd op basis van de toepassingscodebase. Om de inhoud te veranderen, _geef ons terugkoppelen_ (vind de verbinding bij het hogere recht). Voor bijdragerichtsnoeren, zie {de Bijdragen van de Code 0} ](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).[
+
+### Algemene opties
+
+#### `--help`, `-h`
+
+Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+#### `--quiet`, `-q`
+
+Geen bericht uitvoeren
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+#### `--verbose`, `-v|-vv|-vvv`
+
+Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+#### `--version`, `-V`
+
+Deze toepassingsversie weergeven
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+#### `--ansi`
+
+ANSI-uitvoer forceren (of uitschakelen —no-ansi)
+
+- Accepteert geen waarde
+
+#### `--no-ansi`
+
+De optie &quot;—ansi&quot; negeren
+
+- Standaard: `false`
+- Accepteert geen waarde
+
+#### `--no-interaction`, `-n`
+
+Geen interactieve vraag stellen
+
+- Standaard: `false`
+- Accepteert geen waarde
+
 
 ## `_complete`
-
-Interne opdracht voor suggesties voor shell-voltooiing
 
 ```bash
 ece-tools _complete [-s|--shell SHELL] [-i|--input INPUT] [-c|--current CURRENT] [-a|--api-version API-VERSION] [-S|--symfony SYMFONY]
 ```
 
-### `--shell`, `-s`
+Interne opdracht voor suggesties voor shell-voltooiing
+
+### Opties
+
+Voor globale opties, zie [ Globale opties ](#global-options).
+
+#### `--shell`, `-s`
 
 Het schelpdiertype (&quot;bash&quot;, &quot;fish&quot;, &quot;zsh&quot;)
 
 - Vereist een waarde
 
-### `--input`, `-i`
+#### `--input`, `-i`
 
 Een array van invoertokens (bv. COMP_WORDS of argv)
 
 - Standaard: `[]`
 - Vereist een waarde
 
-### `--current`, `-c`
+#### `--current`, `-c`
 
 De index van de &quot;input&quot;-array waarin de cursor zich bevindt (bijvoorbeeld COMP_CWORD)
 
 - Vereist een waarde
 
-### `--api-version`, `-a`
+#### `--api-version`, `-a`
 
 De API-versie van het voltooiingsscript
 
 - Vereist een waarde
 
-### `--symfony`, `-S`
+#### `--symfony`, `-S`
 
 verouderd
 
 - Vereist een waarde
 
-### `--help`, `-h`
-
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
-
 
 ## `build`
-
-Builds-toepassing.
 
 ```bash
 ece-tools build
 ```
 
-### `--help`, `-h`
+Builds-toepassing.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `completion`
-
-Het shell-voltooiingsscript dumpen
 
 ```bash
 ece-tools completion [--debug] [--] [<shell>]
 ```
 
+Het shell-voltooiingsscript dumpen
 
-### `shell`
+```
+The completion command dumps the shell completion script required
+to use shell autocompletion (currently, bash, fish, zsh completion are supported).
+
+Static installation
+-------------------
+
+Dump the script to a global completion file and restart your shell:
+
+    bin/ece-tools completion  | sudo tee /etc/bash_completion.d/ece-tools
+
+Or dump the script to a local file and source it:
+
+    bin/ece-tools completion  > completion.sh
+
+    # source the file whenever you use the project
+    source completion.sh
+
+    # or add this line at the end of your "~/.bashrc" file:
+    source /path/to/completion.sh
+
+Dynamic installation
+--------------------
+
+Add this to the end of your shell configuration file (e.g. "~/.bashrc"):
+
+    eval "$(/var/jenkins/workspace/gendocs-ece-tools-cli/bin/ece-tools completion )"
+```
+
+### Argumenten
+
+#### `shell`
 
 Het shell type (bijvoorbeeld &quot;bash&quot;), de waarde van &quot;$SHELL&quot; env var zal worden gebruikt als dit niet wordt gegeven
 
+### Opties
 
-### `--debug`
+Voor globale opties, zie [ Globale opties ](#global-options).
+
+#### `--debug`
 
 Tik op het logbestand voor foutopsporing bij voltooien
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--help`, `-h`
-
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -234,214 +181,94 @@ Geen interactieve vraag stellen
 
 ## `db-dump`
 
-Maakt databaseback-ups.
-
 ```bash
 ece-tools db-dump [-d|--remove-definers] [-a|--dump-directory DUMP-DIRECTORY] [--] [<databases>...]
 ```
 
+Maakt databaseback-ups.
 
-### `databases`
+### Argumenten
+
+#### `databases`
 
 Databases voor back-up. Beschikbare Waarden: [ belangrijkste citaatverkoop ]. Als de argumentwaarde niet wordt gespecificeerd, zullen de gegevensbestandsteunen worden gecreeerd gebruikend de geloofsbrieven die in `MAGENTO_CLOUD_RELATIONSHIP` worden opgeslagen omgevingsvariabele of/en het `stage.deploy.DATABASE_CONFIGURATION` bezit van het .magento.env.yaml configuratiedossier.
 
 - Standaard: `[]`
-
 - Array
 
-### `--remove-definers`, `-d`
+### Opties
+
+Voor globale opties, zie [ Globale opties ](#global-options).
+
+#### `--remove-definers`, `-d`
 
 Verwijder definities uit de gegevensbestandstortplaats
 
 - Standaard: `false`
 - Accepteert geen waarde
 
-### `--dump-directory`, `-a`
+#### `--dump-directory`, `-a`
 
 Alternatieve directory gebruiken voor opslaan van dump
 
 - Vereist een waarde
 
-### `--help`, `-h`
-
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
-
 
 ## `deploy`
-
-Implementeert de toepassing.
 
 ```bash
 ece-tools deploy
 ```
 
-### `--help`, `-h`
+Implementeert de toepassing.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `help`
-
-Help weergeven voor een opdracht
 
 ```bash
 ece-tools help [--format FORMAT] [--raw] [--] [<command_name>]
 ```
 
+Help weergeven voor een opdracht
 
-### `command_name`
+```
+The help command displays help for a given command:
+
+  bin/ece-tools help list
+
+You can also output the help in other formats by using the --format option:
+
+  bin/ece-tools help --format=xml list
+
+To display the list of available commands, please use the list command.
+```
+
+### Argumenten
+
+#### `command_name`
 
 De opdrachtnaam
 
 - Standaard: `help`
 
+### Opties
 
-### `--format`
+Voor globale opties, zie [ Globale opties ](#global-options).
+
+#### `--format`
 
 De uitvoerindeling (txt, xml, json of md)
 
 - Standaard: `txt`
 - Vereist een waarde
 
-### `--raw`
+#### `--raw`
 
 Help bij de opdracht Uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--help`, `-h`
-
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -449,83 +276,57 @@ Geen interactieve vraag stellen
 
 ## `list`
 
-Lijstopdrachten
-
 ```bash
 ece-tools list [--raw] [--format FORMAT] [--short] [--] [<namespace>]
 ```
 
+Lijstopdrachten
 
-### `namespace`
+```
+The list command lists all commands:
+
+  bin/ece-tools list
+
+You can also display the commands for a specific namespace:
+
+  bin/ece-tools list test
+
+You can also output the information in other formats by using the --format option:
+
+  bin/ece-tools list --format=xml
+
+It's also possible to get raw list of commands (useful for embedding command runner):
+
+  bin/ece-tools list --raw
+```
+
+### Argumenten
+
+#### `namespace`
 
 De naamruimtenaam
 
+### Opties
 
-### `--raw`
+Voor globale opties, zie [ Globale opties ](#global-options).
+
+#### `--raw`
 
 Naar uitvoer RAW-opdrachtlijst
 
 - Standaard: `false`
 - Accepteert geen waarde
 
-### `--format`
+#### `--format`
 
 De uitvoerindeling (txt, xml, json of md)
 
 - Standaard: `txt`
 - Vereist een waarde
 
-### `--short`
+#### `--short`
 
 Om het beschrijven van de argumenten van bevelen over te slaan
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--help`, `-h`
-
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -533,1153 +334,315 @@ Geen interactieve vraag stellen
 
 ## `patch`
 
-Hiermee past u aangepaste patches toe.
-
 ```bash
 ece-tools patch
 ```
 
-### `--help`, `-h`
+Hiermee past u aangepaste patches toe.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `post-deploy`
-
-Voert uit na plaatsingsverrichtingen.
 
 ```bash
 ece-tools post-deploy
 ```
 
-### `--help`, `-h`
+Voert uit na plaatsingsverrichtingen.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `run`
-
-Voer scenario(s) uit.
 
 ```bash
 ece-tools run <scenario>...
 ```
 
+Voer scenario(s) uit.
 
-### `scenario`
+### Argumenten
+
+#### `scenario`
 
 Scenario(s)
 
 - Standaard: `[]`
-
 - Vereist
+
 - Array
 
-### `--help`, `-h`
+### Opties
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `backup:list`
-
-Hiermee geeft u de lijst met back-upbestanden weer.
 
 ```bash
 ece-tools backup:list
 ```
 
-### `--help`, `-h`
+Hiermee geeft u de lijst met back-upbestanden weer.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `backup:restore`
-
-Belangrijke configuratiebestanden herstellen. Back-up uitvoeren:lijst met reservekopieën weergeven.
 
 ```bash
 ece-tools backup:restore [-f|--force] [--file [FILE]]
 ```
 
-### `--force`, `-f`
+Belangrijke configuratiebestanden herstellen. Back-up uitvoeren:lijst met reservekopieën weergeven.
+
+### Opties
+
+Voor globale opties, zie [ Globale opties ](#global-options).
+
+#### `--force`, `-f`
 
 Bestaande bestanden overschrijven tijdens het herstellen van een back-up
 
 - Standaard: `false`
 - Accepteert geen waarde
 
-### `--file`
+#### `--file`
 
 Een specifiek pad voor bestandsherstel
 
 - Accepteert een waarde
 
-### `--help`, `-h`
-
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
-
 
 ## `build:generate`
-
-Hiermee worden alle benodigde bestanden gegenereerd voor het samenstellen van het werkgebied.
 
 ```bash
 ece-tools build:generate
 ```
 
-### `--help`, `-h`
+Hiermee worden alle benodigde bestanden gegenereerd voor het samenstellen van het werkgebied.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `build:transfer`
-
-Gegenereerde bestanden worden overgebracht naar de init-map.
 
 ```bash
 ece-tools build:transfer
 ```
 
-### `--help`, `-h`
+Gegenereerde bestanden worden overgebracht naar de init-map.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `cloud:config:create`
-
-Maakt een `.magento.env.yaml` -bestand met de opgegeven configuratie van variabelen voor samenstellen, implementeren en achteraf implementeren. Hiermee overschrijft u een bestaand `.magento,.env.yaml` -bestand.
 
 ```bash
 ece-tools cloud:config:create <configuration>
 ```
 
+Maakt een `.magento.env.yaml` -bestand met de opgegeven configuratie van variabelen voor samenstellen, implementeren en achteraf implementeren. Hiermee overschrijft u een bestaand `.magento,.env.yaml` -bestand.
 
-### `configuration`
+### Argumenten
+
+#### `configuration`
 
 Configuratie in JSON-indeling
 
 - Vereist
 
-### `--help`, `-h`
+### Opties
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `cloud:config:update`
-
-Werkt het bestaande `.magento.env.yaml` dossier met de gespecificeerde configuratie bij. Maakt een `.magento.env.yaml` -bestand als dit niet bestaat.
 
 ```bash
 ece-tools cloud:config:update <configuration>
 ```
 
+Werkt het bestaande `.magento.env.yaml` dossier met de gespecificeerde configuratie bij. Maakt een `.magento.env.yaml` -bestand als dit niet bestaat.
 
-### `configuration`
+### Argumenten
+
+#### `configuration`
 
 Configuratie in JSON-indeling
 
 - Vereist
 
-### `--help`, `-h`
+### Opties
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `cloud:config:validate`
-
-Valideert het configuratiebestand `.magento.env.yaml`
 
 ```bash
 ece-tools cloud:config:validate
 ```
 
-### `--help`, `-h`
+Valideert het configuratiebestand `.magento.env.yaml`
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `config:dump`
 
+```bash
+ece-tools config:dumpdump
+```
+
 Vorm van de pomp voor statische inhoudsplaatsing.
 
-```bash
-ece-tools config:dump
-```
+### Opties
 
-
-```bash
-ece-tools dump
-```
-
-### `--help`, `-h`
-
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `cron:disable`
-
-Schakel alle processen voor het uitsnijden van Magento&#39;s uit en beëindigt alle actieve processen.
 
 ```bash
 ece-tools cron:disable
 ```
 
-### `--help`, `-h`
+Schakel alle processen voor het uitsnijden van Magento&#39;s uit en beëindigt alle actieve processen.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `cron:enable`
-
-Hiermee schakelt u snijprocessen voor Magento&#39;s in.
 
 ```bash
 ece-tools cron:enable
 ```
 
-### `--help`, `-h`
+Hiermee schakelt u snijprocessen voor Magento&#39;s in.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `cron:kill`
-
-Beëindigt alle processen van de Magento kruin.
 
 ```bash
 ece-tools cron:kill
 ```
 
-### `--help`, `-h`
+Beëindigt alle processen van de Magento kruin.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `cron:unlock`
-
-Ontgrendel de banen van de kroon die in &quot;lopende&quot;staat bleven.
 
 ```bash
 ece-tools cron:unlock [--job-code [JOB-CODE]]
 ```
 
-### `--job-code`
+Ontgrendel de banen van de kroon die in &quot;lopende&quot;staat bleven.
+
+### Opties
+
+Voor globale opties, zie [ Globale opties ](#global-options).
+
+#### `--job-code`
 
 Taakcode uitsnijden die moet worden ontgrendeld.
 
 - Standaard: `[]`
 - Accepteert meerdere waarden
 
-### `--help`, `-h`
-
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
-
 
 ## `dev:generate:schema-error`
-
-Genereert het bestand dist/error-codes.md uit het bestand schema.error.yaml.
 
 ```bash
 ece-tools dev:generate:schema-error
 ```
 
-### `--help`, `-h`
+Genereert het bestand dist/error-codes.md uit het bestand schema.error.yaml.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `dev:git:update-composer`
-
-Werkt composer bij voor implementatie vanuit de it.
 
 ```bash
 ece-tools dev:git:update-composer
 ```
 
-### `--help`, `-h`
+Werkt composer bij voor implementatie vanuit de it.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `env:config:show`
-
-Gecodeerde omgevingsvariabelen voor cloudconfiguratie weergeven.
 
 ```bash
 ece-tools env:config:show [<variable>...]
 ```
 
+Gecodeerde omgevingsvariabelen voor cloudconfiguratie weergeven.
 
-### `variable`
+### Argumenten
+
+#### `variable`
 
 Te tonen omgevingsvariabelen, mogelijke opties: services, routes, variabelen
 
 - Standaard: `[]`
-
 - Array
 
-### `--help`, `-h`
+### Opties
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `error:show`
-
-Hier wordt informatie weergegeven over fout-id of informatie over alle fouten van de laatste implementatie.
 
 ```bash
 ece-tools error:show [-j|--json] [--] [<error-code>]
 ```
 
+Hier wordt informatie weergegeven over fout-id of informatie over alle fouten van de laatste implementatie.
 
-### `error-code`
+### Argumenten
+
+#### `error-code`
 
 Foutcode: als er geen informatie over de opdrachtweergave wordt doorgegeven over alle fouten van de laatste implementatie
 
+### Opties
 
-### `--json`, `-j`
+Voor globale opties, zie [ Globale opties ](#global-options).
+
+#### `--json`, `-j`
 
 Wordt gebruikt voor het ophalen van resultaten in de JSON-indeling
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--help`, `-h`
-
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
 
 - Standaard: `false`
 - Accepteert geen waarde
@@ -1687,456 +650,103 @@ Geen interactieve vraag stellen
 
 ## `module:refresh`
 
-Verfrist de configuratie om nieuw toegevoegde modules toe te laten.
-
 ```bash
 ece-tools module:refresh
 ```
 
-### `--help`, `-h`
+Verfrist de configuratie om nieuw toegevoegde modules toe te laten.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `schema:generate`
-
-Genereert het schema *.dist-bestand.
 
 ```bash
 ece-tools schema:generate
 ```
 
-### `--help`, `-h`
+Genereert het schema *.dist-bestand.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `wizard:ideal-state`
-
-Verifieert ideale staat van configuratie.
 
 ```bash
 ece-tools wizard:ideal-state
 ```
 
-### `--help`, `-h`
+Verifieert ideale staat van configuratie.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `wizard:master-slave`
-
-Verifieert master-slave configuratie.
 
 ```bash
 ece-tools wizard:master-slave
 ```
 
-### `--help`, `-h`
+Verifieert master-slave configuratie.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `wizard:scd-on-build`
-
-Verifieert SCD bij bouwstijlconfiguratie.
 
 ```bash
 ece-tools wizard:scd-on-build
 ```
 
-### `--help`, `-h`
+Verifieert SCD bij bouwstijlconfiguratie.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `wizard:scd-on-demand`
-
-Verifieert SCD op bestelling configuratie.
 
 ```bash
 ece-tools wizard:scd-on-demand
 ```
 
-### `--help`, `-h`
+Verifieert SCD op bestelling configuratie.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `wizard:scd-on-deploy`
-
-Verifieert SCD bij opstellen configuratie.
 
 ```bash
 ece-tools wizard:scd-on-deploy
 ```
 
-### `--help`, `-h`
+Verifieert SCD bij opstellen configuratie.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
+Voor globale opties, zie [ Globale opties ](#global-options).
 
 
 ## `wizard:split-db-state`
-
-Controleert de mogelijkheid om DB te splitsen en of DB al gesplitst was of niet.
 
 ```bash
 ece-tools wizard:split-db-state
 ```
 
-### `--help`, `-h`
+Controleert de mogelijkheid om DB te splitsen en of DB al gesplitst was of niet.
 
-Help weergeven voor de opgegeven opdracht. Wanneer geen bevel vertoningshulp voor het lijstbevel wordt gegeven
+### Opties
 
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--quiet`, `-q`
-
-Geen bericht uitvoeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--verbose`, `-v|-vv|-vvv`
-
-Verhoog de breedheid van berichten: 1 voor normale output, 2 voor meer uitgebreide output en 3 voor zuivert
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--version`, `-V`
-
-Deze toepassingsversie weergeven
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--ansi`
-
-ANSI-uitvoer forceren (of uitschakelen —no-ansi)
-
-- Accepteert geen waarde
-
-### `--no-ansi`
-
-De optie &quot;—ansi&quot; negeren
-
-- Standaard: `false`
-- Accepteert geen waarde
-
-### `--no-interaction`, `-n`
-
-Geen interactieve vraag stellen
-
-- Standaard: `false`
-- Accepteert geen waarde
-
+Voor globale opties, zie [ Globale opties ](#global-options).
