@@ -1,7 +1,7 @@
 ---
-source-git-commit: 762ce3cb6268401b0f5fae5b2280a870aa9c83a5
+source-git-commit: a87039d2e96e39d6d8d19673c5e0d52de8b844a4
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '879'
 ht-degree: 0%
 
 ---
@@ -43,11 +43,12 @@ Stel de optie `_merge` in op een van de volgende opties:
 ## Pro-services-ondersteuning {#pro-update-service}
 
 >[!TIP]
+>
 >Voor Pro projecten, moet u [ een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voorleggen om [ diensten ](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/services-yaml.html) in `Staging` en `Production` slechts milieu&#39;s te installeren of bij te werken.
 >
 >Geef aan welke servicewijzigingen nodig zijn, neem de bijgewerkte `.magento.app.yaml` - en `services.yaml` -bestanden op en geef de PHP-versie op in het ticket. Voor zelfbedienings veranderingen in PHP versie, uitbreidingen, of milieu montages, zie [ PHP montages ](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/php-settings.html) in _configuratie van de Toepassing_.
 >
->Voor veranderingen in a _levende_ milieu van de Productie (**Pro slechts**), moet u een minimum van 48 uurbericht verstrekken om het de infrastructuurteam van de Wolk voldoende tijd toe te staan om middelen te marshal en een veilige verbetering te leiden. De opzegtermijn omvat geen weekends. Als u bijvoorbeeld wilt dat de upgrades van de service op maandag worden uitgevoerd, moet u het verzoek op de vorige woensdag indienen.
+>Voor veranderingen in een levende milieu van de Productie (**slechts Pro**), wordt een minimum van 48 uurverklaring vereist. Hierdoor kan het infrastructuurteam van de cloud voldoende tijd krijgen om bronnen te bundelen en een veilige upgrade uit te voeren. De opzegtermijn begint wanneer het infrastructuurteam de aanvraag erkent en de upgrade plant, met uitzondering van weekends. Bijvoorbeeld, om de dienstverbeteringen te hebben op een maandag worden voltooid, moet een erkenning van de geplande verbetering tegen Woensdag worden ontvangen. Tijdens piekvraagperiodes, zou het meer tijd kunnen vergen om uw verzoek te verwerken.
 
 ## Pro-back-ups {#pro-backups}
 
