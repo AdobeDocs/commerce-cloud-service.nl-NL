@@ -2,7 +2,7 @@
 title: Site starten
 description: Leer hoe u begint met het voorbereiden van de lancering van de site.
 exl-id: a7b3f260-b76e-4220-b521-699548a9928a
-source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '902'
 ht-degree: 0%
@@ -65,7 +65,7 @@ Met het hulpprogramma Beveiligingsscan kunt u regelmatig uw winkelwebsites contr
 
 - Beveiligingsupdates en sitespecifieke meldingen ontvangen
 
-Zie de [ Gids van de Gebruiker ](https://docs.magento.com/user-guide/magento/security-scan.html) voor informatie over vestiging en het gebruiken van het hulpmiddel van het veiligheidsaftasten. Doorgaans gebruikt u dit gereedschap wanneer u met het testen van gebruikersacceptatie (UAT) begint.
+Zie de [ Gids van de Gebruiker ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-scan) voor informatie over vestiging en het gebruiken van het hulpmiddel van het veiligheidsaftasten. Doorgaans gebruikt u dit gereedschap wanneer u met het testen van gebruikersacceptatie (UAT) begint.
 
 Elke site die u scant, moet zijn geregistreerd via het tabblad Beveiligingsscan. Tijdens het registratieproces moet u de disclaimer accepteren voordat u kunt beginnen met scannen. U beheert het schema en machtigt de gebruiker om meldingen te ontvangen wanneer elke scan is voltooid. U kunt scans voor een specifieke, terugkomende datum en tijd plannen, of een aftasten in werking stellen wanneer nodig.
 

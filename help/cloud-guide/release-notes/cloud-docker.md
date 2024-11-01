@@ -5,7 +5,7 @@ feature: Cloud, Docker, Release Notes
 recommendations: noDisplay, catalog
 last-substantial-update: 2024-10-07T00:00:00Z
 exl-id: 907d977f-2e9c-4553-a46b-000bc6a57b28
-source-git-commit: fdb596430fbc532bed4a6b251872f44c5321d375
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '3684'
 ht-degree: 0%
@@ -98,7 +98,7 @@ Releasedatum: 10 maart 2022
 
 Releasedatum: 25 oktober 2021
 
-- ![ fixpictogram ](../../assets/fix.svg) **verbetert het werkschema van de wijze van de Ontwikkelaar** - eerder, moest u de wijze in de bouwstijl specificeren en stappen opstellen. De optie `--mode` in de stap `build` bepaalt nu de modus in de latere stap `deploy` . Het instellen van de modus na de implementatie is niet meer vereist. Zie {de wijze van de 0} Ontwikkelaar ](https://devdocs.magento.com/cloud/docker/docker-mode-developer.html).<!-- ACMP-1086 -->[
+- ![ fixpictogram ](../../assets/fix.svg) **verbetert het werkschema van de wijze van de Ontwikkelaar** - eerder, moest u de wijze in de bouwstijl specificeren en stappen opstellen. De optie `--mode` in de stap `build` bepaalt nu de modus in de latere stap `deploy` . Het instellen van de modus na de implementatie is niet meer vereist. Zie {de wijze van de 0} Ontwikkelaar ](https://developer.adobe.com/commerce/cloud-tools/docker/deploy/developer-mode/).<!-- ACMP-1086 -->[
 - ![ fixpictogram ](../../assets/fix.svg) **Verbeteringen voor read-only filesystem** - <!-- ACMP-1106 -->
    - Probleem verhelpen met een PHP-container voor e-mailconfiguratie.
    - Kan omgevingsvariabelen gebruiken in INI-bestanden.
@@ -110,7 +110,7 @@ Releasedatum: 25 oktober 2021
 
 Releasedatum: 29 juli 2021
 
-- ![ nieuw pictogram ](../../assets/new.svg) **Nieuwe `Zookeeper` container** - toegevoegd a [ container van de Zookeeper ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#zookeeper-container) om slotleveranciersconfiguratie voor projecten te beheren die niet aan Adobe Commerce op de infrastructuur van de Wolk worden opgesteld.<!--MCLOUD-8000-->
+- ![ nieuw pictogram ](../../assets/new.svg) **Nieuwe `Zookeeper` container** - toegevoegd a [ container van de Zookeeper ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#zookeeper-container) om slotleveranciersconfiguratie voor projecten te beheren die niet aan Adobe Commerce op de infrastructuur van de Wolk worden opgesteld.<!--MCLOUD-8000-->
 
 - ![ nieuw pictogram ](../../assets/new.svg) **Toegevoegde steun voor Composer 2.0.** - Toegevoegde Composer versie 2.0 aan het de configuratiedossier van Composer om verbeteringen van Composer 1.0 te steunen die eind-van-leven nadert.<!--MCLOUD-8003-->
 
@@ -121,7 +121,7 @@ Releasedatum: 14 juni 2021
 - ![ nieuw pictogram ](../../assets/new.svg) **Toegevoegde PHP 8.0** - Bijgewerkt PHP aan versie 8.0, toestaand u uit alle nieuwe eigenschappen en optimalisaties PHP 8.0 omvat.<!--MCLOUD-7941-->
 - ![ nieuw pictogram ](../../assets/new.svg) **bijgewerkt aan Varnish 6.6 en Elasticsearch 7.11.2** - de volgende verbindingen verstrekken versieinformatie over [ Vernis Geheime voorgeheugen 6.6 ](https://varnish-cache.org/releases/rel6.6.0.html#rel6-6-0) en Elasticsearch 7.11.2.<!--MCLOUD-7921-->
 - ![ nieuw pictogram ](../../assets/new.svg) **Toegevoegde `ioncube` uitbreiding voor PHP beeld 7.4** - de `ioncube` uitbreiding is opnieuw toegevoegd aan PHP beeld 7.4 na aanvankelijk uitgesloten van PHP 7.3 aan PHP verbetering 7.4. *[Voorgelegd door mattskr ](https://github.com/magento/magento-cloud-docker/pull/314).*<!--PR #314-->
-- ![ nieuw pictogram ](../../assets/new.svg) **voegde een optie van de dossiersynchronisatie toe:`manual-native`** - de `manual-native` optie van de dossiersynchronisatie verstrekt handcontrole over synchronisatie, die de beste prestaties voor de milieu&#39;s van macOS en van Vensters verstrekt. Lees over het gebruiken van de `manual-native` optie op [ wijze van de Ontwikkelaar ](https://devdocs.magento.com/cloud/docker/docker-mode-developer.html) en [ het Synchroniseren van gegevens in een ontwikkelaarmilieu van de Docker ](https://devdocs.magento.com/cloud/docker/docker-syncing-data.html#file-synchronization-options).<!--MCLOUD-7977-->
+- ![ nieuw pictogram ](../../assets/new.svg) **voegde een optie van de dossiersynchronisatie toe:`manual-native`** - de `manual-native` optie van de dossiersynchronisatie verstrekt handcontrole over synchronisatie, die de beste prestaties voor de milieu&#39;s van macOS en van Vensters verstrekt. Lees over het gebruiken van de `manual-native` optie op [ wijze van de Ontwikkelaar ](https://developer.adobe.com/commerce/cloud-tools/docker/deploy/developer-mode/) en [ het Synchroniseren van gegevens in een ontwikkelaarmilieu van de Docker ](https://developer.adobe.com/commerce/cloud-tools/docker/setup/synchronize-data/#file-synchronization-options).<!--MCLOUD-7977-->
 - ![ nieuw pictogram ](../../assets/new.svg) **Verwijderde volume schrappingen van `up` en `down` bevelen** - de `--volume` optie werd verwijderd uit `bin/magento-docker up` en `bin/magento-docker down` bevelen, die door het nieuwe `bin/magento-docker init` bevel met een waarschuwing van het gegevensverlies worden vervangen. Door deze wijziging voorkomt u dat gegevens per ongeluk verloren gaan. *[Voorgelegd door joeshelton-wagento ](https://github.com/magento/magento-cloud-docker/pull/319).*<!--PR #319-->
 - ![ fixpictogram ](../../assets/fix.svg) **bijgewerkte `CN` waarde voor het geproduceerde certificaat** - Verwijderde de geharde `CN` waarde uit Dockerfile. Deze waarde leidde tot een certificaatfout (`NET::ERR_CERT_INVALID`) die `--host` optie voor het `ece-docker build:compose` bevel om veroorzaakte te worden genegeerd.<!--MCLOUD-7934-->
 
@@ -187,33 +187,33 @@ Releasedatum: 9 november 2020
 
       - Toegevoegde steun voor Elasticsearch 7.9 voor verenigbaarheid met de aanstaande versies van Adobe Commerce.<!--MCLOUD-7190-->
 
-      - **Elasticsearch plug-in configuratie** - Toegevoegde steun om de configuratieinformatie van de Elasticsearch plug-in van het `services.yaml` dossier te gebruiken om het `docker-compose.yaml` dossier voor een Dok van de Wolk voor het milieu van Commerce te produceren. Zie [ de stoppen van de Elasticsearch ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#elasticsearch-plugins).<!--MCLOUD-2789-->
+      - **Elasticsearch plug-in configuratie** - Toegevoegde steun om de configuratieinformatie van de Elasticsearch plug-in van het `services.yaml` dossier te gebruiken om het `docker-compose.yaml` dossier voor een Dok van de Wolk voor het milieu van Commerce te produceren. Zie [ de stoppen van de Elasticsearch ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#elasticsearch-plugins).<!--MCLOUD-2789-->
 
       - **de insteekmodule van de Elasticsearch steun** - toegevoegde steun voor de volgende Elasticsearch stop-ins: `analysis-icu`, `analysis-phonetic`, `analysis-stempel`, en `analysis-nori`. De plug-ins `analysis-icu` en `analysis-phonetic` worden standaard geïnstalleerd. U kunt de plug-ins `analysis-stempel` en `analysis-nori` naar wens toevoegen of verwijderen. <!--MCLOUD-2789-->
 
    - ![ nieuw pictogram ](../../assets/new.svg) **CLI container**
 
-      - **de bevelen van de Looppas binnen de containers van PHP van de Doopvaring** - nu kunt u CLI van het Dok van de Wolk gebruiken om bevelen binnen containers PHP in uw milieu van het Dok in werking te stellen zonder het moeten PHP op de gastheer installeren. Met de volgende opdracht bouwt u bijvoorbeeld de configuratie: `./bin/magento-docker php 7.3 vendor/bin/ece-docker build:compose` . Zie [ CLI van het Docker van de Wolk ](https://devdocs.magento.com/cloud/docker/docker-quick-reference.html#magento-cloud-docker-cli). [ Repareren die door G Arvind van de Technologie van Zilker ](https://github.com/magento/magento-cloud-docker/pull/209) wordt voorgelegd.<!--MCLOUD-5982-->
+      - **de bevelen van de Looppas binnen de containers van PHP van de Doopvaring** - nu kunt u CLI van het Dok van de Wolk gebruiken om bevelen binnen containers PHP in uw milieu van het Dok in werking te stellen zonder het moeten PHP op de gastheer installeren. Met de volgende opdracht bouwt u bijvoorbeeld de configuratie: `./bin/magento-docker php 7.3 vendor/bin/ece-docker build:compose` . Zie [ CLI van het Docker van de Wolk ](https://developer.adobe.com/commerce/cloud-tools/docker/quick-reference/#cloud-docker-cli). [ Repareren die door G Arvind van de Technologie van Zilker ](https://github.com/magento/magento-cloud-docker/pull/209) wordt voorgelegd.<!--MCLOUD-5982-->
 
       - OpenSSH-client toegevoegd aan PHP CLI containers. Nu, kunt u ssh-agent gebruiken die voor Composer door:sturen als het `composer.json` dossier privé gothandelen bevat die een ssh cliënt vereisen om Composer bevelen te gebruiken.<!--MCLOUD-6008-->
 
-   - ![ fixpictogram ](../../assets/fix.svg) **container TLS** - nu, is de [ container TLS ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#tls-container) gebaseerd op het `https://hub.docker.com/r/magento/magento-cloud-docker-nginx` beeld van het Dok in plaats van het beeld CentOS. Deze wijziging verhelpt problemen die fouten veroorzaakten bij het verzenden van HTTPS-aanvragen tussen containers in de Cloud Docker-omgeving.<!--MCLOUD-6469-->
+   - ![ fixpictogram ](../../assets/fix.svg) **container TLS** - nu, is de [ container TLS ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#tls-container) gebaseerd op het `https://hub.docker.com/r/magento/magento-cloud-docker-nginx` beeld van het Dok in plaats van het beeld CentOS. Deze wijziging verhelpt problemen die fouten veroorzaakten bij het verzenden van HTTPS-aanvragen tussen containers in de Cloud Docker-omgeving.<!--MCLOUD-6469-->
 
-   - ![ nieuw pictogram ](../../assets/new.svg) **container van de Test** - voegde een testcontainer voor toepassing het testen toe, en voegde de `--with-test` optie aan het Dokker `build:compose` bevel toe om de container slechts tot stand te brengen wanneer het testen in het milieu van de Dokker. Zie [ toepassing het testen ](https://devdocs.magento.com/cloud/docker/docker-test-app-mftf.html).<!--MCLOUD-6394-->
+   - ![ nieuw pictogram ](../../assets/new.svg) **container van de Test** - voegde een testcontainer voor toepassing het testen toe, en voegde de `--with-test` optie aan het Dokker `build:compose` bevel toe om de container slechts tot stand te brengen wanneer het testen in het milieu van de Dokker. Zie [ toepassing het testen ](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/).<!--MCLOUD-6394-->
 
    - ![ nieuw pictogram ](../../assets/new.svg) **FPM-XDEBUG container**
 
-      - ![ nieuw pictogram ](../../assets/new.svg) **vorm Xdebug op Linux** - voegde de `--set-docker-host` optie aan het `ece-docker build:compose` bevel toe om de `host.docker.internal` waarde in de container te vormen Xdebug. Deze optie is vereist als u Xdebug wilt gebruiken op Linux-systemen. Zie [ Xdebug voor Docker ](https://devdocs.magento.com/cloud/docker/docker-development-debug.html) vormen.<!--MCLOUD-6430-->
+      - ![ nieuw pictogram ](../../assets/new.svg) **vorm Xdebug op Linux** - voegde de `--set-docker-host` optie aan het `ece-docker build:compose` bevel toe om de `host.docker.internal` waarde in de container te vormen Xdebug. Deze optie is vereist als u Xdebug wilt gebruiken op Linux-systemen. Zie [ Xdebug voor Docker ](https://developer.adobe.com/commerce/cloud-tools/docker/test/configure-xdebug/) vormen.<!--MCLOUD-6430-->
 
       - ![ fixpictogram ](../../assets/fix.svg) Vaste de Xdebug veranderlijke configuratie voor het BINNENPUNT van de Dok om `uninitialized "with_xdebug" variable` fouten in de logboeken op te lossen. [ Fix die door Florent Olivaud ](https://github.com/magento/magento-cloud-docker/pull/218) wordt voorgelegd <!--MCLOUD-6043-->
 
 - ![ nieuw pictogram ](../../assets/new.svg) **de configuratieveranderingen van de Docker**
 
-   - **configuratie MailHog** - nu kunt u de volgende `ece-docker build:compose` bevelopties gebruiken om MailHog onbruikbaar te maken en havens te specificeren: `--no-mailhog`, `--mailhog-http-port`, en `--mailhog-smtp-port`. Zie [ Opstelling e-mail ](https://devdocs.magento.com/cloud/docker/docker-config.html#set-up-email).<!--MCLOUD-6898, MCLOUD-6660-->
+   - **configuratie MailHog** - nu kunt u de volgende `ece-docker build:compose` bevelopties gebruiken om MailHog onbruikbaar te maken en havens te specificeren: `--no-mailhog`, `--mailhog-http-port`, en `--mailhog-smtp-port`. Zie [ Opstelling e-mail ](https://developer.adobe.com/commerce/cloud-tools/docker/configure/#set-up-email).<!--MCLOUD-6898, MCLOUD-6660-->
 
    - Voor Cloud Docker voor Commerce 1.2.0 en hoger biedt Adobe nu Docker-afbeeldingen voor elke patchversie en de Docker-configuratiegenerator maakt de Docker-configuratie met een opgegeven patchversie in plaats van de nieuwste versie. Eerder, bouwde de configuratiegenerator van de Dokker de configuratie gebruikend de recentste flardversie die Cloud Docker voor milieu&#39;s kon breken Commerce die gebruikend een vroegere versie werden gebouwd.<!--MCLOUD-7093-->
 
-   - **specificeer douanebeelden en versies in de configuratie van het Dok van de douaneWolk** - bijgewerkt het `build:custom:compose` bevel met opties om douanebeelden en versies te specificeren wanneer het produceren van een douaneDocker stelt configuratiedossier samen (`docker-compose.yaml`). Zie [ bouwt een douaneDocker stelt configuratie ](https://devdocs.magento.com/cloud/docker/docker-config-sources.html#build-a-custom-docker-compose-configuration) samen. <!--MCLOUD-7089-->
+   - **specificeer douanebeelden en versies in de configuratie van het Dok van de douaneWolk** - bijgewerkt het `build:custom:compose` bevel met opties om douanebeelden en versies te specificeren wanneer het produceren van een douaneDocker stelt configuratiedossier samen (`docker-compose.yaml`). Zie [ bouwt een douaneDocker stelt configuratie ](https://developer.adobe.com/commerce/cloud-tools/docker/configure/custom-docker-compose/) samen. <!--MCLOUD-7089-->
 
    - Bijgewerkt de de gastheerconfiguratie van de Docker om haven 443 bloot te stellen om toegang tot Adobe Commerce (`https://magento2.docker`) van alle containers toe te laten CLI. U kunt de standaardpoort wijzigen door de optie `--tls-port` toe te voegen wanneer u het Docker-configuratiebestand genereert.<!--MCLOUD-6806-->
 
@@ -233,13 +233,13 @@ Releasedatum: 9 september 2020
 
 Releasedatum: 5 augustus 2020
 
-- ![ fixpictogram ](../../assets/fix.svg) **Bijgewerkte e-mailconfiguratie** - Bijgewerkt het standaardDocker van de Wolk voor de configuratie van Commerce om de dienst te steunen MailHog in plaats van het gebruiken van SendMail. Zie [ Opstelling e-mail ](https://devdocs.magento.com/cloud/docker/docker-config.html#set-up-email).<!--MCLOUD-5624-->
+- ![ fixpictogram ](../../assets/fix.svg) **Bijgewerkte e-mailconfiguratie** - Bijgewerkt het standaardDocker van de Wolk voor de configuratie van Commerce om de dienst te steunen MailHog in plaats van het gebruiken van SendMail. Zie [ Opstelling e-mail ](https://developer.adobe.com/commerce/cloud-tools/docker/configure/#set-up-email).<!--MCLOUD-5624-->
 
 - ![ fixpictogram ](../../assets/fix.svg) herstelde de bibliotheek van PS aan de de omgevingsconfiguratie van het Dok van de Wolk om `ps:  command not found` fouten te bevestigen.<!--MCLOUD-6621-->
 
 - ![ herstellingspictogram ](../../assets/fix.svg) werkte standaarddocker van de Wolk voor de configuratie van Commerce bij om automatische steun van de volumes van de gegevensbestandingang en MariaDB te verwijderen om `Cannot create container for service db` fouten te bevestigen die wanneer het beginnen van uw milieu van de Dok van de Wolk kunnen voorkomen.
 
-  Nu kunt u de Cloud Docker-omgeving zo configureren dat de databasemappen worden gekoppeld door de volgende opties toe te voegen aan de opdracht `ece-docker build:compose` : `--with-entry-point` en `with-mariadb-conf` . Zie [ de configuratieopties van de Dienst ](https://devdocs.magento.com/cloud/docker/docker-containers.html#service-configuration-options).<!--MCLOUD-6424-->
+  Nu kunt u de Cloud Docker-omgeving zo configureren dat de databasemappen worden gekoppeld door de volgende opties toe te voegen aan de opdracht `ece-docker build:compose` : `--with-entry-point` en `with-mariadb-conf` . Zie [ de configuratieopties van de Dienst ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/#service-configuration-options).<!--MCLOUD-6424-->
 
 - ![ nieuwe pictogram ](../../assets/new.svg) **CLI bevelupdates**
 
@@ -256,25 +256,25 @@ Releasedatum: 25 juni 2020
 
 - ![ nieuw pictogram ](../../assets/new.svg) **Steun voor Adobe Commerce en plaatsing van de Magento Open Source** - nu kunt u het Dok van de Wolk voor Commerce gebruiken om een lokale ontwikkelomgeving voor projecten op te stellen die niet op Adobe Commerce op wolkeninfrastructuur worden ontvangen.<!--MCLOUD-5667-->
 
-- ![ nieuw pictogram ](../../assets/new.svg) **Blackfire.io steun** - Toegevoegde steun om de {](https://devdocs.magento.com/cloud/docker/docker-config-blackfire-io.html) uitbreiding 4} Blackfire.io voor geautomatiseerde prestaties te gebruiken testend. [ [ Reparatie die door Adarsh Manickam van de Technologie van Zilker ](https://github.com/magento/magento-cloud-docker/pull/202) wordt voorgelegd <!--MCLOUD-5857-->
+- ![ nieuw pictogram ](../../assets/new.svg) **Blackfire.io steun** - Toegevoegde steun om de {](https://developer.adobe.com/commerce/cloud-tools/docker/test/blackfire/) uitbreiding 4} Blackfire.io voor geautomatiseerde prestaties te gebruiken testend. [ [ Reparatie die door Adarsh Manickam van de Technologie van Zilker ](https://github.com/magento/magento-cloud-docker/pull/202) wordt voorgelegd <!--MCLOUD-5857-->
 
 - ![ nieuw pictogram ](../../assets/new.svg) **de updates van de Container**
 
-   - **vernis** - nu vervaagt is het standaardgeheime voorgeheugen wanneer u Adobe Commerce in een milieu van het Dok van de Wolk gebruikend een gesteunde versie van het de toepassingsmalplaatje van de Wolk opstelt. Zie [ Vierige container ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#varnish-container).<!--MCLOUD-2634-->
+   - **vernis** - nu vervaagt is het standaardgeheime voorgeheugen wanneer u Adobe Commerce in een milieu van het Dok van de Wolk gebruikend een gesteunde versie van het de toepassingsmalplaatje van de Wolk opstelt. Zie [ Vierige container ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#varnish-container).<!--MCLOUD-2634-->
 
    - De optie `--no-varnish` is toegevoegd om de installatie van Varnish-services over te slaan wanneer u het configuratiebestand van Cloud Docker genereert.<!--MCLOUD-2634-->
 
    - ![ nieuw pictogram ](../../assets/new.svg) **Gegevensbestand**
 
-      - De ondersteuning voor de MySQL-database is toegevoegd. Nu kunt u de Cloud Docker-omgeving configureren met MariaDB of MySQL. Zie [ de configuratieopties van de Dienst ](https://devdocs.magento.com/cloud/docker/docker-containers.html#service-configuration-options).<!--MCLOUD-5691-->
+      - De ondersteuning voor de MySQL-database is toegevoegd. Nu kunt u de Cloud Docker-omgeving configureren met MariaDB of MySQL. Zie [ de configuratieopties van de Dienst ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/#service-configuration-options).<!--MCLOUD-5691-->
 
-      - Toegevoegd de capaciteit om de verhogings en compensatiemontages voor gegevensbestandreplicatie te plaatsen wanneer u het Docker samenstelt dossier produceert. Zie [ de containers van de Dienst ](https://devdocs.magento.com/cloud/docker/docker-containers.html#service-containers).<!--MCLOUD-5735-->
+      - Toegevoegd de capaciteit om de verhogings en compensatiemontages voor gegevensbestandreplicatie te plaatsen wanneer u het Docker samenstelt dossier produceert. Zie [ de containers van de Dienst ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/#service-containers).<!--MCLOUD-5735-->
 
    - ![ nieuw pictogram ](../../assets/new.svg) **PHP-FPM**
 
       - Toegevoegde steun voor PHP 7.4. [ Fix die door Mohanela Murugan van de Technologie van Zilker ](https://github.com/magento/magento-cloud-docker/pull/198) wordt voorgelegd <!--MCLOUD-198-->
 
-      - Mogelijkheid toegevoegd om een `php.ini` -bestand in de hoofdprojectmap te kopiëren naar de Cloud Docker-omgeving en aangepaste PHP-instellingen toe te passen op de PHP-FPM- en CLI-containers. Zie [ PHP montages ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#customize-php-settings) aanpassen. [ Repareren die door Mathew Beane van de Technologie van Zilker ](https://github.com/magento/magento-cloud-docker/pull/130) wordt voorgelegd.<!--MCLOUD-6012-->
+      - Mogelijkheid toegevoegd om een `php.ini` -bestand in de hoofdprojectmap te kopiëren naar de Cloud Docker-omgeving en aangepaste PHP-instellingen toe te passen op de PHP-FPM- en CLI-containers. Zie [ PHP montages ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#customize-php-settings) aanpassen. [ Repareren die door Mathew Beane van de Technologie van Zilker ](https://github.com/magento/magento-cloud-docker/pull/130) wordt voorgelegd.<!--MCLOUD-6012-->
 
       - Er is een containerhealth check toegevoegd. [ Reparatie die door de Sampath van de Visant van de Technologie van de Zilker ](https://github.com/magento/magento-cloud-docker/pull/188) wordt voorgelegd.<!--MCLOUD-5752-->
 
@@ -284,11 +284,11 @@ Releasedatum: 25 juni 2020
 
       - Toegevoegde steun voor Elasticsearch 6.8, 7.2, 7.5, en 7.6.<!--MCLOUD-4050, MCLOUD-5855,MCLOUD-5860-->
 
-      - Toegevoegd de capaciteit om de [ de containerconfiguratie van de Elasticsearch ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#elasticsearch-container) aan te passen wanneer u het Docker samenstelt configuratiedossier produceert.<!--MCLOUD-3059-->
+      - Toegevoegd de capaciteit om de [ de containerconfiguratie van de Elasticsearch ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#elasticsearch-container) aan te passen wanneer u het Docker samenstelt configuratiedossier produceert.<!--MCLOUD-3059-->
 
       - De optie `--no-es` is toegevoegd aan de opties voor serviceconfiguratie voor het genereren van het configuratiebestand Docker Compose. Gebruik deze optie om de containerinstallatie van de Elasticsearch over te slaan en in plaats daarvan MySQL-zoekopdracht te gebruiken. Deze optie wordt slechts gesteund voor versies 2.3.5 van Adobe Commerce en vroeger.<!--MCLOUD-3766-->
 
-   - ![ nieuw pictogram ](../../assets/new.svg) **FPM-XDEBUG container** - voegde een optie van de de dienstconfiguratie toe om Xdebug voor het zuiveren PHP in uw milieu van het Dok van de Wolk te installeren en te vormen. Zie [ Xdebug ](https://devdocs.magento.com/cloud/docker/docker-development-debug.html) vormen.<!--MCLOUD-4098-->
+   - ![ nieuw pictogram ](../../assets/new.svg) **FPM-XDEBUG container** - voegde een optie van de de dienstconfiguratie toe om Xdebug voor het zuiveren PHP in uw milieu van het Dok van de Wolk te installeren en te vormen. Zie [ Xdebug ](https://developer.adobe.com/commerce/cloud-tools/docker/test/configure-xdebug/) vormen.<!--MCLOUD-4098-->
 
 - ![ nieuw pictogram ](../../assets/new.svg) **de configuratieveranderingen van de Docker**
 
@@ -309,11 +309,11 @@ Releasedatum: 25 juni 2020
 | Redis-cache wissen | `bin/magento-docker flush-redis` |
 | Varnish-cache wissen | `bin/magento-docker flush-varnish` |
 | De standaardinstallatie van Varnish overslaan | `.vendor/bin/ece-docker build:compose --no-varnish`<!--MCLOUD-2634--> |
-| [ pas Elasticsearch opties ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#elasticsearch-container) aan | `.vendor/bin/ece-docker build:compose --es-env-var`<!--MCLOUD-3059--> |
-| [ verwijdert de configuratie van de Elasticsearch ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#elasticsearch-container) | `.vendor/bin/ece-docker build:compose --no-es`<!--MCLOUD-3766--> |
+| [ pas Elasticsearch opties ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#elasticsearch-container) aan | `.vendor/bin/ece-docker build:compose --es-env-var`<!--MCLOUD-3059--> |
+| [ verwijdert de configuratie van de Elasticsearch ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#elasticsearch-container) | `.vendor/bin/ece-docker build:compose --no-es`<!--MCLOUD-3766--> |
 | DB-container configureren met MySQL versie 5.6 of 5.7 | `./vendor/bin/ece-docker build:compose --db <mysql-version-number> --db-image mysql`<!--MCLOUD-5691--> |
 | Aangepaste basis-URL opgeven | `./vendor/bin/ece-docker build:compose --host=<hostname> --port=<port-number>`<!--MCLOUD-3063--> |
-| [ voeg container voor configuratie Xdebug ](https://devdocs.magento.com/cloud/docker/docker-development-debug.html) toe | `.vendor/bin/ece-docker build:compose --mode developer --sync-engine native --with-xdebug`<!--MCLOUD-4098--> |
+| [ voeg container voor configuratie Xdebug ](https://developer.adobe.com/commerce/cloud-tools/docker/test/configure-xdebug/) toe | `.vendor/bin/ece-docker build:compose --mode developer --sync-engine native --with-xdebug`<!--MCLOUD-4098--> |
 
 - ![ fixpictogram ](../../assets/fix.svg) Vaste de configuratie van mutagene dossiersynchronisatie om mutageen te verhinderen stapelzittingen te creëren. [ Repareren die door Mathew Beane van de Technologie van Zilker ](https://github.com/magento/magento-cloud-docker/pull/127) wordt voorgelegd.<!--MCLOUD-6010-->
 
@@ -349,11 +349,11 @@ Releasedatum: 5 februari 2020
 
    - ![ nieuw pictogram ](../../assets/new.svg) **container van het Web** -
 
-      - ![ nieuw pictogram ](../../assets/new.svg) **pas NGINX configuratie** toe - voegde het vermogen toe om een douane `nginx.conf` dossier aan het Dok van de Wolk voor het milieu van Commerce op te zetten. Zie {de container van 0} Web ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#web-container).<!--MAGECLOUD-4204-->[
+      - ![ nieuw pictogram ](../../assets/new.svg) **pas NGINX configuratie** toe - voegde het vermogen toe om een douane `nginx.conf` dossier aan het Dok van de Wolk voor het milieu van Commerce op te zetten. Zie {de container van 0} Web ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#web-container).<!--MAGECLOUD-4204-->[
 
       - ![ nieuw pictogram ](../../assets/new.svg) **Auto-geproduceerde NGINX certificaten** - het de configuratiedossier van de Docker omvat nu de configuratie om NGINX certificaten voor de container van het Web auto-te produceren.<!--MAGECLOUD-4258-->
 
-   - ![ nieuw pictogram ](../../assets/new.svg) **Nieuwe container van Selenium** - Toegevoegd a [ container van Selenium ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#selenium-container) om de toepassing van Adobe Commerce te steunen die het Magento het Functionele Testen Kader (MFTF) testen.<!--MAGECLOUD-4040-->
+   - ![ nieuw pictogram ](../../assets/new.svg) **Nieuwe container van Selenium** - Toegevoegd a [ container van Selenium ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#selenium-container) om de toepassing van Adobe Commerce te steunen die het Magento het Functionele Testen Kader (MFTF) testen.<!--MAGECLOUD-4040-->
 
    - ![ nieuw pictogram ](../../assets/new.svg) **[!DNL RabbitMQ]versiessteun** - werkte de [!DNL RabbitMQ] containerconfiguratie bij om [!DNL RabbitMQ] versie 3.8 te steunen.<!--MAGECLOUD-4674-->
 
@@ -361,7 +361,7 @@ Releasedatum: 5 februari 2020
 
    - ![ nieuw pictogram ](../../assets/new.svg) **container TLS** -
 
-      - ![ nieuw pictogram ](../../assets/new.svg) **werkte het beeld van de containerbasis bij om officieel beeld** te gebruiken - het [ de container van TLS van de Wolk ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#tls-container) beeld is nu gebaseerd op het officiële `debian:jessie` beeld van het Docker.—<!--MAGECLOUD-4163-->
+      - ![ nieuw pictogram ](../../assets/new.svg) **werkte het beeld van de containerbasis bij om officieel beeld** te gebruiken - het [ de container van TLS van de Wolk ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#tls-container) beeld is nu gebaseerd op het officiële `debian:jessie` beeld van het Docker.—<!--MAGECLOUD-4163-->
 
       - ![ nieuw pictogram ](../../assets/new.svg) **Toegevoegde steun voor de [ Gevonden Volgorde van de Beëindiging TLS]** - het [ Pond configuratiedossier ](https://github.com/magento/magento-cloud-docker/blob/1.0/images/tls/) voegt de volgende variabelen toe ENV om de configuratie van de Dok voor de container aan te passen TLS:
 
@@ -373,7 +373,7 @@ Releasedatum: 5 februari 2020
 
    - ![ nieuw pictogram ](../../assets/new.svg) **Varnish container** -
 
-      - ![ nieuw pictogram ](../../assets/new.svg) **werkte het beeld van de containerbasis bij om officieel beeld** te gebruiken - de [ container van de Vlek van de Wolk ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#varnish-container) is nu gebaseerd op het officiële `centos` beeld van het Docker.<!--MAGECLOUD-4163-->
+      - ![ nieuw pictogram ](../../assets/new.svg) **werkte het beeld van de containerbasis bij om officieel beeld** te gebruiken - de [ container van de Vlek van de Wolk ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#varnish-container) is nu gebaseerd op het officiële `centos` beeld van het Docker.<!--MAGECLOUD-4163-->
 
       - ![ nieuw pictogram ](../../assets/new.svg) **Verbeterde standaardonderbrekingsconfiguratie** - toegevoegd `.first_byte_timeout` en `.between_bytes_timeout` configuratie aan de container van de Varnish. Beide time-outwaarden zijn standaard ingesteld op `300s` (5 minuten). [ Repareren die door Mathew Beane van de Technologie van Zilker ](https://github.com/magento/magento-cloud-docker/pull/78) wordt voorgelegd <!--MAGECLOUD-4460-->
 
@@ -385,7 +385,7 @@ Releasedatum: 5 februari 2020
 
    - ![ nieuw pictogram ](../../assets/new.svg) **Steun voor de wijze van de netwerkbrug** - Toegevoegde steun voor de wijze van de netwerkbrug om verbindingen tussen de containers van de Dok over het lokale netwerk toe te laten.<!--MAGECLOUD-4165-->
 
-   - ![ nieuw pictogram ](../../assets/new.svg) **Uitsnijdcontainer gehandicapt door gebrek** - om prestaties te verbeteren, wordt de container van het Gewas niet meer gevormd door gebrek wanneer u het milieu van de Docker bouwt. Met de optie `--with-cron` in de constructieopdracht Docker kunt u een container voor uitsnijden aan uw omgeving toevoegen. Zie [ het Leiden kroonbanen ](https://devdocs.magento.com/cloud/docker/docker-manage-cron-jobs.html).<!--MAGECLOUD-5181-->
+   - ![ nieuw pictogram ](../../assets/new.svg) **Uitsnijdcontainer gehandicapt door gebrek** - om prestaties te verbeteren, wordt de container van het Gewas niet meer gevormd door gebrek wanneer u het milieu van de Docker bouwt. Met de optie `--with-cron` in de constructieopdracht Docker kunt u een container voor uitsnijden aan uw omgeving toevoegen. Zie [ het Leiden kroonbanen ](https://developer.adobe.com/commerce/cloud-tools/docker/configure/manage-cron-jobs/).<!--MAGECLOUD-5181-->
 
    - ![ nieuw pictogram ](../../assets/new.svg) **Einde synchroniserend grote reservedossiers** - Toegevoegde de stortplaatsen van DB en archiefdossiers-ZIP, SQL, GZ, en BZ2-aan de uitsluitingslijst in `dist/docker-sync.yml` en `dist/mutagen.sh` dossiers. Het synchroniseren van grote dossiers (>1 GB) kan een periode van inactiviteit veroorzaken en de reservedossiers vereisen normaal geen synchronisatie aangezien u hen kunt regenereren.<!--MAGECLOUD-3979-->
 
@@ -395,13 +395,13 @@ Releasedatum: 5 februari 2020
 
    - ![ nieuw pictogram ](../../assets/new.svg) **voegde een optie van de de dienstconfiguratie toe om de gegevensbestandhaven aan de gastheer** bloot te stellen - gebruik de `--expose-db-port= [Fix submitted by Adarsh Manickam from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/101).<PORT>` optie om de gegevensbestandhaven aan de gastheer bloot te stellen wanneer het bouwen van het `docker-compose.yml` dossier: `bin/ece-docker build:compose --expose-db-port=<PORT>`<!--MAGECLOUD-4454-->
 
-   - ![ nieuw pictogram ](../../assets/new.svg) **Nieuw post-stelt bevel** op - eerder, post-stelt haken die in het `.magento.app.yaml` dossier worden bepaald automatisch in werking nadat u Adobe Commerce aan een container van het Dok van de Wolk gebruikend het `cloud-deploy` bevel opstelde. Nu moet u een aparte opdracht `cloud-post-deploy` geven om de koppelingen na de implementatie uit te voeren. Zie de bijgewerkte lanceringsinstructies voor [ ontwikkelaar ](https://devdocs.magento.com/cloud/docker/docker-mode-developer.html) en [ productie ](https://devdocs.magento.com/cloud/docker/docker-mode-production.html) wijze.<!--MAGECLOUD-3996-->
+   - ![ nieuw pictogram ](../../assets/new.svg) **Nieuw post-stelt bevel** op - eerder, post-stelt haken die in het `.magento.app.yaml` dossier worden bepaald automatisch in werking nadat u Adobe Commerce aan een container van het Dok van de Wolk gebruikend het `cloud-deploy` bevel opstelde. Nu moet u een aparte opdracht `cloud-post-deploy` geven om de koppelingen na de implementatie uit te voeren. Zie de bijgewerkte lanceringsinstructies voor [ ontwikkelaar ](https://developer.adobe.com/commerce/cloud-tools/docker/deploy/developer-mode/) en [ productie ](https://developer.adobe.com/commerce/cloud-tools/docker/deploy/production-mode/) wijze.<!--MAGECLOUD-3996-->
 
    - ![ nieuw pictogram ](../../assets/new.svg) voegde de `--rm` optie aan `./bin/magento-docker` bevelen voor de bouwstijl toe en stel containers op. Dit verwijdert de container nadat de taak volledig is.<!--MAGECLOUD-4205-->
 
    - ![ nieuw pictogram ](../../assets/new.svg) **Updates aan `build:compose` bevel**—
 
-      - ![ nieuw pictogram ](../../assets/new.svg) voegde de `--sync-engine="native"` optie aan het `docker-build` bevel toe om dossiersynchronisatie onbruikbaar te maken wanneer u het Docker samenstelt configuratiedossier op ontwikkelaarwijze produceert. Gebruik deze optie bij het ontwikkelen op Linux-systemen, waarvoor geen bestandssynchronisatie is vereist voor lokale Docker-ontwikkeling. Zie [ Synchroniserend gegevens in het milieu van de Dokker ](https://devdocs.magento.com/cloud/docker/docker-syncing-data.html).<!--MCLOUD-3231, MCLOUD-3890-->
+      - ![ nieuw pictogram ](../../assets/new.svg) voegde de `--sync-engine="native"` optie aan het `docker-build` bevel toe om dossiersynchronisatie onbruikbaar te maken wanneer u het Docker samenstelt configuratiedossier op ontwikkelaarwijze produceert. Gebruik deze optie bij het ontwikkelen op Linux-systemen, waarvoor geen bestandssynchronisatie is vereist voor lokale Docker-ontwikkeling. Zie [ Synchroniserend gegevens in het milieu van de Dokker ](https://developer.adobe.com/commerce/cloud-tools/docker/setup/synchronize-data/).<!--MCLOUD-3231, MCLOUD-3890-->
 
    - ![ nieuw pictogram ](../../assets/new.svg) veranderde standaarddossiersynchronisatie die van `docker-sync` aan `native` werd geplaatst. [ Repareren die door Mathew Beane van de Technologie van Zilker ](https://github.com/magento/magento-cloud-docker/pull/124) wordt voorgelegd.<!--MAGECLOUD-5066-->
 

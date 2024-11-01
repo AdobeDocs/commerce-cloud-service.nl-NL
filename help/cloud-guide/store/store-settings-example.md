@@ -2,9 +2,9 @@
 title: Voorbeeld van het beheren van systeemspecifieke instellingen
 description: Bekijk een voorbeeld van hoe u de configuratie-instellingen van de winkel in alle Adobe Commerce kunt beheren en synchroniseren in omgevingen met cloudinfrastructuren.
 hidefromtoc: true
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '864'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Het voorbeeld gebruikt de volgende procedure die in [ wordt bepaald montages van
 
 U kunt bijvoorbeeld de volgende instellingen instellen:
 
-* Maak [ scène ](https://glossary.magento.com/locale) en statische montages van de dossieroptimalisering in uw integratiemilieu onbruikbaar
+* De optimalisatie-instellingen voor landinstellingen en statische bestanden uitschakelen in uw integratieomgeving
 * Optimalisatie van statische bestanden inschakelen in testomgevingen en productieomgevingen
 * Vorm snel in het Staging en Productie met specifieke geloofsbrieven voor elk
 
@@ -56,7 +56,7 @@ In de integratieomgeving kunt u zich aanmelden bij de beheerder om de systeemcon
    ![ verander de scène ](../../assets/locale-options.png)
 
 1. Klik **sparen Config**.
-1. Indien ertoe aangezet, [ spoel het geheime voorgeheugen ](https://docs.magento.com/user-guide/system/cache-management.html).
+1. Indien ertoe aangezet, [ spoel het geheime voorgeheugen ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management).
 1. Afmelden bij de beheerder.
 
 ## Waarden exporteren en config.php overbrengen naar uw lokale systeem
@@ -159,7 +159,7 @@ Configuratiewaarden toevoegen in de integratieomgeving Admin. In dit voorbeeld w
 1. In de juiste ruit, breid **Montages van JavaScript** uit.
 1. Van de **lijst van de Dossiers van JavaScript van de Fusie**, klik **ja**.
 1. Klik **sparen Config**.
-1. Indien ertoe aangezet, [ spoel het geheime voorgeheugen ](https://docs.magento.com/user-guide/system/cache-management.html).
+1. Indien ertoe aangezet, [ spoel het geheime voorgeheugen ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management).
 1. Afmelden bij de beheerder.
 
 Door het dumpbevel opnieuw in werking te stellen, wordt de nieuwe configuratie toegevoegd aan het dossier.

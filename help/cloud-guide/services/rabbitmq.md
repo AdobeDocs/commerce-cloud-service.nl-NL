@@ -3,16 +3,16 @@ title: RabbitMQ-service instellen
 description: Leer hoe u de RabbitMQ-service in staat stelt om berichtwachtrijen voor Adobe Commerce te beheren op cloudinfrastructuur.
 feature: Cloud, Services
 exl-id: 85794b8f-2260-4a6e-b5a6-a1b4c356594e
-source-git-commit: adcfbb7217c70122a4003a66d1bec1a623fbf11a
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '399'
+source-wordcount: '398'
 ht-degree: 0%
 
 ---
 
 # [!DNL RabbitMQ] -service instellen
 
-Het [ Kader van de Rij van het Bericht (MQF) ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) is een systeem binnen Adobe Commerce dat a [ module ](https://glossary.magento.com/module) toestaat om berichten aan rijen te publiceren. Het bepaalt ook de consumenten die de berichten asynchroon ontvangen.
+Het [ Kader van de Rij van het Bericht (MQF) ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) is een systeem binnen Adobe Commerce dat a [ module ](https://experienceleague.adobe.com/en/docs/commerce-operations/operational-playbook/glossary#module) toestaat om berichten aan rijen te publiceren. Het bepaalt ook de consumenten die de berichten asynchroon ontvangen.
 
 MQF gebruikt [ RabbitMQ ](https://www.rabbitmq.com/) als overseinenmakelaar, die een scalable platform voor het verzenden van en het ontvangen van berichten verstrekt. Het omvat ook een mechanisme voor het opslaan van niet-geleverde berichten. [!DNL RabbitMQ] is gebaseerd op de Geavanceerde specificatie 0.9.1 van het een rij vormen van het Bericht van het Protocol (AMQP).
 
@@ -144,4 +144,4 @@ Wanneer u zich aanmeldt bij uw PHP-container, voert u een `amqp-` -opdracht in d
 
 ### Verbinding maken met uw PHP-toepassing
 
-Om met RabbitMQ te verbinden gebruikend uw toepassing PHP, voeg een PHP [ bibliotheek ](https://glossary.magento.com/library) aan uw bronboom toe.
+Als u verbinding wilt maken met RabbitMQ met uw PHP-toepassing, voegt u een PHP-bibliotheek toe aan de bronstructuur.

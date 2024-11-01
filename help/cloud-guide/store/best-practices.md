@@ -3,7 +3,7 @@ title: Aanbevolen procedures voor winkelconfiguratie
 description: Lees meer over de beste praktijken voor het configureren van uw winkel op Adobe Commerce op cloudinfrastructuur.
 feature: Cloud, Best Practices
 exl-id: 01f528bd-74c2-42e7-8e77-7e6f57a40ef4
-source-git-commit: 5b0a691a4355f5eda31d42cd3da9925439dfb510
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '1087'
 ht-degree: 0%
@@ -58,7 +58,7 @@ Om een Regel van de Prijs tot stand te brengen, zie {de Gids van de Gebruiker va
 
 In het volgende voorbeeld ziet u hoe u een prijsregel maakt voor een korting van Alleen eerste bestelling. Voor deze korting wilt u:
 
-* Creeer een prijsregel met a [ klantensegment ](https://docs.magento.com/user-guide/marketing/customer-segment-price-rule.html) met een voorwaarde: Totaal Aantal Orden minder dan 1
+* Creeer een prijsregel met a [ klantensegment ](https://experienceleague.adobe.com/en/docs/commerce-admin/customers/segments/customer-segment-price-rule) met een voorwaarde: Totaal Aantal Orden minder dan 1
 * Dit klantensegment toevoegen als een voorwaarde aan de kartelregel
 * Facultatief - voeg voorwaarden en regels toe om de kortingen op specifieke SKU&#39;s of categorieën producten voor gerichte aankopen toe te passen
 

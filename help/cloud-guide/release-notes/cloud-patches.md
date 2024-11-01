@@ -4,9 +4,9 @@ description: Zie een lijst met de meest recente verbeteringen in het pakket met 
 recommendations: noDisplay, catalog
 last-substantial-update: 2024-10-07T00:00:00Z
 exl-id: ae6b511b-a37d-4776-9a5e-ad7d9f9f6611
-source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '2275'
+source-wordcount: '2256'
 ht-degree: 0%
 
 ---
@@ -154,7 +154,7 @@ Releasedatum: 12 augustus 2021
 
 Kritieke patch voor Adobe Commerce 2.4.3 en 2.3.7-p1:
 
-- **Uitgave met API tarief beperkt** - Dit flard verbetert een standaardtariefgrens die Web APIs verhinderde verzoeken met meer dan 20 punten in een serie te verwerken. Deze patch verhoogt de standaardwaarde van de tariefgrens. Zie Adobe Commerce [ 2.4.3 versienota&#39;s ](https://devdocs.magento.com/guides/v2.4/release-notes/commerce-2-4-3.html#apply-mc-43048__set_rate_limits__243patch-to-address-issue-with-api-rate-limiting) en [ 2.3.7 versienota&#39;s ](https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p1.html#apply-mc-43048__set_rate_limits__237-p1patch-to-address-issue-with-api-rate-limiting).<!-- MC-43048 -->
+- **Uitgave met API tarief beperkt** - Dit flard verbetert een standaardtariefgrens die Web APIs verhinderde verzoeken met meer dan 20 punten in een serie te verwerken. Deze patch verhoogt de standaardwaarde van de tariefgrens. Zie Adobe Commerce [ 2.4.3 versienota&#39;s ](https://experienceleague.adobe.com/en/docs/commerce-operations/release/notes/adobe-commerce/2-4-3#apply-mc-43048__set_rate_limits__243patch-to-address-issue-with-api-rate-limiting).<!-- MC-43048 -->
 
 ## v1.0.11
 
@@ -222,7 +222,7 @@ Releasedatum:
 
 Releasedatum: 26 juni 2020
 
-- **herstelt prestatiesverbeteringen** - voegt Redis optimaliseringseigenschappen aan versies 2.3.3 en 2.3.4 van Adobe Commerce toe. Deze correcties zijn opgenomen in de Adobe Commerce-versie 2.3.5. Zie [ de verhogingen van Prestaties ](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html#performance-boosts) in _Adobe Commerce 2.3.5 de Nota&#39;s van de Versie_.<!--MCLOUD-5771-->
+- **herstelt prestatiesverbeteringen** - voegt Redis optimaliseringseigenschappen aan versies 2.3.3 en 2.3.4 van Adobe Commerce toe. Deze correcties zijn opgenomen in de Adobe Commerce-versie 2.3.5.<!--MCLOUD-5771-->
 
 - **het logboekenricher van New Relic** - voegt Monolog ProcessorInterface toe die wordt vereist om verbeteringen aan het registreren van New Relic mogelijkheden te steunen die in de Componenten van de Wolk van versie 1.0.4 van Commerce worden geïntroduceerd. Deze patch is vereist voor de implementatie van Adobe Commerce 2.1.x. Als het flard niet wordt toegepast, ontbreekt de bouwstijl tijdens het `di:compile` proces.<!--MCLOUD-6029-->
 

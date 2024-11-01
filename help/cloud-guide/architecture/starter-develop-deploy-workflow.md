@@ -3,7 +3,7 @@ title: Starter-projectworkflow
 description: Leer hoe u de workflows voor Starter-ontwikkeling en -implementatie kunt gebruiken.
 feature: Cloud, Paas
 exl-id: f334047a-1e0d-45c7-bf96-5c2964741951
-source-git-commit: 08f43a3b0a50cdb2a5e8a45bd2e2448bc6dbca2b
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '2103'
 ht-degree: 0%
@@ -105,9 +105,9 @@ Wanneer u klaar bent om uw winkel te configureren, drukt u op al uw code naar de
 Raadpleeg de documentatie voor Adobe Commerce en de geïnstalleerde extensies voor de beste informatie over configuraties. Hier volgen enkele koppelingen en ideeën die u helpen om aan de slag te gaan:
 
 - [ Beste praktijken voor opslagconfiguratie ](../store/best-practices.md) voor specifieke beste praktijken in de wolk
-- [ Basisconfiguratie ](https://docs.magento.com/user-guide/configuration/configuration-basic.html) voor opslag admin toegang, naam, talen, valuta, branding, plaatsen, opslagmeningen en meer
-- [ Thema ](https://docs.magento.com/user-guide/design/design-theme.html) voor uw blik en gevoel van de plaats en opslag met inbegrip van CSS en lay-outs
-- [ configuratie van het Systeem ](https://docs.magento.com/user-guide/system/system.html) voor rollen, hulpmiddelen, berichten, en uw encryptiesleutel voor uw gegevensbestand
+- [ Basisconfiguratie ](https://experienceleague.adobe.com/en/docs/commerce-admin/start/setup/store-details) voor opslag admin toegang, naam, talen, valuta, branding, plaatsen, opslagmeningen en meer
+- [ Thema ](https://experienceleague.adobe.com/en/docs/commerce-admin/content-design/content-menu#design-features) voor uw blik en gevoel van de plaats en opslag met inbegrip van CSS en lay-outs
+- [ configuratie van het Systeem ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/guide-overview) voor rollen, hulpmiddelen, berichten, en uw encryptiesleutel voor uw gegevensbestand
 - Instellingen voor extensies gebruiken in de documentatie
 
 Buiten enkel opslagmontages, kunt u veelvoudige plaatsen en opslag, de gevormde diensten, en meer verder vormen. Zie [ uw opslag ](../store/overview.md) vormen.
@@ -165,7 +165,7 @@ Productiegegevens exporteren als testgegevens voor gebruik in staging- en integr
 
 - [ stel de bevelen van de steunnut ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/run-support-utilities.html) CLI (geadviseerd) in werking wanneer het uitvoeren van een beschermde steun van klant en opslaggegevens gebruikend uw de encryptiesleutel van Adobe Commerce
 
-- [ het hulpmiddel van de Inzameling van Gegevens ](https://docs.magento.com/user-guide/system/support-data-collector.html) om gegevens te produceren en uit te voeren
+- [ het hulpmiddel van de Inzameling van Gegevens ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/support#data-collector) om gegevens te produceren en uit te voeren
 
 Om dit gegeven te migreren, zie [ en stel statische dossiers en gegevens ](../deploy/staging-production.md#migrate-static-files) op.
 

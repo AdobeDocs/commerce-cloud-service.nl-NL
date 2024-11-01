@@ -3,7 +3,7 @@ title: Cloud Components voor Commerce
 description: Zie een lijst met de meest recente verbeteringen in het pakket met Cloud Components.
 recommendations: noDisplay, catalog
 exl-id: b4e2508a-3558-4fa8-bae0-3eb76c7b2775
-source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '590'
 ht-degree: 0%
@@ -46,7 +46,7 @@ Releasedatum: 10 maart 2023
 
 Releasedatum: 13 september 2022
 
-- ![ herstellingspictogram ](../../assets/fix.svg) **Fouten op warmte** - Vaste een kwestie die aan [ warmte ](../environment/variables-post-deploy.md#warm_up_pages) probeerde toen de paginazichtbaarheid aan [**niet Zichtbaar individueel** ](https://docs.magento.com/user-guide/system/data-attributes-product.html#simple-product-csv-file-structure) in Admin wordt geplaatst, resulterend in `ERROR: Warming up failed: <link to page>` fouten in het plaatsingslogboek.<!-- MCLOUD-9134 -->
+- ![ herstellingspictogram ](../../assets/fix.svg) **Fouten op warmte** - Vaste een kwestie die aan [ warmte ](../environment/variables-post-deploy.md#warm_up_pages) probeerde toen de paginazichtbaarheid aan [**niet Zichtbaar individueel** ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/data-transfer/data-attributes-product#simple-product-csv-file-structure) in Admin wordt geplaatst, resulterend in `ERROR: Warming up failed: <link to page>` fouten in het plaatsingslogboek.<!-- MCLOUD-9134 -->
 
 ## v1.0.11
 

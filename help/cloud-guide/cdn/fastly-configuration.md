@@ -3,9 +3,9 @@ title: Services voor snel configureren
 description: Leer hoe u snelle services instelt en configureert voor uw Adobe Commerce-project.
 feature: Cloud, Configuration, Iaas, Cache, Security
 exl-id: c53ff3bd-3df2-45fb-933e-d3b29f7edf4e
-source-git-commit: 8a0523f1714b6ea41887e99b5c31294cf5e5255e
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '1961'
+source-wordcount: '1960'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Snelheid is vereist voor Adobe Commerce op omgevingen voor het opslaan en produceren van cloudinfrastructuur.
 
-De werken snel met Varnish om snelle caching mogelijkheden en het Netwerk van de Levering van de Inhoud van de a [ ](https://glossary.magento.com/content-delivery-network) (CDN) voor statische activa te verstrekken. Verstrekt snel ook een Firewall van de Toepassing van het Web (WAF) om uw plaats en infrastructuur van de Wolk te beveiligen. Om uw plaats en infrastructuur van de Wolk tegen kwaadwillig verkeer en aanvallen te beschermen, route al inkomend plaatsverkeer door Snelst.
+Het werkt snel met Varnish om snelle caching mogelijkheden en een Netwerk van de Levering van de Inhoud (CDN) voor statische activa te verstrekken. Kies deze optie om snel ook een WAF (Web Application Firewall) te maken waarmee u uw site en cloudinfrastructuur kunt beveiligen. Om uw plaats en infrastructuur van de Wolk tegen kwaadwillig verkeer en aanvallen te beschermen, route al inkomend plaatsverkeer door Snelst.
 
 >[!NOTE]
 >
@@ -64,7 +64,7 @@ De methode voor het bekijken van geloofsbrieven is verschillend voor Pro en de p
 
 >[!NOTE]
 >
->Als u niet de Fastly geloofsbrieven voor de het Opvoeren of milieu&#39;s van de Productie kunt vinden, contacteer uw Technische Adviseur van de Klant van de Adobe (CTA).
+>Neem contact op met de technische adviseur van de Adobe (CTA) als u de gegevens voor de testomgeving of productieomgeving niet snel kunt vinden.
 
 ## Snelle caching inschakelen
 
