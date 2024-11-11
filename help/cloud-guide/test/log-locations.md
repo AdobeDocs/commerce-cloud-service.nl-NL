@@ -3,7 +3,7 @@ title: Logbestanden weergeven en beheren
 description: Begrijp de typen logbestanden die beschikbaar zijn in de cloudinfrastructuur en waar u ze kunt vinden.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 633e5e75ae23a933d15a0faedae22092797d5d0b
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 0%
@@ -208,7 +208,7 @@ Voor Pro Staging- en productieomgevingen zijn de logbestanden Implementeren, Pos
 
 ### Gearchiveerde logbestanden
 
-De toepassingslogboeken worden eenmaal per dag gecomprimeerd en gearchiveerd en één jaar bewaard. De gecomprimeerde logbestanden krijgen een naam met een unieke id die overeenkomt met de naam `Number of Days Ago + 1` . In Pro-productieomgevingen wordt bijvoorbeeld een PHP-toegangslogboek voor 21 dagen in het verleden opgeslagen en als volgt benoemd:
+De toepassingslogboeken worden samengeperst en één keer per dag gearchiveerd en voor **30 dagen** gehouden. De gecomprimeerde logbestanden krijgen een naam met een unieke id die overeenkomt met de naam `Number of Days Ago + 1` . In Pro-productieomgevingen wordt bijvoorbeeld een PHP-toegangslogboek voor 21 dagen in het verleden opgeslagen en als volgt benoemd:
 
 ```
 /var/log/platform/<project-ID>/php.access.log.22.gz
@@ -242,4 +242,4 @@ De logboeken van de dienst worden gearchiveerd en voor verschillende periodes, a
 
 Voor ProProductie en het Opvoeren milieu&#39;s, gebruik [ New Relic logboekbeheer ](../monitor/log-management.md) geïntegreerd met uw project om samengevoegde logboekgegevens van alle logboeken te beheren verbonden aan uw Adobe Commerce op het project van de wolkeninfrastructuur.
 
-De New Relic Logs-toepassing biedt een gecentraliseerd logbeheerdashboard om Adobe Commerce problemen op te lossen en te controleren in productieomgevingen en testomgevingen voor cloudinfrastructuur. Het dashboard verleent ook toegang tot logboekgegevens voor de Snelle diensten van CDN, de Optimalisering van het Beeld, en van de de toepassingsfirewall van het Web (WAF). Zie {de diensten van 0} New Relic ](../monitor/new-relic-service.md).[
+De New Relic Logs-toepassing biedt een gecentraliseerd logbeheerdashboard om Adobe Commerce problemen op te lossen en te controleren in productieomgevingen en testomgevingen voor cloudinfrastructuur. Het dashboard verleent ook toegang tot logboekgegevens voor de Snelle diensten van CDN, van de Optimalisering van het Beeld, en van de de toepassingsfirewall van het Web (WAF). Zie {de diensten van 0} New Relic ](../monitor/new-relic-service.md).[
