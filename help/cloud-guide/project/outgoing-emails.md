@@ -2,20 +2,24 @@
 title: Uitgaande e-mails configureren
 description: Leer hoe u uitgaande e-mails voor Adobe Commerce kunt inschakelen voor cloudinfrastructuur.
 exl-id: 814fe2a9-15bf-4bcb-a8de-ae288fd7f284
-source-git-commit: ec9192caa5daa1cd25a3eec6095c2c3cf8fbefb4
+source-git-commit: 75318be63adcbe23bb8b6699b1c59b2b4a3c1a4d
 workflow-type: tm+mt
-source-wordcount: '373'
+source-wordcount: '384'
 ht-degree: 0%
 
 ---
 
 # Uitgaande e-mails configureren
 
-U kunt uitgaande e-mails voor elke omgeving in- en uitschakelen via de [!DNL Cloud Console] of de opdrachtregel. U kunt uitgaande e-mails voor integratie (en het opvoeren voor alleen Starter)-omgevingen inschakelen om tweefelige verificatie te verzenden of wachtwoorde-mails voor gebruikers van Cloud-projecten opnieuw in te stellen.
+U kunt uitgaande e-mailberichten voor integratie (en het opvoeren voor Starter slechts) milieu&#39;s van [!DNL Cloud Console] of van de bevellijn toelaten en onbruikbaar maken. U kunt uitgaande e-mails verzenden om tweefelige verificatie te verzenden of wachtwoorde-mails opnieuw in te stellen voor gebruikers van een Cloud-project.
 
 Standaard zijn uitgaande e-mails ingeschakeld in Productie- en Staging-omgevingen (alleen Pro). Nochtans, kan het **[!UICONTROL Enable outgoing emails]** plaatsen gehandicapt in de milieu montages ongeacht status lijken tot u het `enable_smtp` bezit door de [ bevellijn ](#enable-emails-in-the-cli) of [ Console van de Wolk ](outgoing-emails.md#enable-emails-in-the-cloud-console) plaatst.
 
 Het bijwerken van de `enable_smtp` bezitswaarde door [ bevellijn ](#enable-emails-in-the-cli) verandert ook de [!UICONTROL Enable outgoing emails] plaatsende waarde voor dit milieu op de Console van de Wolk.
+
+>[!NOTE]
+>
+>Als u de instelling **[!UICONTROL Enable outgoing emails]** inschakelt/uitschakelt, worden e-mails in de Pro Staging- of Production-omgeving niet in- of uitgeschakeld.
 
 {{redeploy-warning}}
 
@@ -27,14 +31,14 @@ Als de uitgaande e-mails moeten worden onbruikbaar gemaakt of op ProProductie of
 
 >[!TIP]
 >
->De status van uitgaande e-mail wordt mogelijk niet weerspiegeld voor Pro-omgevingen in de Cloud Console. In plaats daarvan, gebruik de [ bevellijn ](#enable-emails-in-the-cli) voor het toelaten van en het testen van uitgaande e-mails.
+>De status van uitgaande e-mail wordt mogelijk niet weerspiegeld voor Pro Staging- of Production-omgevingen in de Cloud Console.
 
 **Om e-mailsteun van[!DNL Cloud Console]** te beheren:
 
 1. Meld u aan bij de map [[!DNL Cloud Console] ](https://console.adobecommerce.com) .
 1. Selecteer een project van de _Alle projecten_ lijst.
 1. Voor het dashboard van het Project, klik het configuratiepictogram in het hogere recht.
-1. Klik op **[!UICONTROL Environments]** en selecteer een specifieke omgeving in de lijst.
+1. Klik op **[!UICONTROL Environments]** en selecteer een specifieke omgeving in de lijst (behalve Staging en Productie voor Pro).
 1. Om uitgaande e-mail toe te laten of onbruikbaar te maken, knevel _uitgaande e-mail_ **** of **weg** toe.
 
    ![ laat uitgaande e-mailconfiguratie ](../../assets/outgoing-emails.png) toe
