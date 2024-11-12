@@ -3,9 +3,9 @@ title: Commerce-versie upgraden
 description: Leer hoe u de Adobe Commerce-versie kunt upgraden in het cloud-infrastructuurproject.
 feature: Cloud, Upgrade
 exl-id: 87821007-4979-4a20-940b-aa3c82c192d8
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 8851db6ee962bf1a65b31d344e2bd71065e9340d
 workflow-type: tm+mt
-source-wordcount: '1439'
+source-wordcount: '1547'
 ht-degree: 0%
 
 ---
@@ -286,6 +286,19 @@ Herzie de [ informatie van de de dienstversies ](../services/services-yaml.md#se
    ```bash
    composer update
    ```
+
+1. Bekijk de patches die momenteel worden toegepast:
+
+   - Als er om het even welke die flarden in de `m2-hotfixes` folder worden geïnstalleerd zijn, [ voorlegt een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#support-case) en het werk met de Steun van Adobe Commerce om te verifiëren welke flarden nog op de nieuwe versie kunnen worden toegepast. Verwijder de niet-toepasselijke patch(es) uit de map `m2-hotfixes` .
+
+   - Als er om het even welke [ Patches van de Kwaliteit ] in het `.magento.env.yaml` dossier worden toegepast, verifieer of zij nog op de nieuwe versie kunnen worden toegepast. Verwijder de niet-toepasselijke patch(es) uit de sectie `QUALITY_PATCHES` van het `.magento.env.yaml` -bestand.
+
+   **Methode 1**: [ verifieer de toepasselijke versies in de de versienota&#39;s van de Patches van de Kwaliteit ](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/quality-patches-tool/release-notes)
+
+   **Methode 2**: [ de beschikbare flarden van de Mening en status ](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/develop/upgrade/apply-patches#view-available-patches-and-status)
+
+   **Methode 3**: [ Onderzoek naar flarden ](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html?lang=en)
+
 
 1. Wijzigingen in code toevoegen, vastleggen en doorvoeren.
 
