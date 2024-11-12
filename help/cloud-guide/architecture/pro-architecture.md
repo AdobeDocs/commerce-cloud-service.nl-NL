@@ -4,9 +4,9 @@ description: Leer meer over de omgevingen die worden ondersteund door de Pro-arc
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 66b1f86c8c674d0de4e2895e328a5a850eadf903
+source-git-commit: a1e7674b99d7e289531268e1a298f61344c7bd8f
 workflow-type: tm+mt
-source-wordcount: '1559'
+source-wordcount: '1573'
 ht-degree: 0%
 
 ---
@@ -67,6 +67,11 @@ De milieu&#39;s van de integratie worden ontworpen voor beperkte test en ontwikk
 Voor de beste prestaties in de integratieomgeving volgt u de volgende aanbevolen procedures:
 
 - Beperk de catalogusgrootte - Ter referentie bevat de voorbeeldgegevens ongeveer 2.048 producten. Verklein uw catalogus tot ongeveer 4.000-5.000 producten.
+Om het aantal producten in de catalogus te controleren, stel de volgende vraag MySQL in werking:
+
+  ```sql
+  select distinct count(entity_id) from catalog_product_entity;
+  ```
 
 - Verminder het aantal klantengroepen - Het hebben van teveel klantengroepen kan de indexerende prestaties en algemene prestaties beïnvloeden.
 
