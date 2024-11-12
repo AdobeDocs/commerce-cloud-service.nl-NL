@@ -4,7 +4,7 @@ description: Meer informatie over de New Relic-service die beschikbaar is bij uw
 feature: Cloud, Observability
 last-substantial-update: 2023-09-06T00:00:00Z
 exl-id: 613f0694-5338-4037-8ee4-ac5eca376159
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: b53d5a8d06e0ed249bd44b6f38f837a257cbd315
 workflow-type: tm+mt
 source-wordcount: '369'
 ht-degree: 0%
@@ -19,7 +19,7 @@ De volgende New Relic-functies zijn beschikbaar voor gebruik in Productie- en St
 
 - [ New Relic APM ](#new-relic-apm) (Pro en Starter)
 - [ de Infrastructuur van New Relic ](#new-relic-infrastructure) (Pro slechts)
-- [ het Beheer van het Logboek van New Relic ](#new-relic-logs) (Pro slechts)
+- [ het Beheer van het Logboek van New Relic ](#new-relic-log-management) (Pro slechts)
 
 >[!INFO]
 >
