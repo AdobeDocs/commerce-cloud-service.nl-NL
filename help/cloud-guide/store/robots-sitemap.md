@@ -3,9 +3,9 @@ title: Robots voor site-toewijzing en zoekprogramma's toevoegen
 description: Leer hoe u robots voor sites met hyperlinks en zoekprogramma's aan Adobe Commerce kunt toevoegen op cloudinfrastructuur.
 feature: Cloud, Configuration, Search, Site Navigation
 exl-id: b98f43fa-1878-466d-8ea0-1e7207af8b60
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: fda88fdf03afa4a59f40e52802c16b6136d8716f
 workflow-type: tm+mt
-source-wordcount: '517'
+source-wordcount: '537'
 ht-degree: 0%
 
 ---
@@ -117,10 +117,12 @@ In de `sitemap` admin config, moet u de plaats van het dossier specificeren gebr
 
 ### Indexeren via zoekprogramma configureren
 
-Om `robots.txt` aanpassingen te activeren, moet u **Indexeren door onderzoeksmotoren toelaten voor`<environment-name>`** optie in uw projectmontages is.
+Om `robots.txt` aanpassingen in Productie te activeren, moet u **Indexeren door onderzoeksmotoren toelaten voor`<environment-name>`** optie in uw projectmontages is.
 
 ![ Gebruik [!DNL Cloud Console] om milieu&#39;s ](../../assets/robots-indexing-by-search-engine.png) te beheren
 
 >[!NOTE]
 >
->Als u PWA Studio gebruikt en tot uw gevormd `robots.txt` dossier niet kunt toegang hebben, voeg `robots.txt` aan de [ Voorste Lijst van gewenste personen van de Naam ](https://github.com/magento/magento2-upward-connector#front-name-allowlist) bij **Opslag** > Configuratie > **Algemeen** > **Web** > de Configuratie van de PWA van UPWARD toe.
+>- Indexering door zoekmachines kan alleen worden ingeschakeld in Productie, maar niet in een van de lagere omgevingen.
+>
+>- Als u PWA Studio gebruikt en tot uw gevormd `robots.txt` dossier niet kunt toegang hebben, voeg `robots.txt` aan de [ Voorste Lijst van gewenste personen van de Naam ](https://github.com/magento/magento2-upward-connector#front-name-allowlist) bij **Opslag** > Configuratie > **Algemeen** > **Web** > de Configuratie van de PWA van UPWARD toe.
