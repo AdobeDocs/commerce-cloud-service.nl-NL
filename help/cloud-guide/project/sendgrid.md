@@ -2,9 +2,9 @@
 title: E-mailservice SendGrid
 description: Leer over de SendGrid e-mailservice voor Adobe Commerce op cloudinfrastructuur en hoe u uw DNS-configuratie kunt testen.
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: b5c8dc062a940e9e202d9bd4cca6901b07109e07
+source-git-commit: d07447fa8390794c3d019d513f23321fe02e41a1
 workflow-type: tm+mt
-source-wordcount: '1273'
+source-wordcount: '1317'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ De SMTP-proxy van SendGrid is niet bedoeld voor gebruik als e-mailserver voor al
 
 >[!TIP]
 >
->U kunt details SendGrid voor uw rekening in [ op het instappen UI ](https://cloud.magento.com) vinden en de **Details van het Project** selecteren > **het ontvangen Info** tabel.
+>Zorg ervoor dat u de juiste e-mailadressen van de winkel in Admin hebt geconfigureerd door naar Opslagruimten > Configuratie > Algemeen te gaan om problemen met de te leveren items en domeinverificatie te voorkomen. U moet **[!UICONTROL Use Default]** uitschakelen en de standaardwaarden vervangen door een domein dat u bezit. E-mailservices van openbare of gedeelde domeinen, zoals gmail.com en outlook.com, moeten niet worden geconfigureerd als het e-mailadres van de afzender wanneer e-mails via Sendgrid worden verzonden.
 
 ## E-mail in- of uitschakelen
 
