@@ -4,9 +4,9 @@ description: Open uw cloud-account en stel een Adobe Commerce in voor een infras
 role: Admin
 recommendations: noDisplay, catalog
 exl-id: c6b768d7-d835-4a8d-aad9-1c0324f7570d
-source-git-commit: abe9aa36b907be8bdfdf42e6f28f1e1eac68fecf
+source-git-commit: f989dc126e1a19f4a69bfdaee70cee151a300c85
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '492'
 ht-degree: 0%
 
 ---
@@ -17,41 +17,15 @@ Nadat de Adobe een Commerce op het abonnement van de wolkeninfrastructuur active
 
 De eigenaar van de licentie is de persoon in uw bedrijf of financiële organisatie die betalingen en andere zakelijke transacties voor de Adobe Commerce beheert op de account voor cloudinfrastructuur. Deze persoon fungeert als contactpunt met Adobe. Als u de Eigenaar van de Vergunning op uw rekening moet veranderen, moet u uw Team van de Rekening van de Adobe contacteren.
 
-Als u snel aan boord van uw project wilt gaan, zodat u uw site kunt gaan ontwikkelen voor live implementatie, moet u de vereiste instellingen en [!DNL onboarding] taken uitvoeren. Doorgaans begint de Eigenaar van de licentie het proces door beheerdersrechten te beveiligen en gebruikers van Technical Admin aan te maken die hulp kunnen bieden bij het instellen, aanpassen en ontwikkelen.
+Als u snel aan boord van uw project wilt gaan, zodat u uw site kunt gaan ontwikkelen voor live implementatie, moet u de vereiste instellingen en [!DNL onboarding] taken uitvoeren. Doorgaans begint de Eigenaar van de licentie het proces door beheerdersrechten te beveiligen en Admin-gebruikers te maken die hulp kunnen bieden bij het instellen, aanpassen en ontwikkelen.
 
 ## Aanmelden voor een Cloud-account
 
 Als u geen Adobe Commerce op de rekening van de wolkeninfrastructuur hebt, contacteer [ Verkoop ]. Wanneer u zich aanmeldt, maakt Adobe uw account en verzendt u een welkomstbericht met instructies over de toegang tot de projectinterface. Het e-mailbericht bevat een koppeling waarmee u zich kunt aanmelden bij uw account en de initiële projectinstelling kunt voltooien.
 
-### UI voor cloud [!DNL Onboarding]
-
-Adobe Commerce op de pagina van het Project van het Project van de wolkeninfrastructuur in ([!DNL Onboarding] UI) verstrekt een Begonnen het Begeleidende controlelijst aan opstelling uw project en de diensten, bepaalt toegang, en begint met ontwikkeling. Vanuit OBUI kunt u:
-
-- Voeg een Technische Admin, een supergebruiker toe die uw project en takken kan beheren
-- Toegang tot uw projectomgeving, inclusief een koppeling naar de [!DNL Cloud Console]
-- Voltooi een snelle controlelijst voor gebruikersacceptatie (UAT) met koppelingen naar verdere tests
-
-**om de projectpagina** te openen:
-
-1. Login aan uw [ de klantenrekening van Adobe Commerce ](https://account.magento.com/customer/account/login).
-
-1. Op de _Mijn pagina van de Rekening_, klik het **[!UICONTROL Commerce]** lusje om de projecten in uw rekening te zien.
-
-1. Klik **de Pagina van het Project van de Mening** in de [ sectie van Projecten ](https://cloud.magento.com/cloud/project/).
-
-1. Klik de projectnaam en open de pagina van het Project van de Wolk ([!DNL Onboarding] UI).
-
-   ![ OBUI projectpagina ](../assets/onboarding-ui.png)
-
-   Doorblader door het portaal voor nuttige informatie en opties beginnen uw project te plannen, code te ontwikkelen, en voorbereidingen te treffen voor UAT en plaatslancering.
-
 ## Project openen en gebruikers toevoegen
 
 De Eigenaar van de Vergunning kan gebruikersrekeningen toevoegen om toegang tot code te verlenen, takken te beheren, kaartjes, en steunmilieu&#39;s in te gaan. Deze gebruikersaccounts kunnen interne ontwikkeling, consultants en oplossingsspecialisten omvatten.
-
-Typisch, is de enige gebruiker de Eigenaar van de Vergunning moet tot stand brengen _Technische Admin_. Technisch Admin heeft een gebruikersrekening met admin toegang nodig om gebruikersrekeningen voor ontwikkelaars tot stand te brengen, milieutoestemmingen te plaatsen, en alle takken en milieu&#39;s te beheren. Technisch Admin kan een ontwikkelaar, een adviseur, een [ Partner van de Oplossing van de Adobe ](https://business.adobe.com/products/magento/partners.html), of uzelf zijn.
-
-U kunt een Technische Admin door het Portaal van het Project, van [!DNL Cloud Console], of van de bevellijn tot stand brengen gebruikend `magento-cloud` CLI.
 
 ### Gebruikersregistratie
 
@@ -64,18 +38,6 @@ De eigenaar van de licentie kan gedeelde toegang instellen voor de account. Via 
 ### [!DNL Cloud Console]
 
 U kunt [[!DNL Cloud Console]](cloud-console.md) gebruiken om uw project te beheren, gebruikersrekeningen toe te voegen, en beginnen uw opslag te ontwikkelen. De Eigenaar van de Vergunning, de gebruikers van Technische Admin, en de ontwikkelaars kunnen [!DNL Cloud Console] gebruiken om alle milieu&#39;s en takken, milieuvariabelen, milieu montages, en routes te beheren.
-
-**om tot[!DNL Cloud Console]** toegang te hebben:
-
-1. Login aan [ Mijn rekening ](https://account.magento.com/customer/account/login).
-
-1. Op de _Mijn pagina van de Rekening_, klik het **[!UICONTROL Commerce]** lusje om de projecten in uw rekening te zien.
-
-1. Klik het **lusje van Projecten** en selecteer een project.
-
-1. Klik **toegang van de Infrastructuur**, en klik dan **Toegang van het Project (Web UI)**.
-
-   ![ het projectportaal van de Wolk ](../assets/obui-project-access.png)
 
 ## Aanmelden voor status van Adobe
 
