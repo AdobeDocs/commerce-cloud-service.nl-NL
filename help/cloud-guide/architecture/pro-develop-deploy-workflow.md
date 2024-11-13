@@ -3,7 +3,7 @@ title: Workflow voor Pro-projecten
 description: Leer hoe u de workflows voor ontwikkeling en implementatie van Pro gebruikt.
 feature: Cloud, Iaas, Paas
 exl-id: 103e90d5-2ef2-4fef-845c-439344666b00
-source-git-commit: 08f43a3b0a50cdb2a5e8a45bd2e2448bc6dbca2b
+source-git-commit: c6d4128792e688485e021bad75d9814a9f4d3b4f
 workflow-type: tm+mt
 source-wordcount: '782'
 ht-degree: 0%
@@ -91,6 +91,8 @@ Combineer alle geverifieerde codewijzigingen door uw actieve ontwikkelingsvertak
 Staging is een omgeving vóór de productie die alle services en instellingen zo dicht mogelijk bij de productieomgeving biedt. Duw altijd uw codeveranderingen van het `integration` milieu aan het `staging` milieu zodat u grondig het testen met alle diensten kunt uitvoeren. De eerste keer u het opvoeren milieu gebruikt, moet u de diensten, zoals [ snel CDN ](../cdn/fastly.md) en [ New Relic ](../monitor/new-relic-service.md) vormen. Configureer betaalgateways, verzendingen, meldingen en andere essentiële services met sandbox- of testgegevens.
 
 Het is best om elke dienst grondig te testen, uw prestaties testende hulpmiddelen te verifiëren, en het testen van UAT als beheerder en als klant uit te voeren, tot u vindt dat uw opslag klaar voor het productiemilieu is. Zie [ uw opslag ](../deploy/staging-production.md) opstellen.
+
+{{second-staging}}
 
 ### Samenvoegen tot productie
 

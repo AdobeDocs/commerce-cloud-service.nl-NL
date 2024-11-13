@@ -1,7 +1,7 @@
 ---
-source-git-commit: a87039d2e96e39d6d8d19673c5e0d52de8b844a4
+source-git-commit: 63b966c1562318dc43dd42641e6f607f5438137b
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '907'
 ht-degree: 0%
 
 ---
@@ -81,6 +81,12 @@ Stel de optie `_merge` in op een van de volgende opties:
 >[!NOTE]
 >
 >Met [!DNL ECE-Tools] 2002.1.0 en hoger kunt u de op scenario&#39;s gebaseerde implementatiefunctie gebruiken om de build-, implementatie- en postimplementatieprocessen voor uw Adobe Commerce aan te passen in het infrastructuurproject in de cloud. Zie [ op scenario-Gebaseerde plaatsing ](/help/cloud-guide/deploy/scenario-based.md).
+
+## Tweede fasering {#second-staging}
+
+>[!NOTE]
+>
+>Sommige projecten vereisen een meer geavanceerd ontwikkelingswerkschema. Om deze behoefte te steunen, biedt de Adobe een [ extra het opvoeren milieu ](/help/cloud-guide/test/second-staging.md) als toe:voegen-op optie aan uw wolkeninfrastructuur aan.
 
 ## Serviceinstructie {#service-instruction}
 

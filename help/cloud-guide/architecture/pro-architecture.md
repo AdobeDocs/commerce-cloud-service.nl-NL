@@ -4,7 +4,7 @@ description: Leer meer over de omgevingen die worden ondersteund door de Pro-arc
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: a1e7674b99d7e289531268e1a298f61344c7bd8f
+source-git-commit: 18f4da5c6e7e5c483f5cf64e977b3fb3fd28bbb0
 workflow-type: tm+mt
 source-wordcount: '1573'
 ht-degree: 0%
@@ -120,6 +120,8 @@ Zie [ het werkschema van de Plaatsing ](pro-develop-deploy-workflow.md#deploymen
 - Na het lanceren van de productielocatie, gebruik het het opvoeren milieu hoofdzakelijk om flarden voor productie-kritieke insectenmoeilijke situaties te testen.
 
 - U kunt geen vertakking maken van de `staging` -vertakking. In plaats daarvan verandert de code van de `integration` -vertakking in de `staging` -vertakking.
+
+{{second-staging}}
 
 ### Productieomgeving
 

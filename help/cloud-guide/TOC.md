@@ -3,9 +3,9 @@ user-guide-title: Handleiding Commerce on Cloud Infrastructure
 user-guide-description: Leer hoe u de Adobe Commerce-toepassing beheert op cloudinfrastructuur.
 product: magento
 feature: Cloud
-source-git-commit: ebd434e488b666d34df9562825a612b33495e44d
+source-git-commit: 54b9101d3cba535a0e2c83e482aaebe261e3bcce
 workflow-type: tm+mt
-source-wordcount: '353'
+source-wordcount: '356'
 ht-degree: 4%
 
 ---
@@ -82,6 +82,7 @@ ht-degree: 4%
       + [Xdebug](test/debug.md)
       + [Voorbeeldgegevens](test/sample-data.md)
       + [Staging en productie](test/staging-and-production.md)
+      + [Tweede testomgeving](test/second-staging.md)
    + [PrivateLink-service](development/privatelink-service.md)
    + [Beschermend blok](development/protective-block.md)
    + [Omgeving herstellen](development/restore-environment.md)
@@ -118,7 +119,7 @@ ht-degree: 4%
          + [Algemeen](environment/variables-global.md)
          + [Opbouwen](environment/variables-build.md)
          + [Implementeren](environment/variables-deploy.md)
-         + [Post-implementatie](environment/variables-post-deploy.md)
+         + [Na implementatie](environment/variables-post-deploy.md)
       + Meldingen configureren {#log}
          + [Meldingen](environment/set-up-notifications.md)
          + [Logboekhandlers](environment/log-handlers.md)
@@ -144,7 +145,7 @@ ht-degree: 4%
    + [Afbeelding optimaliseren](cdn/fastly-image-optimization.md)
    + Aanpassen met VCL {#custom-vcl-snippets}
       + [Aan de slag](cdn/fastly-vcl-custom-snippets.md)
-      + [Reroute-aanvragen naar een CMS-backend](cdn/fastly-vcl-wordpress.md)
+      + [Aanvragen voor een CMS-backend routeren](cdn/fastly-vcl-wordpress.md)
       + [Blokverwijzingsspam](cdn/fastly-vcl-badreferer.md)
       + [IP LIJST VAN GEWENSTE PERSONEN](cdn/fastly-vcl-allowlist.md)
       + [IP LIJST VAN GEWEZEN PERSONEN](cdn/fastly-vcl-blocking.md)
