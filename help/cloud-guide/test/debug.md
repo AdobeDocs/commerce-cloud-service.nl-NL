@@ -2,9 +2,9 @@
 title: Configureren  [!DNL Xdebug]
 description: Leer hoe u de Xdebug-extensie configureert voor foutopsporing in uw Adobe Commerce op het gebied van projecten voor cloudinfrastructuur.
 exl-id: bf2d32d8-fab7-439e-8df3-b039e53009d4
-source-git-commit: 7b42174663b79b673ee5af05b794090ddc5bdd75
+source-git-commit: 83984f9e30402cda7af29ca5095a251ff835b4a1
 workflow-type: tm+mt
-source-wordcount: '1765'
+source-wordcount: '1920'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Voer de volgende stappen uit om [!DNL Xdebug] te configureren:
 
 - [In een vertakking werken om updates van bestanden door te voeren](#get-started-with-a-branch)
 - [Laat  [!DNL Xdebug]  voor milieu&#39;s toe](#enable-xdebug-in-your-environment)
-- [Vorm uw winde](#configure-phpstorm)
+- [PHPStorm-server configureren](#configure-phpstorm-server)
 - [Poorten doorsturen instellen](#set-up-port-forwarding)
 
 ### Aan de slag met een vertakking
@@ -41,6 +41,8 @@ Om [!DNL Xdebug] toe te voegen, adviseert de Adobe het werken in [ een ontwikkel
 ### Xdebug inschakelen in uw omgeving
 
 U kunt [!DNL Xdebug] rechtstreeks inschakelen voor alle Starter-omgevingen en Pro-integratieomgevingen. Deze configuratiestap is niet vereist voor Pro Production &amp; Staging-omgevingen. Zie [ zuiveren voor Pro het Opvoeren en de Productie ](#debug-for-pro-staging-and-production).
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437407?learn=on)
 
 Als u [!DNL Xdebug] wilt inschakelen voor uw project, voegt u `xdebug` toe aan de sectie `runtime:extensions` van het `.magento.app.yaml` -bestand.
 
@@ -65,11 +67,11 @@ Als u [!DNL Xdebug] wilt inschakelen voor uw project, voegt u `xdebug` toe aan d
 1. Voeg de wijzigingen toe, begaan en duw deze om de omgeving opnieuw te implementeren.
 
    ```bash
-   git add -A
+   git add .magento.app.yaml
    ```
 
    ```bash
-   git commit -m "Add xdebug"
+   git commit -m "add xdebug"
    ```
 
    ```bash
@@ -78,7 +80,9 @@ Als u [!DNL Xdebug] wilt inschakelen voor uw project, voegt u `xdebug` toe aan d
 
 Wanneer [!DNL Xdebug] wordt geïmplementeerd in Starter-omgevingen en Pro-integratieomgevingen, is het nu beschikbaar. Ga door met het configureren van uw IDE. Voor PHPStorm, zie [ PHPStorm ](#configure-phpstorm) vormen.
 
-### PhpStorm configureren
+### PHPStorm-server configureren
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437409?learn=on)
 
 [ PpStorm ](https://www.jetbrains.com/phpstorm/) winde moet worden gevormd om behoorlijk met [!DNL Xdebug] te werken.
 
@@ -86,10 +90,10 @@ Wanneer [!DNL Xdebug] wordt geïmplementeerd in Starter-omgevingen en Pro-integr
 
 1. In uw project PhpStorm, open het **paneel van Montages**.
 
-   - _macOS_ - selecteer **PHPStorm** > **Voorkeur**.
+   - _macOS_ - selecteer **PHPStorm** > **Montages**.
    - _Vensters/Linux_ - selecteer **Dossier** > **Montages**.
 
-1. In het _paneel van Montages_, breid uit en bepaal de plaats van **Talen &amp; Frameworks** > **PHP** > **sectie van Servers**.
+1. In het _paneel van Montages_, breid **PHP** sectie uit en klik op **Servers**.
 
 1. Klik **+** om een serverconfiguratie toe te voegen. De projectnaam is grijs bovenaan.
 
@@ -110,11 +114,32 @@ Wanneer [!DNL Xdebug] wordt geïmplementeerd in Starter-omgevingen en Pro-integr
       - Productie: `/app/<project_code>/`
       - Staging: `/app/<project_code>_stg/`
 
-1. Verander de [!DNL Xdebug] haven in 9000 in de **Talen &amp; Frameworks** > **PHP** > **zuivert** > **Xdebug** > **zuivert het paneel van de Haven**.
+1. Verander de [!DNL Xdebug] haven in `9000,9003` of u kunt het beperken tot enkel `9000` in **PHP** > **zuiveren** > **Xdebug** > **zuivert het paneel van de Haven**.
 
 1. Klik **toepassen**.
 
+### De configuratie van PHPStorm Run/Debug maken
+
+Hierdoor kan de toepassing de juiste foutopsporingsinstellingen hebben om de aanvraag van de Adobe Commerce-toepassing af te handelen.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437426?learn=on)
+
+1. Open de PHPStorm-toepassing en klik op **[!UICONTROL Add Configuration]** rechtsboven in het scherm.
+
+1. Klik op **[!UICONTROL Add new run configuration]**.
+
+1. Selecteer de optie **[!UICONTROL PHP Remote Debug]** .
+
+   - Voer een unieke, maar herkenbare naam in.
+   - Schakel het selectievakje [!UICONTROL Filter debug connection by IDE key]** in.
+   - Selecteer de server die u in de [ vorige sectie ](#configure-phpstorm-server) creeerde. Als u het nog niet hebt gecreeerd, kunt u tot stand brengen nu, maar naar dat deel van de opstellingsgids verwijzen.
+   - Typ `PHPSTORM` in hoofdletters in het tekstveld **[!UICONTROL IDE key(session id)]** . We zullen dit in andere delen van de opstelling gebruiken, dus het is belangrijk om dit te handhaven. Als u een ander koord kiest, moet u zich herinneren om het elders in de opstelling en het configuratieproces te gebruiken.
+
+1. Klik op **[!UICONTROL Apply]** > **[!UICONTROL OK]** .
+
 ### Poorten doorsturen instellen
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437410?learn=on)
 
 Wijs de `XDEBUG` verbinding van de server aan uw lokaal systeem toe. Voor elk type foutopsporing moet u poort 9000 van uw Adobe Commerce op de server van de cloudinfrastructuur doorsturen naar uw lokale computer. Zie een van de volgende secties:
 
@@ -280,6 +305,10 @@ U hebt het volgende nodig:
 >- Methode 2: Commerce Console: https://CONSOLE-URL/ENVIRONMENT, klik `SSH v` dropdown
 
 **beginnen het zuiveren gebruikend het milieu URL**:
+
+Dit is een demonstratie van de gebruikte configuraties evenals een demonstratie van de parameter van de GET om een verre het zuiveren zitting te beginnen.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437417?learn=on)
 
 1. Foutopsporing op afstand inschakelen; ga naar de site in de browser en voeg het volgende toe aan de URL waar `KEY` de waarde voor `xdebug_key` is.
 
