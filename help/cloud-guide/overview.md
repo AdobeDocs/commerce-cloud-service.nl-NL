@@ -2,9 +2,9 @@
 title: Commerce on Cloud Infrastructure
 description: Meer informatie over het bouwen, implementeren en beheren van Commerce op Cloud-infrastructuur.
 exl-id: c0accd55-95ac-49d9-b6f4-0da19b82c28f
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 6ac23cbcf7ab48d09b494ebe8c7136518d213c4e
 workflow-type: tm+mt
-source-wordcount: '224'
+source-wordcount: '236'
 ht-degree: 0%
 
 ---
@@ -19,6 +19,10 @@ Adobe Commerce op wolkeninfrastructuur verstrekt een geautomatiseerd ontvangend 
 - Amazon Web Services (AWS) hosting die een schaalbare en veilige omgeving biedt voor online verkoop en detailhandel.
 
 ![ de voordelen van de Wolk ](../assets/CloudBenefits.svg)
+
+>[!NOTE]
+>
+>Voor meer informatie over veiligheid, verwijs naar de [ checklist van de veiligheidslancering ](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/launch/checklist#security-configuration).
 
 Bekijk de [ stapel van de Technologie ](architecture/tech-stack.md) in detail of leer meer over specifieke eigenschappen en gesteunde producten in [ architectuur van de Wolk voor Commerce ](architecture/cloud-architecture.md).
 

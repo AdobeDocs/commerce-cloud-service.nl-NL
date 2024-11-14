@@ -2,7 +2,7 @@
 title: Checklist starten
 description: Controlelijst met items voor het starten van de site weergeven.
 exl-id: 4525742e-18c5-40d1-975d-00ba3f3a51a0
-source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
+source-git-commit: 6ac23cbcf7ab48d09b494ebe8c7136518d213c4e
 workflow-type: tm+mt
 source-wordcount: '1104'
 ht-degree: 0%
@@ -139,7 +139,7 @@ U kunt ook testen met de volgende opties van derden:
 
 - [ Veilige configuratie voor Admin gebruiker ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-admin)
 
-- [ Veilige configuratie voor Beheer URL ] https://experienceleague.adobe.com/en/docs/commerce-admin/stores-sales/site-store/store-urls#use-a-custom-admin-url)
+- [ Veilige configuratie voor Admin URL ](https://experienceleague.adobe.com/en/docs/commerce-admin/stores-sales/site-store/store-urls#use-a-custom-admin-url)
 
 - [Gebruikers die zich niet meer op de Adobe Commerce bevinden, verwijderen uit het infrastructuurproject voor de cloud](../project/user-access.md)
 
