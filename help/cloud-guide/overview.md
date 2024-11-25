@@ -2,9 +2,9 @@
 title: Commerce on Cloud Infrastructure
 description: Meer informatie over het bouwen, implementeren en beheren van Commerce op Cloud-infrastructuur.
 exl-id: c0accd55-95ac-49d9-b6f4-0da19b82c28f
-source-git-commit: 6ac23cbcf7ab48d09b494ebe8c7136518d213c4e
+source-git-commit: 5f00b20e599b7ba26e483a238d05d99daf1dd1b8
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '293'
 ht-degree: 0%
 
 ---
@@ -32,6 +32,26 @@ Bekijk de [ stapel van de Technologie ](architecture/tech-stack.md) in detail of
 <div id="recs-overview-body-4"></div>
 <div id="recs-overview-body-5"></div>
 <div id="recs-overview-body-6"></div>
+
+## Cloud-gebieden
+
+De volgende secties bevatten informatie over de verschillende AWS- en Azure-regio&#39;s die beschikbaar zijn voor Adobe Commerce op cloudinfrastructuur.
+
+## AWS-regio&#39;s
+
+![ Diagram die de gebieden van AWS tonen ](../assets/aws-regions.svg){zoomable="yes"}
+
+>[!NOTE]
+>
+> Alleen ter plaatse in China en Rusland.
+
+## Azure-gebieden
+
+![ Diagram die Azure gebieden ](../assets/azure-regions.svg){zoomable="yes"} tonen
+
+>[!NOTE]
+>
+> Alleen ter plaatse in China en Rusland. Alle handelaren die integratieomgevingen vereisen, moeten Amerikaanse regio&#39;s gebruiken.
 
 ## Adobe Commerce-documentatie
 
