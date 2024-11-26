@@ -3,7 +3,7 @@ title: Snelle probleemoplossing
 description: Leer hoe u de snelste CDN-module en -services voor Adobe Commerce kunt oplossen en beheren.
 feature: Cloud, Configuration, Cache, Services
 exl-id: e4c47035-cbad-4838-8d44-fa5eaaac42d1
-source-git-commit: e066e9c7e1a6010c9d316f66f1632e28a0c40652
+source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
 workflow-type: tm+mt
 source-wordcount: '1834'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Ontwikkelaars en gevorderde VCL-gebruikers kunnen aangepaste VCL gebruiken om de
 log {"syslog"} req.service_id {" my_logging_endpoint_name :: "}
 ```
 
-U kunt dezelfde VCL gebruiken voor productie- en testomgevingen. Zie [ hoe te vcl_log ](https://support.fastly.com/hc/en-us/community/posts/360040447172-How-to-configure-vcl-log) vormen.
+U kunt dezelfde VCL gebruiken voor productie- en testomgevingen. Zie [`vcl_log` ](https://www.fastly.com/documentation/reference/vcl/subroutines/log/) in de _Snelle Documentatie_.
 
 ## Problemen met de prestaties, leegmaken en cache van de site
 

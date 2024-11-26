@@ -3,9 +3,9 @@ title: Redis-service instellen
 description: Leer hoe u Redis kunt instellen en optimaliseren als back-end cacheoplossing voor Adobe Commerce op cloudinfrastructuur.
 feature: Cloud, Cache, Services
 exl-id: d6971875-d302-495a-ad10-a81c507c2bc9
-source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
+source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '245'
 ht-degree: 0%
 
 ---
@@ -131,7 +131,5 @@ Raadpleeg de volgende Adobe Commerce Support-artikelen voor hulp bij het oplosse
 
 - [ herstelt de login van Admin van de Uitgiftevertraging of controle ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-issue-delay-magento-admin-login-or-checkout.html)
 - [ Uitgebreide Redis geheim voorgeheugenimplementatie Adobe Commerce 2.3.5+ ](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/planning/redis-service-configuration.html)
-- [ MDVA-30102: Het geheime voorgeheugen van Redis die volledig ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/patches/v1-0-6/mdva-30102-magento-patch-redis-cache-getting-full.html) wordt
 - [ Beheerde alarm op Adobe Commerce: Redis alarm van de geheugenwaarschuwing ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-warning-alert.html)
 - [ Beheerd alarm op Adobe Commerce: Redis geheugen kritieke alarm ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-critical-alert.html)
-- [ herstelt probleemoplosser ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-troubleshooter.html)

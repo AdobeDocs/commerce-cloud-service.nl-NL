@@ -4,9 +4,9 @@ description: Leer hoe u toegang krijgt tot uw New Relic-dashboard en hoe u gegev
 feature: Cloud, Observability
 topic: Performance
 exl-id: 8d1e2ad6-14d0-4754-9703-960d93e135a9
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
 workflow-type: tm+mt
-source-wordcount: '844'
+source-wordcount: '833'
 ht-degree: 0%
 
 ---
@@ -85,11 +85,11 @@ Wanneer de infrastructuur of de toepassingsvoorwaarden van de plaats een waakzam
 
 Wijzig geen waarschuwingen die zijn opgenomen in het beleid Beheerde waarschuwingen voor Adobe Commerce. De Adobe werkt en verbetert de waakzame voorwaarden in dit beleid in tijd bij, dat om het even welke aanpassingen beschrijft u aan het beleid toevoegt.
 
-In plaats van een bestaande waarschuwing te wijzigen, kunt u een waarschuwingsbeleid maken. Kopieer vervolgens de waarschuwingsvoorwaarden naar het nieuwe beleid. Zie [ beleid of voorwaarden van de Update ](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/alert-policies/update-or-disable-policies-conditions/) in de _New Relic_ documentatie.
+In plaats van een bestaande waarschuwing te wijzigen, kunt u een waarschuwingsbeleid maken. Kopieer vervolgens de waarschuwingsvoorwaarden naar het nieuwe beleid.
 
 >[!TIP]
 >
->Zie [ Inleiding aan alarm ](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/learn-alerts/alerts-concepts-workflow/) in _New Relic_ documentatie voor meer gedetailleerde informatie over Alarm, waakzaam beleid, en werkschema&#39;s.
+>Zie [ Inleiding aan alarm ](https://docs.newrelic.com/docs/alerts/overview/) in _New Relic_ documentatie voor meer gedetailleerde informatie over Alarm, waakzaam beleid, en werkschema&#39;s.
 
 ## Een workflow voor meldingen instellen
 

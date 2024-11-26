@@ -3,9 +3,9 @@ title: Service Elasticsearch instellen
 description: Leer hoe u de service Elasticsearch voor Adobe Commerce kunt inschakelen voor cloudinfrastructuur.
 feature: Cloud, Search, Services
 exl-id: ac559cbb-342a-4756-ade5-49eba4827965
-source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
+source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
 workflow-type: tm+mt
-source-wordcount: '798'
+source-wordcount: '788'
 ht-degree: 0%
 
 ---
@@ -266,6 +266,5 @@ Als u de insteekmodules verwijdert uit `elasticsearch:` in `.magento/services.ya
 Raadpleeg de volgende Adobe Commerce Support-artikelen voor hulp bij het oplossen van problemen met de Elasticsearch:
 
 - [ Elasticsearch 5 wordt gevormd, maar de onderzoekspagina laadt niet met &quot;de gegevens van het Gebied is gehandicapt...&quot;fout ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-5-is-configured-but-search-page-does-not-load-with-fielddata-is-disabled...-error.html)
-- [ de paginering van de Catalogus werkt niet wanneer Elasticsearch 6.x wordt gebruikt ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/known-issues-patches-attached/catalog-pagination-doesn-t-work-when-elasticsearch-6.x-is-used.html)
 - [ Elasticsearch in de probleemoplosser van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-in-magento-troubleshooter.html)
 - [ de Status van de Index van de Elasticsearch is `yellow` of `red` ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-index-status-is-yellow-or-red.html)
