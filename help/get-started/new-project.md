@@ -4,9 +4,9 @@ description: Leer hoe u een technische adviseur van de klant van de Adobe voorbe
 recommendations: noDisplay, catalog
 role: Admin
 exl-id: cfb354b0-c255-4b6e-94aa-c5a6bf7230d6
-source-git-commit: da1dec76b9389244f9d5a65428e09f1bc897fa5f
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
-source-wordcount: '756'
+source-wordcount: '751'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Zie [ schijfruimte beheren ](../cloud-guide/storage/manage-disk-space.md) in _Co
 
 Kies Amazon Web Services (AWS) of Microsoft Azure als uw IaaS-stichting (Infrastructure as a Service) voor uw Adobe Commerce op cloudinfrasinfrastructuurPro-projecten. Elke dienstverlener werkt in veelvoudige gebieden en verstrekt veelvoudige beschikbaarheidsstreken. Selecteer een gebied dat u op uw locatie handig vindt en verminder de mogelijkheden voor latentie en hogere kosten.
 
-Zie [ een kaart van de wolkengebieden van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/infrastructure/cloud/regions.html) in _Playbook van de Implementatie_.
+Zie [ een kaart van de wolkengebieden van Adobe Commerce ](../cloud-guide/overview.md).
 
 ## Verbindingsservice
 

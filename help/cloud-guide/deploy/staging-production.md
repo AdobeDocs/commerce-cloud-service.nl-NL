@@ -3,7 +3,7 @@ title: Distribueren naar Staging en Productie
 description: Leer hoe u uw Adobe Commerce-code voor cloudinfrastructuur kunt implementeren in de Staging- en Productomgevingen voor verdere tests.
 feature: Cloud, Console, Deploy, SCD, Storage
 exl-id: 4b82289f-ee04-4b14-a0ed-7a8a19fc6a6a
-source-git-commit: ae7eb6a0c3de773377c8e1efb5ce2e92c06506bd
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
 source-wordcount: '1310'
 ht-degree: 0%
@@ -140,7 +140,7 @@ De Cloud CLI bevat opdrachten voor het implementeren van code. U hebt SSH en Git
 
 ## Statische bestanden migreren
 
-[ de Statische dossiers ](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) worden opgeslagen in `mounts`. Er zijn twee methoden voor het migreren van bestanden van een bronmontagelocatie, zoals uw lokale omgeving, naar een doellocatie. Beide methoden gebruiken het hulpprogramma `rsync` , maar Adobe raadt u aan de CLI van `magento-cloud` te gebruiken om bestanden tussen de lokale en externe omgeving te verplaatsen. En Adobe raadt u aan de methode `rsync` te gebruiken wanneer u bestanden van een externe bron naar een andere externe locatie verplaatst.
+[ de Statische dossiers ](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) worden opgeslagen in `mounts`. Er zijn twee methoden voor het migreren van bestanden van een bronmontagelocatie, zoals uw lokale omgeving, naar een doellocatie. Beide methoden gebruiken het hulpprogramma `rsync` , maar Adobe raadt u aan de CLI van `magento-cloud` te gebruiken om bestanden tussen de lokale en externe omgeving te verplaatsen. En Adobe raadt u aan de methode `rsync` te gebruiken wanneer u bestanden van een externe bron naar een andere externe locatie verplaatst.
 
 ### Bestanden migreren met CLI
 

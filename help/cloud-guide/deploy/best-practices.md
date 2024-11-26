@@ -3,7 +3,7 @@ title: Aanbevolen werkwijzen voor implementatie
 description: Ontdek best practices voor de implementatie van Adobe Commerce op cloudinfrastructuur.
 feature: Cloud, Deploy, Best Practices
 exl-id: bac3ca83-0eee-4fda-9a5c-a84ab25a837a
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
 source-wordcount: '1904'
 ht-degree: 0%
@@ -118,7 +118,7 @@ In deze fase wordt ook `composer install` uitgevoerd om afhankelijkheden op te h
 Deze fase bouwt de codebase en voert haken in de `build` sectie van `.magento.app.yaml` uit. De standaardbuild-haak is de opdracht `php ./vendor/bin/ece-tools` en voert het volgende uit:
 
 - Past patches toe in `vendor/magento/ece-patches` en optionele, projectspecifieke patches in `m2-hotfixes`
-- Regenereert code en de [ configuratie van de gebiedsdeelinjectie ](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) (namelijk de `generated/` folder, die `generated/code` en `generated/metapackage` omvat) gebruikend `bin/magento setup:di:compile`.
+- Regenereert code en de [ configuratie van de gebiedsdeelinjectie ](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) (namelijk de `generated/` folder, die `generated/code` en `generated/metapackage` omvat) gebruikend `bin/magento setup:di:compile`.
 - Controleert of het [`app/etc/config.php`](../store/store-settings.md) -bestand in de codebase bestaat. Adobe Commerce genereert dit bestand automatisch als het tijdens de constructiefase niet wordt gedetecteerd en bevat een lijst met modules en extensies. Als het bestaat, gaat de bouwstijlfase als normaal verder, comprimeert statische dossiers gebruikend GZIP, en stelt op, die onderbreking in de plaatsingsfase vermindert. Verwijs naar [ bouwt opties ](../environment/variables-build.md) om over het aanpassen van of het onbruikbaar maken van dossiercompressie te leren.
 
 >[!WARNING]
@@ -145,7 +145,7 @@ De schuine streep omvat alle dossiers en omslagen **exclusief de volgende** in `
 
 ### Fase 4: Slakken en cluster implementeren
 
-Uw toepassingen en alle [ achterste ](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) de dienstvoorziening als volgt:
+Uw toepassingen en alle [ achterste ](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) de dienstvoorziening als volgt:
 
 - Elke service in een container koppelen, zoals een webserver, OpenSearch, [!DNL RabbitMQ]
 - Hiermee wordt het lees-schrijfbestandssysteem gemonteerd (op een opslagraster met hoge beschikbaarheid)
@@ -183,7 +183,7 @@ Er zijn twee implementatiehaken. De `pre-deploy.php` haak voltooit noodzakelijke
 >
 >In het implementatiescript worden de waarden gebruikt die door configuratiebestanden in de map `.magento` zijn gedefinieerd. Vervolgens verwijdert het script de map en de inhoud ervan. Dit heeft geen invloed op uw lokale ontwikkelomgeving.
 
-### Post-implementatie: routeringen configureren
+### Post-plaatsing: vorm het verpletteren
 
 Terwijl de plaatsing loopt, stopt het proces inkomend verkeer op het ingangspunt voor 60 seconden en past het verpletteren aan zodat uw Webverkeer bij uw pas gecreëerde cluster aankomt.
 
