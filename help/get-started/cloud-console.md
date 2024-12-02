@@ -1,5 +1,5 @@
 ---
-title: "Log in to [!DNL Cloud Console]"
+title: Aanmelden bij  [!DNL Cloud Console]
 description: Leer over  [!DNL Cloud Console]  voor Adobe Commerce op de infrastructuur van de Wolk.
 recommendations: noDisplay, catalog
 last-substantial-update: 2024-02-06T00:00:00Z

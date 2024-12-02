@@ -1,5 +1,5 @@
 ---
-title: "Beheer takken met  [!DNL Cloud Console]"
+title: Vertakkingen beheren met de  [!DNL Cloud Console]
 description: Leer hoe te om de milieutakken voor Adobe Commerce op wolkeninfrastructuur te beheren gebruikend  [!DNL Cloud Console].
 role: Developer
 feature: Cloud, Install

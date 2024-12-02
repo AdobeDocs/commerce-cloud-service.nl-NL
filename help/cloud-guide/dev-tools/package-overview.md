@@ -1,5 +1,5 @@
 ---
-title: '[!DNL ECE-Tools] Pakket'
+title: '[!DNL ECE-Tools] Pakket maken'
 description: Leer over het  [!DNL ECE-Tools]  pakket en hoe het helpt om Adobe Commerce te beheren en op te stellen.
 exl-id: 5583a685-29c5-4de5-8d2e-94cff5ff37ab
 source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
