@@ -3,9 +3,9 @@ title: Logbestanden weergeven en beheren
 description: Begrijp de typen logbestanden die beschikbaar zijn in de cloudinfrastructuur en waar u ze kunt vinden.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 633e5e75ae23a933d15a0faedae22092797d5d0b
+source-git-commit: 564a569c37ab8ec53f8a12bc105106a621251b10
 workflow-type: tm+mt
-source-wordcount: '1056'
+source-wordcount: '1083'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,18 @@ ssh 1.ent-project-environment-id@ssh.region.magento.cloud "cat var/log/cron.log"
 
 >[!TIP]
 >
->Voor Pro Staging- en productieomgevingen zijn automatische logrotatie, compressie en verwijdering ingeschakeld voor logbestanden met een vaste bestandsnaam. Elk logboekbestandstype heeft een roterend patroon en een levensduur. Starteromgevingen hebben geen logrotatie. Meer informatie over de logrotatie en de levensduur van gecomprimeerde logbestanden in de omgeving vindt u in: `/etc/logrotate.conf` en `/etc/logrotate.d/<various>` . Logrotatie kan niet worden geconfigureerd in Pro-integratieomgevingen. Voor ProIntegratie, moet u een douaneoplossing/manuscript uitvoeren en [ vormt uw kruin ](../application/crons-property.md) om het manuscript in werking te stellen zoals nodig.
+>Voor Pro Staging- en Pro Production-omgevingen zijn automatische logrotatie, compressie en verwijdering ingeschakeld voor logbestanden met een vaste bestandsnaam. Elk logboekbestandstype heeft een roterend patroon en een levensduur.
+>Meer informatie over de logrotatie en de levensduur van gecomprimeerde logbestanden in de omgeving vindt u in: `/etc/logrotate.conf` en `/etc/logrotate.d/<various>` .
+>Voor Pro het Opvoeren en de Pro milieu&#39;s van de Productie, moet u [ een kaartje van de Steun van Adobe Commerce ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) voorleggen om voor veranderingen in de configuratie van de logboekomwenteling te vragen.
+
+>[!TIP]
+>
+>Logrotatie kan niet worden geconfigureerd in Pro-integratieomgevingen.
+>Voor ProIntegratie, moet u een douaneoplossing/manuscript uitvoeren en [ vormt uw kruin ](../application/crons-property.md) om het manuscript in werking te stellen zoals nodig.
+
+>[!NOTE]
+>
+>Starter-projectomgevingen hebben geen logrotatie.
 
 ## Logboeken samenstellen en implementeren
 
