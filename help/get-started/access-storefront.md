@@ -3,9 +3,9 @@ title: Open het deelvenster Commerce Admin
 description: Leer hoe u het deelvenster Commerce Admin kunt openen.
 recommendations: noDisplay, catalog
 exl-id: 9a8a0a49-b108-48bd-b413-ec9431370c06
-source-git-commit: 3ca09243dc0a714c1d86cccf9f0620a8a39fd1e1
+source-git-commit: 8be5b3f33798b1f03fc85a7ac9111dabd7bfd9e5
 workflow-type: tm+mt
-source-wordcount: '323'
+source-wordcount: '310'
 ht-degree: 0%
 
 ---
@@ -30,4 +30,4 @@ Nadat u het verzoek tot wijziging van het wachtwoord hebt verzonden, controleert
 
 ## Gezondheid van site controleren
 
-Het [ plaats-brede Hulpmiddel van de Analyse ](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/intro) is een pro-actief zelfbedieningshulpmiddel en een centrale bewaarplaats die gedetailleerde systeeminzichten en aanbevelingen omvat om de veiligheid en de operabiliteit van uw installatie van Adobe Commerce te verzekeren. Het biedt 24/7 real-time prestatiescontrole, rapporten, en advies om potentiële kwesties en betere zichtbaarheid in plaatsgezondheid, veiligheid, en toepassingsconfiguraties te identificeren. Het helpt de resolutietijd te verminderen en de stabiliteit en prestaties van de site te verbeteren. U kunt tot het Plaats-brede Hulpmiddel van de Analyse direct van het [ paneel Admin ](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-2-logging-in-to-your-site-wide-analysis-tool-dashboard-from-your-stores-admin-panel) of van het [ specifieke domein ](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-1-logging-in-to-your-site-wide-analysis-tool-dashboard-directly-from-the-site-wide-analysis-tool-domain-for-adobe-commerce-on-cloud-infrastructure-only) (Adobe Commerce op de projecten van de wolkeninfrastructuur slechts) toegang hebben.
+Het [ plaats-brede Hulpmiddel van de Analyse ](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/intro) is een pro-actief zelfbedieningshulpmiddel en een centrale bewaarplaats die gedetailleerde systeeminzichten en aanbevelingen omvat om de veiligheid en de operabiliteit van uw installatie van Adobe Commerce te verzekeren. Het biedt 24/7 real-time prestatiescontrole, rapporten, en advies om potentiële kwesties en betere zichtbaarheid in plaatsgezondheid, veiligheid, en toepassingsconfiguraties te identificeren. Het helpt de resolutietijd te verminderen en de stabiliteit en prestaties van de site te verbeteren. U kunt tot het Plaats-brede Hulpmiddel van de Analyse van de Analyse van het [ deelvenster Admin ](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-2-logging-in-to-your-site-wide-analysis-tool-dashboard-from-your-stores-admin-panel) direct toegang hebben.
