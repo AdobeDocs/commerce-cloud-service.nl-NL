@@ -4,9 +4,9 @@ description: Leer meer over de omgevingen die worden ondersteund door de Pro-arc
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 18f4da5c6e7e5c483f5cf64e977b3fb3fd28bbb0
+source-git-commit: eb33d9867355a4ccfada99c7f5b0e4520dbe44f5
 workflow-type: tm+mt
-source-wordcount: '1573'
+source-wordcount: '1554'
 ht-degree: 0%
 
 ---
@@ -185,7 +185,7 @@ U kunt a **handsteun** van het gegevensbestand voor uw het Opvoeren en milieu&#3
 
 ### Doelstelling herstelpunt
 
-RPO is zes uren maximumtijd aan laatste steun (bijvoorbeeld bij 06:00, toen 12:00, toen 18:00). De frequentie van back-ups is afhankelijk van het back-upschema van uw abonnement en het volume van de wijzigingen dat naar de opslagservice moet worden geschreven.
+Neem contact op met de Customer Success Manager van de Adobe voor meer informatie over de tijd die het herstelpunt nodig heeft om de laatste back-up te maken. De frequentie van back-ups is afhankelijk van het back-upschema van uw abonnement en het volume van de wijzigingen dat naar de opslagservice moet worden geschreven.
 
 ### Retentiebeleid
 
@@ -203,11 +203,7 @@ Dit beleid kan afhankelijk van uw plan van de wolkeninfrastructuur variëren.
 
 ### Doelstelling hersteltijd
 
-RTO is afhankelijk van de grootte van de opslag. Grote EBS-volumes hebben meer tijd nodig om te herstellen. De hersteltijden kunnen variëren afhankelijk van de grootte van uw database:
-
-- Een grote database (200+ GB) kan 5 uur duren
-- Een middelgrote database (150 GB) kan 2 1/2 uur in beslag nemen
-- Een kleine database (60 GB) kan 1 uur duren
+RTO is afhankelijk van de grootte van de opslag. Grote EBS-volumes hebben meer tijd nodig om te herstellen. De hersteltijden kunnen variëren, afhankelijk van de grootte van de database. Neem voor meer informatie contact op met de Customer Success Manager van de Adobe.
 
 ## Schalen in Pro-clusters
 
